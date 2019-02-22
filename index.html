@@ -101,7 +101,8 @@
 <p>app.use和app.get/app.post实现几乎大同小异，代码示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">function testUser(req, res, next)&#123;</span><br><span class="line"></span><br><span class="line">    // req 参数可以接受一些请求的参数(req.query/req.body) 和 请求头信息</span><br><span class="line"></span><br><span class="line">    // res 用于响应信息</span><br><span class="line"></span><br><span class="line">    // 调用next()方法则进入下一个中间件</span><br><span class="line">	res.send(&quot;测试用户&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function testLogin(req,res,next)&#123;</span><br><span class="line"></span><br><span class="line">	res.send(&quot;测试登录&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var server = app.listen(2019, function () &#123;</span><br><span class="line"></span><br><span class="line">  var host = server.address().address</span><br><span class="line">  var port = server.address().port</span><br><span class="line"></span><br><span class="line">  console.log(&quot;应用实例，访问地址为 http://127.0.0.1:2019&quot;)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//路径匹配</span><br><span class="line"></span><br><span class="line">app.use(&apos;/user&apos;,testUser);</span><br><span class="line"></span><br><span class="line">app.get(&apos;/login&apos;,testLogin);</span><br></pre></td></tr></table></figure></p>
 <p>关于node.js的express框架就介绍这么多，最近本人因实现某个插件的功能而需要用到的，这与下面说的mock server有比较大的关系。</p>
 <p>##mock server 介绍</p>
-<p>mock server 翻译过来的意思是模拟服务。<br>说到这我相信大家就很容易理解了。至于为什么要模拟服务？<br>比方说现今的业务系统很少有孤立存在的，它们或多或少使用其他公司提供的服务，这给我们联调和测试造成了比较大的麻烦，对于这种情况，常见的解决方案就是搭建一个mock server，模拟那些服务器，提供数据进行联调和测试(这句话，我引用自该链接<a href="https://www.cnblogs.com/fnng/p/7511539.html" target="_blank" rel="noopener">Mock Server 入门</a><br>下图比较好的解释了mock-server的作用:<br><img src="/2019/02/22/node-js之express框架/mock-server.png" alt="如图比较好解释mock-server的作用"></p>
+<p>mock server 翻译过来的意思是模拟服务。<br>说到这我相信大家就很容易理解了。至于为什么要模拟服务？<br>比方说现今的业务系统很少有孤立存在的，它们或多或少使用其他公司提供的服务，这给我们联调和测试造成了比较大的麻烦，对于这种情况，常见的解决方案就是搭建一个mock server，模拟那些服务器，提供数据进行联调和测试(这句话，我引用自该链接<a href="https://www.cnblogs.com/fnng/p/7511539.html" target="_blank" rel="noopener">Mock Server 入门</a></p>
+<p><img src="/2019/02/22/node-js之express框架/mock-server.png" alt="如图比较好解释mock-server的作用"></p>
 <p>##mock server的实现思路</p>
 <p>现在google或者being搜索mock server 实现思路肯定有很多，这里我就不再赘述。<br>这里我以我自己最近的vscode插件开发来说。<br>我最近的工作是针对Settings-Sync作二次开发<br>关于settings-sync插件，感兴趣的可以参考我的博客园<a href="https://www.cnblogs.com/youcong/p/10380501.html" target="_blank" rel="noopener">Settings-Sync源码阅读</a></p>
 <p>如何实现一个mock server 替换github api地址并确保效果一致?</p>
@@ -119,7 +120,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/22/node-js之express框架/" data-id="cjsg7eflk00021svky7k7pcbp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/22/node-js之express框架/" data-id="cjsg7hm1k0002esvkbdsqr6ck" class="article-share-link">Share</a>
       
       
     </footer>
@@ -167,7 +168,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/02/22/SpringBoot之加密/" data-id="cjsg7eflg00011svkuykgaqyn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/02/22/SpringBoot之加密/" data-id="cjsg7hm1e0001esvkn934hybs" class="article-share-link">Share</a>
       
       
     </footer>
