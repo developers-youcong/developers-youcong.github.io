@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>nginx配置https | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="其实nginx配置也差不太多，虽然差不太多，但还是有区别的。 假定你已经在阿里云完成了证书申请，接下来你就可以按照如下配置(主要是修改nginx.conf文件)1234567891011121314151617181920212223server &amp;#123;        listen 443;        server_name www.youcongtech.com;        ssl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx配置https">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/02/26/nginx配置https/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="其实nginx配置也差不太多，虽然差不太多，但还是有区别的。 假定你已经在阿里云完成了证书申请，接下来你就可以按照如下配置(主要是修改nginx.conf文件)1234567891011121314151617181920212223server &amp;#123;        listen 443;        server_name www.youcongtech.com;        ssl">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-02-26T12:27:20.530Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nginx配置https">
+<meta name="twitter:description" content="其实nginx配置也差不太多，虽然差不太多，但还是有区别的。 假定你已经在阿里云完成了证书申请，接下来你就可以按照如下配置(主要是修改nginx.conf文件)1234567891011121314151617181920212223server &amp;#123;        listen 443;        server_name www.youcongtech.com;        ssl">
+  
+    <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://developers-youcong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-nginx配置https" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/26/nginx配置https/" class="article-date">
+  <time datetime="2019-02-26T12:06:25.000Z" itemprop="datePublished">2019-02-26</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      nginx配置https
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>其实nginx配置也差不太多，虽然差不太多，但还是有区别的。</p>
+<p>假定你已经在阿里云完成了证书申请，接下来你就可以按照如下配置(主要是修改nginx.conf文件)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 443;</span><br><span class="line">        server_name www.youcongtech.com;</span><br><span class="line">        ssl on;</span><br><span class="line">        index index.html;</span><br><span class="line">        ssl_certificate /usr/local/nginx/cert/1854029_www.youcongtech.com.pem;</span><br><span class="line">        ssl_certificate_key /usr/local/nginx/cert/1854029_www.youcongtech.com.key;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                proxy_set_header X-Forwarded-Host $host;</span><br><span class="line">                proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">                proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">                proxy_set_header Host $http_host;</span><br><span class="line">                proxy_redirect off;</span><br><span class="line">                expires off;</span><br><span class="line">                sendfile off;</span><br><span class="line">                proxy_pass http://www.youcongtech.com;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>按照这样配置你不一定成功，可能会遇见下面的几个错误？</p>
+<h2><span id="错误1">错误1</span></h2><p>错误信息:ubuntu error: SSL modules require the OpenSSL library.</p>
+<p>解决办法:<br>执行该命令即可解决:sudo apt-get install openssl libssl-dev<br>参考链接为:<a href="https://yq.aliyun.com/articles/486172" target="_blank" rel="noopener">https://yq.aliyun.com/articles/486172</a></p>
+<h2><span id="错误2">错误2</span></h2><p>错误信息:nginx: [emerg] unknown directive “ssl” in /usr/local/nginx/conf/nginx.conf:188</p>
+<p>解决办法:<br>在Nginx解压目录执行该命令:./configure –with-http_ssl_module</p>
+<p>参考链接为:<a href="https://blog.csdn.net/weiyangdong/article/details/80008543" target="_blank" rel="noopener">https://blog.csdn.net/weiyangdong/article/details/80008543</a></p>
+<p>如果你对此还有疑问的话，可以参考这个链接:<a href="https://www.cnblogs.com/tianhei/p/7726505.html" target="_blank" rel="noopener">https://www.cnblogs.com/tianhei/p/7726505.html</a><br>这个链接会讲如何申请证书到配置https成功。</p>
+<p>最后在浏览器输入:<a href="https://www.youcongtech.com" target="_blank" rel="noopener">https://www.youcongtech.com</a> 你会看到一个博客界面或者是一个Nginx欢迎页。<br>当然了，目前我的阿里云域名尚在认证中，过段时间就可以申请下来了。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cjslqok3i0000ugvkclzag6bq" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vscode源码编译运行打包使其由英文变为中文</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/02/26/nginx配置https/">nginx配置https</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/">vscode源码编译运行打包使其由英文变为中文</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/25/阿里云配置tomcat-https/">阿里云配置tomcat https</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/23/springboot打成的jar包如何在Linux上持久运行/">springboot打成的jar包如何在Linux上持久运行</a>
+          </li>
+        
+          <li>
+            <a href="/2019/02/23/如何将博客园的数据迁移到wordpress上面/">如何将博客园的数据迁移到wordpress上面</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 youcong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
