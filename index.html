@@ -105,11 +105,16 @@
 <p>最后例子中还有阿里云和腾讯云的图片存储，大家可以做一个参考。</p>
 <p>源码地址为:<a href="https://github.com/developers-youcong/mock-github-api" target="_blank" rel="noopener">https://github.com/developers-youcong/mock-github-api</a></p>
 <p>希望能够对大家有所启发和帮助</p>
+<p>注意，可能遇到的问题:</p>
+<p>问题一:静态资源需要放行，否则无法访问<br>在index.js补充这段代码即可解决这个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(path.join(__dirname, &apos;public&apos;)))</span><br></pre></td></tr></table></figure></p>
+<p>问题二:socket hang up</p>
+<p>我将var bodyParser = require(‘body-parser’)去除就解决了这个问题</p>
+<p>参考链接如:<a href="https://blog.csdn.net/gsying1474/article/details/52200445" target="_blank" rel="noopener">https://blog.csdn.net/gsying1474/article/details/52200445</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cjsq3zr020007t8vk2h0mrxl6" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cjsq4b15g00048cvkezdx48a0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -151,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cjsq3zqzy0003t8vku10gkcya" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cjsq4b15c00028cvk6zsh0d9b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -197,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cjsq3zqzw0002t8vkh0837yeh" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cjsq4b15e00038cvkew4zljny" class="article-share-link">Share</a>
       
       
     </footer>
@@ -237,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cjsq3zr010006t8vk8yho8ndo" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cjsq4b15i00068cvkaj2o0uwb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -282,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cjsq3zr0m000bt8vkv2gij8st" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cjsq4b164000b8cvkaufivqr7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -340,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cjsq3zr000005t8vkw2wlc9ts" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cjsq4b15k00078cvkeqxcjy5r" class="article-share-link">Share</a>
       
       
     </footer>
@@ -379,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/如何将博客园的数据迁移到wordpress上面/" data-id="cjsq3zr0k000at8vk1a512u0q" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/如何将博客园的数据迁移到wordpress上面/" data-id="cjsq4b15n00098cvk5sx6il26" class="article-share-link">Share</a>
       
       
     </footer>
@@ -439,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/wordpress数据表分析/" data-id="cjsq3zr0g0008t8vkxmk03p54" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/wordpress数据表分析/" data-id="cjsq4b15l00088cvk5a9p0s15" class="article-share-link">Share</a>
       
       
     </footer>
@@ -495,7 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/谈谈存储系统/" data-id="cjsq3zr0i0009t8vkbw8fdsde" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/谈谈存储系统/" data-id="cjsq4b15p000a8cvku1n36lo6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -561,7 +566,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/22/node-js之express框架/" data-id="cjsq3zqzz0004t8vkzp5qtv6q" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/22/node-js之express框架/" data-id="cjsq4b15h00058cvkor4rvfyn" class="article-share-link">Share</a>
       
       
     </footer>

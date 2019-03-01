@@ -20,7 +20,7 @@
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/express04.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/express05.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/express06.png">
-<meta property="og:updated_time" content="2019-03-01T13:42:58.426Z">
+<meta property="og:updated_time" content="2019-03-01T13:52:46.377Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js使用express框架进行文件上传">
 <meta name="twitter:description" content="关于node.js使用express框架进行文件上传，主要来自于最近对Settings-Sync插件做的研究。目前的研究算是取得的比较好的进展。Settings-Sync中通过快捷键上传文件，其实主要还是请求后端接口。于是我便使用node.js模拟一个服务，这个服务其实就相当于github api(Settings-Sync实际请求的接口，比如token验证，gist存储创建等都是来自github">
@@ -114,11 +114,16 @@
 <p>最后例子中还有阿里云和腾讯云的图片存储，大家可以做一个参考。</p>
 <p>源码地址为:<a href="https://github.com/developers-youcong/mock-github-api" target="_blank" rel="noopener">https://github.com/developers-youcong/mock-github-api</a></p>
 <p>希望能够对大家有所启发和帮助</p>
+<p>注意，可能遇到的问题:</p>
+<p>问题一:静态资源需要放行，否则无法访问<br>在index.js补充这段代码即可解决这个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(path.join(__dirname, &apos;public&apos;)))</span><br></pre></td></tr></table></figure></p>
+<p>问题二:socket hang up</p>
+<p>我将var bodyParser = require(‘body-parser’)去除就解决了这个问题</p>
+<p>参考链接如:<a href="https://blog.csdn.net/gsying1474/article/details/52200445" target="_blank" rel="noopener">https://blog.csdn.net/gsying1474/article/details/52200445</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cjsq3zr020007t8vk2h0mrxl6" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cjsq4b15g00048cvkezdx48a0" class="article-share-link">Share</a>
       
       
     </footer>
