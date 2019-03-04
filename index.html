@@ -62,6 +62,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-node-js读写文件" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/04/node-js读写文件/" class="article-date">
+  <time datetime="2019-03-04T13:32:24.000Z" itemprop="datePublished">2019-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/04/node-js读写文件/">node.js读写文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于node.js的读写操作，应用场景有很多。<br>比如其中这样的一个场景，如何获取全局的token。<br>这就涉及到写和读操作了。</p>
+<p>写操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">function storeToken(token)&#123;</span><br><span class="line"></span><br><span class="line">	fs.writeFile(&apos;D://youcongtech//token.txt&apos;,token.slice(10),&apos;utf8&apos;,function(error)&#123;</span><br><span class="line"></span><br><span class="line">		if(error)&#123;</span><br><span class="line">			console.log(error);</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(&apos;write success&apos;);</span><br><span class="line"></span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>读操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">function readToken()&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	fs.readFile(&apos;D://youcongtech//token.txt&apos;, function (err, data) &#123;</span><br><span class="line">		if (err) &#123;</span><br><span class="line">			return console.error(err);</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(data.toString());</span><br><span class="line">	&#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过上述两个示例代码，就可以达到存取token的目的，这样一来就不必担心如何获取token问题。<br>当然了，问题的解决方式不止这一个，其实还可以用redis来存储token。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/04/node-js读写文件/" data-id="cjsue4nib000758vksbi1lg0p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-javascript之传输加密" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/04/javascript之传输加密/" class="article-date">
@@ -113,7 +153,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/04/javascript之传输加密/" data-id="cjsudqjbf000ei8vk4j77bwyt" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/04/javascript之传输加密/" data-id="cjsue4nj2000f58vk8vyqxra8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -155,7 +195,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/VsCode插件开发之通信/" data-id="cjsudqjak0003i8vkutrha010" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/VsCode插件开发之通信/" data-id="cjsue4ni9000558vk769jjloo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -200,7 +240,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cjsudqjag0002i8vkc7iy1ihx" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cjsue4nhx000058vkysaht59n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -262,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cjsudqjar0008i8vk5cnhj92c" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cjsue4nid000958vk5p1uajlj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,7 +344,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cjsudqjam0004i8vkiltz6ufh" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cjsue4nia000658vkcfkmchy1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -350,7 +390,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cjsudqjam0005i8vkhbhxa8mb" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cjsue4ni6000358vk4gb04fyg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -390,7 +430,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cjsudqjaq0007i8vkrctt7bn0" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cjsue4nie000a58vkwvslbsbp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -435,7 +475,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cjsudqjay000di8vkcl6174cr" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cjsue4nij000e58vkw7l2osvw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -493,46 +533,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cjsudqjav000ai8vkxsyn9y9h" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-如何将博客园的数据迁移到wordpress上面" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/23/如何将博客园的数据迁移到wordpress上面/" class="article-date">
-  <time datetime="2019-02-23T06:01:28.000Z" itemprop="datePublished">2019-02-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/23/如何将博客园的数据迁移到wordpress上面/">如何将博客园的数据迁移到wordpress上面</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有些时候我不得不惊叹软件系统的强大。<br>比如如果不是今天我想着将博客园的数据迁移到wordpress上，也许我不会认识到wordpress的强大之处。<br>之所以导入是因为我觉得已经有现成的数据，我自己就不必造太多假数据，省事。<br>之前还想着如果实在不想就用python爬取数据将其存到数据库中，同时也还想着一个笨办法(传统的cv大法)。</p>
-<p>从博客园迁移数据到wordpress对应的插件为:<a href="https://wordpress.org/plugins/cnblogs2wp/" target="_blank" rel="noopener">https://wordpress.org/plugins/cnblogs2wp/</a></p>
-<p>如果你的wordpress本身存在某些问题，可以参考如下链接:<br>wordpress之插件安装和主题安装(包含常见问题):<a href="https://www.cnblogs.com/youcong/p/9245621.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/p/9245621.html</a><br>如果是因为文件上传大小限制，可找到对应的php.ini修改<br>参考链接如:<a href="https://jingyan.baidu.com/article/c85b7a64570aad003bac95ad.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/c85b7a64570aad003bac95ad.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/如何将博客园的数据迁移到wordpress上面/" data-id="cjsudqjaw000bi8vk4vcz78ab" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cjsue4nic000858vkw36aj2xb" class="article-share-link">Share</a>
       
       
     </footer>
@@ -578,6 +579,10 @@
       <ul>
         
           <li>
+            <a href="/2019/03/04/node-js读写文件/">node.js读写文件</a>
+          </li>
+        
+          <li>
             <a href="/2019/03/04/javascript之传输加密/">javascript之传输加密</a>
           </li>
         
@@ -591,10 +596,6 @@
         
           <li>
             <a href="/2019/03/01/node-js使用express框架进行文件上传/">node.js使用express框架进行文件上传</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/01/nginx让所有的http地址重定向到https/">nginx让所有的http地址重定向到https</a>
           </li>
         
       </ul>

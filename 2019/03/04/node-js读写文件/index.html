@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>node.js读写文件 | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于node.js的读写操作，应用场景有很多。比如其中这样的一个场景，如何获取全局的token。这就涉及到写和读操作了。 写操作:1234567891011121314var fs = require(&amp;quot;fs&amp;quot;);function storeToken(token)&amp;#123;	fs.writeFile(&amp;apos;D://youcongtech//token.txt&amp;apos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node.js读写文件">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/03/04/node-js读写文件/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="关于node.js的读写操作，应用场景有很多。比如其中这样的一个场景，如何获取全局的token。这就涉及到写和读操作了。 写操作:1234567891011121314var fs = require(&amp;quot;fs&amp;quot;);function storeToken(token)&amp;#123;	fs.writeFile(&amp;apos;D://youcongtech//token.txt&amp;apos">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-04T13:38:43.736Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node.js读写文件">
+<meta name="twitter:description" content="关于node.js的读写操作，应用场景有很多。比如其中这样的一个场景，如何获取全局的token。这就涉及到写和读操作了。 写操作:1234567891011121314var fs = require(&amp;quot;fs&amp;quot;);function storeToken(token)&amp;#123;	fs.writeFile(&amp;apos;D://youcongtech//token.txt&amp;apos">
+  
+    <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://developers-youcong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-node-js读写文件" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/04/node-js读写文件/" class="article-date">
+  <time datetime="2019-03-04T13:32:24.000Z" itemprop="datePublished">2019-03-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node.js读写文件
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于node.js的读写操作，应用场景有很多。<br>比如其中这样的一个场景，如何获取全局的token。<br>这就涉及到写和读操作了。</p>
+<p>写操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">function storeToken(token)&#123;</span><br><span class="line"></span><br><span class="line">	fs.writeFile(&apos;D://youcongtech//token.txt&apos;,token.slice(10),&apos;utf8&apos;,function(error)&#123;</span><br><span class="line"></span><br><span class="line">		if(error)&#123;</span><br><span class="line">			console.log(error);</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(&apos;write success&apos;);</span><br><span class="line"></span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>读操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">function readToken()&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	fs.readFile(&apos;D://youcongtech//token.txt&apos;, function (err, data) &#123;</span><br><span class="line">		if (err) &#123;</span><br><span class="line">			return console.error(err);</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(data.toString());</span><br><span class="line">	&#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>通过上述两个示例代码，就可以达到存取token的目的，这样一来就不必担心如何获取token问题。<br>当然了，问题的解决方式不止这一个，其实还可以用redis来存储token。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/04/node-js读写文件/" data-id="cjsue4nib000758vksbi1lg0p" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/04/javascript之传输加密/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">javascript之传输加密</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/04/node-js读写文件/">node.js读写文件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/04/javascript之传输加密/">javascript之传输加密</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/01/VsCode插件开发之通信/">VsCode插件开发之通信</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/01/Python实现机器人聊天/">Python实现机器人聊天</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/01/node-js使用express框架进行文件上传/">node.js使用express框架进行文件上传</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 youcong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
