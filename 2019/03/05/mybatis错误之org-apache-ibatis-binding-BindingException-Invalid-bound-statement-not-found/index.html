@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found) | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。 错误信息如下:org.apache.ibatis.binding.BindingException: Invalid bound statement  (not found) 通常原因是因为Mapper interf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。 错误信息如下:org.apache.ibatis.binding.BindingException: Invalid bound statement  (not found) 通常原因是因为Mapper interf">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-05T13:28:08.112Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)">
+<meta name="twitter:description" content="玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。 错误信息如下:org.apache.ibatis.binding.BindingException: Invalid bound statement  (not found) 通常原因是因为Mapper interf">
+  
+    <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://developers-youcong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" class="article-date">
+  <time datetime="2019-03-05T13:16:45.000Z" itemprop="datePublished">2019-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。</p>
+<p>错误信息如下:<br>org.apache.ibatis.binding.BindingException: Invalid bound statement<br>  (not found)</p>
+<p>通常原因是因为Mapper interface和xml文件的定义对不上，通常需要检查包名、namespace、函数名等。</p>
+<p>出现这个错误的原因是我太过相信自我了，觉得自觉没有错，于是手打，结果就是一个单词写错了。</p>
+<p>看代码示例:</p>
+<p>xml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;resentPosts&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line"> 	SELECT post_title FROM `wp_posts` WHERE post_status = &apos;publish&apos; ORDER BY post_modified DESC LIMIT 0,5 </span><br><span class="line"> &lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
+<p>dao(interface):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//近期文章</span><br><span class="line">public List&lt;Posts&gt; recentPosts();</span><br></pre></td></tr></table></figure></p>
+<p>大家很容易会看出select标签中的id与dao中的接口函数名不对应。这就是问题的根源，改成一样的，如下(即可解决问题)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;recentPosts&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">  	SELECT post_title FROM `wp_posts` WHERE post_status = &apos;publish&apos; ORDER BY post_modified DESC LIMIT 0,5 </span><br><span class="line">  &lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p>最后说一句，遇到问题不要慌，找到问题关键信息，复制到百度上/谷歌或者stackoverflow即可找到答案。</p>
+<p>太阳底下没有新鲜事儿，你遇到过的，说不定别人也遇到过。</p>
+<p>参考链接:<a href="https://www.cnblogs.com/lfm601508022/p/InvalidBoundStatement.html" target="_blank" rel="noopener">https://www.cnblogs.com/lfm601508022/p/InvalidBoundStatement.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" data-id="cjsvt5zg80002x8vklozg8dm3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node.js服务端程序在Linux上持久运行</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/">node.js服务端程序在Linux上持久运行</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/04/node-js读写文件/">node.js读写文件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/04/javascript之传输加密/">javascript之传输加密</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/01/VsCode插件开发之通信/">VsCode插件开发之通信</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 youcong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
