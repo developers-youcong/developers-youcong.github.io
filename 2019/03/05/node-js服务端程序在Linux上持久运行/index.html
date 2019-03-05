@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>node.js服务端程序在Linux上持久运行 | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="如果要想在服务端部署node.js程序，让其持久化运行，就不能单单使用npm start命令运行，当然了，这样运行是毫无问题的，但是当关闭xshell窗口或者是关闭进程的时候(其实关闭xshell窗口相当于默认关闭进程)，就无法访问对应的node.js服务端程序了。 那么该如何才能持久访问呢？ 其实也就两步 第一步安装forever1npm install forever 或者 npminstal">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node.js服务端程序在Linux上持久运行">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="如果要想在服务端部署node.js程序，让其持久化运行，就不能单单使用npm start命令运行，当然了，这样运行是毫无问题的，但是当关闭xshell窗口或者是关闭进程的时候(其实关闭xshell窗口相当于默认关闭进程)，就无法访问对应的node.js服务端程序了。 那么该如何才能持久访问呢？ 其实也就两步 第一步安装forever1npm install forever 或者 npminstal">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-05T06:24:12.282Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node.js服务端程序在Linux上持久运行">
+<meta name="twitter:description" content="如果要想在服务端部署node.js程序，让其持久化运行，就不能单单使用npm start命令运行，当然了，这样运行是毫无问题的，但是当关闭xshell窗口或者是关闭进程的时候(其实关闭xshell窗口相当于默认关闭进程)，就无法访问对应的node.js服务端程序了。 那么该如何才能持久访问呢？ 其实也就两步 第一步安装forever1npm install forever 或者 npminstal">
+  
+    <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://developers-youcong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-node-js服务端程序在Linux上持久运行" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/" class="article-date">
+  <time datetime="2019-03-05T06:04:07.000Z" itemprop="datePublished">2019-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node.js服务端程序在Linux上持久运行
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果要想在服务端部署node.js程序，让其持久化运行，就不能单单使用npm start命令运行，当然了，这样运行是毫无问题的，但是当关闭xshell窗口或者是关闭进程的时候(其实关闭xshell窗口相当于默认关闭进程)，就无法访问对应的node.js服务端程序了。</p>
+<p>那么该如何才能持久访问呢？</p>
+<p>其实也就两步</p>
+<h4><span id="第一步安装forever">第一步安装forever</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install forever 或者 npminstall -g forever</span><br></pre></td></tr></table></figure>
+<h4><span id="第二步运行对应的js">第二步运行对应的js</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forver start index.js</span><br></pre></td></tr></table></figure>
+<h5><span id="注意你可能会遇到如下错误">注意(你可能会遇到如下错误):</span></h5><p>错误信息:<br>forever: command not found</p>
+<p>原因:以Windows来说，通常这种错误是因为没有配置好环境变量，解决方案也很简单就是配置好环境变量或者是使用绝对路径</p>
+<p>解决方式(Linux演示，这里我使用绝对路径):</p>
+<h5><span id="如何找到绝对路径呢">如何找到绝对路径呢？</span></h5><p>通过该命令可以获取node.js的安装模块,npm list -g –depth 0<br>├── <a href="mailto:ali-oss@6.1.0" target="_blank" rel="noopener">ali-oss@6.1.0</a><br>├── <a href="mailto:forever@0.15.3" target="_blank" rel="noopener">forever@0.15.3</a><br>└── <a href="mailto:npm@6.4.1" target="_blank" rel="noopener">npm@6.4.1</a></p>
+<p>再通过关键字搜索 find / -name forever<br>/home/youcong/mock-github-api/node_modules/forever<br>/home/youcong/mock-github-api/node_modules/forever/lib/forever<br>/home/youcong/mock-github-api/node_modules/forever/bin/forever<br>/home/youcong/mock-github-api/node_modules/.bin/forever<br>/home/youcong/nodejs/lib/node_modules/forever<br>/home/youcong/nodejs/lib/node_modules/forever/lib/forever<br>/home/youcong/nodejs/lib/node_modules/forever/bin/forever<br>/home/youcong/nodejs/bin/forever</p>
+<p>最后通过/home/youcong/mock-github-api/node_modules/forever/bin/forever start index.js 即可实现node.js服务端程序在Linux上持久运行。</p>
+<h5><span id="forever常用命令">forever常用命令</span></h5><p>forever start app.js //启动程序</p>
+<p>forever stop app.js //关闭程序</p>
+<p>forever start -l forever.log -o out.log -e err.log app.js //启动程序并输出日志</p>
+<p>forever restart app.js //重启程序</p>
+<p>forever list //查看正在运行的进程</p>
+<h6><span id="参考链接">参考链接:</span></h6><p>forever:command not found:<a href="https://blog.csdn.net/xgbm_k/article/details/78132293" target="_blank" rel="noopener">https://blog.csdn.net/xgbm_k/article/details/78132293</a><br>node.js在Linux上如何持久运行:<a href="https://blog.csdn.net/shakdy/article/details/82938679" target="_blank" rel="noopener">https://blog.csdn.net/shakdy/article/details/82938679</a><br>node.js后台运行方法:<a href="https://blog.csdn.net/zdyueguanyun/article/details/79043483" target="_blank" rel="noopener">https://blog.csdn.net/zdyueguanyun/article/details/79043483</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/" data-id="cjsve1ktt0007kgvkf7e4pwfw" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/04/node-js读写文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node.js读写文件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/">node.js服务端程序在Linux上持久运行</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/04/node-js读写文件/">node.js读写文件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/04/javascript之传输加密/">javascript之传输加密</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/01/VsCode插件开发之通信/">VsCode插件开发之通信</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/01/Python实现机器人聊天/">Python实现机器人聊天</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 youcong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
