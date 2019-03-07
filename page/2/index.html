@@ -62,6 +62,68 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-node-js使用express框架进行文件上传" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/01/node-js使用express框架进行文件上传/" class="article-date">
+  <time datetime="2019-03-01T12:49:08.000Z" itemprop="datePublished">2019-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/01/node-js使用express框架进行文件上传/">node.js使用express框架进行文件上传</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于node.js使用express框架进行文件上传，主要来自于最近对Settings-Sync插件做的研究。<br>目前的研究算是取得的比较好的进展。<br>Settings-Sync中通过快捷键上传文件，其实主要还是请求后端接口。<br>于是我便使用node.js模拟一个服务，这个服务其实就相当于github api(Settings-Sync实际请求的接口，比如token验证，gist存储创建等都是来自github 对应的api)。</p>
+<p>话不多说，直接代码贴起讲解:</p>
+<h2><span id="1创建一个nodejs项目这里我以express框架为例">1.创建一个node.js项目(这里我以express框架为例)</span></h2><p>关于如何创建一个node.js项目我就不详细说，通常通过npm init就可以创建一个node.js项目了。<br>关于node.js项目详细教程，可以参考该篇文章<a href="https://www.jianshu.com/p/7b0a5d4491ba" target="_blank" rel="noopener">nodeJS入门——新建一个项目及代码详解</a><br>当然了，如果你是直接通过这篇文章操作，最先可能会报这个错误，错误信息如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;express&apos; 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br></pre></td></tr></table></figure>
+<p>解决方式很简单，并不是npm install -g express就可以的，在此之前还需执行npm install -g express-generator</p>
+<p>这条命令很好理解，你可以将其理解为你的express框架生成器，以Java中Maven来说，通常ide就把maven结构都弄好了，你只需在创建项目的时候，勾选maven即可，它会自己将所有相关项目包括配置文件一起生成。</p>
+<p>虽然说我将地址贴出来，但是我觉得还是实际操作一遍，这样对此有一个感性认识(初学编程的人或者是已经有编程经验的人，是绝对不能忽略这一点的)。</p>
+<p>流程如下:</p>
+<h4><span id="a使用express命令创建express项目">a.使用express命令创建express项目</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express blog</span><br></pre></td></tr></table></figure>
+<h5><span id="效果图如下">效果图如下:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express01.png" alt=""></p>
+<p>express非常有人性化，已经告诉你怎么进入blog项目及其安装相关的库依赖和启动了，你只需按照它的这个步骤，一步一步来就行了。</p>
+<h4><span id="b目录结构分析">b.目录结构分析</span></h4><h5><span id="示意图如下所示">示意图如下所示:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express02.png" alt=""><br>app.js:——启动文件，也可以说是主文件入口。<br>package.json——定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。<br>node_modules——存放package.json中安装的模块，当你在package.json添加依赖的模块并安装后，存放在这个文件夹下<br>public——存放image、css、js等文件<br>routes——存放路由文件<br>views——存放视图文件或者说模板文件<br>bin——存放可执行文件</p>
+<h2><span id="2使用express框架进行文件上传">2.使用express框架进行文件上传</span></h2><p>注意，目录结构如下所示(我主要是复用最近研究的mock-github-api):<br><img src="/2019/03/01/node-js使用express框架进行文件上传/express03.png" alt=""></p>
+<h4><span id="a准备html文件">a.准备html文件</span></h4><p>public文件夹主要放置静态文件，如index.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;文件上传&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h3&gt;文件上传：&lt;/h3&gt;</span><br><span class="line">    选择一个文件上传: &lt;br /&gt;</span><br><span class="line">    &lt;form action=&quot;/gists&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;file&quot; name=&quot;content&quot; /&gt;</span><br><span class="line">        &lt;br /&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;上传文件&quot; /&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h4><span id="b编写相关的js">b.编写相关的js</span></h4><p>像upload.js属于路由，通常放置在routes文件夹下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var multer  = require(&apos;multer&apos;);</span><br><span class="line">var path = require(&apos;path&apos;);</span><br><span class="line">var router = express.Router();</span><br><span class="line"></span><br><span class="line">var upload = multer(&#123;dest: &apos;upload_tmp/&apos;&#125;);</span><br><span class="line"></span><br><span class="line">router.post(&apos;/&apos;, upload.any(), function(req, res, next) &#123;</span><br><span class="line">    console.log(req.files[0]);  // 上传的文件信息</span><br><span class="line"></span><br><span class="line">    var des_file = &quot;./upload/&quot; + req.files[0].originalname;</span><br><span class="line">    fs.readFile( req.files[0].path, function (err, data) &#123;</span><br><span class="line">        fs.writeFile(des_file, data, function (err) &#123;</span><br><span class="line">            if( err )&#123;</span><br><span class="line">                console.log( err );</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                response = &#123;</span><br><span class="line">                    message:&apos;File uploaded successfully&apos;,</span><br><span class="line">                    filename:req.files[0].originalname</span><br><span class="line">                &#125;;</span><br><span class="line">                console.log( response );</span><br><span class="line">                res.end( JSON.stringify( response ) );</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">module.exports = router;</span><br></pre></td></tr></table></figure></p>
+<h4><span id="c上传文件及其效果">c.上传文件及其效果</span></h4><h5><span id="页面图">页面图:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express04.png" alt=""></p>
+<h5><span id="上传成功显示图">上传成功显示图:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express05.png" alt=""></p>
+<h5><span id="upload文件夹下会有对应的文件也就是你刚刚通过页面上传的文件">upload文件夹下会有对应的文件(也就是你刚刚通过页面上传的文件)</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express06.png" alt=""></p>
+<p>最后例子中还有阿里云和腾讯云的图片存储，大家可以做一个参考。</p>
+<p>源码地址为:<a href="https://github.com/developers-youcong/mock-github-api" target="_blank" rel="noopener">https://github.com/developers-youcong/mock-github-api</a></p>
+<p>希望能够对大家有所启发和帮助</p>
+<p>注意，可能遇到的问题:</p>
+<p>问题一:静态资源需要放行，否则无法访问<br>在index.js补充这段代码即可解决这个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(path.join(__dirname, &apos;public&apos;)))</span><br></pre></td></tr></table></figure></p>
+<p>问题二:socket hang up</p>
+<p>我将var bodyParser = require(‘body-parser’)去除就解决了这个问题</p>
+<p>参考链接如:<a href="https://blog.csdn.net/gsying1474/article/details/52200445" target="_blank" rel="noopener">https://blog.csdn.net/gsying1474/article/details/52200445</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cjsylp0ik000aqsvkesuk7uoz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-nginx让所有的http地址重定向到https" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/01/nginx让所有的http地址重定向到https/" class="article-date">
@@ -94,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cjsyl9jmx0006hsvkcyi2htlm" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cjsylp0ic0005qsvkz7ohvuhk" class="article-share-link">Share</a>
       
       
     </footer>
@@ -140,7 +202,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cjsyl9jn00007hsvko7ej2cr6" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cjsylp0ii0008qsvkx1c9x7t9" class="article-share-link">Share</a>
       
       
     </footer>
@@ -180,7 +242,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cjsyl9jp9000ihsvkyw7you00" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cjsylp0is000gqsvkofe0fpww" class="article-share-link">Share</a>
       
       
     </footer>
@@ -225,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cjsyl9jp8000hhsvksep3ncwc" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cjsylp0ix000kqsvkym5akzpv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -283,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cjsyl9jp5000fhsvk45yl8ixv" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cjsylp0iu000iqsvkavcfnmuo" class="article-share-link">Share</a>
       
       
     </footer>
@@ -322,7 +384,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/如何将博客园的数据迁移到wordpress上面/" data-id="cjsyl9jp7000ghsvkqfkf1q9c" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/如何将博客园的数据迁移到wordpress上面/" data-id="cjsylp0it000hqsvk8q1h2mkp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -382,7 +444,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/wordpress数据表分析/" data-id="cjsyl9jp4000ehsvkctmltp0u" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/wordpress数据表分析/" data-id="cjsylp0ir000fqsvk8vplsnwh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -438,7 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/谈谈存储系统/" data-id="cjsyl9jps000khsvky08542z7" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/谈谈存储系统/" data-id="cjsylp0iw000jqsvkr963rzd0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -504,55 +566,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/22/node-js之express框架/" data-id="cjsyl9jp2000dhsvk2acqdwu6" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-SpringBoot之加密" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/22/SpringBoot之加密/" class="article-date">
-  <time datetime="2019-02-22T12:26:44.000Z" itemprop="datePublished">2019-02-22</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/22/SpringBoot之加密/">SpringBoot之加密</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近利用闲暇时间写了一个博客系统，主要参考wordpress，主要目的是为了提高自己的技术能力。<br>写代码写了两年多，联系到之前在学校的时候写过的一个博客系统，发现工作中开发的系统，技术上基本一致，业务逻辑方面存在差异。<br>比如博客系统可能面对高并发的场景，比如某个时间段访问量，再比如博客系统为了最大程度吸引用户(换句话说，提高用户粘性)，在界面上美观，使用上更加方便。通常界面美观伴随着前端js库的增多，特别是一些非常好看的画面或者图像是极其消耗带宽的，带宽如果不给力的话，页面半天打不开，同样也对于用户而言体验不好。</p>
-<p>只想表达一个意思，软件开发万变不离其宗，本质上基本都是一个CMS系统(也许这句话武断了)。</p>
-<p>话不多说，今天我要讲的关于SpringBoot加密。</p>
-<p>SSM框架和SpringBoot中加密是不一样的，比如在SSM框架中可以使用Druid进行加密(主要对数据库密码或者是其它重要配置信息加密)，但是在SpringBoot就不一定会适用。</p>
-<p>关于Druid加密，可以参考我的博客园这篇文章:<a href="https://www.cnblogs.com/youcong/p/10140043.html" target="_blank" rel="noopener">Druid加密</a></p>
-<p>SpringBoot使用jasypt-spring-boot-starter加密，具体步骤如下:</p>
-<h2><span id="一-导入maven依赖注意我的springboot版本为159建议最好版本别相差太多否则会出现依赖冲突等问题">一、导入Maven依赖(注意，我的springboot版本为1.5.9，建议最好版本别相差太多，否则会出现依赖冲突等问题)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;com.github.ulisesbocchio&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;jasypt-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;1.16&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h2><span id="二-编写测试类">二、编写测试类</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package cn.test;</span><br><span class="line"></span><br><span class="line">import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;</span><br><span class="line">import org.jasypt.encryption.pbe.config.EnvironmentPBEConfig;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line">import org.springframework.data.redis.core.StringRedisTemplate;</span><br><span class="line">import org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line">import com.blog.springboot.Application;</span><br><span class="line">import com.blog.springboot.service.UsersService;</span><br><span class="line"></span><br><span class="line">import cn.hutool.core.util.RandomUtil;</span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)</span><br><span class="line">public class JunitTest &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testEncrypt() throws Exception &#123;</span><br><span class="line">	        StandardPBEStringEncryptor standardPBEStringEncryptor = new StandardPBEStringEncryptor();</span><br><span class="line">	        EnvironmentPBEConfig config = new EnvironmentPBEConfig();</span><br><span class="line">	        config.setAlgorithm(&quot;PBEWithMD5AndDES&quot;);          // 加密的算法，这个算法是默认的</span><br><span class="line">	        config.setPassword(&quot;lyh&quot;);                        // 加密的密钥</span><br><span class="line">	        standardPBEStringEncryptor.setConfig(config);</span><br><span class="line">	        //加密用户信息</span><br><span class="line">	        String plainText = &quot;youcong&quot;;</span><br><span class="line">	        String encryptedText = standardPBEStringEncryptor.encrypt(plainText);</span><br><span class="line">	        //加密密码信息</span><br><span class="line">	        String Enpassword = &quot;youcong&quot;;</span><br><span class="line">	        String EnpasswordText = standardPBEStringEncryptor.encrypt(Enpassword);</span><br><span class="line">	        String db=&quot;wordpress&quot;;</span><br><span class="line">	        String dbEnc = standardPBEStringEncryptor.encrypt(db);</span><br><span class="line">	        //加密地址信息</span><br><span class="line">	        String DBAUrl = &quot;jdbc:mysql://localhost:3306/blog?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false&quot;;</span><br><span class="line">	        String DBAUrlText = standardPBEStringEncryptor.encrypt(DBAUrl);</span><br><span class="line">	        System.out.println(&quot;用户:&quot;+encryptedText);</span><br><span class="line">	        System.out.println(&quot;密码:&quot;+EnpasswordText);</span><br><span class="line">	        System.out.println(&quot;地址:&quot;+DBAUrlText);</span><br><span class="line">	        System.out.println(&quot;db:&quot;+dbEnc);</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="三-在springboot的配置文件添加如下配置这里我以applicationyml配置为例">三、在springboot的配置文件添加如下配置(这里我以application.yml配置为例)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jasypt:</span><br><span class="line">  encryptor:</span><br><span class="line">    password: lyh</span><br></pre></td></tr></table></figure>
-<p>问:为什么要加这段？<br>答:这里的password对应的值lyh相当于密钥，主要用于解密。<br>你在单元测试中以什么作为加密，那么在yml中就以什么作为解密。</p>
-<h2><span id="四-配置applicationyml中的数据源">四、配置application.yml中的数据源</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">datasource:</span><br><span class="line">  url: ENC(cY3NmQF349TpBB0z0KavaiEPNDux/mKEss0UFeA11VTFC545rHh6t1rLC46GlX1b2rm8s5lzX49JmzFE4odcSiPafGZfQvnsHl2yVlLWM3kJg5DvVI4D0l5na3RUPTio4uz1gG9nML1u9ceHuj/yPb1097ZZfbCUsLSyRoeWvhhKuPxAM5mvGLZh641ArtVfRchNcdVZ1W4=)</span><br><span class="line">  username: ENC(BcbIdbvEq4yN8kezH5mDjg==)</span><br><span class="line">  password: ENC(Isk3pYM71258wxWTQOt3Dg==)</span><br><span class="line">  db-name: ENC(CZcfw3ZJN6TVCVxkCW9Ey6z6iAuszHO8)</span><br><span class="line">  filters: log4j,wall,mergeStat1</span><br></pre></td></tr></table></figure>
-<p>问:为什么要在数据源中添加ENC?<br>答:这个ENC相当于解密的标识符。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/22/SpringBoot之加密/" data-id="cjsyl9jma0001hsvkbh26qn4z" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/22/node-js之express框架/" data-id="cjsylp0ij0009qsvkut02906g" class="article-share-link">Share</a>
       
       
     </footer>
@@ -566,7 +580,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -598,6 +612,10 @@
       <ul>
         
           <li>
+            <a href="/2019/03/07/springboot实现跨域请求/">Springboot实现跨域请求</a>
+          </li>
+        
+          <li>
             <a href="/2019/03/07/node-js如何引用其它js文件/">node.js如何引用其它js文件</a>
           </li>
         
@@ -611,10 +629,6 @@
         
           <li>
             <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/">node.js服务端程序在Linux上持久运行</a>
           </li>
         
       </ul>

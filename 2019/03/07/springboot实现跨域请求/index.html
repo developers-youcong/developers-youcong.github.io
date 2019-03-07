@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Springboot实现跨域请求 | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="之所以需要用到跨域请求，目的在于现在的Java项目，几乎基本上都前后端分离，除一些较老的维护项目外(通常是单体或者是maven多模块形式，不过本质上还是将前端放在webapps下)。 SpringBoot实现跨域其实和Spring是一样，区别不大，如果要说区别的话，Spring需要在对应的xml文件中配置bean，而SpringBoot则通过注解的方式。 Spring配置跨域请求可参考我的这篇文章">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Springboot实现跨域请求">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/03/07/springboot实现跨域请求/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="之所以需要用到跨域请求，目的在于现在的Java项目，几乎基本上都前后端分离，除一些较老的维护项目外(通常是单体或者是maven多模块形式，不过本质上还是将前端放在webapps下)。 SpringBoot实现跨域其实和Spring是一样，区别不大，如果要说区别的话，Spring需要在对应的xml文件中配置bean，而SpringBoot则通过注解的方式。 Spring配置跨域请求可参考我的这篇文章">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-07T12:21:39.181Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Springboot实现跨域请求">
+<meta name="twitter:description" content="之所以需要用到跨域请求，目的在于现在的Java项目，几乎基本上都前后端分离，除一些较老的维护项目外(通常是单体或者是maven多模块形式，不过本质上还是将前端放在webapps下)。 SpringBoot实现跨域其实和Spring是一样，区别不大，如果要说区别的话，Spring需要在对应的xml文件中配置bean，而SpringBoot则通过注解的方式。 Spring配置跨域请求可参考我的这篇文章">
+  
+    <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://developers-youcong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-springboot实现跨域请求" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/07/springboot实现跨域请求/" class="article-date">
+  <time datetime="2019-03-07T12:12:29.000Z" itemprop="datePublished">2019-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Springboot实现跨域请求
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之所以需要用到跨域请求，目的在于现在的Java项目，几乎基本上都前后端分离，除一些较老的维护项目外(通常是单体或者是maven多模块形式，不过本质上还是将前端放在webapps下)。</p>
+<p>SpringBoot实现跨域其实和Spring是一样，区别不大，如果要说区别的话，Spring需要在对应的xml文件中配置bean，而SpringBoot则通过注解的方式。</p>
+<p>Spring配置跨域请求可参考我的这篇文章:<a href="https://www.cnblogs.com/youcong/p/9676433.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/p/9676433.html</a></p>
+<p>示例代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package com.blog.springboot.config;</span><br><span class="line"></span><br><span class="line">import org.springframework.context.annotation.Bean;  </span><br><span class="line">import org.springframework.context.annotation.Configuration;  </span><br><span class="line">import org.springframework.web.cors.CorsConfiguration;  </span><br><span class="line">import org.springframework.web.cors.UrlBasedCorsConfigurationSource;  </span><br><span class="line">import org.springframework.web.filter.CorsFilter;  </span><br><span class="line"></span><br><span class="line">@Configuration  </span><br><span class="line">public class CorsConfig &#123;  </span><br><span class="line">    private CorsConfiguration buildConfig() &#123;  </span><br><span class="line">        CorsConfiguration corsConfiguration = new CorsConfiguration();  </span><br><span class="line">        corsConfiguration.addAllowedOrigin(&quot;*&quot;); // 1允许任何域名使用</span><br><span class="line">        corsConfiguration.addAllowedHeader(&quot;*&quot;); // 2允许任何头</span><br><span class="line">        corsConfiguration.addAllowedMethod(&quot;*&quot;); // 3允许任何方法（post、get等） </span><br><span class="line">        return corsConfiguration;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    @Bean  </span><br><span class="line">    public CorsFilter corsFilter() &#123;  </span><br><span class="line">        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();  </span><br><span class="line">        source.registerCorsConfiguration(&quot;/**&quot;, buildConfig()); // 4  </span><br><span class="line">        return new CorsFilter(source);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>本文主要参考链接为:<br>SpringBoot跨域配置:<a href="https://www.cnblogs.com/nananana/p/8492185.html" target="_blank" rel="noopener">https://www.cnblogs.com/nananana/p/8492185.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/07/springboot实现跨域请求/" data-id="cjsylp0ip000dqsvk7tg3tgwn" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/07/node-js如何引用其它js文件/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">node.js如何引用其它js文件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/07/springboot实现跨域请求/">Springboot实现跨域请求</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/07/node-js如何引用其它js文件/">node.js如何引用其它js文件</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/07/jenkins忘记管理员密码之解决方案/">jenkins忘记管理员密码之解决方案</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/06/mybatis之一对多/">mybatis之一对多</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 youcong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
