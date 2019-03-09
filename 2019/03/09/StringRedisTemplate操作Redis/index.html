@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://developers-youcong.github.io">
-  <title>Archives: 2019 | Blog</title>
+  <title>StringRedisTemplate操作Redis | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://developers-youcong.github.io/archives/2019/index.html">
+  <meta name="description" content="在说到StringRedisTemplate操作Redis数据的时候，我们顺便谈谈StringRedisTemplate和RedisTemplate的区别。 一、StringRedisTemplate和RedisTemplate的区别区别如下:1.两者关系是StringRedisTemplate继承RedisTemplate。 从StringRedisTemplate源码即可看出，如下图所示: 2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="StringRedisTemplate操作Redis">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="在说到StringRedisTemplate操作Redis数据的时候，我们顺便谈谈StringRedisTemplate和RedisTemplate的区别。 一、StringRedisTemplate和RedisTemplate的区别区别如下:1.两者关系是StringRedisTemplate继承RedisTemplate。 从StringRedisTemplate源码即可看出，如下图所示: 2">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/example01.png">
+<meta property="og:updated_time" content="2019-03-09T13:03:40.717Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
+<meta name="twitter:title" content="StringRedisTemplate操作Redis">
+<meta name="twitter:description" content="在说到StringRedisTemplate操作Redis数据的时候，我们顺便谈谈StringRedisTemplate和RedisTemplate的区别。 一、StringRedisTemplate和RedisTemplate的区别区别如下:1.两者关系是StringRedisTemplate继承RedisTemplate。 从StringRedisTemplate源码即可看出，如下图所示: 2">
+<meta name="twitter:image" content="http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/example01.png">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -150,295 +156,164 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-StringRedisTemplate操作Redis" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      StringRedisTemplate操作Redis
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/09/StringRedisTemplate操作Redis/" class="archive-article-date">
+
+        
+        <a href="/2019/03/09/StringRedisTemplate操作Redis/" class="archive-article-date">
   	<time datetime="2019-03-09T12:40:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/09/StringRedisTemplate操作Redis/">StringRedisTemplate操作Redis</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在说到StringRedisTemplate操作Redis数据的时候，我们顺便谈谈StringRedisTemplate和RedisTemplate的区别。</p>
+<h2><span id="一-stringredistemplate和redistemplate的区别">一、StringRedisTemplate和RedisTemplate的区别</span></h2><p>区别如下:<br>1.两者关系是StringRedisTemplate继承RedisTemplate。</p>
+<p>从StringRedisTemplate源码即可看出，如下图所示:<br><img src="/2019/03/09/StringRedisTemplate操作Redis/example01.png" alt=""></p>
+<p>2.两者的数据是不共通的，也就是说StringRedisTemplate只能管理StringRedisTemplate里面的数据，RedisTemplate只能管理RedisTemplate中的数据。</p>
+<p>3.使用的序列化类不同。<br>使用的序列化哪里不同?如下所示:<br>(1)RedisTemplate使用的是JdkSerializationRedisSerializer 存入数据会将数据先序列化成字节组然后再存入Redis数据库。<br>(2)StringRedisTemplate使用的是StringRedisSerializer。</p>
+<p>使用时注意事项:<br>(1)当你的Redis数据库里面本来存的是字符串数据或者是你要存取的数据就是字符串类型数据的时候，那么你就使用StringRedisTemplate即可;<br>(2)但是如果你的数据是复杂的对象类型，而取出的时候又不想做任何数据转换，直接从Redis里面取出一个对象，那么使用RedisTemplate是更好的选择;<br>(3)RedisTemplate中存取数据都是字节数组。当Redis职工存入的数据是可读形式而非字节数组时，使用RedisTemplate取值的时候会无法获取导出数据，获得的值为null。可以使用StringRedisTemplate试试;</p>
+<h2><span id="二-redistemplate定义了5种数据结构操作">二、RedisTemplate定义了5种数据结构操作</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redisTemplate.opsForValue();//操作字符串</span><br><span class="line">redisTemplate.opsForHash();//操作hash</span><br><span class="line">redisTemplate.opsForList();//操作list</span><br><span class="line">redisTemplate.opsForSet();//操作set</span><br><span class="line">redisTemplate.opsForZSet();//操作有序set</span><br></pre></td></tr></table></figure>
+<h2><span id="三-stringredistemplate常用操作">三、StringRedisTemplate常用操作</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">stringRedisTemplate.opsForValue().set(&quot;test&quot;, &quot;100&quot;,60*10,TimeUnit.SECONDS);//向redis里存入数据和设置缓存时间  </span><br><span class="line"></span><br><span class="line">stringRedisTemplate.boundValueOps(&quot;test&quot;).increment(-1);//val做-1操作</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForValue().get(&quot;test&quot;)//根据key获取缓存中的val</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.boundValueOps(&quot;test&quot;).increment(1);//val +1</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.getExpire(&quot;test&quot;)//根据key获取过期时间</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.getExpire(&quot;test&quot;,TimeUnit.SECONDS)//根据key获取过期时间并换算成指定单位 </span><br><span class="line"></span><br><span class="line">stringRedisTemplate.delete(&quot;test&quot;);//根据key删除缓存</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.hasKey(&quot;546545&quot;);//检查key是否存在，返回boolean值 </span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForSet().add(&quot;red_123&quot;, &quot;1&quot;,&quot;2&quot;,&quot;3&quot;);//向指定key中存放set集合</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.expire(&quot;red_123&quot;,1000 , TimeUnit.MILLISECONDS);//设置过期时间</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForSet().isMember(&quot;red_123&quot;, &quot;1&quot;)//根据key查看集合中是否存在指定数据</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForSet().members(&quot;red_123&quot;);//根据key获取set集合</span><br></pre></td></tr></table></figure>
+<p>单测示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">package cn.test;</span><br><span class="line"></span><br><span class="line">import static org.junit.Assert.*;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line">import org.springframework.data.redis.core.StringRedisTemplate;</span><br><span class="line">import org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line">import com.blog.springboot.Application;</span><br><span class="line"></span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)</span><br><span class="line">public class PracticeJunitTest &#123;</span><br><span class="line">	@Autowired</span><br><span class="line">    private StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testConnectionRedis() throws Exception &#123;</span><br><span class="line"></span><br><span class="line">		stringRedisTemplate.opsForValue().set(&quot;youcong&quot;, &quot;ok&quot;);</span><br><span class="line"></span><br><span class="line">		System.out.println(stringRedisTemplate.opsForValue().get(&quot;youcong&quot;));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>参考链接如下:<br><a href="http://www.cnblogs.com/slowcity/p/9002660.html" target="_blank" rel="noopener">StringRedisTemplate操作redis数据</a></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" class="archive-article-date">
-  	<time datetime="2019-03-09T12:26:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Could not get a resource from the pool 错误解决</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/">Could not get a resource from the pool 错误解决</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/08/大型网站技术架构演化/" class="archive-article-date">
-  	<time datetime="2019-03-08T05:54:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/08/大型网站技术架构演化/">大型网站技术架构演化</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/07/node-js之十大Web框架/" class="archive-article-date">
-  	<time datetime="2019-03-07T13:14:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/07/node-js之十大Web框架/">node.js之十大Web框架</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/07/javascript之map/" class="archive-article-date">
-  	<time datetime="2019-03-07T12:28:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/07/javascript之map/">javascript之Map</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/07/springboot实现跨域请求/" class="archive-article-date">
-  	<time datetime="2019-03-07T12:12:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/07/springboot实现跨域请求/">Springboot实现跨域请求</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/07/node-js如何引用其它js文件/" class="archive-article-date">
-  	<time datetime="2019-03-07T11:50:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/07/node-js如何引用其它js文件/">node.js如何引用其它js文件</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/07/jenkins忘记管理员密码之解决方案/" class="archive-article-date">
-  	<time datetime="2019-03-07T11:34:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/07/jenkins忘记管理员密码之解决方案/">jenkins忘记管理员密码之解决方案</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/06/mybatis之一对多/" class="archive-article-date">
-  	<time datetime="2019-03-06T12:54:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-06</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/06/mybatis之一对多/">mybatis之一对多</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" class="archive-article-date">
-  	<time datetime="2019-03-05T13:16:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="page-number" href="/archives/2019/page/3/">3</a><a class="extend next" rel="next" href="/archives/2019/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -462,8 +337,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
