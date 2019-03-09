@@ -152,6 +152,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Could-not-get-a-resource-from-the-pool-错误解决" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/">Could not get a resource from the pool 错误解决</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" class="archive-article-date">
+  	<time datetime="2019-03-09T12:26:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>错误关键信息:Could not get a resource from the pool</p>
+<p>通常原因是因为远程服务器上的redis没有配置好。</p>
+<p>解决方案如下:<br>(1)将redis.conf中的bind:127.0.0.1注释掉;<br>(2)将redis.conf中的protected-mode yes改为protected-mode no</p>
+<p>按照上述的解决方案是可以解决这个问题的。但是以SpringBoot为例，这样做仍然无法解决问题，原因是因为application.yml中的redis配置有误造成的。</p>
+<p>按照如下配置即可解决问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  redis:</span><br><span class="line">    host: 192.168.126.128</span><br><span class="line">    port: 2019</span><br><span class="line">    password: youcongtech</span><br><span class="line">    database: 0</span><br><span class="line">    lettuce:</span><br><span class="line">      pool:</span><br><span class="line">        max-active: 32</span><br><span class="line">        max-wait: 300ms</span><br><span class="line">        max-idle: 16</span><br><span class="line">        min-idle: 8</span><br></pre></td></tr></table></figure></p>
+<p>之所以这样配置是因为使用的是spring-boot-starter-data-redis这个maven依赖。当然了，如果你不想这样配置的话大可自己写一个Jedis，不过通常Maven已经提供了，不必自己动手造轮子。</p>
+<p>详情可参考如下:<br>Java连接Redis之redis的增删改查:<a href="https://www.cnblogs.com/youcong/p/8098881.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/p/8098881.html</a></p>
+<p>如果你还没有安装过Redis可以参考我的这篇文章<a href="https://www.cnblogs.com/youcong/p/8044625.html" target="_blank" rel="noopener">Redis的安装和客户端使用注意事项</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-大型网站技术架构演化" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -891,72 +961,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/03/05/node-js服务端程序在Linux上持久运行/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-node-js读写文件" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/04/node-js读写文件/">node.js读写文件</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/04/node-js读写文件/" class="archive-article-date">
-  	<time datetime="2019-03-04T13:32:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于node.js的读写操作，应用场景有很多。<br>比如其中这样的一个场景，如何获取全局的token。<br>这就涉及到写和读操作了。</p>
-<p>写操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">function storeToken(token)&#123;</span><br><span class="line"></span><br><span class="line">	fs.writeFile(&apos;D://youcongtech//token.txt&apos;,token.slice(10),&apos;utf8&apos;,function(error)&#123;</span><br><span class="line"></span><br><span class="line">		if(error)&#123;</span><br><span class="line">			console.log(error);</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(&apos;write success&apos;);</span><br><span class="line"></span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>读操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">function readToken()&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	fs.readFile(&apos;D://youcongtech//token.txt&apos;, function (err, data) &#123;</span><br><span class="line">		if (err) &#123;</span><br><span class="line">			return console.error(err);</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(data.toString());</span><br><span class="line">	&#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>通过上述两个示例代码，就可以达到存取token的目的，这样一来就不必担心如何获取token问题。<br>当然了，问题的解决方式不止这一个，其实还可以用redis来存储token。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/04/node-js读写文件/">展开全文 >></a>
         </p>
       
 
