@@ -9,13 +9,14 @@
   <title>阿里云配置tomcat https | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="阿里云申请免费的SSL证书和配置https，可参考该篇博文:https://blog.csdn.net/baidu_19473529/article/details/70037976 虽然有现成的，不过我还是要做一个小小的总结记录一下。 由于我公司使用的tomcat主要是8.5,所以我以8.5配置作为讲解(总的来说，配置相差不大) 假定你已经在阿里云成功申请到免费的SSL证书，现在我们开始来配置。">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="阿里云配置tomcat https">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="阿里云申请免费的SSL证书和配置https，可参考该篇博文:https://blog.csdn.net/baidu_19473529/article/details/70037976 虽然有现成的，不过我还是要做一个小小的总结记录一下。 由于我公司使用的tomcat主要是8.5,所以我以8.5配置作为讲解(总的来说，配置相差不大) 假定你已经在阿里云成功申请到免费的SSL证书，现在我们开始来配置。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-25T11:36:49.056Z">
+<meta property="og:updated_time" content="2019-03-16T12:35:55.345Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="阿里云配置tomcat https">
 <meta name="twitter:description" content="阿里云申请免费的SSL证书和配置https，可参考该篇博文:https://blog.csdn.net/baidu_19473529/article/details/70037976 虽然有现成的，不过我还是要做一个小小的总结记录一下。 由于我公司使用的tomcat主要是8.5,所以我以8.5配置作为讲解(总的来说，配置相差不大) 假定你已经在阿里云成功申请到免费的SSL证书，现在我们开始来配置。">
@@ -59,7 +60,11 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/categories/">文章分类</a></li>
+	        
+				<li><a href="/">所有文章</a></li>
+	        
+				<li><a href="/tags/">文章标签</a></li>
 	        
 			</ul>
 		</nav>
@@ -113,6 +118,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -126,12 +135,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 25%"><a href="/categories/">文章分类</a></li>
+		        
+					<li style="width: 25%"><a href="/">所有文章</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/">文章标签</a></li>
 		        
 				</ul>
 			</nav>
@@ -204,6 +217,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -416,6 +440,74 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">VsCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">存储</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

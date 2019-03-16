@@ -9,6 +9,7 @@
   <title>SpringBoot之静态资源放行 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="为了提高开发效率，编写对应的代码生成器。代码生成器主要有两个方面，一个是在线Web，另外一个是运行某个类。 使用的技术是SpringBoot+MyBatis-Plus+MySQL+JDK8。 在编写在线代码生成器的时候，正好遇到一个小问题，那就是静态资源无法访问。 以SSM(Spring+SpringMVC+MyBatis/MyBatis-Plus)框架来说，通常要想对静态资源放行，最简单直接的办">
+<meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot之静态资源放行">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/13/SpringBoot之静态资源放行/index.html">
@@ -17,7 +18,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/13/SpringBoot之静态资源放行/server01.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/13/SpringBoot之静态资源放行/server02.png">
-<meta property="og:updated_time" content="2019-03-16T08:15:59.108Z">
+<meta property="og:updated_time" content="2019-03-16T12:34:45.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot之静态资源放行">
 <meta name="twitter:description" content="为了提高开发效率，编写对应的代码生成器。代码生成器主要有两个方面，一个是在线Web，另外一个是运行某个类。 使用的技术是SpringBoot+MyBatis-Plus+MySQL+JDK8。 在编写在线代码生成器的时候，正好遇到一个小问题，那就是静态资源无法访问。 以SSM(Spring+SpringMVC+MyBatis/MyBatis-Plus)框架来说，通常要想对静态资源放行，最简单直接的办">
@@ -62,7 +63,11 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/categories/">文章分类</a></li>
+	        
+				<li><a href="/">所有文章</a></li>
+	        
+				<li><a href="/tags/">文章标签</a></li>
 	        
 			</ul>
 		</nav>
@@ -116,6 +121,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -129,12 +138,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 25%"><a href="/categories/">文章分类</a></li>
+		        
+					<li style="width: 25%"><a href="/">所有文章</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/">文章标签</a></li>
 		        
 				</ul>
 			</nav>
@@ -221,6 +234,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -433,6 +457,74 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">VsCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">存储</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

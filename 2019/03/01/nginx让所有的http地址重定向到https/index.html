@@ -9,13 +9,14 @@
   <title>nginx让所有的http地址重定向到https | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="问:为什么让所有的http都重定向到https呢？答:因为这样会使网站更安全些。 那么我是如何在nginx配置，让输入http://www.youcongtech.com或者youcongtech.com全部都重定向到https://www.youcongtech.com的呢？其实我仅仅只是在nginx.conf配置文件中的server配置了如下:1rewrite ^(.*)$  https://">
+<meta name="keywords" content="Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx让所有的http地址重定向到https">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="问:为什么让所有的http都重定向到https呢？答:因为这样会使网站更安全些。 那么我是如何在nginx配置，让输入http://www.youcongtech.com或者youcongtech.com全部都重定向到https://www.youcongtech.com的呢？其实我仅仅只是在nginx.conf配置文件中的server配置了如下:1rewrite ^(.*)$  https://">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-01T12:47:38.497Z">
+<meta property="og:updated_time" content="2019-03-16T12:28:14.641Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx让所有的http地址重定向到https">
 <meta name="twitter:description" content="问:为什么让所有的http都重定向到https呢？答:因为这样会使网站更安全些。 那么我是如何在nginx配置，让输入http://www.youcongtech.com或者youcongtech.com全部都重定向到https://www.youcongtech.com的呢？其实我仅仅只是在nginx.conf配置文件中的server配置了如下:1rewrite ^(.*)$  https://">
@@ -59,7 +60,11 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/categories/">文章分类</a></li>
+	        
+				<li><a href="/">所有文章</a></li>
+	        
+				<li><a href="/tags/">文章标签</a></li>
 	        
 			</ul>
 		</nav>
@@ -113,6 +118,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -126,12 +135,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 25%"><a href="/categories/">文章分类</a></li>
+		        
+					<li style="width: 25%"><a href="/">所有文章</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/">文章标签</a></li>
 		        
 				</ul>
 			</nav>
@@ -201,6 +214,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -413,6 +437,74 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">VsCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">存储</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

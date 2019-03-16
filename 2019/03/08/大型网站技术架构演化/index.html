@@ -9,6 +9,7 @@
   <title>大型网站技术架构演化 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="一、大型网站软件系统的特点1.高并发、大流量a.什么是高并发?高并发是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理多个请求。 b.高并发的衡量指标有哪些?(1)响应时间:系统对请求做出响应。例如系统处理一个HTTP请求需要200ms,这个200ms就是系统的响应时间。 (2)吞吐量:单位时间内处理的请求数量。 (3)QPS：每秒响应请求数。在互联网领域">
+<meta name="keywords" content="架构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大型网站技术架构演化">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/index.html">
@@ -23,7 +24,7 @@
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/server06.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/server07.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/server08.png">
-<meta property="og:updated_time" content="2019-03-09T03:17:48.915Z">
+<meta property="og:updated_time" content="2019-03-16T12:36:06.883Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大型网站技术架构演化">
 <meta name="twitter:description" content="一、大型网站软件系统的特点1.高并发、大流量a.什么是高并发?高并发是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理多个请求。 b.高并发的衡量指标有哪些?(1)响应时间:系统对请求做出响应。例如系统处理一个HTTP请求需要200ms,这个200ms就是系统的响应时间。 (2)吞吐量:单位时间内处理的请求数量。 (3)QPS：每秒响应请求数。在互联网领域">
@@ -68,7 +69,11 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/categories/">文章分类</a></li>
+	        
+				<li><a href="/">所有文章</a></li>
+	        
+				<li><a href="/tags/">文章标签</a></li>
 	        
 			</ul>
 		</nav>
@@ -122,6 +127,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -135,12 +144,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 25%"><a href="/categories/">文章分类</a></li>
+		        
+					<li style="width: 25%"><a href="/">所有文章</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/">文章标签</a></li>
 		        
 				</ul>
 			</nav>
@@ -288,6 +301,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">架构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -500,6 +524,74 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">VsCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">存储</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

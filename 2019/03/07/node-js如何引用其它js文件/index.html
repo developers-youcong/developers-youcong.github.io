@@ -9,13 +9,14 @@
   <title>node.js如何引用其它js文件 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="以Java来说，比如要实现第三方存储，我可能需要导入对应的库，以maven为例，使用腾讯云或者七牛云、阿里云，我需要导入对应的maven依赖。再比如，有些时候我们封装某个类，而那个类不在该包下，我们需要导包(就是指定那个类的路径，如果路径不对，则可能出现找不到这个类之类的错误，通常对应的IDE会提示错误)。 其实，node.js也是这样的。最近在开发node.js的时候，难免也会遇到需要引入其它j">
+<meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js如何引用其它js文件">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/07/node-js如何引用其它js文件/index.html">
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="以Java来说，比如要实现第三方存储，我可能需要导入对应的库，以maven为例，使用腾讯云或者七牛云、阿里云，我需要导入对应的maven依赖。再比如，有些时候我们封装某个类，而那个类不在该包下，我们需要导包(就是指定那个类的路径，如果路径不对，则可能出现找不到这个类之类的错误，通常对应的IDE会提示错误)。 其实，node.js也是这样的。最近在开发node.js的时候，难免也会遇到需要引入其它j">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-07T12:12:54.098Z">
+<meta property="og:updated_time" content="2019-03-16T12:32:07.488Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js如何引用其它js文件">
 <meta name="twitter:description" content="以Java来说，比如要实现第三方存储，我可能需要导入对应的库，以maven为例，使用腾讯云或者七牛云、阿里云，我需要导入对应的maven依赖。再比如，有些时候我们封装某个类，而那个类不在该包下，我们需要导包(就是指定那个类的路径，如果路径不对，则可能出现找不到这个类之类的错误，通常对应的IDE会提示错误)。 其实，node.js也是这样的。最近在开发node.js的时候，难免也会遇到需要引入其它j">
@@ -59,7 +60,11 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/categories/">文章分类</a></li>
+	        
+				<li><a href="/">所有文章</a></li>
+	        
+				<li><a href="/tags/">文章标签</a></li>
 	        
 			</ul>
 		</nav>
@@ -113,6 +118,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -126,12 +135,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 25%"><a href="/categories/">文章分类</a></li>
+		        
+					<li style="width: 25%"><a href="/">所有文章</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/">文章标签</a></li>
 		        
 				</ul>
 			</nav>
@@ -205,6 +218,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -417,6 +441,74 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">VsCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">存储</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>

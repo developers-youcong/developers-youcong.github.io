@@ -9,6 +9,7 @@
   <title>node.js使用express框架进行文件上传 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="关于node.js使用express框架进行文件上传，主要来自于最近对Settings-Sync插件做的研究。目前的研究算是取得的比较好的进展。Settings-Sync中通过快捷键上传文件，其实主要还是请求后端接口。于是我便使用node.js模拟一个服务，这个服务其实就相当于github api(Settings-Sync实际请求的接口，比如token验证，gist存储创建等都是来自github">
+<meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js使用express框架进行文件上传">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/index.html">
@@ -21,7 +22,7 @@
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/express04.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/express05.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/express06.png">
-<meta property="og:updated_time" content="2019-03-01T13:55:47.000Z">
+<meta property="og:updated_time" content="2019-03-16T12:32:19.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js使用express框架进行文件上传">
 <meta name="twitter:description" content="关于node.js使用express框架进行文件上传，主要来自于最近对Settings-Sync插件做的研究。目前的研究算是取得的比较好的进展。Settings-Sync中通过快捷键上传文件，其实主要还是请求后端接口。于是我便使用node.js模拟一个服务，这个服务其实就相当于github api(Settings-Sync实际请求的接口，比如token验证，gist存储创建等都是来自github">
@@ -66,7 +67,11 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔/">随笔</a></li>
+				<li><a href="/categories/">文章分类</a></li>
+	        
+				<li><a href="/">所有文章</a></li>
+	        
+				<li><a href="/tags/">文章标签</a></li>
 	        
 			</ul>
 		</nav>
@@ -120,6 +125,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -133,12 +142,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 25%"><a href="/categories/">文章分类</a></li>
+		        
+					<li style="width: 25%"><a href="/">所有文章</a></li>
+		        
+					<li style="width: 25%"><a href="/tags/">文章标签</a></li>
 		        
 				</ul>
 			</nav>
@@ -228,6 +241,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -440,6 +464,74 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">tags</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">node.js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">VsCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">存储</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
