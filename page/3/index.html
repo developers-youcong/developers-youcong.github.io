@@ -79,11 +79,7 @@
 				
 					<a class="github" target="_blank" href="https://github.com/developers-youcong" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/you-cong-63/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
@@ -120,11 +116,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/developers-youcong" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/you-cong-63/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -151,6 +143,165 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-Python实现机器人聊天" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/01/Python实现机器人聊天/">Python实现机器人聊天</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/01/Python实现机器人聊天/" class="archive-article-date">
+  	<time datetime="2019-03-01T13:56:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。<br>于是用其写了一个简单的Python聊天，源码如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">import aiml</span><br><span class="line">import sys</span><br><span class="line">import os</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">def get_module_dir(name):</span><br><span class="line"> print(&quot;module&quot;, sys.modules[name])</span><br><span class="line"> path = getattr(sys.modules[name], &apos;__file__&apos;, None)</span><br><span class="line"> print(path)</span><br><span class="line"> if not path:</span><br><span class="line">  raise AttributeError(&apos;module %s has not attribute __file__&apos; % name)</span><br><span class="line"> return os.path.dirname(os.path.abspath(path))</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">alice_path = get_module_dir(&apos;aiml&apos;) + &apos;\\botdata\\alice&apos;</span><br><span class="line"> </span><br><span class="line">os.chdir(alice_path)  # 切换到语料库所在工作目录</span><br><span class="line"> </span><br><span class="line">alice = aiml.Kernel()  # 创建机器人alice对象</span><br><span class="line">alice.learn(&quot;startup.xml&quot;) # 加载...\\botdata\\alice\\startup.xml</span><br><span class="line">alice.respond(&apos;LOAD ALICE&apos;) # 加载...\\botdata\\alice目录下的语料库</span><br><span class="line">  </span><br><span class="line">while True:</span><br><span class="line"> message = input(&quot;Enter your message &gt;&gt; &quot;)</span><br><span class="line"> if(&quot;exit&quot; == message):</span><br><span class="line">  exit()</span><br><span class="line"> response = alice.respond(message) # 机器人应答</span><br><span class="line"> print(response)</span><br></pre></td></tr></table></figure></p>
+<p>注意:如果出现某某模块找不到的时候，记得使用pip安装对应的模块。</p>
+<p>效果图如下所示:<br><img src="/2019/03/01/Python实现机器人聊天/rebot01.png" alt=""></p>
+<p>唯一美中不足的是英文，不过没关系，国内有图灵机器人。</p>
+<p>代码如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">from urllib.request import urlopen,Request</span><br><span class="line">from urllib.error import URLError</span><br><span class="line">from urllib.parse import urlencode</span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">class TuringChatMode(object):</span><br><span class="line">    &quot;&quot;&quot;this mode base on turing robot&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        # API接口地址</span><br><span class="line">        self.turing_url = &apos;http://www.tuling123.com/openapi/api?&apos;</span><br><span class="line"></span><br><span class="line">    def get_turing_text(self,text):</span><br><span class="line">        &apos;&apos;&apos; 请求方式:   HTTP POST</span><br><span class="line">            请求参数:   参数      是否必须        长度          说明</span><br><span class="line">                        key        必须          32           APIkey</span><br><span class="line">                        info       必须          1-32         请求内容，编码方式为&quot;utf-8&quot;</span><br><span class="line">                        userid     必须          32           MAC地址或ID</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        turing_url_data = dict(</span><br><span class="line">            key = &apos;fcbf9efe277e493993e889eabca5b331&apos;,</span><br><span class="line">            info = text,</span><br><span class="line">            userid = &apos;60-14-B3-BA-E1-4D&apos;,</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line">        # print(&quot;The things to Request is:&quot;,self.turing_url + urlencode(turing_url_data))</span><br><span class="line">        self.request = Request(self.turing_url + urlencode(turing_url_data))</span><br><span class="line">        # print(&quot;The result of Request is:&quot;,self.request)</span><br><span class="line"></span><br><span class="line">        try:</span><br><span class="line">            w_data = urlopen(self.request)</span><br><span class="line">            # print(&quot;Type of the data from urlopen:&quot;,type(w_data))</span><br><span class="line">            # print(&quot;The data from urlopen is:&quot;,w_data)</span><br><span class="line">        except URLError:</span><br><span class="line">            raise IndexError(&quot;No internet connection available to transfer txt data&quot;)</span><br><span class="line">            # 如果发生网络错误，断言提示没有可用的网络连接来传输文本信息</span><br><span class="line">        except:</span><br><span class="line">            raise KeyError(&quot;Server wouldn&apos;t respond (invalid key or quota has been maxed out)&quot;)</span><br><span class="line">            # 其他情况断言提示服务相应次数已经达到上限</span><br><span class="line"></span><br><span class="line">        response_text = w_data.read().decode(&apos;utf-8&apos;)</span><br><span class="line">        # print(&quot;Type of the response_text :&quot;,type(response_text))</span><br><span class="line">        # print(&quot;response_text :&quot;,response_text)</span><br><span class="line"></span><br><span class="line">        json_result = json.loads(response_text)</span><br><span class="line">        # print(&quot;Type of the json_result :&quot;,type(json_result))</span><br><span class="line">        return json_result[&apos;text&apos;]</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    print(&quot;Now u can type in something &amp; input q to quit&quot;)</span><br><span class="line"></span><br><span class="line">    turing = TuringChatMode()</span><br><span class="line"></span><br><span class="line">    while True:</span><br><span class="line">        msg = input(&quot;\nMaster:&quot;)</span><br><span class="line">        if msg == &apos;q&apos;:</span><br><span class="line">            exit(&quot;u r quit the chat !&quot;)         # 设定输入q，退出聊天。</span><br><span class="line">        else:</span><br><span class="line">            turing_data = turing.get_turing_text(msg)</span><br><span class="line">            print(&quot;Robot:&quot;,turing_data)</span><br></pre></td></tr></table></figure></p>
+<p>效果图如下:<br><img src="/2019/03/01/Python实现机器人聊天/rebot02.png" alt=""></p>
+<p>可能由于机器人智能太低了，有点答非所问。</p>
+<p>更多精彩可以去图灵机器人官网了解:<a href="http://www.tuling123.com" target="_blank" rel="noopener">http://www.tuling123.com</a></p>
+<p>编程的世界是有趣的，你去探索，你会发现很多有意思的事情。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/01/Python实现机器人聊天/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-node-js使用express框架进行文件上传" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/01/node-js使用express框架进行文件上传/">node.js使用express框架进行文件上传</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/01/node-js使用express框架进行文件上传/" class="archive-article-date">
+  	<time datetime="2019-03-01T12:49:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于node.js使用express框架进行文件上传，主要来自于最近对Settings-Sync插件做的研究。<br>目前的研究算是取得的比较好的进展。<br>Settings-Sync中通过快捷键上传文件，其实主要还是请求后端接口。<br>于是我便使用node.js模拟一个服务，这个服务其实就相当于github api(Settings-Sync实际请求的接口，比如token验证，gist存储创建等都是来自github 对应的api)。</p>
+<p>话不多说，直接代码贴起讲解:</p>
+<h2><span id="1创建一个nodejs项目这里我以express框架为例">1.创建一个node.js项目(这里我以express框架为例)</span></h2><p>关于如何创建一个node.js项目我就不详细说，通常通过npm init就可以创建一个node.js项目了。<br>关于node.js项目详细教程，可以参考该篇文章<a href="https://www.jianshu.com/p/7b0a5d4491ba" target="_blank" rel="noopener">nodeJS入门——新建一个项目及代码详解</a><br>当然了，如果你是直接通过这篇文章操作，最先可能会报这个错误，错误信息如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;express&apos; 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br></pre></td></tr></table></figure>
+<p>解决方式很简单，并不是npm install -g express就可以的，在此之前还需执行npm install -g express-generator</p>
+<p>这条命令很好理解，你可以将其理解为你的express框架生成器，以Java中Maven来说，通常ide就把maven结构都弄好了，你只需在创建项目的时候，勾选maven即可，它会自己将所有相关项目包括配置文件一起生成。</p>
+<p>虽然说我将地址贴出来，但是我觉得还是实际操作一遍，这样对此有一个感性认识(初学编程的人或者是已经有编程经验的人，是绝对不能忽略这一点的)。</p>
+<p>流程如下:</p>
+<h4><span id="a使用express命令创建express项目">a.使用express命令创建express项目</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express blog</span><br></pre></td></tr></table></figure>
+<h5><span id="效果图如下">效果图如下:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express01.png" alt=""></p>
+<p>express非常有人性化，已经告诉你怎么进入blog项目及其安装相关的库依赖和启动了，你只需按照它的这个步骤，一步一步来就行了。</p>
+<h4><span id="b目录结构分析">b.目录结构分析</span></h4><h5><span id="示意图如下所示">示意图如下所示:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express02.png" alt=""><br>app.js:——启动文件，也可以说是主文件入口。<br>package.json——定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。<br>node_modules——存放package.json中安装的模块，当你在package.json添加依赖的模块并安装后，存放在这个文件夹下<br>public——存放image、css、js等文件<br>routes——存放路由文件<br>views——存放视图文件或者说模板文件<br>bin——存放可执行文件</p>
+<h2><span id="2使用express框架进行文件上传">2.使用express框架进行文件上传</span></h2><p>注意，目录结构如下所示(我主要是复用最近研究的mock-github-api):<br><img src="/2019/03/01/node-js使用express框架进行文件上传/express03.png" alt=""></p>
+<h4><span id="a准备html文件">a.准备html文件</span></h4><p>public文件夹主要放置静态文件，如index.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;文件上传&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h3&gt;文件上传：&lt;/h3&gt;</span><br><span class="line">    选择一个文件上传: &lt;br /&gt;</span><br><span class="line">    &lt;form action=&quot;/gists&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;file&quot; name=&quot;content&quot; /&gt;</span><br><span class="line">        &lt;br /&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;上传文件&quot; /&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<h4><span id="b编写相关的js">b.编写相关的js</span></h4><p>像upload.js属于路由，通常放置在routes文件夹下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var multer  = require(&apos;multer&apos;);</span><br><span class="line">var path = require(&apos;path&apos;);</span><br><span class="line">var router = express.Router();</span><br><span class="line"></span><br><span class="line">var upload = multer(&#123;dest: &apos;upload_tmp/&apos;&#125;);</span><br><span class="line"></span><br><span class="line">router.post(&apos;/&apos;, upload.any(), function(req, res, next) &#123;</span><br><span class="line">    console.log(req.files[0]);  // 上传的文件信息</span><br><span class="line"></span><br><span class="line">    var des_file = &quot;./upload/&quot; + req.files[0].originalname;</span><br><span class="line">    fs.readFile( req.files[0].path, function (err, data) &#123;</span><br><span class="line">        fs.writeFile(des_file, data, function (err) &#123;</span><br><span class="line">            if( err )&#123;</span><br><span class="line">                console.log( err );</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                response = &#123;</span><br><span class="line">                    message:&apos;File uploaded successfully&apos;,</span><br><span class="line">                    filename:req.files[0].originalname</span><br><span class="line">                &#125;;</span><br><span class="line">                console.log( response );</span><br><span class="line">                res.end( JSON.stringify( response ) );</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">module.exports = router;</span><br></pre></td></tr></table></figure></p>
+<h4><span id="c上传文件及其效果">c.上传文件及其效果</span></h4><h5><span id="页面图">页面图:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express04.png" alt=""></p>
+<h5><span id="上传成功显示图">上传成功显示图:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express05.png" alt=""></p>
+<h5><span id="upload文件夹下会有对应的文件也就是你刚刚通过页面上传的文件">upload文件夹下会有对应的文件(也就是你刚刚通过页面上传的文件)</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express06.png" alt=""></p>
+<p>最后例子中还有阿里云和腾讯云的图片存储，大家可以做一个参考。</p>
+<p>源码地址为:<a href="https://github.com/developers-youcong/mock-github-api" target="_blank" rel="noopener">https://github.com/developers-youcong/mock-github-api</a></p>
+<p>希望能够对大家有所启发和帮助</p>
+<p>注意，可能遇到的问题:</p>
+<p>问题一:静态资源需要放行，否则无法访问<br>在index.js补充这段代码即可解决这个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(path.join(__dirname, &apos;public&apos;)))</span><br></pre></td></tr></table></figure></p>
+<p>问题二:socket hang up</p>
+<p>我将var bodyParser = require(‘body-parser’)去除就解决了这个问题</p>
+<p>参考链接如:<a href="https://blog.csdn.net/gsying1474/article/details/52200445" target="_blank" rel="noopener">https://blog.csdn.net/gsying1474/article/details/52200445</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/01/node-js使用express框架进行文件上传/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-nginx让所有的http地址重定向到https" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
@@ -746,175 +897,9 @@
 
 
   
-    <article id="post-node-js之express框架" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/22/node-js之express框架/">node.js之express框架</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/22/node-js之express框架/" class="archive-article-date">
-  	<time datetime="2019-02-22T13:06:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之前学习过node.js接触过express框架，最近为了编写一个mock server正好用到了express。下面正好就跟大家介绍一下关于express。<br>今天的内容主要围绕这么几个方面?</p>
-<ul>
-<li>express框架初步介绍</li>
-<li>express框架中的app.use和app.get/app.post</li>
-<li>mock server 介绍</li>
-<li>mock server的实现思路</li>
-</ul>
-<h2><span id="一-express框架初步介绍">一、express框架初步介绍</span></h2><p>关于express框架的介绍，这里我引用菜鸟教程的简介:<br>Express是一个简洁而灵活的node.js web框架，提供了一系列强大特性帮助你创建各种web应用，和丰富的HTTP工具。使用Express可以快速地搭建一个完整功能的网站。</p>
-<h4><span id="1express框架的特性">1.express框架的特性</span></h4><p>（1）可以设置中间件来响应HTTP请求；<br>（2）定义了路由表用于执行不同大的HTTP请求动作；<br>（3）可以通过向模板传递参数来动态渲染HTML页面；</p>
-<h4><span id="2安装express">2.安装express</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express --save或cnpm install express --save</span><br></pre></td></tr></table></figure>
-<p>以下几个重要需要与express框架一起安装:<br>body-parser -node.js中间件，用于处理JSON，Raw，Text和URL编码的数据；<br>cookie-parser -这就是一个解析Cookie的工具。通过req.cookies可以取到传过来的cookie，并将它们转为对象；<br>multer - node.js中间件，用于处理enctype=“multipart/form-data”（设置表单mime编码)的表单数据；</p>
-<p>安装命令如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install body-parser --save</span><br><span class="line">npm install cookie-parser --save</span><br><span class="line">npm install multer --save</span><br></pre></td></tr></table></figure></p>
-<h4><span id="3express的入门程序">3.express的入门程序</span></h4><p>node_learning.js代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">app.get(&apos;/&apos;, function (req, res) &#123;</span><br><span class="line">   res.send(&apos;Hello World&apos;);</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">var server = app.listen(2019, function () &#123;</span><br><span class="line"></span><br><span class="line">  var host = server.address().address</span><br><span class="line">  var port = server.address().port</span><br><span class="line"></span><br><span class="line">  console.log(&quot;应用实例，访问地址为 http://127.0.0.1:2019&quot;, host, port)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
-<h2><span id="二-express框架中的appuse和appgetapppost">二、express框架中的app.use和app.get/app.post</span></h2><p>app.use和app.get/app.post其实区别如(引用一位朋友说的):<br>感兴趣的可以参考这个链接:<a href="https://blog.csdn.net/wthfeng/article/details/53366169" target="_blank" rel="noopener">作者做了试验测试过的</a><br>(1)app.use(path,callback)中的callback既可以是router对象又可以是函数<br>(2)app.get(path,callback)中的callback只能是函数</p>
-<p>app.use和app.get/app.post实现几乎大同小异，代码示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">function testUser(req, res, next)&#123;</span><br><span class="line"></span><br><span class="line">    // req 参数可以接受一些请求的参数(req.query/req.body) 和 请求头信息</span><br><span class="line"></span><br><span class="line">    // res 用于响应信息</span><br><span class="line"></span><br><span class="line">    // 调用next()方法则进入下一个中间件</span><br><span class="line">	res.send(&quot;测试用户&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function testLogin(req,res,next)&#123;</span><br><span class="line"></span><br><span class="line">	res.send(&quot;测试登录&quot;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var server = app.listen(2019, function () &#123;</span><br><span class="line"></span><br><span class="line">  var host = server.address().address</span><br><span class="line">  var port = server.address().port</span><br><span class="line"></span><br><span class="line">  console.log(&quot;应用实例，访问地址为 http://127.0.0.1:2019&quot;)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//路径匹配</span><br><span class="line"></span><br><span class="line">app.use(&apos;/user&apos;,testUser);</span><br><span class="line"></span><br><span class="line">app.get(&apos;/login&apos;,testLogin);</span><br></pre></td></tr></table></figure></p>
-<p>关于node.js的express框架就介绍这么多，最近本人因实现某个插件的功能而需要用到的，这与下面说的mock server有比较大的关系。</p>
-<h2><span id="三-mock-server-介绍">三、mock server 介绍</span></h2><p>mock server 翻译过来的意思是模拟服务。<br>说到这我相信大家就很容易理解了。至于为什么要模拟服务？<br>比方说现今的业务系统很少有孤立存在的，它们或多或少使用其他公司提供的服务，这给我们联调和测试造成了比较大的麻烦，对于这种情况，常见的解决方案就是搭建一个mock server，模拟那些服务器，提供数据进行联调和测试(这句话，我引用自该链接<a href="https://www.cnblogs.com/fnng/p/7511539.html" target="_blank" rel="noopener">Mock Server 入门</a></p>
-<p><img src="/2019/02/22/node-js之express框架/mock-server.png" alt="如图比较好解释mock-server的作用"></p>
-<h2><span id="四-mock-server的实现思路">四、mock server的实现思路</span></h2><p>现在google或者being搜索mock server 实现思路肯定有很多，这里我就不再赘述。<br>这里我以我自己最近的vscode插件开发来说。<br>我最近的工作是针对Settings-Sync作二次开发<br>关于settings-sync插件，感兴趣的可以参考我的博客园<a href="https://www.cnblogs.com/youcong/p/10380501.html" target="_blank" rel="noopener">Settings-Sync源码阅读</a></p>
-<p>如何实现一个mock server 替换github api地址并确保效果一致?</p>
-<p>针对目前这个需求，我的实现思路如下:</p>
-<p>第一，针对如何实现一个mock server ，可以复用已有，如mock-github-api(其本身是使用node.js的express框架);<br>第二，如何编写，可以按照express框架编写网络请求的方法，如app.get或app.use等;<br>第三，为了保持与githu api一致，我需要引入github rest api，如@octokit/rest;<br>参考api地址为:<a href="https://www.npmjs.com/package/@octokit/rest#authentication" target="_blank" rel="noopener">https://www.npmjs.com/package/@octokit/rest#authentication</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">示例一:</span><br><span class="line">	  octokit.repos.listForOrg(&#123;</span><br><span class="line">	  org: &apos;octokit&apos;,</span><br><span class="line">	  type: &apos;public&apos;</span><br><span class="line">	&#125;).then((&#123; data, status, headers &#125;) =&gt; &#123;</span><br><span class="line">	  // handle data</span><br><span class="line">	  //console.log(&quot;status:&quot;+JSON.stringify(headers));</span><br><span class="line">	  //console.log(status);</span><br><span class="line">	  console.log(data);</span><br><span class="line">	&#125;)</span><br><span class="line">	返回的octokit相关的api信息(信息太多了，就先简略)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">示例二:</span><br><span class="line">	const clientWithAuth = new Octokit(&#123;</span><br><span class="line">    auth: &apos;token secret123&apos;</span><br><span class="line">    &#125;)</span><br><span class="line">	console.log(clientWithAuth)//查看详细信息</span><br><span class="line">	console.log(JSON.stringify(clientWithAuth))//输出简要信息如下</span><br><span class="line">	所示:</span><br><span class="line">	返回的信息:</span><br><span class="line">	&#123;&quot;log&quot;:&#123;&#125;,&quot;activity&quot;:&#123;&#125;,&quot;apps&quot;:&#123;&#125;,&quot;checks&quot;:&#123;&#125;,&quot;codesOfConduct&quot;:&#123;&#125;,&quot;emojis&quot;:&#123;&#125;,</span><br><span class="line">	&quot;gists&quot;:&#123;&#125;,&quot;git&quot;:&#123;&#125;,&quot;gitignore&quot;:&#123;&#125;,&quot;interactions&quot;:&#123;&#125;,&quot;issues&quot;:&#123;&#125;,&quot;licenses&quot;:&#123;&#125;,</span><br><span class="line">	&quot;markdown&quot;:&#123;&#125;,&quot;meta&quot;:&#123;&#125;,&quot;migrations&quot;:&#123;&#125;,&quot;oauthAuthorizations&quot;:&#123;&#125;,&quot;orgs&quot;:&#123;&#125;,</span><br><span class="line">	&quot;projects&quot;:&#123;&#125;,&quot;pulls&quot;:&#123;&#125;,&quot;rateLimit&quot;:&#123;&#125;,&quot;reactions&quot;:&#123;&#125;,&quot;repos&quot;:&#123;&#125;,&quot;search&quot;:&#123;&#125;,</span><br><span class="line">	&quot;teams&quot;:&#123;&#125;,&quot;users&quot;:&#123;&#125;,&quot;gitdata&quot;:&#123;&#125;,&quot;authorization&quot;:&#123;&#125;,&quot;pullRequests&quot;:&#123;&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-<p>第四，根据router.json(node_modules\@octokit\rest\plugins\rest-api-endpoints\routes.json)也就是octokit里面定义github rest api的地方(该文件定义了所需的所有的请求信息)，我可以仿照其编写对应的网络请求（美其名依样画葫芦）；</p>
-<p>如果要用一句简单直接的话来概述，模仿github rest api编写一个mock server来替换github，只要接口定义保持一致就可以。<br>但是目前存在一个问题，我在此停滞不前。正在想办法解决这个问题。<br>这个问题是，我参考其对应的rest api文档写代码，但是其返回的信息却并没有我想要的，返回是一大堆没有用处的function之类的，而不是具体的信息。<br>但是以5why原则来看待这个问题：<br>为什么github api会返回一大堆function?</p>
-<p>这些function有什么用?github api不会无缘无故返回没有用的东西</p>
-<p>还有就是为什么console.log(clientWithAuth)返回详细信息，console.log(JSON.stringify(clientWithAuth))返回的却是简要信息呢？难道是因为非JSON数据吗？两者返回的都是JSON数据</p>
-<p>我查找JSON.stringify()认为应该是这个原因:<br>JSON.stringify() 方法是将一个JavaScript值(对象或者数组)转换为一个 JSON字符串，如果指定了replacer是一个函数，则可以替换值，或者如果指定了replacer是一个数组，可选的仅包括指定的属性(参考地址为:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify</a>)</p>
-<p>另外前面虽说不讲mock server的实现思路，但是还是要推荐一下一个开源实现框架 moco。</p>
-<p>github仓库地址为:<a href="https://github.com/dreamhead/moco" target="_blank" rel="noopener">https://github.com/dreamhead/moco</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/22/node-js之express框架/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SpringBoot之加密" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/22/SpringBoot之加密/">SpringBoot之加密</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/22/SpringBoot之加密/" class="archive-article-date">
-  	<time datetime="2019-02-22T12:26:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近利用闲暇时间写了一个博客系统，主要参考wordpress，主要目的是为了提高自己的技术能力。<br>写代码写了两年多，联系到之前在学校的时候写过的一个博客系统，发现工作中开发的系统，技术上基本一致，业务逻辑方面存在差异。<br>比如博客系统可能面对高并发的场景，比如某个时间段访问量，再比如博客系统为了最大程度吸引用户(换句话说，提高用户粘性)，在界面上美观，使用上更加方便。通常界面美观伴随着前端js库的增多，特别是一些非常好看的画面或者图像是极其消耗带宽的，带宽如果不给力的话，页面半天打不开，同样也对于用户而言体验不好。</p>
-<p>只想表达一个意思，软件开发万变不离其宗，本质上基本都是一个CMS系统(也许这句话武断了)。</p>
-<p>话不多说，今天我要讲的关于SpringBoot加密。</p>
-<p>SSM框架和SpringBoot中加密是不一样的，比如在SSM框架中可以使用Druid进行加密(主要对数据库密码或者是其它重要配置信息加密)，但是在SpringBoot就不一定会适用。</p>
-<p>关于Druid加密，可以参考我的博客园这篇文章:<a href="https://www.cnblogs.com/youcong/p/10140043.html" target="_blank" rel="noopener">Druid加密</a></p>
-<p>SpringBoot使用jasypt-spring-boot-starter加密，具体步骤如下:</p>
-<h2><span id="一-导入maven依赖注意我的springboot版本为159建议最好版本别相差太多否则会出现依赖冲突等问题">一、导入Maven依赖(注意，我的springboot版本为1.5.9，建议最好版本别相差太多，否则会出现依赖冲突等问题)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">		&lt;groupId&gt;com.github.ulisesbocchio&lt;/groupId&gt;</span><br><span class="line">		&lt;artifactId&gt;jasypt-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">		&lt;version&gt;1.16&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h2><span id="二-编写测试类">二、编写测试类</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package cn.test;</span><br><span class="line"></span><br><span class="line">import org.jasypt.encryption.pbe.StandardPBEStringEncryptor;</span><br><span class="line">import org.jasypt.encryption.pbe.config.EnvironmentPBEConfig;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line">import org.springframework.data.redis.core.StringRedisTemplate;</span><br><span class="line">import org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line"></span><br><span class="line">import com.blog.springboot.Application;</span><br><span class="line">import com.blog.springboot.service.UsersService;</span><br><span class="line"></span><br><span class="line">import cn.hutool.core.util.RandomUtil;</span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)</span><br><span class="line">public class JunitTest &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testEncrypt() throws Exception &#123;</span><br><span class="line">	        StandardPBEStringEncryptor standardPBEStringEncryptor = new StandardPBEStringEncryptor();</span><br><span class="line">	        EnvironmentPBEConfig config = new EnvironmentPBEConfig();</span><br><span class="line">	        config.setAlgorithm(&quot;PBEWithMD5AndDES&quot;);          // 加密的算法，这个算法是默认的</span><br><span class="line">	        config.setPassword(&quot;lyh&quot;);                        // 加密的密钥</span><br><span class="line">	        standardPBEStringEncryptor.setConfig(config);</span><br><span class="line">	        //加密用户信息</span><br><span class="line">	        String plainText = &quot;youcong&quot;;</span><br><span class="line">	        String encryptedText = standardPBEStringEncryptor.encrypt(plainText);</span><br><span class="line">	        //加密密码信息</span><br><span class="line">	        String Enpassword = &quot;youcong&quot;;</span><br><span class="line">	        String EnpasswordText = standardPBEStringEncryptor.encrypt(Enpassword);</span><br><span class="line">	        String db=&quot;wordpress&quot;;</span><br><span class="line">	        String dbEnc = standardPBEStringEncryptor.encrypt(db);</span><br><span class="line">	        //加密地址信息</span><br><span class="line">	        String DBAUrl = &quot;jdbc:mysql://localhost:3306/blog?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false&quot;;</span><br><span class="line">	        String DBAUrlText = standardPBEStringEncryptor.encrypt(DBAUrl);</span><br><span class="line">	        System.out.println(&quot;用户:&quot;+encryptedText);</span><br><span class="line">	        System.out.println(&quot;密码:&quot;+EnpasswordText);</span><br><span class="line">	        System.out.println(&quot;地址:&quot;+DBAUrlText);</span><br><span class="line">	        System.out.println(&quot;db:&quot;+dbEnc);</span><br><span class="line">	    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="三-在springboot的配置文件添加如下配置这里我以applicationyml配置为例">三、在springboot的配置文件添加如下配置(这里我以application.yml配置为例)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jasypt:</span><br><span class="line">  encryptor:</span><br><span class="line">    password: lyh</span><br></pre></td></tr></table></figure>
-<p>问:为什么要加这段？<br>答:这里的password对应的值lyh相当于密钥，主要用于解密。<br>你在单元测试中以什么作为加密，那么在yml中就以什么作为解密。</p>
-<h2><span id="四-配置applicationyml中的数据源">四、配置application.yml中的数据源</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">datasource:</span><br><span class="line">  url: ENC(cY3NmQF349TpBB0z0KavaiEPNDux/mKEss0UFeA11VTFC545rHh6t1rLC46GlX1b2rm8s5lzX49JmzFE4odcSiPafGZfQvnsHl2yVlLWM3kJg5DvVI4D0l5na3RUPTio4uz1gG9nML1u9ceHuj/yPb1097ZZfbCUsLSyRoeWvhhKuPxAM5mvGLZh641ArtVfRchNcdVZ1W4=)</span><br><span class="line">  username: ENC(BcbIdbvEq4yN8kezH5mDjg==)</span><br><span class="line">  password: ENC(Isk3pYM71258wxWTQOt3Dg==)</span><br><span class="line">  db-name: ENC(CZcfw3ZJN6TVCVxkCW9Ey6z6iAuszHO8)</span><br><span class="line">  filters: log4j,wall,mergeStat1</span><br></pre></td></tr></table></figure>
-<p>问:为什么要在数据源中添加ENC?<br>答:这个ENC相当于解密的标识符。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/22/SpringBoot之加密/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -1070,27 +1055,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://www.cnblogs.com/youcong/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的博客园</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="https://segmentfault.com/u/youcongtech" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的思否</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="https://www.zhihu.com/people/you-cong-63/activities" "="" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的知乎</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
+              <a href="https://github.com/developers-youcong" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>我的Github</a>
             </li>
           
         </ul>
@@ -1101,7 +1078,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">大家好&lt;br&gt;我是一个喜爱旅行、读书、编程的Boy，本博客旨在写技术、生活、旅行等方面的内容，不过技术可能会偏多一些&lt;br&gt;&lt;br&gt;欢迎大家关注</div>
   	  	
     	</section>
     
