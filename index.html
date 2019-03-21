@@ -156,6 +156,158 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mysql备份命令" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/21/mysql备份命令/">mysql备份命令</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/21/mysql备份命令/" class="archive-article-date">
+  	<time datetime="2019-03-21T05:32:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mysql备份命令如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">备份多个数据库可以使用如下命令:</span><br><span class="line">mysqldump -uroot -p123456 --databases test1 test2 test3 &gt; /home/test/dump.sql;</span><br><span class="line"></span><br><span class="line">恢复备份:</span><br><span class="line">source dump.sql 在mysql命令行中输入该命令即可恢复</span><br><span class="line"></span><br><span class="line">备份整个数据库:</span><br><span class="line"> mysqldump -uroot -123456 -A &gt; all.sql</span><br><span class="line"></span><br><span class="line">备份整个数据库结构:</span><br><span class="line"> mysqldump -uroot -p123456 -P3306 -A -d &gt; all_002.sql</span><br><span class="line"> </span><br><span class="line">备份单个数据库结构及其数据</span><br><span class="line">mysqldump -uroot -p123456 -P3306 test &gt; all_003.sql</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">备份单个数据库结构及其数据</span><br><span class="line">mysqldump -uroot -p123456 -P3306 test -d &gt; all_004.sql</span><br><span class="line">备份单个数据库数据</span><br><span class="line">mysqldump -uroot -p123456 -P3306 test -t &gt; all_005.sql</span><br></pre></td></tr></table></figure></p>
+<p>通常情况下，备份数据库的结构和数据，在实际生产环境中用的比较多，对于大数据时代而言，数据是至关重要的，通过数据分析便可发现用户某些行为，从而开辟市场</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/21/mysql备份命令/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js获取访问IP、地区、、当前操作浏览器" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/">js获取访问IP、地区、、当前操作浏览器</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" class="archive-article-date">
+  	<time datetime="2019-03-21T05:18:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>js获取IP、地区、当前操作浏览器有什么用呢？</p>
+<p>我的回答是用处很多，比如现在的异地登录和对用户常用浏览器做数据分析等。</p>
+<p>源代码如下:<br>index.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;http://pv.sohu.com/cityjson?ie=utf-8&quot;&gt;&lt;/script&gt; </span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">        document.write(&apos;IP地址:&apos; + returnCitySN[&quot;cip&quot;] + &apos;, CID:&apos; + returnCitySN[&quot;cid&quot;] + &apos;, 地区:&apos; + returnCitySN[&quot;cname&quot;]+&quot;,浏览器版本:&quot;+getBrowserInfo());</span><br><span class="line">		</span><br><span class="line">		function getBrowserInfo()</span><br><span class="line">&#123;</span><br><span class="line">    var agent = navigator.userAgent.toLowerCase() ;</span><br><span class="line"></span><br><span class="line">    var regStr_ie = /msie [\d.]+;/gi ;</span><br><span class="line">    var regStr_ff = /firefox\/[\d.]+/gi</span><br><span class="line">    var regStr_chrome = /chrome\/[\d.]+/gi ;</span><br><span class="line">    var regStr_saf = /safari\/[\d.]+/gi ;</span><br><span class="line">    </span><br><span class="line">    //IE</span><br><span class="line">    if(agent.indexOf(&quot;msie&quot;) &gt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_ie) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //firefox</span><br><span class="line">    if(agent.indexOf(&quot;firefox&quot;) &gt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_ff) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Chrome</span><br><span class="line">    if(agent.indexOf(&quot;chrome&quot;) &gt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_chrome) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Safari</span><br><span class="line">    if(agent.indexOf(&quot;safari&quot;) &gt; 0 &amp;&amp; agent.indexOf(&quot;chrome&quot;) &lt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_saf) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>展示效果如下:<br><img src="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/js01.png" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Uncaught-ReferenceError-layer-is-not-defined" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -320,7 +472,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/19/python3-6在linux持久运行django/">python3.6在linux持久运行djang</a>
+      <a class="article-title" href="/2019/03/19/python3-6在linux持久运行django/">python3.6在linux持久运行django</a>
     </h1>
   
 
@@ -798,170 +950,6 @@
 
 
   
-    <article id="post-node-js之Cookie" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/node-js之Cookie/">node.js之Cookie</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/13/node-js之Cookie/" class="archive-article-date">
-  	<time datetime="2019-03-13T14:27:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近还是用node.js比较多，今天正好遇见一个问题，还是关于Cookie。</p>
-<p>node.js中如何实现cookie(以express框架为例):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&quot;use strict&quot;;</span><br><span class="line"> </span><br><span class="line">var express = require(&quot;express&quot;);</span><br><span class="line">var cookieParser = require(&quot;cookie-parser&quot;);</span><br><span class="line">var util = require(&quot;util&quot;);</span><br><span class="line"> </span><br><span class="line">var app = express();</span><br><span class="line">app.use(cookieParser());</span><br><span class="line"> </span><br><span class="line">app.get(&quot;/test&quot;,function (req, res) &#123;</span><br><span class="line">    console.log(&quot;Cookies: &quot; + util.inspect(req.cookies));</span><br><span class="line">	</span><br><span class="line">	res.send(&quot;cookie&quot;);</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">app.listen(8081);</span><br></pre></td></tr></table></figure></p>
-<p>控制台输出结果为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Cookies: &#123; Hm_lvt_2edaee7dab677cdec491683758d1e378: &apos;1552046206,1552134942,1552485731&apos;,</span><br><span class="line">  Hm_lpvt_2edaee7dab677cdec491683758d1e378: &apos;1552485731&apos;,</span><br><span class="line">  add: [ null, null, null, null, null, null, null ] &#125;</span><br></pre></td></tr></table></figure></p>
-<p>如果不使用express的话，那么原生node.js是如何实现的呢？代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line"></span><br><span class="line">    // 获得客户端的Cookie</span><br><span class="line"></span><br><span class="line">    var Cookies = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    req.headers.cookie &amp;&amp; req.headers.cookie.split(&apos;;&apos;).forEach(function( Cookie ) &#123;</span><br><span class="line"></span><br><span class="line">        var parts = Cookie.split(&apos;=&apos;);</span><br><span class="line"></span><br><span class="line">        Cookies[ parts[ 0 ].trim() ] = ( parts[ 1 ] || &apos;&apos; ).trim();</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    console.log(Cookies)</span><br><span class="line"></span><br><span class="line">    // 向客户端设置一个Cookie</span><br><span class="line"></span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line"></span><br><span class="line">        &apos;Set-Cookie&apos;: &apos;myCookie=test&apos;,</span><br><span class="line"></span><br><span class="line">        &apos;Content-Type&apos;: &apos;text/plain&apos;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    res.end(&apos;Hello World\n&apos;);</span><br><span class="line"></span><br><span class="line">&#125;).listen(8000);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">console.log(&apos;Server running at http://127.0.0.1:8000/&apos;);</span><br></pre></td></tr></table></figure></p>
-<p>‘<br>cookie并不是万能的，相反它有一定的安全隐患，为此node.js有一种cookie签名实现，源码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;express&apos;);</span><br><span class="line">const cookieParser = require(&apos;cookie-parser&apos;);</span><br><span class="line"></span><br><span class="line">//随机生成的字符串</span><br><span class="line">var signStr = &apos;xadsafeowirw&apos;</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">//需要将密匙传给cookieParser, 在接收数据的时候，进行解析。</span><br><span class="line">app.use(cookieParser(signStr));</span><br><span class="line"></span><br><span class="line">app.use(&apos;/&apos;, function (req, res) &#123;</span><br><span class="line">    //将密匙字符串赋值给req.secret,可以省略，在上面cookieparser()时会自动对secret赋值</span><br><span class="line">    req.secret=signStr;</span><br><span class="line"></span><br><span class="line">    //返回给浏览器的cookie, 这就是传说中的种cookie了</span><br><span class="line">    //如果需要开启签名，第三个参数对象signed 设置为true.</span><br><span class="line">    //由于cookie的大小限制4k，而签名后的cookie体积会增加，所以重要的cookie才签名</span><br><span class="line">    res.cookie(&apos;cookiename&apos;, &apos;youcong&apos;, &#123;signed: true, maxAge: 3600&#125;)</span><br><span class="line"></span><br><span class="line">    //有没有签名的cookie，获取方式不一样。</span><br><span class="line">    console.log(&apos;无签名&apos;, req.cookies);</span><br><span class="line">    console.log(&apos;带签名&apos;,req.signedCookies);</span><br><span class="line">    res.send(&apos;ok&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(8090);</span><br></pre></td></tr></table></figure></p>
-<p>顺便再补充一下node.js的session实现,代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;express&apos;);</span><br><span class="line">const cookieParser = require(&apos;cookie-parser&apos;);</span><br><span class="line">const cookieSession = require(&apos;cookie-session&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.use(cookieParser());</span><br><span class="line"></span><br><span class="line">//cookieSession 必须放在cookieParser后面</span><br><span class="line">app.use(cookieSession(&#123;</span><br><span class="line">    //session的秘钥，防止session劫持。 这个秘钥会被循环使用，秘钥越长，数量越多，破解难度越高。</span><br><span class="line">    keys: [&apos;aaa&apos;, &apos;bbb&apos;, &apos;ccc&apos;],</span><br><span class="line">    //session过期时间，不易太长。php默认20分钟</span><br><span class="line">    maxAge: 60*60,</span><br><span class="line">    //可以改变浏览器cookie的名字</span><br><span class="line">    name: &apos;session&apos;</span><br><span class="line">&#125;));</span><br><span class="line"></span><br><span class="line">app.use(&apos;/&apos;, function (req, res) &#123;</span><br><span class="line"></span><br><span class="line">    //假设使用count记录用户访问的次数</span><br><span class="line">   if(req.session[&apos;count&apos;] == null) &#123;</span><br><span class="line">       req.session[&apos;count&apos;] = 1;</span><br><span class="line">   &#125;else&#123;</span><br><span class="line">       req.session[&apos;count&apos;]++;</span><br><span class="line">   &#125;</span><br><span class="line">   console.log(req.session[&apos;count&apos;])</span><br><span class="line">    res.send(&apos;ok&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(8090)</span><br></pre></td></tr></table></figure></p>
-<p>参考资料如下:<br>node.js操作Cookie，让你清楚了解cookie存入过程:<a href="https://blog.csdn.net/sinat_18474835/article/details/79987282" target="_blank" rel="noopener">https://blog.csdn.net/sinat_18474835/article/details/79987282</a><br>Node.js学习（15）-Cookie:<a href="https://blog.csdn.net/sunhuansheng/article/details/82356129" target="_blank" rel="noopener">https://blog.csdn.net/sunhuansheng/article/details/82356129</a><br>node学习之cookie和session:<a href="https://www.cnblogs.com/lijinwen/p/7898159.html" target="_blank" rel="noopener">https://www.cnblogs.com/lijinwen/p/7898159.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/13/node-js之Cookie/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-jQuery和js之Cookie实现" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/jQuery和js之Cookie实现/">jQuery和js之Cookie实现</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/13/jQuery和js之Cookie实现/" class="archive-article-date">
-  	<time datetime="2019-03-13T14:11:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Web开发者的朋友们基本上都知道，jQuery是对js的封装。今天之所以想讲解这个问题，主要是因为Cookie用的还是比较多，应用场景除了老生常谈的购物车，还有就是用户状态(以我之前开发的一个项目除了session和token外，还有一个加密cookie，双重保护，确保系统安全)。</p>
-<h2><span id="一-js中的cookie增加-获取-删除操作">一、js中的Cookie增加、获取、删除操作</span></h2><h3><span id="1添加cookie保存cookie">1.添加Cookie(保存Cookie)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function setCookie(c_name,value,expiredays)&#123;</span><br><span class="line">    var cookieStr = &quot;&quot;;</span><br><span class="line">    var exdate=new Date();</span><br><span class="line">    exdate.setDate(exdate.getDate()+expiredays);</span><br><span class="line">    document.cookie = c_name+ &quot;=&quot; +escape(value)+</span><br><span class="line">    ((expiredays==null) ? &quot;&quot; : &quot;; expires=&quot;+exdate.toGMTString())+&quot;;path=/&quot;;</span><br><span class="line">&#125;//由于cookie存在域的概念，且在这里要不区分域，获取cookie的值，所以在这里使用的是统一的路径 path=/ ；</span><br></pre></td></tr></table></figure>
-<h3><span id="2获取cookie">2.获取Cookie</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function getCookie(c_name)&#123;</span><br><span class="line">    if (document.cookie.length&gt;0)&#123; </span><br><span class="line">        console.log(document.cookie);</span><br><span class="line">        c_start=document.cookie.indexOf(c_name + &quot;=&quot;);</span><br><span class="line">        if (c_start!=-1)&#123; </span><br><span class="line">            c_start=c_start + c_name.length+1; </span><br><span class="line">            c_end=document.cookie.indexOf(&quot;;&quot;,c_start);</span><br><span class="line">            if (c_end==-1) c_end=document.cookie.length;</span><br><span class="line">            return unescape(document.cookie.substring(c_start,c_end));</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    return &quot;&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3><span id="3删除cookie">3.删除Cookie</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function delete_cookie( name, path, domain ) &#123;</span><br><span class="line">  if( get_cookie( name ) ) &#123;</span><br><span class="line">    document.cookie = name + &quot;=&quot; +</span><br><span class="line">      ((path) ? &quot;;path=&quot;+path:&quot;&quot;)+</span><br><span class="line">      ((domain)?&quot;;domain=&quot;+domain:&quot;&quot;) +</span><br><span class="line">      &quot;;expires=Thu, 01 Jan 1970 00:00:01 GMT&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="二-jquery如何操作cookie">二、jQuery如何操作Cookie</span></h2><p>前提必须要有jQuery.min.js和jQuery.cookie.js。<br>jQuery.cookie.js下载:<a href="http://plugins.jquery.com/cookie/" target="_blank" rel="noopener">http://plugins.jquery.com/cookie/</a></p>
-<h3><span id="1jquery添加cookie">1.jQuery添加Cookie</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.cookie(&apos;the_cookie&apos;, &apos;the_value&apos;, &#123; expires: 7 &#125;);</span><br></pre></td></tr></table></figure>
-<h3><span id="2jquery获取cookie">2.jQuery获取Cookie</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.cookie(&apos;the_cookie&apos;);</span><br></pre></td></tr></table></figure>
-<h3><span id="3jquery删除cookie">3.jQuery删除Cookie</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.cookie(&apos;the_cookie&apos;, null);</span><br></pre></td></tr></table></figure>
-<p>js和jQuery对比，两者效果明显，从中也能体现框架化繁为简的特性。</p>
-<p>注意事项:<br>有的浏览器禁用Cookie会看不到Cookie信息，比如Google。上面的例子是没有问题的，如果你发现在你本地运行不出来，该导入的库也导入了还是没有效果，也不报错，这个时候你就需要看看是不是浏览器禁用Cookie了。</p>
-<p>本文参考资料:<br>jQuery之操作Cookie:<a href="https://www.cnblogs.com/s313139232/p/7839037.html" target="_blank" rel="noopener">https://www.cnblogs.com/s313139232/p/7839037.html</a><br>js中Cookie操作:<a href="https://www.cnblogs.com/springlight/p/5953153.html" target="_blank" rel="noopener">https://www.cnblogs.com/springlight/p/5953153.html</a><br>关于js操作Cookie(包含Cookie相关的基础知识):<a href="https://blog.csdn.net/web_yzm/article/details/81669772" target="_blank" rel="noopener">https://blog.csdn.net/web_yzm/article/details/81669772</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/13/jQuery和js之Cookie实现/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1072,10 +1060,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
@@ -1084,11 +1068,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1096,7 +1084,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,6 +1100,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
@@ -1124,11 +1116,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">存储</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color3">存储</a>
               </li>
             
             <div class="clearfix"></div>

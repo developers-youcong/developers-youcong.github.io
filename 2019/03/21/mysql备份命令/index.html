@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://developers-youcong.github.io">
-  <title>categories | Blog</title>
+  <title>mysql备份命令 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://developers-youcong.github.io/categories/index.html">
+  <meta name="description" content="mysql备份命令如下:1234567891011121314151617181920备份多个数据库可以使用如下命令:mysqldump -uroot -p123456 --databases test1 test2 test3 &amp;gt; /home/test/dump.sql;恢复备份:source dump.sql 在mysql命令行中输入该命令即可恢复备份整个数据库: mysqldump -">
+<meta name="keywords" content="MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql备份命令">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/03/21/mysql备份命令/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="mysql备份命令如下:1234567891011121314151617181920备份多个数据库可以使用如下命令:mysqldump -uroot -p123456 --databases test1 test2 test3 &amp;gt; /home/test/dump.sql;恢复备份:source dump.sql 在mysql命令行中输入该命令即可恢复备份整个数据库: mysqldump -">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T09:44:42.644Z">
+<meta property="og:updated_time" content="2019-03-21T05:33:51.306Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
+<meta name="twitter:title" content="mysql备份命令">
+<meta name="twitter:description" content="mysql备份命令如下:1234567891011121314151617181920备份多个数据库可以使用如下命令:mysqldump -uroot -p123456 --databases test1 test2 test3 &amp;gt; /home/test/dump.sql;恢复备份:source dump.sql 在mysql命令行中输入该命令即可恢复备份整个数据库: mysqldump -">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -155,27 +159,29 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope="" itemprop="blogPost">
+            <article id="post-mysql备份命令" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      mysql备份命令
     </h1>
   
 
         
-        <a href="/categories/index.html" class="archive-article-date">
-  	<time datetime="2019-02-22T12:28:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-22</time>
+        <a href="/2019/03/21/mysql备份命令/" class="archive-article-date">
+  	<time datetime="2019-03-21T05:32:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>mysql备份命令如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">备份多个数据库可以使用如下命令:</span><br><span class="line">mysqldump -uroot -p123456 --databases test1 test2 test3 &gt; /home/test/dump.sql;</span><br><span class="line"></span><br><span class="line">恢复备份:</span><br><span class="line">source dump.sql 在mysql命令行中输入该命令即可恢复</span><br><span class="line"></span><br><span class="line">备份整个数据库:</span><br><span class="line"> mysqldump -uroot -123456 -A &gt; all.sql</span><br><span class="line"></span><br><span class="line">备份整个数据库结构:</span><br><span class="line"> mysqldump -uroot -p123456 -P3306 -A -d &gt; all_002.sql</span><br><span class="line"> </span><br><span class="line">备份单个数据库结构及其数据</span><br><span class="line">mysqldump -uroot -p123456 -P3306 test &gt; all_003.sql</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">备份单个数据库结构及其数据</span><br><span class="line">mysqldump -uroot -p123456 -P3306 test -d &gt; all_004.sql</span><br><span class="line">备份单个数据库数据</span><br><span class="line">mysqldump -uroot -p123456 -P3306 test -t &gt; all_005.sql</span><br></pre></td></tr></table></figure></p>
+<p>通常情况下，备份数据库的结构和数据，在实际生产环境中用的比较多，对于大数据时代而言，数据是至关重要的，通过数据分析便可发现用户某些行为，从而开辟市场</p>
+
       
 
       
@@ -214,6 +220,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -264,7 +281,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://developers-youcong.github.io/categories/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://developers-youcong.github.io/2019/03/21/mysql备份命令/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,6 +293,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js获取访问IP、地区、、当前操作浏览器</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -326,7 +353,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

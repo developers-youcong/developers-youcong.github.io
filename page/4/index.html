@@ -156,6 +156,166 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nginx配置https" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/26/nginx配置https/">nginx配置https</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/26/nginx配置https/" class="archive-article-date">
+  	<time datetime="2019-02-26T12:06:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>其实nginx配置也差不太多，虽然差不太多，但还是有区别的。</p>
+<p>假定你已经在阿里云完成了证书申请，接下来你就可以按照如下配置(主要是修改nginx.conf文件)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 443;</span><br><span class="line">        server_name www.youcongtech.com;</span><br><span class="line">        ssl on;</span><br><span class="line">        index index.html;</span><br><span class="line">        ssl_certificate /usr/local/nginx/cert/1854029_www.youcongtech.com.pem;</span><br><span class="line">        ssl_certificate_key /usr/local/nginx/cert/1854029_www.youcongtech.com.key;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                proxy_set_header X-Forwarded-Host $host;</span><br><span class="line">                proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">                proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">                proxy_set_header Host $http_host;</span><br><span class="line">                proxy_redirect off;</span><br><span class="line">                expires off;</span><br><span class="line">                sendfile off;</span><br><span class="line">                proxy_pass http://www.youcongtech.com;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>按照这样配置你不一定成功，可能会遇见下面的几个错误？</p>
+<h2><span id="错误1">错误1</span></h2><p>错误信息:ubuntu error: SSL modules require the OpenSSL library.</p>
+<p>解决办法:<br>执行该命令即可解决:sudo apt-get install openssl libssl-dev<br>参考链接为:<a href="https://yq.aliyun.com/articles/486172" target="_blank" rel="noopener">https://yq.aliyun.com/articles/486172</a></p>
+<h2><span id="错误2">错误2</span></h2><p>错误信息:nginx: [emerg] unknown directive “ssl” in /usr/local/nginx/conf/nginx.conf:188</p>
+<p>解决办法:<br>在Nginx解压目录执行该命令:./configure –with-http_ssl_module</p>
+<p>参考链接为:<a href="https://blog.csdn.net/weiyangdong/article/details/80008543" target="_blank" rel="noopener">https://blog.csdn.net/weiyangdong/article/details/80008543</a></p>
+<p>如果你对此还有疑问的话，可以参考这个链接:<a href="https://www.cnblogs.com/tianhei/p/7726505.html" target="_blank" rel="noopener">https://www.cnblogs.com/tianhei/p/7726505.html</a><br>这个链接会讲如何申请证书到配置https成功。</p>
+<p>最后在浏览器输入:<a href="https://www.youcongtech.com" target="_blank" rel="noopener">https://www.youcongtech.com</a> 你会看到一个博客界面或者是一个Nginx欢迎页。<br>当然了，目前我的阿里云域名尚在认证中，过段时间就可以申请下来了。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/26/nginx配置https/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vscode源码编译运行打包使其由英文变为中文" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/">vscode源码编译运行打包使其由英文变为中文</a>
+    </h1>
+  
+
+        
+        <a href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" class="archive-article-date">
+  	<time datetime="2019-02-25T11:46:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vscode默认是英文，如果你想让其变为中文，可参考这个链接:<a href="https://blog.csdn.net/testcs_dn/article/details/75070415" target="_blank" rel="noopener">https://blog.csdn.net/testcs_dn/article/details/75070415</a></p>
+<p>最近发现一个很奇怪的问题，vscode打包前和打包后存在很大的不同的，正常来说，比如我们开发项目，实际上来说，本地怎么样，线上就怎么样，当然了，也不排除一些线上导致的bug。</p>
+<p>比如vscode源码已经启用了中文语言包插件，同时也修改了locale.json文件(将文件中的en改为zh-CN)，但是还是是英文，后来我转念一想，将这个中文语言包弄到打包好的插件放置处，最后发现居然可以了。</p>
+<p>当然了，也存在一点问题，问题是绝大部分可以翻译为中文，少部分还是英文。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">VsCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-阿里云配置tomcat-https" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -902,10 +1062,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
@@ -914,11 +1070,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -926,7 +1086,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -942,6 +1102,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
@@ -954,11 +1118,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">存储</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color3">存储</a>
               </li>
             
             <div class="clearfix"></div>
