@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://developers-youcong.github.io">
-  <title>Tag: VsCode | Blog</title>
+  <title>JSON.stringify()和JSON.parse()的作用 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://developers-youcong.github.io/tags/VsCode/index.html">
+  <meta name="description" content="(1)JSON.stringify() 从一个对象中解析出字符串 JSON.stringify({“a”:”1”,”b”:”2”}) 结果是：”{“a”:”1”,”b”:”2”}” (2)JSON.parse()从一个字符串中解析出JSON对象 var str = ‘{“a”:”1”,”b”:”2”}’; JSON.parse(str); 结果是：Object{a:”1”,b:”2”} 应用场景:">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSON.stringify()和JSON.parse()的作用">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/03/22/JSON-stringify-和JSON-parse-的作用/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="(1)JSON.stringify() 从一个对象中解析出字符串 JSON.stringify({“a”:”1”,”b”:”2”}) 结果是：”{“a”:”1”,”b”:”2”}” (2)JSON.parse()从一个字符串中解析出JSON对象 var str = ‘{“a”:”1”,”b”:”2”}’; JSON.parse(str); 结果是：Object{a:”1”,b:”2”} 应用场景:">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-03-22T08:52:31.551Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
+<meta name="twitter:title" content="JSON.stringify()和JSON.parse()的作用">
+<meta name="twitter:description" content="(1)JSON.stringify() 从一个对象中解析出字符串 JSON.stringify({“a”:”1”,”b”:”2”}) 结果是：”{“a”:”1”,”b”:”2”}” (2)JSON.parse()从一个字符串中解析出JSON对象 var str = ‘{“a”:”1”,”b”:”2”}’; JSON.parse(str); 结果是：Object{a:”1”,b:”2”} 应用场景:">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -154,98 +159,185 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-JSON-stringify-和JSON-parse-的作用" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/01/VsCode插件开发之通信/" class="archive-article-date">
-  	<time datetime="2019-03-01T14:20:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/01/VsCode插件开发之通信/">VsCode插件开发之通信</a>
+    <h1 class="article-title" itemprop="name">
+      JSON.stringify()和JSON.parse()的作用
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/03/22/JSON-stringify-和JSON-parse-的作用/" class="archive-article-date">
+  	<time datetime="2019-03-22T08:44:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>(1)JSON.stringify() 从一个对象中解析出字符串</p>
+<p>JSON.stringify({“a”:”1”,”b”:”2”})</p>
+<p>结果是：”{“a”:”1”,”b”:”2”}”</p>
+<p>(2)JSON.parse()从一个字符串中解析出JSON对象</p>
+<p>var str = ‘{“a”:”1”,”b”:”2”}’;</p>
+<p>JSON.parse(str);</p>
+<p>结果是：Object{a:”1”,b:”2”}</p>
+<p>应用场景:<br>针对(1)，比如后台Java对应的RequestMapping参数列表中的参数为一个对象时，前台多个传输需要经过JSON.stringify()处理，否则会出现参数解析异常。</p>
+<p>针对(2)，比如向后台请求，后台返回一大堆字符串，这时前台页面渲染需要将其以对象的形式展现，这时可以用到JSON.parse()。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://youcongtech.oss-cn-beijing.aliyuncs.com/zhifubao.png?Expires=1552975456&amp;OSSAccessKeyId=TMP.AQGewLxRk6J2lJ1PB80X8PIQT59wBfql1U3EqNuMEpJuPSJM4Hav9OjitjmYADAtAhQdhXpKH7IJJvusQLygLA5sFMCsmgIVAPgLvwKtUoTFxbftyti-zZiu-YCN&amp;Signature=w5eCG1ZUDPEEj3XWpGZofx4j76s%3D">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://youcongtech.oss-cn-beijing.aliyuncs.com/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190319122129.jpg?Expires=1552976294&amp;OSSAccessKeyId=TMP.AQGewLxRk6J2lJ1PB80X8PIQT59wBfql1U3EqNuMEpJuPSJM4Hav9OjitjmYADAtAhQdhXpKH7IJJvusQLygLA5sFMCsmgIVAPgLvwKtUoTFxbftyti-zZiu-YCN&amp;Signature=MGQVo1pOCzcCaq5CcDDeQPmhEUs%3D">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">VsCode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://developers-youcong.github.io/2019/03/22/JSON-stringify-和JSON-parse-的作用/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" class="archive-article-date">
-  	<time datetime="2019-02-25T11:46:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/03/21/mysql备份命令/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mysql备份命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/">vscode源码编译运行打包使其由英文变为中文</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">VsCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -268,9 +360,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

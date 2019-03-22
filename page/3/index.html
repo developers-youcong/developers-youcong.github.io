@@ -156,6 +156,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-node-js如何引用其它js文件" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/07/node-js如何引用其它js文件/">node.js如何引用其它js文件</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/07/node-js如何引用其它js文件/" class="archive-article-date">
+  	<time datetime="2019-03-07T11:50:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以Java来说，比如要实现第三方存储，我可能需要导入对应的库，以maven为例，使用腾讯云或者七牛云、阿里云，我需要导入对应的maven依赖。<br>再比如，有些时候我们封装某个类，而那个类不在该包下，我们需要导包(就是指定那个类的路径，如果路径不对，则可能出现找不到这个类之类的错误，通常对应的IDE会提示错误)。</p>
+<p>其实，node.js也是这样的。最近在开发node.js的时候，难免也会遇到需要引入其它js文件。今天我以一个简单示例来说一说node.js如何引用其它js文件。</p>
+<p>test01.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function hello()&#123;</span><br><span class="line">	</span><br><span class="line">	console.log(&quot;hello&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function hello2()&#123;</span><br><span class="line">	</span><br><span class="line">	console.log(&quot;hello2&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;hello,hello2&#125;</span><br></pre></td></tr></table></figure></p>
+<p>test02.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var test01 = require( &quot;./test01&quot; );</span><br><span class="line"></span><br><span class="line">test01.hello();</span><br><span class="line"></span><br><span class="line">test01.hello2();</span><br></pre></td></tr></table></figure></p>
+<p>通过命令行运行node test02.js 正常会分别输出hello、hello2。</p>
+<p>require是什么意思呢？<br>其实就跟我们Java开发导包一样的意思，在Java中是import，其实node.js也可以import式导包。</p>
+<p>那么node.js中的require和import导包有什么区别呢？<br>(1)require导包位置任意，而import导包必须在文件的最开始;<br>(2)遵循的规范不同，require/exports是CommonJS的一部分，而import/export是ES6的规范;<br>(3)出现时间不同，CommonJS作为node.js的规范，一直沿用至今，主要是因为npm善CommonJS的类库众多，以及CommonJS和ES6之间的差异，Node.js无法直接兼容ES6。所以现阶段require/exports仍然是必要且必须的;<br>(4)形式不同，require/exports的用法只有以下三种简单写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">— — — — — — — — — — — — — — </span><br><span class="line">exports.fs = fs;</span><br><span class="line">module.exports = fs;</span><br></pre></td></tr></table></figure></p>
+<p>而import/exports的写法就多种多样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import fs from &apos;fs&apos;;</span><br><span class="line">import &#123;default as fs&#125; from &apos;fs&apos;;</span><br><span class="line">import * as fs from &apos;fs&apos;;</span><br><span class="line">import &#123;readFile&#125; from &apos;fs&apos;;</span><br><span class="line">import &#123;readFile as read&#125; from &apos;fs&apos;;</span><br><span class="line">import fs, &#123;readFile&#125; from &apos;fs&apos;;</span><br><span class="line">— — — — — — — — — — — — — — — — — — — — </span><br><span class="line">export default fs;</span><br><span class="line">export const fs;</span><br><span class="line">export function readFile;</span><br><span class="line">export &#123;readFile, read&#125;;</span><br><span class="line">export * from &apos;fs&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>(5)本质上不同，主要体现:<br>a.CommonJS还是ES6 Module 输出都可以看成是一个具备多个属性或者方法的对象;<br>b.default是ES6 Module所独有的关键字，export default fs 输出默认的接口对象，import fs from ‘fs’可直接导入这个对象;<br>c.ES6 Module 中导入模块的属性或者方法是强绑定的，包括基础类型，而CommonJS则普通的值传递或者引用传递;</p>
+<p>本文参考链接如下所示:<br>node.js如何引用其它js文件:<a href="https://www.cnblogs.com/wuotto/p/9640312.html" target="_blank" rel="noopener">https://www.cnblogs.com/wuotto/p/9640312.html</a><br>关于require/import的区别:<a href="https://www.jianshu.com/p/fd39e16feb60" target="_blank" rel="noopener">https://www.jianshu.com/p/fd39e16feb60</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/07/node-js如何引用其它js文件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-jenkins忘记管理员密码之解决方案" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -941,85 +1024,6 @@
 
 
   
-    <article id="post-nginx让所有的http地址重定向到https" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/01/nginx让所有的http地址重定向到https/">nginx让所有的http地址重定向到https</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/01/nginx让所有的http地址重定向到https/" class="archive-article-date">
-  	<time datetime="2019-03-01T12:28:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>问:为什么让所有的http都重定向到https呢？<br>答:因为这样会使网站更安全些。</p>
-<p>那么我是如何在nginx配置，让输入<a href="http://www.youcongtech.com或者youcongtech.com全部都重定向到https://www.youcongtech.com的呢？" target="_blank" rel="noopener">http://www.youcongtech.com或者youcongtech.com全部都重定向到https://www.youcongtech.com的呢？</a><br>其实我仅仅只是在nginx.conf配置文件中的server配置了如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rewrite ^(.*)$  https://$host$1 permanent;</span><br></pre></td></tr></table></figure></p>
-<p>这段配置的含义将所有的http请求通过rewrite重写到https上。</p>
-<p>下面贴一下我的nginx.conf配置文件(主要重要的):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"> upstream  www.youcongtech.com&#123;</span><br><span class="line">         server   39.107.110.227:2019;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"> server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  www.youcongtech.com;</span><br><span class="line">        rewrite ^(.*)$  https://$host$1 permanent;</span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        location ~ / &#123;</span><br><span class="line">            root /usr/local/nginx/html;</span><br><span class="line">            index index.html index.htm;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">      error_page   500 502 503 504  /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      server &#123;</span><br><span class="line">        listen 443;</span><br><span class="line">        server_name www.youcongtech.com;</span><br><span class="line">        ssl on;</span><br><span class="line">        index index.html;</span><br><span class="line">        ssl_certificate /usr/local/nginx/cert/18540291_www.youcongtech.com.pem;</span><br><span class="line">        ssl_certificate_key /usr/local/nginx/cert/18540291_www.youcongtech.com.key;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                proxy_set_header X-Forwarded-Host $host;</span><br><span class="line">                proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">                proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">                proxy_set_header Host $http_host;</span><br><span class="line">                proxy_redirect off;</span><br><span class="line">                expires off;</span><br><span class="line">                sendfile off;</span><br><span class="line">                proxy_pass http://www.youcongtech.com;</span><br><span class="line">                root /usr/local/nginx/html;</span><br><span class="line">                index index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    	location ~ ^/blog/(.*)&#123;</span><br><span class="line">                 proxy_set_header Host $host;</span><br><span class="line">                 proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">                 proxy_pass http://www.youcongtech.com;    #转向tomcat处理</span><br><span class="line"></span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>上面参数到底是什么意思，加或者不加到底会怎么样，关于nginx参数详解和更好的优化，后续会有详细的讲解，我会继续编写我的博客系统，并以此作为案例。<br>当然了，如果公司涉及这块比较多，后续我也会以公司案例来给大家讲解。</p>
-<p>本文主要参考该地址:<a href="https://www.cnblogs.com/kevingrace/p/6187072.html" target="_blank" rel="noopener">https://www.cnblogs.com/kevingrace/p/6187072.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Nginx</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/01/nginx让所有的http地址重定向到https/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1130,6 +1134,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
@@ -1138,15 +1150,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1154,7 +1158,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1166,15 +1170,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1183,6 +1183,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">

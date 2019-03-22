@@ -156,6 +156,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-express框架之跨域请求" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/express框架之跨域请求/">express框架之跨域请求</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/13/express框架之跨域请求/" class="archive-article-date">
+  	<time datetime="2019-03-13T14:51:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>express.js跨域请求代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.all(&apos;*&apos;, function(req, res, next) &#123;</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Headers&quot;, &quot;X-Requested-With&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Methods&quot;,&quot;PUT,POST,GET,DELETE,OPTIONS&quot;);</span><br><span class="line">    res.header(&quot;X-Powered-By&quot;,&apos; 3.2.1&apos;)</span><br><span class="line">    res.header(&quot;Content-Type&quot;, &quot;application/json;charset=utf-8&quot;);</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>按照上面的代码，即可解决跨域问题。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/13/express框架之跨域请求/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-node-js之Cookie" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1014,89 +1089,6 @@
 
 
   
-    <article id="post-node-js如何引用其它js文件" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/07/node-js如何引用其它js文件/">node.js如何引用其它js文件</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/07/node-js如何引用其它js文件/" class="archive-article-date">
-  	<time datetime="2019-03-07T11:50:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以Java来说，比如要实现第三方存储，我可能需要导入对应的库，以maven为例，使用腾讯云或者七牛云、阿里云，我需要导入对应的maven依赖。<br>再比如，有些时候我们封装某个类，而那个类不在该包下，我们需要导包(就是指定那个类的路径，如果路径不对，则可能出现找不到这个类之类的错误，通常对应的IDE会提示错误)。</p>
-<p>其实，node.js也是这样的。最近在开发node.js的时候，难免也会遇到需要引入其它js文件。今天我以一个简单示例来说一说node.js如何引用其它js文件。</p>
-<p>test01.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function hello()&#123;</span><br><span class="line">	</span><br><span class="line">	console.log(&quot;hello&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function hello2()&#123;</span><br><span class="line">	</span><br><span class="line">	console.log(&quot;hello2&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;hello,hello2&#125;</span><br></pre></td></tr></table></figure></p>
-<p>test02.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var test01 = require( &quot;./test01&quot; );</span><br><span class="line"></span><br><span class="line">test01.hello();</span><br><span class="line"></span><br><span class="line">test01.hello2();</span><br></pre></td></tr></table></figure></p>
-<p>通过命令行运行node test02.js 正常会分别输出hello、hello2。</p>
-<p>require是什么意思呢？<br>其实就跟我们Java开发导包一样的意思，在Java中是import，其实node.js也可以import式导包。</p>
-<p>那么node.js中的require和import导包有什么区别呢？<br>(1)require导包位置任意，而import导包必须在文件的最开始;<br>(2)遵循的规范不同，require/exports是CommonJS的一部分，而import/export是ES6的规范;<br>(3)出现时间不同，CommonJS作为node.js的规范，一直沿用至今，主要是因为npm善CommonJS的类库众多，以及CommonJS和ES6之间的差异，Node.js无法直接兼容ES6。所以现阶段require/exports仍然是必要且必须的;<br>(4)形式不同，require/exports的用法只有以下三种简单写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">— — — — — — — — — — — — — — </span><br><span class="line">exports.fs = fs;</span><br><span class="line">module.exports = fs;</span><br></pre></td></tr></table></figure></p>
-<p>而import/exports的写法就多种多样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import fs from &apos;fs&apos;;</span><br><span class="line">import &#123;default as fs&#125; from &apos;fs&apos;;</span><br><span class="line">import * as fs from &apos;fs&apos;;</span><br><span class="line">import &#123;readFile&#125; from &apos;fs&apos;;</span><br><span class="line">import &#123;readFile as read&#125; from &apos;fs&apos;;</span><br><span class="line">import fs, &#123;readFile&#125; from &apos;fs&apos;;</span><br><span class="line">— — — — — — — — — — — — — — — — — — — — </span><br><span class="line">export default fs;</span><br><span class="line">export const fs;</span><br><span class="line">export function readFile;</span><br><span class="line">export &#123;readFile, read&#125;;</span><br><span class="line">export * from &apos;fs&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>(5)本质上不同，主要体现:<br>a.CommonJS还是ES6 Module 输出都可以看成是一个具备多个属性或者方法的对象;<br>b.default是ES6 Module所独有的关键字，export default fs 输出默认的接口对象，import fs from ‘fs’可直接导入这个对象;<br>c.ES6 Module 中导入模块的属性或者方法是强绑定的，包括基础类型，而CommonJS则普通的值传递或者引用传递;</p>
-<p>本文参考链接如下所示:<br>node.js如何引用其它js文件:<a href="https://www.cnblogs.com/wuotto/p/9640312.html" target="_blank" rel="noopener">https://www.cnblogs.com/wuotto/p/9640312.html</a><br>关于require/import的区别:<a href="https://www.jianshu.com/p/fd39e16feb60" target="_blank" rel="noopener">https://www.jianshu.com/p/fd39e16feb60</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/07/node-js如何引用其它js文件/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1207,6 +1199,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
@@ -1215,15 +1215,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1231,7 +1223,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1243,15 +1235,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1260,6 +1248,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
