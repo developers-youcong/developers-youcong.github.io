@@ -156,6 +156,81 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-js截取url参数" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/16/js截取url参数/">js截取url参数</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/16/js截取url参数/" class="archive-article-date">
+  	<time datetime="2019-03-16T07:24:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>举例说明，比如<a href="http://localhost:2019/blog/getCommentListInfo?postId=1" target="_blank" rel="noopener">http://localhost:2019/blog/getCommentListInfo?postId=1</a><br>如何获取postId=1这个参数值呢？<br>很简单通过下面代码即可获取，如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function() &#123;</span><br><span class="line"></span><br><span class="line">	var postId = getUrlParms(&quot;postId&quot;);</span><br><span class="line"></span><br><span class="line">	getByIdCommentInfo(postId);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//获取地址栏参数，name:参数名称</span><br><span class="line">function getUrlParms(name) &#123;</span><br><span class="line">	var reg = new RegExp(&quot;(^|&amp;)&quot; + name + &quot;=([^&amp;]*)(&amp;|$)&quot;);</span><br><span class="line">	var r = window.location.search.substr(1).match(reg);</span><br><span class="line">	if(r != null)</span><br><span class="line">		return unescape(r[2]);</span><br><span class="line">	return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>参考资料:<br>js获取url传递参数，js获取url?号后面的参数:<a href="https://www.cnblogs.com/karila/p/5991340.html" target="_blank" rel="noopener">https://www.cnblogs.com/karila/p/5991340.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/16/js截取url参数/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-express框架之跨域请求" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1011,87 +1086,9 @@
 
 
   
-    <article id="post-springboot实现跨域请求" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/07/springboot实现跨域请求/">Springboot实现跨域请求</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/07/springboot实现跨域请求/" class="archive-article-date">
-  	<time datetime="2019-03-07T12:12:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之所以需要用到跨域请求，目的在于现在的Java项目，几乎基本上都前后端分离，除一些较老的维护项目外(通常是单体或者是maven多模块形式，不过本质上还是将前端放在webapps下)。</p>
-<p>SpringBoot实现跨域其实和Spring是一样，区别不大，如果要说区别的话，Spring需要在对应的xml文件中配置bean，而SpringBoot则通过注解的方式。</p>
-<p>Spring配置跨域请求可参考我的这篇文章:<a href="https://www.cnblogs.com/youcong/p/9676433.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/p/9676433.html</a></p>
-<p>示例代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package com.blog.springboot.config;</span><br><span class="line"></span><br><span class="line">import org.springframework.context.annotation.Bean;  </span><br><span class="line">import org.springframework.context.annotation.Configuration;  </span><br><span class="line">import org.springframework.web.cors.CorsConfiguration;  </span><br><span class="line">import org.springframework.web.cors.UrlBasedCorsConfigurationSource;  </span><br><span class="line">import org.springframework.web.filter.CorsFilter;  </span><br><span class="line"></span><br><span class="line">@Configuration  </span><br><span class="line">public class CorsConfig &#123;  </span><br><span class="line">    private CorsConfiguration buildConfig() &#123;  </span><br><span class="line">        CorsConfiguration corsConfiguration = new CorsConfiguration();  </span><br><span class="line">        corsConfiguration.addAllowedOrigin(&quot;*&quot;); // 1允许任何域名使用</span><br><span class="line">        corsConfiguration.addAllowedHeader(&quot;*&quot;); // 2允许任何头</span><br><span class="line">        corsConfiguration.addAllowedMethod(&quot;*&quot;); // 3允许任何方法（post、get等） </span><br><span class="line">        return corsConfiguration;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    @Bean  </span><br><span class="line">    public CorsFilter corsFilter() &#123;  </span><br><span class="line">        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();  </span><br><span class="line">        source.registerCorsConfiguration(&quot;/**&quot;, buildConfig()); // 4  </span><br><span class="line">        return new CorsFilter(source);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>本文主要参考链接为:<br>SpringBoot跨域配置:<a href="https://www.cnblogs.com/nananana/p/8492185.html" target="_blank" rel="noopener">https://www.cnblogs.com/nananana/p/8492185.html</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/07/springboot实现跨域请求/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -1203,15 +1200,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1223,10 +1224,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
               </li>
              
@@ -1235,11 +1232,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1248,10 +1249,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">

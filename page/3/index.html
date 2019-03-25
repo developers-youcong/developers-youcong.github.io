@@ -156,6 +156,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-springboot实现跨域请求" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/07/springboot实现跨域请求/">Springboot实现跨域请求</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/07/springboot实现跨域请求/" class="archive-article-date">
+  	<time datetime="2019-03-07T12:12:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之所以需要用到跨域请求，目的在于现在的Java项目，几乎基本上都前后端分离，除一些较老的维护项目外(通常是单体或者是maven多模块形式，不过本质上还是将前端放在webapps下)。</p>
+<p>SpringBoot实现跨域其实和Spring是一样，区别不大，如果要说区别的话，Spring需要在对应的xml文件中配置bean，而SpringBoot则通过注解的方式。</p>
+<p>Spring配置跨域请求可参考我的这篇文章:<a href="https://www.cnblogs.com/youcong/p/9676433.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/p/9676433.html</a></p>
+<p>示例代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package com.blog.springboot.config;</span><br><span class="line"></span><br><span class="line">import org.springframework.context.annotation.Bean;  </span><br><span class="line">import org.springframework.context.annotation.Configuration;  </span><br><span class="line">import org.springframework.web.cors.CorsConfiguration;  </span><br><span class="line">import org.springframework.web.cors.UrlBasedCorsConfigurationSource;  </span><br><span class="line">import org.springframework.web.filter.CorsFilter;  </span><br><span class="line"></span><br><span class="line">@Configuration  </span><br><span class="line">public class CorsConfig &#123;  </span><br><span class="line">    private CorsConfiguration buildConfig() &#123;  </span><br><span class="line">        CorsConfiguration corsConfiguration = new CorsConfiguration();  </span><br><span class="line">        corsConfiguration.addAllowedOrigin(&quot;*&quot;); // 1允许任何域名使用</span><br><span class="line">        corsConfiguration.addAllowedHeader(&quot;*&quot;); // 2允许任何头</span><br><span class="line">        corsConfiguration.addAllowedMethod(&quot;*&quot;); // 3允许任何方法（post、get等） </span><br><span class="line">        return corsConfiguration;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    @Bean  </span><br><span class="line">    public CorsFilter corsFilter() &#123;  </span><br><span class="line">        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();  </span><br><span class="line">        source.registerCorsConfiguration(&quot;/**&quot;, buildConfig()); // 4  </span><br><span class="line">        return new CorsFilter(source);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>本文主要参考链接为:<br>SpringBoot跨域配置:<a href="https://www.cnblogs.com/nananana/p/8492185.html" target="_blank" rel="noopener">https://www.cnblogs.com/nananana/p/8492185.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">SpringBoot</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/07/springboot实现跨域请求/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-node-js如何引用其它js文件" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -925,108 +1003,9 @@
 
 
   
-    <article id="post-node-js使用express框架进行文件上传" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/01/node-js使用express框架进行文件上传/">node.js使用express框架进行文件上传</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/01/node-js使用express框架进行文件上传/" class="archive-article-date">
-  	<time datetime="2019-03-01T12:49:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于node.js使用express框架进行文件上传，主要来自于最近对Settings-Sync插件做的研究。<br>目前的研究算是取得的比较好的进展。<br>Settings-Sync中通过快捷键上传文件，其实主要还是请求后端接口。<br>于是我便使用node.js模拟一个服务，这个服务其实就相当于github api(Settings-Sync实际请求的接口，比如token验证，gist存储创建等都是来自github 对应的api)。</p>
-<p>话不多说，直接代码贴起讲解:</p>
-<h2><span id="1创建一个nodejs项目这里我以express框架为例">1.创建一个node.js项目(这里我以express框架为例)</span></h2><p>关于如何创建一个node.js项目我就不详细说，通常通过npm init就可以创建一个node.js项目了。<br>关于node.js项目详细教程，可以参考该篇文章<a href="https://www.jianshu.com/p/7b0a5d4491ba" target="_blank" rel="noopener">nodeJS入门——新建一个项目及代码详解</a><br>当然了，如果你是直接通过这篇文章操作，最先可能会报这个错误，错误信息如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;express&apos; 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br></pre></td></tr></table></figure>
-<p>解决方式很简单，并不是npm install -g express就可以的，在此之前还需执行npm install -g express-generator</p>
-<p>这条命令很好理解，你可以将其理解为你的express框架生成器，以Java中Maven来说，通常ide就把maven结构都弄好了，你只需在创建项目的时候，勾选maven即可，它会自己将所有相关项目包括配置文件一起生成。</p>
-<p>虽然说我将地址贴出来，但是我觉得还是实际操作一遍，这样对此有一个感性认识(初学编程的人或者是已经有编程经验的人，是绝对不能忽略这一点的)。</p>
-<p>流程如下:</p>
-<h4><span id="a使用express命令创建express项目">a.使用express命令创建express项目</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express blog</span><br></pre></td></tr></table></figure>
-<h5><span id="效果图如下">效果图如下:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express01.png" alt=""></p>
-<p>express非常有人性化，已经告诉你怎么进入blog项目及其安装相关的库依赖和启动了，你只需按照它的这个步骤，一步一步来就行了。</p>
-<h4><span id="b目录结构分析">b.目录结构分析</span></h4><h5><span id="示意图如下所示">示意图如下所示:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express02.png" alt=""><br>app.js:——启动文件，也可以说是主文件入口。<br>package.json——定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。<br>node_modules——存放package.json中安装的模块，当你在package.json添加依赖的模块并安装后，存放在这个文件夹下<br>public——存放image、css、js等文件<br>routes——存放路由文件<br>views——存放视图文件或者说模板文件<br>bin——存放可执行文件</p>
-<h2><span id="2使用express框架进行文件上传">2.使用express框架进行文件上传</span></h2><p>注意，目录结构如下所示(我主要是复用最近研究的mock-github-api):<br><img src="/2019/03/01/node-js使用express框架进行文件上传/express03.png" alt=""></p>
-<h4><span id="a准备html文件">a.准备html文件</span></h4><p>public文件夹主要放置静态文件，如index.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;文件上传&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h3&gt;文件上传：&lt;/h3&gt;</span><br><span class="line">    选择一个文件上传: &lt;br /&gt;</span><br><span class="line">    &lt;form action=&quot;/gists&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;file&quot; name=&quot;content&quot; /&gt;</span><br><span class="line">        &lt;br /&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;上传文件&quot; /&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<h4><span id="b编写相关的js">b.编写相关的js</span></h4><p>像upload.js属于路由，通常放置在routes文件夹下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var multer  = require(&apos;multer&apos;);</span><br><span class="line">var path = require(&apos;path&apos;);</span><br><span class="line">var router = express.Router();</span><br><span class="line"></span><br><span class="line">var upload = multer(&#123;dest: &apos;upload_tmp/&apos;&#125;);</span><br><span class="line"></span><br><span class="line">router.post(&apos;/&apos;, upload.any(), function(req, res, next) &#123;</span><br><span class="line">    console.log(req.files[0]);  // 上传的文件信息</span><br><span class="line"></span><br><span class="line">    var des_file = &quot;./upload/&quot; + req.files[0].originalname;</span><br><span class="line">    fs.readFile( req.files[0].path, function (err, data) &#123;</span><br><span class="line">        fs.writeFile(des_file, data, function (err) &#123;</span><br><span class="line">            if( err )&#123;</span><br><span class="line">                console.log( err );</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                response = &#123;</span><br><span class="line">                    message:&apos;File uploaded successfully&apos;,</span><br><span class="line">                    filename:req.files[0].originalname</span><br><span class="line">                &#125;;</span><br><span class="line">                console.log( response );</span><br><span class="line">                res.end( JSON.stringify( response ) );</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">module.exports = router;</span><br></pre></td></tr></table></figure></p>
-<h4><span id="c上传文件及其效果">c.上传文件及其效果</span></h4><h5><span id="页面图">页面图:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express04.png" alt=""></p>
-<h5><span id="上传成功显示图">上传成功显示图:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express05.png" alt=""></p>
-<h5><span id="upload文件夹下会有对应的文件也就是你刚刚通过页面上传的文件">upload文件夹下会有对应的文件(也就是你刚刚通过页面上传的文件)</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express06.png" alt=""></p>
-<p>最后例子中还有阿里云和腾讯云的图片存储，大家可以做一个参考。</p>
-<p>源码地址为:<a href="https://github.com/developers-youcong/mock-github-api" target="_blank" rel="noopener">https://github.com/developers-youcong/mock-github-api</a></p>
-<p>希望能够对大家有所启发和帮助</p>
-<p>注意，可能遇到的问题:</p>
-<p>问题一:静态资源需要放行，否则无法访问<br>在index.js补充这段代码即可解决这个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(path.join(__dirname, &apos;public&apos;)))</span><br></pre></td></tr></table></figure></p>
-<p>问题二:socket hang up</p>
-<p>我将var bodyParser = require(‘body-parser’)去除就解决了这个问题</p>
-<p>参考链接如:<a href="https://blog.csdn.net/gsying1474/article/details/52200445" target="_blank" rel="noopener">https://blog.csdn.net/gsying1474/article/details/52200445</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/01/node-js使用express框架进行文件上传/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -1138,15 +1117,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1158,10 +1141,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
               </li>
              
@@ -1170,11 +1149,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Nginx</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1183,10 +1166,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
