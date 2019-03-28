@@ -156,6 +156,169 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-如何让Node-js运行在浏览器端" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/28/如何让Node-js运行在浏览器端/">如何让Node.js运行在浏览器端</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/28/如何让Node-js运行在浏览器端/" class="archive-article-date">
+  	<time datetime="2019-03-28T09:02:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Node.js又称服务端JavaScript。<br>今天我为了解决一个问题，通过搜索引擎找到了如何将Node.js转成浏览器端可以运行的javascript。<br>尽管这种方式有其局限性，但是还是可以用的。</p>
+<h2><span id="1安装库">1.安装库</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g browserify</span><br></pre></td></tr></table></figure>
+<h2><span id="2转换">2.转换</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">browserify test.js &gt; index.js</span><br><span class="line">或</span><br><span class="line"> browserify test &gt; index.js</span><br><span class="line">或</span><br><span class="line">browserify test.js -o index.js</span><br></pre></td></tr></table></figure>
+<p>以上三种方式均可行</p>
+<p>参考资料:<br>如何让nodejs写的代码在浏览器里面运行:<a href="https://jingyan.baidu.com/article/48b37f8dda4cb11a646488b9.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/48b37f8dda4cb11a646488b9.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/28/如何让Node-js运行在浏览器端/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Ubuntu16-04安装和使用ElasticSearch" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/">Ubuntu16.04安装和使用ElasticSearch</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" class="archive-article-date">
+  	<time datetime="2019-03-28T08:50:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2><span id="1下载es">1.下载es</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz</span><br></pre></td></tr></table></figure>
+<h2><span id="2解压并将其放到usrlocal目录下">2.解压并将其放到/usr/local目录下</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf elasticsearch-2.4.4.tar.gz -C /usr/local</span><br><span class="line">cd /usr/local/elasticsearch-2.4.4</span><br></pre></td></tr></table></figure>
+<h2><span id="3修改es配置文件">3.修改es配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd config</span><br><span class="line">vim elasticsearch.yml</span><br></pre></td></tr></table></figure>
+<p>在elasticsearch.yml添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">bootstrap.memory_lock: true</span><br><span class="line">index.cache.field.max_size: 50000</span><br><span class="line">index.cache.field.expire: 30m</span><br><span class="line">index.cache.field.type: soft</span><br><span class="line"></span><br><span class="line">network.host: 0.0.0.0</span><br><span class="line"></span><br><span class="line">action.disable_delete_all_indices : true</span><br></pre></td></tr></table></figure></p>
+<h2><span id="4启动">4.启动</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ../bin</span><br><span class="line"></span><br><span class="line">//直接启动ElasticSearch</span><br><span class="line">./elasticsearch </span><br><span class="line"></span><br><span class="line">//或者使用后台方式进行启动</span><br><span class="line">./elasticsearch -d</span><br></pre></td></tr></table></figure>
+<h2><span id="查看端口占用">查看端口占用</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -anp|grep 9200 或lsof -i:9200 //看该进程是否正常运行</span><br></pre></td></tr></table></figure>
+<p>出现的问题:<br>Exception in thread “main” Java.lang.RuntimeException: don’t run elasticsearch as root.<br>at org.elasticsearch.bootstrap.Bootstrap.initializeNatives(Bootstrap.java:93)<br>at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:144)<br>at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:270)<br>at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:35)</p>
+<p>解决办法一:<br>添加用户并授权<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user add test</span><br><span class="line">chown -R test /usr/local/elasticsearch-2.4.4</span><br></pre></td></tr></table></figure></p>
+<p>解决办法二:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./elasticsearch -Des.insecure.allow.root=true</span><br><span class="line">或者</span><br><span class="line">vi elasticsearch</span><br><span class="line"></span><br><span class="line">// 找到ES_JAVA_OPTS在其后追加</span><br><span class="line">ES_JAVA_OPTS=&quot;-Des.insecure.allow.root=true&quot;</span><br></pre></td></tr></table></figure></p>
+<p>本人建议使用第一种方法，因为最好不要习惯用root用户，否则一旦不慎执行某些操作，后果很严重。</p>
+<h2><span id="5网站访问">5.网站访问</span></h2><p><a href="http://IP地址:9200" target="_blank" rel="noopener">http://IP地址:9200</a><br>出现如图所示:<br><img src="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/es.png" alt=""></p>
+<p>参考资料:<br>【Linux进阶】Ubuntu 16.04安装ElasticSearch:<a href="https://blog.csdn.net/u011404265/article/details/72870166" target="_blank" rel="noopener">https://blog.csdn.net/u011404265/article/details/72870166</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-VsCode云端版本" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -794,162 +957,6 @@
 
 
   
-    <article id="post-js获取访问IP、地区、、当前操作浏览器" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/">js获取访问IP、地区、、当前操作浏览器</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" class="archive-article-date">
-  	<time datetime="2019-03-21T05:18:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>js获取IP、地区、当前操作浏览器有什么用呢？</p>
-<p>我的回答是用处很多，比如现在的异地登录和对用户常用浏览器做数据分析等。</p>
-<p>源代码如下:<br>index.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;http://pv.sohu.com/cityjson?ie=utf-8&quot;&gt;&lt;/script&gt; </span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">        document.write(&apos;IP地址:&apos; + returnCitySN[&quot;cip&quot;] + &apos;, CID:&apos; + returnCitySN[&quot;cid&quot;] + &apos;, 地区:&apos; + returnCitySN[&quot;cname&quot;]+&quot;,浏览器版本:&quot;+getBrowserInfo());</span><br><span class="line">		</span><br><span class="line">		function getBrowserInfo()</span><br><span class="line">&#123;</span><br><span class="line">    var agent = navigator.userAgent.toLowerCase() ;</span><br><span class="line"></span><br><span class="line">    var regStr_ie = /msie [\d.]+;/gi ;</span><br><span class="line">    var regStr_ff = /firefox\/[\d.]+/gi</span><br><span class="line">    var regStr_chrome = /chrome\/[\d.]+/gi ;</span><br><span class="line">    var regStr_saf = /safari\/[\d.]+/gi ;</span><br><span class="line">    </span><br><span class="line">    //IE</span><br><span class="line">    if(agent.indexOf(&quot;msie&quot;) &gt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_ie) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //firefox</span><br><span class="line">    if(agent.indexOf(&quot;firefox&quot;) &gt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_ff) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Chrome</span><br><span class="line">    if(agent.indexOf(&quot;chrome&quot;) &gt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_chrome) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Safari</span><br><span class="line">    if(agent.indexOf(&quot;safari&quot;) &gt; 0 &amp;&amp; agent.indexOf(&quot;chrome&quot;) &lt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_saf) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>展示效果如下:<br><img src="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/js01.png" alt=""></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Uncaught-ReferenceError-layer-is-not-defined" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/">Uncaught ReferenceError: layer is not defined</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" class="archive-article-date">
-  	<time datetime="2019-03-19T12:35:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>错误详细信息,如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught ReferenceError: layer is not defined&apos;</span><br></pre></td></tr></table></figure></p>
-<p>关键词就是not defined 未定义，那么解决方案就是给它定义。</p>
-<p>原来的问题代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>这样在我的博客首页是可以生效的，不会出现未定义。但是当我将其抽象为一个函数的时候，其它地方就不行了。</p>
-<p>通过声明定义后，代码就变成如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">layui.use(&apos;layer&apos;,function () &#123; </span><br><span class="line">       	</span><br><span class="line">       layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br><span class="line">       </span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>当时我在想引入layer.js来解决这个问题，但是仔细一看这并不是问题的关键所在。<br>解决问题，在于更好的理解问题，当然了，把握关键词也是很重要的(事半功倍)。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1060,11 +1067,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1072,7 +1079,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1080,7 +1087,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1096,7 +1103,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,7 +1119,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -156,6 +156,186 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mybatis之一对多" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/mybatis之一对多/">mybatis之一对多</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/06/mybatis之一对多/" class="archive-article-date">
+  	<time datetime="2019-03-06T12:54:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天主要话题围绕这么几个方面？</p>
+<ul>
+<li>mybatis一对多示例</li>
+<li>sql优化策略</li>
+</ul>
+<h2><span id="一-mybatis之一对多">一、mybatis之一对多</span></h2><p>在说一对多之前，顺便说一下一对一。</p>
+<p>一对一，常见的例子，比如以常见的班级例子来说，一个班主任只属于一个班级(排除某个班主任能力超群可兼任多个班级).</p>
+<p>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt; </span><br><span class="line">&lt;!DOCTYPE mapper    PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;    </span><br><span class="line">    &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt; </span><br><span class="line">&lt;!--  为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样保证了namespace的值是唯一的--&gt;</span><br><span class="line">&lt;mapper namespace=&quot;com.yc.mybatis.test.classMapper&quot;&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;!-- </span><br><span class="line">         方式一：嵌套结果：使用嵌套结果映射来处理重复的联合结果的子集</span><br><span class="line">                 封装联表查询的数据(去除重复的数据)</span><br><span class="line">         select * from class c, teacher t where c.teacher_id=t.t_id and c.c_id=1</span><br><span class="line">     --&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;select id=&quot;getClass&quot; parameterType=&quot;int&quot; resultMap=&quot;getClassMap&quot;&gt;</span><br><span class="line">        select * from class c, teacher t  where c.teacher_id = t.t_id and c.teacher_id=#&#123;id&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;!-- resultMap:映射实体类和字段之间的一一对应的关系 --&gt;</span><br><span class="line">    &lt;resultMap type=&quot;Classes&quot; id=&quot;getClassMap&quot;&gt;</span><br><span class="line">        &lt;id property=&quot;id&quot; column=&quot;c_id&quot;/&gt;   </span><br><span class="line">        &lt;result property=&quot;name&quot; column=&quot;c_name&quot;/&gt;</span><br><span class="line">        &lt;association property=&quot;teacher&quot; javaType=&quot;Teacher&quot;&gt;   </span><br><span class="line">            &lt;id property=&quot;id&quot; column=&quot;t_id&quot;/&gt;</span><br><span class="line">            &lt;result property=&quot;name&quot; column=&quot;t_name&quot;/&gt;</span><br><span class="line">        &lt;/association&gt;</span><br><span class="line">    &lt;/resultMap&gt;</span><br><span class="line">    </span><br><span class="line">     &lt;!-- </span><br><span class="line">         方式二：嵌套查询：通过执行另外一个SQL映射语句来返回预期的复杂类型</span><br><span class="line">         SELECT * FROM class WHERE c_id=1;</span><br><span class="line">         SELECT * FROM teacher WHERE t_id=1   //1 是上一个查询得到的teacher_id的值</span><br><span class="line">         property:别名(属性名)    column：列名 --&gt;</span><br><span class="line">          &lt;!-- 把teacher的字段设置进去 --&gt;</span><br><span class="line">    &lt;select id=&quot;getClass1&quot; parameterType=&quot;int&quot; resultMap=&quot;getClassMap1&quot;&gt;</span><br><span class="line">        select * from class where c_id=#&#123;id&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;resultMap type=&quot;Classes&quot; id=&quot;getClassMap1&quot;&gt;</span><br><span class="line">        &lt;id property=&quot;id&quot; column=&quot;c_id&quot;/&gt;   </span><br><span class="line">        &lt;result property=&quot;name&quot; column=&quot;c_name&quot;/&gt;</span><br><span class="line">        &lt;association property=&quot;teacher&quot; column=&quot;teacher_id&quot; select=&quot;getTeacher&quot;/&gt;   </span><br><span class="line">    &lt;/resultMap&gt;</span><br><span class="line">    &lt;select id=&quot;getTeacher&quot; parameterType=&quot;int&quot; resultType=&quot;Teacher&quot;&gt;</span><br><span class="line">        select t_id id,t_name name from teacher where t_id =#&#123;id&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure></p>
+<p>顺便对association标签的属性进行解释:<br>property:对象属性名称<br>javaType:对象属性类型<br>column:所对应的外键字段名称</p>
+<p>一对多，以我博客为例，比如今天我写的一个近期评论的接口就是一个一对多的体现(一个评论者可以对应多篇文章，相反，多篇文章也能对应一个评论者，从中可以体现一对多，多对一，甚至多对多的关系)</p>
+<p>关于一对一、一对多或者多对多，可以参考<a href="https://www.cnblogs.com/yaobolove/p/5444046.html" target="_blank" rel="noopener">Mybatis 一对一，一对多，多对一，多对多的理解</a></p>
+<p>话不多说，看xml代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;mapper namespace=&quot;com.blog.springboot.dao.CommentsDao&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 通用查询映射结果 --&gt;</span><br><span class="line">    &lt;resultMap id=&quot;BaseResultMap&quot; type=&quot;com.blog.springboot.entity.Comments&quot;&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;id column=&quot;comment_ID&quot; property=&quot;commentId&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_post_ID&quot; property=&quot;commentPostId&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_author&quot; property=&quot;commentAuthor&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_author_email&quot; property=&quot;commentAuthorEmail&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_author_url&quot; property=&quot;commentAuthorUrl&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_author_IP&quot; property=&quot;commentAuthorIp&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_date&quot; property=&quot;commentDate&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_date_gmt&quot; property=&quot;commentDateGmt&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_content&quot; property=&quot;commentContent&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_karma&quot; property=&quot;commentKarma&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_approved&quot; property=&quot;commentApproved&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_agent&quot; property=&quot;commentAgent&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_type&quot; property=&quot;commentType&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;comment_parent&quot; property=&quot;commentParent&quot; /&gt;</span><br><span class="line">        &lt;result column=&quot;user_id&quot; property=&quot;userId&quot; /&gt;</span><br><span class="line">        </span><br><span class="line">        &lt;collection property=&quot;posts&quot; ofType=&quot;Posts&quot;&gt;</span><br><span class="line">        	&lt;result column=&quot;post_title&quot; property=&quot;postTitle&quot;/&gt;</span><br><span class="line">        &lt;/collection&gt;</span><br><span class="line">        </span><br><span class="line">    &lt;/resultMap&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 通用查询结果列 --&gt;</span><br><span class="line">    &lt;sql id=&quot;Base_Column_List&quot;&gt;</span><br><span class="line">        comment_ID AS commentId, comment_post_ID AS commentPostId, comment_author AS commentAuthor, comment_author_email AS commentAuthorEmail, comment_author_url AS commentAuthorUrl, comment_author_IP AS commentAuthorIp, comment_date AS commentDate, comment_date_gmt AS commentDateGmt, comment_content AS commentContent, comment_karma AS commentKarma, comment_approved AS commentApproved, comment_agent AS commentAgent, comment_type AS commentType, comment_parent AS commentParent, user_id AS userId</span><br><span class="line">    &lt;/sql&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;select id=&quot;recentComments&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">    	SELECT comments.comment_author,posts.post_title FROM wp_comments AS comments LEFT JOIN wp_posts AS posts ON(comments.comment_post_ID=posts.ID) WHERE comments.comment_approved=&apos;0&apos; AND posts.post_status=&apos;publish&apos; ORDER BY comments.comment_date_gmt DESC LIMIT 0,5</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line"></span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure></p>
+<p>相关属性我就不做多的解释，关于MyBatis相关的教程，除了参考官网之外，还可以参考我的博客系列文章，地址为:<a href="https://www.cnblogs.com/youcong/category/1144041.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/category/1144041.html</a></p>
+<p>关于ofType还是要说的，如果你的mybatis-config.xml或者是springboot中的application.yml或application.properties没有配置对应的别名，那么请将类的完整路径填写上去，假定我没有做出相关的配置的话，那么我需要这么写 ofType=”com.blog.springboot.entity.Posts”。</p>
+<p>collection的property要包含在com.blog.springboot.entity.Comments类里面</p>
+<p>我贴出我的Comments类，大家可以做一个参考:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br></pre></td><td class="code"><pre><span class="line">package com.blog.springboot.entity;</span><br><span class="line"></span><br><span class="line">import java.io.Serializable;</span><br><span class="line">import java.util.Date;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">import com.baomidou.mybatisplus.activerecord.Model;</span><br><span class="line">import com.baomidou.mybatisplus.annotations.TableField;</span><br><span class="line">import com.baomidou.mybatisplus.annotations.TableId;</span><br><span class="line">import com.baomidou.mybatisplus.annotations.TableName;</span><br><span class="line">import com.baomidou.mybatisplus.enums.IdType;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * &lt;p&gt;</span><br><span class="line"> * </span><br><span class="line"> * &lt;/p&gt;</span><br><span class="line"> *</span><br><span class="line"> * @author youcong</span><br><span class="line"> * @since 2019-02-12</span><br><span class="line"> */</span><br><span class="line">@TableName(&quot;wp_comments&quot;)</span><br><span class="line">public class Comments extends Model&lt;Comments&gt; &#123;</span><br><span class="line"></span><br><span class="line">    private static final long serialVersionUID = 1L;</span><br><span class="line"></span><br><span class="line">    @TableId(value = &quot;comment_ID&quot;, type = IdType.AUTO)</span><br><span class="line">    private Long commentId;</span><br><span class="line">    @TableField(&quot;comment_post_ID&quot;)</span><br><span class="line">    private Long commentPostId;</span><br><span class="line">    @TableField(&quot;comment_author&quot;)</span><br><span class="line">    private String commentAuthor;</span><br><span class="line">    @TableField(&quot;comment_author_email&quot;)</span><br><span class="line">    private String commentAuthorEmail;</span><br><span class="line">    @TableField(&quot;comment_author_url&quot;)</span><br><span class="line">    private String commentAuthorUrl;</span><br><span class="line">    @TableField(&quot;comment_author_IP&quot;)</span><br><span class="line">    private String commentAuthorIp;</span><br><span class="line">    @TableField(&quot;comment_date&quot;)</span><br><span class="line">    private Date commentDate;</span><br><span class="line">    @TableField(&quot;comment_date_gmt&quot;)</span><br><span class="line">    private Date commentDateGmt;</span><br><span class="line">    @TableField(&quot;comment_content&quot;)</span><br><span class="line">    private String commentContent;</span><br><span class="line">    @TableField(&quot;comment_karma&quot;)</span><br><span class="line">    private Integer commentKarma;</span><br><span class="line">    @TableField(&quot;comment_approved&quot;)</span><br><span class="line">    private String commentApproved;</span><br><span class="line">    @TableField(&quot;comment_agent&quot;)</span><br><span class="line">    private String commentAgent;</span><br><span class="line">    @TableField(&quot;comment_type&quot;)</span><br><span class="line">    private String commentType;</span><br><span class="line">    @TableField(&quot;comment_parent&quot;)</span><br><span class="line">    private Long commentParent;</span><br><span class="line">    @TableField(&quot;user_id&quot;)</span><br><span class="line">    private Long userId;</span><br><span class="line">    </span><br><span class="line">    @TableField(exist=false)</span><br><span class="line">    private List&lt;Posts&gt; posts;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    public List&lt;Posts&gt; getPosts() &#123;</span><br><span class="line">		return posts;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setPosts(List&lt;Posts&gt; posts) &#123;</span><br><span class="line">		this.posts = posts;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public Long getCommentId() &#123;</span><br><span class="line">        return commentId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentId(Long commentId) &#123;</span><br><span class="line">        this.commentId = commentId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Long getCommentPostId() &#123;</span><br><span class="line">        return commentPostId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentPostId(Long commentPostId) &#123;</span><br><span class="line">        this.commentPostId = commentPostId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getCommentAuthor() &#123;</span><br><span class="line">        return commentAuthor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentAuthor(String commentAuthor) &#123;</span><br><span class="line">        this.commentAuthor = commentAuthor;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getCommentAuthorEmail() &#123;</span><br><span class="line">        return commentAuthorEmail;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentAuthorEmail(String commentAuthorEmail) &#123;</span><br><span class="line">        this.commentAuthorEmail = commentAuthorEmail;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getCommentAuthorUrl() &#123;</span><br><span class="line">        return commentAuthorUrl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentAuthorUrl(String commentAuthorUrl) &#123;</span><br><span class="line">        this.commentAuthorUrl = commentAuthorUrl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getCommentAuthorIp() &#123;</span><br><span class="line">        return commentAuthorIp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentAuthorIp(String commentAuthorIp) &#123;</span><br><span class="line">        this.commentAuthorIp = commentAuthorIp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Date getCommentDate() &#123;</span><br><span class="line">        return commentDate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentDate(Date commentDate) &#123;</span><br><span class="line">        this.commentDate = commentDate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Date getCommentDateGmt() &#123;</span><br><span class="line">        return commentDateGmt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentDateGmt(Date commentDateGmt) &#123;</span><br><span class="line">        this.commentDateGmt = commentDateGmt;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getCommentContent() &#123;</span><br><span class="line">        return commentContent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentContent(String commentContent) &#123;</span><br><span class="line">        this.commentContent = commentContent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Integer getCommentKarma() &#123;</span><br><span class="line">        return commentKarma;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentKarma(Integer commentKarma) &#123;</span><br><span class="line">        this.commentKarma = commentKarma;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getCommentApproved() &#123;</span><br><span class="line">        return commentApproved;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentApproved(String commentApproved) &#123;</span><br><span class="line">        this.commentApproved = commentApproved;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getCommentAgent() &#123;</span><br><span class="line">        return commentAgent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentAgent(String commentAgent) &#123;</span><br><span class="line">        this.commentAgent = commentAgent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getCommentType() &#123;</span><br><span class="line">        return commentType;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentType(String commentType) &#123;</span><br><span class="line">        this.commentType = commentType;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Long getCommentParent() &#123;</span><br><span class="line">        return commentParent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setCommentParent(Long commentParent) &#123;</span><br><span class="line">        this.commentParent = commentParent;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public Long getUserId() &#123;</span><br><span class="line">        return userId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void setUserId(Long userId) &#123;</span><br><span class="line">        this.userId = userId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected Serializable pkVal() &#123;</span><br><span class="line">        return this.commentId;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public String toString() &#123;</span><br><span class="line">        return &quot;Comments&#123;&quot; +</span><br><span class="line">        &quot;, commentId=&quot; + commentId +</span><br><span class="line">        &quot;, commentPostId=&quot; + commentPostId +</span><br><span class="line">        &quot;, commentAuthor=&quot; + commentAuthor +</span><br><span class="line">        &quot;, commentAuthorEmail=&quot; + commentAuthorEmail +</span><br><span class="line">        &quot;, commentAuthorUrl=&quot; + commentAuthorUrl +</span><br><span class="line">        &quot;, commentAuthorIp=&quot; + commentAuthorIp +</span><br><span class="line">        &quot;, commentDate=&quot; + commentDate +</span><br><span class="line">        &quot;, commentDateGmt=&quot; + commentDateGmt +</span><br><span class="line">        &quot;, commentContent=&quot; + commentContent +</span><br><span class="line">        &quot;, commentKarma=&quot; + commentKarma +</span><br><span class="line">        &quot;, commentApproved=&quot; + commentApproved +</span><br><span class="line">        &quot;, commentAgent=&quot; + commentAgent +</span><br><span class="line">        &quot;, commentType=&quot; + commentType +</span><br><span class="line">        &quot;, commentParent=&quot; + commentParent +</span><br><span class="line">        &quot;, userId=&quot; + userId +</span><br><span class="line">        &quot;&#125;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也许大家发现我的mybatis与你们的mybatis不一样，实际上我用的是mybatis-plus，mybatis-plus可以说跟mybatis几乎没有什么区别，我多次强调过，mybatis-plus是mybatis的增强版，意味着mybatis原有的功能，mybatis-plus可以毫无顾忌的拿来即用。</p>
+<p>关于mybatis-plus的学习教程，感兴趣的朋友可以参考我的这篇博客(包含从入门到使用):<a href="https://www.cnblogs.com/youcong/category/1213059.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/category/1213059.html</a></p>
+<h2><span id="sql优化策略">sql优化策略</span></h2><p>sql优化的策略有很多，大家可以参考如下:</p>
+<p>(1)任何地方都不要使用select <em> from table_name，请使用具体的字段列表代替”</em>“ ，不要返回用不到的任何字段;<br>(2)对查询进行优化，应尽量避免全表扫描，首先应考虑在where及order by涉及的列建立索引;<br>(3)应尽量避免在where子句中使用or来连接条件，否则将导致引擎放弃使用索引而进行全表扫描;<br>(4)应尽量避免在where子句中使用!=或&lt;&gt;操作符，否则将导致引擎放弃使用索引而进行全表扫描;<br>(5)int和not in慎用，否则会导致全表扫描;<br>(6)应尽量避免在where子句中对字段进行表达式操作，这将导致引擎放弃使用索引而进行全表扫描;<br>(7)很多时候使用exists代替in是一个好的选择;<br>(8)尽量使用数字型字段，若只含数值信息的字段设计为字符型，这将会降低查询和连接的性能，并会增加存储开销,这是因为引擎在处理查询和连接时会逐个比较字符串职工的每一个字符，而对于数字型而言只需要比较一次就够了;<br>(9)尽可能使用varchar代替char，因为首先变长字段存储空间小，可以节省存储空间，其次对于查询来说，在一个相对较小的字段内搜索效率显然要高些;</p>
+<p>当然远远不止这么多，知识的海洋是无穷的，探索的乐趣亦如此。</p>
+<p>关于sql优化思路，大家可以参考<a href="https://www.cnblogs.com/wcwen1990/p/7204739.html" target="_blank" rel="noopener">SQL优化思路大全</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/06/mybatis之一对多/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" class="archive-article-date">
+  	<time datetime="2019-03-05T13:16:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。</p>
+<p>错误信息如下:<br>org.apache.ibatis.binding.BindingException: Invalid bound statement<br>  (not found)</p>
+<p>通常原因是因为Mapper interface和xml文件的定义对不上，通常需要检查包名、namespace、函数名等。</p>
+<p>出现这个错误的原因是我太过相信自我了，觉得自觉没有错，于是手打，结果就是一个单词写错了。</p>
+<p>看代码示例:</p>
+<p>xml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;resentPosts&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line"> 	SELECT post_title FROM `wp_posts` WHERE post_status = &apos;publish&apos; ORDER BY post_modified DESC LIMIT 0,5 </span><br><span class="line"> &lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
+<p>dao(interface):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//近期文章</span><br><span class="line">public List&lt;Posts&gt; recentPosts();</span><br></pre></td></tr></table></figure></p>
+<p>大家很容易会看出select标签中的id与dao中的接口函数名不对应。这就是问题的根源，改成一样的，如下(即可解决问题)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;recentPosts&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">  	SELECT post_title FROM `wp_posts` WHERE post_status = &apos;publish&apos; ORDER BY post_modified DESC LIMIT 0,5 </span><br><span class="line">  &lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p>最后说一句，遇到问题不要慌，找到问题关键信息，复制到百度上/谷歌或者stackoverflow即可找到答案。</p>
+<p>太阳底下没有新鲜事儿，你遇到过的，说不定别人也遇到过。</p>
+<p>参考链接:<a href="https://www.cnblogs.com/lfm601508022/p/InvalidBoundStatement.html" target="_blank" rel="noopener">https://www.cnblogs.com/lfm601508022/p/InvalidBoundStatement.html</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">MyBatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-node-js服务端程序在Linux上持久运行" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -843,165 +1023,6 @@
 
 
   
-    <article id="post-vscode源码编译运行打包使其由英文变为中文" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/">vscode源码编译运行打包使其由英文变为中文</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" class="archive-article-date">
-  	<time datetime="2019-02-25T11:46:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>vscode默认是英文，如果你想让其变为中文，可参考这个链接:<a href="https://blog.csdn.net/testcs_dn/article/details/75070415" target="_blank" rel="noopener">https://blog.csdn.net/testcs_dn/article/details/75070415</a></p>
-<p>最近发现一个很奇怪的问题，vscode打包前和打包后存在很大的不同的，正常来说，比如我们开发项目，实际上来说，本地怎么样，线上就怎么样，当然了，也不排除一些线上导致的bug。</p>
-<p>比如vscode源码已经启用了中文语言包插件，同时也修改了locale.json文件(将文件中的en改为zh-CN)，但是还是是英文，后来我转念一想，将这个中文语言包弄到打包好的插件放置处，最后发现居然可以了。</p>
-<p>当然了，也存在一点问题，问题是绝大部分可以翻译为中文，少部分还是英文。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">VsCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-阿里云配置tomcat-https" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/25/阿里云配置tomcat-https/">阿里云配置tomcat https</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/25/阿里云配置tomcat-https/" class="archive-article-date">
-  	<time datetime="2019-02-25T11:22:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>阿里云申请免费的SSL证书和配置https，可参考该篇博文:<a href="https://blog.csdn.net/baidu_19473529/article/details/70037976" target="_blank" rel="noopener">https://blog.csdn.net/baidu_19473529/article/details/70037976</a></p>
-<p>虽然有现成的，不过我还是要做一个小小的总结记录一下。</p>
-<p>由于我公司使用的tomcat主要是8.5,所以我以8.5配置作为讲解(总的来说，配置相差不大)</p>
-<p>假定你已经在阿里云成功申请到免费的SSL证书，现在我们开始来配置。</p>
-<h2><span id="1首先讲pfx文件放在tomcat的一个叫cert的文件夹tomcat实际上没有这个文件夹你可以选择手动创建一个">1.首先讲pfx文件放在tomcat的一个叫cert的文件夹(tomcat实际上没有这个文件夹，你可以选择手动创建一个)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd tomcat8</span><br><span class="line">mkdir cert</span><br></pre></td></tr></table></figure>
-<h2><span id="2修改serverxml">2.修改server.xml</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=&quot;443&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot;</span><br><span class="line">               maxThreads=&quot;150&quot; SSLEnabled=&quot;true&quot;  scheme=&quot;https&quot;</span><br><span class="line">    secure=&quot;true&quot;</span><br><span class="line">               &gt;</span><br><span class="line">        &lt;SSLHostConfig&gt;</span><br><span class="line">             &lt;Certificate certificateKeystoreFile=&quot;cert/test.pfx&quot;</span><br><span class="line">                         certificateKeystoreType=&quot;PKCS12&quot; certificateKeystorePassword=&quot;1541231341210&quot; /&gt;</span><br><span class="line">        &lt;/SSLHostConfig&gt;</span><br><span class="line">    &lt;/Connector&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">               connectionTimeout=&quot;20000&quot;</span><br><span class="line">               redirectPort=&quot;443&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Connector port=&quot;8009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;443&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<h2><span id="3修改webxml">3.修改web.xml</span></h2><p>编辑web.xml，不加下面这段的话不能把http请求转为https<br>在该文件标签（一般在文件最末尾）后面加上这样一段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;login-config&gt;  </span><br><span class="line">    &lt;!-- Authorization setting for SSL --&gt;  </span><br><span class="line">    &lt;auth-method&gt;CLIENT-CERT&lt;/auth-method&gt;  </span><br><span class="line">    &lt;realm-name&gt;Client Cert Users-only Area&lt;/realm-name&gt;  </span><br><span class="line">&lt;/login-config&gt;  </span><br><span class="line">&lt;security-constraint&gt;  </span><br><span class="line">    &lt;!-- Authorization setting for SSL --&gt;  </span><br><span class="line">    &lt;web-resource-collection &gt;  </span><br><span class="line">        &lt;web-resource-name &gt;SSL&lt;/web-resource-name&gt;  </span><br><span class="line">        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;  </span><br><span class="line">    &lt;/web-resource-collection&gt;  </span><br><span class="line">    &lt;user-data-constraint&gt;  </span><br><span class="line">        &lt;transport-guarantee&gt;CONFIDENTIAL&lt;/transport-guarantee&gt;  </span><br><span class="line">    &lt;/user-data-constraint&gt;  </span><br><span class="line">&lt;/security-constraint&gt;</span><br></pre></td></tr></table></figure></p>
-<p>本文主要参考该篇博文<a href="https://blog.csdn.net/qq_35624642/article/details/83016813" target="_blank" rel="noopener">Tomcat8、9配置https SSL证书 阿里云的免费dv证书</a></p>
-<p>另外为了调试方便，本地tomcat还需配置https,关于windowns配置https，可参考该篇博文<a href="https://blog.csdn.net/u014793522/article/details/54846973" target="_blank" rel="noopener">本地windows搭建https</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/25/阿里云配置tomcat-https/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -1112,11 +1133,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1124,7 +1145,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1132,7 +1153,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1148,7 +1169,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1164,7 +1185,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
