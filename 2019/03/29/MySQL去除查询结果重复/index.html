@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://developers-youcong.github.io">
-  <title>普通用户使用Docker | Blog</title>
+  <title>MySQL去除查询结果重复 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.查询是否有docker组：1cat /etc/group 如果没有可以通过该命令添加(一般默认是有的) 1sudo groupadd docker 2.将当前用户添加到docker组1sudo usermod -G docker $(USER) 例如:sudo usermod -G docker test 3.重启docker服务1sudo systemctl restart docker.s">
-<meta name="keywords" content="Docker">
+  <meta name="description" content="出现结果重复数SQL(四表关联):12345678910SELECTCOUNT(post.ID )FROM wp_posts AS post LEFT JOINwp_term_relationships AS relationON(post.menu_order =relation.term_order) LEFT JOIN wp_term_taxonomyAS taxonomyON(relati">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="普通用户使用Docker">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/index.html">
+<meta property="og:title" content="MySQL去除查询结果重复">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="1.查询是否有docker组：1cat /etc/group 如果没有可以通过该命令添加(一般默认是有的) 1sudo groupadd docker 2.将当前用户添加到docker组1sudo usermod -G docker $(USER) 例如:sudo usermod -G docker test 3.重启docker服务1sudo systemctl restart docker.s">
+<meta property="og:description" content="出现结果重复数SQL(四表关联):12345678910SELECTCOUNT(post.ID )FROM wp_posts AS post LEFT JOINwp_term_relationships AS relationON(post.menu_order =relation.term_order) LEFT JOIN wp_term_taxonomyAS taxonomyON(relati">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-27T08:59:03.394Z">
+<meta property="og:updated_time" content="2019-03-29T13:36:46.678Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="普通用户使用Docker">
-<meta name="twitter:description" content="1.查询是否有docker组：1cat /etc/group 如果没有可以通过该命令添加(一般默认是有的) 1sudo groupadd docker 2.将当前用户添加到docker组1sudo usermod -G docker $(USER) 例如:sudo usermod -G docker test 3.重启docker服务1sudo systemctl restart docker.s">
+<meta name="twitter:title" content="MySQL去除查询结果重复">
+<meta name="twitter:description" content="出现结果重复数SQL(四表关联):12345678910SELECTCOUNT(post.ID )FROM wp_posts AS post LEFT JOINwp_term_relationships AS relationON(post.menu_order =relation.term_order) LEFT JOIN wp_term_taxonomyAS taxonomyON(relati">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -159,33 +159,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-普通用户使用Docker" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-MySQL去除查询结果重复" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      普通用户使用Docker
+      MySQL去除查询结果重复
     </h1>
   
 
         
-        <a href="/2019/03/27/普通用户使用Docker/" class="archive-article-date">
-  	<time datetime="2019-03-27T08:54:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-27</time>
+        <a href="/2019/03/29/MySQL去除查询结果重复/" class="archive-article-date">
+  	<time datetime="2019-03-29T13:29:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2><span id="1查询是否有docker组">1.查询是否有docker组：</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/group</span><br></pre></td></tr></table></figure>
-<p>如果没有可以通过该命令添加(一般默认是有的)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
-<h2><span id="2将当前用户添加到docker组">2.将当前用户添加到docker组</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -G docker $(USER)</span><br></pre></td></tr></table></figure>
-<p>例如:sudo usermod -G docker test</p>
-<h2><span id="3重启docker服务">3.重启docker服务</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart docker.service</span><br></pre></td></tr></table></figure>
-<p>参考资料如下:<br>普通用户使用Docker:<a href="https://blog.csdn.net/qq_36713450/article/details/83109477" target="_blank" rel="noopener">https://blog.csdn.net/qq_36713450/article/details/83109477</a></p>
+        <p>出现结果重复数SQL(四表关联):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">COUNT(post.ID )</span><br><span class="line">FROM wp_posts AS post LEFT JOIN</span><br><span class="line">wp_term_relationships AS relation</span><br><span class="line">ON(post.menu_order =</span><br><span class="line">relation.term_order) LEFT JOIN wp_term_taxonomy</span><br><span class="line">AS taxonomy</span><br><span class="line">ON(relation.term_taxonomy_id = taxonomy.term_id) LEFT JOIN</span><br><span class="line">wp_terms AS</span><br><span class="line">term ON(taxonomy.term_id = term.term_id)</span><br></pre></td></tr></table></figure></p>
+<p>正常的结果应该显示490条数据，但是结果显示了224941。</p>
+<p>解决这个办法是在对应的COUNT()里面加上DISTINCT</p>
+<p>DISTINCT这个关键字主要用于过滤掉多余的重复记录只保留一条，但往往只用它来返回不重复记录的条数，而不是用它来返回不重记录的所有值。</p>
+<p>注意:它有局限性，比如吧不能对应多个目标字段，只能对应一个目标字段。</p>
+<p>解决重复结果书的SQL如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">COUNT(DISTINCT post.ID)</span><br><span class="line">FROM wp_posts AS post LEFT JOIN</span><br><span class="line">wp_term_relationships AS relation</span><br><span class="line">ON(post.menu_order =</span><br><span class="line">relation.term_order) LEFT JOIN wp_term_taxonomy</span><br><span class="line">AS taxonomy</span><br><span class="line">ON(relation.term_taxonomy_id = taxonomy.term_id) LEFT JOIN</span><br><span class="line">wp_terms AS</span><br><span class="line">term ON(taxonomy.term_id = term.term_id)</span><br></pre></td></tr></table></figure></p>
+<p>参考资料:<br>MySQL中count函数使用方法详解:<a href="https://blog.csdn.net/qq_31135027/article/details/79858184" target="_blank" rel="noopener">https://blog.csdn.net/qq_31135027/article/details/79858184</a></p>
 
       
 
@@ -230,7 +230,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Docker</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">MySQL</a>
         		</li>
       		
 		</ul>
@@ -286,7 +286,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -300,18 +300,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/27/VsCode云端版本/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          VsCode云端版本
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/27/Docker安装MySQL并配置远程访问/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Docker安装MySQL并配置远程访问</div>
+    <a href="/2019/03/29/Ubuntu16-04之安装Nutch/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ubuntu16.04之安装Nutch</div>
       <i class="icon-circle-right"></i>
     </a>
   
