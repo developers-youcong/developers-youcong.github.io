@@ -156,6 +156,83 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Node-js读取某个目录下的所有文件夹名字并将其写入到json文件" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/">Node.js读取某个目录下的所有文件夹名字并将其写入到json文件</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/" class="archive-article-date">
+  	<time datetime="2019-03-19T06:08:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>针对解决的问题是，有些时候我们需要读取某个文件并将其写入到对应的json文件(xml文件也行，不过目前用json很多，json是主流)。</p>
+<p>源码如下:<br>index.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line"></span><br><span class="line">let components = []</span><br><span class="line">const files = fs.readdirSync(&apos;./&apos;)</span><br><span class="line">files.forEach(function (item, index) &#123;</span><br><span class="line">    let stat = fs.lstatSync(&quot;./&quot; + item)</span><br><span class="line">    if (stat.isDirectory() === true) &#123; </span><br><span class="line">      components.push(item)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">console.log(components);</span><br><span class="line"></span><br><span class="line">let str = JSON.stringify(components)</span><br><span class="line"> </span><br><span class="line"> fs.writeFile(&apos;./extension.json&apos;,str,function(err)&#123;</span><br><span class="line"> if (err) &#123;res.status(500).send(&apos;Server is error...&apos;)&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>控制台输出对应的数据:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[ &apos;file&apos;,</span><br><span class="line">  &apos;LearningDemo&apos;,</span><br><span class="line">  &apos;VsCode&apos;,</span><br><span class="line">  &apos;VsCode文件备份&apos;,</span><br><span class="line">  &apos;WeChatApp&apos;,</span><br><span class="line">  &apos;业务管理文档&apos;,</span><br><span class="line">  &apos;技术管理文档&apos;,</span><br><span class="line">  &apos;阿里云服务器备份&apos; ]</span><br></pre></td></tr></table></figure></p>
+<p>参考资料如下:<br>nodejs写入json文件，格式化输出json的方法:<a href="http://www.cnblogs.com/threeEyes/p/10023827.html" target="_blank" rel="noopener">http://www.cnblogs.com/threeEyes/p/10023827.html</a><br>利用nodejs对本地json文件进行增删改查:<a href="https://blog.csdn.net/zhaoxiang66/article/details/79894209" target="_blank" rel="noopener">https://blog.csdn.net/zhaoxiang66/article/details/79894209</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-PostgreSQL安装和使用" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -910,163 +987,6 @@
 
 
   
-    <article id="post-大型网站技术架构演化" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/08/大型网站技术架构演化/">大型网站技术架构演化</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/08/大型网站技术架构演化/" class="archive-article-date">
-  	<time datetime="2019-03-08T05:54:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2><span id="一-大型网站软件系统的特点">一、大型网站软件系统的特点</span></h2><h4><span id="1高并发-大流量">1.高并发、大流量</span></h4><h5><span id="a什么是高并发">a.什么是高并发?</span></h5><p>高并发是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理多个请求。</p>
-<h5><span id="b高并发的衡量指标有哪些">b.高并发的衡量指标有哪些?</span></h5><p>(1)响应时间:系统对请求做出响应。例如系统处理一个HTTP请求需要200ms,这个200ms就是系统的响应时间。</p>
-<p>(2)吞吐量:单位时间内处理的请求数量。</p>
-<p>(3)QPS：每秒响应请求数。在互联网领域，这个指标和吞吐量区分的不那么明显。</p>
-<p>(4)并发用户数:同时承载正常使用系统功能的用户数量。例如一个通讯系统，在线量一定程度上代表系统的并发用户数，比如腾讯QQ。</p>
-<h5><span id="c什么是大流量">c.什么是大流量</span></h5><p>大流量这个词，顾名思义表示很多流量，这个很多可以用一千万，一亿或者百亿等来衡量。</p>
-<p>以流量来说，这个词有比较多的含义，如:</p>
-<p>(1)它可以表示手机无线网数据;</p>
-<p>(2)网店或网站的访问量;</p>
-<p>(3)流体通过量，如水流量等;</p>
-<p>在这里主要指网站的流量(包含网站访问量)。</p>
-<h5><span id="d那么网站流量指标有哪些呢">d.那么网站流量指标有哪些呢</span></h5><p>主要指标包括:</p>
-<p>(1)独立访问者数量;</p>
-<p>(2)重复访问者数量;</p>
-<p>(3)页面浏览数;</p>
-<p>(4)每个访问者的页面浏览数;</p>
-<p>(5)用户在网站的停留时间;</p>
-<p>(6)用户来源网站(又叫”引导网站”);</p>
-<p>(7)用户所使用的搜索引擎及其关键字;</p>
-<h4><span id="2高可用系统需要不间断提供服务">2.高可用:系统需要不间断提供服务</span></h4><h5><span id="a什么是高可用">a.什么是高可用</span></h5><p>高可用是分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计减少系统不能提供正常服务的时间。</p>
-<p>假设系统一直能够提供服务，我们说系统的可用性是100%。</p>
-<p>如果系统每运行100个时间单位，会有1个时间单位无法提供服务，系统的年停机时间为8.76个小时。</p>
-<h5><span id="b如何保障系统的高可用">b.如何保障系统的高可用</span></h5><p>我们都知道，单点是系统高可用的大敌，应该尽量在系统设计的过程中避免单点。方法论上，高可用保证的原则是“集群化”，或者叫“冗余”:只有一个单点挂了服务会受影响，如果有冗余备份，挂了还有其它backup能够顶上。</p>
-<p>那么什么是单点呢？</p>
-<p>你可以理解为所有的服务都在一个服务器上。</p>
-<p>为什么要避免单点？</p>
-<p>假定所有的服务在一个服务器上，如果该服务器因为某种原因挂掉了，那么所有的服务都会收到影响，从而会增长系统不能提供正常服务的时间。</p>
-<h4><span id="3海量数据又称大数据">3.海量数据(又称“大数据”)</span></h4><p>什么是是海量数据？海量数据又称大数据。对于大数据，研究机构给出了这样的定义:大数据是需要新处理模式才能具有更强的决策力、洞察力和流程化能力的海量、高增长率和多样化的信息资产。</p>
-<p>从技术上看，大数据与云计算的关系就像一昧硬币的正反面。大数据必然无法用单台计算机进行处理，必须采用分布式架构。其特色在于可对海量数据进行分布式数据挖掘，但必须依托云计算的分布式处理、分布式数据库以及云存储、虚拟化技术。</p>
-<h5><span id="大数据的特点">大数据的特点</span></h5><p>(1)数据体量大，从TB级跃升到PB级别。</p>
-<p>(2)数据类型繁多，比如网络日志、视频、图片、地理位置等。</p>
-<p>(3)处理速度快。</p>
-<p>(4)数据价值大。</p>
-<h4><span id="4用户分布广泛网络情况复杂">4.用户分布广泛，网络情况复杂</span></h4><p>许多大型互联网都是为全球用户提供服务的，用户分布范围广，各地网络情况千差万别。在国内，还有各个运营商网络互通难的问题。<br>以在我老家的时候，联通的网络不好，移动的网络好，导致使用联通的用户使用软件受制于网络信号差而无法使用。</p>
-<h4><span id="5安全环境恶劣">5.安全环境恶劣</span></h4><p>由于互联网的开放性，使得互联网站更容易受到攻击，大型网站几乎每天都会被黑客攻击。以GitHub为例，无时无刻不在遭受到攻击。</p>
-<h4><span id="6需求快速变更发布频繁">6.需求快速变更，发布频繁</span></h4><p>和传统软件的版本发布频率不一样，互联网产品为了快速适应市场，满足用户需求，其产品发布频率是极高的。</p>
-<h4><span id="7渐进式发展几乎所有的大网站都是从一个小网站开始的">7.渐进式发展:几乎所有的大网站都是从一个小网站开始的</span></h4><p>以最早期的淘宝来说，也是从单体应用来的。据说早期的架构是Linux+Apache+MySQL+PHP(LAMP)。<br>FaceBook是伯克扎克同学在哈佛大学的宿舍里开发的；Google的第一台服务器部署在斯坦福大学的实验室;阿里巴巴则是在马云家的客厅里诞生。<br>好的互联网产品都是慢慢运营出来的，不是一开始就开发好的，这也正好与网站架构的发展演化过程对应。</p>
-<h2><span id="二-大型网站架构演化发展历程">二、大型网站架构演化发展历程</span></h2><h4><span id="1初始阶段的网络架构应用程序-数据库-文件等所有资源都在一台服务器上单体应用">1.初始阶段的网络架构:应用程序、数据库、文件等所有资源都在一台服务器上(单体应用)</span></h4><p><img src="/2019/03/08/大型网站技术架构演化/server01.png" alt=""></p>
-<h4><span id="2应用服务和数据库分离网站使用三台服务器应用服务器-文件服务器-数据库服务器">2.应用服务和数据库分离:网站使用三台服务器:应用服务器、文件服务器、数据库服务器</span></h4><p><img src="/2019/03/08/大型网站技术架构演化/server02.png" alt=""></p>
-<p>一般情况下有这么几种形式？</p>
-<p>(1)nginx+tomcat+ftp+mysql/oracle;</p>
-<p>(2)nginx+tomcat+vsftp+mysql/oracle;</p>
-<p>(3)apache+tomcat+ftp+mysql/oracle;</p>
-<p>(4)nginx+tomcat;</p>
-<p>(5)docker容器实践思路(又称容器化);</p>
-<p>当然了，上述列出的仅仅是冰山一角，有部分公司拥有自己研发的DB或者应用服务器。</p>
-<h4><span id="3使用缓存改善网站性能使用缓存后数据库访问压力得到有效缓解">3.使用缓存改善网站性能:使用缓存后数据库访问压力得到有效缓解</span></h4><p><img src="/2019/03/08/大型网站技术架构演化/server03.png" alt=""></p>
-<h5><span id="a那么在什么样的情况应该使用缓存">a.那么在什么样的情况应该使用缓存?</span></h5><p>(1)经常变化的数据，但是不需要立刻进行持久化的;</p>
-<p>(2)经常被大量读取，很少进行更新操作;</p>
-<p>(3)大量的数据库IO操作;</p>
-<p>(4)通用的页面，如JS、CSS、图片等;</p>
-<p>(5) 统计和计算需要暂存的信息，需要加快计算的;</p>
-<h5><span id="bjava常用的缓存框架有哪些呢">b.Java常用的缓存框架有哪些呢？</span></h5><p>一般情况下，用Redis或者Memcache，当然了，有的时候也会用ehcache，关于Java常用的缓存框架代码示例和介绍可参考该篇文章:<a href="https://www.cnblogs.com/chinway/p/5534636.html" target="_blank" rel="noopener">https://www.cnblogs.com/chinway/p/5534636.html</a></p>
-<h4><span id="4使用服务器集群改善网站的并发处理能力通过负载均衡调度器将请求分配到集群中的服务器上">4.使用服务器集群改善网站的并发处理能力:通过负载均衡调度器将请求分配到集群中的服务器上</span></h4><p><img src="/2019/03/08/大型网站技术架构演化/server04.png" alt=""></p>
-<p>这种方式又可以称作“中心化”，所有的请求全部经过Nginx，由Nginx分发请求到不同的应用服务器上面(根据权重进行分配)。</p>
-<h4><span id="5数据库读写分离应用服务器在写数据的时候访问主数据库主数据通过主从复制机制将数据更新同步到从数据库这样当服务器读数据的时候就可以通过从数据库了">5.数据库读写分离:应用服务器在写数据的时候访问主数据库，主数据通过主从复制机制将数据更新同步到从数据库，这样当服务器读数据的时候就可以通过从数据库了</span></h4><p><img src="/2019/03/08/大型网站技术架构演化/server05.png" alt=""></p>
-<h4><span id="6使用反向代理和cdn加速网络响应">6.使用反向代理和CDN加速网络响应</span></h4><p>关于CDN可以参考我的这篇文章:<a href="https://www.cnblogs.com/youcong/p/9607448.html" target="_blank" rel="noopener">谈谈CDN</a></p>
-<p>不过觉得还是要贴一下图，这样会有一个感性的认识。</p>
-<p><img src="/2019/03/08/大型网站技术架构演化/server06.png" alt=""></p>
-<h5><span id="什么是反向代理呢">什么是反向代理呢？</span></h5><p>反向代理是指以代理服务器来接收internet上的连接请求，然后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给internet上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。</p>
-<h4><span id="7使用分布式文件系统和分布式数据库系统">7.使用分布式文件系统和分布式数据库系统</span></h4><p><img src="/2019/03/08/大型网站技术架构演化/server07.png" alt=""></p>
-<h5><span id="分布式文件系统有哪些">分布式文件系统有哪些？</span></h5><p>主要有MFS、Ceph、GlusterFS、Lustre等</p>
-<p>关于它们的区别可参考:</p>
-<p><a href="https://www.cnblogs.com/zhiguo/p/3334993.html" target="_blank" rel="noopener">分布式文件系统MFS、Ceph、GlusterFS、Lustre的对比</a></p>
-<h4><span id="8使用nosql和搜索引擎">8.使用NoSQL和搜索引擎</span></h4><p><img src="/2019/03/08/大型网站技术架构演化/server08.png" alt=""></p>
-<p>应用比较多的NoSQL,比如Memcache、Redis、MongoDB等。</p>
-<p>搜索引擎，以solr和elasticsearch比较多。</p>
-<h4><span id="9业务拆分">9.业务拆分</span></h4><p>关于业务拆分可参考我的这篇博文<a href="https://www.cnblogs.com/youcong/p/9688300.html" target="_blank" rel="noopener">业务拆分的思考</a></p>
-<h4><span id="10分布式服务">10.分布式服务</span></h4><p>可以去看看分布式服务架构这本书或是去看看国外相关专业人士的论文或文章。</p>
-<p>分布式服务架构:原理、设计与实战电子书下载地址为:<a href="https://pan.baidu.com/s/1hK3vlIHX0SgbD4NNKx_zTg" target="_blank" rel="noopener">https://pan.baidu.com/s/1hK3vlIHX0SgbD4NNKx_zTg</a></p>
-<h2><span id="三-大型网站演化的价值观">三、大型网站演化的价值观</span></h2><p>(1)大型网站架构核心价值是随网站所需灵活应付;</p>
-<p>(2)驱动网站技术发展的主要力量是网站发展业务;</p>
-<p>大型网站的核心价值不是从无到有二搭建一个大型网站，而是能够伴随小型网站业务逐步发展，慢慢演化成一个大型网站，网站的架构选择尽量满足网站用户增加需求。</p>
-<h2><span id="四-网站架构设计误区">四、网站架构设计误区</span></h2><p>误区如下所示:</p>
-<p>(1)一昧追随大公司方案;</p>
-<p>(2)为了技术而技术;</p>
-<p>(3)企图用技术解决所有问题;</p>
-<p>参考资料如下:</p>
-<p>什么是高并发:<a href="https://blog.csdn.net/DreamWeaver_zhou/article/details/78587580" target="_blank" rel="noopener">https://blog.csdn.net/DreamWeaver_zhou/article/details/78587580</a></p>
-<p>什么是高可用:<a href="http://www.cnblogs.com/shizhiyi/p/7750530.html" target="_blank" rel="noopener">http://www.cnblogs.com/shizhiyi/p/7750530.html</a></p>
-<p>什么是海量数据？它具有哪些特征？:<a href="http://www.znjj.tv/news/3322.html" target="_blank" rel="noopener">http://www.znjj.tv/news/3322.html</a></p>
-<p>在什么情况使用Java缓存:<a href="https://flychao88.iteye.com/blog/1532335" target="_blank" rel="noopener">https://flychao88.iteye.com/blog/1532335</a></p>
-<p>8张图读懂大型网站技术架构:<a href="https://github.com/Snailclimb/JavaGuide/blob/master/%E6%9E%B6%E6%9E%84/8%20%E5%BC%A0%E5%9B%BE%E8%AF%BB%E6%87%82%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.md" target="_blank" rel="noopener">https://github.com/Snailclimb/JavaGuide/blob/master/%E6%9E%B6%E6%9E%84/8%20%E5%BC%A0%E5%9B%BE%E8%AF%BB%E6%87%82%E5%A4%A7%E5%9E%8B%E7%BD%91%E7%AB%99%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.md</a></p>
-<p>《大型网站技术架构:核心原理与案例分析》第一章概述第一节大型网站架构演化</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">架构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/08/大型网站技术架构演化/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1177,7 +1097,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
+                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1185,11 +1105,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1197,11 +1113,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1209,7 +1121,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1221,10 +1141,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
@@ -1233,15 +1149,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">wordpress</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">架构</a>
+                <a href="javascript:void(0)" class="js-tag color3">存储</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">存储</a>
+                <a href="javascript:void(0)" class="js-tag color3">架构</a>
               </li>
             
             <div class="clearfix"></div>
