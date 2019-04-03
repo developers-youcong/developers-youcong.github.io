@@ -62,6 +62,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js获取select标签选中的值" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/03/js获取select标签选中的值/" class="article-date">
+  <time datetime="2019-04-03T11:51:30.000Z" itemprop="datePublished">2019-04-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/03/js获取select标签选中的值/">js获取select标签选中的值</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>两种方式，原生js和jQuery。<br>特别是作为全栈开发工程师，学会使用框架固然重要，但是也要使用的基础上，由浅入深，搞懂原理，这样才能在技术进化迅速的时代立于不败之地。<br>举个例子说明以下，以我这篇文章为例<a href="https://www.cnblogs.com/youcong/p/10503099.html" target="_blank" rel="noopener">node.js之十大Web框架</a>，当你学会Node.js的语法，有过使用Node.js开发几个简单Demo的经验，你会发现这些并不难。但是如果你想深入的理解Node.js，比如VsCode就是在Electron+TypeScript等基础上研发出来，但是Electron 是基于 Chromium 和 Node.js，如果你对Node.js和Chromium毫不了解，自己深入到Electron，注定是要吃亏的。</p>
+<p>使用原生js获取select标签选中值，源码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;form action=&quot;#&quot;&gt;</span><br><span class="line"> &lt;select id=&quot;test&quot;&gt;</span><br><span class="line"> &lt;option value=&quot;1&quot;&gt;VsCode&lt;/option&gt;</span><br><span class="line">  &lt;option value=&quot;2&quot;&gt;Atorm&lt;/option&gt;</span><br><span class="line"> &lt;/select&gt;</span><br><span class="line"> &lt;input type=&quot;button&quot; value=&quot;测试&quot; onclick=&quot;t1()&quot;&gt;</span><br><span class="line"> &lt;/form&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> function t1()&#123;</span><br><span class="line">   var myselect=document.getElementById(&quot;test&quot;);</span><br><span class="line">  var index=myselect.selectedIndex;</span><br><span class="line">  alert(myselect.options[index].value)</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>使用jQuery获取select标签选中值，源码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head lang=&quot;en&quot;&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"> &lt;form action=&quot;#&quot;&gt;</span><br><span class="line"> &lt;select id=&quot;test&quot;&gt;</span><br><span class="line"> &lt;option value=&quot;1&quot;&gt;VsCode&lt;/option&gt;</span><br><span class="line">  &lt;option value=&quot;2&quot;&gt;Atorm&lt;/option&gt;</span><br><span class="line"> &lt;/select&gt;</span><br><span class="line"> &lt;input type=&quot;button&quot; value=&quot;测试&quot; onclick=&quot;t1()&quot;&gt;</span><br><span class="line"> &lt;/form&gt;</span><br><span class="line"> &lt;script src=&quot;jquery-1.8.0.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"> &lt;script&gt;</span><br><span class="line"> function t1()&#123;</span><br><span class="line">   var options=$(&quot;#test option:selected&quot;);</span><br><span class="line">   alert(options.val());//获取value</span><br><span class="line">   alert(options.text());//获取文本</span><br><span class="line">&#125;</span><br><span class="line"> &lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/03/js获取select标签选中的值/" data-id="cju164nlb001kqovkhdrmjc7f" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-layui之确认框" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/03/layui之确认框/" class="article-date">
@@ -91,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/03/layui之确认框/" data-id="cju0zrv19001xn0vk29tmc5am" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/03/layui之确认框/" data-id="cju164nlf001rqovkeorvlzan" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -131,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/02/Node-js读取文件内容并返回值-非异步/" data-id="cju0zruyv000cn0vkt0u588y7" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/02/Node-js读取文件内容并返回值-非异步/" data-id="cju164nji000eqovkxuunym1k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -172,7 +213,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" data-id="cju0zrv24002xn0vk2u0t4yiq" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" data-id="cju164nmd002vqovk79crjumh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -217,7 +258,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cju0zruy60006n0vk862oo4e1" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cju164njb000bqovkprlrv4bw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
@@ -261,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cju0zrv0f0013n0vkenktprqj" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cju164nk5000vqovkcu7yfmwg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -306,7 +347,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cju0zrv0r001cn0vk23e04i7s" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cju164nk2000rqovkiwem6hur" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -350,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/" data-id="cju0zrv2j003cn0vkmb7gadyi" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/" data-id="cju164nmt003dqovkzoiv9rtv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -393,7 +434,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cju0zrv22002vn0vk3p9c8zno" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cju164nma002rqovkn1h8qvcj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -436,60 +477,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/如何让Node-js运行在浏览器端/" data-id="cju0zrv2f0038n0vkea36ljaa" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/如何让Node-js运行在浏览器端/" data-id="cju164nmn0036qovktoutwtph" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Ubuntu16-04安装和使用ElasticSearch" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" class="article-date">
-  <time datetime="2019-03-28T08:50:04.000Z" itemprop="datePublished">2019-03-28</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/">Ubuntu16.04安装和使用ElasticSearch</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2><span id="1下载es">1.下载es</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz</span><br></pre></td></tr></table></figure>
-<h2><span id="2解压并将其放到usrlocal目录下">2.解压并将其放到/usr/local目录下</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf elasticsearch-2.4.4.tar.gz -C /usr/local</span><br><span class="line">cd /usr/local/elasticsearch-2.4.4</span><br></pre></td></tr></table></figure>
-<h2><span id="3修改es配置文件">3.修改es配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd config</span><br><span class="line">vim elasticsearch.yml</span><br></pre></td></tr></table></figure>
-<p>在elasticsearch.yml添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">bootstrap.memory_lock: true</span><br><span class="line">index.cache.field.max_size: 50000</span><br><span class="line">index.cache.field.expire: 30m</span><br><span class="line">index.cache.field.type: soft</span><br><span class="line"></span><br><span class="line">network.host: 0.0.0.0</span><br><span class="line"></span><br><span class="line">action.disable_delete_all_indices : true</span><br></pre></td></tr></table></figure></p>
-<h2><span id="4启动">4.启动</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ../bin</span><br><span class="line"></span><br><span class="line">//直接启动ElasticSearch</span><br><span class="line">./elasticsearch </span><br><span class="line"></span><br><span class="line">//或者使用后台方式进行启动</span><br><span class="line">./elasticsearch -d</span><br></pre></td></tr></table></figure>
-<h2><span id="查看端口占用">查看端口占用</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -anp|grep 9200 或lsof -i:9200 //看该进程是否正常运行</span><br></pre></td></tr></table></figure>
-<p>出现的问题:<br>Exception in thread “main” Java.lang.RuntimeException: don’t run elasticsearch as root.<br>at org.elasticsearch.bootstrap.Bootstrap.initializeNatives(Bootstrap.java:93)<br>at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:144)<br>at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:270)<br>at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:35)</p>
-<p>解决办法一:<br>添加用户并授权<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user add test</span><br><span class="line">chown -R test /usr/local/elasticsearch-2.4.4</span><br></pre></td></tr></table></figure></p>
-<p>解决办法二:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./elasticsearch -Des.insecure.allow.root=true</span><br><span class="line">或者</span><br><span class="line">vi elasticsearch</span><br><span class="line"></span><br><span class="line">// 找到ES_JAVA_OPTS在其后追加</span><br><span class="line">ES_JAVA_OPTS=&quot;-Des.insecure.allow.root=true&quot;</span><br></pre></td></tr></table></figure></p>
-<p>本人建议使用第一种方法，因为最好不要习惯用root用户，否则一旦不慎执行某些操作，后果很严重。</p>
-<h2><span id="5网站访问">5.网站访问</span></h2><p><a href="http://IP地址:9200" target="_blank" rel="noopener">http://IP地址:9200</a><br>出现如图所示:<br><img src="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/es.png" alt=""></p>
-<p>参考资料:<br>【Linux进阶】Ubuntu 16.04安装ElasticSearch:<a href="https://blog.csdn.net/u011404265/article/details/72870166" target="_blank" rel="noopener">https://blog.csdn.net/u011404265/article/details/72870166</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cju0zrv17001un0vk0oilekgy" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -548,6 +539,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/03/js获取select标签选中的值/">js获取select标签选中的值</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/03/layui之确认框/">layui之确认框</a>
           </li>
         
@@ -561,10 +556,6 @@
         
           <li>
             <a href="/2019/03/29/MySQL去除查询结果重复/">MySQL去除查询结果重复</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/29/Ubuntu16-04之安装Nutch/">Ubuntu16.04之安装Nutch</a>
           </li>
         
       </ul>

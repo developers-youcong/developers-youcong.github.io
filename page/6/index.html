@@ -62,6 +62,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-阿里云配置tomcat-https" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/02/25/阿里云配置tomcat-https/" class="article-date">
+  <time datetime="2019-02-25T11:22:15.000Z" itemprop="datePublished">2019-02-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/02/25/阿里云配置tomcat-https/">阿里云配置tomcat https</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>阿里云申请免费的SSL证书和配置https，可参考该篇博文:<a href="https://blog.csdn.net/baidu_19473529/article/details/70037976" target="_blank" rel="noopener">https://blog.csdn.net/baidu_19473529/article/details/70037976</a></p>
+<p>虽然有现成的，不过我还是要做一个小小的总结记录一下。</p>
+<p>由于我公司使用的tomcat主要是8.5,所以我以8.5配置作为讲解(总的来说，配置相差不大)</p>
+<p>假定你已经在阿里云成功申请到免费的SSL证书，现在我们开始来配置。</p>
+<h2><span id="1首先讲pfx文件放在tomcat的一个叫cert的文件夹tomcat实际上没有这个文件夹你可以选择手动创建一个">1.首先讲pfx文件放在tomcat的一个叫cert的文件夹(tomcat实际上没有这个文件夹，你可以选择手动创建一个)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd tomcat8</span><br><span class="line">mkdir cert</span><br></pre></td></tr></table></figure>
+<h2><span id="2修改serverxml">2.修改server.xml</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=&quot;443&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot;</span><br><span class="line">               maxThreads=&quot;150&quot; SSLEnabled=&quot;true&quot;  scheme=&quot;https&quot;</span><br><span class="line">    secure=&quot;true&quot;</span><br><span class="line">               &gt;</span><br><span class="line">        &lt;SSLHostConfig&gt;</span><br><span class="line">             &lt;Certificate certificateKeystoreFile=&quot;cert/test.pfx&quot;</span><br><span class="line">                         certificateKeystoreType=&quot;PKCS12&quot; certificateKeystorePassword=&quot;1541231341210&quot; /&gt;</span><br><span class="line">        &lt;/SSLHostConfig&gt;</span><br><span class="line">    &lt;/Connector&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">               connectionTimeout=&quot;20000&quot;</span><br><span class="line">               redirectPort=&quot;443&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Connector port=&quot;8009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;443&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<h2><span id="3修改webxml">3.修改web.xml</span></h2><p>编辑web.xml，不加下面这段的话不能把http请求转为https<br>在该文件标签（一般在文件最末尾）后面加上这样一段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;login-config&gt;  </span><br><span class="line">    &lt;!-- Authorization setting for SSL --&gt;  </span><br><span class="line">    &lt;auth-method&gt;CLIENT-CERT&lt;/auth-method&gt;  </span><br><span class="line">    &lt;realm-name&gt;Client Cert Users-only Area&lt;/realm-name&gt;  </span><br><span class="line">&lt;/login-config&gt;  </span><br><span class="line">&lt;security-constraint&gt;  </span><br><span class="line">    &lt;!-- Authorization setting for SSL --&gt;  </span><br><span class="line">    &lt;web-resource-collection &gt;  </span><br><span class="line">        &lt;web-resource-name &gt;SSL&lt;/web-resource-name&gt;  </span><br><span class="line">        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;  </span><br><span class="line">    &lt;/web-resource-collection&gt;  </span><br><span class="line">    &lt;user-data-constraint&gt;  </span><br><span class="line">        &lt;transport-guarantee&gt;CONFIDENTIAL&lt;/transport-guarantee&gt;  </span><br><span class="line">    &lt;/user-data-constraint&gt;  </span><br><span class="line">&lt;/security-constraint&gt;</span><br></pre></td></tr></table></figure></p>
+<p>本文主要参考该篇博文<a href="https://blog.csdn.net/qq_35624642/article/details/83016813" target="_blank" rel="noopener">Tomcat8、9配置https SSL证书 阿里云的免费dv证书</a></p>
+<p>另外为了调试方便，本地tomcat还需配置https,关于windowns配置https，可参考该篇博文<a href="https://blog.csdn.net/u014793522/article/details/54846973" target="_blank" rel="noopener">本地windows搭建https</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cju164nrz003uqovkop8br9fv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-springboot打成的jar包如何在Linux上持久运行" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" class="article-date">
@@ -110,7 +157,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cju0zrv290031n0vkdiy65rtv" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cju164nmj0031qovk82zs84r7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -151,7 +198,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/如何将博客园的数据迁移到wordpress上面/" data-id="cju0zrv2h003an0vkvqsgqcsl" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/如何将博客园的数据迁移到wordpress上面/" data-id="cju164nml0034qovkbgyt0hkv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
@@ -213,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/wordpress数据表分析/" data-id="cju0zrv2b0033n0vkmuzuffcz" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/wordpress数据表分析/" data-id="cju164nmg002zqovkl4lgokcz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
@@ -271,7 +318,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/谈谈存储系统/" data-id="cju0zrv2p003in0vknl9sb0l4" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/谈谈存储系统/" data-id="cju164nqj003oqovko8ltfur2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/存储/">存储</a></li></ul>
@@ -339,7 +386,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/22/node-js之express框架/" data-id="cju0zrv1j0029n0vkwdvujo9v" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/22/node-js之express框架/" data-id="cju164nls0026qovkjvqxq7hw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -394,7 +441,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/22/SpringBoot之加密/" data-id="cju0zruza000in0vk8mz7kiv9" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/22/SpringBoot之加密/" data-id="cju164nk3000tqovkwkac31da" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -456,6 +503,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/03/js获取select标签选中的值/">js获取select标签选中的值</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/03/layui之确认框/">layui之确认框</a>
           </li>
         
@@ -469,10 +520,6 @@
         
           <li>
             <a href="/2019/03/29/MySQL去除查询结果重复/">MySQL去除查询结果重复</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/29/Ubuntu16-04之安装Nutch/">Ubuntu16.04之安装Nutch</a>
           </li>
         
       </ul>

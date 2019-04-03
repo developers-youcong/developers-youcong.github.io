@@ -62,6 +62,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Uncaught-ReferenceError-layer-is-not-defined" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" class="article-date">
+  <time datetime="2019-03-19T12:35:10.000Z" itemprop="datePublished">2019-03-19</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/">Uncaught ReferenceError: layer is not defined</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>错误详细信息,如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught ReferenceError: layer is not defined&apos;</span><br></pre></td></tr></table></figure></p>
+<p>关键词就是not defined 未定义，那么解决方案就是给它定义。</p>
+<p>原来的问题代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>这样在我的博客首页是可以生效的，不会出现未定义。但是当我将其抽象为一个函数的时候，其它地方就不行了。</p>
+<p>通过声明定义后，代码就变成如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">layui.use(&apos;layer&apos;,function () &#123; </span><br><span class="line">       	</span><br><span class="line">       layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br><span class="line">       </span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>当时我在想引入layer.js来解决这个问题，但是仔细一看这并不是问题的关键所在。<br>解决问题，在于更好的理解问题，当然了，把握关键词也是很重要的(事半功倍)。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" data-id="cju164nko0017qovkuhrmk12b" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Error-listen-EADDRINUSE-3000" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/19/Error-listen-EADDRINUSE-3000/" class="article-date">
@@ -93,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Error-listen-EADDRINUSE-3000/" data-id="cju0zruym0008n0vkw4nqypga" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Error-listen-EADDRINUSE-3000/" data-id="cju164niq0006qovkmen19y33" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -136,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/python3-6在linux持久运行django/" data-id="cju0zrv21002tn0vkojxzhnnc" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/python3-6在linux持久运行django/" data-id="cju164nqi003nqovk78nc7d2a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -178,7 +222,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/" data-id="cju0zruys000bn0vkcif2b3lp" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/" data-id="cju164njm000hqovkfz27ftbq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -240,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/PostgreSQL安装和使用/" data-id="cju0zruz0000en0vk0mayek8p" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/PostgreSQL安装和使用/" data-id="cju164njs000jqovk5e7ec9cq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li></ul>
@@ -288,7 +332,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/" data-id="cju0zrv1z002rn0vkteiff4fa" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/" data-id="cju164nm8002pqovkanrrg9sb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -328,7 +372,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cju0zrv11001ln0vkutmfdrkj" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cju164nl8001hqovk5cckjs4l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -368,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/express框架之跨域请求/" data-id="cju0zrv0o0019n0vkhcqqm3il" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/express框架之跨域请求/" data-id="cju164nkl0015qovk3h9en9e7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -413,7 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/node-js之Cookie/" data-id="cju0zrv1i0028n0vkssulbv2y" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/node-js之Cookie/" data-id="cju164nlq0023qovkk48dxngy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -462,71 +506,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/" data-id="cju0zrv0t001en0vkwzhj74sr" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/" data-id="cju164nkx001aqovku3h1d5vm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-SpringBoot之静态资源放行" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/13/SpringBoot之静态资源放行/" class="article-date">
-  <time datetime="2019-03-13T13:45:23.000Z" itemprop="datePublished">2019-03-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/SpringBoot之静态资源放行/">SpringBoot之静态资源放行</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>为了提高开发效率，编写对应的代码生成器。代码生成器主要有两个方面，一个是在线Web，另外一个是运行某个类。</p>
-<p>使用的技术是SpringBoot+MyBatis-Plus+MySQL+JDK8。</p>
-<p>在编写在线代码生成器的时候，正好遇到一个小问题，那就是静态资源无法访问。</p>
-<p>以SSM(Spring+SpringMVC+MyBatis/MyBatis-Plus)框架来说，通常要想对静态资源放行，最简单直接的办法是使用*.do。</p>
-<p>如果你不想使用*.do，那么可以尝试下面两种方法？</p>
-<h2><span id="第一种方法">第一种方法</span></h2><p>在spring-mvc.xml中配置如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;mvc:default-servlet-handler/&gt;</span><br></pre></td></tr></table></figure>
-<p>光这样还不够，如果是不起作用，你还需要在web.xml配置如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- 静态资源文件的引入 --&gt;</span><br><span class="line"></span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-name&gt;default&lt;/servlet-name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;url-pattern&gt;*.js&lt;/url-pattern&gt;</span><br><span class="line"></span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-name&gt;default&lt;/servlet-name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;url-pattern&gt;*.css&lt;/url-pattern&gt;</span><br><span class="line"></span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-name&gt;default&lt;/servlet-name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;url-pattern&gt;*.png&lt;/url-pattern&gt;</span><br><span class="line"></span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-name&gt;default&lt;/servlet-name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;url-pattern&gt;*.jpg&lt;/url-pattern&gt;</span><br><span class="line"></span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
-<h2><span id="第二种方法">第二种方法</span></h2><p>对指定目录放行，通常也是修改spring-mvc.xml,请参考:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- 对指定目录下的静态资源放行 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;mvc:resources location=&quot;/images/&quot; mapping=&quot;/images/**&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;mvc:resources location=&quot;/css/&quot; mapping=&quot;/css/**&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;mvc:resources location=&quot;/js/&quot; mapping=&quot;/js/**&quot;/&gt;</span><br></pre></td></tr></table></figure>
-<p>如果是使用SpringBoot的话，该如何配置静态资源放行呢？</p>
-<p>一般情况下，SpringBoot+模板语言(jsp+freemarker等)开发。</p>
-<p>但是有部分开发者为了实现前后端分离(这是一种变相的分离)，将静态资源放在src/main/resources目录下。</p>
-<p>放在这个目录下是无法访问的，如果要想访问，需要配置。</p>
-<p>WebConfig.java</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package com.acs.springboot.config;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line">import org.springframework.http.CacheControl;</span><br><span class="line"></span><br><span class="line">import org.springframework.web.bind.annotation.ControllerAdvice;</span><br><span class="line"></span><br><span class="line">import org.springframework.web.servlet.config.annotation.InterceptorRegistry;</span><br><span class="line"></span><br><span class="line">import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;</span><br><span class="line"></span><br><span class="line">import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@ControllerAdvice</span><br><span class="line"></span><br><span class="line">@Configuration</span><br><span class="line"></span><br><span class="line">public class WebConfig extends WebMvcConfigurerAdapter &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    public void addResourceHandlers(ResourceHandlerRegistry registry) &#123;</span><br><span class="line"></span><br><span class="line">        //静态资源放行</span><br><span class="line"></span><br><span class="line">    	registry.addResourceHandler(&quot;/view/**&quot;).addResourceLocations(&quot;classpath:/view/&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>效果图如下:</p>
-<p><img src="/2019/03/13/SpringBoot之静态资源放行/server01.png" alt=""></p>
-<p><img src="/2019/03/13/SpringBoot之静态资源放行/server02.png" alt=""></p>
-<p>参考(均来自我个人的博客园):</p>
-<p>JavaWeb在线代码生成器:<a href="https://www.cnblogs.com/youcong/p/9494892.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/p/9494892.html</a></p>
-<p>MP实战系列(六)之代码生成器讲解:<a href="https://blog.csdn.net/suijiarui/article/details/51360980" target="_blank" rel="noopener">https://blog.csdn.net/suijiarui/article/details/51360980</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/SpringBoot之静态资源放行/" data-id="cju0zruzc000kn0vkw4zjbe17" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
 
     </footer>
   </div>
@@ -585,6 +568,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/03/js获取select标签选中的值/">js获取select标签选中的值</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/03/layui之确认框/">layui之确认框</a>
           </li>
         
@@ -598,10 +585,6 @@
         
           <li>
             <a href="/2019/03/29/MySQL去除查询结果重复/">MySQL去除查询结果重复</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/29/Ubuntu16-04之安装Nutch/">Ubuntu16.04之安装Nutch</a>
           </li>
         
       </ul>

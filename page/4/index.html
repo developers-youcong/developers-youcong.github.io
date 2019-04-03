@@ -62,6 +62,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-SpringBoot之静态资源放行" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/13/SpringBoot之静态资源放行/" class="article-date">
+  <time datetime="2019-03-13T13:45:23.000Z" itemprop="datePublished">2019-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/SpringBoot之静态资源放行/">SpringBoot之静态资源放行</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>为了提高开发效率，编写对应的代码生成器。代码生成器主要有两个方面，一个是在线Web，另外一个是运行某个类。</p>
+<p>使用的技术是SpringBoot+MyBatis-Plus+MySQL+JDK8。</p>
+<p>在编写在线代码生成器的时候，正好遇到一个小问题，那就是静态资源无法访问。</p>
+<p>以SSM(Spring+SpringMVC+MyBatis/MyBatis-Plus)框架来说，通常要想对静态资源放行，最简单直接的办法是使用*.do。</p>
+<p>如果你不想使用*.do，那么可以尝试下面两种方法？</p>
+<h2><span id="第一种方法">第一种方法</span></h2><p>在spring-mvc.xml中配置如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;mvc:default-servlet-handler/&gt;</span><br></pre></td></tr></table></figure>
+<p>光这样还不够，如果是不起作用，你还需要在web.xml配置如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- 静态资源文件的引入 --&gt;</span><br><span class="line"></span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-name&gt;default&lt;/servlet-name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;url-pattern&gt;*.js&lt;/url-pattern&gt;</span><br><span class="line"></span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-name&gt;default&lt;/servlet-name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;url-pattern&gt;*.css&lt;/url-pattern&gt;</span><br><span class="line"></span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line"> &lt;servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-name&gt;default&lt;/servlet-name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;url-pattern&gt;*.png&lt;/url-pattern&gt;</span><br><span class="line"></span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-mapping&gt;</span><br><span class="line"></span><br><span class="line">  &lt;servlet-name&gt;default&lt;/servlet-name&gt;</span><br><span class="line"></span><br><span class="line">  &lt;url-pattern&gt;*.jpg&lt;/url-pattern&gt;</span><br><span class="line"></span><br><span class="line"> &lt;/servlet-mapping&gt;</span><br></pre></td></tr></table></figure>
+<h2><span id="第二种方法">第二种方法</span></h2><p>对指定目录放行，通常也是修改spring-mvc.xml,请参考:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- 对指定目录下的静态资源放行 --&gt;</span><br><span class="line"></span><br><span class="line">&lt;mvc:resources location=&quot;/images/&quot; mapping=&quot;/images/**&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;mvc:resources location=&quot;/css/&quot; mapping=&quot;/css/**&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;mvc:resources location=&quot;/js/&quot; mapping=&quot;/js/**&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<p>如果是使用SpringBoot的话，该如何配置静态资源放行呢？</p>
+<p>一般情况下，SpringBoot+模板语言(jsp+freemarker等)开发。</p>
+<p>但是有部分开发者为了实现前后端分离(这是一种变相的分离)，将静态资源放在src/main/resources目录下。</p>
+<p>放在这个目录下是无法访问的，如果要想访问，需要配置。</p>
+<p>WebConfig.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">package com.acs.springboot.config;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import java.util.concurrent.TimeUnit;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line">import org.springframework.http.CacheControl;</span><br><span class="line"></span><br><span class="line">import org.springframework.web.bind.annotation.ControllerAdvice;</span><br><span class="line"></span><br><span class="line">import org.springframework.web.servlet.config.annotation.InterceptorRegistry;</span><br><span class="line"></span><br><span class="line">import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;</span><br><span class="line"></span><br><span class="line">import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">@ControllerAdvice</span><br><span class="line"></span><br><span class="line">@Configuration</span><br><span class="line"></span><br><span class="line">public class WebConfig extends WebMvcConfigurerAdapter &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line"></span><br><span class="line">    public void addResourceHandlers(ResourceHandlerRegistry registry) &#123;</span><br><span class="line"></span><br><span class="line">        //静态资源放行</span><br><span class="line"></span><br><span class="line">    	registry.addResourceHandler(&quot;/view/**&quot;).addResourceLocations(&quot;classpath:/view/&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>效果图如下:</p>
+<p><img src="/2019/03/13/SpringBoot之静态资源放行/server01.png" alt=""></p>
+<p><img src="/2019/03/13/SpringBoot之静态资源放行/server02.png" alt=""></p>
+<p>参考(均来自我个人的博客园):</p>
+<p>JavaWeb在线代码生成器:<a href="https://www.cnblogs.com/youcong/p/9494892.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/p/9494892.html</a></p>
+<p>MP实战系列(六)之代码生成器讲解:<a href="https://blog.csdn.net/suijiarui/article/details/51360980" target="_blank" rel="noopener">https://blog.csdn.net/suijiarui/article/details/51360980</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/13/SpringBoot之静态资源放行/" data-id="cju164nk0000oqovkfou3lgoj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-StringRedisTemplate操作Redis" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/09/StringRedisTemplate操作Redis/" class="article-date">
@@ -98,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/" data-id="cju0zrv0h0014n0vkus6uz4zi" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/" data-id="cju164nk7000xqovkdj8732mz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
@@ -144,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" data-id="cju0zruy00003n0vk2fff7sfz" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" data-id="cju164nf90000qovk1pg5spml" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
@@ -266,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/" data-id="cju0zrv2m003gn0vkl40d9w92" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/" data-id="cju164nms003bqovkywkuhlys" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
@@ -348,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js之十大Web框架/" data-id="cju0zrv1n002cn0vks4nh1vlz" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js之十大Web框架/" data-id="cju164nlu0028qovkzz2rflxj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -395,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/javascript之map/" data-id="cju0zrv0w001hn0vkg12flvm0" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/javascript之map/" data-id="cju164nl2001cqovk7p6pemlb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -438,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/springboot实现跨域请求/" data-id="cju0zrv27002zn0vku3ymmse4" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/springboot实现跨域请求/" data-id="cju164nmb002tqovk29mssrxh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -486,7 +547,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js如何引用其它js文件/" data-id="cju0zrv1t002jn0vkx9yh9mbg" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js如何引用其它js文件/" data-id="cju164nlz002gqovk75qmjkm5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -531,7 +592,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/jenkins忘记管理员密码之解决方案/" data-id="cju0zrv0z001jn0vk70bf44ps" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/jenkins忘记管理员密码之解决方案/" data-id="cju164nl6001fqovkxdqslr9i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jenkins/">jenkins</a></li></ul>
@@ -591,60 +652,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/06/mybatis之一对多/" data-id="cju0zrv15001sn0vkshrsc56j" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/06/mybatis之一对多/" data-id="cju164nle001pqovkfwphfrae" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mybatis/">mybatis</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" class="article-date">
-  <time datetime="2019-03-05T13:16:45.000Z" itemprop="datePublished">2019-03-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。</p>
-<p>错误信息如下:<br>org.apache.ibatis.binding.BindingException: Invalid bound statement<br>  (not found)</p>
-<p>通常原因是因为Mapper interface和xml文件的定义对不上，通常需要检查包名、namespace、函数名等。</p>
-<p>出现这个错误的原因是我太过相信自我了，觉得自觉没有错，于是手打，结果就是一个单词写错了。</p>
-<p>看代码示例:</p>
-<p>xml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;resentPosts&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line"> 	SELECT post_title FROM `wp_posts` WHERE post_status = &apos;publish&apos; ORDER BY post_modified DESC LIMIT 0,5 </span><br><span class="line"> &lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
-<p>dao(interface):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//近期文章</span><br><span class="line">public List&lt;Posts&gt; recentPosts();</span><br></pre></td></tr></table></figure></p>
-<p>大家很容易会看出select标签中的id与dao中的接口函数名不对应。这就是问题的根源，改成一样的，如下(即可解决问题)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;recentPosts&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">  	SELECT post_title FROM `wp_posts` WHERE post_status = &apos;publish&apos; ORDER BY post_modified DESC LIMIT 0,5 </span><br><span class="line">  &lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<p>最后说一句，遇到问题不要慌，找到问题关键信息，复制到百度上/谷歌或者stackoverflow即可找到答案。</p>
-<p>太阳底下没有新鲜事儿，你遇到过的，说不定别人也遇到过。</p>
-<p>参考链接:<a href="https://www.cnblogs.com/lfm601508022/p/InvalidBoundStatement.html" target="_blank" rel="noopener">https://www.cnblogs.com/lfm601508022/p/InvalidBoundStatement.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" data-id="cju0zrv1e0023n0vkpcgpisft" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
 
     </footer>
   </div>
@@ -703,6 +714,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/03/js获取select标签选中的值/">js获取select标签选中的值</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/03/layui之确认框/">layui之确认框</a>
           </li>
         
@@ -716,10 +731,6 @@
         
           <li>
             <a href="/2019/03/29/MySQL去除查询结果重复/">MySQL去除查询结果重复</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/29/Ubuntu16-04之安装Nutch/">Ubuntu16.04之安装Nutch</a>
           </li>
         
       </ul>

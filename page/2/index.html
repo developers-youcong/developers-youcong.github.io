@@ -62,6 +62,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Ubuntu16-04安装和使用ElasticSearch" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" class="article-date">
+  <time datetime="2019-03-28T08:50:04.000Z" itemprop="datePublished">2019-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/">Ubuntu16.04安装和使用ElasticSearch</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2><span id="1下载es">1.下载es</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz</span><br></pre></td></tr></table></figure>
+<h2><span id="2解压并将其放到usrlocal目录下">2.解压并将其放到/usr/local目录下</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf elasticsearch-2.4.4.tar.gz -C /usr/local</span><br><span class="line">cd /usr/local/elasticsearch-2.4.4</span><br></pre></td></tr></table></figure>
+<h2><span id="3修改es配置文件">3.修改es配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd config</span><br><span class="line">vim elasticsearch.yml</span><br></pre></td></tr></table></figure>
+<p>在elasticsearch.yml添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">bootstrap.memory_lock: true</span><br><span class="line">index.cache.field.max_size: 50000</span><br><span class="line">index.cache.field.expire: 30m</span><br><span class="line">index.cache.field.type: soft</span><br><span class="line"></span><br><span class="line">network.host: 0.0.0.0</span><br><span class="line"></span><br><span class="line">action.disable_delete_all_indices : true</span><br></pre></td></tr></table></figure></p>
+<h2><span id="4启动">4.启动</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ../bin</span><br><span class="line"></span><br><span class="line">//直接启动ElasticSearch</span><br><span class="line">./elasticsearch </span><br><span class="line"></span><br><span class="line">//或者使用后台方式进行启动</span><br><span class="line">./elasticsearch -d</span><br></pre></td></tr></table></figure>
+<h2><span id="查看端口占用">查看端口占用</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -anp|grep 9200 或lsof -i:9200 //看该进程是否正常运行</span><br></pre></td></tr></table></figure>
+<p>出现的问题:<br>Exception in thread “main” Java.lang.RuntimeException: don’t run elasticsearch as root.<br>at org.elasticsearch.bootstrap.Bootstrap.initializeNatives(Bootstrap.java:93)<br>at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:144)<br>at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:270)<br>at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:35)</p>
+<p>解决办法一:<br>添加用户并授权<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user add test</span><br><span class="line">chown -R test /usr/local/elasticsearch-2.4.4</span><br></pre></td></tr></table></figure></p>
+<p>解决办法二:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./elasticsearch -Des.insecure.allow.root=true</span><br><span class="line">或者</span><br><span class="line">vi elasticsearch</span><br><span class="line"></span><br><span class="line">// 找到ES_JAVA_OPTS在其后追加</span><br><span class="line">ES_JAVA_OPTS=&quot;-Des.insecure.allow.root=true&quot;</span><br></pre></td></tr></table></figure></p>
+<p>本人建议使用第一种方法，因为最好不要习惯用root用户，否则一旦不慎执行某些操作，后果很严重。</p>
+<h2><span id="5网站访问">5.网站访问</span></h2><p><a href="http://IP地址:9200" target="_blank" rel="noopener">http://IP地址:9200</a><br>出现如图所示:<br><img src="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/es.png" alt=""></p>
+<p>参考资料:<br>【Linux进阶】Ubuntu 16.04安装ElasticSearch:<a href="https://blog.csdn.net/u011404265/article/details/72870166" target="_blank" rel="noopener">https://blog.csdn.net/u011404265/article/details/72870166</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cju164nkf0011qovk4mtf5k0y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-VsCode云端版本" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/27/VsCode云端版本/" class="article-date">
@@ -93,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/VsCode云端版本/" data-id="cju0zrv0l0016n0vksy5cuw1h" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/VsCode云端版本/" data-id="cju164nkc000yqovkv838vi2x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
@@ -138,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" data-id="cju0zrv2l003en0vk2nixhrzr" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" data-id="cju164nmq0038qovkwz9jn4ha" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
@@ -188,7 +238,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/Docker安装MySQL并配置远程访问/" data-id="cju0zruwk0001n0vkjqehuabh" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/Docker安装MySQL并配置远程访问/" data-id="cju164ni00001qovki9dla7ce" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
@@ -235,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/Node-js之mysql增删改查/" data-id="cju0zruze000mn0vktx8769pv" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/Node-js之mysql增删改查/" data-id="cju164njg000dqovk6c32a9wh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -276,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/node-js获取时间/" data-id="cju0zrv1v002ln0vkgzhxfgdl" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/node-js获取时间/" data-id="cju164nm0002iqovkz1nyg2ht" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -321,7 +371,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/25/node-js-api文档生成/" data-id="cju0zrv1o002en0vkcguur2zb" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/25/node-js-api文档生成/" data-id="cju164nlx002dqovku4ccr5to" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -368,7 +418,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/22/JSON-stringify-和JSON-parse-的作用/" data-id="cju0zruy80007n0vkoh3g2j13" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/22/JSON-stringify-和JSON-parse-的作用/" data-id="cju164niv0008qovkou1p9vwb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -408,7 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/21/mysql备份命令/" data-id="cju0zrv1b001zn0vk16htxdug" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/21/mysql备份命令/" data-id="cju164nlh001uqovktddstb5d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
@@ -450,51 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" data-id="cju0zrv13001on0vk34hsgobw" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Uncaught-ReferenceError-layer-is-not-defined" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" class="article-date">
-  <time datetime="2019-03-19T12:35:10.000Z" itemprop="datePublished">2019-03-19</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/">Uncaught ReferenceError: layer is not defined</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>错误详细信息,如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught ReferenceError: layer is not defined&apos;</span><br></pre></td></tr></table></figure></p>
-<p>关键词就是not defined 未定义，那么解决方案就是给它定义。</p>
-<p>原来的问题代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>这样在我的博客首页是可以生效的，不会出现未定义。但是当我将其抽象为一个函数的时候，其它地方就不行了。</p>
-<p>通过声明定义后，代码就变成如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">layui.use(&apos;layer&apos;,function () &#123; </span><br><span class="line">       	</span><br><span class="line">       layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br><span class="line">       </span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>当时我在想引入layer.js来解决这个问题，但是仔细一看这并不是问题的关键所在。<br>解决问题，在于更好的理解问题，当然了，把握关键词也是很重要的(事半功倍)。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" data-id="cju0zrv15001qn0vknonrr8yj" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" data-id="cju164nlc001mqovksd815x43" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -556,6 +562,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/03/js获取select标签选中的值/">js获取select标签选中的值</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/03/layui之确认框/">layui之确认框</a>
           </li>
         
@@ -569,10 +579,6 @@
         
           <li>
             <a href="/2019/03/29/MySQL去除查询结果重复/">MySQL去除查询结果重复</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/29/Ubuntu16-04之安装Nutch/">Ubuntu16.04之安装Nutch</a>
           </li>
         
       </ul>

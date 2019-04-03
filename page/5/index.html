@@ -62,6 +62,56 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" class="article-date">
+  <time datetime="2019-03-05T13:16:45.000Z" itemprop="datePublished">2019-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。</p>
+<p>错误信息如下:<br>org.apache.ibatis.binding.BindingException: Invalid bound statement<br>  (not found)</p>
+<p>通常原因是因为Mapper interface和xml文件的定义对不上，通常需要检查包名、namespace、函数名等。</p>
+<p>出现这个错误的原因是我太过相信自我了，觉得自觉没有错，于是手打，结果就是一个单词写错了。</p>
+<p>看代码示例:</p>
+<p>xml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;resentPosts&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line"> 	SELECT post_title FROM `wp_posts` WHERE post_status = &apos;publish&apos; ORDER BY post_modified DESC LIMIT 0,5 </span><br><span class="line"> &lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
+<p>dao(interface):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//近期文章</span><br><span class="line">public List&lt;Posts&gt; recentPosts();</span><br></pre></td></tr></table></figure></p>
+<p>大家很容易会看出select标签中的id与dao中的接口函数名不对应。这就是问题的根源，改成一样的，如下(即可解决问题)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;recentPosts&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">  	SELECT post_title FROM `wp_posts` WHERE post_status = &apos;publish&apos; ORDER BY post_modified DESC LIMIT 0,5 </span><br><span class="line">  &lt;/select&gt;</span><br></pre></td></tr></table></figure>
+<p>最后说一句，遇到问题不要慌，找到问题关键信息，复制到百度上/谷歌或者stackoverflow即可找到答案。</p>
+<p>太阳底下没有新鲜事儿，你遇到过的，说不定别人也遇到过。</p>
+<p>参考链接:<a href="https://www.cnblogs.com/lfm601508022/p/InvalidBoundStatement.html" target="_blank" rel="noopener">https://www.cnblogs.com/lfm601508022/p/InvalidBoundStatement.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" data-id="cju164nlm001zqovkte5zp3ls" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-node-js服务端程序在Linux上持久运行" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/" class="article-date">
@@ -105,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/" data-id="cju0zrv1w002nn0vkbhtbwso8" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/" data-id="cju164nm4002lqovkn0buuhso" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -147,7 +197,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/04/node-js读写文件/" data-id="cju0zrv1y002pn0vkln5fe1db" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/04/node-js读写文件/" data-id="cju164nm6002nqovk8xi7pgul" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -210,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/04/javascript之传输加密/" data-id="cju0zrv2t003nn0vkgbavypa9" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/04/javascript之传输加密/" data-id="cju164nql003qqovk2zlt4h2u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -254,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/VsCode插件开发之通信/" data-id="cju0zrv0n0018n0vk4pxb7d5j" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/VsCode插件开发之通信/" data-id="cju164nki0013qovkv3ckqdrj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
@@ -301,7 +351,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cju0zruz7000gn0vkt2fswqay" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cju164njy000mqovk4laz5v02" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -365,7 +415,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cju0zrv1r002hn0vkg3lz6idk" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cju164nlw002bqovkgj038yfr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -409,7 +459,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cju0zrv1c0021n0vk2ejyr3h2" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cju164nlj001wqovk31xh28sw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
@@ -457,7 +507,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cju0zrv1g0026n0vke5kgrh6z" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cju164nlo0021qovkkqy4r7it" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
@@ -499,57 +549,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cju0zrv2d0035n0vkp8o29ueh" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cju164nmf002xqovkhfyy7j0e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-阿里云配置tomcat-https" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/25/阿里云配置tomcat-https/" class="article-date">
-  <time datetime="2019-02-25T11:22:15.000Z" itemprop="datePublished">2019-02-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/25/阿里云配置tomcat-https/">阿里云配置tomcat https</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>阿里云申请免费的SSL证书和配置https，可参考该篇博文:<a href="https://blog.csdn.net/baidu_19473529/article/details/70037976" target="_blank" rel="noopener">https://blog.csdn.net/baidu_19473529/article/details/70037976</a></p>
-<p>虽然有现成的，不过我还是要做一个小小的总结记录一下。</p>
-<p>由于我公司使用的tomcat主要是8.5,所以我以8.5配置作为讲解(总的来说，配置相差不大)</p>
-<p>假定你已经在阿里云成功申请到免费的SSL证书，现在我们开始来配置。</p>
-<h2><span id="1首先讲pfx文件放在tomcat的一个叫cert的文件夹tomcat实际上没有这个文件夹你可以选择手动创建一个">1.首先讲pfx文件放在tomcat的一个叫cert的文件夹(tomcat实际上没有这个文件夹，你可以选择手动创建一个)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd tomcat8</span><br><span class="line">mkdir cert</span><br></pre></td></tr></table></figure>
-<h2><span id="2修改serverxml">2.修改server.xml</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;Connector port=&quot;443&quot; protocol=&quot;org.apache.coyote.http11.Http11NioProtocol&quot;</span><br><span class="line">               maxThreads=&quot;150&quot; SSLEnabled=&quot;true&quot;  scheme=&quot;https&quot;</span><br><span class="line">    secure=&quot;true&quot;</span><br><span class="line">               &gt;</span><br><span class="line">        &lt;SSLHostConfig&gt;</span><br><span class="line">             &lt;Certificate certificateKeystoreFile=&quot;cert/test.pfx&quot;</span><br><span class="line">                         certificateKeystoreType=&quot;PKCS12&quot; certificateKeystorePassword=&quot;1541231341210&quot; /&gt;</span><br><span class="line">        &lt;/SSLHostConfig&gt;</span><br><span class="line">    &lt;/Connector&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> &lt;Connector port=&quot;80&quot; protocol=&quot;HTTP/1.1&quot;</span><br><span class="line">               connectionTimeout=&quot;20000&quot;</span><br><span class="line">               redirectPort=&quot;443&quot; /&gt;</span><br><span class="line"></span><br><span class="line">    &lt;Connector port=&quot;8009&quot; protocol=&quot;AJP/1.3&quot; redirectPort=&quot;443&quot; /&gt;</span><br></pre></td></tr></table></figure>
-<h2><span id="3修改webxml">3.修改web.xml</span></h2><p>编辑web.xml，不加下面这段的话不能把http请求转为https<br>在该文件标签（一般在文件最末尾）后面加上这样一段：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;login-config&gt;  </span><br><span class="line">    &lt;!-- Authorization setting for SSL --&gt;  </span><br><span class="line">    &lt;auth-method&gt;CLIENT-CERT&lt;/auth-method&gt;  </span><br><span class="line">    &lt;realm-name&gt;Client Cert Users-only Area&lt;/realm-name&gt;  </span><br><span class="line">&lt;/login-config&gt;  </span><br><span class="line">&lt;security-constraint&gt;  </span><br><span class="line">    &lt;!-- Authorization setting for SSL --&gt;  </span><br><span class="line">    &lt;web-resource-collection &gt;  </span><br><span class="line">        &lt;web-resource-name &gt;SSL&lt;/web-resource-name&gt;  </span><br><span class="line">        &lt;url-pattern&gt;/*&lt;/url-pattern&gt;  </span><br><span class="line">    &lt;/web-resource-collection&gt;  </span><br><span class="line">    &lt;user-data-constraint&gt;  </span><br><span class="line">        &lt;transport-guarantee&gt;CONFIDENTIAL&lt;/transport-guarantee&gt;  </span><br><span class="line">    &lt;/user-data-constraint&gt;  </span><br><span class="line">&lt;/security-constraint&gt;</span><br></pre></td></tr></table></figure></p>
-<p>本文主要参考该篇博文<a href="https://blog.csdn.net/qq_35624642/article/details/83016813" target="_blank" rel="noopener">Tomcat8、9配置https SSL证书 阿里云的免费dv证书</a></p>
-<p>另外为了调试方便，本地tomcat还需配置https,关于windowns配置https，可参考该篇博文<a href="https://blog.csdn.net/u014793522/article/details/54846973" target="_blank" rel="noopener">本地windows搭建https</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cju0zrv2r003ln0vk6mlbz3hf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -608,6 +611,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/03/js获取select标签选中的值/">js获取select标签选中的值</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/03/layui之确认框/">layui之确认框</a>
           </li>
         
@@ -621,10 +628,6 @@
         
           <li>
             <a href="/2019/03/29/MySQL去除查询结果重复/">MySQL去除查询结果重复</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/29/Ubuntu16-04之安装Nutch/">Ubuntu16.04之安装Nutch</a>
           </li>
         
       </ul>
