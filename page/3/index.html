@@ -156,6 +156,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Error-listen-EADDRINUSE-3000" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/19/Error-listen-EADDRINUSE-3000/">Error: listen EADDRINUSE :::3000</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/19/Error-listen-EADDRINUSE-3000/" class="archive-article-date">
+  	<time datetime="2019-03-19T06:48:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>错误详细信息如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">events.js:183</span><br><span class="line"></span><br><span class="line">      throw er; // Unhandled &apos;error&apos; event</span><br><span class="line"></span><br><span class="line">      ^</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Error: listen EADDRINUSE :::3000</span><br><span class="line"></span><br><span class="line">    at Server.setupListenHandle [as _listen2] (net.js:1360:14)</span><br><span class="line"></span><br><span class="line">    at listenInCluster (net.js:1401:12)</span><br><span class="line"></span><br><span class="line">    at Server.listen (net.js:1485:7)</span><br><span class="line"></span><br><span class="line">    at Function.listen (E:\VsCode\mock-github-api\node_modules\express\lib\appli                                                                                                                                  cation.js:618:24)</span><br><span class="line"></span><br><span class="line">    at Object.&lt;anonymous&gt; (E:\VsCode\mock-github-api\index.js:180:5)</span><br><span class="line"></span><br><span class="line">    at Module._compile (module.js:653:30)</span><br><span class="line"></span><br><span class="line">    at Object.Module._extensions..js (module.js:664:10)</span><br><span class="line"></span><br><span class="line">    at Module.load (module.js:566:32)</span><br><span class="line"></span><br><span class="line">    at tryModuleLoad (module.js:506:12)</span><br><span class="line"></span><br><span class="line">    at Function.Module._load (module.js:498:3)</span><br><span class="line"></span><br><span class="line">npm ERR! code ELIFECYCLE</span><br><span class="line"></span><br><span class="line">npm ERR! errno 1</span><br><span class="line"></span><br><span class="line">npm ERR! mock-github-api@1.0.0 start: `node index`</span><br><span class="line"></span><br><span class="line">npm ERR! Exit status 1</span><br><span class="line"></span><br><span class="line">npm ERR!</span><br><span class="line"></span><br><span class="line">npm ERR! Failed at the mock-github-api@1.0.0 start script.</span><br><span class="line"></span><br><span class="line">npm ERR! This is probably not a problem with npm. There is likely additional log                                                                                                                                  ging output above.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">npm ERR! A complete log of this run can be found in:</span><br><span class="line"></span><br><span class="line">npm ERR!     D:\Program Files\nodejs\node_cache\_logs\2019-03-19T06_44_19_978Z-d                                                                                                                                  ebug.log</span><br></pre></td></tr></table></figure>
+<p>关键信息:listen EADDRINUSE :::3000</p>
+<p>其实就是端口被占，主要修改的地方是app.listen(4000),我在这里将其改为4000,问题就迎刃而解。</p>
+<p>当然了，接下来还可能会出现这个问题，最直接的解决办法是快捷键ctrl+shift+esc打开进程管理，并找到对应的进程，将其杀死，如图所示:<br><img src="/2019/03/19/Error-listen-EADDRINUSE-3000/process.png" alt=""></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/19/Error-listen-EADDRINUSE-3000/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-python3-6在linux持久运行django" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -901,89 +979,6 @@
 
 
   
-    <article id="post-StringRedisTemplate操作Redis" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/09/StringRedisTemplate操作Redis/">StringRedisTemplate操作Redis</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/09/StringRedisTemplate操作Redis/" class="archive-article-date">
-  	<time datetime="2019-03-09T12:40:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在说到StringRedisTemplate操作Redis数据的时候，我们顺便谈谈StringRedisTemplate和RedisTemplate的区别。</p>
-<h2><span id="一-stringredistemplate和redistemplate的区别">一、StringRedisTemplate和RedisTemplate的区别</span></h2><p>区别如下:<br>1.两者关系是StringRedisTemplate继承RedisTemplate。</p>
-<p>从StringRedisTemplate源码即可看出，如下图所示:<br><img src="/2019/03/09/StringRedisTemplate操作Redis/example01.png" alt=""></p>
-<p>2.两者的数据是不共通的，也就是说StringRedisTemplate只能管理StringRedisTemplate里面的数据，RedisTemplate只能管理RedisTemplate中的数据。</p>
-<p>3.使用的序列化类不同。<br>使用的序列化哪里不同?如下所示:<br>(1)RedisTemplate使用的是JdkSerializationRedisSerializer 存入数据会将数据先序列化成字节组然后再存入Redis数据库。<br>(2)StringRedisTemplate使用的是StringRedisSerializer。</p>
-<p>使用时注意事项:<br>(1)当你的Redis数据库里面本来存的是字符串数据或者是你要存取的数据就是字符串类型数据的时候，那么你就使用StringRedisTemplate即可;<br>(2)但是如果你的数据是复杂的对象类型，而取出的时候又不想做任何数据转换，直接从Redis里面取出一个对象，那么使用RedisTemplate是更好的选择;<br>(3)RedisTemplate中存取数据都是字节数组。当Redis职工存入的数据是可读形式而非字节数组时，使用RedisTemplate取值的时候会无法获取导出数据，获得的值为null。可以使用StringRedisTemplate试试;</p>
-<h2><span id="二-redistemplate定义了5种数据结构操作">二、RedisTemplate定义了5种数据结构操作</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redisTemplate.opsForValue();//操作字符串</span><br><span class="line">redisTemplate.opsForHash();//操作hash</span><br><span class="line">redisTemplate.opsForList();//操作list</span><br><span class="line">redisTemplate.opsForSet();//操作set</span><br><span class="line">redisTemplate.opsForZSet();//操作有序set</span><br></pre></td></tr></table></figure>
-<h2><span id="三-stringredistemplate常用操作">三、StringRedisTemplate常用操作</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">stringRedisTemplate.opsForValue().set(&quot;test&quot;, &quot;100&quot;,60*10,TimeUnit.SECONDS);//向redis里存入数据和设置缓存时间  </span><br><span class="line"></span><br><span class="line">stringRedisTemplate.boundValueOps(&quot;test&quot;).increment(-1);//val做-1操作</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForValue().get(&quot;test&quot;)//根据key获取缓存中的val</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.boundValueOps(&quot;test&quot;).increment(1);//val +1</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.getExpire(&quot;test&quot;)//根据key获取过期时间</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.getExpire(&quot;test&quot;,TimeUnit.SECONDS)//根据key获取过期时间并换算成指定单位 </span><br><span class="line"></span><br><span class="line">stringRedisTemplate.delete(&quot;test&quot;);//根据key删除缓存</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.hasKey(&quot;546545&quot;);//检查key是否存在，返回boolean值 </span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForSet().add(&quot;red_123&quot;, &quot;1&quot;,&quot;2&quot;,&quot;3&quot;);//向指定key中存放set集合</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.expire(&quot;red_123&quot;,1000 , TimeUnit.MILLISECONDS);//设置过期时间</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForSet().isMember(&quot;red_123&quot;, &quot;1&quot;)//根据key查看集合中是否存在指定数据</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForSet().members(&quot;red_123&quot;);//根据key获取set集合</span><br></pre></td></tr></table></figure>
-<p>单测示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">package cn.test;</span><br><span class="line"></span><br><span class="line">import static org.junit.Assert.*;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line">import org.springframework.data.redis.core.StringRedisTemplate;</span><br><span class="line">import org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line">import com.blog.springboot.Application;</span><br><span class="line"></span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)</span><br><span class="line">public class PracticeJunitTest &#123;</span><br><span class="line">	@Autowired</span><br><span class="line">    private StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testConnectionRedis() throws Exception &#123;</span><br><span class="line"></span><br><span class="line">		stringRedisTemplate.opsForValue().set(&quot;youcong&quot;, &quot;ok&quot;);</span><br><span class="line"></span><br><span class="line">		System.out.println(stringRedisTemplate.opsForValue().get(&quot;youcong&quot;));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>参考链接如下:<br><a href="http://www.cnblogs.com/slowcity/p/9002660.html" target="_blank" rel="noopener">StringRedisTemplate操作redis数据</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/09/StringRedisTemplate操作Redis/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1094,6 +1089,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
@@ -1106,7 +1105,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1114,11 +1113,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1130,15 +1129,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1146,7 +1141,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">

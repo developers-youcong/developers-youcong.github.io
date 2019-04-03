@@ -156,6 +156,89 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-StringRedisTemplate操作Redis" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/09/StringRedisTemplate操作Redis/">StringRedisTemplate操作Redis</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/09/StringRedisTemplate操作Redis/" class="archive-article-date">
+  	<time datetime="2019-03-09T12:40:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在说到StringRedisTemplate操作Redis数据的时候，我们顺便谈谈StringRedisTemplate和RedisTemplate的区别。</p>
+<h2><span id="一-stringredistemplate和redistemplate的区别">一、StringRedisTemplate和RedisTemplate的区别</span></h2><p>区别如下:<br>1.两者关系是StringRedisTemplate继承RedisTemplate。</p>
+<p>从StringRedisTemplate源码即可看出，如下图所示:<br><img src="/2019/03/09/StringRedisTemplate操作Redis/example01.png" alt=""></p>
+<p>2.两者的数据是不共通的，也就是说StringRedisTemplate只能管理StringRedisTemplate里面的数据，RedisTemplate只能管理RedisTemplate中的数据。</p>
+<p>3.使用的序列化类不同。<br>使用的序列化哪里不同?如下所示:<br>(1)RedisTemplate使用的是JdkSerializationRedisSerializer 存入数据会将数据先序列化成字节组然后再存入Redis数据库。<br>(2)StringRedisTemplate使用的是StringRedisSerializer。</p>
+<p>使用时注意事项:<br>(1)当你的Redis数据库里面本来存的是字符串数据或者是你要存取的数据就是字符串类型数据的时候，那么你就使用StringRedisTemplate即可;<br>(2)但是如果你的数据是复杂的对象类型，而取出的时候又不想做任何数据转换，直接从Redis里面取出一个对象，那么使用RedisTemplate是更好的选择;<br>(3)RedisTemplate中存取数据都是字节数组。当Redis职工存入的数据是可读形式而非字节数组时，使用RedisTemplate取值的时候会无法获取导出数据，获得的值为null。可以使用StringRedisTemplate试试;</p>
+<h2><span id="二-redistemplate定义了5种数据结构操作">二、RedisTemplate定义了5种数据结构操作</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">redisTemplate.opsForValue();//操作字符串</span><br><span class="line">redisTemplate.opsForHash();//操作hash</span><br><span class="line">redisTemplate.opsForList();//操作list</span><br><span class="line">redisTemplate.opsForSet();//操作set</span><br><span class="line">redisTemplate.opsForZSet();//操作有序set</span><br></pre></td></tr></table></figure>
+<h2><span id="三-stringredistemplate常用操作">三、StringRedisTemplate常用操作</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">stringRedisTemplate.opsForValue().set(&quot;test&quot;, &quot;100&quot;,60*10,TimeUnit.SECONDS);//向redis里存入数据和设置缓存时间  </span><br><span class="line"></span><br><span class="line">stringRedisTemplate.boundValueOps(&quot;test&quot;).increment(-1);//val做-1操作</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForValue().get(&quot;test&quot;)//根据key获取缓存中的val</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.boundValueOps(&quot;test&quot;).increment(1);//val +1</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.getExpire(&quot;test&quot;)//根据key获取过期时间</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.getExpire(&quot;test&quot;,TimeUnit.SECONDS)//根据key获取过期时间并换算成指定单位 </span><br><span class="line"></span><br><span class="line">stringRedisTemplate.delete(&quot;test&quot;);//根据key删除缓存</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.hasKey(&quot;546545&quot;);//检查key是否存在，返回boolean值 </span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForSet().add(&quot;red_123&quot;, &quot;1&quot;,&quot;2&quot;,&quot;3&quot;);//向指定key中存放set集合</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.expire(&quot;red_123&quot;,1000 , TimeUnit.MILLISECONDS);//设置过期时间</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForSet().isMember(&quot;red_123&quot;, &quot;1&quot;)//根据key查看集合中是否存在指定数据</span><br><span class="line"></span><br><span class="line">stringRedisTemplate.opsForSet().members(&quot;red_123&quot;);//根据key获取set集合</span><br></pre></td></tr></table></figure>
+<p>单测示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">package cn.test;</span><br><span class="line"></span><br><span class="line">import static org.junit.Assert.*;</span><br><span class="line">import org.junit.Test;</span><br><span class="line">import org.junit.runner.RunWith;</span><br><span class="line">import org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line">import org.springframework.boot.test.context.SpringBootTest;</span><br><span class="line">import org.springframework.data.redis.core.StringRedisTemplate;</span><br><span class="line">import org.springframework.test.context.junit4.SpringRunner;</span><br><span class="line">import com.blog.springboot.Application;</span><br><span class="line"></span><br><span class="line">@RunWith(SpringRunner.class)</span><br><span class="line">@SpringBootTest(classes = Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)</span><br><span class="line">public class PracticeJunitTest &#123;</span><br><span class="line">	@Autowired</span><br><span class="line">    private StringRedisTemplate stringRedisTemplate;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	@Test</span><br><span class="line">	public void testConnectionRedis() throws Exception &#123;</span><br><span class="line"></span><br><span class="line">		stringRedisTemplate.opsForValue().set(&quot;youcong&quot;, &quot;ok&quot;);</span><br><span class="line"></span><br><span class="line">		System.out.println(stringRedisTemplate.opsForValue().get(&quot;youcong&quot;));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>参考链接如下:<br><a href="http://www.cnblogs.com/slowcity/p/9002660.html" target="_blank" rel="noopener">StringRedisTemplate操作redis数据</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Redis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/09/StringRedisTemplate操作Redis/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Could-not-get-a-resource-from-the-pool-错误解决" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -1014,96 +1097,6 @@
 
 
   
-    <article id="post-node-js服务端程序在Linux上持久运行" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/05/node-js服务端程序在Linux上持久运行/">node.js服务端程序在Linux上持久运行</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/" class="archive-article-date">
-  	<time datetime="2019-03-05T06:04:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>如果要想在服务端部署node.js程序，让其持久化运行，就不能单单使用npm start命令运行，当然了，这样运行是毫无问题的，但是当关闭xshell窗口或者是关闭进程的时候(其实关闭xshell窗口相当于默认关闭进程)，就无法访问对应的node.js服务端程序了。</p>
-<p>那么该如何才能持久访问呢？</p>
-<p>其实也就两步</p>
-<h4><span id="第一步安装forever">第一步安装forever</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install forever 或者 npminstall -g forever</span><br></pre></td></tr></table></figure>
-<h4><span id="第二步运行对应的js">第二步运行对应的js</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forver start index.js</span><br></pre></td></tr></table></figure>
-<h5><span id="注意你可能会遇到如下错误">注意(你可能会遇到如下错误):</span></h5><p>错误信息:<br>forever: command not found</p>
-<p>原因:以Windows来说，通常这种错误是因为没有配置好环境变量，解决方案也很简单就是配置好环境变量或者是使用绝对路径</p>
-<p>解决方式(Linux演示，这里我使用绝对路径):</p>
-<h5><span id="如何找到绝对路径呢">如何找到绝对路径呢？</span></h5><p>通过该命令可以获取node.js的安装模块,npm list -g –depth 0<br>├── <a href="mailto:ali-oss@6.1.0" target="_blank" rel="noopener">ali-oss@6.1.0</a><br>├── <a href="mailto:forever@0.15.3" target="_blank" rel="noopener">forever@0.15.3</a><br>└── <a href="mailto:npm@6.4.1" target="_blank" rel="noopener">npm@6.4.1</a></p>
-<p>再通过关键字搜索 find / -name forever<br>/home/youcong/mock-github-api/node_modules/forever<br>/home/youcong/mock-github-api/node_modules/forever/lib/forever<br>/home/youcong/mock-github-api/node_modules/forever/bin/forever<br>/home/youcong/mock-github-api/node_modules/.bin/forever<br>/home/youcong/nodejs/lib/node_modules/forever<br>/home/youcong/nodejs/lib/node_modules/forever/lib/forever<br>/home/youcong/nodejs/lib/node_modules/forever/bin/forever<br>/home/youcong/nodejs/bin/forever</p>
-<p>最后通过/home/youcong/mock-github-api/node_modules/forever/bin/forever start index.js 即可实现node.js服务端程序在Linux上持久运行。</p>
-<h5><span id="forever常用命令">forever常用命令</span></h5><p>forever start app.js //启动程序</p>
-<p>forever stop app.js //关闭程序</p>
-<p>forever start -l forever.log -o out.log -e err.log app.js //启动程序并输出日志</p>
-<p>forever restart app.js //重启程序</p>
-<p>forever list //查看正在运行的进程</p>
-<h6><span id="参考链接">参考链接:</span></h6><p>forever:command not found:<a href="https://blog.csdn.net/xgbm_k/article/details/78132293" target="_blank" rel="noopener">https://blog.csdn.net/xgbm_k/article/details/78132293</a><br>node.js在Linux上如何持久运行:<a href="https://blog.csdn.net/shakdy/article/details/82938679" target="_blank" rel="noopener">https://blog.csdn.net/shakdy/article/details/82938679</a><br>node.js后台运行方法:<a href="https://blog.csdn.net/zdyueguanyun/article/details/79043483" target="_blank" rel="noopener">https://blog.csdn.net/zdyueguanyun/article/details/79043483</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/05/node-js服务端程序在Linux上持久运行/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -1214,6 +1207,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Redis</a>
               </li>
              
@@ -1226,7 +1223,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
+                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1234,11 +1231,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Docker</a>
+                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">SpringBoot</a>
+                <a href="javascript:void(0)" class="js-tag color1">MySQL</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1250,15 +1247,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">PostgreSQL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">jenkins</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1266,7 +1259,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+                <a href="javascript:void(0)" class="js-tag color3">MyBatis</a>
               </li>
              
               <li class="article-tag-list-item">
