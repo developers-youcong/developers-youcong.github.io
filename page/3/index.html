@@ -62,6 +62,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-mysql备份命令" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/21/mysql备份命令/" class="article-date">
+  <time datetime="2019-03-21T05:32:20.000Z" itemprop="datePublished">2019-03-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/21/mysql备份命令/">mysql备份命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mysql备份命令如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">备份多个数据库可以使用如下命令:</span><br><span class="line">mysqldump -uroot -p123456 --databases test1 test2 test3 &gt; /home/test/dump.sql;</span><br><span class="line"></span><br><span class="line">恢复备份:</span><br><span class="line">source dump.sql 在mysql命令行中输入该命令即可恢复</span><br><span class="line"></span><br><span class="line">备份整个数据库:</span><br><span class="line"> mysqldump -uroot -123456 -A &gt; all.sql</span><br><span class="line"></span><br><span class="line">备份整个数据库结构:</span><br><span class="line"> mysqldump -uroot -p123456 -P3306 -A -d &gt; all_002.sql</span><br><span class="line"> </span><br><span class="line">备份单个数据库结构及其数据</span><br><span class="line">mysqldump -uroot -p123456 -P3306 test &gt; all_003.sql</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">备份单个数据库结构及其数据</span><br><span class="line">mysqldump -uroot -p123456 -P3306 test -d &gt; all_004.sql</span><br><span class="line">备份单个数据库数据</span><br><span class="line">mysqldump -uroot -p123456 -P3306 test -t &gt; all_005.sql</span><br></pre></td></tr></table></figure></p>
+<p>通常情况下，备份数据库的结构和数据，在实际生产环境中用的比较多，对于大数据时代而言，数据是至关重要的，通过数据分析便可发现用户某些行为，从而开辟市场</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/21/mysql备份命令/" data-id="cju2cvyrf001q90vkfe7rl520" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-js获取访问IP、地区、、当前操作浏览器" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" class="article-date">
@@ -92,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" data-id="cju19xr5c001ogcvkx6tqw3yq" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" data-id="cju2cvyr4001b90vk3c0riovi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -136,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" data-id="cju19xr3x000rgcvkxt7a0qal" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" data-id="cju2cvyr6001e90vk5hpl7ivd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -179,7 +219,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Error-listen-EADDRINUSE-3000/" data-id="cju19xr370004gcvk9qiot62m" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Error-listen-EADDRINUSE-3000/" data-id="cju2cvypf000390vkx0yujgqg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -222,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/python3-6在linux持久运行django/" data-id="cju19xr6r0030gcvk4mgr7bmc" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/python3-6在linux持久运行django/" data-id="cju2cvys3002k90vkoriogex1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -264,7 +304,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/" data-id="cju19xr3l000dgcvk85q6zoyu" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/" data-id="cju2cvypk000590vkq8to22u2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -326,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/PostgreSQL安装和使用/" data-id="cju19xr3k000bgcvk65onnk9f" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/PostgreSQL安装和使用/" data-id="cju2cvypt000b90vkm4majr5l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li></ul>
@@ -374,7 +414,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/" data-id="cju19xr6n002wgcvkid6k81e2" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/" data-id="cju2cvys1002h90vk8wj8xz5v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -414,7 +454,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cju19xr5y001ygcvkk71ufa2m" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cju2cvyqy001490vk65e3v591" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -454,52 +494,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/express框架之跨域请求/" data-id="cju19xr4w001igcvkdorkpd0i" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-node-js之Cookie" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/13/node-js之Cookie/" class="article-date">
-  <time datetime="2019-03-13T14:27:45.000Z" itemprop="datePublished">2019-03-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/node-js之Cookie/">node.js之Cookie</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近还是用node.js比较多，今天正好遇见一个问题，还是关于Cookie。</p>
-<p>node.js中如何实现cookie(以express框架为例):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&quot;use strict&quot;;</span><br><span class="line"> </span><br><span class="line">var express = require(&quot;express&quot;);</span><br><span class="line">var cookieParser = require(&quot;cookie-parser&quot;);</span><br><span class="line">var util = require(&quot;util&quot;);</span><br><span class="line"> </span><br><span class="line">var app = express();</span><br><span class="line">app.use(cookieParser());</span><br><span class="line"> </span><br><span class="line">app.get(&quot;/test&quot;,function (req, res) &#123;</span><br><span class="line">    console.log(&quot;Cookies: &quot; + util.inspect(req.cookies));</span><br><span class="line">	</span><br><span class="line">	res.send(&quot;cookie&quot;);</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">app.listen(8081);</span><br></pre></td></tr></table></figure></p>
-<p>控制台输出结果为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Cookies: &#123; Hm_lvt_2edaee7dab677cdec491683758d1e378: &apos;1552046206,1552134942,1552485731&apos;,</span><br><span class="line">  Hm_lpvt_2edaee7dab677cdec491683758d1e378: &apos;1552485731&apos;,</span><br><span class="line">  add: [ null, null, null, null, null, null, null ] &#125;</span><br></pre></td></tr></table></figure></p>
-<p>如果不使用express的话，那么原生node.js是如何实现的呢？代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line"></span><br><span class="line">    // 获得客户端的Cookie</span><br><span class="line"></span><br><span class="line">    var Cookies = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    req.headers.cookie &amp;&amp; req.headers.cookie.split(&apos;;&apos;).forEach(function( Cookie ) &#123;</span><br><span class="line"></span><br><span class="line">        var parts = Cookie.split(&apos;=&apos;);</span><br><span class="line"></span><br><span class="line">        Cookies[ parts[ 0 ].trim() ] = ( parts[ 1 ] || &apos;&apos; ).trim();</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    console.log(Cookies)</span><br><span class="line"></span><br><span class="line">    // 向客户端设置一个Cookie</span><br><span class="line"></span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line"></span><br><span class="line">        &apos;Set-Cookie&apos;: &apos;myCookie=test&apos;,</span><br><span class="line"></span><br><span class="line">        &apos;Content-Type&apos;: &apos;text/plain&apos;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    res.end(&apos;Hello World\n&apos;);</span><br><span class="line"></span><br><span class="line">&#125;).listen(8000);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">console.log(&apos;Server running at http://127.0.0.1:8000/&apos;);</span><br></pre></td></tr></table></figure></p>
-<p>‘<br>cookie并不是万能的，相反它有一定的安全隐患，为此node.js有一种cookie签名实现，源码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;express&apos;);</span><br><span class="line">const cookieParser = require(&apos;cookie-parser&apos;);</span><br><span class="line"></span><br><span class="line">//随机生成的字符串</span><br><span class="line">var signStr = &apos;xadsafeowirw&apos;</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">//需要将密匙传给cookieParser, 在接收数据的时候，进行解析。</span><br><span class="line">app.use(cookieParser(signStr));</span><br><span class="line"></span><br><span class="line">app.use(&apos;/&apos;, function (req, res) &#123;</span><br><span class="line">    //将密匙字符串赋值给req.secret,可以省略，在上面cookieparser()时会自动对secret赋值</span><br><span class="line">    req.secret=signStr;</span><br><span class="line"></span><br><span class="line">    //返回给浏览器的cookie, 这就是传说中的种cookie了</span><br><span class="line">    //如果需要开启签名，第三个参数对象signed 设置为true.</span><br><span class="line">    //由于cookie的大小限制4k，而签名后的cookie体积会增加，所以重要的cookie才签名</span><br><span class="line">    res.cookie(&apos;cookiename&apos;, &apos;youcong&apos;, &#123;signed: true, maxAge: 3600&#125;)</span><br><span class="line"></span><br><span class="line">    //有没有签名的cookie，获取方式不一样。</span><br><span class="line">    console.log(&apos;无签名&apos;, req.cookies);</span><br><span class="line">    console.log(&apos;带签名&apos;,req.signedCookies);</span><br><span class="line">    res.send(&apos;ok&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(8090);</span><br></pre></td></tr></table></figure></p>
-<p>顺便再补充一下node.js的session实现,代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;express&apos;);</span><br><span class="line">const cookieParser = require(&apos;cookie-parser&apos;);</span><br><span class="line">const cookieSession = require(&apos;cookie-session&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.use(cookieParser());</span><br><span class="line"></span><br><span class="line">//cookieSession 必须放在cookieParser后面</span><br><span class="line">app.use(cookieSession(&#123;</span><br><span class="line">    //session的秘钥，防止session劫持。 这个秘钥会被循环使用，秘钥越长，数量越多，破解难度越高。</span><br><span class="line">    keys: [&apos;aaa&apos;, &apos;bbb&apos;, &apos;ccc&apos;],</span><br><span class="line">    //session过期时间，不易太长。php默认20分钟</span><br><span class="line">    maxAge: 60*60,</span><br><span class="line">    //可以改变浏览器cookie的名字</span><br><span class="line">    name: &apos;session&apos;</span><br><span class="line">&#125;));</span><br><span class="line"></span><br><span class="line">app.use(&apos;/&apos;, function (req, res) &#123;</span><br><span class="line"></span><br><span class="line">    //假设使用count记录用户访问的次数</span><br><span class="line">   if(req.session[&apos;count&apos;] == null) &#123;</span><br><span class="line">       req.session[&apos;count&apos;] = 1;</span><br><span class="line">   &#125;else&#123;</span><br><span class="line">       req.session[&apos;count&apos;]++;</span><br><span class="line">   &#125;</span><br><span class="line">   console.log(req.session[&apos;count&apos;])</span><br><span class="line">    res.send(&apos;ok&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(8090)</span><br></pre></td></tr></table></figure></p>
-<p>参考资料如下:<br>node.js操作Cookie，让你清楚了解cookie存入过程:<a href="https://blog.csdn.net/sinat_18474835/article/details/79987282" target="_blank" rel="noopener">https://blog.csdn.net/sinat_18474835/article/details/79987282</a><br>Node.js学习（15）-Cookie:<a href="https://blog.csdn.net/sunhuansheng/article/details/82356129" target="_blank" rel="noopener">https://blog.csdn.net/sunhuansheng/article/details/82356129</a><br>node学习之cookie和session:<a href="https://www.cnblogs.com/lijinwen/p/7898159.html" target="_blank" rel="noopener">https://www.cnblogs.com/lijinwen/p/7898159.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/node-js之Cookie/" data-id="cju19xr6a002fgcvk9kw6lqro" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/express框架之跨域请求/" data-id="cju2cvyqu000z90vktc8t69i3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -529,7 +524,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li></ul>
     </div>
   </div>
 
@@ -539,7 +534,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 12px;">Docker</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 14px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 12px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Redis/" style="font-size: 12px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 14px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/wordpress/" style="font-size: 12px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
+      <a href="/tags/Docker/" style="font-size: 12px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 14px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 12px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Redis/" style="font-size: 12px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 14px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/wordpress/" style="font-size: 12px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
     </div>
   </div>
 
@@ -561,6 +556,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/04/vue-electron脚手架/">vue-electron脚手架</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/03/记一次layui弹框关闭问题/">记一次layui弹框关闭问题</a>
           </li>
         
@@ -574,10 +573,6 @@
         
           <li>
             <a href="/2019/04/02/Node-js读取文件内容并返回值-非异步/">Node.js读取文件内容并返回值(非异步)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/">springboot1.5.4 配置druid1.1.0(使用druid-spring-boot-starter)</a>
           </li>
         
       </ul>

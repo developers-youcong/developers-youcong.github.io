@@ -62,6 +62,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-jenkins忘记管理员密码之解决方案" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/07/jenkins忘记管理员密码之解决方案/" class="article-date">
+  <time datetime="2019-03-07T11:34:40.000Z" itemprop="datePublished">2019-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/07/jenkins忘记管理员密码之解决方案/">jenkins忘记管理员密码之解决方案</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>jenkins忘记管理员密码怎么办？</p>
+<p>通常有这么几种解决方案，如下所示:</p>
+<p>(1)进入对应的用户目录文件夹，以ubuntu16.04为例，jenkins安装目录为/var/lib/jenkins<br>进入到该目录，通过ls或ll命令可以显示对应的所有文件夹，找到其中的users文件夹，进入对应的用户里面，修改config.xml中的passwordHash<br>通过关键字hudson.security.HudsonPrivateSecurityRealm_-Details即可找到。如果找不到你可以采用方案(2)解决该问题;</p>
+<p>(2)还是以ubuntu为了，进入/var/lib/jenkins目录，修改config.xml中的useSecurity将其改为false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;mode&gt;NORMAL&lt;/mode&gt;</span><br><span class="line">&lt;useSecurity&gt;false&lt;/useSecurity&gt; //默认为true</span><br><span class="line">&lt;authorizationStrategy class=&quot;hudson.security.AuthorizationStrategy$Unsecured&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>最后通过service jenkins restart重启jenkins，请按照如下步骤依次操作:<br>依次点击页面中的系统管理-&gt;全局安全配置-&gt;勾选启用安全-&gt;选择jenkins专有用户数据库，点击保存-&gt;再次点击系统管理-&gt;管理用户，配置管理员账号密码即可</p>
+<p>就这样愉快地解决了问题。</p>
+<p>参考链接如下所示:<br>Jenkins忘记密码解决方案:<a href="https://www.cnblogs.com/kazihuo/p/9328107.html" target="_blank" rel="noopener">https://www.cnblogs.com/kazihuo/p/9328107.html</a><br>Jenkins 忘记admin密码拯救方法:<a href="https://www.cnblogs.com/huangenai/p/7416322.html" target="_blank" rel="noopener">https://www.cnblogs.com/huangenai/p/7416322.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/07/jenkins忘记管理员密码之解决方案/" data-id="cju2cvyr0001690vk7dl5qtqk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jenkins/">jenkins</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mybatis之一对多" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/06/mybatis之一对多/" class="article-date">
@@ -110,7 +155,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/06/mybatis之一对多/" data-id="cju19xr630025gcvkivhs4uju" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/06/mybatis之一对多/" data-id="cju2cvyra001j90vk45kiyde4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mybatis/">mybatis</a></li></ul>
@@ -160,7 +205,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" data-id="cju19xr600020gcvk09oqnz4q" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" data-id="cju2cvyri001s90vkgeiah5sn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -215,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/" data-id="cju19xr6i002qgcvktn2ze8sd" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/" data-id="cju2cvys0002f90vkpr0bxfbs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -257,7 +302,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/04/node-js读写文件/" data-id="cju19xr6k002sgcvknxhbodg3" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/04/node-js读写文件/" data-id="cju2cvys5002m90vkfulg260y" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -320,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/04/javascript之传输加密/" data-id="cju19xr7l003ygcvkpi7z4boz" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/04/javascript之传输加密/" data-id="cju2cvywo003w90vkksgo9qrg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -364,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/VsCode插件开发之通信/" data-id="cju19xr4u001ggcvkh3litpej" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/VsCode插件开发之通信/" data-id="cju2cvyqn000v90vk1e0t48v9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
@@ -411,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cju19xr3n000fgcvk5mx1m1kx" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cju2cvypp000990vkgoyn3m6m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -475,7 +520,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cju19xr6e002kgcvk4x7fdmnf" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cju2cvyrr002590vkhreqz8ac" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -519,55 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cju19xr610022gcvkdo8dcql7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-nginx配置https" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/26/nginx配置https/" class="article-date">
-  <time datetime="2019-02-26T12:06:25.000Z" itemprop="datePublished">2019-02-26</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/26/nginx配置https/">nginx配置https</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>其实nginx配置也差不太多，虽然差不太多，但还是有区别的。</p>
-<p>假定你已经在阿里云完成了证书申请，接下来你就可以按照如下配置(主要是修改nginx.conf文件)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 443;</span><br><span class="line">        server_name www.youcongtech.com;</span><br><span class="line">        ssl on;</span><br><span class="line">        index index.html;</span><br><span class="line">        ssl_certificate /usr/local/nginx/cert/1854029_www.youcongtech.com.pem;</span><br><span class="line">        ssl_certificate_key /usr/local/nginx/cert/1854029_www.youcongtech.com.key;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                proxy_set_header X-Forwarded-Host $host;</span><br><span class="line">                proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">                proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">                proxy_set_header Host $http_host;</span><br><span class="line">                proxy_redirect off;</span><br><span class="line">                expires off;</span><br><span class="line">                sendfile off;</span><br><span class="line">                proxy_pass http://www.youcongtech.com;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>按照这样配置你不一定成功，可能会遇见下面的几个错误？</p>
-<h2><span id="错误1">错误1</span></h2><p>错误信息:ubuntu error: SSL modules require the OpenSSL library.</p>
-<p>解决办法:<br>执行该命令即可解决:sudo apt-get install openssl libssl-dev<br>参考链接为:<a href="https://yq.aliyun.com/articles/486172" target="_blank" rel="noopener">https://yq.aliyun.com/articles/486172</a></p>
-<h2><span id="错误2">错误2</span></h2><p>错误信息:nginx: [emerg] unknown directive “ssl” in /usr/local/nginx/conf/nginx.conf:188</p>
-<p>解决办法:<br>在Nginx解压目录执行该命令:./configure –with-http_ssl_module</p>
-<p>参考链接为:<a href="https://blog.csdn.net/weiyangdong/article/details/80008543" target="_blank" rel="noopener">https://blog.csdn.net/weiyangdong/article/details/80008543</a></p>
-<p>如果你对此还有疑问的话，可以参考这个链接:<a href="https://www.cnblogs.com/tianhei/p/7726505.html" target="_blank" rel="noopener">https://www.cnblogs.com/tianhei/p/7726505.html</a><br>这个链接会讲如何申请证书到配置https成功。</p>
-<p>最后在浏览器输入:<a href="https://www.youcongtech.com" target="_blank" rel="noopener">https://www.youcongtech.com</a> 你会看到一个博客界面或者是一个Nginx欢迎页。<br>当然了，目前我的阿里云域名尚在认证中，过段时间就可以申请下来了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cju19xr650027gcvkcqc4q8n1" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cju2cvyrb001l90vkk07fms4n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
@@ -597,7 +594,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li></ul>
     </div>
   </div>
 
@@ -607,7 +604,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 12px;">Docker</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 14px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 12px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Redis/" style="font-size: 12px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 14px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/wordpress/" style="font-size: 12px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
+      <a href="/tags/Docker/" style="font-size: 12px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 14px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 12px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Redis/" style="font-size: 12px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 14px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/wordpress/" style="font-size: 12px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
     </div>
   </div>
 
@@ -629,6 +626,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/04/vue-electron脚手架/">vue-electron脚手架</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/03/记一次layui弹框关闭问题/">记一次layui弹框关闭问题</a>
           </li>
         
@@ -642,10 +643,6 @@
         
           <li>
             <a href="/2019/04/02/Node-js读取文件内容并返回值-非异步/">Node.js读取文件内容并返回值(非异步)</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/">springboot1.5.4 配置druid1.1.0(使用druid-spring-boot-starter)</a>
           </li>
         
       </ul>
