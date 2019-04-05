@@ -62,6 +62,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-express框架之跨域请求" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/13/express框架之跨域请求/" class="article-date">
+  <time datetime="2019-03-13T14:51:59.000Z" itemprop="datePublished">2019-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/express框架之跨域请求/">express框架之跨域请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>express.js跨域请求代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.all(&apos;*&apos;, function(req, res, next) &#123;</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Headers&quot;, &quot;X-Requested-With&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Methods&quot;,&quot;PUT,POST,GET,DELETE,OPTIONS&quot;);</span><br><span class="line">    res.header(&quot;X-Powered-By&quot;,&apos; 3.2.1&apos;)</span><br><span class="line">    res.header(&quot;Content-Type&quot;, &quot;application/json;charset=utf-8&quot;);</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>按照上面的代码，即可解决跨域问题。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/13/express框架之跨域请求/" data-id="cju47ovta001basvku6g56nl3" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-node-js之Cookie" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/13/node-js之Cookie/" class="article-date">
@@ -95,7 +135,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/node-js之Cookie/" data-id="cju2cvyrm001x90vk17jr1ced" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/node-js之Cookie/" data-id="cju47ovv3002easvk8ku0c1ob" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -144,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/" data-id="cju2cvyqq000w90vkzukkjjy1" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/" data-id="cju47ovth001fasvk9767cg52" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -205,7 +245,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/SpringBoot之静态资源放行/" data-id="cju2cvypz000f90vkje6lk3og" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/SpringBoot之静态资源放行/" data-id="cju47ovro000jasvk8dpti3ki" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -253,7 +293,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/" data-id="cju2cvyq8000o90vkhjwue79i" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/" data-id="cju47ovt10013asvk8ulnhs7a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
@@ -299,7 +339,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" data-id="cju2cvypb000190vkrst2ml0i" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" data-id="cju47ovqs0003asvklcwnpbvz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
@@ -421,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/" data-id="cju2cvyuz003i90vkip1kuex1" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/" data-id="cju47ovw8003gasvkss8lw3ty" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
@@ -503,7 +543,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js之十大Web框架/" data-id="cju2cvyrp002290vkqsb52bxs" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js之十大Web框架/" data-id="cju47ovvj002jasvks5j8cdwl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -550,7 +590,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/javascript之map/" data-id="cju2cvyqw001190vkfn2lqdf8" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/javascript之map/" data-id="cju47ovtd001casvkdv3qrh4h" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -593,58 +633,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/springboot实现跨域请求/" data-id="cju2cvys8002r90vkyuyctjxi" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/springboot实现跨域请求/" data-id="cju47ovvx0031asvkx2w892yj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-node-js如何引用其它js文件" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/07/node-js如何引用其它js文件/" class="article-date">
-  <time datetime="2019-03-07T11:50:02.000Z" itemprop="datePublished">2019-03-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/07/node-js如何引用其它js文件/">node.js如何引用其它js文件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以Java来说，比如要实现第三方存储，我可能需要导入对应的库，以maven为例，使用腾讯云或者七牛云、阿里云，我需要导入对应的maven依赖。<br>再比如，有些时候我们封装某个类，而那个类不在该包下，我们需要导包(就是指定那个类的路径，如果路径不对，则可能出现找不到这个类之类的错误，通常对应的IDE会提示错误)。</p>
-<p>其实，node.js也是这样的。最近在开发node.js的时候，难免也会遇到需要引入其它js文件。今天我以一个简单示例来说一说node.js如何引用其它js文件。</p>
-<p>test01.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function hello()&#123;</span><br><span class="line">	</span><br><span class="line">	console.log(&quot;hello&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function hello2()&#123;</span><br><span class="line">	</span><br><span class="line">	console.log(&quot;hello2&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = &#123;hello,hello2&#125;</span><br></pre></td></tr></table></figure></p>
-<p>test02.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var test01 = require( &quot;./test01&quot; );</span><br><span class="line"></span><br><span class="line">test01.hello();</span><br><span class="line"></span><br><span class="line">test01.hello2();</span><br></pre></td></tr></table></figure></p>
-<p>通过命令行运行node test02.js 正常会分别输出hello、hello2。</p>
-<p>require是什么意思呢？<br>其实就跟我们Java开发导包一样的意思，在Java中是import，其实node.js也可以import式导包。</p>
-<p>那么node.js中的require和import导包有什么区别呢？<br>(1)require导包位置任意，而import导包必须在文件的最开始;<br>(2)遵循的规范不同，require/exports是CommonJS的一部分，而import/export是ES6的规范;<br>(3)出现时间不同，CommonJS作为node.js的规范，一直沿用至今，主要是因为npm善CommonJS的类库众多，以及CommonJS和ES6之间的差异，Node.js无法直接兼容ES6。所以现阶段require/exports仍然是必要且必须的;<br>(4)形式不同，require/exports的用法只有以下三种简单写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">— — — — — — — — — — — — — — </span><br><span class="line">exports.fs = fs;</span><br><span class="line">module.exports = fs;</span><br></pre></td></tr></table></figure></p>
-<p>而import/exports的写法就多种多样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import fs from &apos;fs&apos;;</span><br><span class="line">import &#123;default as fs&#125; from &apos;fs&apos;;</span><br><span class="line">import * as fs from &apos;fs&apos;;</span><br><span class="line">import &#123;readFile&#125; from &apos;fs&apos;;</span><br><span class="line">import &#123;readFile as read&#125; from &apos;fs&apos;;</span><br><span class="line">import fs, &#123;readFile&#125; from &apos;fs&apos;;</span><br><span class="line">— — — — — — — — — — — — — — — — — — — — </span><br><span class="line">export default fs;</span><br><span class="line">export const fs;</span><br><span class="line">export function readFile;</span><br><span class="line">export &#123;readFile, read&#125;;</span><br><span class="line">export * from &apos;fs&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>(5)本质上不同，主要体现:<br>a.CommonJS还是ES6 Module 输出都可以看成是一个具备多个属性或者方法的对象;<br>b.default是ES6 Module所独有的关键字，export default fs 输出默认的接口对象，import fs from ‘fs’可直接导入这个对象;<br>c.ES6 Module 中导入模块的属性或者方法是强绑定的，包括基础类型，而CommonJS则普通的值传递或者引用传递;</p>
-<p>本文参考链接如下所示:<br>node.js如何引用其它js文件:<a href="https://www.cnblogs.com/wuotto/p/9640312.html" target="_blank" rel="noopener">https://www.cnblogs.com/wuotto/p/9640312.html</a><br>关于require/import的区别:<a href="https://www.jianshu.com/p/fd39e16feb60" target="_blank" rel="noopener">https://www.jianshu.com/p/fd39e16feb60</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js如何引用其它js文件/" data-id="cju2cvyrv002a90vka2jb8osl" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
 
     </footer>
   </div>
@@ -703,6 +695,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/05/layui之日期和时间组件/">layui之日期和时间组件</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/04/vue-electron脚手架/">vue-electron脚手架</a>
           </li>
         
@@ -716,10 +712,6 @@
         
           <li>
             <a href="/2019/04/03/layui之确认框/">layui之确认框</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/02/Node-js读取文件内容并返回值-非异步/">Node.js读取文件内容并返回值(非异步)</a>
           </li>
         
       </ul>

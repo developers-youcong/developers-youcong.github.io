@@ -5,15 +5,23 @@
   
 
   
-  <title>Archives: 2019/3 | Blog</title>
+  <title>layui之日期和时间组件 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://developers-youcong.github.io/archives/2019/03/page/3/index.html">
+  <meta name="description" content="参考文档:https://www.layui.com/doc/modules/laydate.html代码片段如下:12345678layui.use(&amp;apos;laydate&amp;apos;, function()&amp;#123;		  var laydate = layui.laydate;		  laydate.render(&amp;#123;		    elem: &amp;apos;#createDate&amp;">
+<meta name="keywords" content="javascript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="layui之日期和时间组件">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/04/05/layui之日期和时间组件/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="参考文档:https://www.layui.com/doc/modules/laydate.html代码片段如下:12345678layui.use(&amp;apos;laydate&amp;apos;, function()&amp;#123;		  var laydate = layui.laydate;		  laydate.render(&amp;#123;		    elem: &amp;apos;#createDate&amp;">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/04/05/layui之日期和时间组件/date01.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/04/05/layui之日期和时间组件/date02.png">
+<meta property="og:updated_time" content="2019-04-05T15:15:54.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
+<meta name="twitter:title" content="layui之日期和时间组件">
+<meta name="twitter:description" content="参考文档:https://www.layui.com/doc/modules/laydate.html代码片段如下:12345678layui.use(&amp;apos;laydate&amp;apos;, function()&amp;#123;		  var laydate = layui.laydate;		  laydate.render(&amp;#123;		    elem: &amp;apos;#createDate&amp;">
+<meta name="twitter:image" content="http://developers-youcong.github.io/2019/04/05/layui之日期和时间组件/date01.png">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -60,216 +68,57 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/16/PostgreSQL安装和使用/" class="archive-article-date">
-  <time datetime="2019-03-16T11:41:45.000Z" itemprop="datePublished">Mar 16</time>
+        <section id="main"><article id="post-layui之日期和时间组件" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/05/layui之日期和时间组件/" class="article-date">
+  <time datetime="2019-04-05T15:11:01.000Z" itemprop="datePublished">2019-04-05</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/16/PostgreSQL安装和使用/">PostgreSQL安装和使用</a>
+    <h1 class="article-title" itemprop="name">
+      layui之日期和时间组件
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/16/npm-run-dev-在Linux上持久运行/" class="archive-article-date">
-  <time datetime="2019-03-16T07:32:42.000Z" itemprop="datePublished">Mar 16</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/16/npm-run-dev-在Linux上持久运行/">npm run dev 在Linux上持久运行</a>
-    </h1>
-  
+        <p>参考文档:<a href="https://www.layui.com/doc/modules/laydate.html" target="_blank" rel="noopener">https://www.layui.com/doc/modules/laydate.html</a><br>代码片段如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">layui.use(&apos;laydate&apos;, function()&#123;</span><br><span class="line">		  var laydate = layui.laydate;</span><br><span class="line"></span><br><span class="line">		  laydate.render(&#123;</span><br><span class="line">		    elem: &apos;#createDate&apos;, // 指定元素</span><br><span class="line">		    type:&apos;datetime&apos;</span><br><span class="line">		  &#125;);</span><br><span class="line">		&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>效果图如下:<br><img src="/2019/04/05/layui之日期和时间组件/date01.png" alt=""></p>
+<p>其中type默认值为date(年月日)，有如下几个可选值:</p>
+<p><img src="/2019/04/05/layui之日期和时间组件/date02.png" alt=""></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/16/js截取url参数/" class="archive-article-date">
-  <time datetime="2019-03-16T07:24:33.000Z" itemprop="datePublished">Mar 16</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/16/js截取url参数/">js截取url参数</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/13/express框架之跨域请求/" class="archive-article-date">
-  <time datetime="2019-03-13T14:51:59.000Z" itemprop="datePublished">Mar 13</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/05/layui之日期和时间组件/" data-id="cju47ovts001pasvkyghlopwc" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/13/express框架之跨域请求/">express框架之跨域请求</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/13/node-js之Cookie/" class="archive-article-date">
-  <time datetime="2019-03-13T14:27:45.000Z" itemprop="datePublished">Mar 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/13/node-js之Cookie/">node.js之Cookie</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/04/vue-electron脚手架/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vue-electron脚手架</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/13/jQuery和js之Cookie实现/" class="archive-article-date">
-  <time datetime="2019-03-13T14:11:06.000Z" itemprop="datePublished">Mar 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/13/jQuery和js之Cookie实现/">jQuery和js之Cookie实现</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/13/SpringBoot之静态资源放行/" class="archive-article-date">
-  <time datetime="2019-03-13T13:45:23.000Z" itemprop="datePublished">Mar 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/13/SpringBoot之静态资源放行/">SpringBoot之静态资源放行</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/09/StringRedisTemplate操作Redis/" class="archive-article-date">
-  <time datetime="2019-03-09T12:40:19.000Z" itemprop="datePublished">Mar 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/09/StringRedisTemplate操作Redis/">StringRedisTemplate操作Redis</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" class="archive-article-date">
-  <time datetime="2019-03-09T12:26:18.000Z" itemprop="datePublished">Mar 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/">Could not get a resource from the pool 错误解决</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/08/大型网站技术架构演化/" class="archive-article-date">
-  <time datetime="2019-03-08T05:54:14.000Z" itemprop="datePublished">Mar 8</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/08/大型网站技术架构演化/">大型网站技术架构演化</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/archives/2019/03/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/2019/03/">1</a><a class="page-number" href="/archives/2019/03/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/2019/03/page/4/">4</a><a class="page-number" href="/archives/2019/03/page/5/">5</a><a class="extend next" rel="next" href="/archives/2019/03/page/4/">Next &raquo;</a>
-  </nav>
 
 </section>
         

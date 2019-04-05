@@ -62,6 +62,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-nginx让所有的http地址重定向到https" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/01/nginx让所有的http地址重定向到https/" class="article-date">
+  <time datetime="2019-03-01T12:28:22.000Z" itemprop="datePublished">2019-03-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/01/nginx让所有的http地址重定向到https/">nginx让所有的http地址重定向到https</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>问:为什么让所有的http都重定向到https呢？<br>答:因为这样会使网站更安全些。</p>
+<p>那么我是如何在nginx配置，让输入<a href="http://www.youcongtech.com或者youcongtech.com全部都重定向到https://www.youcongtech.com的呢？" target="_blank" rel="noopener">http://www.youcongtech.com或者youcongtech.com全部都重定向到https://www.youcongtech.com的呢？</a><br>其实我仅仅只是在nginx.conf配置文件中的server配置了如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rewrite ^(.*)$  https://$host$1 permanent;</span><br></pre></td></tr></table></figure></p>
+<p>这段配置的含义将所有的http请求通过rewrite重写到https上。</p>
+<p>下面贴一下我的nginx.conf配置文件(主要重要的):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"> upstream  www.youcongtech.com&#123;</span><br><span class="line">         server   39.107.110.227:2019;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"> server &#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name  www.youcongtech.com;</span><br><span class="line">        rewrite ^(.*)$  https://$host$1 permanent;</span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        location ~ / &#123;</span><br><span class="line">            root /usr/local/nginx/html;</span><br><span class="line">            index index.html index.htm;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">      error_page   500 502 503 504  /50x.html;</span><br><span class="line">        location = /50x.html &#123;</span><br><span class="line">            root   html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      server &#123;</span><br><span class="line">        listen 443;</span><br><span class="line">        server_name www.youcongtech.com;</span><br><span class="line">        ssl on;</span><br><span class="line">        index index.html;</span><br><span class="line">        ssl_certificate /usr/local/nginx/cert/18540291_www.youcongtech.com.pem;</span><br><span class="line">        ssl_certificate_key /usr/local/nginx/cert/18540291_www.youcongtech.com.key;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                proxy_set_header X-Forwarded-Host $host;</span><br><span class="line">                proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">                proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">                proxy_set_header Host $http_host;</span><br><span class="line">                proxy_redirect off;</span><br><span class="line">                expires off;</span><br><span class="line">                sendfile off;</span><br><span class="line">                proxy_pass http://www.youcongtech.com;</span><br><span class="line">                root /usr/local/nginx/html;</span><br><span class="line">                index index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    	location ~ ^/blog/(.*)&#123;</span><br><span class="line">                 proxy_set_header Host $host;</span><br><span class="line">                 proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">                 proxy_pass http://www.youcongtech.com;    #转向tomcat处理</span><br><span class="line"></span><br><span class="line">         &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面参数到底是什么意思，加或者不加到底会怎么样，关于nginx参数详解和更好的优化，后续会有详细的讲解，我会继续编写我的博客系统，并以此作为案例。<br>当然了，如果公司涉及这块比较多，后续我也会以公司案例来给大家讲解。</p>
+<p>本文主要参考该地址:<a href="https://www.cnblogs.com/kevingrace/p/6187072.html" target="_blank" rel="noopener">https://www.cnblogs.com/kevingrace/p/6187072.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cju47ovu40022asvk01v3m7p8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-nginx配置https" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/02/26/nginx配置https/" class="article-date">
@@ -98,7 +142,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cju2cvyro002090vkc41zcjsw" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cju47ovu70025asvkepcvz21d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
@@ -140,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cju2cvyuo003890vke3pngo80" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cju47ovw10035asvkq25mpa6a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
@@ -187,7 +231,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cju2cvywk003r90vk4eucofj7" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cju47ovwh003qasvk2ac7oxs8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -247,7 +291,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cju2cvysa002t90vktqynydw6" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cju47ovw20037asvk5xc8x9pt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -288,7 +332,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/如何将博客园的数据迁移到wordpress上面/" data-id="cju2cvyux003g90vk5m3k6b3c" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/如何将博客园的数据迁移到wordpress上面/" data-id="cju47ovwf003nasvkys3abanj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
@@ -350,7 +394,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/wordpress数据表分析/" data-id="cju2cvyw8003q90vkb9vvkaij" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/wordpress数据表分析/" data-id="cju47ovw5003basvk3421vqnl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
@@ -408,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/谈谈存储系统/" data-id="cju2cvyvw003n90vksm9yv7hd" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/谈谈存储系统/" data-id="cju47ovwi003sasvk17q5hdtb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/存储/">存储</a></li></ul>
@@ -476,7 +520,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/22/node-js之express框架/" data-id="cju2cvyrk001v90vks76057pr" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/22/node-js之express框架/" data-id="cju47ovva002hasvkyqbw7ouu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -531,7 +575,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/22/SpringBoot之加密/" data-id="cju2cvyq4000k90vk5xyezee3" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/22/SpringBoot之加密/" data-id="cju47ovrs000masvktqhvmgpc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -593,6 +637,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/05/layui之日期和时间组件/">layui之日期和时间组件</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/04/vue-electron脚手架/">vue-electron脚手架</a>
           </li>
         
@@ -606,10 +654,6 @@
         
           <li>
             <a href="/2019/04/03/layui之确认框/">layui之确认框</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/02/Node-js读取文件内容并返回值-非异步/">Node.js读取文件内容并返回值(非异步)</a>
           </li>
         
       </ul>
