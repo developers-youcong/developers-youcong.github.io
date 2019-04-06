@@ -62,6 +62,49 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-springboot实现跨域请求" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/07/springboot实现跨域请求/" class="article-date">
+  <time datetime="2019-03-07T12:12:29.000Z" itemprop="datePublished">2019-03-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/07/springboot实现跨域请求/">Springboot实现跨域请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>之所以需要用到跨域请求，目的在于现在的Java项目，几乎基本上都前后端分离，除一些较老的维护项目外(通常是单体或者是maven多模块形式，不过本质上还是将前端放在webapps下)。</p>
+<p>SpringBoot实现跨域其实和Spring是一样，区别不大，如果要说区别的话，Spring需要在对应的xml文件中配置bean，而SpringBoot则通过注解的方式。</p>
+<p>Spring配置跨域请求可参考我的这篇文章:<a href="https://www.cnblogs.com/youcong/p/9676433.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/p/9676433.html</a></p>
+<p>示例代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package com.blog.springboot.config;</span><br><span class="line"></span><br><span class="line">import org.springframework.context.annotation.Bean;  </span><br><span class="line">import org.springframework.context.annotation.Configuration;  </span><br><span class="line">import org.springframework.web.cors.CorsConfiguration;  </span><br><span class="line">import org.springframework.web.cors.UrlBasedCorsConfigurationSource;  </span><br><span class="line">import org.springframework.web.filter.CorsFilter;  </span><br><span class="line"></span><br><span class="line">@Configuration  </span><br><span class="line">public class CorsConfig &#123;  </span><br><span class="line">    private CorsConfiguration buildConfig() &#123;  </span><br><span class="line">        CorsConfiguration corsConfiguration = new CorsConfiguration();  </span><br><span class="line">        corsConfiguration.addAllowedOrigin(&quot;*&quot;); // 1允许任何域名使用</span><br><span class="line">        corsConfiguration.addAllowedHeader(&quot;*&quot;); // 2允许任何头</span><br><span class="line">        corsConfiguration.addAllowedMethod(&quot;*&quot;); // 3允许任何方法（post、get等） </span><br><span class="line">        return corsConfiguration;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    @Bean  </span><br><span class="line">    public CorsFilter corsFilter() &#123;  </span><br><span class="line">        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();  </span><br><span class="line">        source.registerCorsConfiguration(&quot;/**&quot;, buildConfig()); // 4  </span><br><span class="line">        return new CorsFilter(source);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>本文主要参考链接为:<br>SpringBoot跨域配置:<a href="https://www.cnblogs.com/nananana/p/8492185.html" target="_blank" rel="noopener">https://www.cnblogs.com/nananana/p/8492185.html</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/07/springboot实现跨域请求/" data-id="cju5kch3f002yrcvkjfgb1aei" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-node-js如何引用其它js文件" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/07/node-js如何引用其它js文件/" class="article-date">
@@ -98,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js如何引用其它js文件/" data-id="cju47ovvn002nasvkb5pxqwyt" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js如何引用其它js文件/" data-id="cju5kch33002hrcvkz59yokpf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -143,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/jenkins忘记管理员密码之解决方案/" data-id="cju47ovtj001hasvkvh0tgfz9" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/jenkins忘记管理员密码之解决方案/" data-id="cju5kch290019rcvkznrbwrar" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jenkins/">jenkins</a></li></ul>
@@ -203,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/06/mybatis之一对多/" data-id="cju47ovtx001tasvkr08wvao7" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/06/mybatis之一对多/" data-id="cju5kch2l001qrcvk2chgaghx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mybatis/">mybatis</a></li></ul>
@@ -253,7 +296,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" data-id="cju47ovu20020asvkrb5720gw" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" data-id="cju5kch2q001yrcvke5mdgxo6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -308,7 +351,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/" data-id="cju47ovvr002tasvkd3bi6q5x" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/" data-id="cju5kch3b002rrcvkw65e4sr1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -350,7 +393,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/04/node-js读写文件/" data-id="cju47ovvq002rasvkydvop9dq" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/04/node-js读写文件/" data-id="cju5kch39002prcvkfy8qpoiu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -413,7 +456,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/04/javascript之传输加密/" data-id="cju47ovwk003uasvke6xip413" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/04/javascript之传输加密/" data-id="cju5kch4g0046rcvk2m5vbe7o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -457,7 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/VsCode插件开发之通信/" data-id="cju47ovt70018asvkywn813o3" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/VsCode插件开发之通信/" data-id="cju5kch1z000yrcvkevijjrki" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
@@ -504,74 +547,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cju47ovrf000dasvk1k6ta57l" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cju5kch17000jrcvk105ic006" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-node-js使用express框架进行文件上传" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/01/node-js使用express框架进行文件上传/" class="article-date">
-  <time datetime="2019-03-01T12:49:08.000Z" itemprop="datePublished">2019-03-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/01/node-js使用express框架进行文件上传/">node.js使用express框架进行文件上传</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于node.js使用express框架进行文件上传，主要来自于最近对Settings-Sync插件做的研究。<br>目前的研究算是取得的比较好的进展。<br>Settings-Sync中通过快捷键上传文件，其实主要还是请求后端接口。<br>于是我便使用node.js模拟一个服务，这个服务其实就相当于github api(Settings-Sync实际请求的接口，比如token验证，gist存储创建等都是来自github 对应的api)。</p>
-<p>话不多说，直接代码贴起讲解:</p>
-<h2><span id="1创建一个nodejs项目这里我以express框架为例">1.创建一个node.js项目(这里我以express框架为例)</span></h2><p>关于如何创建一个node.js项目我就不详细说，通常通过npm init就可以创建一个node.js项目了。<br>关于node.js项目详细教程，可以参考该篇文章<a href="https://www.jianshu.com/p/7b0a5d4491ba" target="_blank" rel="noopener">nodeJS入门——新建一个项目及代码详解</a><br>当然了，如果你是直接通过这篇文章操作，最先可能会报这个错误，错误信息如下:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;express&apos; 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br></pre></td></tr></table></figure>
-<p>解决方式很简单，并不是npm install -g express就可以的，在此之前还需执行npm install -g express-generator</p>
-<p>这条命令很好理解，你可以将其理解为你的express框架生成器，以Java中Maven来说，通常ide就把maven结构都弄好了，你只需在创建项目的时候，勾选maven即可，它会自己将所有相关项目包括配置文件一起生成。</p>
-<p>虽然说我将地址贴出来，但是我觉得还是实际操作一遍，这样对此有一个感性认识(初学编程的人或者是已经有编程经验的人，是绝对不能忽略这一点的)。</p>
-<p>流程如下:</p>
-<h4><span id="a使用express命令创建express项目">a.使用express命令创建express项目</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">express blog</span><br></pre></td></tr></table></figure>
-<h5><span id="效果图如下">效果图如下:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express01.png" alt=""></p>
-<p>express非常有人性化，已经告诉你怎么进入blog项目及其安装相关的库依赖和启动了，你只需按照它的这个步骤，一步一步来就行了。</p>
-<h4><span id="b目录结构分析">b.目录结构分析</span></h4><h5><span id="示意图如下所示">示意图如下所示:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express02.png" alt=""><br>app.js:——启动文件，也可以说是主文件入口。<br>package.json——定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）。npm install命令根据这个配置文件，自动下载所需的模块，也就是配置项目所需的运行和开发环境。<br>node_modules——存放package.json中安装的模块，当你在package.json添加依赖的模块并安装后，存放在这个文件夹下<br>public——存放image、css、js等文件<br>routes——存放路由文件<br>views——存放视图文件或者说模板文件<br>bin——存放可执行文件</p>
-<h2><span id="2使用express框架进行文件上传">2.使用express框架进行文件上传</span></h2><p>注意，目录结构如下所示(我主要是复用最近研究的mock-github-api):<br><img src="/2019/03/01/node-js使用express框架进行文件上传/express03.png" alt=""></p>
-<h4><span id="a准备html文件">a.准备html文件</span></h4><p>public文件夹主要放置静态文件，如index.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;文件上传&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h3&gt;文件上传：&lt;/h3&gt;</span><br><span class="line">    选择一个文件上传: &lt;br /&gt;</span><br><span class="line">    &lt;form action=&quot;/gists&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">        &lt;input type=&quot;file&quot; name=&quot;content&quot; /&gt;</span><br><span class="line">        &lt;br /&gt;</span><br><span class="line">        &lt;input type=&quot;submit&quot; value=&quot;上传文件&quot; /&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">	</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<h4><span id="b编写相关的js">b.编写相关的js</span></h4><p>像upload.js属于路由，通常放置在routes文件夹下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&apos;fs&apos;);</span><br><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var multer  = require(&apos;multer&apos;);</span><br><span class="line">var path = require(&apos;path&apos;);</span><br><span class="line">var router = express.Router();</span><br><span class="line"></span><br><span class="line">var upload = multer(&#123;dest: &apos;upload_tmp/&apos;&#125;);</span><br><span class="line"></span><br><span class="line">router.post(&apos;/&apos;, upload.any(), function(req, res, next) &#123;</span><br><span class="line">    console.log(req.files[0]);  // 上传的文件信息</span><br><span class="line"></span><br><span class="line">    var des_file = &quot;./upload/&quot; + req.files[0].originalname;</span><br><span class="line">    fs.readFile( req.files[0].path, function (err, data) &#123;</span><br><span class="line">        fs.writeFile(des_file, data, function (err) &#123;</span><br><span class="line">            if( err )&#123;</span><br><span class="line">                console.log( err );</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                response = &#123;</span><br><span class="line">                    message:&apos;File uploaded successfully&apos;,</span><br><span class="line">                    filename:req.files[0].originalname</span><br><span class="line">                &#125;;</span><br><span class="line">                console.log( response );</span><br><span class="line">                res.end( JSON.stringify( response ) );</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">module.exports = router;</span><br></pre></td></tr></table></figure></p>
-<h4><span id="c上传文件及其效果">c.上传文件及其效果</span></h4><h5><span id="页面图">页面图:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express04.png" alt=""></p>
-<h5><span id="上传成功显示图">上传成功显示图:</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express05.png" alt=""></p>
-<h5><span id="upload文件夹下会有对应的文件也就是你刚刚通过页面上传的文件">upload文件夹下会有对应的文件(也就是你刚刚通过页面上传的文件)</span></h5><p><img src="/2019/03/01/node-js使用express框架进行文件上传/express06.png" alt=""></p>
-<p>最后例子中还有阿里云和腾讯云的图片存储，大家可以做一个参考。</p>
-<p>源码地址为:<a href="https://github.com/developers-youcong/mock-github-api" target="_blank" rel="noopener">https://github.com/developers-youcong/mock-github-api</a></p>
-<p>希望能够对大家有所启发和帮助</p>
-<p>注意，可能遇到的问题:</p>
-<p>问题一:静态资源需要放行，否则无法访问<br>在index.js补充这段代码即可解决这个问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">app.use(express.static(path.join(__dirname, &apos;public&apos;)))</span><br></pre></td></tr></table></figure></p>
-<p>问题二:socket hang up</p>
-<p>我将var bodyParser = require(‘body-parser’)去除就解决了这个问题</p>
-<p>参考链接如:<a href="https://blog.csdn.net/gsying1474/article/details/52200445" target="_blank" rel="noopener">https://blog.csdn.net/gsying1474/article/details/52200445</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cju47ovvm002lasvklw7vluzo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
 
     </footer>
   </div>
@@ -584,7 +563,7 @@
 
   <nav id="page-nav">
     
-    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
+    <a class="extend prev" rel="prev" href="/page/4/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/6/">Next &raquo;</a>
   </nav>
 
 </section>
@@ -598,7 +577,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li></ul>
     </div>
   </div>
 
@@ -608,7 +587,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 12px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 14px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 12px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Redis/" style="font-size: 12px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 14px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/wordpress/" style="font-size: 12px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
+      <a href="/tags/Docker/" style="font-size: 12px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 14px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 12px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Redis/" style="font-size: 12px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 14px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/wordpress/" style="font-size: 12px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
     </div>
   </div>
 
@@ -630,6 +609,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/06/git分支开发的好处/">git分支开发的好处</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/05/layui之日期和时间组件/">layui之日期和时间组件</a>
           </li>
         
@@ -643,10 +626,6 @@
         
           <li>
             <a href="/2019/04/03/js获取select标签选中的值/">js获取select标签选中的值</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/03/layui之确认框/">layui之确认框</a>
           </li>
         
       </ul>
