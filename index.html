@@ -62,6 +62,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/" class="article-date">
+  <time datetime="2019-04-07T06:36:58.000Z" itemprop="datePublished">2019-04-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/">Caused by: java.sql.SQLException: Value &#39;0000-00-00 00:00:00&#39; can not be represented as java.sql.Timestamp</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>错误信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.sql.SQLException: Value &apos;0000-00-00 00:00:00&apos; can not be represented as java.sql.Timestamp</span><br></pre></td></tr></table></figure></p>
+<p>原因如下:<br>是因为数据表中字段类型与对象中的属性类型不一致。比如在我的数据表中是datetime类型，正常来说，对象中应该是Date类型，但是本次在对象中却是String类型。</p>
+<p>解决办法:<br>(1)将datetime类型修改为varchar类型，即可解决问题;<br>(2)将Java对象属性类型(对应的那个)改为Date类型(java.util而非java.sql),即可解决问题;</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/" data-id="cju6khl1j00003gvkivk2ma9k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-git分支开发的好处" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/06/git分支开发的好处/" class="article-date">
@@ -104,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/06/git分支开发的好处/" data-id="cju5kch230012rcvk1wb6zsm5" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/06/git分支开发的好处/" data-id="cju6khl5h00193gvkg5umyqd2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -146,7 +187,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/05/layui之日期和时间组件/" data-id="cju5kch2g001jrcvke005o8ho" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/05/layui之日期和时间组件/" data-id="cju6khl61001q3gvkcreao62g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -189,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/04/vue-electron脚手架/" data-id="cju5kch3n0039rcvklv76pfvh" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/04/vue-electron脚手架/" data-id="cju6khl78003b3gvk9og8tj6m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Electron/">Electron</a></li></ul>
@@ -228,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/03/记一次layui弹框关闭问题/" data-id="cju5kch3s003grcvkqrhfgeab" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/03/记一次layui弹框关闭问题/" data-id="cju6khl7g003l3gvk0utexou3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -269,7 +310,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/03/js获取select标签选中的值/" data-id="cju5kch2c001ercvkg9i5fgyh" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/03/js获取select标签选中的值/" data-id="cju6khl5t001o3gvktlmpft5n" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -310,7 +351,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/03/layui之确认框/" data-id="cju5kch2j001orcvkvwwwjydu" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/03/layui之确认框/" data-id="cju6khl67001y3gvk0iemxcn0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -350,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/02/Node-js读取文件内容并返回值-非异步/" data-id="cju5kch0v000ercvkv2d4zfb5" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/02/Node-js读取文件内容并返回值-非异步/" data-id="cju6khl4u000n3gvk60fcsotm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -391,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" data-id="cju5kch3e002wrcvkn6w1dnz7" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" data-id="cju6khl7200333gvkktvn7o8o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -436,54 +477,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cju5kch0e0005rcvkwrp0gkjz" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cju6khl1z00083gvks6tvs5y0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Ubuntu16-04之安装Nutch" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/29/Ubuntu16-04之安装Nutch/" class="article-date">
-  <time datetime="2019-03-29T06:45:58.000Z" itemprop="datePublished">2019-03-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/29/Ubuntu16-04之安装Nutch/">Ubuntu16.04之安装Nutch</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2><span id="1下载nutch">1.下载Nutch</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirrors.shu.edu.cn/apache/nutch/2.3.1/apache-nutch-2.3.1-src.zip</span><br></pre></td></tr></table></figure>
-<h2><span id="2解压">2.解压</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip apache-nutch-2.3.1-src.zip</span><br></pre></td></tr></table></figure>
-<h2><span id="3进入apache-nutch-231">3.进入apache-nutch-2.3.1</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd apache-nutch-2.3.1</span><br></pre></td></tr></table></figure>
-<h2><span id="4使用ant编译">4.使用ant编译</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ant</span><br></pre></td></tr></table></figure>
-<p>编译成功，如下(不过需要比较多的时间，大概20分钟左右):<br><img src="/2019/03/29/Ubuntu16-04之安装Nutch/nutch.png" alt=""></p>
-<p>参考资料:<br>Ubuntu环境下搭建nutch环境(包含使用):<a href="https://blog.csdn.net/u010317005/article/details/51090175" target="_blank" rel="noopener">https://blog.csdn.net/u010317005/article/details/51090175</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cju5kch1l000rrcvk4quz2115" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -510,7 +507,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mybatis/">mybatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li></ul>
     </div>
   </div>
 
@@ -520,7 +517,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 12px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 14px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 12px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Redis/" style="font-size: 12px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 14px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/mybatis/" style="font-size: 10px;">mybatis</a> <a href="/tags/wordpress/" style="font-size: 12px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
+      <a href="/tags/Docker/" style="font-size: 12px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 16px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 12px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Redis/" style="font-size: 12px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 14px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 12px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
     </div>
   </div>
 
@@ -542,6 +539,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/">Caused by: java.sql.SQLException: Value &#39;0000-00-00 00:00:00&#39; can not be represented as java.sql.Timestamp</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/06/git分支开发的好处/">git分支开发的好处</a>
           </li>
         
@@ -555,10 +556,6 @@
         
           <li>
             <a href="/2019/04/03/记一次layui弹框关闭问题/">记一次layui弹框关闭问题</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/03/js获取select标签选中的值/">js获取select标签选中的值</a>
           </li>
         
       </ul>

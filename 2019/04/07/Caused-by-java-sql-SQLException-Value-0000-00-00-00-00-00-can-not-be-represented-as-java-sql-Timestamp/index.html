@@ -5,20 +5,20 @@
   
 
   
-  <title>npm run dev 在Linux上持久运行 | Blog</title>
+  <title>Caused by: java.sql.SQLException: Value &#39;0000-00-00 00:00:00&#39; can not be represented as java.sql.Timestamp | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于node.js应用程序如何持久运行，我在node.js服务端程序在Linux上持久运行用过。 这次主要是针对是一个vue.js应用程序。 vue.js应用程序通常运行命令是npm run dev。如果是在命令行输入该命令，则会出现如下信息:123DONE  Compiled successfully in 1140ms">
-<meta name="keywords" content="Linux">
+  <meta name="description" content="错误信息如下:1Caused by: java.sql.SQLException: Value &amp;apos;0000-00-00 00:00:00&amp;apos; can not be represented as java.sql.Timestamp 原因如下:是因为数据表中字段类型与对象中的属性类型不一致。比如在我的数据表中是datetime类型，正常来说，对象中应该是Date类型，但是本次在对象">
+<meta name="keywords" content="MyBatis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="npm run dev 在Linux上持久运行">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/index.html">
+<meta property="og:title" content="Caused by: java.sql.SQLException: Value &#39;0000-00-00 00:00:00&#39; can not be represented as java.sql.Timestamp">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="关于node.js应用程序如何持久运行，我在node.js服务端程序在Linux上持久运行用过。 这次主要是针对是一个vue.js应用程序。 vue.js应用程序通常运行命令是npm run dev。如果是在命令行输入该命令，则会出现如下信息:123DONE  Compiled successfully in 1140ms">
+<meta property="og:description" content="错误信息如下:1Caused by: java.sql.SQLException: Value &amp;apos;0000-00-00 00:00:00&amp;apos; can not be represented as java.sql.Timestamp 原因如下:是因为数据表中字段类型与对象中的属性类型不一致。比如在我的数据表中是datetime类型，正常来说，对象中应该是Date类型，但是本次在对象">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T12:33:20.584Z">
+<meta property="og:updated_time" content="2019-04-07T06:49:45.492Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="npm run dev 在Linux上持久运行">
-<meta name="twitter:description" content="关于node.js应用程序如何持久运行，我在node.js服务端程序在Linux上持久运行用过。 这次主要是针对是一个vue.js应用程序。 vue.js应用程序通常运行命令是npm run dev。如果是在命令行输入该命令，则会出现如下信息:123DONE  Compiled successfully in 1140ms">
+<meta name="twitter:title" content="Caused by: java.sql.SQLException: Value &#39;0000-00-00 00:00:00&#39; can not be represented as java.sql.Timestamp">
+<meta name="twitter:description" content="错误信息如下:1Caused by: java.sql.SQLException: Value &amp;apos;0000-00-00 00:00:00&amp;apos; can not be represented as java.sql.Timestamp 原因如下:是因为数据表中字段类型与对象中的属性类型不一致。比如在我的数据表中是datetime类型，正常来说，对象中应该是Date类型，但是本次在对象">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-npm-run-dev-在Linux上持久运行" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/03/16/npm-run-dev-在Linux上持久运行/" class="article-date">
-  <time datetime="2019-03-16T07:32:42.000Z" itemprop="datePublished">2019-03-16</time>
+    <a href="/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/" class="article-date">
+  <time datetime="2019-04-07T06:36:58.000Z" itemprop="datePublished">2019-04-07</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      npm run dev 在Linux上持久运行
+      Caused by: java.sql.SQLException: Value &#39;0000-00-00 00:00:00&#39; can not be represented as java.sql.Timestamp
     </h1>
   
 
@@ -87,24 +87,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于node.js应用程序如何持久运行，我在<a href="https://developers-youcong.github.io/2019/03/05/node-js%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%A8%8B%E5%BA%8F%E5%9C%A8Linux%E4%B8%8A%E6%8C%81%E4%B9%85%E8%BF%90%E8%A1%8C/">node.js服务端程序在Linux上持久运行</a>用过。</p>
-<p>这次主要是针对是一个vue.js应用程序。</p>
-<p>vue.js应用程序通常运行命令是npm run dev。如果是在命令行输入该命令，则会出现如下信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DONE  Compiled successfully in 1140ms                                                                          15:13:02</span><br><span class="line"></span><br><span class="line">I  Your application is running here: http://0.0.0.0:8081</span><br></pre></td></tr></table></figure></p>
-<p>假定如果关闭当前窗口则发现进程随之关闭，那么如何保证其持久运行，不会因为关闭窗口造成进程关闭，还是需要用到nohub这个Linux命令。</p>
-<p>关于这个命令我在<a href="https://developers-youcong.github.io/2019/02/23/springboot%E6%89%93%E6%88%90%E7%9A%84jar%E5%8C%85%E5%A6%82%E4%BD%95%E5%9C%A8Linux%E4%B8%8A%E6%8C%81%E4%B9%85%E8%BF%90%E8%A1%8C/">springboot打成的jar包如何在Linux上持久运行</a>用过</p>
-<p>该vue.js应用程序同样适用。</p>
-<p>如果想记录日志，请按照如下执行(一定要在package.json同级目录或者是当前项目根目录):</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">touch my.log</span><br><span class="line">chmod u+w my.log</span><br><span class="line">nohup npm run dev &gt; my.log 2&gt;my.log &amp;</span><br></pre></td></tr></table></figure>
-<p>如果不想记录日志，如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nohup npm run dev &gt;/dev/null 2&gt;&amp;1 &amp;</span><br><span class="line">exit</span><br></pre></td></tr></table></figure></p>
-<p>参考资料:<br><a href="https://blog.csdn.net/chanlingmai5374/article/details/80762983?utm_source=blogxgwz7" target="_blank" rel="noopener">让npm run dev在Linux后台 持久运行</a></p>
+        <p>错误信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.sql.SQLException: Value &apos;0000-00-00 00:00:00&apos; can not be represented as java.sql.Timestamp</span><br></pre></td></tr></table></figure></p>
+<p>原因如下:<br>是因为数据表中字段类型与对象中的属性类型不一致。比如在我的数据表中是datetime类型，正常来说，对象中应该是Date类型，但是本次在对象中却是String类型。</p>
+<p>解决办法:<br>(1)将datetime类型修改为varchar类型，即可解决问题;<br>(2)将Java对象属性类型(对应的那个)改为Date类型(java.util而非java.sql),即可解决问题;</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/" data-id="cju6khl6w002v3gvk4vn61fvn" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/" data-id="cju6khl1j00003gvkivk2ma9k" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
 
     </footer>
   </div>
@@ -112,19 +105,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/03/16/PostgreSQL安装和使用/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          PostgreSQL安装和使用
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/16/js截取url参数/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/04/06/git分支开发的好处/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">js截取url参数</div>
+      <div class="article-nav-title">git分支开发的好处</div>
     </a>
   
 </nav>
