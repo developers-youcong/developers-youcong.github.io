@@ -62,6 +62,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-MySQL去除查询结果重复" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/29/MySQL去除查询结果重复/" class="article-date">
+  <time datetime="2019-03-29T13:29:36.000Z" itemprop="datePublished">2019-03-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/29/MySQL去除查询结果重复/">MySQL去除查询结果重复</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>出现结果重复数SQL(四表关联):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">COUNT(post.ID )</span><br><span class="line">FROM wp_posts AS post LEFT JOIN</span><br><span class="line">wp_term_relationships AS relation</span><br><span class="line">ON(post.menu_order =</span><br><span class="line">relation.term_order) LEFT JOIN wp_term_taxonomy</span><br><span class="line">AS taxonomy</span><br><span class="line">ON(relation.term_taxonomy_id = taxonomy.term_id) LEFT JOIN</span><br><span class="line">wp_terms AS</span><br><span class="line">term ON(taxonomy.term_id = term.term_id)</span><br></pre></td></tr></table></figure></p>
+<p>正常的结果应该显示490条数据，但是结果显示了224941。</p>
+<p>解决这个办法是在对应的COUNT()里面加上DISTINCT</p>
+<p>DISTINCT这个关键字主要用于过滤掉多余的重复记录只保留一条，但往往只用它来返回不重复记录的条数，而不是用它来返回不重记录的所有值。</p>
+<p>注意:它有局限性，比如吧不能对应多个目标字段，只能对应一个目标字段。</p>
+<p>解决重复结果书的SQL如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">COUNT(DISTINCT post.ID)</span><br><span class="line">FROM wp_posts AS post LEFT JOIN</span><br><span class="line">wp_term_relationships AS relation</span><br><span class="line">ON(post.menu_order =</span><br><span class="line">relation.term_order) LEFT JOIN wp_term_taxonomy</span><br><span class="line">AS taxonomy</span><br><span class="line">ON(relation.term_taxonomy_id = taxonomy.term_id) LEFT JOIN</span><br><span class="line">wp_terms AS</span><br><span class="line">term ON(taxonomy.term_id = term.term_id)</span><br></pre></td></tr></table></figure></p>
+<p>参考资料:<br>MySQL中count函数使用方法详解:<a href="https://blog.csdn.net/qq_31135027/article/details/79858184" target="_blank" rel="noopener">https://blog.csdn.net/qq_31135027/article/details/79858184</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cju6mod0x0009r0vk9pheigby" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Ubuntu16-04之安装Nutch" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/29/Ubuntu16-04之安装Nutch/" class="article-date">
@@ -94,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cju6khl5b00103gvkx85inog0" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cju6mod2y000rr0vkyd0eml3z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -139,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cju6khl4z000r3gvk7j9013av" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cju6mod31000tr0vkn7dzawa5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -183,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/" data-id="cju6khl7o003u3gvkil9d7v0n" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/" data-id="cju6mod55002yr0vk4205y4hb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -226,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cju6khl7300353gvktapb6vao" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cju6mod54002wr0vk9wcya8yy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -269,7 +314,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/如何让Node-js运行在浏览器端/" data-id="cju6khl7i003n3gvk6ai46knz" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/如何让Node-js运行在浏览器端/" data-id="cju6mod6m0042r0vkhfy93eqv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -319,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cju6khl6a00223gvkxp1blvjg" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cju6mod3z001tr0vk01vy1pg7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -362,7 +407,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/VsCode云端版本/" data-id="cju6khl5c00123gvk0zhdgl8v" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/VsCode云端版本/" data-id="cju6mod36000xr0vkhi9lng1u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
@@ -407,7 +452,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" data-id="cju6khl7d003i3gvkrtw8gzem" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" data-id="cju6mod5p003lr0vkvzt2l0lx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
@@ -457,57 +502,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/Docker安装MySQL并配置远程访问/" data-id="cju6khl1y00063gvkrzlfbpta" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/Docker安装MySQL并配置远程访问/" data-id="cju6mod0u0007r0vkjggj2482" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Node-js之mysql增删改查" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/27/Node-js之mysql增删改查/" class="article-date">
-  <time datetime="2019-03-27T07:37:45.000Z" itemprop="datePublished">2019-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/Node-js之mysql增删改查/">Node.js之mysql增删改查</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2><span id="1安装库">1.安装库</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install mysql</span><br></pre></td></tr></table></figure>
-<h2><span id="2编写dbjs用作公共模块">2.编写db.js(用作公共模块)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//连接MySQL数据库</span><br><span class="line">var mysql = require(&quot;mysql&quot;);</span><br><span class="line"></span><br><span class="line">var pool = mysql.createPool(&#123;</span><br><span class="line">    host:&quot;127.0.0.1&quot;,</span><br><span class="line">    user:&quot;root&quot;,</span><br><span class="line">    password:&quot;123456&quot;,</span><br><span class="line">    database:&quot;wordpress&quot;,</span><br><span class="line">	port:3306</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function query(sql,callback)&#123;</span><br><span class="line">    pool.getConnection(function(err,connection)&#123;</span><br><span class="line">        connection.query(sql, function (err,rows) &#123;</span><br><span class="line">            callback(err,rows);</span><br><span class="line">            connection.release();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.query = query;</span><br></pre></td></tr></table></figure>
-<h2><span id="3编写userjs与数据库交互并对外开放接口">3.编写user.js(与数据库交互并对外开放接口)</span></h2><p>顺便说下req.params、req.body、req.query的应用</p>
-<p>req.body通常用于解析post请求数据</p>
-<p>req.query通常用于解析get请求数据,如<a href="http://wwww.youcongtech.com/blog/user?username=youcong" target="_blank" rel="noopener">http://wwww.youcongtech.com/blog/user?username=youcong</a></p>
-<p>req.params通常用于解析rest请求方式，如<a href="http://www.youcongtech.com/blog/user/youcong" target="_blank" rel="noopener">http://www.youcongtech.com/blog/user/youcong</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br></pre></td><td class="code"><pre><span class="line">var express = require(&apos;express&apos;);</span><br><span class="line">var router = express.Router();</span><br><span class="line">var URL = require(&apos;url&apos;);</span><br><span class="line">var db = require(&apos;./db&apos;);</span><br><span class="line">var jsonData = require(&apos;./jsonData&apos;);</span><br><span class="line">var bodyParser = require(&apos;body-parser&apos;);</span><br><span class="line"></span><br><span class="line">//定义一个post输出接口</span><br><span class="line">router.post(&apos;/post&apos;, function(req, res) &#123;</span><br><span class="line"></span><br><span class="line">    var obj = &#123;</span><br><span class="line">        a: 1,</span><br><span class="line">        b: 2</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    res.json(obj); //以json格式输出</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//增删改查</span><br><span class="line"></span><br><span class="line">//查询所有信息</span><br><span class="line">router.get(&apos;/queryAll&apos;, function(req, res, next) &#123;</span><br><span class="line">    </span><br><span class="line">  var userLogin = req.userLogin</span><br><span class="line">  </span><br><span class="line">  var querySql = &apos;SELECT * FROM wp_users&apos;;</span><br><span class="line">  </span><br><span class="line">  db.query(querySql,function (err, rows) &#123;</span><br><span class="line">	  </span><br><span class="line">	  </span><br><span class="line">        if(err)&#123;</span><br><span class="line">          console.log(&apos;[SELECT ERROR] - &apos;,err.message);</span><br><span class="line">          return;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //把搜索值输出</span><br><span class="line">       res.send(rows);</span><br><span class="line">	   console.log(&apos;The solution is: &apos;, rows[0].ID);</span><br><span class="line">	   </span><br><span class="line">    &#125;);</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//添加用户信息</span><br><span class="line">router.post(&quot;/add&quot;,function(req,res)&#123;</span><br><span class="line">	var params = URL.parse(req.url, true).query;</span><br><span class="line">	  </span><br><span class="line">	var addSql = &quot;INSERT INTO wp_users (user_login) VALUES(&apos;&quot;+params.userLogin+&quot;&apos;)&quot;;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">    var addSqlParams = [params.userLogin];</span><br><span class="line">	 </span><br><span class="line">	 db.query(addSql,function(err,rows)&#123;</span><br><span class="line">        if(err)&#123;</span><br><span class="line">            res.send(&quot;添加失败 &quot; + err);</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            res.send(jsonData.addInfo);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">	  </span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//更新用户信息</span><br><span class="line">router.put(&quot;/update&quot;,function(req,res,next)&#123;</span><br><span class="line">	 </span><br><span class="line">	 var params = URL.parse(req.url, true).query;</span><br><span class="line">	 </span><br><span class="line">	 var displayName = params.displayName;</span><br><span class="line">	 </span><br><span class="line">	 var id = params.id;</span><br><span class="line"></span><br><span class="line">	 var sql = &quot;update wp_users set display_name = &apos;&quot;+ displayName +&quot;&apos; where ID = &quot; + id;</span><br><span class="line">	 </span><br><span class="line">	  db.query(sql,function(err,rows)&#123;</span><br><span class="line">        if(err)&#123;</span><br><span class="line">            res.send(&quot;修改失败 &quot; + err);</span><br><span class="line">        &#125;else &#123;</span><br><span class="line">            res.send(jsonData.updateInfo);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">//根据ID获取用户信息</span><br><span class="line">router.get(&quot;/getById/:id&quot;,function(req,res)&#123;</span><br><span class="line">	</span><br><span class="line">	var id = req.params.id;</span><br><span class="line">	</span><br><span class="line">	var sql = &apos;select * from wp_users where ID = &apos;+id;</span><br><span class="line">	</span><br><span class="line">	  </span><br><span class="line">   db.query(sql,function (err, result) &#123;</span><br><span class="line">	  </span><br><span class="line">        if(err)&#123;</span><br><span class="line">          console.log(&apos;[SELECT ERROR] - &apos;,err.message);</span><br><span class="line">          return;</span><br><span class="line">        &#125;   </span><br><span class="line">		</span><br><span class="line">   console.log(result);</span><br><span class="line">   res.send(result);</span><br><span class="line">	   </span><br><span class="line">    &#125;);</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//删除用户信息</span><br><span class="line">router.delete(&apos;/delete/:id&apos;, function(req, res, next) &#123;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"> var id = req.params.id;</span><br><span class="line">  </span><br><span class="line">  var delSql = &apos;delete from wp_users where id = &apos;+id;</span><br><span class="line">  </span><br><span class="line">  db.query(delSql,function (err, result) &#123;</span><br><span class="line">	  </span><br><span class="line">        if(err)&#123;</span><br><span class="line">          console.log(&apos;[INSERT ERROR] - &apos;,err.message);</span><br><span class="line">          return;</span><br><span class="line">        &#125;   </span><br><span class="line">	    res.send(jsonData.deleteInfo);</span><br><span class="line">	   </span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">module.exports = router;</span><br></pre></td></tr></table></figure>
-<h2><span id="4不要忘记在appjs配置路由">4.不要忘记在app.js配置路由</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var usersRouter = require(&apos;./routes/users&apos;);</span><br><span class="line"></span><br><span class="line">app.use(&apos;/users&apos;, usersRouter);</span><br></pre></td></tr></table></figure>
-<p>参考资料如下:<br>node.js取参四种方法req.body,req.params,req.param,req.body:<a href="https://www.cnblogs.com/jkingdom/p/8065202.html" target="_blank" rel="noopener">https://www.cnblogs.com/jkingdom/p/8065202.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/Node-js之mysql增删改查/" data-id="cju6khl58000v3gvk0nz8q3t1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
 
     </footer>
   </div>
@@ -544,7 +542,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 12px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 16px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 16px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 12px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 12px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Redis/" style="font-size: 12px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 14px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 12px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
+      <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 16.67px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.67px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.67px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 15px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 13.33px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.67px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
     </div>
   </div>
 
@@ -566,6 +564,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/07/博客中的文章归档是如何实现的/">博客中的文章归档是如何实现的</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/">Caused by: java.sql.SQLException: Value &#39;0000-00-00 00:00:00&#39; can not be represented as java.sql.Timestamp</a>
           </li>
         
@@ -579,10 +581,6 @@
         
           <li>
             <a href="/2019/04/04/vue-electron脚手架/">vue-electron脚手架</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/03/记一次layui弹框关闭问题/">记一次layui弹框关闭问题</a>
           </li>
         
       </ul>
