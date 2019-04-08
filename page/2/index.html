@@ -62,6 +62,87 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Node-js读取文件内容并返回值-非异步" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/02/Node-js读取文件内容并返回值-非异步/" class="article-date">
+  <time datetime="2019-04-02T06:43:59.000Z" itemprop="datePublished">2019-04-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/02/Node-js读取文件内容并返回值-非异步/">Node.js读取文件内容并返回值(非异步)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>主要解决的问题的，以最近VsCode插件开发为例，每次请求都需要token,而vscode并不支持cookie这样的存储，所以就采用粗暴点办法，存到某个用户目录下并读取。</p>
+<p>源码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">var fs=require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line"> function getToken(isRelease) &#123;</span><br><span class="line">		//是否为正式版本，路径不一样</span><br><span class="line">		if (isRelease) &#123;</span><br><span class="line">			const scriptSrc = path.dirname(__filename);</span><br><span class="line">			const jsName = scriptSrc.split(&apos;\\&apos;);</span><br><span class="line">			var i = jsName.length;</span><br><span class="line">			var finpath = &quot;&quot;;</span><br><span class="line">			for (var j = 0; j &lt; i - 3; j++) &#123;</span><br><span class="line">				if (j == 0) &#123;</span><br><span class="line">					finpath = jsName[j];</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					finpath = finpath + &apos;\\&apos; + jsName[j];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			finpath = finpath + &apos;\\token.txt&apos;;</span><br><span class="line"></span><br><span class="line">		&#125; else &#123; </span><br><span class="line">			finpath = &apos;D://Workspace//token//token.txt&apos;;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		if (fs.existsSync(finpath)) &#123; //判断是否存在该文件</span><br><span class="line">			try &#123;</span><br><span class="line">				let result = fs.readFileSync(finpath);</span><br><span class="line">				console.log(result.toString());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">				return result.toString();</span><br><span class="line">			</span><br><span class="line">			&#125; catch (e) &#123;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	console.log(getToken());</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/02/Node-js读取文件内容并返回值-非异步/" data-id="cju83443z000e5svkxos23h53" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" class="article-date">
+  <time datetime="2019-04-01T13:31:47.000Z" itemprop="datePublished">2019-04-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/">springboot1.5.4 配置druid1.1.0(使用druid-spring-boot-starter)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2><span id="一-导入maven依赖">一、导入Maven依赖</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2><span id="二-applicationyml配置">二、application.yml配置</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  devtools:</span><br><span class="line">    restart:</span><br><span class="line">      enabled: false</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  datasource:</span><br><span class="line">    url: ENC(4k7M62ElZmvr2fECvWBXaYqMh5gz5cR4hn7LU2jaAt+Cv0hfWuvEXwpigYjLXZ6W)</span><br><span class="line">    username: ENC(kJXrMwKAoGen2JxTFdtfgw==)</span><br><span class="line">    password: ENC(r7aiV3zZoSqKN36KqE6jiQ6rmfmFt7WE)</span><br><span class="line">    db-name: ENC(5lFd29y9ciI4HwyIX8BAPg==)</span><br><span class="line">    driver-class-name: com.mysql.jdbc.Driver</span><br><span class="line">    ###################以下为druid增加的配置###########################</span><br><span class="line">    type: com.alibaba.druid.pool.DruidDataSource</span><br><span class="line">    # 下面为连接池的补充设置，应用到上面所有数据源中</span><br><span class="line">    # 初始化大小，最小，最大</span><br><span class="line">    initialSize: 5</span><br><span class="line">    minIdle: 5</span><br><span class="line">    maxActive: 20</span><br><span class="line">    # 配置获取连接等待超时的时间</span><br><span class="line">    maxWait: 60000</span><br><span class="line">    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒</span><br><span class="line">    timeBetweenEvictionRunsMillis: 60000</span><br><span class="line">    # 配置一个连接在池中最小生存的时间，单位是毫秒</span><br><span class="line">    minEvictableIdleTimeMillis: 300000</span><br><span class="line">    validationQuery: SELECT 1 FROM DUAL</span><br><span class="line">    testWhileIdle: true</span><br><span class="line">    testOnBorrow: false</span><br><span class="line">    testOnReturn: false</span><br><span class="line">    # 打开PSCache，并且指定每个连接上PSCache的大小</span><br><span class="line">    poolPreparedStatements: true</span><br><span class="line">    maxPoolPreparedStatementPerConnectionSize: 20</span><br><span class="line">    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，&apos;wall&apos;用于防火墙</span><br><span class="line">    filters: stat,wall,log4j</span><br><span class="line">    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录</span><br><span class="line">    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000</span><br><span class="line">    # 合并多个DruidDataSource的监控数据</span><br><span class="line">    useGlobalDataSourceStat: true</span><br></pre></td></tr></table></figure>
+<h2><span id="三-效果图">三、效果图</span></h2><p><img src="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/druid.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" data-id="cju83447r002z5svkz8ggfgu5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-MySQL去除查询结果重复" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/29/MySQL去除查询结果重复/" class="article-date">
@@ -95,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cju6n24dw0009nwvkcnc6i5ft" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cju83443m00075svkqamc1744" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
@@ -139,7 +220,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cju6n24ec000onwvk2qlgxn53" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cju83445c000n5svk8d0z1vij" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -184,7 +265,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cju6n24ef000rnwvk00m1bswl" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cju83446400125svk4vhtaelp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -228,7 +309,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/" data-id="cju6n24g5002tnwvkewwj6v1a" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/" data-id="cju83448r003n5svkngcznjil" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -271,7 +352,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cju6n24g7002vnwvk6t9w04nw" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cju83447o002v5svkfgvlky6u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -314,7 +395,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/如何让Node-js运行在浏览器端/" data-id="cju6n24go003hnwvkznugiqzd" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/如何让Node-js运行在浏览器端/" data-id="cju83449500445svkhk4y49mc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -364,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cju6n24ei000vnwvkqm27rwsr" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cju83446w001s5svknda5lrvb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -407,105 +488,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/VsCode云端版本/" data-id="cju6n24en0011nwvklecoptea" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/VsCode云端版本/" data-id="cju83445v000v5svkua8dy9gx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-普通用户使用Docker" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/27/普通用户使用Docker/" class="article-date">
-  <time datetime="2019-03-27T08:54:05.000Z" itemprop="datePublished">2019-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/普通用户使用Docker/">普通用户使用Docker</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2><span id="1查询是否有docker组">1.查询是否有docker组：</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/group</span><br></pre></td></tr></table></figure>
-<p>如果没有可以通过该命令添加(一般默认是有的)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
-<h2><span id="2将当前用户添加到docker组">2.将当前用户添加到docker组</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -G docker $(USER)</span><br></pre></td></tr></table></figure>
-<p>例如:sudo usermod -G docker test</p>
-<h2><span id="3重启docker服务">3.重启docker服务</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart docker.service</span><br></pre></td></tr></table></figure>
-<p>参考资料如下:<br>普通用户使用Docker:<a href="https://blog.csdn.net/qq_36713450/article/details/83109477" target="_blank" rel="noopener">https://blog.csdn.net/qq_36713450/article/details/83109477</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" data-id="cju6n24gt003onwvkyypq91l2" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Docker安装MySQL并配置远程访问" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/27/Docker安装MySQL并配置远程访问/" class="article-date">
-  <time datetime="2019-03-27T08:36:03.000Z" itemprop="datePublished">2019-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/Docker安装MySQL并配置远程访问/">Docker安装MySQL并配置远程访问</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2><span id="1docker-search-mysql-查看mysql版本">1.docker search mysql   查看mysql版本</span></h2><h2><span id="2docker-pull-mysql-要选择starts最高的那个name-进行下载">2.docker pull mysql  要选择starts最高的那个name 进行下载</span></h2><h2><span id="3docker-images-查看下载好的镜像">3.docker images  查看下载好的镜像</span></h2><h2><span id="4启动mysql实例">4.启动mysql实例</span></h2><p> docker run –name dockermysql  -p 3307:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql</p>
-<pre><code>--name 为mysql的实例设置别名。 -p 3307为对外暴露的端口。3306是内部端口 
-
--e MYSQL_ROOT_PASSWORD 设置mysql登录密码  -d 以守护进程运行（后台运行） 最后的mysql是镜像名称
-</code></pre><h2><span id="5-docker-ps-a-查看在运行的">5. docker ps -a 查看在运行的</span></h2><h2><span id="6-docker-exec-it-dockermysql-bash-进入容器内部-dockermysql-是上边运行时为容器取的别名-也可以用id替代">6. docker exec -it dockermysql bash     进入容器内部  dockermysql 是上边运行时为容器取的别名 也可以用id替代</span></h2><p> 另外进入容器后，你如果想要使用vim或vi编辑文件，请先执行apt install vim安装对应的库，否则会出现command not found这样的错误提示</p>
-<h2><span id="7mysql-u-root-p-然后直接输入密码即可-密码是在运行时设置的">7.mysql -u root -p      然后直接输入密码即可 密码是在运行时设置的</span></h2><h2><span id="8grant-all-privileges-on-to-root-给用于授予权限">8.grant all privileges on <em>.</em>  to ‘root‘@’%’ ;   给用于授予权限</span></h2><p> GRANT ALL PRIVILEGES ON <em>.</em>  ‘root’@’%’ identified by ‘123123’ WITH GRANT OPTION;  这是网上流传较多的写法。实际上会报错的(本人试验了确实报错，比如像mysql5.7以下的通常是好使的，像现在比较高的版本就不好使了,比如我这个版本是8.0.15)</p>
-<h2><span id="9flush-privileges-刷新权限">9.flush privileges;  刷新权限</span></h2><p>遇见一个错误mysql 1251</p>
-<p>解决办法按照如下做法即可解决，然后就可以利用mysql客户端(如sqlyog或其它工具)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;password&apos; PASSWORD EXPIRE NEVER; #修改加密规则 </span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;password&apos;; #更新一下用户的密码 </span><br><span class="line">FLUSH PRIVILEGES; #刷新权限</span><br></pre></td></tr></table></figure></p>
-<p>‘root’   为你自己定义的用户名</p>
-<p>‘localhost’ 指的是用户开放的IP，可以是’localhost’(仅本机访问，相当于127.0.0.1)，可以是具体的’<em>.</em>.<em>.</em>‘(具体某一IP)，也可以是 ‘%’ (所有IP均可访问)</p>
-<p>‘password’ 是你想使用的用户密码</p>
-<p>参考资料:<br>docker部署mysql 实现远程连接:<a href="https://blog.csdn.net/weixin_42459563/article/details/80924634" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42459563/article/details/80924634</a><br>Navicat连接Mysql8.0.11出现1251错误:<a href="https://blog.csdn.net/qq_36068954/article/details/80175755" target="_blank" rel="noopener">https://blog.csdn.net/qq_36068954/article/details/80175755</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/Docker安装MySQL并配置远程访问/" data-id="cju6n24dl0004nwvkxda5glwm" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
 
     </footer>
   </div>
@@ -542,7 +528,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 16.67px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.67px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.67px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 15px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 13.33px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.67px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a>
+      <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 16.67px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.67px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.67px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 13.33px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.67px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a>
     </div>
   </div>
 
@@ -564,6 +550,14 @@
       <ul>
         
           <li>
+            <a href="/2019/04/08/SpringBoot打包成war/">SpringBoot打包成war</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/08/大型网站架构模式/">大型网站架构模式</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/07/博客中的文章归档是如何实现的/">博客中的文章归档是如何实现的</a>
           </li>
         
@@ -573,14 +567,6 @@
         
           <li>
             <a href="/2019/04/06/git分支开发的好处/">git分支开发的好处</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/05/layui之日期和时间组件/">layui之日期和时间组件</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/04/vue-electron脚手架/">vue-electron脚手架</a>
           </li>
         
       </ul>
