@@ -62,6 +62,61 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-node-js服务端程序在Linux上持久运行" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/" class="article-date">
+  <time datetime="2019-03-05T06:04:07.000Z" itemprop="datePublished">2019-03-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/05/node-js服务端程序在Linux上持久运行/">node.js服务端程序在Linux上持久运行</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果要想在服务端部署node.js程序，让其持久化运行，就不能单单使用npm start命令运行，当然了，这样运行是毫无问题的，但是当关闭xshell窗口或者是关闭进程的时候(其实关闭xshell窗口相当于默认关闭进程)，就无法访问对应的node.js服务端程序了。</p>
+<p>那么该如何才能持久访问呢？</p>
+<p>其实也就两步</p>
+<h4><span id="第一步安装forever">第一步安装forever</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install forever 或者 npminstall -g forever</span><br></pre></td></tr></table></figure>
+<h4><span id="第二步运行对应的js">第二步运行对应的js</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forver start index.js</span><br></pre></td></tr></table></figure>
+<h5><span id="注意你可能会遇到如下错误">注意(你可能会遇到如下错误):</span></h5><p>错误信息:<br>forever: command not found</p>
+<p>原因:以Windows来说，通常这种错误是因为没有配置好环境变量，解决方案也很简单就是配置好环境变量或者是使用绝对路径</p>
+<p>解决方式(Linux演示，这里我使用绝对路径):</p>
+<h5><span id="如何找到绝对路径呢">如何找到绝对路径呢？</span></h5><p>通过该命令可以获取node.js的安装模块,npm list -g –depth 0<br>├── <a href="mailto:ali-oss@6.1.0" target="_blank" rel="noopener">ali-oss@6.1.0</a><br>├── <a href="mailto:forever@0.15.3" target="_blank" rel="noopener">forever@0.15.3</a><br>└── <a href="mailto:npm@6.4.1" target="_blank" rel="noopener">npm@6.4.1</a></p>
+<p>再通过关键字搜索 find / -name forever<br>/home/youcong/mock-github-api/node_modules/forever<br>/home/youcong/mock-github-api/node_modules/forever/lib/forever<br>/home/youcong/mock-github-api/node_modules/forever/bin/forever<br>/home/youcong/mock-github-api/node_modules/.bin/forever<br>/home/youcong/nodejs/lib/node_modules/forever<br>/home/youcong/nodejs/lib/node_modules/forever/lib/forever<br>/home/youcong/nodejs/lib/node_modules/forever/bin/forever<br>/home/youcong/nodejs/bin/forever</p>
+<p>最后通过/home/youcong/mock-github-api/node_modules/forever/bin/forever start index.js 即可实现node.js服务端程序在Linux上持久运行。</p>
+<h5><span id="forever常用命令">forever常用命令</span></h5><p>forever start app.js //启动程序</p>
+<p>forever stop app.js //关闭程序</p>
+<p>forever start -l forever.log -o out.log -e err.log app.js //启动程序并输出日志</p>
+<p>forever restart app.js //重启程序</p>
+<p>forever list //查看正在运行的进程</p>
+<h6><span id="参考链接">参考链接:</span></h6><p>forever:command not found:<a href="https://blog.csdn.net/xgbm_k/article/details/78132293" target="_blank" rel="noopener">https://blog.csdn.net/xgbm_k/article/details/78132293</a><br>node.js在Linux上如何持久运行:<a href="https://blog.csdn.net/shakdy/article/details/82938679" target="_blank" rel="noopener">https://blog.csdn.net/shakdy/article/details/82938679</a><br>node.js后台运行方法:<a href="https://blog.csdn.net/zdyueguanyun/article/details/79043483" target="_blank" rel="noopener">https://blog.csdn.net/zdyueguanyun/article/details/79043483</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/" data-id="cju8du46y002rnovkqd7nsimp" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-node-js读写文件" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/04/node-js读写文件/" class="article-date">
@@ -92,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/04/node-js读写文件/" data-id="cju836j3a002pw8vkishhdxqx" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/04/node-js读写文件/" data-id="cju8du4770033novkbhx08euq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -155,7 +210,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/04/javascript之传输加密/" data-id="cju836j58004fw8vkur7zblsv" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/04/javascript之传输加密/" data-id="cju8du48i004enovkmkn1qba4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -199,7 +254,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/VsCode插件开发之通信/" data-id="cju836j1y0010w8vkl4tk08iv" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/VsCode插件开发之通信/" data-id="cju8du464001anovkhl5mzxjz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
@@ -246,7 +301,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cju836j1i000hw8vkzy2d4u12" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cju8du455000nnovklo89n8hb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -310,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cju836j32002dw8vkka1wauy6" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cju8du46w002onovkrkbpqkhv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -354,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cju836j2l001yw8vkmke15chp" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/nginx让所有的http地址重定向到https/" data-id="cju8du46t002hnovkdwtbdrru" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
@@ -402,7 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cju836j2v0023w8vknx05rubn" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cju8du46q002cnovkua2fa6it" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
@@ -444,7 +499,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cju836j3o0037w8vk479fn5pt" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" data-id="cju8du47i003mnovkgc4viham" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
@@ -491,70 +546,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cju836j4s0048w8vkvjc89qhr" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/25/阿里云配置tomcat-https/" data-id="cju8du47r0042novkrvd5etiz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-springboot打成的jar包如何在Linux上持久运行" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" class="article-date">
-  <time datetime="2019-02-23T09:16:10.000Z" itemprop="datePublished">2019-02-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/23/springboot打成的jar包如何在Linux上持久运行/">springboot打成的jar包如何在Linux上持久运行</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-<h2><span id="一-首先说说在没有springboot的时候项目是如何部署的">一、首先说说在没有springboot的时候，项目是如何部署的？</span></h2><h4><span id="1动态web项目">1.动态web项目</span></h4><p>动态web项目部署很方便，基本上上传文件到服务器的tomcat里面的webapps文件夹下即可完成部署。<br>当然了，这种做法的弊端是，如果是通过winscp来传输对于网速方面要求严格，不然的话网速一卡，很久传不过去，很耽误时间的，当然了，我一个同学他们公司用的就是动态web项目，部署的方式也正是采用这种方式，据说是公司制度定下的。原因我就没有细问过他。</p>
-<p>当然了，有人会说，那我上传到服务器之前将其压缩成一个zip包，然后在Linux通过unzip命令解压。这种方式我以前也这么干过。<br>当我后来发现将动态web项目导出war包，直接通过winscp上传到tomcat对应的目录下，在当前目录就会产生一个文件夹，该文件夹主要是web相关的资源，还有就是java产生的编译文件class等。</p>
-<p>由此可以推出动态web项目常规部署方式有这么几种?<br>a.直接上传到tomcat对应的目录下;<br>b.先打成zip包然后再传输到tomcat对应的目录下;<br>c.本地导出war包，然后在传输到tomcat对应的目录下;</p>
-<p>其实a和b是一样的，c则是利用Eclipse的导出war功能来实现的。</p>
-<h4><span id="2maven项目">2.maven项目</span></h4><p>maven项目的部署以war项目为例，直接通过mvn install 或者mvn clean package直接打包上传到服务器上，就即可完成部署。<br>当然了，还可以通过写一个脚本利用git clone的特性加上maven，也可以完成快速部署</p>
-<p>来个小结:<br>现在使用动态web项目都是一些老公司维护一些老的项目，总而言之，现在大部分都在用mavne，当然，也不排除有一部分用grandle或ant等。<br>其实发现用maven以后除了有些时候导入依赖(依赖之间因版本冲突问题，为此我感到烦之外，其它都还好)。</p>
-<p>说完这两种项目部署后，下面我再说springboot打包成jar，如何在Linux上持久运行。</p>
-<h2><span id="二-springboot打成的jar如何在linux上持久运行">二、springboot打成的jar如何在Linux上持久运行</span></h2><p>首先呢？你本地要有一个springboot的项目，如果没有可以参考我的这篇博客写一个,<a href="https://www.cnblogs.com/youcong/p/8098861.html" target="_blank" rel="noopener">springboot入门程序</a></p>
-<p>然后呢？你要有一个虚拟机搭建一个Linux服务器或者是远程服务器(阿里云或者腾讯云、百度云、美团云等)。</p>
-<p>再然后，你还要有一个winscp，winscp官网地址为:<a href="https://winscp.net/eng/docs/lang:chs(你可以去官网下载)" target="_blank" rel="noopener">https://winscp.net/eng/docs/lang:chs(你可以去官网下载)</a></p>
-<p>最后将springboot打包(确保本地运行没有问题)，利用winscp上传到Linux上。</p>
-<p>通过该命令运行jar包:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -jar blog.jar &gt; system.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></p>
-<p>会在本地有一个system.log文件产生，通过该文件你可以看到对应的日志输出。</p>
-<p>下面我们对这条命令进行分析</p>
-<p>nohub一般形式为如下:</p>
-<p>nohub command &amp;</p>
-<p>但是当你退出账户时，仍然会停止对应的进程。</p>
-<p>所以这就需要你在后面添加 2&gt;&amp;1 &amp;(相当于正常退出，仍保持命令在后台运行)</p>
-<p>上面这个command正好对上java -jar blog.jar &gt; system.log</p>
-<p>“&gt;” 输出重定向，通常用于输出日志</p>
-<p>本文主要参考该地址:<a href="https://www.cnblogs.com/createhappy/p/9375874.html" target="_blank" rel="noopener">https://www.cnblogs.com/createhappy/p/9375874.html</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cju836j3m0035w8vk9lf2qzc4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
 
     </footer>
   </div>
@@ -591,7 +586,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 16.67px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.67px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.67px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 13.33px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.67px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a>
+      <a href="/tags/Docker/" style="font-size: 11.43px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Linux/" style="font-size: 14.29px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 15.71px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.43px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.43px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 17.14px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 12.86px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.43px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 11.43px;">架构</a>
     </div>
   </div>
 
@@ -613,6 +608,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/">Spring Boot:The field file exceeds its maximum permitted size of 1048576 bytes</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/08/SpringBoot打包成war/">SpringBoot打包成war</a>
           </li>
         
@@ -626,10 +625,6 @@
         
           <li>
             <a href="/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/">Caused by: java.sql.SQLException: Value &#39;0000-00-00 00:00:00&#39; can not be represented as java.sql.Timestamp</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/06/git分支开发的好处/">git分支开发的好处</a>
           </li>
         
       </ul>

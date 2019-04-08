@@ -5,20 +5,20 @@
   
 
   
-  <title>Uncaught ReferenceError: layer is not defined | Blog</title>
+  <title>Spring Boot:The field file exceeds its maximum permitted size of 1048576 bytes | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。 原来的问题代码如下:12345678910111213layer.confirm(&amp;apos;确认要退出吗？&amp;apos;, &amp;#123;           btn : [ &amp;apos;确定&amp;apos;,">
-<meta name="keywords" content="javascript">
+  <meta name="description" content="错误信息:The field file exceeds its maximum permitted size of 1048576 bytes原因是因为SpringBoot内嵌tomcat默认所能上传的文件大小为1M,超出这个就会报错。 解决办法: 1.修改application.yml配置文件123456spring:  http:    multipart:      enabled: tru">
+<meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Uncaught ReferenceError: layer is not defined">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/index.html">
+<meta property="og:title" content="Spring Boot:The field file exceeds its maximum permitted size of 1048576 bytes">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。 原来的问题代码如下:12345678910111213layer.confirm(&amp;apos;确认要退出吗？&amp;apos;, &amp;#123;           btn : [ &amp;apos;确定&amp;apos;,">
+<meta property="og:description" content="错误信息:The field file exceeds its maximum permitted size of 1048576 bytes原因是因为SpringBoot内嵌tomcat默认所能上传的文件大小为1M,超出这个就会报错。 解决办法: 1.修改application.yml配置文件123456spring:  http:    multipart:      enabled: tru">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-19T12:43:18.156Z">
+<meta property="og:updated_time" content="2019-04-08T13:20:18.011Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Uncaught ReferenceError: layer is not defined">
-<meta name="twitter:description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。 原来的问题代码如下:12345678910111213layer.confirm(&amp;apos;确认要退出吗？&amp;apos;, &amp;#123;           btn : [ &amp;apos;确定&amp;apos;,">
+<meta name="twitter:title" content="Spring Boot:The field file exceeds its maximum permitted size of 1048576 bytes">
+<meta name="twitter:description" content="错误信息:The field file exceeds its maximum permitted size of 1048576 bytes原因是因为SpringBoot内嵌tomcat默认所能上传的文件大小为1M,超出这个就会报错。 解决办法: 1.修改application.yml配置文件123456spring:  http:    multipart:      enabled: tru">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-Uncaught-ReferenceError-layer-is-not-defined" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" class="article-date">
-  <time datetime="2019-03-19T12:35:10.000Z" itemprop="datePublished">2019-03-19</time>
+    <a href="/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/" class="article-date">
+  <time datetime="2019-04-08T13:11:29.000Z" itemprop="datePublished">2019-04-08</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Uncaught ReferenceError: layer is not defined
+      Spring Boot:The field file exceeds its maximum permitted size of 1048576 bytes
     </h1>
   
 
@@ -87,20 +87,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>错误详细信息,如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught ReferenceError: layer is not defined&apos;</span><br></pre></td></tr></table></figure></p>
-<p>关键词就是not defined 未定义，那么解决方案就是给它定义。</p>
-<p>原来的问题代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>这样在我的博客首页是可以生效的，不会出现未定义。但是当我将其抽象为一个函数的时候，其它地方就不行了。</p>
-<p>通过声明定义后，代码就变成如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">layui.use(&apos;layer&apos;,function () &#123; </span><br><span class="line">       	</span><br><span class="line">       layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br><span class="line">       </span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>当时我在想引入layer.js来解决这个问题，但是仔细一看这并不是问题的关键所在。<br>解决问题，在于更好的理解问题，当然了，把握关键词也是很重要的(事半功倍)。</p>
+        <p>错误信息:The field file exceeds its maximum permitted size of 1048576 bytes<br>原因是因为SpringBoot内嵌tomcat默认所能上传的文件大小为1M,超出这个就会报错。</p>
+<p>解决办法:</p>
+<h2><span id="1修改applicationyml配置文件">1.修改application.yml配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  http:</span><br><span class="line">    multipart:</span><br><span class="line">      enabled: true</span><br><span class="line">      max-file-size: 30MB</span><br><span class="line">      max-request-size: 30MB</span><br></pre></td></tr></table></figure>
+<h2><span id="2编写配置类">2.编写配置类</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package com.blog.springboot.config;</span><br><span class="line"></span><br><span class="line">import javax.servlet.MultipartConfigElement;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.web.servlet.MultipartConfigFactory;</span><br><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line">@Configuration</span><br><span class="line">public class MulterFile &#123;</span><br><span class="line">	/**  </span><br><span class="line">     * 文件上传配置  </span><br><span class="line">     * @return  </span><br><span class="line">     */  </span><br><span class="line">    @Bean  </span><br><span class="line">    public MultipartConfigElement multipartConfigElement() &#123;  </span><br><span class="line">        MultipartConfigFactory factory = new MultipartConfigFactory();  </span><br><span class="line">        //文件最大  </span><br><span class="line">        factory.setMaxFileSize(&quot;10240KB&quot;); //KB,MB  </span><br><span class="line">        /// 设置总上传数据总大小  </span><br><span class="line">        factory.setMaxRequestSize(&quot;102400KB&quot;);  </span><br><span class="line">        return factory.createMultipartConfig();  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考资料:<br><a href="https://blog.csdn.net/u010429286/article/details/54381705" target="_blank" rel="noopener">Spring Boot:The field file exceeds its maximum permitted size of 1048576 bytes.</a><br><a href="https://www.cnblogs.com/jiangwz/p/9030943.html" target="_blank" rel="noopener">Spring Boot设置上传文件大小</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" data-id="cju8du46c001lnovku9h681yl" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/" data-id="cju8du457000qnovk3e4k7j0s" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
 
     </footer>
   </div>
@@ -108,19 +107,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          js获取访问IP、地区、、当前操作浏览器
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/19/Error-listen-EADDRINUSE-3000/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/04/08/SpringBoot打包成war/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Error: listen EADDRINUSE :::3000</div>
+      <div class="article-nav-title">SpringBoot打包成war</div>
     </a>
   
 </nav>
