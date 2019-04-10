@@ -84,13 +84,26 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2><span id="1更新">1.更新</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<h2><span id="2安装nginx">2.安装Nginx</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+<h2><span id="3安装php">3.安装php</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">udo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \</span><br><span class="line">    php7.0-dev php7.0-fpm php7.0-json php7.0-mbstring php7.0-mcrypt \</span><br><span class="line">    php7.0-mysql php7.0-opcache php7.0-zip php7.0-intl php7.0-gd php7.0-xml</span><br></pre></td></tr></table></figure>
+<p>修改配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/php/7.0/fpm/php.ini</span><br></pre></td></tr></table></figure></p>
+<p>修改配置内容如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">post_max_size = 1024M</span><br><span class="line">memory_limit = 1024M</span><br><span class="line">upload_max_filesize = 1024M</span><br></pre></td></tr></table></figure></p>
+<p>重启让配置生效:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service php7.0-fpm restart</span><br></pre></td></tr></table></figure></p>
+<h2><span id="4安装mysql">4.安装mysql</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
+<h2><span id="5安装edusoho">5.安装edusoho</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www</span><br><span class="line">sudo wget http://download.edusoho.com/edusoho-8.3.20.tar.gz </span><br><span class="line">sudo tar -zxvf edusoho-8.3.20.tar.gz </span><br><span class="line">sudo chown www-data:www-data edusoho/ -Rf</span><br></pre></td></tr></table></figure>
+<h2><span id="6修改配置文件">6.修改配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/nginx/sites-enabled/edusoho</span><br></pre></td></tr></table></figure>
+<p>edusoho配置如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    # [改] 域名或IP</span><br><span class="line">    server_name 192.168.126.130;</span><br><span class="line">    </span><br><span class="line">    #301跳转可以在nginx中配置</span><br><span class="line"></span><br><span class="line">    # 程序的安装路径</span><br><span class="line">    root /var/www/edusoho/web;</span><br><span class="line"></span><br><span class="line">    # 日志路径</span><br><span class="line">    access_log /var/log/nginx/example.com.access.log;</span><br><span class="line">    error_log /var/log/nginx/example.com.error.log;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        index app.php;</span><br><span class="line">        try_files $uri @rewriteapp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location @rewriteapp &#123;</span><br><span class="line">        rewrite ^(.*)$ /app.php/$1 last;</span><br><span class="line">    &#125;</span><br><span class="line">     location ~ ^/udisk &#123;</span><br><span class="line">        internal;</span><br><span class="line">        root /var/www/edusoho/app/data/;</span><br><span class="line">    &#125;</span><br><span class="line">    location ~ ^/(app|app_dev)\.php(/|$) &#123;</span><br><span class="line">        fastcgi_pass   unix:/var/run/php7.0-fpm.sock;</span><br><span class="line">        fastcgi_split_path_info ^(.+\.php)(/.*)$;</span><br><span class="line">        include fastcgi_params;</span><br><span class="line">        fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;</span><br><span class="line">        fastcgi_param  HTTPS              off;</span><br><span class="line">        fastcgi_param HTTP_X-Sendfile-Type X-Accel-Redirect;</span><br><span class="line">        fastcgi_param HTTP_X-Accel-Mapping /udisk=/var/www/edusoho/app/data/udisk;</span><br><span class="line">        fastcgi_buffer_size 128k;</span><br><span class="line">        fastcgi_buffers 8 128k;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    # 配置设置图片格式文件</span><br><span class="line">    location ~* \.(jpg|jpeg|gif|png|ico|swf)$ &#123;</span><br><span class="line">        # 过期时间为3年</span><br><span class="line">        expires 3y;</span><br><span class="line">        </span><br><span class="line">        # 关闭日志记录</span><br><span class="line">        access_log off;</span><br><span class="line"></span><br><span class="line">        # 关闭gzip压缩，减少CPU消耗，因为图片的压缩率不高。</span><br><span class="line">        gzip off;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    # 配置css/js文件</span><br><span class="line">    location ~* \.(css|js)$ &#123;</span><br><span class="line">        access_log off;</span><br><span class="line">        expires 3y;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    # 禁止用户上传目录下所有.php文件的访问，提高安全性</span><br><span class="line">    location ~ ^/files/.*\.(php|php7.0)$ &#123;</span><br><span class="line">        deny all;</span><br><span class="line">    &#125;</span><br><span class="line"> # 以下配置允许运行.php的程序，方便于其他第三方系统的集成。</span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        # [改] 请根据实际php-fpm运行的方式修改</span><br><span class="line">        fastcgi_pass   unix:/var/run/php7.0-fpm.sock;</span><br><span class="line">        fastcgi_split_path_info ^(.+\.php)(/.*)$;</span><br><span class="line">        include fastcgi_params;</span><br><span class="line">        fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;</span><br><span class="line">        fastcgi_param  HTTPS              off;</span><br><span class="line">        fastcgi_param  HTTP_PROXY         &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>其实LNMP环境搭建与LAMP环境搭建基本相同，只不过使用的web服务器不同及其配置有点差异，一句话，大同小异。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/Edusoho之LNMP环境搭建/" data-id="cjuazrrh00006v0vkbbjwjurc" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/Edusoho之LNMP环境搭建/" data-id="cjub0h1l7000dhkvk00yeb74c" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
     </footer>
   </div>
   
@@ -147,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/Edusoho之LAMP环境搭建/" data-id="cjuazrrh20007v0vklafxlma3" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/Edusoho之LAMP环境搭建/" data-id="cjub0h1kr0004hkvklz9i8t3z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -191,7 +204,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem/" data-id="cjuazrrhe000fv0vklsivbdby" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem/" data-id="cjub0h1l20008hkvk6sddnjtv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -233,7 +246,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/Ubuntu16-04中php如何切换版本/" data-id="cjuazrrj8001wv0vk2v59l7k6" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/Ubuntu16-04中php如何切换版本/" data-id="cjub0h1lw0013hkvk5tnxpd4j" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -286,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/" data-id="cjuazrrjv002uv0vkhodu1nir" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/" data-id="cjub0h1mw002ehkvkseev9omo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -329,7 +342,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/" data-id="cjuazrrhw000pv0vkajc1fhzo" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/" data-id="cjub0h1lj000phkvkmvmmttqs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -372,7 +385,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/" data-id="cjuazrrj3001pv0vk8xluszxe" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/" data-id="cjub0h1lo000uhkvkj6114so5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -449,7 +462,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/08/大型网站架构模式/" data-id="cjuazrrkt004cv0vk317jiok5" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/大型网站架构模式/" data-id="cjub0h1ra004ahkvkgr6isf5a" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
@@ -496,7 +509,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/07/博客中的文章归档是如何实现的/" data-id="cjuazrrkn0043v0vk6trw5bwd" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/07/博客中的文章归档是如何实现的/" data-id="cjub0h1r60047hkvkc75yj535" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -537,7 +550,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/" data-id="cjuazrrb70000v0vkaqkwy92a" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/" data-id="cjub0h1kd0000hkvkr5k17m6b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
