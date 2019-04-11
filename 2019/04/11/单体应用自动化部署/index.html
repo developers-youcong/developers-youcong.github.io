@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives: 2019 | Blog</title>
+  <title>单体应用自动化部署 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://developers-youcong.github.io/archives/2019/page/5/index.html">
+  <meta name="description" content="单体应用自动化部署脚本:12345678910111213141516171819202122232425262728DATE=$(date +%Y%m%d)time=$(date &amp;quot;+%Y-%m-%d %H:%M:%S&amp;quot;)git clone https://code.aliyun.com/test/blog.gitcd blogmvn clean packageif [ $?">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单体应用自动化部署">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/04/11/单体应用自动化部署/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="单体应用自动化部署脚本:12345678910111213141516171819202122232425262728DATE=$(date +%Y%m%d)time=$(date &amp;quot;+%Y-%m-%d %H:%M:%S&amp;quot;)git clone https://code.aliyun.com/test/blog.gitcd blogmvn clean packageif [ $?">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-11T03:09:38.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
+<meta name="twitter:title" content="单体应用自动化部署">
+<meta name="twitter:description" content="单体应用自动化部署脚本:12345678910111213141516171819202122232425262728DATE=$(date +%Y%m%d)time=$(date &amp;quot;+%Y-%m-%d %H:%M:%S&amp;quot;)git clone https://code.aliyun.com/test/blog.gitcd blogmvn clean packageif [ $?">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -60,216 +65,60 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/16/PostgreSQL安装和使用/" class="archive-article-date">
-  <time datetime="2019-03-16T11:41:45.000Z" itemprop="datePublished">Mar 16</time>
+        <section id="main"><article id="post-单体应用自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/11/单体应用自动化部署/" class="article-date">
+  <time datetime="2019-04-11T02:58:53.000Z" itemprop="datePublished">2019-04-11</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/16/PostgreSQL安装和使用/">PostgreSQL安装和使用</a>
+    <h1 class="article-title" itemprop="name">
+      单体应用自动化部署
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/16/npm-run-dev-在Linux上持久运行/" class="archive-article-date">
-  <time datetime="2019-03-16T07:32:42.000Z" itemprop="datePublished">Mar 16</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/16/npm-run-dev-在Linux上持久运行/">npm run dev 在Linux上持久运行</a>
-    </h1>
-  
+        <p>单体应用自动化部署脚本:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">DATE=$(date +%Y%m%d)</span><br><span class="line"></span><br><span class="line">time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line">git clone https://code.aliyun.com/test/blog.git</span><br><span class="line"></span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line">mvn clean package</span><br><span class="line"></span><br><span class="line">if [ $? -ne 0 ]; then</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目失败,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署失败，请登录服务器查看&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line">else</span><br><span class="line"></span><br><span class="line">    cp -r /home/project/blog/target/blog.war /home/project/tomcat8/webapps/</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/startup.sh</span><br><span class="line"></span><br><span class="line">    rm -r /home/project/blog</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目成功,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署成功&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>其中涉及到邮件在服务器发生，我在这里使用的是heirloom-mailx</p>
+<p>安装使用流程如下(以Ubuntu16.04为例):</p>
+<h3><span id="1安装heirloom-mailx">1.安装heirloom-mailx</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install heirloom-mailx</span><br></pre></td></tr></table></figure>
+<h3><span id="2修改etcs-nailrc并在尾部添加如下内容这里使用的是163详情可去163邮箱了解">2.修改/etc/s-nail.rc并在尾部添加如下内容(这里使用的是163，详情可去163邮箱了解)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set from=&quot;xxx@163.com&quot;</span><br><span class="line">set smtp=&quot;smtps://smtp.163.com:465&quot;</span><br><span class="line">set smtp-auth-user=&quot;xxxm@163.com&quot;</span><br><span class="line">set smtp-auth-password=&quot;123456&quot;</span><br><span class="line">set smtp-auth=login</span><br></pre></td></tr></table></figure>
+<h3><span id="3测试">3.测试</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;this is test&apos; | mail -s &quot;test email.&quot; 123@qq.com</span><br></pre></td></tr></table></figure>
+<p>邮箱这里我主要参考:<br><a href="https://blog.csdn.net/just_shunjian/article/details/78677054" target="_blank" rel="noopener">ubuntu16.04 heirloom-mailx 通过外部SMTP服务器发送邮件</a></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/16/js截取url参数/" class="archive-article-date">
-  <time datetime="2019-03-16T07:24:33.000Z" itemprop="datePublished">Mar 16</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/16/js截取url参数/">js截取url参数</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/13/express框架之跨域请求/" class="archive-article-date">
-  <time datetime="2019-03-13T14:51:59.000Z" itemprop="datePublished">Mar 13</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/11/单体应用自动化部署/" data-id="cjuc2e4uf003rxwvk3yhsymbe" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/13/express框架之跨域请求/">express框架之跨域请求</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/13/node-js之Cookie/" class="archive-article-date">
-  <time datetime="2019-03-13T14:27:45.000Z" itemprop="datePublished">Mar 13</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/13/node-js之Cookie/">node.js之Cookie</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/10/Edusoho之LNMP环境搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Edusoho之LNMP环境搭建</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/13/jQuery和js之Cookie实现/" class="archive-article-date">
-  <time datetime="2019-03-13T14:11:06.000Z" itemprop="datePublished">Mar 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/13/jQuery和js之Cookie实现/">jQuery和js之Cookie实现</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/13/SpringBoot之静态资源放行/" class="archive-article-date">
-  <time datetime="2019-03-13T13:45:23.000Z" itemprop="datePublished">Mar 13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/13/SpringBoot之静态资源放行/">SpringBoot之静态资源放行</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/09/StringRedisTemplate操作Redis/" class="archive-article-date">
-  <time datetime="2019-03-09T12:40:19.000Z" itemprop="datePublished">Mar 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/09/StringRedisTemplate操作Redis/">StringRedisTemplate操作Redis</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" class="archive-article-date">
-  <time datetime="2019-03-09T12:26:18.000Z" itemprop="datePublished">Mar 9</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/">Could not get a resource from the pool 错误解决</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/08/大型网站技术架构演化/" class="archive-article-date">
-  <time datetime="2019-03-08T05:54:14.000Z" itemprop="datePublished">Mar 8</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/08/大型网站技术架构演化/">大型网站技术架构演化</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/archives/2019/page/4/">&laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/3/">3</a><a class="page-number" href="/archives/2019/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/2019/page/6/">6</a><a class="page-number" href="/archives/2019/page/7/">7</a><a class="page-number" href="/archives/2019/page/8/">8</a><a class="extend next" rel="next" href="/archives/2019/page/6/">Next &raquo;</a>
-  </nav>
 
 </section>
         

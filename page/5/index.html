@@ -62,6 +62,68 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-PostgreSQL安装和使用" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/16/PostgreSQL安装和使用/" class="article-date">
+  <time datetime="2019-03-16T11:41:45.000Z" itemprop="datePublished">2019-03-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/16/PostgreSQL安装和使用/">PostgreSQL安装和使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>青岛OJ系统用的关系型数据库是PostgreSQL,为此对PostgreSQL大致了解下。</p>
+<p>今天的主要话题围绕下面两个方面:</p>
+<ul>
+<li>PostgreSQL安装</li>
+<li>PostgreSQL使用</li>
+</ul>
+<h2><span id="一-postgresql安装以ubuntu1604为例">一、PostgreSQL安装(以Ubuntu16.04为例)</span></h2><h4><span id="1安装命令">1.安装命令</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install postgresql</span><br></pre></td></tr></table></figure>
+<h4><span id="2修改-etcpostgresql95mainpostgresqlconf">2.修改 /etc/postgresql/9.5/main/postgresql.conf</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">将下面 listen_addresses = &apos;localhost&apos;注释去掉并改为  listen_addresses = &apos;*&apos;</span><br><span class="line"># - Connection Settings -</span><br><span class="line">#listen_addresses = &apos;localhost&apos;          </span><br><span class="line"># what IP address(es) to listen on;                </span><br><span class="line"># comma-separated list of addresses;     </span><br><span class="line"># defaults to &apos;localhost&apos;; use &apos;*&apos; for all</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">将下面password_encryption = on 注释打开</span><br><span class="line">#password_encryption = on</span><br></pre></td></tr></table></figure>
+<h4><span id="3切换用户su-postgres">3.切换用户su - postgres</span></h4><h4><span id="4通过psql-命令进入postgresql客户端">4.通过psql 命令进入postgresql客户端</span></h4><h4><span id="5修改用户密码">5.修改用户密码</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER postgres PASSWORD &apos;youcongtech&apos;;</span><br></pre></td></tr></table></figure>
+<h4><span id="6vim-etcpostgresql95mainpg_hbaconf-修改-host-all-all-1921681024-md5-中的ip为00000">6.vim /etc/postgresql/9.5/main/pg_hba.conf 修改 host all all 192.168.1.0/24 md5 中的ip,为：0.0.0.0/0</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># TYPE DATABASE  USER    CIDR-ADDRESS     METHOD</span><br><span class="line"># &quot;local&quot; is for Unix domain socket connections only</span><br><span class="line">local all    all               trust</span><br><span class="line"># IPv4 local connections:</span><br><span class="line">host  all    all    127.0.0.1/32     trust</span><br><span class="line">host  all    all    192.168.126.0/24    md5</span><br><span class="line"># IPv6 local connections:</span><br><span class="line">host  all    all    ::1/128       trust</span><br></pre></td></tr></table></figure>
+<p>windows安装PostgreSQL:<a href="https://www.cnblogs.com/sharpest/p/6225028.html" target="_blank" rel="noopener">https://www.cnblogs.com/sharpest/p/6225028.html</a></p>
+<h2><span id="二-postgresql使用">二、PostgreSQL使用</span></h2><p>PostgreSQL官方网站:<a href="https://www.postgresql.org/" target="_blank" rel="noopener">https://www.postgresql.org/</a><br>PostgreSQL中文教程:<a href="https://www.yiibai.com/postgresql/" target="_blank" rel="noopener">https://www.yiibai.com/postgresql/</a></p>
+<h4><span id="1介绍postgresql">1.介绍PostgreSQL</span></h4><p>PostgreSQL是一个功能强大的开源对象关系数据库系统，它使用和扩展了SQL语言，并结合了许多安全存储和扩展最复杂数据工作负载的功能。PostgreSQL的起源可以追溯到1986年，作为加州大学伯克利分校POSTGRES项目的一部分，并在核心平台上进行30多年的积极开发。<br>PostgreSQL凭借其经过验证的架构，可靠性、数据完整性，强大的功能集，可扩展性以及软件背后的开源社区的奉献精神赢得了良好的声誉，以始终如一地提供高性能和创新的解决方案。PostgreSQL在所有主要操作系统上运行，自2001年以来一直是符合ACID标准的，并且具有强大的附加功能，例如流行的PostGIS地址空间数据库扩展器。毫无疑问，PostgerSQL已成为许多人和组织首选的开源关系数据库。</p>
+<h4><span id="为什么要使用postgresql">为什么要使用PostgreSQL</span></h4><p>PostgreSQL提供了许多功能，旨在帮助开发人员构建应用程序，管理员保护数据完整性并构建容错环境，并帮助您管理数据，无论数据集有多大或多小。除了免费和开源之外，PostgeSQL还具有高度可扩展性。例如，您可以定义自己的数据类型，构建自定义函数，甚至可以编写来自不同编程语言的代码，而无需重新编译数据库。<br>PostgreSQL试图符合SQL标准，在这种标准中，这种一致性不会与传统特性相矛盾，或者可能导致糟糕的架构决策。支持SQL标准所需的许多功能，但有时语法或功能略有不同。随着时间的推移，可以预期进一步向一致性迈进。从2018年10月发布的版本11开始，PostgreSQL符合SQL:2011核心一致性的179个强制性功能中的至少160个，在撰写本文时，没有任何关系数据库符合此标准的完全符合性。</p>
+<p>下面是PostgreSQL中各种功能的无穷无尽的功能，每个主要版本都添加更多功能:</p>
+<h5><span id="数据类型">数据类型</span></h5><p>基元：整数，数字，字符串，布尔值<br>结构化：日期/时间，数组，范围，UUID<br>文档：JSON / JSONB，XML，键值（Hstore）<br>几何：点，线，圆，多边形<br>自定义：复合，自定义类型</p>
+<h5><span id="数据的完整性">数据的完整性</span></h5><p>独一无二，不是空的<br>主键<br>外键<br>排除约束<br>显式锁定，咨询锁定</p>
+<h5><span id="并发性性能">并发性，性能</span></h5><p>索引：B树，多列，表达式，部分<br>高级索引：GiST，SP-Gist，KNN Gist，GIN，BRIN，覆盖索引，布隆过滤器<br>复杂的查询计划器/优化器，仅索引扫描，多列统计<br>交易，嵌套交易（通过保存点）<br>多版本并发控制（MVCC）<br>读取查询的并行化和构建B树索引<br>表分区<br>SQL标准中定义的所有事务隔离级别，包括Serializable<br>即时（JIT）表达式汇编</p>
+<h5><span id="可靠性灾难恢复">可靠性，灾难恢复</span></h5><p>预写日志（WAL）<br>复制：异步，同步，逻辑<br>时间点恢复（PITR），主动备用<br>表空间</p>
+<h5><span id="安全">安全</span></h5><p>身份验证：GSSAPI，SSPI，LDAP，SCRAM-SHA-256，证书等<br>强大的访问控制系统<br>列和行级安全性</p>
+<h5><span id="可扩展性">可扩展性</span></h5><p>存储的功能和程序<br>程序语言：PL / PGSQL，Perl，Python（以及更多）<br>外部数据包装器：使用标准SQL接口连接到其他数据库或流<br>许多提供附加功能的扩展，包括PostGIS</p>
+<h5><span id="国际化文本搜索">国际化，文本搜索</span></h5><p>支持国际字符集，例如通过ICU校对<br>全文检索<br>您可以在PostgreSQL 文档中发现更多功能。此外，PostgreSQL具有高度可扩展性：许多功能（如索引）都定义了API，因此您可以使用PostgreSQL构建以解决您的挑战。</p>
+<p>事实证明，PostgreSQL在可管理的大量数据和可容纳的并发用户数量方面具有高度可扩展性。生产环境中有活跃的PostgreSQL集群可管理数TB的数据，以及管理PB级的专用系统。</p>
+<p>本文参考资料:<br><a href="https://www.jianshu.com/p/dda94c4ffd52" target="_blank" rel="noopener">Ubuntu 16.04 安装使用PostgreSQL最佳指南</a><br><a href="https://www.postgresql.org/" target="_blank" rel="noopener">PostgreSQL官网</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/16/PostgreSQL安装和使用/" data-id="cjuc2e4sc0017xwvkx1vl3jz7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-npm-run-dev-在Linux上持久运行" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/16/npm-run-dev-在Linux上持久运行/" class="article-date">
@@ -98,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/" data-id="cjub0h1q3003hhkvkvqbs9yz2" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/" data-id="cjuc2e4u4003dxwvkzj133vn5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -138,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cjub0h1mh001shkvke6nhz9ch" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cjuc2e4t2001yxwvk9wgbw38m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -178,7 +240,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/express框架之跨域请求/" data-id="cjub0h1mb001lhkvkguuy0wuj" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/express框架之跨域请求/" data-id="cjuc2e4si001hxwvkoui2bi43" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -223,7 +285,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/node-js之Cookie/" data-id="cjub0h1oh0035hkvkfyxppql8" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/node-js之Cookie/" data-id="cjuc2e4tl002mxwvku5cufr6u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -272,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/" data-id="cjub0h1me001phkvkfhs5d0c8" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/" data-id="cjuc2e4su001oxwvkjq9u708t" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -333,7 +395,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/SpringBoot之静态资源放行/" data-id="cjub0h1lt000yhkvk1eu1mvhm" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/SpringBoot之静态资源放行/" data-id="cjuc2e4s4000yxwvkvteglimq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -381,7 +443,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/" data-id="cjub0h1lv0011hkvk3zruteal" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/" data-id="cjuc2e4s60011xwvky6rgzle1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
@@ -427,7 +489,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" data-id="cjub0h1kk0001hkvkn91d3j2m" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" data-id="cjuc2e4qu0003xwvkdropqqqh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
@@ -549,92 +611,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/" data-id="cjub0h1r80048hkvk28q80k4p" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/" data-id="cjuc2e4ul0041xwvkpf98klvd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-node-js之十大Web框架" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/07/node-js之十大Web框架/" class="article-date">
-  <time datetime="2019-03-07T13:14:41.000Z" itemprop="datePublished">2019-03-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/07/node-js之十大Web框架/">node.js之十大Web框架</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>之前接触过Node.js是因为好奇大前端越来越能干了，连我后台的饭碗都要抢了，太嚣张了，于是我想打压打压它，然后就这样接触它了。<br>再到后来是因为Settings-Sync插件二次开发，我需要用node.js造一个mock server，而当时在开源项目上找到一个模拟github rest api的node.js服务端程序，然后我就在此基础上开发。从工作中学习有应用场景有目的性，果然还是学的要快很多。</p>
-<p>今天之所以要说一说node.js的十大Web框架，主要是觉得以后针对VsCode开发或者是我自己的项目，用Node.js可能会比较多，比如我将我的博客系统一步一步完善，我想尝试微服务的很多种实践方式，其实很多企业用微服务，还有一个原因就是不受编程语言的制约。</p>
-<p>大前提:框架无优劣之分，只有在某个应用场景是否更适合和更好。</p>
-<h2><span id="一-nodejs开发框架sailjs">一、Node.js开发框架Sail.js</span></h2><p>Sail.js官网地址为:<a href="https://sailsjs.com/" target="_blank" rel="noopener">https://sailsjs.com/</a><br>github地址:<a href="https://github.com/balderdashy/sails" target="_blank" rel="noopener">https://github.com/balderdashy/sails</a></p>
-<p>Sails可以轻松构建自定义的企业级Node.js应用程序</p>
-<p>在几周内而不是几个月内构建实用的，生产就绪的Node.js应用程序。Sails是Node.js最流行的MVC框架，旨在模拟Ruby on Rails等框架的熟悉MVC模式，但支持现代应用程序的需求:具有可扩展性，面向服务的体系结构的数据驱动API。</p>
-<p>优点如下:<br>(1)100%JavaScript<br>在Sails自上构建意味着你的应用程序完全使用JavaScript编写，从这里可以看出浏览器兼容性良好;<br>(2)任何数据库<br>Sails捆绑了一个功能强大的ORM，即Waterline，它提供了一个简单的数据访问层，无论你使用什么数据库，它都能正常工作;<br>(3)自动生成的Rest API<br>Sails附带的蓝图有助于在不编写任何代码的情况下快速启动应用程序的后端;<br>(4)前端不可知<br>Sails与任何前端兼容:Angular、React、IOS、Android、Windows Phone，自定义硬件或其他完全兼容;<br>(5)轻松WebSocket集成<br>由于Sails会为您转换传入的套接字消息，因此它们会自动与Sails应用中的每个路由兼容;<br>(6)专业支持<br>Sails提供商业支持，以加速开发并确保代码职工的最佳实践;</p>
-<h2><span id="二-nodejs服务端框架-hapijs">二、Node.js服务端框架 Hapi.js</span></h2><p>官网地址为:<a href="https://hapijs.com/" target="_blank" rel="noopener">https://hapijs.com/</a></p>
-<p>如何创建一个Hapi.js?请参考如下步骤(均来自官网示例)：<br>1.初始化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
-<p>2.安装库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hapi --save</span><br></pre></td></tr></table></figure>
-<p>3.编写js</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">const Hapi=require(&apos;hapi&apos;);</span><br><span class="line"></span><br><span class="line">// Create a server with a host and port</span><br><span class="line">const server=Hapi.server(&#123;</span><br><span class="line">    host:&apos;localhost&apos;,</span><br><span class="line">    port:8000</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// Add the route</span><br><span class="line">server.route(&#123;</span><br><span class="line">    method:&apos;GET&apos;,</span><br><span class="line">    path:&apos;/hello&apos;,</span><br><span class="line">    handler:function(request,h) &#123;</span><br><span class="line"></span><br><span class="line">        return&apos;hello world&apos;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">// Start the server</span><br><span class="line">const start =  async function() &#123;</span><br><span class="line"></span><br><span class="line">    try &#123;</span><br><span class="line">        await server.start();</span><br><span class="line">    &#125;</span><br><span class="line">    catch (err) &#123;</span><br><span class="line">        console.log(err);</span><br><span class="line">        process.exit(1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    console.log(&apos;Server running at:&apos;, server.info.uri);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">start();</span><br></pre></td></tr></table></figure>
-<p>4.运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm start</span><br></pre></td></tr></table></figure>
-<h2><span id="三-nodejs-高性能封装-expressjs">三、Node.js 高性能封装 Express.js</span></h2><p>关于这个可以参考我的这篇博客:<a href="https://developers-youcong.github.io/2019/02/22/node-js%E4%B9%8Bexpress%E6%A1%86%E6%9E%B6/">https://developers-youcong.github.io/2019/02/22/node-js%E4%B9%8Bexpress%E6%A1%86%E6%9E%B6/</a></p>
-<h2><span id="四-nodejs-web框架-krakenjs">四、Node.js Web框架 Kraken.js</span></h2><p>Kraken 基于 express 构建，实现对环境变量的感知、动态配置、高级中间件和应用生命周期的事件通知。</p>
-<p>官网地址为:<a href="http://krakenjs.com/" target="_blank" rel="noopener">http://krakenjs.com/</a></p>
-<p>示例例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line"></span><br><span class="line">var express = require(&apos;express&apos;),</span><br><span class="line">    kraken = require(&apos;kraken-js&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line">app.use(kraken());</span><br><span class="line">app.listen(8000);</span><br></pre></td></tr></table></figure></p>
-<h2><span id="五-web应用构建平台-meteor">五、Web应用构建平台 Meteor</span></h2><p>Meteor是一组新的技术用于构建高质量的Web应用，提供很多现成的包，可直接在浏览器或者云平台运行。<br>官网地址为:<a href="https://www.meteor.com/" target="_blank" rel="noopener">https://www.meteor.com/</a></p>
-<p>优点如下:<br>(1)使用更少的代码运送更多<br>由于集成的JS堆栈从数据库扩展到最终用户的屏幕，因此可以在10行中完成1000行.</p>
-<p>(2)为任何设备构建应用程序<br>无论是针对Web、IOS、Android还是桌面进行开发，都使用相同的代码。热门推送新功能，无需应用商店批准或者强制用户下载新的原生应用.</p>
-<p>(3)集成已有的技术<br>使用流行的框架和工具，开箱即用。专注于构建功能，而不是自己将不同的组件连接在一起。</p>
-<h2><span id="六-全栈javascript-开发架构-meanjs">六、全栈JavaScript 开发架构 Mean.js</span></h2><p>官网地址为:<a href="http://meanjs.org/" target="_blank" rel="noopener">http://meanjs.org/</a></p>
-<p>1.什么是Mean.js</p>
-<p>MEAN.JS是一个全栈JavaScript的解决方案，可帮助您使用MongoDB、Express、Angular和Node.js构建快速，健壮且可维护的生产Web应用程序.</p>
-<p>2.为何选择Mean.js<br>Mean.js将帮助你入门并避免无用的笨拙工作和常见陷阱，同时保持你的应用程序井然有序。我们目标是创建和维护一个简单易读的开源解决方案，你可以使用它并信任它。</p>
-<p>3.入门<br>入门请参考官方文档:<a href="http://meanjs.org/docs.html" target="_blank" rel="noopener">http://meanjs.org/docs.html</a></p>
-<h2><span id="七-nodejs的web框架-koajs">七、Node.js的Web框架 Koa.js</span></h2><p>Koa是下一代的Node.js的Web框架。由Express团队设计。旨在提供一个更小型、更富有表现力、更可靠的Web应用和API的开发基础。<br>Koa可以通过生成器摆脱回调，极大地改进错误处理。Koa核心不绑定任何中间件，但提供了优雅的一组可以快速愉悦地编写服务器应用的方法。<br>关于koa可参考:<a href="https://www.npmjs.com/package/koa" target="_blank" rel="noopener">https://www.npmjs.com/package/koa</a></p>
-<h2><span id="八-nodejs-cms-和-web-应用程序平台-keystonejs">八、Node.js CMS 和 Web 应用程序平台 KeystoneJS</span></h2><p>KeystoneJS，以 Express 和 MongoDB 为基础搭建的 Node.js CMS 和 Web 应用程序平台。</p>
-<p>官网地址为:<a href="https://keystonejs.com/" target="_blank" rel="noopener">https://keystonejs.com/</a></p>
-<p>具有以下特性：</p>
-<p>Express.js 和 MongoDB：Keystone 会为你配置 express（node.js 上的 Web 服务器），用 Mongoose（领先的 ODM 包）连接你的 MongoDB 数据库</p>
-<p>动态路由：Keystone 从设置 MV* 程序的最佳实践入手，让你管理模板、视图和路由变得更容易</p>
-<p>数据库域：ID、String、Boolean、Date 和 Number 是数据库的构件。Keystone 以它们为基础实现了在现实工作中更实用的域类型，比如 name、email、password、address、image 和 relationship (及其它)</p>
-<p>自动生成管理员界面：不管你在搭建应用程序，或者在生产环境中作为数据库内容管理系统时是否用它，Keystone 的管理员界面都能节省你的时间，让你管理数据更容易</p>
-<p>编码更简单：有时即便做的事情简单，异步代码也会变得复杂。Keystone让简单的事情（比如在视图中显示之前加载数据）保持简单</p>
-<p>表单处理：要验证表单、上次图片或用一行代码更新数据库？基于你已经定义的数据模型，Keystone 可以做到</p>
-<p>会话管理：Keystone 自带了会话管理和认证功能，包括密码域的自动加密</p>
-<p>发送 Email：借助 Keystone，你的应用程序可以轻松地设置、预览和发送基于模板的 email。它还集成了 Mandrill (Mailchimp 卓越的事务性 email 发送服务)</p>
-<h2><span id="九-nodejs-框架组件-flatironjs">九、Node.js 框架组件 flatiron.js</span></h2><p>flatiron 是一款 Node.js 和浏览器的框架组件，是一款构建现代化 web 应用适应性很强的框架。flatiron 提供比 Rails 类组件有更丰富配置的框架组件，允许开发者自己添加他们想要的功能组件。<br>可参考地址为:<a href="https://www.npmjs.com/package/flatiron" target="_blank" rel="noopener">https://www.npmjs.com/package/flatiron</a></p>
-<h2><span id="十-基于-nodejs-的-api-框架-loopback">十、基于 Node.js 的 API 框架 LoopBack</span></h2><p>LoopBack 是基于 Node.js 的一个开源的 API 框架，可以让 Node.js 应用方便的跟各种设备通过 API 进行互联。<br>可参考地址为:<a href="https://loopback.io/" target="_blank" rel="noopener">https://loopback.io/</a></p>
-<p>本文主要参考除引入的官网外还参考<a href="https://my.oschina.net/editorial-story/blog/956498" target="_blank" rel="noopener">Node.js十大Web框架</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js之十大Web框架/" data-id="cjub0h1p3003bhkvk2t8lzqt1" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
 
     </footer>
   </div>
@@ -671,7 +651,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 11.43px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Linux/" style="font-size: 17.14px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 14.29px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.43px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.43px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 15.71px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 12.86px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18.57px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.43px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 11.43px;">架构</a>
+      <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Linux/" style="font-size: 18.33px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 15px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.67px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.67px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 13.33px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.67px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a>
     </div>
   </div>
 
@@ -693,6 +673,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/11/单体应用自动化部署/">单体应用自动化部署</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/10/Edusoho之LNMP环境搭建/">Edusoho之LNMP环境搭建</a>
           </li>
         
@@ -706,10 +690,6 @@
         
           <li>
             <a href="/2019/04/10/Ubuntu16-04中php如何切换版本/">Ubuntu16.04中php如何切换版本</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/10/nginx上配置phpmyadmin/">nginx上配置phpmyadmin</a>
           </li>
         
       </ul>
