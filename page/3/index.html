@@ -62,6 +62,47 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" class="article-date">
+  <time datetime="2019-04-01T13:31:47.000Z" itemprop="datePublished">2019-04-01</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/">springboot1.5.4 配置druid1.1.0(使用druid-spring-boot-starter)</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2><span id="一-导入maven依赖">一、导入Maven依赖</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2><span id="二-applicationyml配置">二、application.yml配置</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  devtools:</span><br><span class="line">    restart:</span><br><span class="line">      enabled: false</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  datasource:</span><br><span class="line">    url: ENC(4k7M62ElZmvr2fECvWBXaYqMh5gz5cR4hn7LU2jaAt+Cv0hfWuvEXwpigYjLXZ6W)</span><br><span class="line">    username: ENC(kJXrMwKAoGen2JxTFdtfgw==)</span><br><span class="line">    password: ENC(r7aiV3zZoSqKN36KqE6jiQ6rmfmFt7WE)</span><br><span class="line">    db-name: ENC(5lFd29y9ciI4HwyIX8BAPg==)</span><br><span class="line">    driver-class-name: com.mysql.jdbc.Driver</span><br><span class="line">    ###################以下为druid增加的配置###########################</span><br><span class="line">    type: com.alibaba.druid.pool.DruidDataSource</span><br><span class="line">    # 下面为连接池的补充设置，应用到上面所有数据源中</span><br><span class="line">    # 初始化大小，最小，最大</span><br><span class="line">    initialSize: 5</span><br><span class="line">    minIdle: 5</span><br><span class="line">    maxActive: 20</span><br><span class="line">    # 配置获取连接等待超时的时间</span><br><span class="line">    maxWait: 60000</span><br><span class="line">    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒</span><br><span class="line">    timeBetweenEvictionRunsMillis: 60000</span><br><span class="line">    # 配置一个连接在池中最小生存的时间，单位是毫秒</span><br><span class="line">    minEvictableIdleTimeMillis: 300000</span><br><span class="line">    validationQuery: SELECT 1 FROM DUAL</span><br><span class="line">    testWhileIdle: true</span><br><span class="line">    testOnBorrow: false</span><br><span class="line">    testOnReturn: false</span><br><span class="line">    # 打开PSCache，并且指定每个连接上PSCache的大小</span><br><span class="line">    poolPreparedStatements: true</span><br><span class="line">    maxPoolPreparedStatementPerConnectionSize: 20</span><br><span class="line">    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，&apos;wall&apos;用于防火墙</span><br><span class="line">    filters: stat,wall,log4j</span><br><span class="line">    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录</span><br><span class="line">    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000</span><br><span class="line">    # 合并多个DruidDataSource的监控数据</span><br><span class="line">    useGlobalDataSourceStat: true</span><br></pre></td></tr></table></figure>
+<h2><span id="三-效果图">三、效果图</span></h2><p><img src="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/druid.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" data-id="cjucbno2l003kj8vk4tswtj1n" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-MySQL去除查询结果重复" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/29/MySQL去除查询结果重复/" class="article-date">
@@ -95,7 +136,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cjuc2e4rw000oxwvkbeatfqei" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cjucbnnzz000kj8vkz5bjdjsd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
@@ -139,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cjuc2e4sa0015xwvkxecldqb0" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cjucbno0i0012j8vk3763yr58" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -184,7 +225,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cjuc2e4s70012xwvkpeptuyvs" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cjucbno0k0014j8vkule0o1ho" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -228,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/" data-id="cjuc2e4u6003fxwvkjo5oo341" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/" data-id="cjucbno2i003gj8vkn1b94l41" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -271,7 +312,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cjuc2e4u7003hxwvk942mz9xf" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cjucbno2h003ej8vk8ikfqt1i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -314,7 +355,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/如何让Node-js运行在浏览器端/" data-id="cjuc2e4uy004gxwvk704rad59" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/如何让Node-js运行在浏览器端/" data-id="cjucbno3w004ij8vknistpri1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -364,7 +405,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cjuc2e4sq001jxwvk9xut5mc5" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cjucbno0w001mj8vk3vjemczl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -407,7 +448,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/VsCode云端版本/" data-id="cjuc2e4sf001cxwvk99x29wak" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/VsCode云端版本/" data-id="cjucbno0q001ej8vkviqlny13" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
@@ -452,57 +493,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" data-id="cjuc2e4um0043xwvk5detyddq" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Docker安装MySQL并配置远程访问" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/27/Docker安装MySQL并配置远程访问/" class="article-date">
-  <time datetime="2019-03-27T08:36:03.000Z" itemprop="datePublished">2019-03-27</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/27/Docker安装MySQL并配置远程访问/">Docker安装MySQL并配置远程访问</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2><span id="1docker-search-mysql-查看mysql版本">1.docker search mysql   查看mysql版本</span></h2><h2><span id="2docker-pull-mysql-要选择starts最高的那个name-进行下载">2.docker pull mysql  要选择starts最高的那个name 进行下载</span></h2><h2><span id="3docker-images-查看下载好的镜像">3.docker images  查看下载好的镜像</span></h2><h2><span id="4启动mysql实例">4.启动mysql实例</span></h2><p> docker run –name dockermysql  -p 3307:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql</p>
-<pre><code>--name 为mysql的实例设置别名。 -p 3307为对外暴露的端口。3306是内部端口 
-
--e MYSQL_ROOT_PASSWORD 设置mysql登录密码  -d 以守护进程运行（后台运行） 最后的mysql是镜像名称
-</code></pre><h2><span id="5-docker-ps-a-查看在运行的">5. docker ps -a 查看在运行的</span></h2><h2><span id="6-docker-exec-it-dockermysql-bash-进入容器内部-dockermysql-是上边运行时为容器取的别名-也可以用id替代">6. docker exec -it dockermysql bash     进入容器内部  dockermysql 是上边运行时为容器取的别名 也可以用id替代</span></h2><p> 另外进入容器后，你如果想要使用vim或vi编辑文件，请先执行apt install vim安装对应的库，否则会出现command not found这样的错误提示</p>
-<h2><span id="7mysql-u-root-p-然后直接输入密码即可-密码是在运行时设置的">7.mysql -u root -p      然后直接输入密码即可 密码是在运行时设置的</span></h2><h2><span id="8grant-all-privileges-on-to-root-给用于授予权限">8.grant all privileges on <em>.</em>  to ‘root‘@’%’ ;   给用于授予权限</span></h2><p> GRANT ALL PRIVILEGES ON <em>.</em>  ‘root’@’%’ identified by ‘123123’ WITH GRANT OPTION;  这是网上流传较多的写法。实际上会报错的(本人试验了确实报错，比如像mysql5.7以下的通常是好使的，像现在比较高的版本就不好使了,比如我这个版本是8.0.15)</p>
-<h2><span id="9flush-privileges-刷新权限">9.flush privileges;  刷新权限</span></h2><p>遇见一个错误mysql 1251</p>
-<p>解决办法按照如下做法即可解决，然后就可以利用mysql客户端(如sqlyog或其它工具)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;password&apos; PASSWORD EXPIRE NEVER; #修改加密规则 </span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;password&apos;; #更新一下用户的密码 </span><br><span class="line">FLUSH PRIVILEGES; #刷新权限</span><br></pre></td></tr></table></figure></p>
-<p>‘root’   为你自己定义的用户名</p>
-<p>‘localhost’ 指的是用户开放的IP，可以是’localhost’(仅本机访问，相当于127.0.0.1)，可以是具体的’<em>.</em>.<em>.</em>‘(具体某一IP)，也可以是 ‘%’ (所有IP均可访问)</p>
-<p>‘password’ 是你想使用的用户密码</p>
-<p>参考资料:<br>docker部署mysql 实现远程连接:<a href="https://blog.csdn.net/weixin_42459563/article/details/80924634" target="_blank" rel="noopener">https://blog.csdn.net/weixin_42459563/article/details/80924634</a><br>Navicat连接Mysql8.0.11出现1251错误:<a href="https://blog.csdn.net/qq_36068954/article/details/80175755" target="_blank" rel="noopener">https://blog.csdn.net/qq_36068954/article/details/80175755</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/Docker安装MySQL并配置远程访问/" data-id="cjuc2e4qz0008xwvkihsxwydu" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" data-id="cjucbno300042j8vk2671sx1l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
@@ -542,7 +533,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Linux/" style="font-size: 18.33px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 15px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.67px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.67px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 13.33px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.67px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a>
+      <a href="/tags/Docker/" style="font-size: 11.43px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Linux/" style="font-size: 18.57px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 14.29px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.43px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.43px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 15.71px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 12.86px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.43px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 11.43px;">架构</a>
     </div>
   </div>
 
@@ -564,6 +555,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/11/多模块应用自动化部署/">多模块应用自动化部署</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/11/单体应用自动化部署/">单体应用自动化部署</a>
           </li>
         
@@ -577,10 +572,6 @@
         
           <li>
             <a href="/2019/04/10/E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem/">E:dpkg was interrupted, you must manually run&#39;dpkg配置&#39;to correct the problem.</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/10/Ubuntu16-04中php如何切换版本/">Ubuntu16.04中php如何切换版本</a>
           </li>
         
       </ul>

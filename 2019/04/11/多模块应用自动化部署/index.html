@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives | Blog</title>
+  <title>多模块应用自动化部署 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://developers-youcong.github.io/archives/page/4/index.html">
+  <meta name="description" content="多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):1234567891011121314151617181920212223242526272829303">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多模块应用自动化部署">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/04/11/多模块应用自动化部署/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):1234567891011121314151617181920212223242526272829303">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-11T07:28:27.015Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
+<meta name="twitter:title" content="多模块应用自动化部署">
+<meta name="twitter:description" content="多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):1234567891011121314151617181920212223242526272829303">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -60,216 +65,56 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/27/Docker安装MySQL并配置远程访问/" class="archive-article-date">
-  <time datetime="2019-03-27T08:36:03.000Z" itemprop="datePublished">Mar 27</time>
+        <section id="main"><article id="post-多模块应用自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/11/多模块应用自动化部署/" class="article-date">
+  <time datetime="2019-04-11T07:16:04.000Z" itemprop="datePublished">2019-04-11</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/Docker安装MySQL并配置远程访问/">Docker安装MySQL并配置远程访问</a>
+    <h1 class="article-title" itemprop="name">
+      多模块应用自动化部署
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/27/Node-js之mysql增删改查/" class="archive-article-date">
-  <time datetime="2019-03-27T07:37:45.000Z" itemprop="datePublished">Mar 27</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/Node-js之mysql增删改查/">Node.js之mysql增删改查</a>
-    </h1>
-  
+        <p>多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line">git clone https://code.aliyun.com/test/bfi.git</span><br><span class="line"></span><br><span class="line">cd /home/project/bfi/bfi-saas/bfi-web/src</span><br><span class="line"></span><br><span class="line">rm -r ./test/</span><br><span class="line"></span><br><span class="line">cd /home/project/bfi/bfi-saas</span><br><span class="line"></span><br><span class="line">mvn clean package</span><br><span class="line"></span><br><span class="line">if [ $? -ne 0 ]; then</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署bfi项目失败,当前日期为:&quot;$time &gt;&gt; /home/project/bfi_deploy.log</span><br><span class="line"></span><br><span class="line">    echo &apos;部署失败，请登录服务器查看&apos; | mail -s &quot;bfi部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line">else</span><br><span class="line"></span><br><span class="line">    cp -r /home/project/bfi/bfi-saas/bfi-web/target/bfi-web.war /home/project/tomcat8/webapps/</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/startup.sh</span><br><span class="line"></span><br><span class="line">    rm -r /home/project/bfi</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署bfi项目成功,当前日期为:&quot;$time &gt;&gt; /home/project/bfi_deploy.log</span><br><span class="line">    </span><br><span class="line">    echo &apos;部署成功&apos; | mail -s &quot;bfi部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+<p>注意:<br>(1)maven打包通常也会执行mvn test，也就是会将src/test/java下面的单元测试代码全部执行一遍，如果你的单元测试其中某个方法有问题也会导致构建失败。上述我的其中一步操作rm -r ./test/主要就是将单元测试代码删除防止影响构建，实际上是不应该这样做的，但是由于某种原因我必须要这样做(不建议开发者将单元测试删除后部署，单测也是一种上线部署的保障;<br>(2)模块之间最好界限分明，否则会有不必要的依赖错误;</p>
+<p>关于脚本中的邮件发送，可以参考我的这篇博客<a href="https://developers-youcong.github.io/2019/04/11/%E5%8D%95%E4%BD%93%E5%BA%94%E7%94%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">单体应用自动化部署</a></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/27/node-js获取时间/" class="archive-article-date">
-  <time datetime="2019-03-27T03:28:44.000Z" itemprop="datePublished">Mar 27</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/27/node-js获取时间/">node.js获取时间</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/25/node-js-api文档生成/" class="archive-article-date">
-  <time datetime="2019-03-25T12:44:15.000Z" itemprop="datePublished">Mar 25</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/11/多模块应用自动化部署/" data-id="cjucbno2t003tj8vkh932pmzw" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/25/node-js-api文档生成/">node.js api文档生成</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/22/JSON-stringify-和JSON-parse-的作用/" class="archive-article-date">
-  <time datetime="2019-03-22T08:44:36.000Z" itemprop="datePublished">Mar 22</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/22/JSON-stringify-和JSON-parse-的作用/">JSON.stringify()和JSON.parse()的作用</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/11/单体应用自动化部署/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">单体应用自动化部署</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/21/mysql备份命令/" class="archive-article-date">
-  <time datetime="2019-03-21T05:32:20.000Z" itemprop="datePublished">Mar 21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/21/mysql备份命令/">mysql备份命令</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" class="archive-article-date">
-  <time datetime="2019-03-21T05:18:25.000Z" itemprop="datePublished">Mar 21</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/">js获取访问IP、地区、、当前操作浏览器</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" class="archive-article-date">
-  <time datetime="2019-03-19T12:35:10.000Z" itemprop="datePublished">Mar 19</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/">Uncaught ReferenceError: layer is not defined</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/19/Error-listen-EADDRINUSE-3000/" class="archive-article-date">
-  <time datetime="2019-03-19T06:48:21.000Z" itemprop="datePublished">Mar 19</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/19/Error-listen-EADDRINUSE-3000/">Error: listen EADDRINUSE :::3000</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/19/python3-6在linux持久运行django/" class="archive-article-date">
-  <time datetime="2019-03-19T06:17:45.000Z" itemprop="datePublished">Mar 19</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/19/python3-6在linux持久运行django/">python3.6在linux持久运行django</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/archives/page/3/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/8/">8</a><a class="extend next" rel="next" href="/archives/page/5/">Next &raquo;</a>
-  </nav>
 
 </section>
         
