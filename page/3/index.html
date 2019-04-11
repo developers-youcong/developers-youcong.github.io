@@ -84,14 +84,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2><span id="一-导入maven依赖">一、导入Maven依赖</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-<h2><span id="二-applicationyml配置">二、application.yml配置</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  devtools:</span><br><span class="line">    restart:</span><br><span class="line">      enabled: false</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  datasource:</span><br><span class="line">    url: ENC(4k7M62ElZmvr2fECvWBXaYqMh5gz5cR4hn7LU2jaAt+Cv0hfWuvEXwpigYjLXZ6W)</span><br><span class="line">    username: ENC(kJXrMwKAoGen2JxTFdtfgw==)</span><br><span class="line">    password: ENC(r7aiV3zZoSqKN36KqE6jiQ6rmfmFt7WE)</span><br><span class="line">    db-name: ENC(5lFd29y9ciI4HwyIX8BAPg==)</span><br><span class="line">    driver-class-name: com.mysql.jdbc.Driver</span><br><span class="line">    ###################以下为druid增加的配置###########################</span><br><span class="line">    type: com.alibaba.druid.pool.DruidDataSource</span><br><span class="line">    # 下面为连接池的补充设置，应用到上面所有数据源中</span><br><span class="line">    # 初始化大小，最小，最大</span><br><span class="line">    initialSize: 5</span><br><span class="line">    minIdle: 5</span><br><span class="line">    maxActive: 20</span><br><span class="line">    # 配置获取连接等待超时的时间</span><br><span class="line">    maxWait: 60000</span><br><span class="line">    # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒</span><br><span class="line">    timeBetweenEvictionRunsMillis: 60000</span><br><span class="line">    # 配置一个连接在池中最小生存的时间，单位是毫秒</span><br><span class="line">    minEvictableIdleTimeMillis: 300000</span><br><span class="line">    validationQuery: SELECT 1 FROM DUAL</span><br><span class="line">    testWhileIdle: true</span><br><span class="line">    testOnBorrow: false</span><br><span class="line">    testOnReturn: false</span><br><span class="line">    # 打开PSCache，并且指定每个连接上PSCache的大小</span><br><span class="line">    poolPreparedStatements: true</span><br><span class="line">    maxPoolPreparedStatementPerConnectionSize: 20</span><br><span class="line">    # 配置监控统计拦截的filters，去掉后监控界面sql无法统计，&apos;wall&apos;用于防火墙</span><br><span class="line">    filters: stat,wall,log4j</span><br><span class="line">    # 通过connectProperties属性来打开mergeSql功能；慢SQL记录</span><br><span class="line">    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000</span><br><span class="line">    # 合并多个DruidDataSource的监控数据</span><br><span class="line">    useGlobalDataSourceStat: true</span><br></pre></td></tr></table></figure>
-<h2><span id="三-效果图">三、效果图</span></h2><p><img src="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/druid.png" alt=""></p>
-
+        <h2 id="一、导入Maven依赖"><a href="#一、导入Maven依赖" class="headerlink" title="一、导入Maven依赖"></a>一、导入Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" data-id="cjuceonq0003jc4vkrxddthob" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" data-id="cjuco7h37003mmsvkxso6u7vw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -127,16 +129,15 @@
       
         <p>出现结果重复数SQL(四表关联):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">COUNT(post.ID )</span><br><span class="line">FROM wp_posts AS post LEFT JOIN</span><br><span class="line">wp_term_relationships AS relation</span><br><span class="line">ON(post.menu_order =</span><br><span class="line">relation.term_order) LEFT JOIN wp_term_taxonomy</span><br><span class="line">AS taxonomy</span><br><span class="line">ON(relation.term_taxonomy_id = taxonomy.term_id) LEFT JOIN</span><br><span class="line">wp_terms AS</span><br><span class="line">term ON(taxonomy.term_id = term.term_id)</span><br></pre></td></tr></table></figure></p>
 <p>正常的结果应该显示490条数据，但是结果显示了224941。</p>
-<p>解决这个办法是在对应的COUNT()里面加上DISTINCT</p>
-<p>DISTINCT这个关键字主要用于过滤掉多余的重复记录只保留一条，但往往只用它来返回不重复记录的条数，而不是用它来返回不重记录的所有值。</p>
-<p>注意:它有局限性，比如吧不能对应多个目标字段，只能对应一个目标字段。</p>
-<p>解决重复结果书的SQL如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">COUNT(DISTINCT post.ID)</span><br><span class="line">FROM wp_posts AS post LEFT JOIN</span><br><span class="line">wp_term_relationships AS relation</span><br><span class="line">ON(post.menu_order =</span><br><span class="line">relation.term_order) LEFT JOIN wp_term_taxonomy</span><br><span class="line">AS taxonomy</span><br><span class="line">ON(relation.term_taxonomy_id = taxonomy.term_id) LEFT JOIN</span><br><span class="line">wp_terms AS</span><br><span class="line">term ON(taxonomy.term_id = term.term_id)</span><br></pre></td></tr></table></figure></p>
-<p>参考资料:<br>MySQL中count函数使用方法详解:<a href="https://blog.csdn.net/qq_31135027/article/details/79858184" target="_blank" rel="noopener">https://blog.csdn.net/qq_31135027/article/details/79858184</a></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2019/03/29/MySQL去除查询结果重复/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cjuceonno000wc4vku9zlj4oy" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cjuco7h0d000nmsvkt4w4gn6u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
@@ -170,17 +171,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2><span id="1下载nutch">1.下载Nutch</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirrors.shu.edu.cn/apache/nutch/2.3.1/apache-nutch-2.3.1-src.zip</span><br></pre></td></tr></table></figure>
-<h2><span id="2解压">2.解压</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip apache-nutch-2.3.1-src.zip</span><br></pre></td></tr></table></figure>
-<h2><span id="3进入apache-nutch-231">3.进入apache-nutch-2.3.1</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd apache-nutch-2.3.1</span><br></pre></td></tr></table></figure>
-<h2><span id="4使用ant编译">4.使用ant编译</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ant</span><br></pre></td></tr></table></figure>
-<p>编译成功，如下(不过需要比较多的时间，大概20分钟左右):<br><img src="/2019/03/29/Ubuntu16-04之安装Nutch/nutch.png" alt=""></p>
-<p>参考资料:<br>Ubuntu环境下搭建nutch环境(包含使用):<a href="https://blog.csdn.net/u010317005/article/details/51090175" target="_blank" rel="noopener">https://blog.csdn.net/u010317005/article/details/51090175</a></p>
-
+        <h2 id="1-下载Nutch"><a href="#1-下载Nutch" class="headerlink" title="1.下载Nutch"></a>1.下载Nutch</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirrors.shu.edu.cn/apache/nutch/2.3.1/apache-nutch-2.3.1-src.zip</span><br></pre></td></tr></table></figure>
+<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2.解压"></a>2.解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip apache-nutch-2.3.1-src.zip</span><br></pre></td></tr></table></figure>
+<h2 id="3-进入apache-nutch-2-3-1"><a href="#3-进入apache-nutch-2-3-1" class="headerlink" title="3.进入apache-nutch-2.3.1"></a>3.进入apache-nutch-2.3.1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd apache-nutch-2.3.1</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/03/29/Ubuntu16-04之安装Nutch/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cjuceono10019c4vkmiu6rxrx" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cjuco7h1a001dmsvkxrw3pp61" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -214,18 +216,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Solr的版本一直都在变化(比如之前我在博客园写的关于Linux安装solr，那个solr为7.6版本，此时已经不在了)。<br>大家可以去这个地址下载对应的版本:<a href="http://mirror.bit.edu.cn/apache/lucene/solr/" target="_blank" rel="noopener">http://mirror.bit.edu.cn/apache/lucene/solr/</a></p>
-<h2><span id="1下载solr我是进入到usrlocal目录下执行这个命令的">1.下载solr(我是进入到/usr/local目录下执行这个命令的)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirror.bit.edu.cn/apache/lucene/solr/7.7.1/solr-7.7.1.tgz</span><br></pre></td></tr></table></figure>
-<h2><span id="2解压">2.解压</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf solr-7.7.1.tgz</span><br></pre></td></tr></table></figure>
-<h2><span id="3进入bin目录执行该脚本">3.进入bin目录执行该脚本</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd solr-7.7.1/bin</span><br><span class="line">./install_solr_service.sh ../../solr-7.7.1.tgz</span><br></pre></td></tr></table></figure>
-<p>如果没有按照3这样做，就可能出现如下报错:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">ERROR: Must specify the path to the Solr installation archive, such as solr-5.0.0.tgz</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Usage: install_solr_service.sh &lt;path_to_solr_distribution_archive&gt; [OPTIONS]</span><br><span class="line"></span><br><span class="line">  The first argument to the script must be a path to a Solr distribution archive, such as solr-5.0.0.tgz</span><br><span class="line">    (only .tgz or .zip are supported formats for the archive)</span><br><span class="line"></span><br><span class="line">  Supported OPTIONS include:</span><br><span class="line"></span><br><span class="line">    -d     Directory for live / writable Solr files, such as logs, pid files, and index data; defaults to /var/solr</span><br><span class="line"></span><br><span class="line">    -i     Directory to extract the Solr installation archive; defaults to /opt/</span><br><span class="line">             The specified path must exist prior to using this script.</span><br><span class="line"></span><br><span class="line">    -p     Port Solr should bind to; default is 8983</span><br><span class="line"></span><br><span class="line">    -s     Service name; defaults to solr</span><br><span class="line"></span><br><span class="line">    -u     User to own the Solr files and run the Solr process as; defaults to solr</span><br><span class="line">             This script will create the specified user account if it does not exist.</span><br><span class="line"></span><br><span class="line">    -f     Upgrade Solr. Overwrite symlink and init script of previous installation.</span><br><span class="line"></span><br><span class="line">    -n     Do not start Solr service after install, and do not abort on missing Java</span><br><span class="line"></span><br><span class="line"> NOTE: Must be run as the root user</span><br></pre></td></tr></table></figure></p>
-<h2><span id="4成功的标识">4.成功的标识</span></h2><p><img src="/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/solr.png" alt=""></p>
-<p>接下来就可以通过<a href="http://IP地址:8983" target="_blank" rel="noopener">http://IP地址:8983</a> 访问到solr后台管理界面,如下图所示:<br><img src="/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/solr_manage.png" alt=""></p>
-
+        <p>Solr的版本一直都在变化(比如之前我在博客园写的关于Linux安装solr，那个solr为7.6版本，此时已经不在了)。<br>大家可以去这个地址下载对应的版本:<a href="http://mirror.bit.edu.cn/apache/lucene/solr/" target="_blank" rel="noopener">http://mirror.bit.edu.cn/apache/lucene/solr/</a><br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cjuceono2001bc4vk590flu2g" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cjuco7h0y000zmsvkdz0ap3qb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -259,17 +259,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>这个错误在MyBatis中实际上很常见，就是SQL写错了。通常通过先在MySQL命令行执行一遍sql看有没有错误，如果有就更改，没有就基本上可以用了。<br>注意，我说的基本上可用并不代代表完全可用，比如今天我就遇到一个非常恶心的问题。</p>
-<p>sql代码如下(这句sql经过在mysql命令行中测试，能够获取数据，完全没有问题):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;categoreListInfo&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">	SELECT</span><br><span class="line">	term.term_id,term.name,</span><br><span class="line">	term.slug,tax.taxonomy,tax.description,tax.count FROM wp_terms AS term</span><br><span class="line">	LEFT JOIN wp_term_taxonomy AS tax ON(term.term_id=tax.term_id)</span><br><span class="line">	&lt;where&gt;</span><br><span class="line">		&lt;if test=&quot;name != null or name != &apos;&apos;&quot;&gt;</span><br><span class="line">			and term.name like concat(&apos;%&apos;, #&#123;name&#125;, &apos;%&apos;)</span><br><span class="line">		&lt;/if&gt;</span><br><span class="line">		&lt;if test =&quot;taxonomy != null or  taxonomy !=&apos;&apos;&quot;&gt;</span><br><span class="line">		    and tax.taxonomy = #&#123;taxonomy&#125;</span><br><span class="line">		&lt;/if&gt;</span><br><span class="line">	&lt;/where&gt;</span><br><span class="line">	limit #&#123;start&#125;,#&#123;size&#125;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
-<p>但是我用如下单元测试就出现了问题，单元测试代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">   @Test</span><br><span class="line">public void testPageListInfo() throws Exception &#123;</span><br><span class="line">	</span><br><span class="line">	Map&lt;String,Object&gt; paramMap = new HashMap&lt;String,Object&gt;();</span><br><span class="line">	paramMap.put(&quot;name&quot;, &quot;&quot;);</span><br><span class="line">	paramMap.put(&quot;start&quot;,&quot;0&quot;);</span><br><span class="line">	paramMap.put(&quot;size&quot;, &quot;10&quot;);</span><br><span class="line">	paramMap.put(&quot;taxonomy&quot;, &quot;post_tag&quot;);</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	List&lt;Terms&gt; list = termService.categoreListInfo(paramMap);</span><br><span class="line">	</span><br><span class="line">	int count = termService.categoryTotalCount(paramMap);</span><br><span class="line">	</span><br><span class="line">	System.out.println(&quot;总数:&quot;+count);</span><br><span class="line">	</span><br><span class="line">	for (Terms terms : list) &#123;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;terms:&quot;+terms.getName());</span><br><span class="line">		</span><br><span class="line">		List&lt;TermTaxonomy&gt; taxList = terms.getTax();</span><br><span class="line">		</span><br><span class="line">		for (TermTaxonomy termTaxonomy : taxList) &#123;</span><br><span class="line">			</span><br><span class="line">			System.out.println(&quot;tax:&quot;+termTaxonomy.getDescription()+&quot;||&quot;+termTaxonomy.getTaxonomy());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>单元测试并没有写错，错的是参数问题，关键点是这个:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">paramMap.put(&quot;start&quot;,&quot;0&quot;);</span><br><span class="line">paramMap.put(&quot;size&quot;, &quot;10&quot;);</span><br></pre></td></tr></table></figure></p>
-<p>在mysql中limit两个参数实际为int类型，非字符串，而我此时在此传字符串，所以就出现org.springframework.jdbc.BadSqlGrammarException,说sql有问题。</p>
-<p>所以大家切记在命令行执行sql以后，千万别掉以轻心，还是要细心，否则不必要的错误非常让人糟心。</p>
-
+        <p>这个错误在MyBatis中实际上很常见，就是SQL写错了。通常通过先在MySQL命令行执行一遍sql看有没有错误，如果有就更改，没有就基本上可以用了。<br>注意，我说的基本上可用并不代代表完全可用，比如今天我就遇到一个非常恶心的问题。<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/" data-id="cjuceonqp004ac4vkj0c9cvum" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/" data-id="cjuco7h3b003qmsvkp4h3nm55" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -304,15 +303,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>错误信息如下:<br>org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 ‘’&amp;’’ 后面</p>
-<p>出现这个错误的原因是在xml中使用&amp;，实际上xml中不支持这种方式，&amp;其实是并列的意思，如果要在xml中使用&amp;，需要将其改为英文 and才能使用。</p>
-<p>问题代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;categoreListInfo&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">	SELECT</span><br><span class="line">	term.term_id,term.name,</span><br><span class="line">	term.slug,tax.taxonomy,tax.description,tax.count FROM wp_terms AS term</span><br><span class="line">	LEFT JOIN wp_term_taxonomy AS tax ON(term.term_id=tax.term_id)</span><br><span class="line">	&lt;where&gt;</span><br><span class="line">		&lt;if test=&quot;name != null &amp; name != &apos;&apos;&quot;&gt;</span><br><span class="line">			and term.name like concat(&apos;%&apos;, #&#123;name&#125;, &apos;%&apos;)</span><br><span class="line">		&lt;/if&gt;</span><br><span class="line">		&lt;if test =&quot;taxonomy != null &amp; taxonomy !=&apos;&apos;&quot;&gt;</span><br><span class="line">		    and tax.taxonomy = #&#123;taxonomy&#125;</span><br><span class="line">		&lt;/if&gt;</span><br><span class="line">	&lt;/where&gt;</span><br><span class="line">	limit #&#123;start&#125;,#&#123;size&#125;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
-<p>将代码中的&amp;条件改为and即可</p>
-<p>参考资料:<br>【java】org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 ‘&amp;’ 后面。解决方法:<a href="https://blog.csdn.net/demon_ll/article/details/78542356" target="_blank" rel="noopener">https://blog.csdn.net/demon_ll/article/details/78542356</a></p>
-
+<p>出现这个错误的原因是在xml中使用&amp;，实际上xml中不支持这种方式，&amp;其实是并列的意思，如果要在xml中使用&amp;，需要将其改为英文 and才能使用。<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cjuceonpy003hc4vkj8u1ruzh" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cjuco7h30003emsvk9ada6o3z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -346,16 +346,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Node.js又称服务端JavaScript。<br>今天我为了解决一个问题，通过搜索引擎找到了如何将Node.js转成浏览器端可以运行的javascript。<br>尽管这种方式有其局限性，但是还是可以用的。</p>
-<h2><span id="1安装库">1.安装库</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g browserify</span><br></pre></td></tr></table></figure>
-<h2><span id="2转换">2.转换</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">browserify test.js &gt; index.js</span><br><span class="line">或</span><br><span class="line"> browserify test &gt; index.js</span><br><span class="line">或</span><br><span class="line">browserify test.js -o index.js</span><br></pre></td></tr></table></figure>
-<p>以上三种方式均可行</p>
-<p>参考资料:<br>如何让nodejs写的代码在浏览器里面运行:<a href="https://jingyan.baidu.com/article/48b37f8dda4cb11a646488b9.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/48b37f8dda4cb11a646488b9.html</a></p>
-
+        <p>Node.js又称服务端JavaScript。<br>今天我为了解决一个问题，通过搜索引擎找到了如何将Node.js转成浏览器端可以运行的javascript。<br>尽管这种方式有其局限性，但是还是可以用的。<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/03/28/如何让Node-js运行在浏览器端/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/如何让Node-js运行在浏览器端/" data-id="cjuceonro004tc4vk925ue1eo" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/如何让Node-js运行在浏览器端/" data-id="cjuco7h5n004pmsvk09839iza" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -389,23 +389,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2><span id="1下载es">1.下载es</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz</span><br></pre></td></tr></table></figure>
-<h2><span id="2解压并将其放到usrlocal目录下">2.解压并将其放到/usr/local目录下</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf elasticsearch-2.4.4.tar.gz -C /usr/local</span><br><span class="line">cd /usr/local/elasticsearch-2.4.4</span><br></pre></td></tr></table></figure>
-<h2><span id="3修改es配置文件">3.修改es配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd config</span><br><span class="line">vim elasticsearch.yml</span><br></pre></td></tr></table></figure>
-<p>在elasticsearch.yml添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">bootstrap.memory_lock: true</span><br><span class="line">index.cache.field.max_size: 50000</span><br><span class="line">index.cache.field.expire: 30m</span><br><span class="line">index.cache.field.type: soft</span><br><span class="line"></span><br><span class="line">network.host: 0.0.0.0</span><br><span class="line"></span><br><span class="line">action.disable_delete_all_indices : true</span><br></pre></td></tr></table></figure></p>
-<h2><span id="4启动">4.启动</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ../bin</span><br><span class="line"></span><br><span class="line">//直接启动ElasticSearch</span><br><span class="line">./elasticsearch </span><br><span class="line"></span><br><span class="line">//或者使用后台方式进行启动</span><br><span class="line">./elasticsearch -d</span><br></pre></td></tr></table></figure>
-<h2><span id="查看端口占用">查看端口占用</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -anp|grep 9200 或lsof -i:9200 //看该进程是否正常运行</span><br></pre></td></tr></table></figure>
-<p>出现的问题:<br>Exception in thread “main” Java.lang.RuntimeException: don’t run elasticsearch as root.<br>at org.elasticsearch.bootstrap.Bootstrap.initializeNatives(Bootstrap.java:93)<br>at org.elasticsearch.bootstrap.Bootstrap.setup(Bootstrap.java:144)<br>at org.elasticsearch.bootstrap.Bootstrap.init(Bootstrap.java:270)<br>at org.elasticsearch.bootstrap.Elasticsearch.main(Elasticsearch.java:35)</p>
-<p>解决办法一:<br>添加用户并授权<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user add test</span><br><span class="line">chown -R test /usr/local/elasticsearch-2.4.4</span><br></pre></td></tr></table></figure></p>
-<p>解决办法二:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">./elasticsearch -Des.insecure.allow.root=true</span><br><span class="line">或者</span><br><span class="line">vi elasticsearch</span><br><span class="line"></span><br><span class="line">// 找到ES_JAVA_OPTS在其后追加</span><br><span class="line">ES_JAVA_OPTS=&quot;-Des.insecure.allow.root=true&quot;</span><br></pre></td></tr></table></figure></p>
-<p>本人建议使用第一种方法，因为最好不要习惯用root用户，否则一旦不慎执行某些操作，后果很严重。</p>
-<h2><span id="5网站访问">5.网站访问</span></h2><p><a href="http://IP地址:9200" target="_blank" rel="noopener">http://IP地址:9200</a><br>出现如图所示:<br><img src="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/es.png" alt=""></p>
-<p>参考资料:<br>【Linux进阶】Ubuntu 16.04安装ElasticSearch:<a href="https://blog.csdn.net/u011404265/article/details/72870166" target="_blank" rel="noopener">https://blog.csdn.net/u011404265/article/details/72870166</a></p>
-
+        <h2 id="1-下载es"><a href="#1-下载es" class="headerlink" title="1.下载es"></a>1.下载es</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cjuceono4001ec4vkpm6onesd" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cjuco7h1j001nmsvkwmgrila5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -440,15 +433,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>VsCode的云端版与客户端简直是一模一样。</p>
-<p>官网地址为:<a href="https://coder.com/" target="_blank" rel="noopener">https://coder.com/</a></p>
-<p>安装命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -t -p 127.0.0.1:8443:8443 -v &quot;$&#123;PWD&#125;:/root/project&quot; codercom/code-server code-server --allow-http --no-auth</span><br></pre></td></tr></table></figure></p>
-<p>注意安装的前提是要先安装docker，否则不能使用该命令。<br>如果你要远程访问请将127.0.0.1改为0.0.0.0即可<br>Ubuntu16.04安装docker十分容易，一条命令，如sudo apt-get install docker.io</p>
-<p>VsCode云端版本展示效果图如下:<br><img src="/2019/03/27/VsCode云端版本/vscode.png" alt=""></p>
-
+<p>官网地址为:<a href="https://coder.com/" target="_blank" rel="noopener">https://coder.com/</a><br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/03/27/VsCode云端版本/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/VsCode云端版本/" data-id="cjuceono6001gc4vkw3o9lbjx" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/VsCode云端版本/" data-id="cjuco7h1e001imsvk4u64sgj6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
@@ -484,7 +478,7 @@
       
         <h2><span id="1查询是否有docker组">1.查询是否有docker组：</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/group</span><br></pre></td></tr></table></figure>
 <p>如果没有可以通过该命令添加(一般默认是有的)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
 <h2><span id="2将当前用户添加到docker组">2.将当前用户添加到docker组</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -G docker $(USER)</span><br></pre></td></tr></table></figure>
 <p>例如:sudo usermod -G docker test</p>
 <h2><span id="3重启docker服务">3.重启docker服务</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart docker.service</span><br></pre></td></tr></table></figure>
@@ -493,7 +487,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" data-id="cjuceonql0048c4vkmq3pselt" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" data-id="cjuco7h3p0046msvks5gevla6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>

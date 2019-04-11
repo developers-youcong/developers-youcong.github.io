@@ -7,19 +7,19 @@
   
   <title>node.js api文档生成 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ApiDoc官网地址为:http://apidocjs.com/在Java中有Swagger及其升级版的Swagger2+Springfox自动生成接口管理文档。而在Node.js中则可以利用ApiDoc生成接口文档。 参考官网其实步骤，也很简单，也就如下几步。 一、安装库1npm i apidoc -g   #全局安装 二、配置package.json1234567891011121314151">
+  <meta name="description" content="ApiDoc官网地址为:http://apidocjs.com/在Java中有Swagger及其升级版的Swagger2+Springfox自动生成接口管理文档。而在Node.js中则可以利用ApiDoc生成接口文档。">
 <meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js api文档生成">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/25/node-js-api文档生成/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="ApiDoc官网地址为:http://apidocjs.com/在Java中有Swagger及其升级版的Swagger2+Springfox自动生成接口管理文档。而在Node.js中则可以利用ApiDoc生成接口文档。 参考官网其实步骤，也很简单，也就如下几步。 一、安装库1npm i apidoc -g   #全局安装 二、配置package.json1234567891011121314151">
+<meta property="og:description" content="ApiDoc官网地址为:http://apidocjs.com/在Java中有Swagger及其升级版的Swagger2+Springfox自动生成接口管理文档。而在Node.js中则可以利用ApiDoc生成接口文档。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/25/node-js-api文档生成/api.png">
-<meta property="og:updated_time" content="2019-03-25T13:05:03.903Z">
+<meta property="og:updated_time" content="2019-04-11T13:33:15.964Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js api文档生成">
-<meta name="twitter:description" content="ApiDoc官网地址为:http://apidocjs.com/在Java中有Swagger及其升级版的Swagger2+Springfox自动生成接口管理文档。而在Node.js中则可以利用ApiDoc生成接口文档。 参考官网其实步骤，也很简单，也就如下几步。 一、安装库1npm i apidoc -g   #全局安装 二、配置package.json1234567891011121314151">
+<meta name="twitter:description" content="ApiDoc官网地址为:http://apidocjs.com/在Java中有Swagger及其升级版的Swagger2+Springfox自动生成接口管理文档。而在Node.js中则可以利用ApiDoc生成接口文档。">
 <meta name="twitter:image" content="http://developers-youcong.github.io/2019/03/25/node-js-api文档生成/api.png">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -89,8 +89,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>ApiDoc官网地址为:<a href="http://apidocjs.com/" target="_blank" rel="noopener">http://apidocjs.com/</a><br>在Java中有Swagger及其升级版的Swagger2+Springfox自动生成接口管理文档。而在Node.js中则可以利用ApiDoc生成接口文档。</p>
-<p>参考官网其实步骤，也很简单，也就如下几步。</p>
+        <p>ApiDoc官网地址为:<a href="http://apidocjs.com/" target="_blank" rel="noopener">http://apidocjs.com/</a><br>在Java中有Swagger及其升级版的Swagger2+Springfox自动生成接口管理文档。而在Node.js中则可以利用ApiDoc生成接口文档。<br><a id="more"></a><br>参考官网其实步骤，也很简单，也就如下几步。</p>
 <h2><span id="一-安装库">一、安装库</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i apidoc -g   #全局安装</span><br></pre></td></tr></table></figure>
 <h2><span id="二-配置packagejson">二、配置package.json</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;: &quot;mock-github-api&quot;,</span><br><span class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</span><br><span class="line">  &quot;description&quot;: &quot;Mock API server for Github&quot;,</span><br><span class="line">  &quot;main&quot;: &quot;index.js&quot;,</span><br><span class="line">  &quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,</span><br><span class="line">    &quot;start&quot;: &quot;node index&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;repository&quot;: &#123;</span><br><span class="line">    &quot;type&quot;: &quot;git&quot;,</span><br><span class="line">    &quot;url&quot;: &quot;https://github.com/mzabriskie/mock-github-api&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;author&quot;: &quot;Matt Zabriskie&quot;,</span><br><span class="line">  &quot;license&quot;: &quot;MIT&quot;,</span><br><span class="line">  &quot;bugs&quot;: &#123;</span><br><span class="line">    &quot;url&quot;: &quot;https://github.com/mzabriskie/mock-github-api/issues&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;homepage&quot;: &quot;https://github.com/mzabriskie/mock-github-api&quot;,</span><br><span class="line">  &quot;dependencies&quot;: &#123;</span><br><span class="line">    &quot;@octokit/app&quot;: &quot;^2.2.1&quot;,</span><br><span class="line">    &quot;apidoc&quot;: &quot;^0.17.7&quot;,</span><br><span class="line">    &quot;color&quot;: &quot;^0.11.3&quot;,</span><br><span class="line">    &quot;connect-multiparty&quot;: &quot;^2.2.0&quot;,</span><br><span class="line">    &quot;cors&quot;: &quot;^2.7.1&quot;,</span><br><span class="line">    &quot;cos-nodejs-sdk-v5&quot;: &quot;^2.5.6&quot;,</span><br><span class="line">    &quot;express&quot;: &quot;^4.14.0&quot;,</span><br><span class="line">    &quot;faker&quot;: &quot;^3.1.0&quot;,</span><br><span class="line">    &quot;https&quot;: &quot;^1.0.0&quot;,</span><br><span class="line">    &quot;multer&quot;: &quot;^1.4.1&quot;,</span><br><span class="line">    &quot;multiparty&quot;: &quot;^4.2.1&quot;,</span><br><span class="line">    &quot;mysql&quot;: &quot;^2.16.0&quot;,</span><br><span class="line">    &quot;octokit&quot;: &quot;^1.0.0-hello-world&quot;,</span><br><span class="line">    &quot;redis&quot;: &quot;^2.8.0&quot;</span><br><span class="line">  &#125;,</span><br><span class="line">&quot;apidoc&quot;: &#123;  </span><br><span class="line">    &quot;title&quot;: &quot;接口文档&quot;, </span><br><span class="line">    &quot;url&quot;: &quot;http://localhost:3000&quot;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2><span id="三-在public目录下创建apidoc目录">三、在public目录下创建apidoc目录</span></h2><h2><span id="四-使用命令生成apidoc文档">四、使用命令生成apidoc文档</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apidoc -i routes/ -o public/apidoc/</span><br></pre></td></tr></table></figure>
@@ -100,7 +99,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/25/node-js-api文档生成/" data-id="cjuceonpm0033c4vk09fnuxc2" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/25/node-js-api文档生成/" data-id="cjuco7h2l002ymsvk41micuv4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -123,7 +122,7 @@
   
     <a href="/2019/03/22/JSON-stringify-和JSON-parse-的作用/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">JSON.stringify()和JSON.parse()的作用</div>
+      <div class="article-nav-title"></div>
     </a>
   
 </nav>

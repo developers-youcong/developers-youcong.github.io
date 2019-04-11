@@ -7,18 +7,18 @@
   
   <title>js截取url参数 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="举例说明，比如http://localhost:2019/blog/getCommentListInfo?postId=1如何获取postId=1这个参数值呢？很简单通过下面代码即可获取，如:123456789101112131415window.onload = function() &amp;#123;	var postId = getUrlParms(&amp;quot;postId&amp;quot;);	get">
+  <meta name="description" content="举例说明，比如http://localhost:2019/blog/getCommentListInfo?postId=1如何获取postId=1这个参数值呢？">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js截取url参数">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/16/js截取url参数/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="举例说明，比如http://localhost:2019/blog/getCommentListInfo?postId=1如何获取postId=1这个参数值呢？很简单通过下面代码即可获取，如:123456789101112131415window.onload = function() &amp;#123;	var postId = getUrlParms(&amp;quot;postId&amp;quot;);	get">
+<meta property="og:description" content="举例说明，比如http://localhost:2019/blog/getCommentListInfo?postId=1如何获取postId=1这个参数值呢？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T12:30:29.996Z">
+<meta property="og:updated_time" content="2019-04-11T13:31:18.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js截取url参数">
-<meta name="twitter:description" content="举例说明，比如http://localhost:2019/blog/getCommentListInfo?postId=1如何获取postId=1这个参数值呢？很简单通过下面代码即可获取，如:123456789101112131415window.onload = function() &amp;#123;	var postId = getUrlParms(&amp;quot;postId&amp;quot;);	get">
+<meta name="twitter:description" content="举例说明，比如http://localhost:2019/blog/getCommentListInfo?postId=1如何获取postId=1这个参数值呢？">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -87,13 +87,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>举例说明，比如<a href="http://localhost:2019/blog/getCommentListInfo?postId=1" target="_blank" rel="noopener">http://localhost:2019/blog/getCommentListInfo?postId=1</a><br>如何获取postId=1这个参数值呢？<br>很简单通过下面代码即可获取，如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function() &#123;</span><br><span class="line"></span><br><span class="line">	var postId = getUrlParms(&quot;postId&quot;);</span><br><span class="line"></span><br><span class="line">	getByIdCommentInfo(postId);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//获取地址栏参数，name:参数名称</span><br><span class="line">function getUrlParms(name) &#123;</span><br><span class="line">	var reg = new RegExp(&quot;(^|&amp;)&quot; + name + &quot;=([^&amp;]*)(&amp;|$)&quot;);</span><br><span class="line">	var r = window.location.search.substr(1).match(reg);</span><br><span class="line">	if(r != null)</span><br><span class="line">		return unescape(r[2]);</span><br><span class="line">	return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>举例说明，比如<a href="http://localhost:2019/blog/getCommentListInfo?postId=1" target="_blank" rel="noopener">http://localhost:2019/blog/getCommentListInfo?postId=1</a><br>如何获取postId=1这个参数值呢？<br><a id="more"></a><br>很简单通过下面代码即可获取，如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function() &#123;</span><br><span class="line"></span><br><span class="line">	var postId = getUrlParms(&quot;postId&quot;);</span><br><span class="line"></span><br><span class="line">	getByIdCommentInfo(postId);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//获取地址栏参数，name:参数名称</span><br><span class="line">function getUrlParms(name) &#123;</span><br><span class="line">	var reg = new RegExp(&quot;(^|&amp;)&quot; + name + &quot;=([^&amp;]*)(&amp;|$)&quot;);</span><br><span class="line">	var r = window.location.search.substr(1).match(reg);</span><br><span class="line">	if(r != null)</span><br><span class="line">		return unescape(r[2]);</span><br><span class="line">	return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>参考资料:<br>js获取url传递参数，js获取url?号后面的参数:<a href="https://www.cnblogs.com/karila/p/5991340.html" target="_blank" rel="noopener">https://www.cnblogs.com/karila/p/5991340.html</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cjuceonov0027c4vkc4ycn0s6" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cjuco7h1w0022msvkfkwynv44" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>

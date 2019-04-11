@@ -7,20 +7,20 @@
   
   <title>Python实现机器人聊天 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。于是用其写了一个简单的Python聊天，源码如下所示:1234567891011121314151617181920212223242526272829# -*- coding: utf-8 -*-import aimlimport sysimport os    def get_module_dir(name)">
+  <meta name="description" content="今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python实现机器人聊天">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。于是用其写了一个简单的Python聊天，源码如下所示:1234567891011121314151617181920212223242526272829# -*- coding: utf-8 -*-import aimlimport sysimport os    def get_module_dir(name)">
+<meta property="og:description" content="今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/rebot01.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/rebot02.png">
-<meta property="og:updated_time" content="2019-03-16T12:33:43.501Z">
+<meta property="og:updated_time" content="2019-04-11T13:36:12.056Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python实现机器人聊天">
-<meta name="twitter:description" content="今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。于是用其写了一个简单的Python聊天，源码如下所示:1234567891011121314151617181920212223242526272829# -*- coding: utf-8 -*-import aimlimport sysimport os    def get_module_dir(name)">
+<meta name="twitter:description" content="今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。">
 <meta name="twitter:image" content="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/rebot01.png">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -90,7 +90,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。<br>于是用其写了一个简单的Python聊天，源码如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">import aiml</span><br><span class="line">import sys</span><br><span class="line">import os</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">def get_module_dir(name):</span><br><span class="line"> print(&quot;module&quot;, sys.modules[name])</span><br><span class="line"> path = getattr(sys.modules[name], &apos;__file__&apos;, None)</span><br><span class="line"> print(path)</span><br><span class="line"> if not path:</span><br><span class="line">  raise AttributeError(&apos;module %s has not attribute __file__&apos; % name)</span><br><span class="line"> return os.path.dirname(os.path.abspath(path))</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">alice_path = get_module_dir(&apos;aiml&apos;) + &apos;\\botdata\\alice&apos;</span><br><span class="line"> </span><br><span class="line">os.chdir(alice_path)  # 切换到语料库所在工作目录</span><br><span class="line"> </span><br><span class="line">alice = aiml.Kernel()  # 创建机器人alice对象</span><br><span class="line">alice.learn(&quot;startup.xml&quot;) # 加载...\\botdata\\alice\\startup.xml</span><br><span class="line">alice.respond(&apos;LOAD ALICE&apos;) # 加载...\\botdata\\alice目录下的语料库</span><br><span class="line">  </span><br><span class="line">while True:</span><br><span class="line"> message = input(&quot;Enter your message &gt;&gt; &quot;)</span><br><span class="line"> if(&quot;exit&quot; == message):</span><br><span class="line">  exit()</span><br><span class="line"> response = alice.respond(message) # 机器人应答</span><br><span class="line"> print(response)</span><br></pre></td></tr></table></figure></p>
+        <p>今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。<br><a id="more"></a><br>于是用其写了一个简单的Python聊天，源码如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">import aiml</span><br><span class="line">import sys</span><br><span class="line">import os</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">def get_module_dir(name):</span><br><span class="line"> print(&quot;module&quot;, sys.modules[name])</span><br><span class="line"> path = getattr(sys.modules[name], &apos;__file__&apos;, None)</span><br><span class="line"> print(path)</span><br><span class="line"> if not path:</span><br><span class="line">  raise AttributeError(&apos;module %s has not attribute __file__&apos; % name)</span><br><span class="line"> return os.path.dirname(os.path.abspath(path))</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">alice_path = get_module_dir(&apos;aiml&apos;) + &apos;\\botdata\\alice&apos;</span><br><span class="line"> </span><br><span class="line">os.chdir(alice_path)  # 切换到语料库所在工作目录</span><br><span class="line"> </span><br><span class="line">alice = aiml.Kernel()  # 创建机器人alice对象</span><br><span class="line">alice.learn(&quot;startup.xml&quot;) # 加载...\\botdata\\alice\\startup.xml</span><br><span class="line">alice.respond(&apos;LOAD ALICE&apos;) # 加载...\\botdata\\alice目录下的语料库</span><br><span class="line">  </span><br><span class="line">while True:</span><br><span class="line"> message = input(&quot;Enter your message &gt;&gt; &quot;)</span><br><span class="line"> if(&quot;exit&quot; == message):</span><br><span class="line">  exit()</span><br><span class="line"> response = alice.respond(message) # 机器人应答</span><br><span class="line"> print(response)</span><br></pre></td></tr></table></figure></p>
 <p>注意:如果出现某某模块找不到的时候，记得使用pip安装对应的模块。</p>
 <p>效果图如下所示:<br><img src="/2019/03/01/Python实现机器人聊天/rebot01.png" alt=""></p>
 <p>唯一美中不足的是英文，不过没关系，国内有图灵机器人。</p>
@@ -103,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cjuceonnt0010c4vktgpjyocm" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/" data-id="cjuco7h0s000vmsvkvj6ytnfz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>

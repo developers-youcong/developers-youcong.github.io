@@ -7,18 +7,18 @@
   
   <title>mybatis之一对多 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="今天主要话题围绕这么几个方面？  mybatis一对多示例 sql优化策略  一、mybatis之一对多在说一对多之前，顺便说一下一对一。 一对一，常见的例子，比如以常见的班级例子来说，一个班主任只属于一个班级(排除某个班主任能力超群可兼任多个班级). 例如:1234567891011121314151617181920212223242526272829303132333435363738394">
+  <meta name="description" content="今天主要话题围绕这么几个方面？  mybatis一对多示例 sql优化策略">
 <meta name="keywords" content="MyBatis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mybatis之一对多">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/06/mybatis之一对多/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="今天主要话题围绕这么几个方面？  mybatis一对多示例 sql优化策略  一、mybatis之一对多在说一对多之前，顺便说一下一对一。 一对一，常见的例子，比如以常见的班级例子来说，一个班主任只属于一个班级(排除某个班主任能力超群可兼任多个班级). 例如:1234567891011121314151617181920212223242526272829303132333435363738394">
+<meta property="og:description" content="今天主要话题围绕这么几个方面？  mybatis一对多示例 sql优化策略">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-07T06:50:58.998Z">
+<meta property="og:updated_time" content="2019-04-11T13:32:09.388Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mybatis之一对多">
-<meta name="twitter:description" content="今天主要话题围绕这么几个方面？  mybatis一对多示例 sql优化策略  一、mybatis之一对多在说一对多之前，顺便说一下一对一。 一对一，常见的例子，比如以常见的班级例子来说，一个班主任只属于一个班级(排除某个班主任能力超群可兼任多个班级). 例如:1234567891011121314151617181920212223242526272829303132333435363738394">
+<meta name="twitter:description" content="今天主要话题围绕这么几个方面？  mybatis一对多示例 sql优化策略">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -90,9 +90,9 @@
         <p>今天主要话题围绕这么几个方面？</p>
 <ul>
 <li>mybatis一对多示例</li>
-<li>sql优化策略</li>
+<li>sql优化策略<a id="more"></a>
+<h2><span id="一-mybatis之一对多">一、mybatis之一对多</span></h2>在说一对多之前，顺便说一下一对一。</li>
 </ul>
-<h2><span id="一-mybatis之一对多">一、mybatis之一对多</span></h2><p>在说一对多之前，顺便说一下一对一。</p>
 <p>一对一，常见的例子，比如以常见的班级例子来说，一个班主任只属于一个班级(排除某个班主任能力超群可兼任多个班级).</p>
 <p>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt; </span><br><span class="line">&lt;!DOCTYPE mapper    PUBLIC &quot;-//mybatis.org//DTD Mapper 3.0//EN&quot;    </span><br><span class="line">    &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt; </span><br><span class="line">&lt;!--  为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样保证了namespace的值是唯一的--&gt;</span><br><span class="line">&lt;mapper namespace=&quot;com.yc.mybatis.test.classMapper&quot;&gt;</span><br><span class="line">    </span><br><span class="line">        &lt;!-- </span><br><span class="line">         方式一：嵌套结果：使用嵌套结果映射来处理重复的联合结果的子集</span><br><span class="line">                 封装联表查询的数据(去除重复的数据)</span><br><span class="line">         select * from class c, teacher t where c.teacher_id=t.t_id and c.c_id=1</span><br><span class="line">     --&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;select id=&quot;getClass&quot; parameterType=&quot;int&quot; resultMap=&quot;getClassMap&quot;&gt;</span><br><span class="line">        select * from class c, teacher t  where c.teacher_id = t.t_id and c.teacher_id=#&#123;id&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;!-- resultMap:映射实体类和字段之间的一一对应的关系 --&gt;</span><br><span class="line">    &lt;resultMap type=&quot;Classes&quot; id=&quot;getClassMap&quot;&gt;</span><br><span class="line">        &lt;id property=&quot;id&quot; column=&quot;c_id&quot;/&gt;   </span><br><span class="line">        &lt;result property=&quot;name&quot; column=&quot;c_name&quot;/&gt;</span><br><span class="line">        &lt;association property=&quot;teacher&quot; javaType=&quot;Teacher&quot;&gt;   </span><br><span class="line">            &lt;id property=&quot;id&quot; column=&quot;t_id&quot;/&gt;</span><br><span class="line">            &lt;result property=&quot;name&quot; column=&quot;t_name&quot;/&gt;</span><br><span class="line">        &lt;/association&gt;</span><br><span class="line">    &lt;/resultMap&gt;</span><br><span class="line">    </span><br><span class="line">     &lt;!-- </span><br><span class="line">         方式二：嵌套查询：通过执行另外一个SQL映射语句来返回预期的复杂类型</span><br><span class="line">         SELECT * FROM class WHERE c_id=1;</span><br><span class="line">         SELECT * FROM teacher WHERE t_id=1   //1 是上一个查询得到的teacher_id的值</span><br><span class="line">         property:别名(属性名)    column：列名 --&gt;</span><br><span class="line">          &lt;!-- 把teacher的字段设置进去 --&gt;</span><br><span class="line">    &lt;select id=&quot;getClass1&quot; parameterType=&quot;int&quot; resultMap=&quot;getClassMap1&quot;&gt;</span><br><span class="line">        select * from class where c_id=#&#123;id&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">    </span><br><span class="line">    &lt;resultMap type=&quot;Classes&quot; id=&quot;getClassMap1&quot;&gt;</span><br><span class="line">        &lt;id property=&quot;id&quot; column=&quot;c_id&quot;/&gt;   </span><br><span class="line">        &lt;result property=&quot;name&quot; column=&quot;c_name&quot;/&gt;</span><br><span class="line">        &lt;association property=&quot;teacher&quot; column=&quot;teacher_id&quot; select=&quot;getTeacher&quot;/&gt;   </span><br><span class="line">    &lt;/resultMap&gt;</span><br><span class="line">    &lt;select id=&quot;getTeacher&quot; parameterType=&quot;int&quot; resultType=&quot;Teacher&quot;&gt;</span><br><span class="line">        select t_id id,t_name name from teacher where t_id =#&#123;id&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure></p>
 <p>顺便对association标签的属性进行解释:<br>property:对象属性名称<br>javaType:对象属性类型<br>column:所对应的外键字段名称</p>
@@ -113,7 +113,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/06/mybatis之一对多/" data-id="cjuceonp3002hc4vkonj9ct01" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/06/mybatis之一对多/" data-id="cjuco7h2b002mmsvk51q5m6n5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>

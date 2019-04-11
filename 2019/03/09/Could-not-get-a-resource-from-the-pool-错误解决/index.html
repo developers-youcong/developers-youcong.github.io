@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="错误关键信息:Could not get a resource from the pool 通常原因是因为远程服务器上的redis没有配置好。 解决方案如下:(1)将redis.conf中的bind:127.0.0.1注释掉;(2)将redis.conf中的protected-mode yes改为protected-mode no 按照上述的解决方案是可以解决这个问题的。但是以SpringBoot">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T12:28:45.206Z">
+<meta property="og:updated_time" content="2019-04-11T13:27:16.185Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Could not get a resource from the pool 错误解决">
 <meta name="twitter:description" content="错误关键信息:Could not get a resource from the pool 通常原因是因为远程服务器上的redis没有配置好。 解决方案如下:(1)将redis.conf中的bind:127.0.0.1注释掉;(2)将redis.conf中的protected-mode yes改为protected-mode no 按照上述的解决方案是可以解决这个问题的。但是以SpringBoot">
@@ -91,6 +91,7 @@
 <p>通常原因是因为远程服务器上的redis没有配置好。</p>
 <p>解决方案如下:<br>(1)将redis.conf中的bind:127.0.0.1注释掉;<br>(2)将redis.conf中的protected-mode yes改为protected-mode no</p>
 <p>按照上述的解决方案是可以解决这个问题的。但是以SpringBoot为例，这样做仍然无法解决问题，原因是因为application.yml中的redis配置有误造成的。</p>
+<a id="more"></a>
 <p>按照如下配置即可解决问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  redis:</span><br><span class="line">    host: 192.168.126.128</span><br><span class="line">    port: 2019</span><br><span class="line">    password: youcongtech</span><br><span class="line">    database: 0</span><br><span class="line">    lettuce:</span><br><span class="line">      pool:</span><br><span class="line">        max-active: 32</span><br><span class="line">        max-wait: 300ms</span><br><span class="line">        max-idle: 16</span><br><span class="line">        min-idle: 8</span><br></pre></td></tr></table></figure></p>
 <p>之所以这样配置是因为使用的是spring-boot-starter-data-redis这个maven依赖。当然了，如果你不想这样配置的话大可自己写一个Jedis，不过通常Maven已经提供了，不必自己动手造轮子。</p>
 <p>详情可参考如下:<br>Java连接Redis之redis的增删改查:<a href="https://www.cnblogs.com/youcong/p/8098881.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/p/8098881.html</a></p>
@@ -99,7 +100,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" data-id="cjuceonkq0001c4vk6rx5wll0" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" data-id="cjuco7gyr0001msvkszkgwgep" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>

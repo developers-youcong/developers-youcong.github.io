@@ -7,18 +7,18 @@
   
   <title>普通用户使用Docker | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.查询是否有docker组：1cat /etc/group 如果没有可以通过该命令添加(一般默认是有的) 1sudo groupadd docker 2.将当前用户添加到docker组1sudo usermod -G docker $(USER) 例如:sudo usermod -G docker test 3.重启docker服务1sudo systemctl restart docker.s">
+  <meta name="description" content="1.查询是否有docker组：1cat /etc/group 如果没有可以通过该命令添加(一般默认是有的) 12sudo groupadd docker&amp;lt;!--more--&amp;gt; 2.将当前用户添加到docker组1sudo usermod -G docker $(USER) 例如:sudo usermod -G docker test 3.重启docker服务1sudo systemct">
 <meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="普通用户使用Docker">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="1.查询是否有docker组：1cat /etc/group 如果没有可以通过该命令添加(一般默认是有的) 1sudo groupadd docker 2.将当前用户添加到docker组1sudo usermod -G docker $(USER) 例如:sudo usermod -G docker test 3.重启docker服务1sudo systemctl restart docker.s">
+<meta property="og:description" content="1.查询是否有docker组：1cat /etc/group 如果没有可以通过该命令添加(一般默认是有的) 12sudo groupadd docker&amp;lt;!--more--&amp;gt; 2.将当前用户添加到docker组1sudo usermod -G docker $(USER) 例如:sudo usermod -G docker test 3.重启docker服务1sudo systemct">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-27T08:59:03.394Z">
+<meta property="og:updated_time" content="2019-04-11T13:40:49.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="普通用户使用Docker">
-<meta name="twitter:description" content="1.查询是否有docker组：1cat /etc/group 如果没有可以通过该命令添加(一般默认是有的) 1sudo groupadd docker 2.将当前用户添加到docker组1sudo usermod -G docker $(USER) 例如:sudo usermod -G docker test 3.重启docker服务1sudo systemctl restart docker.s">
+<meta name="twitter:description" content="1.查询是否有docker组：1cat /etc/group 如果没有可以通过该命令添加(一般默认是有的) 12sudo groupadd docker&amp;lt;!--more--&amp;gt; 2.将当前用户添加到docker组1sudo usermod -G docker $(USER) 例如:sudo usermod -G docker test 3.重启docker服务1sudo systemct">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -89,7 +89,7 @@
       
         <h2><span id="1查询是否有docker组">1.查询是否有docker组：</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/group</span><br></pre></td></tr></table></figure>
 <p>如果没有可以通过该命令添加(一般默认是有的)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
 <h2><span id="2将当前用户添加到docker组">2.将当前用户添加到docker组</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -G docker $(USER)</span><br></pre></td></tr></table></figure>
 <p>例如:sudo usermod -G docker test</p>
 <h2><span id="3重启docker服务">3.重启docker服务</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart docker.service</span><br></pre></td></tr></table></figure>
@@ -98,7 +98,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" data-id="cjuceonql0048c4vkmq3pselt" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/普通用户使用Docker/" data-id="cjuco7h3p0046msvks5gevla6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>

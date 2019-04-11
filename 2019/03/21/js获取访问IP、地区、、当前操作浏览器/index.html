@@ -7,19 +7,19 @@
   
   <title>js获取访问IP、地区、、当前操作浏览器 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="js获取IP、地区、当前操作浏览器有什么用呢？ 我的回答是用处很多，比如现在的异地登录和对用户常用浏览器做数据分析等。 源代码如下:index.html12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;l">
+  <meta name="description" content="js获取IP、地区、当前操作浏览器有什么用呢？ 我的回答是用处很多，比如现在的异地登录和对用户常用浏览器做数据分析等。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js获取访问IP、地区、、当前操作浏览器">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="js获取IP、地区、当前操作浏览器有什么用呢？ 我的回答是用处很多，比如现在的异地登录和对用户常用浏览器做数据分析等。 源代码如下:index.html12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;l">
+<meta property="og:description" content="js获取IP、地区、当前操作浏览器有什么用呢？ 我的回答是用处很多，比如现在的异地登录和对用户常用浏览器做数据分析等。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/js01.png">
-<meta property="og:updated_time" content="2019-03-21T05:26:01.417Z">
+<meta property="og:updated_time" content="2019-04-11T13:31:05.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js获取访问IP、地区、、当前操作浏览器">
-<meta name="twitter:description" content="js获取IP、地区、当前操作浏览器有什么用呢？ 我的回答是用处很多，比如现在的异地登录和对用户常用浏览器做数据分析等。 源代码如下:index.html12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;l">
+<meta name="twitter:description" content="js获取IP、地区、当前操作浏览器有什么用呢？ 我的回答是用处很多，比如现在的异地登录和对用户常用浏览器做数据分析等。">
 <meta name="twitter:image" content="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/js01.png">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -91,13 +91,14 @@
       
         <p>js获取IP、地区、当前操作浏览器有什么用呢？</p>
 <p>我的回答是用处很多，比如现在的异地登录和对用户常用浏览器做数据分析等。</p>
+<a id="more"></a>
 <p>源代码如下:<br>index.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot; /&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;script src=&quot;http://pv.sohu.com/cityjson?ie=utf-8&quot;&gt;&lt;/script&gt; </span><br><span class="line">    &lt;script type=&quot;text/javascript&quot;&gt;  </span><br><span class="line">        document.write(&apos;IP地址:&apos; + returnCitySN[&quot;cip&quot;] + &apos;, CID:&apos; + returnCitySN[&quot;cid&quot;] + &apos;, 地区:&apos; + returnCitySN[&quot;cname&quot;]+&quot;,浏览器版本:&quot;+getBrowserInfo());</span><br><span class="line">		</span><br><span class="line">		function getBrowserInfo()</span><br><span class="line">&#123;</span><br><span class="line">    var agent = navigator.userAgent.toLowerCase() ;</span><br><span class="line"></span><br><span class="line">    var regStr_ie = /msie [\d.]+;/gi ;</span><br><span class="line">    var regStr_ff = /firefox\/[\d.]+/gi</span><br><span class="line">    var regStr_chrome = /chrome\/[\d.]+/gi ;</span><br><span class="line">    var regStr_saf = /safari\/[\d.]+/gi ;</span><br><span class="line">    </span><br><span class="line">    //IE</span><br><span class="line">    if(agent.indexOf(&quot;msie&quot;) &gt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_ie) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //firefox</span><br><span class="line">    if(agent.indexOf(&quot;firefox&quot;) &gt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_ff) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Chrome</span><br><span class="line">    if(agent.indexOf(&quot;chrome&quot;) &gt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_chrome) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    //Safari</span><br><span class="line">    if(agent.indexOf(&quot;safari&quot;) &gt; 0 &amp;&amp; agent.indexOf(&quot;chrome&quot;) &lt; 0)</span><br><span class="line">    &#123;</span><br><span class="line">        return agent.match(regStr_saf) ;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
 <p>展示效果如下:<br><img src="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/js01.png" alt=""></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" data-id="cjuceonoz002cc4vk0argqm3w" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" data-id="cjuco7h210027msvk8ue80i3r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>

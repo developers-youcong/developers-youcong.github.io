@@ -7,19 +7,19 @@
   
   <title>node.js之express框架 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="之前学习过node.js接触过express框架，最近为了编写一个mock server正好用到了express。下面正好就跟大家介绍一下关于express。今天的内容主要围绕这么几个方面?  express框架初步介绍 express框架中的app.use和app.get/app.post mock server 介绍 mock server的实现思路  一、express框架初步介绍关于exp">
+  <meta name="description" content="之前学习过node.js接触过express框架，最近为了编写一个mock server正好用到了express。下面正好就跟大家介绍一下关于express。今天的内容主要围绕这么几个方面?  express框架初步介绍 express框架中的app.use和app.get/app.post mock server 介绍 mock server的实现思路">
 <meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="node.js之express框架">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/02/22/node-js之express框架/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="之前学习过node.js接触过express框架，最近为了编写一个mock server正好用到了express。下面正好就跟大家介绍一下关于express。今天的内容主要围绕这么几个方面?  express框架初步介绍 express框架中的app.use和app.get/app.post mock server 介绍 mock server的实现思路  一、express框架初步介绍关于exp">
+<meta property="og:description" content="之前学习过node.js接触过express框架，最近为了编写一个mock server正好用到了express。下面正好就跟大家介绍一下关于express。今天的内容主要围绕这么几个方面?  express框架初步介绍 express框架中的app.use和app.get/app.post mock server 介绍 mock server的实现思路">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/02/22/node-js之express框架/mock-server.png">
-<meta property="og:updated_time" content="2019-03-16T12:32:48.984Z">
+<meta property="og:updated_time" content="2019-04-11T13:34:50.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js之express框架">
-<meta name="twitter:description" content="之前学习过node.js接触过express框架，最近为了编写一个mock server正好用到了express。下面正好就跟大家介绍一下关于express。今天的内容主要围绕这么几个方面?  express框架初步介绍 express框架中的app.use和app.get/app.post mock server 介绍 mock server的实现思路  一、express框架初步介绍关于exp">
+<meta name="twitter:description" content="之前学习过node.js接触过express框架，最近为了编写一个mock server正好用到了express。下面正好就跟大家介绍一下关于express。今天的内容主要围绕这么几个方面?  express框架初步介绍 express框架中的app.use和app.get/app.post mock server 介绍 mock server的实现思路">
 <meta name="twitter:image" content="http://developers-youcong.github.io/2019/02/22/node-js之express框架/mock-server.png">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -96,6 +96,7 @@
 <li>mock server 介绍</li>
 <li>mock server的实现思路</li>
 </ul>
+<a id="more"></a>
 <h2><span id="一-express框架初步介绍">一、express框架初步介绍</span></h2><p>关于express框架的介绍，这里我引用菜鸟教程的简介:<br>Express是一个简洁而灵活的node.js web框架，提供了一系列强大特性帮助你创建各种web应用，和丰富的HTTP工具。使用Express可以快速地搭建一个完整功能的网站。</p>
 <h4><span id="1express框架的特性">1.express框架的特性</span></h4><p>（1）可以设置中间件来响应HTTP请求；<br>（2）定义了路由表用于执行不同大的HTTP请求动作；<br>（3）可以通过向模板传递参数来动态渲染HTML页面；</p>
 <h4><span id="2安装express">2.安装express</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install express --save或cnpm install express --save</span><br></pre></td></tr></table></figure>
@@ -123,7 +124,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/22/node-js之express框架/" data-id="cjuceonpd002uc4vkwodj7zok" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/22/node-js之express框架/" data-id="cjuco7h2f002rmsvk78rj9wir" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>

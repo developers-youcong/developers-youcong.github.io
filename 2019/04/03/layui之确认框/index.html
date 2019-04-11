@@ -7,18 +7,18 @@
   
   <title>layui之确认框 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="要使用layui的确认框，需要导入layui的两个库，分别为layer.js和layer.css，除此之外layui.js和layui.css的库也是要导入，这个请注意。所有说你需要分别导入四个库layer.js、layer.css、layui.js、layui.css，四个库多少也会占用带宽，这时你可以使用cdn或者将其放到nginx做缓存也行。 确认框源码如下:1234567891011121">
+  <meta name="description" content="要使用layui的确认框，需要导入layui的两个库，分别为layer.js和layer.css，除此之外layui.js和layui.css的库也是要导入，这个请注意。所有说你需要分别导入四个库layer.js、layer.css、layui.js、layui.css，四个库多少也会占用带宽，这时你可以使用cdn或者将其放到nginx做缓存也行。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="layui之确认框">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/04/03/layui之确认框/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="要使用layui的确认框，需要导入layui的两个库，分别为layer.js和layer.css，除此之外layui.js和layui.css的库也是要导入，这个请注意。所有说你需要分别导入四个库layer.js、layer.css、layui.js、layui.css，四个库多少也会占用带宽，这时你可以使用cdn或者将其放到nginx做缓存也行。 确认框源码如下:1234567891011121">
+<meta property="og:description" content="要使用layui的确认框，需要导入layui的两个库，分别为layer.js和layer.css，除此之外layui.js和layui.css的库也是要导入，这个请注意。所有说你需要分别导入四个库layer.js、layer.css、layui.js、layui.css，四个库多少也会占用带宽，这时你可以使用cdn或者将其放到nginx做缓存也行。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-03T04:39:14.340Z">
+<meta property="og:updated_time" content="2019-04-11T13:31:31.104Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="layui之确认框">
-<meta name="twitter:description" content="要使用layui的确认框，需要导入layui的两个库，分别为layer.js和layer.css，除此之外layui.js和layui.css的库也是要导入，这个请注意。所有说你需要分别导入四个库layer.js、layer.css、layui.js、layui.css，四个库多少也会占用带宽，这时你可以使用cdn或者将其放到nginx做缓存也行。 确认框源码如下:1234567891011121">
+<meta name="twitter:description" content="要使用layui的确认框，需要导入layui的两个库，分别为layer.js和layer.css，除此之外layui.js和layui.css的库也是要导入，这个请注意。所有说你需要分别导入四个库layer.js、layer.css、layui.js、layui.css，四个库多少也会占用带宽，这时你可以使用cdn或者将其放到nginx做缓存也行。">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -87,14 +87,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>要使用layui的确认框，需要导入layui的两个库，分别为layer.js和layer.css，除此之外layui.js和layui.css的库也是要导入，这个请注意。<br>所有说你需要分别导入四个库layer.js、layer.css、layui.js、layui.css，四个库多少也会占用带宽，这时你可以使用cdn或者将其放到nginx做缓存也行。</p>
-<p>确认框源码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">layui.use(&apos;layer&apos;,function () &#123; </span><br><span class="line">	</span><br><span class="line">    layer.confirm(&apos;确认要删除吗？&apos;, &#123;</span><br><span class="line">        btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">    &#125;, function(index) &#123;</span><br><span class="line">    	</span><br><span class="line">        layer.close(index);</span><br><span class="line">        //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">        var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+        <p>要使用layui的确认框，需要导入layui的两个库，分别为layer.js和layer.css，除此之外layui.js和layui.css的库也是要导入，这个请注意。<br>所有说你需要分别导入四个库layer.js、layer.css、layui.js、layui.css，四个库多少也会占用带宽，这时你可以使用cdn或者将其放到nginx做缓存也行。<br><a id="more"></a><br>确认框源码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">layui.use(&apos;layer&apos;,function () &#123; </span><br><span class="line">	</span><br><span class="line">    layer.confirm(&apos;确认要删除吗？&apos;, &#123;</span><br><span class="line">        btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">    &#125;, function(index) &#123;</span><br><span class="line">    	</span><br><span class="line">        layer.close(index);</span><br><span class="line">        //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">        var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line">    </span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
 <p>应用场景:<br>(1)所有的确认框操作，比如是否删除这样的;<br>(2)退出功能;</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/03/layui之确认框/" data-id="cjuceonp1002fc4vkj6z2iqos" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/03/layui之确认框/" data-id="cjuco7h25002emsvk3houx4u4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>

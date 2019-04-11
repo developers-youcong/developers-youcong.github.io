@@ -84,14 +84,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line">git clone https://code.aliyun.com/test/bfi.git</span><br><span class="line"></span><br><span class="line">cd /home/project/bfi/bfi-saas/bfi-web/src</span><br><span class="line"></span><br><span class="line">rm -r ./test/</span><br><span class="line"></span><br><span class="line">cd /home/project/bfi/bfi-saas</span><br><span class="line"></span><br><span class="line">mvn clean package</span><br><span class="line"></span><br><span class="line">if [ $? -ne 0 ]; then</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署bfi项目失败,当前日期为:&quot;$time &gt;&gt; /home/project/bfi_deploy.log</span><br><span class="line"></span><br><span class="line">    echo &apos;部署失败，请登录服务器查看&apos; | mail -s &quot;bfi部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line">else</span><br><span class="line"></span><br><span class="line">    cp -r /home/project/bfi/bfi-saas/bfi-web/target/bfi-web.war /home/project/tomcat8/webapps/</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/startup.sh</span><br><span class="line"></span><br><span class="line">    rm -r /home/project/bfi</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署bfi项目成功,当前日期为:&quot;$time &gt;&gt; /home/project/bfi_deploy.log</span><br><span class="line">    </span><br><span class="line">    echo &apos;部署成功&apos; | mail -s &quot;bfi部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
-<p>注意:<br>(1)maven打包通常也会执行mvn test，也就是会将src/test/java下面的单元测试代码全部执行一遍，如果你的单元测试其中某个方法有问题也会导致构建失败。上述我的其中一步操作rm -r ./test/主要就是将单元测试代码删除防止影响构建，实际上是不应该这样做的，但是由于某种原因我必须要这样做(不建议开发者将单元测试删除后部署，单测也是一种上线部署的保障;<br>(2)模块之间最好界限分明，否则会有不必要的依赖错误;</p>
-<p>关于脚本中的邮件发送，可以参考我的这篇博客<a href="https://developers-youcong.github.io/2019/04/11/%E5%8D%95%E4%BD%93%E5%BA%94%E7%94%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">单体应用自动化部署</a></p>
-
+        <p>多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/11/多模块应用自动化部署/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/11/多模块应用自动化部署/" data-id="cjuceonqb003yc4vk4iyri0qh" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/11/多模块应用自动化部署/" data-id="cjuco7h3d003smsvkowrs1fzz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -125,18 +127,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>单体应用自动化部署脚本:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">DATE=$(date +%Y%m%d)</span><br><span class="line"></span><br><span class="line">time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line">git clone https://code.aliyun.com/test/blog.git</span><br><span class="line"></span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line">mvn clean package</span><br><span class="line"></span><br><span class="line">if [ $? -ne 0 ]; then</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目失败,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署失败，请登录服务器查看&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line">else</span><br><span class="line"></span><br><span class="line">    cp -r /home/project/blog/target/blog.war /home/project/tomcat8/webapps/</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/startup.sh</span><br><span class="line"></span><br><span class="line">    rm -r /home/project/blog</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目成功,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署成功&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
-<p>其中涉及到邮件在服务器发生，我在这里使用的是heirloom-mailx</p>
-<p>安装使用流程如下(以Ubuntu16.04为例):</p>
-<h3><span id="1安装heirloom-mailx">1.安装heirloom-mailx</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install heirloom-mailx</span><br></pre></td></tr></table></figure>
-<h3><span id="2修改etcs-nailrc并在尾部添加如下内容这里使用的是163详情可去163邮箱了解">2.修改/etc/s-nail.rc并在尾部添加如下内容(这里使用的是163，详情可去163邮箱了解)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set from=&quot;xxx@163.com&quot;</span><br><span class="line">set smtp=&quot;smtps://smtp.163.com:465&quot;</span><br><span class="line">set smtp-auth-user=&quot;xxxm@163.com&quot;</span><br><span class="line">set smtp-auth-password=&quot;123456&quot;</span><br><span class="line">set smtp-auth=login</span><br></pre></td></tr></table></figure>
-<h3><span id="3测试">3.测试</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;this is test&apos; | mail -s &quot;test email.&quot; 123@qq.com</span><br></pre></td></tr></table></figure>
-<p>邮箱这里我主要参考:<br><a href="https://blog.csdn.net/just_shunjian/article/details/78677054" target="_blank" rel="noopener">ubuntu16.04 heirloom-mailx 通过外部SMTP服务器发送邮件</a></p>
-
+        <p>单体应用自动化部署脚本:<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/11/单体应用自动化部署/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/11/单体应用自动化部署/" data-id="cjuceonqa003wc4vkr6aamwxw" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/11/单体应用自动化部署/" data-id="cjuco7h39003omsvk4t9xphsi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -170,22 +170,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2><span id="1更新">1.更新</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
-<h2><span id="2安装nginx">2.安装Nginx</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
-<h2><span id="3安装php">3.安装php</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">udo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \</span><br><span class="line">    php7.0-dev php7.0-fpm php7.0-json php7.0-mbstring php7.0-mcrypt \</span><br><span class="line">    php7.0-mysql php7.0-opcache php7.0-zip php7.0-intl php7.0-gd php7.0-xml</span><br></pre></td></tr></table></figure>
-<p>修改配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/php/7.0/fpm/php.ini</span><br></pre></td></tr></table></figure></p>
-<p>修改配置内容如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">post_max_size = 1024M</span><br><span class="line">memory_limit = 1024M</span><br><span class="line">upload_max_filesize = 1024M</span><br></pre></td></tr></table></figure></p>
-<p>重启让配置生效:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service php7.0-fpm restart</span><br></pre></td></tr></table></figure></p>
-<h2><span id="4安装mysql">4.安装mysql</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
-<h2><span id="5安装edusoho">5.安装edusoho</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www</span><br><span class="line">sudo wget http://download.edusoho.com/edusoho-8.3.20.tar.gz </span><br><span class="line">sudo tar -zxvf edusoho-8.3.20.tar.gz </span><br><span class="line">sudo chown www-data:www-data edusoho/ -Rf</span><br></pre></td></tr></table></figure>
-<h2><span id="6修改配置文件">6.修改配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/nginx/sites-enabled/edusoho</span><br></pre></td></tr></table></figure>
-<p>edusoho配置如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    # [改] 域名或IP</span><br><span class="line">    server_name 192.168.126.130;</span><br><span class="line">    </span><br><span class="line">    #301跳转可以在nginx中配置</span><br><span class="line"></span><br><span class="line">    # 程序的安装路径</span><br><span class="line">    root /var/www/edusoho/web;</span><br><span class="line"></span><br><span class="line">    # 日志路径</span><br><span class="line">    access_log /var/log/nginx/example.com.access.log;</span><br><span class="line">    error_log /var/log/nginx/example.com.error.log;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        index app.php;</span><br><span class="line">        try_files $uri @rewriteapp;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location @rewriteapp &#123;</span><br><span class="line">        rewrite ^(.*)$ /app.php/$1 last;</span><br><span class="line">    &#125;</span><br><span class="line">     location ~ ^/udisk &#123;</span><br><span class="line">        internal;</span><br><span class="line">        root /var/www/edusoho/app/data/;</span><br><span class="line">    &#125;</span><br><span class="line">    location ~ ^/(app|app_dev)\.php(/|$) &#123;</span><br><span class="line">        fastcgi_pass   unix:/var/run/php7.0-fpm.sock;</span><br><span class="line">        fastcgi_split_path_info ^(.+\.php)(/.*)$;</span><br><span class="line">        include fastcgi_params;</span><br><span class="line">        fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;</span><br><span class="line">        fastcgi_param  HTTPS              off;</span><br><span class="line">        fastcgi_param HTTP_X-Sendfile-Type X-Accel-Redirect;</span><br><span class="line">        fastcgi_param HTTP_X-Accel-Mapping /udisk=/var/www/edusoho/app/data/udisk;</span><br><span class="line">        fastcgi_buffer_size 128k;</span><br><span class="line">        fastcgi_buffers 8 128k;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    # 配置设置图片格式文件</span><br><span class="line">    location ~* \.(jpg|jpeg|gif|png|ico|swf)$ &#123;</span><br><span class="line">        # 过期时间为3年</span><br><span class="line">        expires 3y;</span><br><span class="line">        </span><br><span class="line">        # 关闭日志记录</span><br><span class="line">        access_log off;</span><br><span class="line"></span><br><span class="line">        # 关闭gzip压缩，减少CPU消耗，因为图片的压缩率不高。</span><br><span class="line">        gzip off;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    # 配置css/js文件</span><br><span class="line">    location ~* \.(css|js)$ &#123;</span><br><span class="line">        access_log off;</span><br><span class="line">        expires 3y;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    # 禁止用户上传目录下所有.php文件的访问，提高安全性</span><br><span class="line">    location ~ ^/files/.*\.(php|php7.0)$ &#123;</span><br><span class="line">        deny all;</span><br><span class="line">    &#125;</span><br><span class="line"> # 以下配置允许运行.php的程序，方便于其他第三方系统的集成。</span><br><span class="line">    location ~ \.php$ &#123;</span><br><span class="line">        # [改] 请根据实际php-fpm运行的方式修改</span><br><span class="line">        fastcgi_pass   unix:/var/run/php7.0-fpm.sock;</span><br><span class="line">        fastcgi_split_path_info ^(.+\.php)(/.*)$;</span><br><span class="line">        include fastcgi_params;</span><br><span class="line">        fastcgi_param  SCRIPT_FILENAME    $document_root$fastcgi_script_name;</span><br><span class="line">        fastcgi_param  HTTPS              off;</span><br><span class="line">        fastcgi_param  HTTP_PROXY         &quot;&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>其实LNMP环境搭建与LAMP环境搭建基本相同，只不过使用的web服务器不同及其配置有点差异，一句话，大同小异。</p>
-
+        <h2 id="1-更新"><a href="#1-更新" class="headerlink" title="1.更新"></a>1.更新</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<h2 id="2-安装Nginx"><a href="#2-安装Nginx" class="headerlink" title="2.安装Nginx"></a>2.安装Nginx</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
+<h2 id="3-安装php"><a href="#3-安装php" class="headerlink" title="3.安装php"></a>3.安装php</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">udo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \</span><br><span class="line">    php7.0-dev php7.0-fpm php7.0-json php7.0-mbstring php7.0-mcrypt \</span><br><span class="line">    php7.0-mysql php7.0-opcache php7.0-zip php7.0-intl php7.0-gd php7.0-xml</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/10/Edusoho之LNMP环境搭建/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/Edusoho之LNMP环境搭建/" data-id="cjuceonku0003c4vk54n03dke" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/Edusoho之LNMP环境搭建/" data-id="cjuco7h03000jmsvk72g08eiq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -220,33 +216,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>主要参考官方文档<a href="http://www.qiqiuyu.com/course/20/task/2708/show" target="_blank" rel="noopener">Ubuntu16.04+Apache+PHP+MySQL+EduSoho 安装教程</a><br>LAMP环境按照如下搭建是没有问题的，本地虚拟机试验是完全没有问题的。</p>
-<h2><span id="1更新">1.更新</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
-<h2><span id="2安装apache2">2.安装apache2</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2 </span><br><span class="line">sudo apt-get install libapache2-mod-xsendfile</span><br></pre></td></tr></table></figure>
+<h2 id="1-更新"><a href="#1-更新" class="headerlink" title="1.更新"></a>1.更新</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
+<h2 id="2-安装apache2"><a href="#2-安装apache2" class="headerlink" title="2.安装apache2"></a>2.安装apache2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2 </span><br><span class="line">sudo apt-get install libapache2-mod-xsendfile</span><br></pre></td></tr></table></figure>
 <p>通常sudo apt-get install apache2 默认是安装apache2.4(通过apache -v可以查看对应的apache版本)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod rewrite   #启用rewrite模块</span><br><span class="line">sudo a2enmod xsendfile    #启用xsendfile模块</span><br></pre></td></tr></table></figure></p>
-<h2><span id="3修改配置文件">3.修改配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/apache2/sites-enabled/edusoho.conf</span><br></pre></td></tr></table></figure>
-<p>edusoho.conf内容如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ServerName 192.168.126.130</span><br><span class="line"></span><br><span class="line">    DocumentRoot /var/www/project/web</span><br><span class="line">    &lt;Directory /var/www/project/web&gt;</span><br><span class="line">        # enable the .htaccess rewrites</span><br><span class="line">        AllowOverride All</span><br><span class="line">        Require all granted   </span><br><span class="line">    &lt;/Directory&gt;</span><br><span class="line">    ErrorLog /var/log/apache2/project_error.log</span><br><span class="line">    CustomLog /var/log/apache2/project_access.log combined</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure></p>
-<p>ServerName 可以域名也可以是IP地址，在这里我用的是IP地址。</p>
-<h2><span id="4安装php">4.安装php</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \</span><br><span class="line">    php7.0-dev php7.0-fpm php7.0-json php7.0-mbstring php7.0-mcrypt \</span><br><span class="line">    php7.0-mysql php7.0-opcache php7.0-zip php7.0-intl php7.0-gd php7.0-xml</span><br></pre></td></tr></table></figure>
-<p>顺便修改对应的配置文件(主要用于修改PHP上传文件的大小限制)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/php/7.0/fpm/php.ini</span><br></pre></td></tr></table></figure></p>
-<p>修改这三个值的大小(通过/+对应的关键字搜索效率更高)，如/post_max_size就可以一下定位到该键上):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">post_max_size = 1024M</span><br><span class="line">memory_limit = 1024M</span><br><span class="line">upload_max_filesize = 1024M</span><br></pre></td></tr></table></figure></p>
-<p>修改配置文件后，记得执行重启命令，让配置生效:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service php7.0-fpm restart</span><br></pre></td></tr></table></figure></p>
-<h2><span id="5安装mysql">5.安装mysql</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
-<p>设置密码</p>
-<p>在这个过程过程中会要求您输入MySQL数据库的root密码，请认真填写。</p>
-<h2><span id="6配置安装edusoho">6.配置安装edusoho</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www</span><br><span class="line">sudo wget http://download.edusoho.com/edusoho-8.3.20.tar.gz </span><br><span class="line">sudo tar -zxvf edusoho-8.3.20.tar.gz </span><br><span class="line">sudo chown www-data:www-data edusoho/ -Rf</span><br></pre></td></tr></table></figure>
-<h2><span id="7重启apache访问">7.重启apache访问</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure>
-<p>访问地址为:192.168.126.130 初次出现的其实与jenkins和wordpress倒有不少相似之处，比如配置数据库和用户等。</p>
-<p>如下图所示:<br>(1)同意协议<br><img src="/2019/04/10/Edusoho之LAMP环境搭建/01.png" alt=""></p>
-<p>(2)检测环境<br><img src="/2019/04/10/Edusoho之LAMP环境搭建/02.png" alt=""></p>
-<p>(3)配置数据库<br><img src="/2019/04/10/Edusoho之LAMP环境搭建/03.png" alt=""></p>
-<p>(4)配置网站信息<br><img src="/2019/04/10/Edusoho之LAMP环境搭建/04.png" alt=""></p>
-<p>(5)安装成功<br><img src="/2019/04/10/Edusoho之LAMP环境搭建/05.png" alt=""></p>
-<p>(6)最终网站效果如图<br><img src="/2019/04/10/Edusoho之LAMP环境搭建/06.png" alt=""></p>
-
+        
+          <p class="article-more-link">
+            <a href="/2019/04/10/Edusoho之LAMP环境搭建/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/Edusoho之LAMP环境搭建/" data-id="cjuceonmx000ec4vkzg84ja8b" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/Edusoho之LAMP环境搭建/" data-id="cjuco7gzw000dmsvkpohiroce" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -290,7 +271,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem/" data-id="cjuceonn3000gc4vki039nls4" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem/" data-id="cjuco7gzn0009msvkyyiaf6if" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -325,14 +306,15 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>其实就是一条Linux命令,如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --config php</span><br></pre></td></tr></table></figure></p>
-<p>会出现下面选项:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">There are 2 choices for the alternative php (providing /usr/bin/php).</span><br><span class="line"></span><br><span class="line">  Selection    Path             Priority   Status</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">* 0            /usr/bin/php7.1   71        auto mode</span><br><span class="line">  1            /usr/bin/php7.0   70        manual mode</span><br><span class="line">  2            /usr/bin/php7.1   71        manual mode</span><br><span class="line">Press &lt;enter&gt; to keep the current choice[*], or type selection number:</span><br></pre></td></tr></table></figure></p>
-<p>输入其中一项数字即可实现php版本切换</p>
-<p>如何判断版本是否切换成功？<br><code>php -v</code>命令进行前后版本对比即可看出。</p>
-
+        
+          <p class="article-more-link">
+            <a href="/2019/04/10/Ubuntu16-04中php如何切换版本/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/Ubuntu16-04中php如何切换版本/" data-id="cjuceonoe001qc4vkjfo9xro5" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/Ubuntu16-04中php如何切换版本/" data-id="cjuco7h120014msvk38hrgi2l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -367,25 +349,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Nginx配置phpmyadmin流程如下:</p>
-<h2><span id="一-准备软件和环境这里我以ubuntu1604为例">一、准备软件和环境(这里我以ubuntu16.04为例)</span></h2><h3><span id="1安装php71">1.安装php7.1</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install php-pear php7.1-cli php7.1-common php7.1-curl \</span><br><span class="line">    php7.1-dev php7.1-fpm php7.1-json php7.1-mbstring php7.1-mcrypt \</span><br><span class="line">    php7.1-mysql php7.1-opcache php7.1-zip php7.1-intl php7.1-gd php7.1-xml</span><br></pre></td></tr></table></figure>
-<h4><span id="1修改-php-fpm-监听方式为1270019000">(1)修改 PHP-FPM 监听方式为127.0.0.1:9000</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sed -i &apos;s/listen = .*/listen = 127.0.0.1:9000/g&apos; /etc/php/7.1/fpm/pool.d/www.conf</span><br></pre></td></tr></table></figure>
-<h4><span id="2重启-php-fpm-服务进程">(2)重启 PHP-FPM 服务进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service php7.1-fpm restart</span><br></pre></td></tr></table></figure>
-<h3><span id="2安装mysql">2.安装mysql</span></h3><h4><span id="1配置mysql57源">(1)配置mysql5.7源</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 可在 http://dev.mysql.com/downloads/repo/apt/ 页面找到 mysql-apt-config 的最新版本。</span><br><span class="line">wget http://dev.mysql.com/get/mysql-apt-config_0.8.7-1_all.deb</span><br><span class="line">sudo dpkg -i mysql-apt-config_0.8.7-1_all.deb</span><br></pre></td></tr></table></figure>
-<p>这时会弹出让你选择，将：</p>
-<p>MySQL Server修改为： mysql-5.7<br>MySQL Tools &amp; Connectors (Currently selected: Enabled)修改为Disabled。<br>MySQL Preview Packages修改过为 Disabled。</p>
-<h4><span id="2安装mysql服务端">(2)安装mysql服务端</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
-<h3><span id="3下载最新版phpmyadmin可以到官网去下载">3.下载最新版phpmyadmin，可以到去下载:</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://files.phpmyadmin.net/phpMyAdmin/4.8.5/phpMyAdmin-4.8.5-all-languages.zip</span><br><span class="line">unzip phpMyAdmin-4.8.5-all-languages.zip</span><br><span class="line">mv phpMyAdmin-4.8.5-all-languages.zip phpmyadmin</span><br></pre></td></tr></table></figure>
-<h3><span id="4安装nginx">4.安装nginx:</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:nginx/stable</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
-<h2><span id="二-将phpmyadmin复制到varwww目录下">二、将phpmyadmin复制到/var/www目录下</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r phpmyadmin /var/www</span><br></pre></td></tr></table></figure>
-<h2><span id="三-配置nginx主要修改nginxconf配置文件">三、配置nginx(主要修改nginx.conf配置文件)</span></h2><p>这段代码放到http{}里面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">listen 8090;</span><br><span class="line">root /var/www/phpmyadmin;</span><br><span class="line">index index.php;</span><br><span class="line"></span><br><span class="line">location ~ \.php$ &#123;</span><br><span class="line">  include snippets/fastcgi-php.conf;</span><br><span class="line">  fastcgi_pass unix:/run/php/php7.1-fpm.sock;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>四、重启nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/nginx restart</span><br></pre></td></tr></table></figure></p>
-<p>访问:<a href="http://IP地址:8090/即可看到" target="_blank" rel="noopener">http://IP地址:8090/即可看到</a><br>效果图如下:<br><img src="/2019/04/10/nginx上配置phpmyadmin/phpmyadmin.png" alt=""></p>
-
+<h2 id="一、准备软件和环境-这里我以ubuntu16-04为例"><a href="#一、准备软件和环境-这里我以ubuntu16-04为例" class="headerlink" title="一、准备软件和环境(这里我以ubuntu16.04为例)"></a>一、准备软件和环境(这里我以ubuntu16.04为例)</h2><h3 id="1-安装php7-1"><a href="#1-安装php7-1" class="headerlink" title="1.安装php7.1"></a>1.安装php7.1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install php-pear php7.1-cli php7.1-common php7.1-curl \</span><br><span class="line">    php7.1-dev php7.1-fpm php7.1-json php7.1-mbstring php7.1-mcrypt \</span><br><span class="line">    php7.1-mysql php7.1-opcache php7.1-zip php7.1-intl php7.1-gd php7.1-xml</span><br></pre></td></tr></table></figure>
+<h4 id="1-修改-PHP-FPM-监听方式为127-0-0-1-9000"><a href="#1-修改-PHP-FPM-监听方式为127-0-0-1-9000" class="headerlink" title="(1)修改 PHP-FPM 监听方式为127.0.0.1:9000"></a>(1)修改 PHP-FPM 监听方式为127.0.0.1:9000</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sed -i &apos;s/listen = .*/listen = 127.0.0.1:9000/g&apos; /etc/php/7.1/fpm/pool.d/www.conf</span><br></pre></td></tr></table></figure>
+<h4 id="2-重启-PHP-FPM-服务进程"><a href="#2-重启-PHP-FPM-服务进程" class="headerlink" title="(2)重启 PHP-FPM 服务进程"></a>(2)重启 PHP-FPM 服务进程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service php7.1-fpm restart</span><br></pre></td></tr></table></figure>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/10/nginx上配置phpmyadmin/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/" data-id="cjuceonp6002lc4vkv8d46v0h" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/" data-id="cjuco7h28002imsvkpy07ta71" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -419,16 +394,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>错误信息:The field file exceeds its maximum permitted size of 1048576 bytes<br>原因是因为SpringBoot内嵌tomcat默认所能上传的文件大小为1M,超出这个就会报错。</p>
-<p>解决办法:</p>
-<h2><span id="1修改applicationyml配置文件">1.修改application.yml配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  http:</span><br><span class="line">    multipart:</span><br><span class="line">      enabled: true</span><br><span class="line">      max-file-size: 30MB</span><br><span class="line">      max-request-size: 30MB</span><br></pre></td></tr></table></figure>
-<h2><span id="2编写配置类">2.编写配置类</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">package com.blog.springboot.config;</span><br><span class="line"></span><br><span class="line">import javax.servlet.MultipartConfigElement;</span><br><span class="line"></span><br><span class="line">import org.springframework.boot.web.servlet.MultipartConfigFactory;</span><br><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line"></span><br><span class="line">@Configuration</span><br><span class="line">public class MulterFile &#123;</span><br><span class="line">	/**  </span><br><span class="line">     * 文件上传配置  </span><br><span class="line">     * @return  </span><br><span class="line">     */  </span><br><span class="line">    @Bean  </span><br><span class="line">    public MultipartConfigElement multipartConfigElement() &#123;  </span><br><span class="line">        MultipartConfigFactory factory = new MultipartConfigFactory();  </span><br><span class="line">        //文件最大  </span><br><span class="line">        factory.setMaxFileSize(&quot;30960KB&quot;); //KB,MB  </span><br><span class="line">        /// 设置总上传数据总大小  </span><br><span class="line">        factory.setMaxRequestSize(&quot;309600KB&quot;);  </span><br><span class="line">        return factory.createMultipartConfig();  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>参考资料:<br><a href="https://blog.csdn.net/u010429286/article/details/54381705" target="_blank" rel="noopener">Spring Boot:The field file exceeds its maximum permitted size of 1048576 bytes.</a><br><a href="https://www.cnblogs.com/jiangwz/p/9030943.html" target="_blank" rel="noopener">Spring Boot设置上传文件大小</a></p>
-
+        <p>错误信息:The field file exceeds its maximum permitted size of 1048576 bytes<br>原因是因为SpringBoot内嵌tomcat默认所能上传的文件大小为1M,超出这个就会报错。<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/" data-id="cjuceonnk000uc4vkfiv0k0ab" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/" data-id="cjuco7h0m000smsvk5ghao6u7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -463,15 +438,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>关于SpringBoot打成jar包以及jar包如何在Linux持久运行，我在前面已经说过了，所以本次不再赘述。</p>
-<p>关于SpringBoot打包成war，其实步骤特别简单，如下图所示(如果是jar，通常是没有图中红色标记处，因为默认就是jar):</p>
-<h2><span id="1添加war">1.添加<packaging>war</packaging></span></h2><p><img src="/2019/04/08/SpringBoot打包成war/springboot.png" alt=""></p>
-<h2><span id="2修改启动类">2.修改启动类</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">package com.blog.springboot;</span><br><span class="line"></span><br><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line">import org.springframework.boot.Banner;</span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line">import org.springframework.boot.builder.SpringApplicationBuilder;</span><br><span class="line">import org.springframework.transaction.annotation.EnableTransactionManagement;</span><br><span class="line"></span><br><span class="line">@EnableTransactionManagement</span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class Application &#123;</span><br><span class="line"></span><br><span class="line">    protected final static Logger logger = LoggerFactory.getLogger(Application.class);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication app = new SpringApplication(Application.class);</span><br><span class="line">        app.setBannerMode(Banner.Mode.OFF);</span><br><span class="line">        app.run(args);</span><br><span class="line">        logger.info(&quot;Application is success!&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    //关键是添加这段代码</span><br><span class="line">    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) &#123;</span><br><span class="line">		// 注意这里要指向原先用main方法执行的Application启动类</span><br><span class="line">		return builder.sources(Application.class);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2><span id="3做完1和2你会发现项目报错这时你只需update-project即可直到不报错为止">3.做完1和2你会发现项目报错，这时你只需update project即可，直到不报错为止。</span></h2><h2><span id="4mvn-install出现如图所示表示打包成功至于war的部署方式就不多说了直接扔到tomcat下的webapps目录下即可">4.mvn install，出现如图所示,表示打包成功(至于war的部署方式就不多说了，直接扔到tomcat下的webapps目录下即可)</span></h2><p><img src="/2019/04/08/SpringBoot打包成war/war.png" alt=""></p>
-
+<p>关于SpringBoot打包成war，其实步骤特别简单，如下图所示(如果是jar，通常是没有图中红色标记处，因为默认就是jar):<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/08/SpringBoot打包成war/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/" data-id="cjuceonoc001oc4vky6myehfr" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/" data-id="cjuco7h18001bmsvkb5xd1g7r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -510,45 +486,16 @@
 <p><strong>联系实际开发</strong>:<br>每个做前后台开发的小伙伴们都会发现一点，一个正儿八经的后台系统，80%是重复的，20%是特别的(可以称作个性化定制)。</p>
 <p>举个例子:<br>人人开源的后台系统:<br><img src="/2019/04/08/大型网站架构模式/model01.png" alt=""></p>
 <p>Jeesite4的后台系统:<br><img src="/2019/04/08/大型网站架构模式/model02.png" alt=""></p>
-<p>从这两者进行比对就可以明显的发现公共的部分非常相似(只不过展现的形式不一样，renren-security中的角色管理是直接在菜单中显示，而jeesite4则放在权限管理中，只需点击即可看到对应的角色管理)</p>
-<p>在这里我就不详细说它们的内部架构了，感兴趣的可以参考我的这篇博客<a href="https://www.cnblogs.com/youcong/p/9800717.html" target="_blank" rel="noopener">开源项目之架构分享</a></p>
-<p>在软件开发中，可复用模式非常重要，因为这会直接影响到敏捷开发的效率高低。</p>
-<h2><span id="网站架构模式">网站架构模式</span></h2><h3><span id="1分层">1.分层</span></h3><p>分层是企业应用系统中最常见的一种架构模式，将系统在横向维度上切分成几个部分，每个部分负责一部分相对比较单一的职责，然后通过上层对下层的依赖和调用组成一个完整的系统。</p>
-<p>应用层:负责具体业务和视图展示，如网站首页及搜索输入和结果展示。<br>服务层:为应用层提供服务支持，如用户管理服务，购物车服务等。<br>数据层:提供数据存储访问服务，如数据库、缓存、文件、搜索引擎等。</p>
-<p>这种分层模式，很多开发者们并不陌生，特别是Java开发的朋友们，最常用的就是三层架构(业务逻辑层、数据访问层、UI层等)，在分层模式中就是一个比较好的诠释。</p>
-<p>通过分层，可以更好地将一个庞大的软件系统切分成不同的部分，便于分工合作开发和维护；各层之间具有一定的独立性，只要维持调用接口不变，各层可以根据具体问题独立演化发展而不需要其他层必须做出相应的调整。</p>
-<p>任何事情有利也有弊，分层并不是万能的，比如禁止跨层次调用(应用层不能直接调用数据层)及逆向调用(数据层调用服务层、或服务层调用应用层等)。</p>
-<p>不过总的来说，正是因为有了分层，软件开发效率才会越来越高，再没有分层的时代，数据层、业务逻辑层、表现层全部耦合在一起，真的是牵其一而动全身。在此我不得不佩服早期开发人员的勇气(这里以早期Java开发为例，记得在校的时候我曾经见过一个JSP+Servlet囊括数据层、业务逻辑层、表现层内容，当时我看到这个项目就冒冷汗，太TMD的变态了)</p>
-<h3><span id="2分割">2.分割</span></h3><p>如果说分层是将软件在横向方面进行切分，那么分割就是在纵向方面对软件进行切分。<br>网站越大，功能越复杂，服务和数据处理的种类也越多，将这些不同的功能和服务分割开来，包装成高内聚低耦合的模块单元，一方面有助于软件的开发和维护；另一方面，便于不同模块的分布式部署，提高网站的并发处理能力和功能扩展能力。</p>
-<p><strong>那么什么是内聚？什么是耦合？</strong><br>内聚是从功能角度来度量模块内的联系，一个好的内聚模块应当恰好做一件事。它描述的是模块内的功能联系(比如一个函数只办一件事)。<br>耦合是软件结构中各模块之间相互连接的一种度量，耦合强弱取决于模块间接口的复杂度、进入或访问一个模块的点以及通过接口的数据(耦合这个很好理解，耦合性越低代码的可扩展性可维护性越好，相反耦合性越高，开发者们就有种想上吊自杀的冲动，耦合性越高的例子就不多说了，特别是维护老项目的开发者们感触最深了)</p>
-<h3><span id="3分布式">3.分布式</span></h3><p>对于大型网站，分层和分割的一个主要目的是为了切分后的模块便于分布式部署，即将不同模块部署在不同的服务器上，通过远程调用协同工作。分布式意味着可以使用更多的计算机完成同样的功能，计算机越多，CPU、内存、存储资源也就越多，能够处理的并发访问和数据量就越大，进而能够为更多的用户提供服务。</p>
-<p><strong>分布式也就其弊端</strong>:<br>(1)服务的调用必须通过网络，可能对性能造成比较严重的影响;<br>(2)服务器越多，服务器宕机的概率也就越大，宕机会造成服务不可用，直接导致网站可用性降低;<br>(3)数据一致性问题;<br>(4)开发管理维护困难;</p>
-<p><strong>常用的分布式方案</strong>：<br>(1)分布式应用和服务:将分层和分割后的应用和服务模块分布式部署，除了可以改善网站性能和并发性、加快开发和发布速度、减少数据库连接资源消耗外；还可以使不同应用复用共同的服务，便于业务功能扩展;<br>(2)分布式静态资源:网站的静态资源如JS、CSS、图片等资源独立分布式部署，并采用独立的域名,即人们常说的动静分离。<br>(3)分布式数据和存储:大型网站处理以P为单位的海量数据(P这个单位也许有人对此不熟悉，本人普及一下，1024K=1M 1024M=1G 1024G=1T 1024T=1P)，通常分布式存储以NoSQL居多。<br>(4)分布式计算，首推Hadoop。</p>
-<h3><span id="4集群">4.集群</span></h3><p>记得当初我对集群和分布式之间的区别不太理解，认为它们差不多。<br>其实它们之间的区别大了去了，在此我用一句话概括(非常理解，保你不忘):<br>集群就是不同的机器提供相同的服务;<br>分布式是不同的机器提供不同的服务;</p>
-<p>服务器集群有更多的服务器提供相同的服务，因此可以提供更好的并发特性，当有更多用户访问的时候，只需要向集群中加入新的机器即可。同时因为一个应用由多台服务器提供，当某台服务器发生故障时，负载均衡设备或者系统的失效转移机制会将请求转发到集群中的其他服务器上，使服务器故障不影响用户使用。所以在网站应用中，即使是访问量很小的分布式应用和服务，也至少要部署两台服务器构成一个小的集群，目的就是提高系统的可用性。</p>
-<h3><span id="5缓存">5.缓存</span></h3><p>缓存就是将数据存放在举例计算最近的位置以加快处理速度。缓存是改善软件性能的第一手段，现代CPU越来越快的一个重要因素就是使用更多的缓存，在复杂的软件设计中，缓存几乎无处不在。</p>
-<p>(1)CDN:即内容分发网络，部署在距离终端用户最近的网络服务商，用户的网站请求总是先到达他的网络服务商那里，在这里缓存网站的一些静态资源(较少变化的数据)，可以就近以最快速度返回给用户，如视频网站和门户网站会将用户访问量大的热点内容缓存在CDN。</p>
-<p>(2)反向代理:反向代理属于网站前端架构的一部分，部署在网站的前端，当用户请求到达网站的数据中心时，最先访问到的就是反向代理服务器，这里缓存网站的静态资源，无需将请求继续转发给应用服务器就能返回给用户。</p>
-<p>(3)本地缓存:在应用服务器本地缓存着热点数据，应用程序可以在本机内存中直接访问数据，而无需访问数据库;</p>
-<p>(4)分布式缓存:大型网站的数据量非常庞大，即使只缓存一小部分，需要的内存空间也不是单机能承受的，所以处了本地缓存，还需要分布式缓存，将数据缓存在一个专门的分布式缓存集群中，应用程序通过网络通信访问缓存数据;</p>
-<p>注意:<br>使用缓存的两个前提条件:<br>a.数据访问热点不均衡,某些数据会更频繁的访问;<br>b.数据在某个时间段内有效，不会很快过期,否则缓存的数据就会因已经失效而产生脏读，影响结果的正确性。</p>
-<p><strong>什么是脏读？</strong><br>通俗的讲，当一个事务正在访问数据，并且对数据进行了修改，而这种修改还没有提交到数据库中，这时，另外一个事务也访问这个数据，然后使用了这个数据。因为这个数据是还没有提交的数据，那么另外一个事务读到的这个数据是脏数据，依据脏数据所做的操作可能是不正确的</p>
-<p>网站应用中，缓存除了可以加快数据访问数据，还可以减轻后端应用和数据存储的负载压力，这一点对网站数据库架构至关重要，网站数据库几乎都是按照有缓存的前提进行负载能力设计的。</p>
-<h3><span id="6异步">6.异步</span></h3><p>计算机软件发展的一个重要目标和驱动力就是降低软件耦合性。事物之间直接关系越少，就越少被彼此影响，越可以独立发展。<br>系统解耦合的手段除了前面提到的分层、分割、分布式等，还有一个重要手段就是异步，业务之间的消息传递不是同步调用，而是将一个业务操作分成多个阶段，每个阶段之间通过共享数据的方式异步执行协作。</p>
-<p>异步架构是典型的生产者消费者模式，两者不存在直接调用，只要保持数据结构不变，彼此功能实现可以随意变换而不互相影响，这对网站扩展新功能非常便利。除此外，使用异步消息队列还有如下特性:<br>(1)提高系统可用性。消费者服务器发生故障，数据会在消息队列服务器中存储堆积，生产者服务器可以继续处理业务请求，系统整体表现无故障。消费者服务器恢复正常后，继续处理消息队列中的数据。</p>
-<p>(2)加快网站响应速度。处在业务处理前端的生产者服务器在处理完业务请求后，将数据写入消息队列，不需要等待消费者服务器处理就可以返回，响应延迟减少;</p>
-<p>(3)消除并发访问高峰。用户访问网站是随机的，存在访问高峰和低谷，即使网站按照一般访问高峰进行规划和部署，也依然会出现突发事件，比如购物网站的促销活动，微博上的热点事件(比如之前赵丽颖官宣导致微博宕机)。</p>
-<h3><span id="7冗余">7.冗余</span></h3><p>网站需要7x24小时连续运行，但是服务器随时可能出现故障，特别是服务器规模比较大时，出现某台服务器宕机是必然事件。要想保证在服务器宕机的情况网站依然可以继续服务，不丢失数据，就需要一定程度的服务器冗余运行，数据冗余备份，这样当某台服务器宕机时，可以将其上的服务和数据访问转移到其他机器上。</p>
-<p>访问和负载很小的服务也必须部署至少两台服务器构成一个集群，其目的就是通过冗余实现服务高可用。数据库除了定期备份(可通过shell脚本实现)，存档保存外，为了保证在线业务高可用，还需要对数据进行主从分离，实时同步实现热备份。</p>
-<p>为了抵御地震等不可抗因素导致的网站完全瘫痪，某些大型网站会对整个数据中心进行备份，全球范围内部署灾备数据中心。网站程序和数据实时同步到多个灾备数据中心。</p>
-<h3><span id="8自动化">8.自动化</span></h3><p>自动化，如自动化监控报警(zabbix、nagios等)、自动化部署(jenkins)、自动化测试等。<br>通常分布式项目一般自动化程度比较高。<br>后续我会针对这些写一个专题实践。</p>
-<h3><span id="9安全">9.安全</span></h3><p>互联网的开放特性使得其从诞生起就面对巨大的安全挑战，网站在安全将方面也积累很多模式，如对于常见的网站XSS攻击、SQL注入、进行编码转换等相应处理、对于垃圾敏感信息进行过滤等。</p>
-<p>本文主要参考《大型网站技术架构：核心原理与案例分析》，上述内容作为本人记录的读书笔记。</p>
-
+<p>从这两者进行比对就可以明显的发现公共的部分非常相似(只不过展现的形式不一样，renren-security中的角色管理是直接在菜单中显示，而jeesite4则放在权限管理中，只需点击即可看到对应的角色管理)<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/04/08/大型网站架构模式/#more">Read More</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/08/大型网站架构模式/" data-id="cjuceonqf0041c4vkw1tdjpio" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/大型网站架构模式/" data-id="cjuco7h5f004jmsvk4durfmjl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>

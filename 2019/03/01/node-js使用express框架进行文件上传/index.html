@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/express04.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/express05.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/express06.png">
-<meta property="og:updated_time" content="2019-03-16T12:32:19.116Z">
+<meta property="og:updated_time" content="2019-04-11T13:34:31.571Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node.js使用express框架进行文件上传">
 <meta name="twitter:description" content="关于node.js使用express框架进行文件上传，主要来自于最近对Settings-Sync插件做的研究。目前的研究算是取得的比较好的进展。Settings-Sync中通过快捷键上传文件，其实主要还是请求后端接口。于是我便使用node.js模拟一个服务，这个服务其实就相当于github api(Settings-Sync实际请求的接口，比如token验证，gist存储创建等都是来自github">
@@ -94,8 +94,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于node.js使用express框架进行文件上传，主要来自于最近对Settings-Sync插件做的研究。<br>目前的研究算是取得的比较好的进展。<br>Settings-Sync中通过快捷键上传文件，其实主要还是请求后端接口。<br>于是我便使用node.js模拟一个服务，这个服务其实就相当于github api(Settings-Sync实际请求的接口，比如token验证，gist存储创建等都是来自github 对应的api)。</p>
-<p>话不多说，直接代码贴起讲解:</p>
+        <p>关于node.js使用express框架进行文件上传，主要来自于最近对Settings-Sync插件做的研究。<br>目前的研究算是取得的比较好的进展。<br>Settings-Sync中通过快捷键上传文件，其实主要还是请求后端接口。<br>于是我便使用node.js模拟一个服务，这个服务其实就相当于github api(Settings-Sync实际请求的接口，比如token验证，gist存储创建等都是来自github 对应的api)。<br><a id="more"></a><br>话不多说，直接代码贴起讲解:</p>
 <h2><span id="1创建一个nodejs项目这里我以express框架为例">1.创建一个node.js项目(这里我以express框架为例)</span></h2><p>关于如何创建一个node.js项目我就不详细说，通常通过npm init就可以创建一个node.js项目了。<br>关于node.js项目详细教程，可以参考该篇文章<a href="https://www.jianshu.com/p/7b0a5d4491ba" target="_blank" rel="noopener">nodeJS入门——新建一个项目及代码详解</a><br>当然了，如果你是直接通过这篇文章操作，最先可能会报这个错误，错误信息如下:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;express&apos; 不是内部或外部命令，也不是可运行的程序</span><br><span class="line">或批处理文件。</span><br></pre></td></tr></table></figure>
 <p>解决方式很简单，并不是npm install -g express就可以的，在此之前还需执行npm install -g express-generator</p>
@@ -124,7 +123,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cjuceonph002zc4vk9tx0jwv3" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/01/node-js使用express框架进行文件上传/" data-id="cjuco7h2n0030msvk41f2b2g7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>

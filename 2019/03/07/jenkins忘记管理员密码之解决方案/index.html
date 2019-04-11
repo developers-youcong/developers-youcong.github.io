@@ -7,18 +7,18 @@
   
   <title>jenkins忘记管理员密码之解决方案 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="jenkins忘记管理员密码怎么办？ 通常有这么几种解决方案，如下所示: (1)进入对应的用户目录文件夹，以ubuntu16.04为例，jenkins安装目录为/var/lib/jenkins进入到该目录，通过ls或ll命令可以显示对应的所有文件夹，找到其中的users文件夹，进入对应的用户里面，修改config.xml中的passwordHash通过关键字hudson.security.Huds">
+  <meta name="description" content="jenkins忘记管理员密码怎么办？ 通常有这么几种解决方案，如下所示:">
 <meta name="keywords" content="jenkins">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jenkins忘记管理员密码之解决方案">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/07/jenkins忘记管理员密码之解决方案/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="jenkins忘记管理员密码怎么办？ 通常有这么几种解决方案，如下所示: (1)进入对应的用户目录文件夹，以ubuntu16.04为例，jenkins安装目录为/var/lib/jenkins进入到该目录，通过ls或ll命令可以显示对应的所有文件夹，找到其中的users文件夹，进入对应的用户里面，修改config.xml中的passwordHash通过关键字hudson.security.Huds">
+<meta property="og:description" content="jenkins忘记管理员密码怎么办？ 通常有这么几种解决方案，如下所示:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T12:29:38.535Z">
+<meta property="og:updated_time" content="2019-04-11T13:30:05.165Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jenkins忘记管理员密码之解决方案">
-<meta name="twitter:description" content="jenkins忘记管理员密码怎么办？ 通常有这么几种解决方案，如下所示: (1)进入对应的用户目录文件夹，以ubuntu16.04为例，jenkins安装目录为/var/lib/jenkins进入到该目录，通过ls或ll命令可以显示对应的所有文件夹，找到其中的users文件夹，进入对应的用户里面，修改config.xml中的passwordHash通过关键字hudson.security.Huds">
+<meta name="twitter:description" content="jenkins忘记管理员密码怎么办？ 通常有这么几种解决方案，如下所示:">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -89,6 +89,7 @@
       
         <p>jenkins忘记管理员密码怎么办？</p>
 <p>通常有这么几种解决方案，如下所示:</p>
+<a id="more"></a>
 <p>(1)进入对应的用户目录文件夹，以ubuntu16.04为例，jenkins安装目录为/var/lib/jenkins<br>进入到该目录，通过ls或ll命令可以显示对应的所有文件夹，找到其中的users文件夹，进入对应的用户里面，修改config.xml中的passwordHash<br>通过关键字hudson.security.HudsonPrivateSecurityRealm_-Details即可找到。如果找不到你可以采用方案(2)解决该问题;</p>
 <p>(2)还是以ubuntu为了，进入/var/lib/jenkins目录，修改config.xml中的useSecurity将其改为false<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;mode&gt;NORMAL&lt;/mode&gt;</span><br><span class="line">&lt;useSecurity&gt;false&lt;/useSecurity&gt; //默认为true</span><br><span class="line">&lt;authorizationStrategy class=&quot;hudson.security.AuthorizationStrategy$Unsecured&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
 <p>最后通过service jenkins restart重启jenkins，请按照如下步骤依次操作:<br>依次点击页面中的系统管理-&gt;全局安全配置-&gt;勾选启用安全-&gt;选择jenkins专有用户数据库，点击保存-&gt;再次点击系统管理-&gt;管理用户，配置管理员账号密码即可</p>
@@ -98,7 +99,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/jenkins忘记管理员密码之解决方案/" data-id="cjuceonoq0023c4vkyj555iyg" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/jenkins忘记管理员密码之解决方案/" data-id="cjuco7h1q001smsvkkvw7p3fq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jenkins/">jenkins</a></li></ul>

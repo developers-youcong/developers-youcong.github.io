@@ -7,18 +7,18 @@
   
   <title>org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 &#39;&amp;&#39; 后面 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="错误信息如下:org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 ‘’&amp;amp;’’ 后面 出现这个错误的原因是在xml中使用&amp;amp;，实际上xml中不支持这种方式，&amp;amp;其实是并列的意思，如果要在xml中使用&amp;amp;，需要将其改为英文 and才能使用。 问题代码:123456789101112131415&amp;lt;select id=&amp;quot;">
+  <meta name="description" content="错误信息如下:org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 ‘’&amp;amp;’’ 后面 出现这个错误的原因是在xml中使用&amp;amp;，实际上xml中不支持这种方式，&amp;amp;其实是并列的意思，如果要在xml中使用&amp;amp;，需要将其改为英文 and才能使用。">
 <meta name="keywords" content="MyBatis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 &#39;&amp;&#39; 后面">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="错误信息如下:org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 ‘’&amp;amp;’’ 后面 出现这个错误的原因是在xml中使用&amp;amp;，实际上xml中不支持这种方式，&amp;amp;其实是并列的意思，如果要在xml中使用&amp;amp;，需要将其改为英文 and才能使用。 问题代码:123456789101112131415&amp;lt;select id=&amp;quot;">
+<meta property="og:description" content="错误信息如下:org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 ‘’&amp;amp;’’ 后面 出现这个错误的原因是在xml中使用&amp;amp;，实际上xml中不支持这种方式，&amp;amp;其实是并列的意思，如果要在xml中使用&amp;amp;，需要将其改为英文 and才能使用。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-28T15:03:21.653Z">
+<meta property="og:updated_time" content="2019-04-11T13:35:40.681Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 &#39;&amp;&#39; 后面">
-<meta name="twitter:description" content="错误信息如下:org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 ‘’&amp;amp;’’ 后面 出现这个错误的原因是在xml中使用&amp;amp;，实际上xml中不支持这种方式，&amp;amp;其实是并列的意思，如果要在xml中使用&amp;amp;，需要将其改为英文 and才能使用。 问题代码:123456789101112131415&amp;lt;select id=&amp;quot;">
+<meta name="twitter:description" content="错误信息如下:org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 ‘’&amp;amp;’’ 后面 出现这个错误的原因是在xml中使用&amp;amp;，实际上xml中不支持这种方式，&amp;amp;其实是并列的意思，如果要在xml中使用&amp;amp;，需要将其改为英文 and才能使用。">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -88,15 +88,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>错误信息如下:<br>org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 ‘’&amp;’’ 后面</p>
-<p>出现这个错误的原因是在xml中使用&amp;，实际上xml中不支持这种方式，&amp;其实是并列的意思，如果要在xml中使用&amp;，需要将其改为英文 and才能使用。</p>
-<p>问题代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;categoreListInfo&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">	SELECT</span><br><span class="line">	term.term_id,term.name,</span><br><span class="line">	term.slug,tax.taxonomy,tax.description,tax.count FROM wp_terms AS term</span><br><span class="line">	LEFT JOIN wp_term_taxonomy AS tax ON(term.term_id=tax.term_id)</span><br><span class="line">	&lt;where&gt;</span><br><span class="line">		&lt;if test=&quot;name != null &amp; name != &apos;&apos;&quot;&gt;</span><br><span class="line">			and term.name like concat(&apos;%&apos;, #&#123;name&#125;, &apos;%&apos;)</span><br><span class="line">		&lt;/if&gt;</span><br><span class="line">		&lt;if test =&quot;taxonomy != null &amp; taxonomy !=&apos;&apos;&quot;&gt;</span><br><span class="line">		    and tax.taxonomy = #&#123;taxonomy&#125;</span><br><span class="line">		&lt;/if&gt;</span><br><span class="line">	&lt;/where&gt;</span><br><span class="line">	limit #&#123;start&#125;,#&#123;size&#125;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
+<p>出现这个错误的原因是在xml中使用&amp;，实际上xml中不支持这种方式，&amp;其实是并列的意思，如果要在xml中使用&amp;，需要将其改为英文 and才能使用。<br><a id="more"></a><br>问题代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;categoreListInfo&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">	SELECT</span><br><span class="line">	term.term_id,term.name,</span><br><span class="line">	term.slug,tax.taxonomy,tax.description,tax.count FROM wp_terms AS term</span><br><span class="line">	LEFT JOIN wp_term_taxonomy AS tax ON(term.term_id=tax.term_id)</span><br><span class="line">	&lt;where&gt;</span><br><span class="line">		&lt;if test=&quot;name != null &amp; name != &apos;&apos;&quot;&gt;</span><br><span class="line">			and term.name like concat(&apos;%&apos;, #&#123;name&#125;, &apos;%&apos;)</span><br><span class="line">		&lt;/if&gt;</span><br><span class="line">		&lt;if test =&quot;taxonomy != null &amp; taxonomy !=&apos;&apos;&quot;&gt;</span><br><span class="line">		    and tax.taxonomy = #&#123;taxonomy&#125;</span><br><span class="line">		&lt;/if&gt;</span><br><span class="line">	&lt;/where&gt;</span><br><span class="line">	limit #&#123;start&#125;,#&#123;size&#125;</span><br><span class="line">&lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
 <p>将代码中的&amp;条件改为and即可</p>
 <p>参考资料:<br>【java】org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 ‘&amp;’ 后面。解决方法:<a href="https://blog.csdn.net/demon_ll/article/details/78542356" target="_blank" rel="noopener">https://blog.csdn.net/demon_ll/article/details/78542356</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cjuceonpy003hc4vkj8u1ruzh" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/" data-id="cjuco7h30003emsvk9ada6o3z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>

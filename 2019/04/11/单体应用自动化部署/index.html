@@ -7,18 +7,18 @@
   
   <title>单体应用自动化部署 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="单体应用自动化部署脚本:12345678910111213141516171819202122232425262728DATE=$(date +%Y%m%d)time=$(date &amp;quot;+%Y-%m-%d %H:%M:%S&amp;quot;)git clone https://code.aliyun.com/test/blog.gitcd blogmvn clean packageif [ $?">
+  <meta name="description" content="单体应用自动化部署脚本:">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单体应用自动化部署">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/04/11/单体应用自动化部署/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="单体应用自动化部署脚本:12345678910111213141516171819202122232425262728DATE=$(date +%Y%m%d)time=$(date &amp;quot;+%Y-%m-%d %H:%M:%S&amp;quot;)git clone https://code.aliyun.com/test/blog.gitcd blogmvn clean packageif [ $?">
+<meta property="og:description" content="单体应用自动化部署脚本:">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-11T03:09:38.852Z">
+<meta property="og:updated_time" content="2019-04-11T13:40:21.669Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单体应用自动化部署">
-<meta name="twitter:description" content="单体应用自动化部署脚本:12345678910111213141516171819202122232425262728DATE=$(date +%Y%m%d)time=$(date &amp;quot;+%Y-%m-%d %H:%M:%S&amp;quot;)git clone https://code.aliyun.com/test/blog.gitcd blogmvn clean packageif [ $?">
+<meta name="twitter:description" content="单体应用自动化部署脚本:">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -87,7 +87,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>单体应用自动化部署脚本:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">DATE=$(date +%Y%m%d)</span><br><span class="line"></span><br><span class="line">time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line">git clone https://code.aliyun.com/test/blog.git</span><br><span class="line"></span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line">mvn clean package</span><br><span class="line"></span><br><span class="line">if [ $? -ne 0 ]; then</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目失败,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署失败，请登录服务器查看&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line">else</span><br><span class="line"></span><br><span class="line">    cp -r /home/project/blog/target/blog.war /home/project/tomcat8/webapps/</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/startup.sh</span><br><span class="line"></span><br><span class="line">    rm -r /home/project/blog</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目成功,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署成功&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
+        <p>单体应用自动化部署脚本:<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">DATE=$(date +%Y%m%d)</span><br><span class="line"></span><br><span class="line">time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line">git clone https://code.aliyun.com/test/blog.git</span><br><span class="line"></span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line">mvn clean package</span><br><span class="line"></span><br><span class="line">if [ $? -ne 0 ]; then</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目失败,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署失败，请登录服务器查看&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line">else</span><br><span class="line"></span><br><span class="line">    cp -r /home/project/blog/target/blog.war /home/project/tomcat8/webapps/</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/startup.sh</span><br><span class="line"></span><br><span class="line">    rm -r /home/project/blog</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目成功,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署成功&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
 <p>其中涉及到邮件在服务器发生，我在这里使用的是heirloom-mailx</p>
 <p>安装使用流程如下(以Ubuntu16.04为例):</p>
 <h3><span id="1安装heirloom-mailx">1.安装heirloom-mailx</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install heirloom-mailx</span><br></pre></td></tr></table></figure>
@@ -98,7 +98,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/11/单体应用自动化部署/" data-id="cjuceonqa003wc4vkr6aamwxw" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/11/单体应用自动化部署/" data-id="cjuco7h39003omsvk4t9xphsi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>

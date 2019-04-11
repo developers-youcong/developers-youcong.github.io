@@ -17,7 +17,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/04/08/大型网站架构模式/model01.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/04/08/大型网站架构模式/model02.png">
-<meta property="og:updated_time" content="2019-04-08T07:49:13.258Z">
+<meta property="og:updated_time" content="2019-04-11T13:40:09.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大型网站架构模式">
 <meta name="twitter:description" content="关于什么是模式,这个来自建筑师的词汇是这样定义的:”每一个模式描述了一个在我们周围不断重复发生的问题及该问题解决方案的核心。这样，你就能一次又一次地使用该方案而不必做重复的工作”。 模式的关键在于模式的可重复性，问题与场景的可重复性带来的解决方案的可重复使用。 联系实际开发:每个做前后台开发的小伙伴们都会发现一点，一个正儿八经的后台系统，80%是重复的，20%是特别的(可以称作个性化定制)。 举个">
@@ -95,8 +95,7 @@
 <p><strong>联系实际开发</strong>:<br>每个做前后台开发的小伙伴们都会发现一点，一个正儿八经的后台系统，80%是重复的，20%是特别的(可以称作个性化定制)。</p>
 <p>举个例子:<br>人人开源的后台系统:<br><img src="/2019/04/08/大型网站架构模式/model01.png" alt=""></p>
 <p>Jeesite4的后台系统:<br><img src="/2019/04/08/大型网站架构模式/model02.png" alt=""></p>
-<p>从这两者进行比对就可以明显的发现公共的部分非常相似(只不过展现的形式不一样，renren-security中的角色管理是直接在菜单中显示，而jeesite4则放在权限管理中，只需点击即可看到对应的角色管理)</p>
-<p>在这里我就不详细说它们的内部架构了，感兴趣的可以参考我的这篇博客<a href="https://www.cnblogs.com/youcong/p/9800717.html" target="_blank" rel="noopener">开源项目之架构分享</a></p>
+<p>从这两者进行比对就可以明显的发现公共的部分非常相似(只不过展现的形式不一样，renren-security中的角色管理是直接在菜单中显示，而jeesite4则放在权限管理中，只需点击即可看到对应的角色管理)<br><a id="more"></a><br>在这里我就不详细说它们的内部架构了，感兴趣的可以参考我的这篇博客<a href="https://www.cnblogs.com/youcong/p/9800717.html" target="_blank" rel="noopener">开源项目之架构分享</a></p>
 <p>在软件开发中，可复用模式非常重要，因为这会直接影响到敏捷开发的效率高低。</p>
 <h2><span id="网站架构模式">网站架构模式</span></h2><h3><span id="1分层">1.分层</span></h3><p>分层是企业应用系统中最常见的一种架构模式，将系统在横向维度上切分成几个部分，每个部分负责一部分相对比较单一的职责，然后通过上层对下层的依赖和调用组成一个完整的系统。</p>
 <p>应用层:负责具体业务和视图展示，如网站首页及搜索输入和结果展示。<br>服务层:为应用层提供服务支持，如用户管理服务，购物车服务等。<br>数据层:提供数据存储访问服务，如数据库、缓存、文件、搜索引擎等。</p>
@@ -133,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/08/大型网站架构模式/" data-id="cjuceonqf0041c4vkw1tdjpio" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/大型网站架构模式/" data-id="cjuco7h5f004jmsvk4durfmjl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>

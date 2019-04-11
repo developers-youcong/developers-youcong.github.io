@@ -7,18 +7,18 @@
   
   <title>python3.6在linux持久运行django | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="最近线上运行一个OnlineJudgeServer的项目，通过python manage.py runserver 0.0.0.0:8090运行，如果关闭当前窗口，实际就相当于关闭了这个进程。 之前说过通过nuhub可以实现在Linux持久运行的目的。 如果你的nohub出现 nohub命令找不到，那么你可以执行如下这个命令:1/usr/bin/nohup python manage.py run">
+  <meta name="description" content="最近线上运行一个OnlineJudgeServer的项目，通过python manage.py runserver 0.0.0.0:8090运行，如果关闭当前窗口，实际就相当于关闭了这个进程。">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python3.6在linux持久运行django">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/19/python3-6在linux持久运行django/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="最近线上运行一个OnlineJudgeServer的项目，通过python manage.py runserver 0.0.0.0:8090运行，如果关闭当前窗口，实际就相当于关闭了这个进程。 之前说过通过nuhub可以实现在Linux持久运行的目的。 如果你的nohub出现 nohub命令找不到，那么你可以执行如下这个命令:1/usr/bin/nohup python manage.py run">
+<meta property="og:description" content="最近线上运行一个OnlineJudgeServer的项目，通过python manage.py runserver 0.0.0.0:8090运行，如果关闭当前窗口，实际就相当于关闭了这个进程。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-21T05:42:12.242Z">
+<meta property="og:updated_time" content="2019-04-11T13:36:01.682Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python3.6在linux持久运行django">
-<meta name="twitter:description" content="最近线上运行一个OnlineJudgeServer的项目，通过python manage.py runserver 0.0.0.0:8090运行，如果关闭当前窗口，实际就相当于关闭了这个进程。 之前说过通过nuhub可以实现在Linux持久运行的目的。 如果你的nohub出现 nohub命令找不到，那么你可以执行如下这个命令:1/usr/bin/nohup python manage.py run">
+<meta name="twitter:description" content="最近线上运行一个OnlineJudgeServer的项目，通过python manage.py runserver 0.0.0.0:8090运行，如果关闭当前窗口，实际就相当于关闭了这个进程。">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -87,8 +87,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>最近线上运行一个OnlineJudgeServer的项目，通过python manage.py runserver 0.0.0.0:8090运行，如果关闭当前窗口，实际就相当于关闭了这个进程。</p>
-<p>之前说过通过nuhub可以实现在Linux持久运行的目的。</p>
+        <p>最近线上运行一个OnlineJudgeServer的项目，通过python manage.py runserver 0.0.0.0:8090运行，如果关闭当前窗口，实际就相当于关闭了这个进程。<br><a id="more"></a><br>之前说过通过nuhub可以实现在Linux持久运行的目的。</p>
 <p>如果你的nohub出现 nohub命令找不到，那么你可以执行如下这个命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/nohup python manage.py runserver 0.0.0.0:8090 &gt; system.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></p>
 <p>但是由于python版本不一样，对应的django也会存在差异，报了些错误,主要是关于djaon版本问题(与Python版本也有关)。</p>
 <p>最后通过如下命令解决该问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/nohup python3.6 manage.py runserver 0.0.0.0:8090 &gt; system.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></p>
@@ -96,7 +95,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/python3-6在linux持久运行django/" data-id="cjuceonpw003fc4vknjwz0p61" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/python3-6在linux持久运行django/" data-id="cjuco7h2y003cmsvkqj783y1f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>

@@ -7,18 +7,18 @@
   
   <title>springboot打成的jar包如何在Linux上持久运行 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、首先说说在没有springboot的时候，项目是如何部署的？1.动态web项目动态web项目部署很方便，基本上上传文件到服务器的tomcat里面的webapps文件夹下即可完成部署。当然了，这种做法的弊端是，如果是通过winscp来传输对于网速方面要求严格，不然的话网速一卡，很久传不过去，很耽误时间的，当然了，我一个同学他们公司用的就是动态web项目，部署的方式也正是采用这种方式，据说是公司">
+  <meta name="description" content="一、首先说说在没有springboot的时候，项目是如何部署的？1.动态web项目动态web项目部署很方便，基本上上传文件到服务器的tomcat里面的webapps文件夹下即可完成部署。当然了，这种做法的弊端是，如果是通过winscp来传输对于网速方面要求严格，不然的话网速一卡，很久传不过去，很耽误时间的，当然了，我一个同学他们公司用的就是动态web项目，部署的方式也正是采用这种方式，据说是公司制">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="springboot打成的jar包如何在Linux上持久运行">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="一、首先说说在没有springboot的时候，项目是如何部署的？1.动态web项目动态web项目部署很方便，基本上上传文件到服务器的tomcat里面的webapps文件夹下即可完成部署。当然了，这种做法的弊端是，如果是通过winscp来传输对于网速方面要求严格，不然的话网速一卡，很久传不过去，很耽误时间的，当然了，我一个同学他们公司用的就是动态web项目，部署的方式也正是采用这种方式，据说是公司">
+<meta property="og:description" content="一、首先说说在没有springboot的时候，项目是如何部署的？1.动态web项目动态web项目部署很方便，基本上上传文件到服务器的tomcat里面的webapps文件夹下即可完成部署。当然了，这种做法的弊端是，如果是通过winscp来传输对于网速方面要求严格，不然的话网速一卡，很久传不过去，很耽误时间的，当然了，我一个同学他们公司用的就是动态web项目，部署的方式也正是采用这种方式，据说是公司制">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T12:33:57.250Z">
+<meta property="og:updated_time" content="2019-04-11T13:37:11.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="springboot打成的jar包如何在Linux上持久运行">
-<meta name="twitter:description" content="一、首先说说在没有springboot的时候，项目是如何部署的？1.动态web项目动态web项目部署很方便，基本上上传文件到服务器的tomcat里面的webapps文件夹下即可完成部署。当然了，这种做法的弊端是，如果是通过winscp来传输对于网速方面要求严格，不然的话网速一卡，很久传不过去，很耽误时间的，当然了，我一个同学他们公司用的就是动态web项目，部署的方式也正是采用这种方式，据说是公司">
+<meta name="twitter:description" content="一、首先说说在没有springboot的时候，项目是如何部署的？1.动态web项目动态web项目部署很方便，基本上上传文件到服务器的tomcat里面的webapps文件夹下即可完成部署。当然了，这种做法的弊端是，如果是通过winscp来传输对于网速方面要求严格，不然的话网速一卡，很久传不过去，很耽误时间的，当然了，我一个同学他们公司用的就是动态web项目，部署的方式也正是采用这种方式，据说是公司制">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -87,11 +87,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h2><span id="一-首先说说在没有springboot的时候项目是如何部署的">一、首先说说在没有springboot的时候，项目是如何部署的？</span></h2><h4><span id="1动态web项目">1.动态web项目</span></h4><p>动态web项目部署很方便，基本上上传文件到服务器的tomcat里面的webapps文件夹下即可完成部署。<br>当然了，这种做法的弊端是，如果是通过winscp来传输对于网速方面要求严格，不然的话网速一卡，很久传不过去，很耽误时间的，当然了，我一个同学他们公司用的就是动态web项目，部署的方式也正是采用这种方式，据说是公司制度定下的。原因我就没有细问过他。</p>
+        <h2><span id="一-首先说说在没有springboot的时候项目是如何部署的">一、首先说说在没有springboot的时候，项目是如何部署的？</span></h2><h4><span id="1动态web项目">1.动态web项目</span></h4><p>动态web项目部署很方便，基本上上传文件到服务器的tomcat里面的webapps文件夹下即可完成部署。<br>当然了，这种做法的弊端是，如果是通过winscp来传输对于网速方面要求严格，不然的话网速一卡，很久传不过去，很耽误时间的，当然了，我一个同学他们公司用的就是动态web项目，部署的方式也正是采用这种方式，据说是公司制度定下的。原因我就没有细问过他。</p>
 <p>当然了，有人会说，那我上传到服务器之前将其压缩成一个zip包，然后在Linux通过unzip命令解压。这种方式我以前也这么干过。<br>当我后来发现将动态web项目导出war包，直接通过winscp上传到tomcat对应的目录下，在当前目录就会产生一个文件夹，该文件夹主要是web相关的资源，还有就是java产生的编译文件class等。</p>
 <p>由此可以推出动态web项目常规部署方式有这么几种?<br>a.直接上传到tomcat对应的目录下;<br>b.先打成zip包然后再传输到tomcat对应的目录下;<br>c.本地导出war包，然后在传输到tomcat对应的目录下;</p>
-<p>其实a和b是一样的，c则是利用Eclipse的导出war功能来实现的。</p>
+<p>其实a和b是一样的，c则是利用Eclipse的导出war功能来实现的。<br><a id="more"></a></p>
 <h4><span id="2maven项目">2.maven项目</span></h4><p>maven项目的部署以war项目为例，直接通过mvn install 或者mvn clean package直接打包上传到服务器上，就即可完成部署。<br>当然了，还可以通过写一个脚本利用git clone的特性加上maven，也可以完成快速部署</p>
 <p>来个小结:<br>现在使用动态web项目都是一些老公司维护一些老的项目，总而言之，现在大部分都在用mavne，当然，也不排除有一部分用grandle或ant等。<br>其实发现用maven以后除了有些时候导入依赖(依赖之间因版本冲突问题，为此我感到烦之外，其它都还好)。</p>
 <p>说完这两种项目部署后，下面我再说springboot打包成jar，如何在Linux上持久运行。</p>
@@ -113,7 +112,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cjuceonq3003nc4vkq3i4e4xf" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" data-id="cjuco7h32003gmsvklv036rk6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>

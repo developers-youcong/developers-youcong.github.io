@@ -7,18 +7,18 @@
   
   <title>nginx配置https | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="其实nginx配置也差不太多，虽然差不太多，但还是有区别的。 假定你已经在阿里云完成了证书申请，接下来你就可以按照如下配置(主要是修改nginx.conf文件)1234567891011121314151617181920212223server &amp;#123;        listen 443;        server_name www.youcongtech.com;        ssl">
+  <meta name="description" content="其实nginx配置也差不太多，虽然差不太多，但还是有区别的。">
 <meta name="keywords" content="Nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nginx配置https">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/02/26/nginx配置https/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="其实nginx配置也差不太多，虽然差不太多，但还是有区别的。 假定你已经在阿里云完成了证书申请，接下来你就可以按照如下配置(主要是修改nginx.conf文件)1234567891011121314151617181920212223server &amp;#123;        listen 443;        server_name www.youcongtech.com;        ssl">
+<meta property="og:description" content="其实nginx配置也差不太多，虽然差不太多，但还是有区别的。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T12:31:27.938Z">
+<meta property="og:updated_time" content="2019-04-11T13:32:41.554Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx配置https">
-<meta name="twitter:description" content="其实nginx配置也差不太多，虽然差不太多，但还是有区别的。 假定你已经在阿里云完成了证书申请，接下来你就可以按照如下配置(主要是修改nginx.conf文件)1234567891011121314151617181920212223server &amp;#123;        listen 443;        server_name www.youcongtech.com;        ssl">
+<meta name="twitter:description" content="其实nginx配置也差不太多，虽然差不太多，但还是有区别的。">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -87,8 +87,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>其实nginx配置也差不太多，虽然差不太多，但还是有区别的。</p>
-<p>假定你已经在阿里云完成了证书申请，接下来你就可以按照如下配置(主要是修改nginx.conf文件)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 443;</span><br><span class="line">        server_name www.youcongtech.com;</span><br><span class="line">        ssl on;</span><br><span class="line">        index index.html;</span><br><span class="line">        ssl_certificate /usr/local/nginx/cert/1854029_www.youcongtech.com.pem;</span><br><span class="line">        ssl_certificate_key /usr/local/nginx/cert/1854029_www.youcongtech.com.key;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                proxy_set_header X-Forwarded-Host $host;</span><br><span class="line">                proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">                proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">                proxy_set_header Host $http_host;</span><br><span class="line">                proxy_redirect off;</span><br><span class="line">                expires off;</span><br><span class="line">                sendfile off;</span><br><span class="line">                proxy_pass http://www.youcongtech.com;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>其实nginx配置也差不太多，虽然差不太多，但还是有区别的。<br><a id="more"></a><br>假定你已经在阿里云完成了证书申请，接下来你就可以按照如下配置(主要是修改nginx.conf文件)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">        listen 443;</span><br><span class="line">        server_name www.youcongtech.com;</span><br><span class="line">        ssl on;</span><br><span class="line">        index index.html;</span><br><span class="line">        ssl_certificate /usr/local/nginx/cert/1854029_www.youcongtech.com.pem;</span><br><span class="line">        ssl_certificate_key /usr/local/nginx/cert/1854029_www.youcongtech.com.key;</span><br><span class="line">        ssl_session_timeout 5m;</span><br><span class="line">        ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">        ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">        ssl_prefer_server_ciphers on;</span><br><span class="line"></span><br><span class="line">        location / &#123;</span><br><span class="line">                proxy_set_header X-Forwarded-Host $host;</span><br><span class="line">                proxy_set_header X-Forwarded-Proto $scheme;</span><br><span class="line">                proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">                proxy_set_header Host $http_host;</span><br><span class="line">                proxy_redirect off;</span><br><span class="line">                expires off;</span><br><span class="line">                sendfile off;</span><br><span class="line">                proxy_pass http://www.youcongtech.com;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>按照这样配置你不一定成功，可能会遇见下面的几个错误？</p>
 <h2><span id="错误1">错误1</span></h2><p>错误信息:ubuntu error: SSL modules require the OpenSSL library.</p>
 <p>解决办法:<br>执行该命令即可解决:sudo apt-get install openssl libssl-dev<br>参考链接为:<a href="https://yq.aliyun.com/articles/486172" target="_blank" rel="noopener">https://yq.aliyun.com/articles/486172</a></p>
@@ -101,7 +100,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cjuceonpb002sc4vkyyzcrtz9" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/26/nginx配置https/" data-id="cjuco7h2d002pmsvkfopvco7g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>

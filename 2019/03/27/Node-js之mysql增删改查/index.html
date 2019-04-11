@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="1.安装库1npm install mysql 2.编写db.js(用作公共模块)12345678910111213141516171819202122//连接MySQL数据库var mysql = require(&amp;quot;mysql&amp;quot;);var pool = mysql.createPool(&amp;#123;    host:&amp;quot;127.0.0.1&amp;quot;,    user">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-27T07:49:43.150Z">
+<meta property="og:updated_time" content="2019-04-11T13:35:02.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js之mysql增删改查">
 <meta name="twitter:description" content="1.安装库1npm install mysql 2.编写db.js(用作公共模块)12345678910111213141516171819202122//连接MySQL数据库var mysql = require(&amp;quot;mysql&amp;quot;);var pool = mysql.createPool(&amp;#123;    host:&amp;quot;127.0.0.1&amp;quot;,    user">
@@ -89,6 +89,7 @@
       
         <h2><span id="1安装库">1.安装库</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install mysql</span><br></pre></td></tr></table></figure>
 <h2><span id="2编写dbjs用作公共模块">2.编写db.js(用作公共模块)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//连接MySQL数据库</span><br><span class="line">var mysql = require(&quot;mysql&quot;);</span><br><span class="line"></span><br><span class="line">var pool = mysql.createPool(&#123;</span><br><span class="line">    host:&quot;127.0.0.1&quot;,</span><br><span class="line">    user:&quot;root&quot;,</span><br><span class="line">    password:&quot;123456&quot;,</span><br><span class="line">    database:&quot;wordpress&quot;,</span><br><span class="line">	port:3306</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function query(sql,callback)&#123;</span><br><span class="line">    pool.getConnection(function(err,connection)&#123;</span><br><span class="line">        connection.query(sql, function (err,rows) &#123;</span><br><span class="line">            callback(err,rows);</span><br><span class="line">            connection.release();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.query = query;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2><span id="3编写userjs与数据库交互并对外开放接口">3.编写user.js(与数据库交互并对外开放接口)</span></h2><p>顺便说下req.params、req.body、req.query的应用</p>
 <p>req.body通常用于解析post请求数据</p>
 <p>req.query通常用于解析get请求数据,如<a href="http://wwww.youcongtech.com/blog/user?username=youcong" target="_blank" rel="noopener">http://wwww.youcongtech.com/blog/user?username=youcong</a></p>
@@ -100,7 +101,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/27/Node-js之mysql增删改查/" data-id="cjuceonnr000yc4vk3oilj2ha" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/27/Node-js之mysql增删改查/" data-id="cjuco7h0h000qmsvkqlgqgi4i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>

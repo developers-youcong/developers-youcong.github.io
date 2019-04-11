@@ -7,19 +7,19 @@
   
   <title>Ubuntu16.04安装和使用ElasticSearch | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.下载es1wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz 2.解压并将其放到/usr/local目录下12tar -xzvf elasticsearch-2.4.4.ta">
+  <meta name="description" content="1.下载es1wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu16.04安装和使用ElasticSearch">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="1.下载es1wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz 2.解压并将其放到/usr/local目录下12tar -xzvf elasticsearch-2.4.4.ta">
+<meta property="og:description" content="1.下载es1wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/es.png">
-<meta property="og:updated_time" content="2019-03-28T09:09:17.216Z">
+<meta property="og:updated_time" content="2019-04-11T13:38:10.462Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu16.04安装和使用ElasticSearch">
-<meta name="twitter:description" content="1.下载es1wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz 2.解压并将其放到/usr/local目录下12tar -xzvf elasticsearch-2.4.4.ta">
+<meta name="twitter:description" content="1.下载es1wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz">
 <meta name="twitter:image" content="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/es.png">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -90,6 +90,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2><span id="1下载es">1.下载es</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h2><span id="2解压并将其放到usrlocal目录下">2.解压并将其放到/usr/local目录下</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf elasticsearch-2.4.4.tar.gz -C /usr/local</span><br><span class="line">cd /usr/local/elasticsearch-2.4.4</span><br></pre></td></tr></table></figure>
 <h2><span id="3修改es配置文件">3.修改es配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd config</span><br><span class="line">vim elasticsearch.yml</span><br></pre></td></tr></table></figure>
 <p>在elasticsearch.yml添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">bootstrap.memory_lock: true</span><br><span class="line">index.cache.field.max_size: 50000</span><br><span class="line">index.cache.field.expire: 30m</span><br><span class="line">index.cache.field.type: soft</span><br><span class="line"></span><br><span class="line">network.host: 0.0.0.0</span><br><span class="line"></span><br><span class="line">action.disable_delete_all_indices : true</span><br></pre></td></tr></table></figure></p>
@@ -105,7 +106,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cjuceono4001ec4vkpm6onesd" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/" data-id="cjuco7h1j001nmsvkwmgrila5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>

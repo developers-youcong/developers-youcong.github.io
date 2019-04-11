@@ -7,13 +7,13 @@
   
   <title>大型网站技术架构演化 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、大型网站软件系统的特点1.高并发、大流量a.什么是高并发?高并发是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理多个请求。 b.高并发的衡量指标有哪些?(1)响应时间:系统对请求做出响应。例如系统处理一个HTTP请求需要200ms,这个200ms就是系统的响应时间。 (2)吞吐量:单位时间内处理的请求数量。 (3)QPS：每秒响应请求数。在互联网领域">
+  <meta name="description" content="一、大型网站软件系统的特点1.高并发、大流量a.什么是高并发?高并发是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理多个请求。">
 <meta name="keywords" content="架构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大型网站技术架构演化">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="一、大型网站软件系统的特点1.高并发、大流量a.什么是高并发?高并发是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理多个请求。 b.高并发的衡量指标有哪些?(1)响应时间:系统对请求做出响应。例如系统处理一个HTTP请求需要200ms,这个200ms就是系统的响应时间。 (2)吞吐量:单位时间内处理的请求数量。 (3)QPS：每秒响应请求数。在互联网领域">
+<meta property="og:description" content="一、大型网站软件系统的特点1.高并发、大流量a.什么是高并发?高并发是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理多个请求。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/server01.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/server02.png">
@@ -23,10 +23,10 @@
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/server06.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/server07.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/server08.png">
-<meta property="og:updated_time" content="2019-03-16T12:36:06.883Z">
+<meta property="og:updated_time" content="2019-04-11T13:39:59.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大型网站技术架构演化">
-<meta name="twitter:description" content="一、大型网站软件系统的特点1.高并发、大流量a.什么是高并发?高并发是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理多个请求。 b.高并发的衡量指标有哪些?(1)响应时间:系统对请求做出响应。例如系统处理一个HTTP请求需要200ms,这个200ms就是系统的响应时间。 (2)吞吐量:单位时间内处理的请求数量。 (3)QPS：每秒响应请求数。在互联网领域">
+<meta name="twitter:description" content="一、大型网站软件系统的特点1.高并发、大流量a.什么是高并发?高并发是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理多个请求。">
 <meta name="twitter:image" content="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/server01.png">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -97,6 +97,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2><span id="一-大型网站软件系统的特点">一、大型网站软件系统的特点</span></h2><h4><span id="1高并发-大流量">1.高并发、大流量</span></h4><h5><span id="a什么是高并发">a.什么是高并发?</span></h5><p>高并发是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理多个请求。</p>
+<a id="more"></a>
 <h5><span id="b高并发的衡量指标有哪些">b.高并发的衡量指标有哪些?</span></h5><p>(1)响应时间:系统对请求做出响应。例如系统处理一个HTTP请求需要200ms,这个200ms就是系统的响应时间。</p>
 <p>(2)吞吐量:单位时间内处理的请求数量。</p>
 <p>(3)QPS：每秒响应请求数。在互联网领域，这个指标和吞吐量区分的不那么明显。</p>
@@ -184,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/" data-id="cjuceonqi0043c4vknblla9td" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/" data-id="cjuco7h3f003umsvk7axsiio0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>

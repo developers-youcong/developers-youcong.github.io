@@ -7,20 +7,20 @@
   
   <title>SpringBoot打包成war | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于SpringBoot打成jar包以及jar包如何在Linux持久运行，我在前面已经说过了，所以本次不再赘述。 关于SpringBoot打包成war，其实步骤特别简单，如下图所示(如果是jar，通常是没有图中红色标记处，因为默认就是jar): 1.添加war 2.修改启动类1234567891011121314151617181920212223242526272829303132package">
+  <meta name="description" content="关于SpringBoot打成jar包以及jar包如何在Linux持久运行，我在前面已经说过了，所以本次不再赘述。 关于SpringBoot打包成war，其实步骤特别简单，如下图所示(如果是jar，通常是没有图中红色标记处，因为默认就是jar):">
 <meta name="keywords" content="SpringBoot">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBoot打包成war">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="关于SpringBoot打成jar包以及jar包如何在Linux持久运行，我在前面已经说过了，所以本次不再赘述。 关于SpringBoot打包成war，其实步骤特别简单，如下图所示(如果是jar，通常是没有图中红色标记处，因为默认就是jar): 1.添加war 2.修改启动类1234567891011121314151617181920212223242526272829303132package">
+<meta property="og:description" content="关于SpringBoot打成jar包以及jar包如何在Linux持久运行，我在前面已经说过了，所以本次不再赘述。 关于SpringBoot打包成war，其实步骤特别简单，如下图所示(如果是jar，通常是没有图中红色标记处，因为默认就是jar):">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/springboot.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/war.png">
-<meta property="og:updated_time" content="2019-04-08T08:18:14.695Z">
+<meta property="og:updated_time" content="2019-04-11T13:36:41.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBoot打包成war">
-<meta name="twitter:description" content="关于SpringBoot打成jar包以及jar包如何在Linux持久运行，我在前面已经说过了，所以本次不再赘述。 关于SpringBoot打包成war，其实步骤特别简单，如下图所示(如果是jar，通常是没有图中红色标记处，因为默认就是jar): 1.添加war 2.修改启动类1234567891011121314151617181920212223242526272829303132package">
+<meta name="twitter:description" content="关于SpringBoot打成jar包以及jar包如何在Linux持久运行，我在前面已经说过了，所以本次不再赘述。 关于SpringBoot打包成war，其实步骤特别简单，如下图所示(如果是jar，通常是没有图中红色标记处，因为默认就是jar):">
 <meta name="twitter:image" content="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/springboot.png">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -91,7 +91,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>关于SpringBoot打成jar包以及jar包如何在Linux持久运行，我在前面已经说过了，所以本次不再赘述。</p>
-<p>关于SpringBoot打包成war，其实步骤特别简单，如下图所示(如果是jar，通常是没有图中红色标记处，因为默认就是jar):</p>
+<p>关于SpringBoot打包成war，其实步骤特别简单，如下图所示(如果是jar，通常是没有图中红色标记处，因为默认就是jar):<br><a id="more"></a></p>
 <h2><span id="1添加war">1.添加<packaging>war</packaging></span></h2><p><img src="/2019/04/08/SpringBoot打包成war/springboot.png" alt=""></p>
 <h2><span id="2修改启动类">2.修改启动类</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">package com.blog.springboot;</span><br><span class="line"></span><br><span class="line">import org.slf4j.Logger;</span><br><span class="line">import org.slf4j.LoggerFactory;</span><br><span class="line">import org.springframework.boot.Banner;</span><br><span class="line">import org.springframework.boot.SpringApplication;</span><br><span class="line">import org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line">import org.springframework.boot.builder.SpringApplicationBuilder;</span><br><span class="line">import org.springframework.transaction.annotation.EnableTransactionManagement;</span><br><span class="line"></span><br><span class="line">@EnableTransactionManagement</span><br><span class="line">@SpringBootApplication</span><br><span class="line">public class Application &#123;</span><br><span class="line"></span><br><span class="line">    protected final static Logger logger = LoggerFactory.getLogger(Application.class);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        SpringApplication app = new SpringApplication(Application.class);</span><br><span class="line">        app.setBannerMode(Banner.Mode.OFF);</span><br><span class="line">        app.run(args);</span><br><span class="line">        logger.info(&quot;Application is success!&quot;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    //关键是添加这段代码</span><br><span class="line">    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) &#123;</span><br><span class="line">		// 注意这里要指向原先用main方法执行的Application启动类</span><br><span class="line">		return builder.sources(Application.class);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2><span id="3做完1和2你会发现项目报错这时你只需update-project即可直到不报错为止">3.做完1和2你会发现项目报错，这时你只需update project即可，直到不报错为止。</span></h2><h2><span id="4mvn-install出现如图所示表示打包成功至于war的部署方式就不多说了直接扔到tomcat下的webapps目录下即可">4.mvn install，出现如图所示,表示打包成功(至于war的部署方式就不多说了，直接扔到tomcat下的webapps目录下即可)</span></h2><p><img src="/2019/04/08/SpringBoot打包成war/war.png" alt=""></p>
@@ -99,7 +99,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/" data-id="cjuceonoc001oc4vky6myehfr" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/" data-id="cjuco7h18001bmsvkb5xd1g7r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>

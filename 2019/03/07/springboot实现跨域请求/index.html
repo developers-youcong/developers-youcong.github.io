@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="之所以需要用到跨域请求，目的在于现在的Java项目，几乎基本上都前后端分离，除一些较老的维护项目外(通常是单体或者是maven多模块形式，不过本质上还是将前端放在webapps下)。 SpringBoot实现跨域其实和Spring是一样，区别不大，如果要说区别的话，Spring需要在对应的xml文件中配置bean，而SpringBoot则通过注解的方式。 Spring配置跨域请求可参考我的这篇文章">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T12:34:12.308Z">
+<meta property="og:updated_time" content="2019-04-11T13:37:20.152Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Springboot实现跨域请求">
 <meta name="twitter:description" content="之所以需要用到跨域请求，目的在于现在的Java项目，几乎基本上都前后端分离，除一些较老的维护项目外(通常是单体或者是maven多模块形式，不过本质上还是将前端放在webapps下)。 SpringBoot实现跨域其实和Spring是一样，区别不大，如果要说区别的话，Spring需要在对应的xml文件中配置bean，而SpringBoot则通过注解的方式。 Spring配置跨域请求可参考我的这篇文章">
@@ -90,13 +90,14 @@
         <p>之所以需要用到跨域请求，目的在于现在的Java项目，几乎基本上都前后端分离，除一些较老的维护项目外(通常是单体或者是maven多模块形式，不过本质上还是将前端放在webapps下)。</p>
 <p>SpringBoot实现跨域其实和Spring是一样，区别不大，如果要说区别的话，Spring需要在对应的xml文件中配置bean，而SpringBoot则通过注解的方式。</p>
 <p>Spring配置跨域请求可参考我的这篇文章:<a href="https://www.cnblogs.com/youcong/p/9676433.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/p/9676433.html</a></p>
+<a id="more"></a>
 <p>示例代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package com.blog.springboot.config;</span><br><span class="line"></span><br><span class="line">import org.springframework.context.annotation.Bean;  </span><br><span class="line">import org.springframework.context.annotation.Configuration;  </span><br><span class="line">import org.springframework.web.cors.CorsConfiguration;  </span><br><span class="line">import org.springframework.web.cors.UrlBasedCorsConfigurationSource;  </span><br><span class="line">import org.springframework.web.filter.CorsFilter;  </span><br><span class="line"></span><br><span class="line">@Configuration  </span><br><span class="line">public class CorsConfig &#123;  </span><br><span class="line">    private CorsConfiguration buildConfig() &#123;  </span><br><span class="line">        CorsConfiguration corsConfiguration = new CorsConfiguration();  </span><br><span class="line">        corsConfiguration.addAllowedOrigin(&quot;*&quot;); // 1允许任何域名使用</span><br><span class="line">        corsConfiguration.addAllowedHeader(&quot;*&quot;); // 2允许任何头</span><br><span class="line">        corsConfiguration.addAllowedMethod(&quot;*&quot;); // 3允许任何方法（post、get等） </span><br><span class="line">        return corsConfiguration;  </span><br><span class="line">    &#125;  </span><br><span class="line">  </span><br><span class="line">    @Bean  </span><br><span class="line">    public CorsFilter corsFilter() &#123;  </span><br><span class="line">        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();  </span><br><span class="line">        source.registerCorsConfiguration(&quot;/**&quot;, buildConfig()); // 4  </span><br><span class="line">        return new CorsFilter(source);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>本文主要参考链接为:<br>SpringBoot跨域配置:<a href="https://www.cnblogs.com/nananana/p/8492185.html" target="_blank" rel="noopener">https://www.cnblogs.com/nananana/p/8492185.html</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/springboot实现跨域请求/" data-id="cjuceonq1003lc4vkrpvkb6ge" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/springboot实现跨域请求/" data-id="cjuco7h36003kmsvkuolree60" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>

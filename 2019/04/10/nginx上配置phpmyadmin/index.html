@@ -16,7 +16,7 @@
 <meta property="og:description" content="Nginx配置phpmyadmin流程如下: 一、准备软件和环境(这里我以ubuntu16.04为例)1.安装php7.112345sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/phpsudo apt-get updatesudo apt-get install php-pear php7.1-cli php7.1-common php7.1-">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/phpmyadmin.png">
-<meta property="og:updated_time" content="2019-04-10T03:38:47.961Z">
+<meta property="og:updated_time" content="2019-04-11T13:33:07.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx上配置phpmyadmin">
 <meta name="twitter:description" content="Nginx配置phpmyadmin流程如下: 一、准备软件和环境(这里我以ubuntu16.04为例)1.安装php7.112345sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/phpsudo apt-get updatesudo apt-get install php-pear php7.1-cli php7.1-common php7.1-">
@@ -93,6 +93,7 @@
 <h2><span id="一-准备软件和环境这里我以ubuntu1604为例">一、准备软件和环境(这里我以ubuntu16.04为例)</span></h2><h3><span id="1安装php71">1.安装php7.1</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install php-pear php7.1-cli php7.1-common php7.1-curl \</span><br><span class="line">    php7.1-dev php7.1-fpm php7.1-json php7.1-mbstring php7.1-mcrypt \</span><br><span class="line">    php7.1-mysql php7.1-opcache php7.1-zip php7.1-intl php7.1-gd php7.1-xml</span><br></pre></td></tr></table></figure>
 <h4><span id="1修改-php-fpm-监听方式为1270019000">(1)修改 PHP-FPM 监听方式为127.0.0.1:9000</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sed -i &apos;s/listen = .*/listen = 127.0.0.1:9000/g&apos; /etc/php/7.1/fpm/pool.d/www.conf</span><br></pre></td></tr></table></figure>
 <h4><span id="2重启-php-fpm-服务进程">(2)重启 PHP-FPM 服务进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service php7.1-fpm restart</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3><span id="2安装mysql">2.安装mysql</span></h3><h4><span id="1配置mysql57源">(1)配置mysql5.7源</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 可在 http://dev.mysql.com/downloads/repo/apt/ 页面找到 mysql-apt-config 的最新版本。</span><br><span class="line">wget http://dev.mysql.com/get/mysql-apt-config_0.8.7-1_all.deb</span><br><span class="line">sudo dpkg -i mysql-apt-config_0.8.7-1_all.deb</span><br></pre></td></tr></table></figure>
 <p>这时会弹出让你选择，将：</p>
 <p>MySQL Server修改为： mysql-5.7<br>MySQL Tools &amp; Connectors (Currently selected: Enabled)修改为Disabled。<br>MySQL Preview Packages修改过为 Disabled。</p>
@@ -108,7 +109,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/" data-id="cjuceonp6002lc4vkv8d46v0h" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/" data-id="cjuco7h28002imsvkpy07ta71" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>

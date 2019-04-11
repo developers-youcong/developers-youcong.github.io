@@ -7,18 +7,18 @@
   
   <title>jQuery和js之Cookie实现 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Web开发者的朋友们基本上都知道，jQuery是对js的封装。今天之所以想讲解这个问题，主要是因为Cookie用的还是比较多，应用场景除了老生常谈的购物车，还有就是用户状态(以我之前开发的一个项目除了session和token外，还有一个加密cookie，双重保护，确保系统安全)。 一、js中的Cookie增加、获取、删除操作1.添加Cookie(保存Cookie)1234567function">
+  <meta name="description" content="Web开发者的朋友们基本上都知道，jQuery是对js的封装。今天之所以想讲解这个问题，主要是因为Cookie用的还是比较多，应用场景除了老生常谈的购物车，还有就是用户状态(以我之前开发的一个项目除了session和token外，还有一个加密cookie，双重保护，确保系统安全)。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jQuery和js之Cookie实现">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Web开发者的朋友们基本上都知道，jQuery是对js的封装。今天之所以想讲解这个问题，主要是因为Cookie用的还是比较多，应用场景除了老生常谈的购物车，还有就是用户状态(以我之前开发的一个项目除了session和token外，还有一个加密cookie，双重保护，确保系统安全)。 一、js中的Cookie增加、获取、删除操作1.添加Cookie(保存Cookie)1234567function">
+<meta property="og:description" content="Web开发者的朋友们基本上都知道，jQuery是对js的封装。今天之所以想讲解这个问题，主要是因为Cookie用的还是比较多，应用场景除了老生常谈的购物车，还有就是用户状态(以我之前开发的一个项目除了session和token外，还有一个加密cookie，双重保护，确保系统安全)。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T12:30:01.587Z">
+<meta property="og:updated_time" content="2019-04-11T13:30:22.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jQuery和js之Cookie实现">
-<meta name="twitter:description" content="Web开发者的朋友们基本上都知道，jQuery是对js的封装。今天之所以想讲解这个问题，主要是因为Cookie用的还是比较多，应用场景除了老生常谈的购物车，还有就是用户状态(以我之前开发的一个项目除了session和token外，还有一个加密cookie，双重保护，确保系统安全)。 一、js中的Cookie增加、获取、删除操作1.添加Cookie(保存Cookie)1234567function">
+<meta name="twitter:description" content="Web开发者的朋友们基本上都知道，jQuery是对js的封装。今天之所以想讲解这个问题，主要是因为Cookie用的还是比较多，应用场景除了老生常谈的购物车，还有就是用户状态(以我之前开发的一个项目除了session和token外，还有一个加密cookie，双重保护，确保系统安全)。">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -87,7 +87,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Web开发者的朋友们基本上都知道，jQuery是对js的封装。今天之所以想讲解这个问题，主要是因为Cookie用的还是比较多，应用场景除了老生常谈的购物车，还有就是用户状态(以我之前开发的一个项目除了session和token外，还有一个加密cookie，双重保护，确保系统安全)。</p>
+        <p>Web开发者的朋友们基本上都知道，jQuery是对js的封装。今天之所以想讲解这个问题，主要是因为Cookie用的还是比较多，应用场景除了老生常谈的购物车，还有就是用户状态(以我之前开发的一个项目除了session和token外，还有一个加密cookie，双重保护，确保系统安全)。<br><a id="more"></a></p>
 <h2><span id="一-js中的cookie增加-获取-删除操作">一、js中的Cookie增加、获取、删除操作</span></h2><h3><span id="1添加cookie保存cookie">1.添加Cookie(保存Cookie)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function setCookie(c_name,value,expiredays)&#123;</span><br><span class="line">    var cookieStr = &quot;&quot;;</span><br><span class="line">    var exdate=new Date();</span><br><span class="line">    exdate.setDate(exdate.getDate()+expiredays);</span><br><span class="line">    document.cookie = c_name+ &quot;=&quot; +escape(value)+</span><br><span class="line">    ((expiredays==null) ? &quot;&quot; : &quot;; expires=&quot;+exdate.toGMTString())+&quot;;path=/&quot;;</span><br><span class="line">&#125;//由于cookie存在域的概念，且在这里要不区分域，获取cookie的值，所以在这里使用的是统一的路径 path=/ ；</span><br></pre></td></tr></table></figure>
 <h3><span id="2获取cookie">2.获取Cookie</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function getCookie(c_name)&#123;</span><br><span class="line">    if (document.cookie.length&gt;0)&#123; </span><br><span class="line">        console.log(document.cookie);</span><br><span class="line">        c_start=document.cookie.indexOf(c_name + &quot;=&quot;);</span><br><span class="line">        if (c_start!=-1)&#123; </span><br><span class="line">            c_start=c_start + c_name.length+1; </span><br><span class="line">            c_end=document.cookie.indexOf(&quot;;&quot;,c_start);</span><br><span class="line">            if (c_end==-1) c_end=document.cookie.length;</span><br><span class="line">            return unescape(document.cookie.substring(c_start,c_end));</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">    return &quot;&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3><span id="3删除cookie">3.删除Cookie</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function delete_cookie( name, path, domain ) &#123;</span><br><span class="line">  if( get_cookie( name ) ) &#123;</span><br><span class="line">    document.cookie = name + &quot;=&quot; +</span><br><span class="line">      ((path) ? &quot;;path=&quot;+path:&quot;&quot;)+</span><br><span class="line">      ((domain)?&quot;;domain=&quot;+domain:&quot;&quot;) +</span><br><span class="line">      &quot;;expires=Thu, 01 Jan 1970 00:00:01 GMT&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -102,7 +102,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/" data-id="cjuceonoh001tc4vkd1ip096t" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/" data-id="cjuco7h1t001xmsvkq0mu6uig" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>

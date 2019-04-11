@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="出现结果重复数SQL(四表关联):12345678910SELECTCOUNT(post.ID )FROM wp_posts AS post LEFT JOINwp_term_relationships AS relationON(post.menu_order =relation.term_order) LEFT JOIN wp_term_taxonomyAS taxonomyON(relati">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-29T13:36:46.678Z">
+<meta property="og:updated_time" content="2019-04-11T13:32:31.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL去除查询结果重复">
 <meta name="twitter:description" content="出现结果重复数SQL(四表关联):12345678910SELECTCOUNT(post.ID )FROM wp_posts AS post LEFT JOINwp_term_relationships AS relationON(post.menu_order =relation.term_order) LEFT JOIN wp_term_taxonomyAS taxonomyON(relati">
@@ -89,6 +89,7 @@
       
         <p>出现结果重复数SQL(四表关联):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">COUNT(post.ID )</span><br><span class="line">FROM wp_posts AS post LEFT JOIN</span><br><span class="line">wp_term_relationships AS relation</span><br><span class="line">ON(post.menu_order =</span><br><span class="line">relation.term_order) LEFT JOIN wp_term_taxonomy</span><br><span class="line">AS taxonomy</span><br><span class="line">ON(relation.term_taxonomy_id = taxonomy.term_id) LEFT JOIN</span><br><span class="line">wp_terms AS</span><br><span class="line">term ON(taxonomy.term_id = term.term_id)</span><br></pre></td></tr></table></figure></p>
 <p>正常的结果应该显示490条数据，但是结果显示了224941。</p>
+<a id="more"></a>
 <p>解决这个办法是在对应的COUNT()里面加上DISTINCT</p>
 <p>DISTINCT这个关键字主要用于过滤掉多余的重复记录只保留一条，但往往只用它来返回不重复记录的条数，而不是用它来返回不重记录的所有值。</p>
 <p>注意:它有局限性，比如吧不能对应多个目标字段，只能对应一个目标字段。</p>
@@ -98,7 +99,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cjuceonno000wc4vku9zlj4oy" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cjuco7h0d000nmsvkt4w4gn6u" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>

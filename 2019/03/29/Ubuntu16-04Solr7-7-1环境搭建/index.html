@@ -7,20 +7,20 @@
   
   <title>Ubuntu16.04之Solr7.7.1环境搭建 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Solr的版本一直都在变化(比如之前我在博客园写的关于Linux安装solr，那个solr为7.6版本，此时已经不在了)。大家可以去这个地址下载对应的版本:http://mirror.bit.edu.cn/apache/lucene/solr/ 1.下载solr(我是进入到/usr/local目录下执行这个命令的)1wget http://mirror.bit.edu.cn/apache/luce">
+  <meta name="description" content="Solr的版本一直都在变化(比如之前我在博客园写的关于Linux安装solr，那个solr为7.6版本，此时已经不在了)。大家可以去这个地址下载对应的版本:http://mirror.bit.edu.cn/apache/lucene/solr/">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu16.04之Solr7.7.1环境搭建">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Solr的版本一直都在变化(比如之前我在博客园写的关于Linux安装solr，那个solr为7.6版本，此时已经不在了)。大家可以去这个地址下载对应的版本:http://mirror.bit.edu.cn/apache/lucene/solr/ 1.下载solr(我是进入到/usr/local目录下执行这个命令的)1wget http://mirror.bit.edu.cn/apache/luce">
+<meta property="og:description" content="Solr的版本一直都在变化(比如之前我在博客园写的关于Linux安装solr，那个solr为7.6版本，此时已经不在了)。大家可以去这个地址下载对应的版本:http://mirror.bit.edu.cn/apache/lucene/solr/">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/solr.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/solr_manage.png">
-<meta property="og:updated_time" content="2019-03-29T06:13:46.193Z">
+<meta property="og:updated_time" content="2019-04-11T13:38:00.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu16.04之Solr7.7.1环境搭建">
-<meta name="twitter:description" content="Solr的版本一直都在变化(比如之前我在博客园写的关于Linux安装solr，那个solr为7.6版本，此时已经不在了)。大家可以去这个地址下载对应的版本:http://mirror.bit.edu.cn/apache/lucene/solr/ 1.下载solr(我是进入到/usr/local目录下执行这个命令的)1wget http://mirror.bit.edu.cn/apache/luce">
+<meta name="twitter:description" content="Solr的版本一直都在变化(比如之前我在博客园写的关于Linux安装solr，那个solr为7.6版本，此时已经不在了)。大家可以去这个地址下载对应的版本:http://mirror.bit.edu.cn/apache/lucene/solr/">
 <meta name="twitter:image" content="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/solr.png">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -90,7 +90,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Solr的版本一直都在变化(比如之前我在博客园写的关于Linux安装solr，那个solr为7.6版本，此时已经不在了)。<br>大家可以去这个地址下载对应的版本:<a href="http://mirror.bit.edu.cn/apache/lucene/solr/" target="_blank" rel="noopener">http://mirror.bit.edu.cn/apache/lucene/solr/</a></p>
+        <p>Solr的版本一直都在变化(比如之前我在博客园写的关于Linux安装solr，那个solr为7.6版本，此时已经不在了)。<br>大家可以去这个地址下载对应的版本:<a href="http://mirror.bit.edu.cn/apache/lucene/solr/" target="_blank" rel="noopener">http://mirror.bit.edu.cn/apache/lucene/solr/</a><br><a id="more"></a></p>
 <h2><span id="1下载solr我是进入到usrlocal目录下执行这个命令的">1.下载solr(我是进入到/usr/local目录下执行这个命令的)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirror.bit.edu.cn/apache/lucene/solr/7.7.1/solr-7.7.1.tgz</span><br></pre></td></tr></table></figure>
 <h2><span id="2解压">2.解压</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf solr-7.7.1.tgz</span><br></pre></td></tr></table></figure>
 <h2><span id="3进入bin目录执行该脚本">3.进入bin目录执行该脚本</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd solr-7.7.1/bin</span><br><span class="line">./install_solr_service.sh ../../solr-7.7.1.tgz</span><br></pre></td></tr></table></figure>
@@ -101,7 +101,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cjuceono2001bc4vk590flu2g" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/" data-id="cjuco7h0y000zmsvkdz0ap3qb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>

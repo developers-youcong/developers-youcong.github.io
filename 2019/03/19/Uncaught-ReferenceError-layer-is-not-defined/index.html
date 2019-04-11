@@ -7,18 +7,18 @@
   
   <title>Uncaught ReferenceError: layer is not defined | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。 原来的问题代码如下:12345678910111213layer.confirm(&amp;apos;确认要退出吗？&amp;apos;, &amp;#123;           btn : [ &amp;apos;确定&amp;apos;,">
+  <meta name="description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。">
 <meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Uncaught ReferenceError: layer is not defined">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。 原来的问题代码如下:12345678910111213layer.confirm(&amp;apos;确认要退出吗？&amp;apos;, &amp;#123;           btn : [ &amp;apos;确定&amp;apos;,">
+<meta property="og:description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-19T12:43:18.156Z">
+<meta property="og:updated_time" content="2019-04-11T13:38:41.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Uncaught ReferenceError: layer is not defined">
-<meta name="twitter:description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。 原来的问题代码如下:12345678910111213layer.confirm(&amp;apos;确认要退出吗？&amp;apos;, &amp;#123;           btn : [ &amp;apos;确定&amp;apos;,">
+<meta name="twitter:description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -88,8 +88,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>错误详细信息,如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught ReferenceError: layer is not defined&apos;</span><br></pre></td></tr></table></figure></p>
-<p>关键词就是not defined 未定义，那么解决方案就是给它定义。</p>
-<p>原来的问题代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>关键词就是not defined 未定义，那么解决方案就是给它定义。<br><a id="more"></a><br>原来的问题代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
 <p>这样在我的博客首页是可以生效的，不会出现未定义。但是当我将其抽象为一个函数的时候，其它地方就不行了。</p>
 <p>通过声明定义后，代码就变成如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">layui.use(&apos;layer&apos;,function () &#123; </span><br><span class="line">       	</span><br><span class="line">       layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br><span class="line">       </span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
 <p>当时我在想引入layer.js来解决这个问题，但是仔细一看这并不是问题的关键所在。<br>解决问题，在于更好的理解问题，当然了，把握关键词也是很重要的(事半功倍)。</p>
@@ -97,7 +96,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" data-id="cjuceonoj001vc4vkzjirewuv" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" data-id="cjuco7h1l001qmsvkmyp638qi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>

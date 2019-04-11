@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="wordpress一共是有12个表的:|wp_commentmeta        || wp_comments           || wp_links              || wp_options            || wp_postmeta           || wp_posts              || wp_term_relationships || wp_te">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-16T12:35:39.452Z">
+<meta property="og:updated_time" content="2019-04-11T13:39:30.343Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="wordpress数据表分析">
 <meta name="twitter:description" content="wordpress一共是有12个表的:|wp_commentmeta        || wp_comments           || wp_links              || wp_options            || wp_postmeta           || wp_posts              || wp_term_relationships || wp_te">
@@ -88,8 +88,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>wordpress一共是有12个表的:<br>|wp_commentmeta        |<br>| wp_comments           |<br>| wp_links              |<br>| wp_options            |<br>| wp_postmeta           |<br>| wp_posts              |<br>| wp_term_relationships |<br>| wp_term_taxonomy      |<br>| wp_termmeta           |<br>| wp_terms              |<br>| wp_usermeta           |<br>| wp_users                 |</p>
-<p>主要参考这篇文章:<a href="https://www.cnblogs.com/wordblog/p/6591499.html" target="_blank" rel="noopener">WordPress数据库及各表结构分析</a><br>另外没有搭建过wordpress的朋友们，可以参考我的这篇文章搭建wordpress和对wordpress有一个大致的了解，文章为<a href="https://www.cnblogs.com/youcong/p/9671294.html" target="_blank" rel="noopener">wordpress研究</a></p>
-<p>十二个表对应的职能如下所示:</p>
+<p>主要参考这篇文章:<a href="https://www.cnblogs.com/wordblog/p/6591499.html" target="_blank" rel="noopener">WordPress数据库及各表结构分析</a><br>另外没有搭建过wordpress的朋友们，可以参考我的这篇文章搭建wordpress和对wordpress有一个大致的了解，文章为<a href="https://www.cnblogs.com/youcong/p/9671294.html" target="_blank" rel="noopener">wordpress研究</a><br><a id="more"></a><br>十二个表对应的职能如下所示:</p>
 <p>wp_commentmeta:存储评论的元数据<br>wp_comments:存储评论<br>wp_links:存储友情链接<br>wp_options:存储wordpress系统选项和插件、主题配置<br>wp_postmeta:存储文章(包括页面、上传文件、修订)的元数据<br>wp_posts:存储文章(包括页面、上传文件、修订)<br>wp_term_relationships:存储每个文章、链接和对应分类的关系<br>wp_term_taxonomy:存储每个目录、标签所对应的分类<br>wp_termmeta:存储网站分类和标签的属性<br>wp_terms:存储每个目录、标签<br>wp_usermeta:存储用户的元数据<br>wp_users:存储用户</p>
 <h4><span id="wp_commentmeta">wp_commentmeta:</span></h4><p>meta_id:自增唯一ID<br>comment_id:对应评论ID<br>meta_key:键名<br>meta_value:键值</p>
 <h4><span id="wp_comments">wp_comments</span></h4><p>comment_ID:自增唯一ID<br>comment_post_ID:对应文章ID<br>comment_author:评论者<br>comment_author_email:评论者邮箱<br>comment_author_url:评论者网址<br>comment_date:评论时间<br>comment_date_gmt:评论时间(GMT+0时间)<br>comment_content:评论正文<br>comment_karma:未知(通过搜索引擎查找，这个字段在wordpress中并没有起到作用)<br>comment_approved:评论是否被批准<br>comment_agent:评论者的USER_AGENT<br>comment_type:评论类型(<a href="https://baike.baidu.com/item/PingBack/6316909?fr=aladdin" target="_blank" rel="noopener">PingBack</a>/普通)<br>comment_parent:父评论ID<br>user_id:评论者用户ID(不一定存在，考虑到游客或者其它因素)</p>
@@ -115,7 +114,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/02/23/wordpress数据表分析/" data-id="cjuceonq5003pc4vkokxwjidi" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/02/23/wordpress数据表分析/" data-id="cjuco7h3h003wmsvklwkrsx9p" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wordpress/">wordpress</a></li></ul>
