@@ -5,15 +5,20 @@
   
 
   
-  <title>Archives: 2019 | Blog</title>
+  <title>shell杀死指定端口的进程 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Blog">
-<meta property="og:url" content="http://developers-youcong.github.io/archives/2019/page/7/index.html">
+  <meta name="description" content="杀死端口代码如下:123lsof -i:2019kill -9 PID 上面的与下面的代码作用相同。 命令如下所示(这种方式更自动化):1kill -9 $(netstat -nlp | grep :2019 | awk &amp;apos;&amp;#123;print $7&amp;#125;&amp;apos; | awk -F&amp;quot;/&amp;quot; &amp;apos;&amp;#123; print $1 &amp;#125;&amp;apos;">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="shell杀死指定端口的进程">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/04/13/shell杀死指定端口的进程/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="杀死端口代码如下:123lsof -i:2019kill -9 PID 上面的与下面的代码作用相同。 命令如下所示(这种方式更自动化):1kill -9 $(netstat -nlp | grep :2019 | awk &amp;apos;&amp;#123;print $7&amp;#125;&amp;apos; | awk -F&amp;quot;/&amp;quot; &amp;apos;&amp;#123; print $1 &amp;#125;&amp;apos;">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-13T07:33:04.468Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Blog">
+<meta name="twitter:title" content="shell杀死指定端口的进程">
+<meta name="twitter:description" content="杀死端口代码如下:123lsof -i:2019kill -9 PID 上面的与下面的代码作用相同。 命令如下所示(这种方式更自动化):1kill -9 $(netstat -nlp | grep :2019 | awk &amp;apos;&amp;#123;print $7&amp;#125;&amp;apos; | awk -F&amp;quot;/&amp;quot; &amp;apos;&amp;#123; print $1 &amp;#125;&amp;apos;">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -60,216 +65,56 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/" class="archive-article-date">
-  <time datetime="2019-03-05T06:04:07.000Z" itemprop="datePublished">Mar 5</time>
+        <section id="main"><article id="post-shell杀死指定端口的进程" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/13/shell杀死指定端口的进程/" class="article-date">
+  <time datetime="2019-04-13T07:23:07.000Z" itemprop="datePublished">2019-04-13</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/05/node-js服务端程序在Linux上持久运行/">node.js服务端程序在Linux上持久运行</a>
+    <h1 class="article-title" itemprop="name">
+      shell杀死指定端口的进程
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/04/node-js读写文件/" class="archive-article-date">
-  <time datetime="2019-03-04T13:32:24.000Z" itemprop="datePublished">Mar 4</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/04/node-js读写文件/">node.js读写文件</a>
-    </h1>
-  
+        <p>杀死端口代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:2019</span><br><span class="line"></span><br><span class="line">kill -9 PID</span><br></pre></td></tr></table></figure></p>
+<p>上面的与下面的代码作用相同。</p>
+<p>命令如下所示(这种方式更自动化):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kill -9 $(netstat -nlp | grep :2019 | awk &apos;&#123;print $7&#125;&apos; | awk -F&quot;/&quot; &apos;&#123; print $1 &#125;&apos;)</span><br></pre></td></tr></table></figure></p>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/04/javascript之传输加密/" class="archive-article-date">
-  <time datetime="2019-03-04T11:52:29.000Z" itemprop="datePublished">Mar 4</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/04/javascript之传输加密/">javascript之传输加密</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/01/VsCode插件开发之通信/" class="archive-article-date">
-  <time datetime="2019-03-01T14:20:15.000Z" itemprop="datePublished">Mar 1</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/13/shell杀死指定端口的进程/" data-id="cjuf9h2qh003pw4vkz4bd18a4" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/01/VsCode插件开发之通信/">VsCode插件开发之通信</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/01/Python实现机器人聊天/" class="archive-article-date">
-  <time datetime="2019-03-01T13:56:13.000Z" itemprop="datePublished">Mar 1</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/01/Python实现机器人聊天/">Python实现机器人聊天</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
-    </header>
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/12/大型网站核心架构因素/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">大型网站核心架构因素</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/01/node-js使用express框架进行文件上传/" class="archive-article-date">
-  <time datetime="2019-03-01T12:49:08.000Z" itemprop="datePublished">Mar 1</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/01/node-js使用express框架进行文件上传/">node.js使用express框架进行文件上传</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/03/01/nginx让所有的http地址重定向到https/" class="archive-article-date">
-  <time datetime="2019-03-01T12:28:22.000Z" itemprop="datePublished">Mar 1</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/01/nginx让所有的http地址重定向到https/">nginx让所有的http地址重定向到https</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/26/nginx配置https/" class="archive-article-date">
-  <time datetime="2019-02-26T12:06:25.000Z" itemprop="datePublished">Feb 26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/26/nginx配置https/">nginx配置https</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/" class="archive-article-date">
-  <time datetime="2019-02-25T11:46:07.000Z" itemprop="datePublished">Feb 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/">vscode源码编译运行打包使其由英文变为中文</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/02/25/阿里云配置tomcat-https/" class="archive-article-date">
-  <time datetime="2019-02-25T11:22:15.000Z" itemprop="datePublished">Feb 25</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/25/阿里云配置tomcat-https/">阿里云配置tomcat https</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    
-    <a class="extend prev" rel="prev" href="/archives/2019/page/6/">&laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2019/page/5/">5</a><a class="page-number" href="/archives/2019/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/archives/2019/page/8/">8</a><a class="extend next" rel="next" href="/archives/2019/page/8/">Next &raquo;</a>
-  </nav>
 
 </section>
         

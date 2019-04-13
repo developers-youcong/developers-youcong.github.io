@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>大型网站核心架构因素 | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于什么是架构，一种比较通俗的说法是 “最高层次的规划，难以改变的决定”，这些规划和决定奠定了事物未来发展的方向和最终蓝图。 从这个意义上说，人生规划也是一种架构。选什么学校、学什么专业、进什么公司、找什么对象、过什么样的生活，都是自己人生的架构。 联系到软件开发:实际上业务类型+技术选型往往也决定整个项目的架构是怎么样的。 具体到软件架构，维基百科是这样定义的:”有关软件整体结构与组件的抽象描述">
+<meta name="keywords" content="架构">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大型网站核心架构因素">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/04/12/大型网站核心架构因素/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="关于什么是架构，一种比较通俗的说法是 “最高层次的规划，难以改变的决定”，这些规划和决定奠定了事物未来发展的方向和最终蓝图。 从这个意义上说，人生规划也是一种架构。选什么学校、学什么专业、进什么公司、找什么对象、过什么样的生活，都是自己人生的架构。 联系到软件开发:实际上业务类型+技术选型往往也决定整个项目的架构是怎么样的。 具体到软件架构，维基百科是这样定义的:”有关软件整体结构与组件的抽象描述">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-13T08:50:39.506Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大型网站核心架构因素">
+<meta name="twitter:description" content="关于什么是架构，一种比较通俗的说法是 “最高层次的规划，难以改变的决定”，这些规划和决定奠定了事物未来发展的方向和最终蓝图。 从这个意义上说，人生规划也是一种架构。选什么学校、学什么专业、进什么公司、找什么对象、过什么样的生活，都是自己人生的架构。 联系到软件开发:实际上业务类型+技术选型往往也决定整个项目的架构是怎么样的。 具体到软件架构，维基百科是这样定义的:”有关软件整体结构与组件的抽象描述">
+  
+    <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://developers-youcong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-大型网站核心架构因素" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/12/大型网站核心架构因素/" class="article-date">
+  <time datetime="2019-04-12T02:54:27.000Z" itemprop="datePublished">2019-04-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      大型网站核心架构因素
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于什么是架构，一种比较通俗的说法是 “最高层次的规划，难以改变的决定”，这些规划和决定奠定了事物未来发展的方向和最终蓝图。</p>
+<p>从这个意义上说，人生规划也是一种架构。选什么学校、学什么专业、进什么公司、找什么对象、过什么样的生活，都是自己人生的架构。</p>
+<p><strong>联系到软件开发:</strong><br>实际上业务类型+技术选型往往也决定整个项目的架构是怎么样的。</p>
+<p>具体到软件架构，维基百科是这样定义的:”有关软件整体结构与组件的抽象描述，用于指导大型软件系统各个方面的设计”。</p>
+<p>系统的各个重要组成部分及其关系构成了系统的架构，这些组成部分可以是具体的功能模块，也可以是非功能的设计与决策，他们相互关系组成一个整体，共同构成了软件系统的架构。</p>
+<h2><span id="一-性能">一、性能</span></h2><p>性能是网站的一个重要指标，性能差的网站往往也代表这可用性等各方面不好。</p>
+<p>关于性能优化，对不同的对象，采取不同的优化措施。</p>
+<h3><span id="1浏览器端">1.浏览器端</span></h3><p>参考《高性能网站建设指南》，里面提供了14个措施。<br>(1)减少HTTP请求;<br>(2)使用CDN;<br>(3)添加Expires头;<br>(4)压缩组件;<br>(5)将样式放在顶部;<br>(6)将脚本放在底部;<br>(7)避免CSS表达式;<br>(8)使用外部JavaScript和CSS;<br>(9)减少DNS查找;<br>(10)精简JavaScript;<br>(11)避免重定向;<br>(12)移除重复脚本;<br>(13)配置ETag;<br>(14)使用Ajax缓存;</p>
+<p><strong>联系实际:</strong><br>以个人实践来说，上述的不说将网站性能100%提高，至少提高50%，因为一个网站不仅仅牵涉网页，而且还牵涉服务端和数据库等。</p>
+<p>想要对网页端优化的朋友，可以参考这本书，具体详情，本文不做太多讲解，该书资源我已经放在我的GitHub，需要的可以去下载。<br>个人平时收集的知识库:<a href="https://github.com/developers-youcong/Personal-Learning-Library" target="_blank" rel="noopener">https://github.com/developers-youcong/Personal-Learning-Library</a></p>
+<h3><span id="2应用服务端">2.应用服务端</span></h3><p>(1)数据库服务器(索引、缓存、SQL优化);<br>(2)使用NoSQL;<br>(3)使用分布式;<br>(4)使用集群;<br>(5)异步操作;</p>
+<h3><span id="3代码层面">3.代码层面</span></h3><p>使用多线程、改善内存管理等手段优化。</p>
+<p>对于网站而言，性能符合预期仅仅是必要条件，因为无法预知网站可能会面临的访问压力，所以必须要考虑系统在高并发访问情况下，超出负载设计能力的情况下可能会出现的性能问题。网站需要长时间持续运行，还必须保证系统在持续运行且访问压力不均匀的情况下保持稳定的性能特征。</p>
+<h2><span id="二-可用性">二、可用性</span></h2><p>网站高可用的主要手段是冗余，应用部署在多台服务器上同时提供访问，数据存在在多台服务器上互相备份，任何一台服务器宕机都不会影响应用的整体可用，也不会导致数据丢失。</p>
+<p><strong>联系实际:</strong><br>这种方式适合看公司情况，有的公司虽然有盈利，但是为了减少一些不必要的成本，需要架构师做一些技术架构的评估，比如A和B技术架构方案都适合业务时，这时公司拍板的人更倾向于成本更低的方案。</p>
+<h2><span id="三-伸缩性">三、伸缩性</span></h2><p>大型网站需要面对大量用户的高并发访问和存储海量数据，不可能只用一台服务器就处理全部用户请求，存储全部数据。网站通过集群的方式将多台服务器组成一个整体共同提供服务。所谓伸缩性是指通过不断向集群中加入服务器的手段来缓解不断上升的用户并发访问压力和不断增长的数据存储需求。</p>
+<p><strong>联系实际:</strong><br>针对之前研究过弹性伸缩，所谓弹性伸缩就是当处于高并发时，自动扩展，开启多台服务器来应对高并发，当处于低并发时，也就是用户不是特别多的时候，自动回收一些多余的服务器。减少不必要的资源浪费。</p>
+<h2><span id="四-扩展性">四、扩展性</span></h2><p>不同于其他架构要素主要关于非功能性需求，网站的扩展性架构直接关注网站的功能需求。网站快速发展，功能不断扩展，如何设计网站的架构使其能够快速响应需求变化，是网站可扩展架构主要的目的。</p>
+<p>衡量网站架构扩展性好坏的主要标准就是网站增加新的业务产品时，是否可以上线新产品。不同产品之间是否很少耦合，一个产品改动对其他产品无影响，其他产品和功能不需要受牵连进行改动。</p>
+<p><strong>联系实际:</strong><br>说到扩展性，工作两年以上的朋友特别深有感触，两年的时间由一个初级开发者到中级开发者，从0写过项目，也维护过不少项目，应该能够深刻的理解扩展性是多么的重要。</p>
+<h2><span id="五-安全性">五、安全性</span></h2><p>互联网是开放的，任何人在任何地方都可以访问网站。网站的安全将就是保护网站不受恶意访问和攻击，保护网站的重要数据不被窃取。</p>
+<p>Web网站常用的攻击方式:<br>(1)SQL注入 - 此威胁的目标可能是绕过登录算法，破坏数据等。</p>
+<p>(2)拒绝服务攻击 - 此威胁的目标可能是拒绝合法用户访问资源。</p>
+<p>(3)跨站点脚本XSS - 此威胁的目标可能是注入可在客户端浏览器上执行的代码。</p>
+<p>(4)Cookie /会话中毒 - 此威胁的目标是通过攻击者修改Cookie /会话数据以获取未经授权的访问权限。</p>
+<p>(5)表格篡改 - 此威胁的目标是修改表单数据，例如电子商务应用程序中的价格，以便攻击者可以以较低的价格获得物品。</p>
+<p>(6)代码注入 - 此威胁的目标是注入可在服务器上执行的PHP，Python等代码。代码可以安装后门，泄露敏感信息等。<br>破坏 - 此威胁的目标是修改网站上显示的页面，并将所有页面请求重定向到包含攻击者消息的单个页面。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/12/大型网站核心架构因素/" data-id="cjuf9h2r6004ew4vkca75n71p" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/13/shell杀死指定端口的进程/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          shell杀死指定端口的进程
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/11/多模块应用自动化部署/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">多模块应用自动化部署</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Docker/" style="font-size: 11.43px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 11.43px;">Git</a> <a href="/tags/Linux/" style="font-size: 18.57px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 14.29px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.43px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.43px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 15.71px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 12.86px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.43px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 12.86px;">架构</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/13/shell杀死指定端口的进程/">shell杀死指定端口的进程</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/12/大型网站核心架构因素/">大型网站核心架构因素</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/11/多模块应用自动化部署/">多模块应用自动化部署</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/11/单体应用自动化部署/">单体应用自动化部署</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/10/Edusoho之LNMP环境搭建/">Edusoho之LNMP环境搭建</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 youcong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
