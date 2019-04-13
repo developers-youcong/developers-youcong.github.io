@@ -7,18 +7,18 @@
   
   <title>Edusoho之LNMP环境搭建 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.更新12sudo apt-get updatesudo apt-get upgrade 2.安装Nginx1sudo apt-get install nginx 3.安装php123udo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \    php7.0-dev php7.0-fpm php7.0-json ph">
+  <meta name="description" content="1.更新12sudo apt-get updatesudo apt-get upgrade 2.安装Nginx1sudo apt-get install nginx 3.安装php123sudo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \    php7.0-dev php7.0-fpm php7.0-json p">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Edusoho之LNMP环境搭建">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/04/10/Edusoho之LNMP环境搭建/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="1.更新12sudo apt-get updatesudo apt-get upgrade 2.安装Nginx1sudo apt-get install nginx 3.安装php123udo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \    php7.0-dev php7.0-fpm php7.0-json ph">
+<meta property="og:description" content="1.更新12sudo apt-get updatesudo apt-get upgrade 2.安装Nginx1sudo apt-get install nginx 3.安装php123sudo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \    php7.0-dev php7.0-fpm php7.0-json p">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-11T13:28:12.027Z">
+<meta property="og:updated_time" content="2019-04-13T15:20:14.273Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Edusoho之LNMP环境搭建">
-<meta name="twitter:description" content="1.更新12sudo apt-get updatesudo apt-get upgrade 2.安装Nginx1sudo apt-get install nginx 3.安装php123udo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \    php7.0-dev php7.0-fpm php7.0-json ph">
+<meta name="twitter:description" content="1.更新12sudo apt-get updatesudo apt-get upgrade 2.安装Nginx1sudo apt-get install nginx 3.安装php123sudo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \    php7.0-dev php7.0-fpm php7.0-json p">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -89,7 +89,7 @@
       
         <h2><span id="1更新">1.更新</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
 <h2><span id="2安装nginx">2.安装Nginx</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
-<h2><span id="3安装php">3.安装php</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">udo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \</span><br><span class="line">    php7.0-dev php7.0-fpm php7.0-json php7.0-mbstring php7.0-mcrypt \</span><br><span class="line">    php7.0-mysql php7.0-opcache php7.0-zip php7.0-intl php7.0-gd php7.0-xml</span><br></pre></td></tr></table></figure>
+<h2><span id="3安装php">3.安装php</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \</span><br><span class="line">    php7.0-dev php7.0-fpm php7.0-json php7.0-mbstring php7.0-mcrypt \</span><br><span class="line">    php7.0-mysql php7.0-opcache php7.0-zip php7.0-intl php7.0-gd php7.0-xml</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>修改配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/php/7.0/fpm/php.ini</span><br></pre></td></tr></table></figure></p>
 <p>修改配置内容如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">post_max_size = 1024M</span><br><span class="line">memory_limit = 1024M</span><br><span class="line">upload_max_filesize = 1024M</span><br></pre></td></tr></table></figure></p>
@@ -103,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/Edusoho之LNMP环境搭建/" data-id="cjuf9mz3l0005fcvk80yomhq6" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/Edusoho之LNMP环境搭建/" data-id="cjufnehtl000d6kvkx5jext64" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
