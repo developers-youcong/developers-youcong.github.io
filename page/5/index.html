@@ -62,6 +62,130 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JSON-stringify-和JSON-parse-的作用" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/22/JSON-stringify-和JSON-parse-的作用/" class="article-date">
+  <time datetime="2019-03-22T08:44:36.054Z" itemprop="datePublished">2019-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title: JSON.stringify()和JSON.parse()的作用<br>date: 2019-03-22T16:44:36.000Z</p>
+<h2><span id="tags-javascript">tags: javascript</span></h2><p>(1)JSON.stringify() 从一个对象中解析出字符串</p>
+<p>JSON.stringify({“a”:”1”,”b”:”2”})</p>
+<p>结果是：”{“a”:”1”,”b”:”2”}”</p>
+<p>(2)JSON.parse()从一个字符串中解析出JSON对象</p>
+<p>var str = ‘{“a”:”1”,”b”:”2”}’;</p>
+<p>JSON.parse(str);</p>
+<p>结果是：Object{a:”1”,b:”2”}</p>
+<p>应用场景:<br>针对(1)，比如后台Java对应的RequestMapping参数列表中的参数为一个对象时，前台多个传输需要经过JSON.stringify()处理，否则会出现参数解析异常。</p>
+<p>针对(2)，比如向后台请求，后台返回一大堆字符串，这时前台页面渲染需要将其以对象的形式展现，这时可以用到JSON.parse()。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/22/JSON-stringify-和JSON-parse-的作用/" data-id="cjujk76g1000g8kvky2iculnr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-mysql备份命令" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/21/mysql备份命令/" class="article-date">
+  <time datetime="2019-03-21T05:32:20.000Z" itemprop="datePublished">2019-03-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/21/mysql备份命令/">mysql备份命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>mysql备份命令如下:<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/03/21/mysql备份命令/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/21/mysql备份命令/" data-id="cjujk76hv002l8kvkqma4aaz7" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js获取访问IP、地区、、当前操作浏览器" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" class="article-date">
+  <time datetime="2019-03-21T05:18:25.000Z" itemprop="datePublished">2019-03-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/">js获取访问IP、地区、、当前操作浏览器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>js获取IP、地区、当前操作浏览器有什么用呢？</p>
+<p>我的回答是用处很多，比如现在的异地登录和对用户常用浏览器做数据分析等。</p>
+        
+          <p class="article-more-link">
+            <a href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" data-id="cjujk76hm00268kvkor1x00tf" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Uncaught-ReferenceError-layer-is-not-defined" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" class="article-date">
@@ -94,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" data-id="cjuhwfvbi001kgcvknyof9d70" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" data-id="cjujk76ha001q8kvkpgp9yhdx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -138,7 +262,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Error-listen-EADDRINUSE-3000/" data-id="cjuhwfv9i000egcvko76fijof" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Error-listen-EADDRINUSE-3000/" data-id="cjujk76fy000c8kvkk3krx72z" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -181,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/python3-6在linux持久运行django/" data-id="cjuhwfve3003mgcvk1jr4gcgf" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/python3-6在linux持久运行django/" data-id="cjujk76ja00418kvk6jfs9jxo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -224,7 +348,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/" data-id="cjuhwfv9w000ngcvkw04xk2at" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/" data-id="cjujk76gj000r8kvkt7bjzrfa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -272,7 +396,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/PostgreSQL安装和使用/" data-id="cjuhwfv9z000pgcvkkmc1ei1l" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/PostgreSQL安装和使用/" data-id="cjujk76gl000t8kvkw9qw7imy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li></ul>
@@ -316,7 +440,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/" data-id="cjuhwfve8003sgcvkhio5xhaf" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/" data-id="cjujk76iw003i8kvkya8h7wxu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -359,133 +483,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cjuhwfvck0026gcvkkdn74sv0" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-express框架之跨域请求" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/13/express框架之跨域请求/" class="article-date">
-  <time datetime="2019-03-13T14:51:59.000Z" itemprop="datePublished">2019-03-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/express框架之跨域请求/">express框架之跨域请求</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>express.js跨域请求代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.all(&apos;*&apos;, function(req, res, next) &#123;</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Headers&quot;, &quot;X-Requested-With&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Methods&quot;,&quot;PUT,POST,GET,DELETE,OPTIONS&quot;);</span><br><span class="line">    res.header(&quot;X-Powered-By&quot;,&apos; 3.2.1&apos;)</span><br><span class="line">    res.header(&quot;Content-Type&quot;, &quot;application/json;charset=utf-8&quot;);</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>按照上面的代码，即可解决跨域问题。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/express框架之跨域请求/" data-id="cjuhwfvbx001ugcvkkthz3vl3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-node-js之Cookie" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/13/node-js之Cookie/" class="article-date">
-  <time datetime="2019-03-13T14:27:45.000Z" itemprop="datePublished">2019-03-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/node-js之Cookie/">node.js之Cookie</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>最近还是用node.js比较多，今天正好遇见一个问题，还是关于Cookie。<br></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/13/node-js之Cookie/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/node-js之Cookie/" data-id="cjuhwfvdo0031gcvkuiw516r8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-jQuery和js之Cookie实现" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/13/jQuery和js之Cookie实现/" class="article-date">
-  <time datetime="2019-03-13T14:11:06.000Z" itemprop="datePublished">2019-03-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/jQuery和js之Cookie实现/">jQuery和js之Cookie实现</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Web开发者的朋友们基本上都知道，jQuery是对js的封装。今天之所以想讲解这个问题，主要是因为Cookie用的还是比较多，应用场景除了老生常谈的购物车，还有就是用户状态(以我之前开发的一个项目除了session和token外，还有一个加密cookie，双重保护，确保系统安全)。<br></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/13/jQuery和js之Cookie实现/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/" data-id="cjuhwfvc80021gcvksclg3448" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cjujk76hf001x8kvko0z5yuti" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -515,7 +513,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
     </div>
   </div>
 
@@ -525,7 +523,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 11.43px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 11.43px;">Git</a> <a href="/tags/Linux/" style="font-size: 18.57px;">Linux</a> <a href="/tags/MyBatis/" style="font-size: 14.29px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.43px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.43px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 15.71px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 12.86px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 10px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.43px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 12.86px;">架构</a> <a href="/tags/计算机/" style="font-size: 10px;">计算机</a>
+      <a href="/tags/Docker/" style="font-size: 11.43px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 11.43px;">Git</a> <a href="/tags/Linux/" style="font-size: 18.57px;">Linux</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MyBatis/" style="font-size: 14.29px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.43px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.43px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 15.71px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 12.86px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 11.43px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.43px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 12.86px;">架构</a> <a href="/tags/计算机/" style="font-size: 10px;">计算机</a>
     </div>
   </div>
 
@@ -547,23 +545,23 @@
       <ul>
         
           <li>
+            <a href="/2019/04/16/Jenkins持续集成实践之java项目自动化部署/">Jenkins持续集成实践之java项目自动化部署</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/16/Ubuntu16-04安装和配置RabbitMQ/">Ubuntu16.04安装和配置RabbitMQ</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/16/maven打包如何跳过测试/">maven打包如何跳过测试</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/15/微信、qq可以上网，但是浏览器却不能上网怎么办/">微信、qq可以上网，但是浏览器却不能上网怎么办</a>
           </li>
         
           <li>
             <a href="/2019/04/13/shell杀死指定端口的进程/">shell杀死指定端口的进程</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/12/大型网站核心架构因素/">大型网站核心架构因素</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/11/多模块应用自动化部署/">多模块应用自动化部署</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/11/单体应用自动化部署/">单体应用自动化部署</a>
           </li>
         
       </ul>

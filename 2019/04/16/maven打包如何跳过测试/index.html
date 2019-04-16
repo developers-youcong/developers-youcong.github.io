@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>maven打包如何跳过测试 | Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Maven打包如何跳过测试?正常来说，不应该这样做，因为测试可以避免很多麻烦排除一些不必要的错误，前提是测试足够规范，这里主要指junit测试，如果junit测试有问题的话，将会直接影响到mvn install打包。">
+<meta name="keywords" content="Maven">
+<meta property="og:type" content="article">
+<meta property="og:title" content="maven打包如何跳过测试">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/04/16/maven打包如何跳过测试/index.html">
+<meta property="og:site_name" content="Blog">
+<meta property="og:description" content="Maven打包如何跳过测试?正常来说，不应该这样做，因为测试可以避免很多麻烦排除一些不必要的错误，前提是测试足够规范，这里主要指junit测试，如果junit测试有问题的话，将会直接影响到mvn install打包。">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-16T09:04:19.948Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="maven打包如何跳过测试">
+<meta name="twitter:description" content="Maven打包如何跳过测试?正常来说，不应该这样做，因为测试可以避免很多麻烦排除一些不必要的错误，前提是测试足够规范，这里主要指junit测试，如果junit测试有问题的话，将会直接影响到mvn install打包。">
+  
+    <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://developers-youcong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-maven打包如何跳过测试" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/16/maven打包如何跳过测试/" class="article-date">
+  <time datetime="2019-04-16T03:44:11.000Z" itemprop="datePublished">2019-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      maven打包如何跳过测试
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Maven打包如何跳过测试?<br>正常来说，不应该这样做，因为测试可以避免很多麻烦排除一些不必要的错误，前提是测试足够规范，这里主要指junit测试，如果junit测试有问题的话，将会直接影响到mvn install打包。<br><a id="more"></a></p>
+<p><strong>如何跳过测试，有两种办法</strong>:</p>
+<p>(1)使用maven命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mvn test -Dmaven.test.failure.ignore=true  </span><br><span class="line">mvn install -Dmaven.test.skip=true</span><br></pre></td></tr></table></figure></p>
+<p>(2)在pom文件中添加如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;build&gt;</span><br><span class="line"></span><br><span class="line">	&lt;plugins&gt;</span><br><span class="line">		&lt;plugin&gt;</span><br><span class="line">			&lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;</span><br><span class="line">		&lt;/plugin&gt;</span><br><span class="line"></span><br><span class="line">		&lt;plugin&gt;</span><br><span class="line">			&lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;</span><br><span class="line">			&lt;configuration&gt;</span><br><span class="line">				&lt;skip&gt;true&lt;/skip&gt;</span><br><span class="line">			&lt;/configuration&gt;</span><br><span class="line">		&lt;/plugin&gt;</span><br><span class="line">	&lt;/plugins&gt;</span><br><span class="line">&lt;/build&gt;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/16/maven打包如何跳过测试/" data-id="cjujk76hp002b8kvkf9v8cxyb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/04/16/Ubuntu16-04安装和配置RabbitMQ/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Ubuntu16.04安装和配置RabbitMQ
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/04/15/微信、qq可以上网，但是浏览器却不能上网怎么办/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">微信、qq可以上网，但是浏览器却不能上网怎么办</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Docker/" style="font-size: 11.43px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 11.43px;">Git</a> <a href="/tags/Linux/" style="font-size: 18.57px;">Linux</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MyBatis/" style="font-size: 14.29px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.43px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.43px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 15.71px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 12.86px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 11.43px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.43px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 12.86px;">架构</a> <a href="/tags/计算机/" style="font-size: 10px;">计算机</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/04/16/Jenkins持续集成实践之java项目自动化部署/">Jenkins持续集成实践之java项目自动化部署</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/16/Ubuntu16-04安装和配置RabbitMQ/">Ubuntu16.04安装和配置RabbitMQ</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/16/maven打包如何跳过测试/">maven打包如何跳过测试</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/15/微信、qq可以上网，但是浏览器却不能上网怎么办/">微信、qq可以上网，但是浏览器却不能上网怎么办</a>
+          </li>
+        
+          <li>
+            <a href="/2019/04/13/shell杀死指定端口的进程/">shell杀死指定端口的进程</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 youcong<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
