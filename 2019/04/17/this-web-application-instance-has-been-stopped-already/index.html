@@ -5,20 +5,20 @@
   
 
   
-  <title>node.js读写文件 | Blog</title>
+  <title>this web application instance has been stopped already | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于node.js的读写操作，应用场景有很多。比如其中这样的一个场景，如何获取全局的token。这就涉及到写和读操作了。">
-<meta name="keywords" content="Node.js">
+  <meta name="description" content="详细错误信息如下:12[mybatis-plus MapperRefresh] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node.js读写文件">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/03/04/node-js读写文件/index.html">
+<meta property="og:title" content="this web application instance has been stopped already">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/04/17/this-web-application-instance-has-been-stopped-already/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="关于node.js的读写操作，应用场景有很多。比如其中这样的一个场景，如何获取全局的token。这就涉及到写和读操作了。">
+<meta property="og:description" content="详细错误信息如下:12[mybatis-plus MapperRefresh] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-11T13:33:44.499Z">
+<meta property="og:updated_time" content="2019-04-17T07:05:23.482Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node.js读写文件">
-<meta name="twitter:description" content="关于node.js的读写操作，应用场景有很多。比如其中这样的一个场景，如何获取全局的token。这就涉及到写和读操作了。">
+<meta name="twitter:title" content="this web application instance has been stopped already">
+<meta name="twitter:description" content="详细错误信息如下:12[mybatis-plus MapperRefresh] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not">
   
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -65,10 +65,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-node-js读写文件" class="article article-type-post" itemscope="" itemprop="blogPost">
+        <section id="main"><article id="post-this-web-application-instance-has-been-stopped-already" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/03/04/node-js读写文件/" class="article-date">
-  <time datetime="2019-03-04T13:32:24.000Z" itemprop="datePublished">2019-03-04</time>
+    <a href="/2019/04/17/this-web-application-instance-has-been-stopped-already/" class="article-date">
+  <time datetime="2019-04-17T06:56:49.000Z" itemprop="datePublished">2019-04-17</time>
 </a>
     
   </div>
@@ -79,7 +79,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      node.js读写文件
+      this web application instance has been stopped already
     </h1>
   
 
@@ -87,17 +87,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>关于node.js的读写操作，应用场景有很多。<br>比如其中这样的一个场景，如何获取全局的token。<br>这就涉及到写和读操作了。<br><a id="more"></a><br>写操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">function storeToken(token)&#123;</span><br><span class="line"></span><br><span class="line">	fs.writeFile(&apos;D://youcongtech//token.txt&apos;,token.slice(10),&apos;utf8&apos;,function(error)&#123;</span><br><span class="line"></span><br><span class="line">		if(error)&#123;</span><br><span class="line">			console.log(error);</span><br><span class="line">			return false;</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(&apos;write success&apos;);</span><br><span class="line"></span><br><span class="line">	&#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>读操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">function readToken()&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	fs.readFile(&apos;D://youcongtech//token.txt&apos;, function (err, data) &#123;</span><br><span class="line">		if (err) &#123;</span><br><span class="line">			return console.error(err);</span><br><span class="line">		&#125;</span><br><span class="line">		console.log(data.toString());</span><br><span class="line">	&#125;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>通过上述两个示例代码，就可以达到存取token的目的，这样一来就不必担心如何获取token问题。<br>当然了，问题的解决方式不止这一个，其实还可以用redis来存储token。</p>
+        <p>详细错误信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mybatis-plus MapperRefresh] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load [META-INF/services/javax.xml.xpath.XPathFactory]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.</span><br><span class="line"> java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [META-INF/services/javax.xml.xpath.XPathFactory]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.</span><br></pre></td></tr></table></figure></p>
+<p>关键信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this web application instance has been stopped already</span><br></pre></td></tr></table></figure></p>
+<p>初次看到这个问题，我也是一头雾水，因为没有影响正常的项目对外服务，但是严重影响线上对接客户端时日志的阅读。</p>
+<p>后来通过搜索知道了原因，原来是因为服务器上其中两个tomcat下的webapps项目相同导致的，而且这两个tomcat又是运行的，所以才导致这样的错误，于是我将另外的测试tomcat去除掉，问题就迎刃而解。</p>
+<p>问题解决参考链接:<br><a href="https://www.cnblogs.com/xxyBlogs/p/5536731.html" target="_blank" rel="noopener">关于tomcat启动报“this web application instance has been stopped already”的处理</a></p>
+<p><a href="https://blog.csdn.net/zl544434558/article/details/49095591" target="_blank" rel="noopener">org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/04/node-js读写文件/" data-id="cjul76xby003ldkvkuuoq81xp" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/17/this-web-application-instance-has-been-stopped-already/" data-id="cjul76xdc004edkvk18kuizbm" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -105,19 +108,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          node.js服务端程序在Linux上持久运行
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/04/javascript之传输加密/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2019/04/16/KindEditor富文本编辑器使用/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">javascript之传输加密</div>
+      <div class="article-nav-title">KindEditor富文本编辑器使用</div>
     </a>
   
 </nav>

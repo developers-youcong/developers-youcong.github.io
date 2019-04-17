@@ -62,6 +62,60 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-git分支开发的好处" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/06/git分支开发的好处/" class="article-date">
+  <time datetime="2019-04-06T13:32:46.000Z" itemprop="datePublished">2019-04-06</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/06/git分支开发的好处/">git分支开发的好处</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>有不少开发者们不习惯使用Git分支开发。原因有如下几个方面?<br>(1)不熟悉不习惯;<br>(2)觉得太麻烦;<br>今天我想说的是使用git分支开发绝对是一个高效版本控制的做法。</p>
+<p>当你遇到测试人员给你提的bug，你只需将其pull下来，并执行git checkout -b bug-solution01该命令即可，这条命令是切换并创建分支，当你切换到创建的分支时，便可以着手解决对应的bug，解决这个bug后，然后执行git checkout master后，再执行git merge bug-solution01该命令合并分支即可。<br>不过在一些中大公司里面，它们并不会通过主分支来合并侧分支，而是有一个开发分支，通过开发分支合并开发者分支，最后通过持续集成使master分支和开发分支合并集成测试部署(其实也是可以手动切换到master分支合并开发分支)等。假设有A、B、C等三个开发者，通常分支的形式是这样:</p>
+<ul>
+<li>主分支(master)</li>
+<li>开发分支(project-dev)</li>
+<li>开发者分支(A开发者分支、B开发者分支、C开发者分支等)</li>
+</ul>
+<p>假设我是开发者A，测试给我提了一个bug，我在A分支的基础上创建一个解决bug分支(暂且命名为a-bug-solution)，当我在a-bug-sllution分支上解决了这个bug并git commit提交到本地仓库后，然后通过git log查看对应的日志(防止提交失败或者其它意外),查看有对应的提交记录后，然后我切换到a-project-dev分支上执行git merge a-bug-solution，合并该分支，合并该分支成功后，然后我再次切换到project-dev分支上，执行git merge a-project-dev进行合并，合并成功后，我就可以不管了，因为剩下的可以交给持续集成工具(jenkins等)。</p>
+<p>上述说起了，大家可能觉得很麻烦或者是没必要这样做，原因可能觉得太耽误时间了，我的回答是非也，一开始可能有点麻烦，越到后面你会越发现它的好处，让你情不自禁地爱上它。</p>
+<p>分支开发的好处，是真正的确保每个人有自己的独立分支而不是全部在master分支上开发，全部在master分支上开发，弊端太多，比如隔离性太差了，而且全部在一个分支上开发的话，经常面临的就是解决冲突(在自己的分支上开发进行合并与全部在一个主分支上开发进行对比，如果代码提交相对频繁，你将会发现你永远都在解决冲突，如果提交缓慢的话，你还是发现在解决冲突，实际上你并不需要解决太多冲突，很多冲突是没有必要的)。</p>
+<p>最后归纳总结一下，分支开发的好处:</p>
+<ul>
+<li>版本迭代更加清晰</li>
+<li>开发效率提升</li>
+<li>利于代码review的实现，从而使整个团队开发更加规范，减少bug率</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/06/git分支开发的好处/" data-id="cjul76x9a0028dkvkmweqefbk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-layui之日期和时间组件" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/05/layui之日期和时间组件/" class="article-date">
@@ -93,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/05/layui之日期和时间组件/" data-id="cjujv4uxm002c24vkmu8qezts" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/05/layui之日期和时间组件/" data-id="cjul76xa2002mdkvk0ijr64ct" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -136,7 +190,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/04/vue-electron脚手架/" data-id="cjujv4v17004j24vkxy6vg80z" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/04/vue-electron脚手架/" data-id="cjul76xd30047dkvk6jmbxjxo" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Electron/">Electron</a></li></ul>
@@ -176,7 +230,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/03/GitHub-Contributions贡献值没有增加/" data-id="cjujv4uv5000924vko1253g5y" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/03/GitHub-Contributions贡献值没有增加/" data-id="cjul76x5q000idkvk0a20qrxv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -219,7 +273,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/03/记一次layui弹框关闭问题/" data-id="cjujv4v1v005924vkdk50zs7x" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/03/记一次layui弹框关闭问题/" data-id="cjul76xe0004xdkvkr5edt1wf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -262,7 +316,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/03/js获取select标签选中的值/" data-id="cjujv4uxg002524vkvwswctmf" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/03/js获取select标签选中的值/" data-id="cjul76x9m002ddkvke74756fc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -305,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/03/layui之确认框/" data-id="cjujv4uxp002g24vkh56cq70j" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/03/layui之确认框/" data-id="cjul76xas002xdkvk27uhu2gs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -348,7 +402,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/02/Node-js读取文件内容并返回值-非异步/" data-id="cjujv4uvy000m24vkmez5px5x" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/02/Node-js读取文件内容并返回值-非异步/" data-id="cjul76x6o000sdkvkxfn7cie3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -391,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" data-id="cjujv4v11004d24vkb84zvmsx" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" data-id="cjul76xcm003tdkvkeeu7zx7k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -435,55 +489,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cjujv4uvw000k24vk9f7wyaeo" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/29/MySQL去除查询结果重复/" data-id="cjul76x6k000rdkvkgukwsf3i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Ubuntu16-04之安装Nutch" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/29/Ubuntu16-04之安装Nutch/" class="article-date">
-  <time datetime="2019-03-29T06:45:58.000Z" itemprop="datePublished">2019-03-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/29/Ubuntu16-04之安装Nutch/">Ubuntu16.04之安装Nutch</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-下载Nutch"><a href="#1-下载Nutch" class="headerlink" title="1.下载Nutch"></a>1.下载Nutch</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://mirrors.shu.edu.cn/apache/nutch/2.3.1/apache-nutch-2.3.1-src.zip</span><br></pre></td></tr></table></figure>
-<h2 id="2-解压"><a href="#2-解压" class="headerlink" title="2.解压"></a>2.解压</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip apache-nutch-2.3.1-src.zip</span><br></pre></td></tr></table></figure>
-<h2 id="3-进入apache-nutch-2-3-1"><a href="#3-进入apache-nutch-2-3-1" class="headerlink" title="3.进入apache-nutch-2.3.1"></a>3.进入apache-nutch-2.3.1</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd apache-nutch-2.3.1</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/29/Ubuntu16-04之安装Nutch/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/29/Ubuntu16-04之安装Nutch/" data-id="cjujv4uww001e24vk7z5f8sec" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -520,7 +529,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 11.43px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 11.43px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 18.57px;">Linux</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MyBatis/" style="font-size: 14.29px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.43px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.43px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.43px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.43px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 15.71px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 12.86px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 11.43px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.43px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 12.86px;">架构</a> <a href="/tags/计算机/" style="font-size: 10px;">计算机</a>
+      <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MyBatis/" style="font-size: 15px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.67px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.67px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 13.33px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 11.67px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.67px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 13.33px;">架构</a> <a href="/tags/计算机/" style="font-size: 10px;">计算机</a>
     </div>
   </div>
 
@@ -542,6 +551,10 @@
       <ul>
         
           <li>
+            <a href="/2019/04/17/this-web-application-instance-has-been-stopped-already/">this web application instance has been stopped already</a>
+          </li>
+        
+          <li>
             <a href="/2019/04/16/KindEditor富文本编辑器使用/">KindEditor富文本编辑器使用</a>
           </li>
         
@@ -555,10 +568,6 @@
         
           <li>
             <a href="/2019/04/16/maven打包如何跳过测试/">maven打包如何跳过测试</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/15/微信、qq可以上网，但是浏览器却不能上网怎么办/">微信、qq可以上网，但是浏览器却不能上网怎么办</a>
           </li>
         
       </ul>
