@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
 
-  
-  <title>Could not get a resource from the pool 错误解决 | Blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="错误关键信息:Could not get a resource from the pool 通常原因是因为远程服务器上的redis没有配置好。 解决方案如下:(1)将redis.conf中的bind:127.0.0.1注释掉;(2)将redis.conf中的protected-mode yes改为protected-mode no 按照上述的解决方案是可以解决这个问题的。但是以SpringBoot">
+    <!--[if lt IE 9]>
+        <style>body {display: none; background: none !important} </style>
+        <meta http-equiv="Refresh" Content="0; url=//outdatedbrowser.com/" />
+    <![endif]-->
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="author" content="youcong">
+
+
+
+<meta name="description" content="错误关键信息:Could not get a resource from the pool 通常原因是因为远程服务器上的redis没有配置好。 解决方案如下:(1)将redis.conf中的bind:127.0.0.1注释掉;(2)将redis.conf中的protected-mode yes改为protected-mode no 按照上述的解决方案是可以解决这个问题的。但是以SpringBoot">
 <meta name="keywords" content="Redis">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Could not get a resource from the pool 错误解决">
@@ -19,60 +27,250 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Could not get a resource from the pool 错误解决">
 <meta name="twitter:description" content="错误关键信息:Could not get a resource from the pool 通常原因是因为远程服务器上的redis没有配置好。 解决方案如下:(1)将redis.conf中的bind:127.0.0.1注释掉;(2)将redis.conf中的protected-mode yes改为protected-mode no 按照上述的解决方案是可以解决这个问题的。但是以SpringBoot">
-  
+
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+
     <link rel="alternate" href="/atom.xml" title="Blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-</html>
+
+
+
+    <link rel="shortcut icon" href="/favicon.png">
+
+
+
+    <link href="//cdn.bootcss.com/animate.css/3.5.1/animate.min.css" rel="stylesheet">
+
+
+
+    <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+
+
+
+    <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+
+
+<link rel="stylesheet" href="/css/style.css">
+
+
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+
+
+<title>Could not get a resource from the pool 错误解决 | Blog</title>
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<script>
+    var yiliaConfig = {
+        fancybox: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+        scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
+        search: 
+    }
+</script>
+
+
+    <script> yiliaConfig.jquery_ui = [false]; </script>
+
+
+
+    <script> yiliaConfig.rootUrl = "\/";</script>
+
+
+
+
+
+
+</head></html>
 <body>
   <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Blog</a>
-      </h1>
-      
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/img/my.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">youcong</a></h1>
+        </hgroup>
+
+        
+
+        
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives/">所有文章</a></li>
+                        
+                            <li><a href="/tags/">标签云</a></li>
+                        
+                            <li><a href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">专注于前端</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://developers-youcong.github.io"></form>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">youcong</a></h1>
       </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/img/my.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">youcong</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/tags/">标签云</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:123@123.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="#" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Could-not-get-a-resource-from-the-pool-错误解决" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" class="article-date">
-  <time datetime="2019-03-09T12:26:18.000Z" itemprop="datePublished">2019-03-09</time>
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+</nav>
+      <div class="body-wrap"><article id="post-Could-not-get-a-resource-from-the-pool-错误解决" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" class="article-date">
+      <time datetime="2019-03-09T12:26:18.000Z" itemprop="datePublished">2019-03-09</time>
 </a>
-    
-  </div>
+
+
+    </div>
+  
   <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
     
     
       <header class="article-header">
@@ -84,9 +282,22 @@
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
+          
         <p>错误关键信息:Could not get a resource from the pool</p>
 <p>通常原因是因为远程服务器上的redis没有配置好。</p>
 <p>解决方案如下:<br>(1)将redis.conf中的bind:127.0.0.1注释掉;<br>(2)将redis.conf中的protected-mode yes改为protected-mode no</p>
@@ -99,138 +310,214 @@
 
       
     </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" data-id="cjunjoabx0000r4vk4tit5yx8" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
-
-    </footer>
+    
   </div>
   
     
-<nav id="article-nav">
-  
-    <a href="/2019/03/09/StringRedisTemplate操作Redis/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/">Could not get a resource from the pool 错误解决</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
+        <p><span>发布时间:</span>2019-03-09, 20:26:18</p>
+        <p><span>最后更新:</span>2019-04-11, 21:27:16</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" title="Could not get a resource from the pool 错误解决">http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
         
-          StringRedisTemplate操作Redis
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2019/03/09/StringRedisTemplate操作Redis/">
+                    StringRedisTemplate操作Redis
+                </a>
+            </div>
         
-      </div>
-    </a>
-  
-  
-    <a href="/2019/03/08/大型网站技术架构演化/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">大型网站技术架构演化</div>
-    </a>
-  
-</nav>
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2019/03/08/大型网站技术架构演化/">
+                    大型网站技术架构演化
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
 
-</section>
+    <div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Docker/">Docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Electron/">Electron</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Git/">Git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Maven/">Maven</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MyBatis/">MyBatis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MySQL/">MySQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Node-js/">Node.js</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Redis/">Redis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VsCode/">VsCode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jenkins/">jenkins</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/wordpress/">wordpress</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/存储/">存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
+            
+        
     </div>
-  </div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
 
 
-  
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Docker/" style="font-size: 11.67px;">Docker</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 11.67px;">Git</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/MyBatis/" style="font-size: 15px;">MyBatis</a> <a href="/tags/MySQL/" style="font-size: 11.67px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.67px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.67px;">Python</a> <a href="/tags/Redis/" style="font-size: 11.67px;">Redis</a> <a href="/tags/SpringBoot/" style="font-size: 16.67px;">SpringBoot</a> <a href="/tags/VsCode/" style="font-size: 13.33px;">VsCode</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 11.67px;">jenkins</a> <a href="/tags/wordpress/" style="font-size: 11.67px;">wordpress</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/架构/" style="font-size: 13.33px;">架构</a> <a href="/tags/计算机/" style="font-size: 11.67px;">计算机</a>
-    </div>
-  </div>
-
-  
+<div class="share">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
-    </div>
-  </div>
-
-
-  
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Could not get a resource from the pool 错误解决　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2019/04/18/点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢/">点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/17/this-web-application-instance-has-been-stopped-already/">this web application instance has been stopped already</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/16/KindEditor富文本编辑器使用/">KindEditor富文本编辑器使用</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/16/Jenkins持续集成实践之java项目自动化部署/">Jenkins持续集成实践之java项目自动化部署</a>
-          </li>
-        
-          <li>
-            <a href="/2019/04/16/Ubuntu16-04安装和配置RabbitMQ/">Ubuntu16.04安装和配置RabbitMQ</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
 
-  
-</aside>
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-      </div>
+            <a href="/2019/03/09/StringRedisTemplate操作Redis/" title="上一篇: StringRedisTemplate操作Redis">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2019/03/08/大型网站技术架构演化/" title="下一篇: 大型网站技术架构演化">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2019/04/18/点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢/">点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/17/this-web-application-instance-has-been-stopped-already/">this web application instance has been stopped already</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/16/KindEditor富文本编辑器使用/">KindEditor富文本编辑器使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/16/Jenkins持续集成实践之java项目自动化部署/">Jenkins持续集成实践之java项目自动化部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/16/Ubuntu16-04安装和配置RabbitMQ/">Ubuntu16.04安装和配置RabbitMQ</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/16/maven打包如何跳过测试/">maven打包如何跳过测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/15/微信、qq可以上网，但是浏览器却不能上网怎么办/">微信、qq可以上网，但是浏览器却不能上网怎么办</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/13/shell杀死指定端口的进程/">shell杀死指定端口的进程</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/12/大型网站核心架构因素/">大型网站核心架构因素</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/11/多模块应用自动化部署/">多模块应用自动化部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/11/单体应用自动化部署/">单体应用自动化部署</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/10/Edusoho之LNMP环境搭建/">Edusoho之LNMP环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/10/Edusoho之LAMP环境搭建/">Edusoho之LAMP环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/10/E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem/">E:dpkg was interrupted, you must manually run'dpkg配置'to correct the problem.</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/10/Ubuntu16-04中php如何切换版本/">Ubuntu16.04中php如何切换版本</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/10/nginx上配置phpmyadmin/">nginx上配置phpmyadmin</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/">Spring Boot:The field file exceeds its maximum permitted size of 1048576 bytes</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/08/SpringBoot打包成war/">SpringBoot打包成war</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/08/大型网站架构模式/">大型网站架构模式</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/07/博客中的文章归档是如何实现的/">博客中的文章归档是如何实现的</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/">Caused by: java.sql.SQLException: Value '0000-00-00 00:00:00' can not be represented as java.sql.Timestamp</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/06/git分支开发的好处/">git分支开发的好处</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/05/layui之日期和时间组件/">layui之日期和时间组件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/04/vue-electron脚手架/">vue-electron脚手架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/03/GitHub-Contributions贡献值没有增加/">GitHub Contributions贡献值没有增加</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/03/记一次layui弹框关闭问题/">记一次layui弹框关闭问题</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/03/js获取select标签选中的值/">js获取select标签选中的值</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/03/layui之确认框/">layui之确认框</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/02/Node-js读取文件内容并返回值-非异步/">Node.js读取文件内容并返回值(非异步)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/">springboot1.5.4 配置druid1.1.0(使用druid-spring-boot-starter)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/29/MySQL去除查询结果重复/">MySQL去除查询结果重复</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/29/Ubuntu16-04之安装Nutch/">Ubuntu16.04之安装Nutch</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/29/Ubuntu16-04Solr7-7-1环境搭建/">Ubuntu16.04之Solr7.7.1环境搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/28/org-springframework-jdbc-BadSqlGrammarException/">org.springframework.jdbc.BadSqlGrammarException</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/28/org-xml-sax-SAXParseException-在实体引用中-实体名称必须紧跟在-后面/">org.xml.sax.SAXParseException;在实体引用中, 实体名称必须紧跟在 '&' 后面</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/28/如何让Node-js运行在浏览器端/">如何让Node.js运行在浏览器端</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/28/Ubuntu16-04安装和使用ElasticSearch/">Ubuntu16.04安装和使用ElasticSearch</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/27/VsCode云端版本/">VsCode云端版本</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/27/普通用户使用Docker/">普通用户使用Docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/27/Docker安装MySQL并配置远程访问/">Docker安装MySQL并配置远程访问</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/27/Node-js之mysql增删改查/">Node.js之mysql增删改查</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/27/node-js获取时间/">node.js获取时间</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/25/node-js-api文档生成/">node.js api文档生成</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/22/JSON-stringify-和JSON-parse-的作用/">JSON-stringify-和JSON-parse-的作用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/mysql备份命令/">mysql备份命令</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/">js获取访问IP、地区、、当前操作浏览器</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/">Uncaught ReferenceError: layer is not defined</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/19/Error-listen-EADDRINUSE-3000/">Error: listen EADDRINUSE :::3000</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/19/python3-6在linux持久运行django/">python3.6在linux持久运行django</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/">Node.js读取某个目录下的所有文件夹名字并将其写入到json文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/16/PostgreSQL安装和使用/">PostgreSQL安装和使用</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/16/npm-run-dev-在Linux上持久运行/">npm run dev 在Linux上持久运行</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/16/js截取url参数/">js截取url参数</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/13/express框架之跨域请求/">express框架之跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/13/node-js之Cookie/">node.js之Cookie</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/13/jQuery和js之Cookie实现/">jQuery和js之Cookie实现</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/13/SpringBoot之静态资源放行/">SpringBoot之静态资源放行</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/09/StringRedisTemplate操作Redis/">StringRedisTemplate操作Redis</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/">Could not get a resource from the pool 错误解决</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/08/大型网站技术架构演化/">大型网站技术架构演化</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/node-js之十大Web框架/">node.js之十大Web框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/javascript之map/">javascript之Map</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/springboot实现跨域请求/">Springboot实现跨域请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/node-js如何引用其它js文件/">node.js如何引用其它js文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/07/jenkins忘记管理员密码之解决方案/">jenkins忘记管理员密码之解决方案</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/06/mybatis之一对多/">mybatis之一对多</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/05/node-js服务端程序在Linux上持久运行/">node.js服务端程序在Linux上持久运行</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/node-js读写文件/">node.js读写文件</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/04/javascript之传输加密/">javascript之传输加密</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/01/VsCode插件开发之通信/">VsCode插件开发之通信</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/01/Python实现机器人聊天/">Python实现机器人聊天</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/01/node-js使用express框架进行文件上传/">node.js使用express框架进行文件上传</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/03/01/nginx让所有的http地址重定向到https/">nginx让所有的http地址重定向到https</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/26/nginx配置https/">nginx配置https</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/25/vscode源码编译运行打包使其由英文变为中文/">vscode源码编译运行打包使其由英文变为中文</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/25/阿里云配置tomcat-https/">阿里云配置tomcat https</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/23/springboot打成的jar包如何在Linux上持久运行/">springboot打成的jar包如何在Linux上持久运行</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/23/如何将博客园的数据迁移到wordpress上面/">如何将博客园的数据迁移到wordpress上面</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/23/wordpress数据表分析/">wordpress数据表分析</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/23/谈谈存储系统/">谈谈存储系统</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/node-js之express框架/">node.js之express框架</a></li><li class="post-list-item"><a class="post-list-link" href="/2019/02/22/SpringBoot之加密/">SpringBoot之加密</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
       <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 youcong<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2016-2019 youcong
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减 Hexo 双栏博客主题  v3.5">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style="display:none">
+                        <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>| </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style="display:none">
+                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
     </div>
-  </div>
 </footer>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
     
+<script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
 
 
 
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" onclick="load$hide();" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    // Open in New Window
+    
+        var oOpenInNew = {
+            
+            
+            
+            
+            
+            
+             archives: ".archive-article-title", 
+             miniArchives: "a.post-list-link", 
+            
+             friends: "#js-friends a", 
+             socail: ".social a" 
+        }
+        for (var x in oOpenInNew) {
+            $(oOpenInNew[x]).attr("target", "_blank");
+        }
+    
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
   </div>
 </body>
 </html>
