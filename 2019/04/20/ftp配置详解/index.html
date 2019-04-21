@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="举例说明，比如http://localhost:2019/blog/getCommentListInfo?postId=1如何获取postId=1这个参数值呢？">
-<meta name="keywords" content="javascript">
+<meta name="description" content="FTP配置详解FTP配置文件位置/etc/vsftpd.conflisten=NO设置为YES时vsftpd以独立运行方式启动，设置为NO时以xinetd方式启动（xinetd是管理守护进程的，将服务集中管理，可以减少大量服务的资源消耗）listen_ipv6=YES以上两个只能一个YES一个NO否则会出错listen_port=port设置控制连接的监听端口号，默认为21listen_addre">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js截取url参数">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/03/16/js截取url参数/index.html">
+<meta property="og:title" content="ftp配置详解">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/04/20/ftp配置详解/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="举例说明，比如http://localhost:2019/blog/getCommentListInfo?postId=1如何获取postId=1这个参数值呢？">
+<meta property="og:description" content="FTP配置详解FTP配置文件位置/etc/vsftpd.conflisten=NO设置为YES时vsftpd以独立运行方式启动，设置为NO时以xinetd方式启动（xinetd是管理守护进程的，将服务集中管理，可以减少大量服务的资源消耗）listen_ipv6=YES以上两个只能一个YES一个NO否则会出错listen_port=port设置控制连接的监听端口号，默认为21listen_addre">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-11T13:31:18.361Z">
+<meta property="og:updated_time" content="2019-04-20T13:22:47.545Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js截取url参数">
-<meta name="twitter:description" content="举例说明，比如http://localhost:2019/blog/getCommentListInfo?postId=1如何获取postId=1这个参数值呢？">
+<meta name="twitter:title" content="ftp配置详解">
+<meta name="twitter:description" content="FTP配置详解FTP配置文件位置/etc/vsftpd.conflisten=NO设置为YES时vsftpd以独立运行方式启动，设置为NO时以xinetd方式启动（xinetd是管理守护进程的，将服务集中管理，可以减少大量服务的资源消耗）listen_ipv6=YES以上两个只能一个YES一个NO否则会出错listen_port=port设置控制连接的监听端口号，默认为21listen_addre">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>js截取url参数 | Blog</title>
+<title>ftp配置详解 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -279,11 +279,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-js截取url参数" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-ftp配置详解" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/16/js截取url参数/" class="article-date">
-      <time datetime="2019-03-16T07:24:33.000Z" itemprop="datePublished">2019-03-16</time>
+      <a href="/2019/04/20/ftp配置详解/" class="article-date">
+      <time datetime="2019-04-20T13:21:57.000Z" itemprop="datePublished">2019-04-20</time>
 </a>
 
 
@@ -298,7 +298,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      js截取url参数
+      ftp配置详解
     </h1>
   
 
@@ -309,7 +309,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -319,8 +319,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>举例说明，比如<a href="http://localhost:2019/blog/getCommentListInfo?postId=1" target="_blank" rel="noopener">http://localhost:2019/blog/getCommentListInfo?postId=1</a><br>如何获取postId=1这个参数值呢？<br><a id="more"></a><br>很简单通过下面代码即可获取，如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">window.onload = function() &#123;</span><br><span class="line"></span><br><span class="line">	var postId = getUrlParms(&quot;postId&quot;);</span><br><span class="line"></span><br><span class="line">	getByIdCommentInfo(postId);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//获取地址栏参数，name:参数名称</span><br><span class="line">function getUrlParms(name) &#123;</span><br><span class="line">	var reg = new RegExp(&quot;(^|&amp;)&quot; + name + &quot;=([^&amp;]*)(&amp;|$)&quot;);</span><br><span class="line">	var r = window.location.search.substr(1).match(reg);</span><br><span class="line">	if(r != null)</span><br><span class="line">		return unescape(r[2]);</span><br><span class="line">	return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>参考资料:<br>js获取url传递参数，js获取url?号后面的参数:<a href="https://www.cnblogs.com/karila/p/5991340.html" target="_blank" rel="noopener">https://www.cnblogs.com/karila/p/5991340.html</a></p>
+        <h2><span id="ftp配置详解">FTP配置详解</span></h2><p>FTP配置文件位置/etc/vsftpd.conf<br>listen=NO<br>设置为YES时vsftpd以独立运行方式启动，设置为NO时以xinetd方式启动（xinetd是管理守护进程的，将服务集中管理，可以减少大量服务的资源消耗）<br>listen_ipv6=YES<br>以上两个只能一个YES一个NO否则会出错<br>listen_port=port<br>设置控制连接的监听端口号，默认为21<br>listen_address=ip_address<br>将在绑定到指定IP地址运行，适合多网卡<br>connect_from_port_20=YES/NO<br>若为YES，则强迫FTP－DATA的数据传送使用port 20，默认YES<br>anonymous_enable=YES<br>允许匿名登陆<br>anon_root=/home/ftp<br>匿名登陆进去后的默认目录，这个自己设置<br>no_anon_password=YES<br>匿名登陆不需要密码<br>anon_upload_enable=YES<br>匿名用户是否能够上传文件，这个YES表示允许，并且它的父目录要有可写权限<br>anon_mkdir_write_enable=YES<br>允许匿名用户创建目录<br>anon_other_write_enable=NO<br>不允许匿名用户具有建立目录，上传之外的权限<br>anon_max_rate=n<br>设置匿名用户的最大传输速率，单位为B/s，值为0表示不限制<br>write_enable=YES<br>登陆用户是否有写权限，全局设置<br>local_enable=YES<br>是否允许本地用户登陆<br>local_root=/../..<br>本地登陆后的默认目录<br>控制用户访问文件vsftpd.user_list(文件中一行一个用户名)<br>在/etc/下面，没有就自己新建一个<br>userlist_file=/../..<br>上面那个文件的路径<br>userlist_enable=YES<br>是否启动vsftpd.user_list这个文件<br>userlist_deny=YES/NO<br>当为YES的时候，在vsftpd.user_list中的用户名不能登陆FTP<br>当为NO的时候，只有vsftpd.user_list中的用户名能登陆FTP<br>idle_session_timeout=300<br>设置多长时间不对FTP服务器进行任何操作，则断开该FTP连接，单位为秒<br>accept_timeout=60<br>建立FTP连接超时时间，单位秒<br>connection_timeout=60<br>PORT方式下建立FTP数据连接超时时间，单位秒<br>data_connection_timeout=60<br>设置空闲的用户会话在N秒后中断，单位秒<br>xferlog_enable=YES<br>开启日志记录<br>xferlog_file=/var/log/vsftpd.log<br>设置日志文件路径<br>pasv_enable=YES/NO<br>是否开启被动模式进行数据传输，有的客户机在防火墙后面，所以建议开启<br>pasv_min_port=n<br>pasv_max_port=m<br>设置被动模式后的数据连接端口范围在n和m之间<br>max_clients=n<br>在独立启动时限制服务器的连接数，0表示无限制<br>FTP添加用户<br>useradd函数，用于添加ftp用户<br>参数：<br>-d 指定用户根目录<br>-s 指定shell脚本为/bin/bash<br>-g 创建分组ftp分组<br>-G 指定root分组<br>例如:<br>useradd -d /home/linux/myftp -s /bin/bash ftpuser<br>详细信息输入useradd -h查看<br>删除ftp用户和主目录 userdel -r youruser<br>详细信息输入userdel -h查看<br>设置ftp用户密码<br>passwd ftpuser<br>输入命令后会让你输密码的<br>如果ftpuser是已存在的用户，则为修改旧密码<br>修改完配置文件后一定要重启服务<br>sudo /etc/init.d/vsftpd restart</p>
+<p>参考链接：<a href="https://www.jianshu.com/p/a299650780e0" target="_blank" rel="noopener">https://www.jianshu.com/p/a299650780e0</a></p>
 
       
     </div>
@@ -329,13 +329,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/03/16/js截取url参数/">js截取url参数</a></p>
+        <p><span>本文标题:</span><a href="/2019/04/20/ftp配置详解/">ftp配置详解</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-03-16, 15:24:33</p>
-        <p><span>最后更新:</span>2019-04-11, 21:31:18</p>
+        <p><span>发布时间:</span>2019-04-20, 21:21:57</p>
+        <p><span>最后更新:</span>2019-04-20, 21:22:47</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/03/16/js截取url参数/" title="js截取url参数">http://developers-youcong.github.io/2019/03/16/js截取url参数/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/03/16/js截取url参数/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/04/20/ftp配置详解/" title="ftp配置详解">http://developers-youcong.github.io/2019/04/20/ftp配置详解/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/04/20/ftp配置详解/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -347,16 +347,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/03/16/npm-run-dev-在Linux上持久运行/">
-                    npm run dev 在Linux上持久运行
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/03/13/express框架之跨域请求/">
-                    express框架之跨域请求
+                <a href="/2019/04/18/点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢/">
+                    点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢
                 </a>
             </div>
         
@@ -368,7 +362,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">FTP配置详解</span></a></li></ol>
         
     </div>
     <style>
@@ -404,7 +398,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"js截取url参数　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"ftp配置详解　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -424,15 +418,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/03/16/npm-run-dev-在Linux上持久运行/" title="上一篇: npm run dev 在Linux上持久运行">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/03/13/express框架之跨域请求/" title="下一篇: express框架之跨域请求">
+            <a href="/2019/04/18/点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢/" title="下一篇: 点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢">
                 <i class="fa fa-angle-right"></i>
             </a>
         

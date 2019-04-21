@@ -281,6 +281,67 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-ftp配置详解" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/20/ftp配置详解/" class="article-date">
+      <time datetime="2019-04-20T13:21:57.000Z" itemprop="datePublished">2019-04-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/20/ftp配置详解/">ftp配置详解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2><span id="ftp配置详解">FTP配置详解</span></h2><p>FTP配置文件位置/etc/vsftpd.conf<br>listen=NO<br>设置为YES时vsftpd以独立运行方式启动，设置为NO时以xinetd方式启动（xinetd是管理守护进程的，将服务集中管理，可以减少大量服务的资源消耗）<br>listen_ipv6=YES<br>以上两个只能一个YES一个NO否则会出错<br>listen_port=port<br>设置控制连接的监听端口号，默认为21<br>listen_address=ip_address<br>将在绑定到指定IP地址运行，适合多网卡<br>connect_from_port_20=YES/NO<br>若为YES，则强迫FTP－DATA的数据传送使用port 20，默认YES<br>anonymous_enable=YES<br>允许匿名登陆<br>anon_root=/home/ftp<br>匿名登陆进去后的默认目录，这个自己设置<br>no_anon_password=YES<br>匿名登陆不需要密码<br>anon_upload_enable=YES<br>匿名用户是否能够上传文件，这个YES表示允许，并且它的父目录要有可写权限<br>anon_mkdir_write_enable=YES<br>允许匿名用户创建目录<br>anon_other_write_enable=NO<br>不允许匿名用户具有建立目录，上传之外的权限<br>anon_max_rate=n<br>设置匿名用户的最大传输速率，单位为B/s，值为0表示不限制<br>write_enable=YES<br>登陆用户是否有写权限，全局设置<br>local_enable=YES<br>是否允许本地用户登陆<br>local_root=/../..<br>本地登陆后的默认目录<br>控制用户访问文件vsftpd.user_list(文件中一行一个用户名)<br>在/etc/下面，没有就自己新建一个<br>userlist_file=/../..<br>上面那个文件的路径<br>userlist_enable=YES<br>是否启动vsftpd.user_list这个文件<br>userlist_deny=YES/NO<br>当为YES的时候，在vsftpd.user_list中的用户名不能登陆FTP<br>当为NO的时候，只有vsftpd.user_list中的用户名能登陆FTP<br>idle_session_timeout=300<br>设置多长时间不对FTP服务器进行任何操作，则断开该FTP连接，单位为秒<br>accept_timeout=60<br>建立FTP连接超时时间，单位秒<br>connection_timeout=60<br>PORT方式下建立FTP数据连接超时时间，单位秒<br>data_connection_timeout=60<br>设置空闲的用户会话在N秒后中断，单位秒<br>xferlog_enable=YES<br>开启日志记录<br>xferlog_file=/var/log/vsftpd.log<br>设置日志文件路径<br>pasv_enable=YES/NO<br>是否开启被动模式进行数据传输，有的客户机在防火墙后面，所以建议开启<br>pasv_min_port=n<br>pasv_max_port=m<br>设置被动模式后的数据连接端口范围在n和m之间<br>max_clients=n<br>在独立启动时限制服务器的连接数，0表示无限制<br>FTP添加用户<br>useradd函数，用于添加ftp用户<br>参数：<br>-d 指定用户根目录<br>-s 指定shell脚本为/bin/bash<br>-g 创建分组ftp分组<br>-G 指定root分组<br>例如:<br>useradd -d /home/linux/myftp -s /bin/bash ftpuser<br>详细信息输入useradd -h查看<br>删除ftp用户和主目录 userdel -r youruser<br>详细信息输入userdel -h查看<br>设置ftp用户密码<br>passwd ftpuser<br>输入命令后会让你输密码的<br>如果ftpuser是已存在的用户，则为修改旧密码<br>修改完配置文件后一定要重启服务<br>sudo /etc/init.d/vsftpd restart</p>
+<p>参考链接：<a href="https://www.jianshu.com/p/a299650780e0" target="_blank" rel="noopener">https://www.jianshu.com/p/a299650780e0</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -854,70 +915,6 @@
       
         <p class="article-more-link">
           <a href="/2019/04/12/大型网站核心架构因素/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-多模块应用自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/11/多模块应用自动化部署/" class="article-date">
-      <time datetime="2019-04-11T07:16:04.000Z" itemprop="datePublished">2019-04-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/11/多模块应用自动化部署/">多模块应用自动化部署</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/11/多模块应用自动化部署/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
