@@ -489,45 +489,53 @@
     </script>
 
 
-<!--gitment 评论-->
-  <div class="comments" id="comments">
+
+
   
-	<!--汉化-->
-    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
-	<script src="https://billts.site/js/gitment.js"></script>
-	<!--原型-->
-	<!--
-	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js" type="text/javascript"></script>
-	-->
-	
-      <div id="gitmentContainer" style="margin-bottom: -19px;"></div>
-     
-      <style>
-        .gitment-container a {
-          border: none;
-        }
-        .comments {
-          margin: 60px 0 0;padding: 0 60px;
-        }
-      </style>
-     
-      <script type="text/javascript">
-        var gitment = new Gitment({
-			  id: 'springboot打成的jar包如何在Linux上持久运行',
-			  title: 'springboot打成的jar包如何在Linux上持久运行',
-			  owner: 'Sogrey',
-			  repo: 'Sogrey.github.io',
-			  oauth: {
-				client_id: '5826******a208c',
-				client_secret: '95db82**************************d7f6be1',
-			  },
-        })
-        gitment.render('gitmentContainer')
-      </script>
+  <!-- Gitment评论插件通用代码 -->
+<div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: "stven0king",//github用户名
+  repo: "stven0king.github.io",//用户存储评论的github项目名称
+  oauth: {
+    client_id: "fcc1c98d5dd6fa567a00",//注册OAuth Application时生产的ClinetID
+    client_secret:"b3f003ead6e4cf076a9f6ab387581af0ff6384d4",//注册OAuth Application时生成的Client Secret
+  },
+})
+gitment.render('git')
+</script>
+<!-- Gitment代码结束 -->
+  
+
+
+
     
-  </div>
-<!--gitment 评论 end--></div>
+        <section id="comments">
+    <style> aside.comment-bar { margin: auto 30px; }</style>
+    <div id="disqus_thread"></div>
+    <script>
+        var disqus_config = function(){
+            this.page.url = 'http://developers-youcong.github.io/2019/02/23/springboot打成的jar包如何在Linux上持久运行/';
+            this.page.identifier = '2019/02/23/springboot打成的jar包如何在Linux上持久运行/';
+        };
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = '//https-developers-youcong-github-io.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    
+    <script> loadComment(); </script>
+
+</section>
+
+
+    
+</div>
       <footer id="footer">
     <div class="outer">
         <div id="footer-info">
