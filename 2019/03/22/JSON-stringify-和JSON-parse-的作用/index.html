@@ -407,6 +407,27 @@
 
 
 
+  
+  <!-- Gitment评论插件通用代码 -->
+<div id="git"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: "developers-youcong",//github用户名
+  repo: "developers-youcong.github.io/",//用户存储评论的github项目名称
+  oauth: {
+    client_id: "fcc1c98d5dd6fa567a00",//注册OAuth Application时生产的ClinetID
+    client_secret:"b3f003ead6e4cf076a9f6ab387581af0ff6384d4",//注册OAuth Application时生成的Client Secret
+  },
+})
+gitment.render('git')
+</script>
+<!-- Gitment代码结束 -->
+  
+
+
+
 
     <div class="scroll" id="post-nav-button">
         
