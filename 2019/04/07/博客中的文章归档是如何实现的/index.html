@@ -479,7 +479,47 @@
     <script>
         
     </script>
-</div>
+
+
+<!--gitment 评论-->
+  <div class="comments" id="comments">
+  
+	<!--汉化-->
+    <link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+	<script src="https://billts.site/js/gitment.js"></script>
+	<!--原型-->
+	<!--
+	<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+	<script src="https://imsun.github.io/gitment/dist/gitment.browser.js" type="text/javascript"></script>
+	-->
+	
+      <div id="gitmentContainer" style="margin-bottom: -19px;"></div>
+     
+      <style>
+        .gitment-container a {
+          border: none;
+        }
+        .comments {
+          margin: 60px 0 0;padding: 0 60px;
+        }
+      </style>
+     
+      <script type="text/javascript">
+        var gitment = new Gitment({
+			  id: '博客中的文章归档是如何实现的',
+			  title: '博客中的文章归档是如何实现的',
+			  owner: 'Sogrey',
+			  repo: 'Sogrey.github.io',
+			  oauth: {
+				client_id: '5826******a208c',
+				client_secret: '95db82**************************d7f6be1',
+			  },
+        })
+        gitment.render('gitmentContainer')
+      </script>
+    
+  </div>
+<!--gitment 评论 end--></div>
       <footer id="footer">
     <div class="outer">
         <div id="footer-info">
