@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="最近还是用node.js比较多，今天正好遇见一个问题，还是关于Cookie。">
+<meta name="description" content="最近正好因业务的一个需求需要研究如何根据vscode的插件名来下载对应的插件以解决之前将插件打包上传到服务器上面导致的延迟问题(插件体积小还好说，如果体积过大，即便是压缩打成zip包，如果同一时刻很多人上传或下载，系统延迟将会非常严重)。之前一直想不明白，找半天找不到要给URL可以下载，最后不经意间有了灵感转变一下思路搞定了。灵感是一个好东西。本文主要讲Node.js如何执行cmd,应用场景除了我">
 <meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node.js之Cookie">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/03/13/node-js之Cookie/index.html">
+<meta property="og:title" content="Node.js如何执行cmd">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/04/26/Node-js如何执行cmd/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="最近还是用node.js比较多，今天正好遇见一个问题，还是关于Cookie。">
+<meta property="og:description" content="最近正好因业务的一个需求需要研究如何根据vscode的插件名来下载对应的插件以解决之前将插件打包上传到服务器上面导致的延迟问题(插件体积小还好说，如果体积过大，即便是压缩打成zip包，如果同一时刻很多人上传或下载，系统延迟将会非常严重)。之前一直想不明白，找半天找不到要给URL可以下载，最后不经意间有了灵感转变一下思路搞定了。灵感是一个好东西。本文主要讲Node.js如何执行cmd,应用场景除了我">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-11T13:34:41.555Z">
+<meta property="og:updated_time" content="2019-04-26T12:59:27.843Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node.js之Cookie">
-<meta name="twitter:description" content="最近还是用node.js比较多，今天正好遇见一个问题，还是关于Cookie。">
+<meta name="twitter:title" content="Node.js如何执行cmd">
+<meta name="twitter:description" content="最近正好因业务的一个需求需要研究如何根据vscode的插件名来下载对应的插件以解决之前将插件打包上传到服务器上面导致的延迟问题(插件体积小还好说，如果体积过大，即便是压缩打成zip包，如果同一时刻很多人上传或下载，系统延迟将会非常严重)。之前一直想不明白，找半天找不到要给URL可以下载，最后不经意间有了灵感转变一下思路搞定了。灵感是一个好东西。本文主要讲Node.js如何执行cmd,应用场景除了我">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>node.js之Cookie | Blog</title>
+<title>Node.js如何执行cmd | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -279,11 +279,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-node-js之Cookie" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Node-js如何执行cmd" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/13/node-js之Cookie/" class="article-date">
-      <time datetime="2019-03-13T14:27:45.000Z" itemprop="datePublished">2019-03-13</time>
+      <a href="/2019/04/26/Node-js如何执行cmd/" class="article-date">
+      <time datetime="2019-04-26T12:47:16.000Z" itemprop="datePublished">2019-04-26</time>
 </a>
 
 
@@ -298,7 +298,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      node.js之Cookie
+      Node.js如何执行cmd
     </h1>
   
 
@@ -319,12 +319,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>最近还是用node.js比较多，今天正好遇见一个问题，还是关于Cookie。<br><a id="more"></a><br>node.js中如何实现cookie(以express框架为例):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&quot;use strict&quot;;</span><br><span class="line"> </span><br><span class="line">var express = require(&quot;express&quot;);</span><br><span class="line">var cookieParser = require(&quot;cookie-parser&quot;);</span><br><span class="line">var util = require(&quot;util&quot;);</span><br><span class="line"> </span><br><span class="line">var app = express();</span><br><span class="line">app.use(cookieParser());</span><br><span class="line"> </span><br><span class="line">app.get(&quot;/test&quot;,function (req, res) &#123;</span><br><span class="line">    console.log(&quot;Cookies: &quot; + util.inspect(req.cookies));</span><br><span class="line">	</span><br><span class="line">	res.send(&quot;cookie&quot;);</span><br><span class="line">	</span><br><span class="line">&#125;);</span><br><span class="line"> </span><br><span class="line">app.listen(8081);</span><br></pre></td></tr></table></figure></p>
-<p>控制台输出结果为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Cookies: &#123; Hm_lvt_2edaee7dab677cdec491683758d1e378: &apos;1552046206,1552134942,1552485731&apos;,</span><br><span class="line">  Hm_lpvt_2edaee7dab677cdec491683758d1e378: &apos;1552485731&apos;,</span><br><span class="line">  add: [ null, null, null, null, null, null, null ] &#125;</span><br></pre></td></tr></table></figure></p>
-<p>如果不使用express的话，那么原生node.js是如何实现的呢？代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);</span><br><span class="line"></span><br><span class="line">http.createServer(function (req, res) &#123;</span><br><span class="line"></span><br><span class="line">    // 获得客户端的Cookie</span><br><span class="line"></span><br><span class="line">    var Cookies = &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    req.headers.cookie &amp;&amp; req.headers.cookie.split(&apos;;&apos;).forEach(function( Cookie ) &#123;</span><br><span class="line"></span><br><span class="line">        var parts = Cookie.split(&apos;=&apos;);</span><br><span class="line"></span><br><span class="line">        Cookies[ parts[ 0 ].trim() ] = ( parts[ 1 ] || &apos;&apos; ).trim();</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    console.log(Cookies)</span><br><span class="line"></span><br><span class="line">    // 向客户端设置一个Cookie</span><br><span class="line"></span><br><span class="line">    res.writeHead(200, &#123;</span><br><span class="line"></span><br><span class="line">        &apos;Set-Cookie&apos;: &apos;myCookie=test&apos;,</span><br><span class="line"></span><br><span class="line">        &apos;Content-Type&apos;: &apos;text/plain&apos;</span><br><span class="line"></span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    res.end(&apos;Hello World\n&apos;);</span><br><span class="line"></span><br><span class="line">&#125;).listen(8000);</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line">console.log(&apos;Server running at http://127.0.0.1:8000/&apos;);</span><br></pre></td></tr></table></figure></p>
-<p>‘<br>cookie并不是万能的，相反它有一定的安全隐患，为此node.js有一种cookie签名实现，源码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;express&apos;);</span><br><span class="line">const cookieParser = require(&apos;cookie-parser&apos;);</span><br><span class="line"></span><br><span class="line">//随机生成的字符串</span><br><span class="line">var signStr = &apos;xadsafeowirw&apos;</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line">//需要将密匙传给cookieParser, 在接收数据的时候，进行解析。</span><br><span class="line">app.use(cookieParser(signStr));</span><br><span class="line"></span><br><span class="line">app.use(&apos;/&apos;, function (req, res) &#123;</span><br><span class="line">    //将密匙字符串赋值给req.secret,可以省略，在上面cookieparser()时会自动对secret赋值</span><br><span class="line">    req.secret=signStr;</span><br><span class="line"></span><br><span class="line">    //返回给浏览器的cookie, 这就是传说中的种cookie了</span><br><span class="line">    //如果需要开启签名，第三个参数对象signed 设置为true.</span><br><span class="line">    //由于cookie的大小限制4k，而签名后的cookie体积会增加，所以重要的cookie才签名</span><br><span class="line">    res.cookie(&apos;cookiename&apos;, &apos;youcong&apos;, &#123;signed: true, maxAge: 3600&#125;)</span><br><span class="line"></span><br><span class="line">    //有没有签名的cookie，获取方式不一样。</span><br><span class="line">    console.log(&apos;无签名&apos;, req.cookies);</span><br><span class="line">    console.log(&apos;带签名&apos;,req.signedCookies);</span><br><span class="line">    res.send(&apos;ok&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(8090);</span><br></pre></td></tr></table></figure></p>
-<p>顺便再补充一下node.js的session实现,代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;express&apos;);</span><br><span class="line">const cookieParser = require(&apos;cookie-parser&apos;);</span><br><span class="line">const cookieSession = require(&apos;cookie-session&apos;);</span><br><span class="line"></span><br><span class="line">var app = express();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">app.use(cookieParser());</span><br><span class="line"></span><br><span class="line">//cookieSession 必须放在cookieParser后面</span><br><span class="line">app.use(cookieSession(&#123;</span><br><span class="line">    //session的秘钥，防止session劫持。 这个秘钥会被循环使用，秘钥越长，数量越多，破解难度越高。</span><br><span class="line">    keys: [&apos;aaa&apos;, &apos;bbb&apos;, &apos;ccc&apos;],</span><br><span class="line">    //session过期时间，不易太长。php默认20分钟</span><br><span class="line">    maxAge: 60*60,</span><br><span class="line">    //可以改变浏览器cookie的名字</span><br><span class="line">    name: &apos;session&apos;</span><br><span class="line">&#125;));</span><br><span class="line"></span><br><span class="line">app.use(&apos;/&apos;, function (req, res) &#123;</span><br><span class="line"></span><br><span class="line">    //假设使用count记录用户访问的次数</span><br><span class="line">   if(req.session[&apos;count&apos;] == null) &#123;</span><br><span class="line">       req.session[&apos;count&apos;] = 1;</span><br><span class="line">   &#125;else&#123;</span><br><span class="line">       req.session[&apos;count&apos;]++;</span><br><span class="line">   &#125;</span><br><span class="line">   console.log(req.session[&apos;count&apos;])</span><br><span class="line">    res.send(&apos;ok&apos;)</span><br><span class="line">&#125;)</span><br><span class="line">app.listen(8090)</span><br></pre></td></tr></table></figure></p>
-<p>参考资料如下:<br>node.js操作Cookie，让你清楚了解cookie存入过程:<a href="https://blog.csdn.net/sinat_18474835/article/details/79987282" target="_blank" rel="noopener">https://blog.csdn.net/sinat_18474835/article/details/79987282</a><br>Node.js学习（15）-Cookie:<a href="https://blog.csdn.net/sunhuansheng/article/details/82356129" target="_blank" rel="noopener">https://blog.csdn.net/sunhuansheng/article/details/82356129</a><br>node学习之cookie和session:<a href="https://www.cnblogs.com/lijinwen/p/7898159.html" target="_blank" rel="noopener">https://www.cnblogs.com/lijinwen/p/7898159.html</a></p>
+        <p>最近正好因业务的一个需求需要研究如何根据vscode的插件名来下载对应的插件以解决之前将插件打包上传到服务器上面导致的延迟问题(插件体积小还好说，如果体积过大，即便是压缩打成zip包，如果同一时刻很多人上传或下载，系统延迟将会非常严重)。<br>之前一直想不明白，找半天找不到要给URL可以下载，最后不经意间有了灵感转变一下思路搞定了。灵感是一个好东西。<br>本文主要讲Node.js如何执行cmd,应用场景除了我开头说的，其实还有很多，只有想不到，没有做不到。正如我们经理说的，现在基本上20%的技术可以解决80%的业务问题，这个时代，技术有点泛滥，换言之，技术产能过剩。<br><a id="more"></a></p>
+<h2><span id="一-下载node-cmd">一、下载node-cmd</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g node-cmd</span><br></pre></td></tr></table></figure>
+<h2><span id="二-编写测试函数indexjs">二、编写测试函数(index.js)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var nodeCmd = require(&apos;node-cmd&apos;);</span><br><span class="line"> </span><br><span class="line">function runCmdTest() &#123;</span><br><span class="line"></span><br><span class="line">			   var fileName = &quot;ms-ceintl.vscode-language-pack-zh-hans&quot;;</span><br><span class="line"></span><br><span class="line">			   console.log(&quot;fileNames:&quot;+fileName);</span><br><span class="line">			   </span><br><span class="line">			   nodeCmd.get(</span><br><span class="line">			 </span><br><span class="line">					&apos;code --install-extension &apos;+fileName+&apos; --extensions-dir=&quot;D:\1024Workspace\extension&quot;&apos;,</span><br><span class="line">			 </span><br><span class="line">					function(err, data, stderr)&#123;</span><br><span class="line">			 </span><br><span class="line">						console.log(data);</span><br><span class="line">			 </span><br><span class="line">					&#125;</span><br><span class="line">			 </span><br><span class="line">				);</span><br><span class="line"></span><br><span class="line">		nodeCmd.run(&apos;code --install-extension &apos;+fileName+&apos; --extensions-dir=&quot;D:\1024Workspace\extension&quot;&apos;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(runCmdTest());</span><br></pre></td></tr></table></figure>
+<p>参考资料如下:<br><a href="https://blog.csdn.net/llzkkk12/article/details/78171750" target="_blank" rel="noopener">nodejs 运行CMD命令</a></p>
 
       
     </div>
@@ -333,13 +331,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/03/13/node-js之Cookie/">node.js之Cookie</a></p>
+        <p><span>本文标题:</span><a href="/2019/04/26/Node-js如何执行cmd/">Node.js如何执行cmd</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-03-13, 22:27:45</p>
-        <p><span>最后更新:</span>2019-04-11, 21:34:41</p>
+        <p><span>发布时间:</span>2019-04-26, 20:47:16</p>
+        <p><span>最后更新:</span>2019-04-26, 20:59:27</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/03/13/node-js之Cookie/" title="node.js之Cookie">http://developers-youcong.github.io/2019/03/13/node-js之Cookie/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/03/13/node-js之Cookie/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/04/26/Node-js如何执行cmd/" title="Node.js如何执行cmd">http://developers-youcong.github.io/2019/04/26/Node-js如何执行cmd/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/04/26/Node-js如何执行cmd/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -351,16 +349,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/03/13/express框架之跨域请求/">
-                    express框架之跨域请求
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/03/13/jQuery和js之Cookie实现/">
-                    jQuery和js之Cookie实现
+                <a href="/2019/04/24/springfox-swagger之swagger-bootstrap-ui/">
+                    springfox-swagger之swagger-bootstrap-ui
                 </a>
             </div>
         
@@ -372,7 +364,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">一、下载node-cmd</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">二、编写测试函数(index.js)</span></a></li></ol>
         
     </div>
     <style>
@@ -408,7 +400,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"node.js之Cookie　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Node.js如何执行cmd　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -430,15 +422,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/03/13/express框架之跨域请求/" title="上一篇: express框架之跨域请求">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/03/13/jQuery和js之Cookie实现/" title="下一篇: jQuery和js之Cookie实现">
+            <a href="/2019/04/24/springfox-swagger之swagger-bootstrap-ui/" title="下一篇: springfox-swagger之swagger-bootstrap-ui">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -474,8 +464,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Wed Mar 13 2019 22:27:45 GMT+0800',
-			  title: 'node.js之Cookie',
+			  id: 'Fri Apr 26 2019 20:47:16 GMT+0800',
+			  title: 'Node.js如何执行cmd',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {

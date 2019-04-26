@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Node.js如何执行cmd</title>
+      <link href="/2019/04/26/Node-js%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8Ccmd/"/>
+      <url>/2019/04/26/Node-js%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8Ccmd/</url>
+      
+        <content type="html"><![CDATA[<p>最近正好因业务的一个需求需要研究如何根据vscode的插件名来下载对应的插件以解决之前将插件打包上传到服务器上面导致的延迟问题(插件体积小还好说，如果体积过大，即便是压缩打成zip包，如果同一时刻很多人上传或下载，系统延迟将会非常严重)。<br>之前一直想不明白，找半天找不到要给URL可以下载，最后不经意间有了灵感转变一下思路搞定了。灵感是一个好东西。<br>本文主要讲Node.js如何执行cmd,应用场景除了我开头说的，其实还有很多，只有想不到，没有做不到。正如我们经理说的，现在基本上20%的技术可以解决80%的业务问题，这个时代，技术有点泛滥，换言之，技术产能过剩。<br><a id="more"></a></p><h2><span id="一-下载node-cmd">一、下载node-cmd</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g node-cmd</span><br></pre></td></tr></table></figure><h2><span id="二-编写测试函数indexjs">二、编写测试函数(index.js)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var nodeCmd = require(&apos;node-cmd&apos;);</span><br><span class="line"> </span><br><span class="line">function runCmdTest() &#123;</span><br><span class="line"></span><br><span class="line">   var fileName = &quot;ms-ceintl.vscode-language-pack-zh-hans&quot;;</span><br><span class="line"></span><br><span class="line">   console.log(&quot;fileNames:&quot;+fileName);</span><br><span class="line">   </span><br><span class="line">   nodeCmd.get(</span><br><span class="line"> </span><br><span class="line">&apos;code --install-extension &apos;+fileName+&apos; --extensions-dir=&quot;D:\1024Workspace\extension&quot;&apos;,</span><br><span class="line"> </span><br><span class="line">function(err, data, stderr)&#123;</span><br><span class="line"> </span><br><span class="line">console.log(data);</span><br><span class="line"> </span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">nodeCmd.run(&apos;code --install-extension &apos;+fileName+&apos; --extensions-dir=&quot;D:\1024Workspace\extension&quot;&apos;);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(runCmdTest());</span><br></pre></td></tr></table></figure><p>参考资料如下:<br><a href="https://blog.csdn.net/llzkkk12/article/details/78171750" target="_blank" rel="noopener">nodejs 运行CMD命令</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Node.js </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>springfox-swagger之swagger-bootstrap-ui</title>
       <link href="/2019/04/24/springfox-swagger%E4%B9%8Bswagger-bootstrap-ui/"/>
       <url>/2019/04/24/springfox-swagger%E4%B9%8Bswagger-bootstrap-ui/</url>
