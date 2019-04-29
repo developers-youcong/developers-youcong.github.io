@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>Linux远程传输文件免密码</title>
+      <link href="/2019/04/29/Linux%E8%BF%9C%E7%A8%8B%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6%E5%85%8D%E5%AF%86%E7%A0%81/"/>
+      <url>/2019/04/29/Linux%E8%BF%9C%E7%A8%8B%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6%E5%85%8D%E5%AF%86%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<p>首先为什么Linux远程传输要免密码?<br>手动使用scp命令传输每次都要输密码太过麻烦了。</p><p>开发中有一句话，能复制粘贴尽量不要手打。</p><p>运维中有一句话，能脚本化实现尽量不要手动执行。</p><p><strong>远程传输文件免密码的目的:</strong><br>在于为了保证公司数据安全，将相关的备份文件传输到一个或多个备份服务器上防止服务器上面的数据因运维人员失误或者相关运营商失误而导致的严重后果。</p><p>A服务器地址：192.168.1.126，下面简称A<br>B服务器地址：192.168.1.128，下面简称B</p><p>步骤如下:<br><a id="more"></a></p><h2><span id="在a中生成密钥对">在A中生成密钥对</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -P &quot;&quot;</span><br></pre></td></tr></table></figure><p>执行上述命令，一路回车，会在当前登录用户的home目录下的.ssh目录下生成id_rsa和id_rsa.pub两个文件，分别代表密钥对的私钥和公钥。</p><h2><span id="拷贝a的公钥id_rsapub">拷贝A的公钥(id_rsa.pub)</span></h2><p>将其拷贝到B的root用户home目录为例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp /root/.ssh/id_rsa.pub root@192.168.1.128</span><br></pre></td></tr></table></figure></p><h2><span id="登录b">登录B</span></h2><p>拷贝A的id_rsa_pub内容到.ssh目录下的authorized_keys文件中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /root</span><br><span class="line">cat id_rsa.pub &gt;&gt; .ssh/authorized_keys</span><br></pre></td></tr></table></figure></p><h2><span id="此时在a中用ssh登录b或想b传输文件将不需要密码">此时在A中用ssh登录B或想B传输文件将不需要密码</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh root@192.168.1.128或</span><br><span class="line">scp test.txt root@192.168.1.128：/home/test/</span><br></pre></td></tr></table></figure><p>参考资料如下:<br><a href="https://blog.csdn.net/zhan570556752/article/details/80547063" target="_blank" rel="noopener">Linux远程传输文件免密码验证登陆和拷贝文件</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>sudo: no tty present and no askpass program specified</title>
+      <link href="/2019/04/27/sudo-no-tty-present-and-no-askpass-program-specified/"/>
+      <url>/2019/04/27/sudo-no-tty-present-and-no-askpass-program-specified/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo: no tty present and no askpass program specified</span><br></pre></td></tr></table></figure></p><p>错误原因:<br>是由于帐号并没有开启免密码导致的 </p><p>解决办法:</p><p>编辑sudoers文件</p><p>vim /etc/sudoers</p><p>添加免密码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户名 ALL = NOPASSWD: ALL</span><br></pre></td></tr></table></figure></p><p>如:jenkins ALL = NOPASSWD: ALL</p><p>参考链接:<br><a href="https://blog.csdn.net/a_little_a_day/article/details/78282983" target="_blank" rel="noopener">sudo: no tty present and no askpass program specified 解决方法</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> jenkins </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Node.js如何执行cmd</title>
       <link href="/2019/04/26/Node-js%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8Ccmd/"/>
       <url>/2019/04/26/Node-js%E5%A6%82%E4%BD%95%E6%89%A7%E8%A1%8Ccmd/</url>
