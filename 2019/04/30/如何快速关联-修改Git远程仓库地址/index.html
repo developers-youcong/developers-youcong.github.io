@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="如何快速关联/修改Git远程仓库地址?按照如下步骤即可快速实现关联/修改Git远程仓库地址:删除本地仓库当前关联的无效远程地址，再为本地仓库添加新的远程仓库地址1234git remote -v //查看git对应的远程仓库地址git remote rm origin //删除关联对应的远程仓库地址git remote -v //查看是否删除成功，如果没有任何返回结果，表示OKgit remote">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-30T12:12:45.056Z">
+<meta property="og:updated_time" content="2019-05-01T03:33:03.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何快速关联&#x2F;修改Git远程仓库地址">
 <meta name="twitter:description" content="如何快速关联/修改Git远程仓库地址?按照如下步骤即可快速实现关联/修改Git远程仓库地址:删除本地仓库当前关联的无效远程地址，再为本地仓库添加新的远程仓库地址1234git remote -v //查看git对应的远程仓库地址git remote rm origin //删除关联对应的远程仓库地址git remote -v //查看是否删除成功，如果没有任何返回结果，表示OKgit remote">
@@ -323,7 +323,7 @@
 <p>其实不仅仅上述这一种方式，还有如下几种方式:<br><a id="more"></a></p>
 <h4><span id="直接修改本地仓库所关联的远程仓库的地址">直接修改本地仓库所关联的远程仓库的地址</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git remote  //查看远程仓库名称：origin </span><br><span class="line">git remote get-url origin //查看远程仓库地址</span><br><span class="line">git remote set-url origin https://github.com/developers-youcong/Metronic_Template.git  ( 如果未设置ssh-key，此处仓库地址为 http://... 开头)</span><br></pre></td></tr></table></figure>
 <h4><span id="修改-git-配置文件">修改 .git 配置文件</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd .git  //进入.git目录</span><br><span class="line">vim config  //修改config配置文件，快速找到remote &quot;origin&quot;下面的url并替换即可实现快速关联和修改</span><br></pre></td></tr></table></figure>
-<h2><span id="如何快速关联修改git远程仓库地址的应用场景有哪些">如何快速关联/修改Git远程仓库地址的应用场景有哪些?</span></h2><p>(1)同步开源项目(以VsCode为例，我针对其进行二次开发，但是其版本总是在更新为了保持与其一致，我就得用到修改git远程仓库同步其最新代码);<br>(2)快速实现项目迁移(比如我不想用阿里云的git，我就将其迁移到github上面);</p>
+<h4><span id="如何快速关联修改git远程仓库地址的应用场景有哪些">如何快速关联/修改Git远程仓库地址的应用场景有哪些?</span></h4><p>(1)同步开源项目(以VsCode为例，我针对其进行二次开发，但是其版本总是在更新为了保持与其一致，我就得用到修改git远程仓库同步其最新代码);<br>(2)快速实现项目迁移(比如我不想用阿里云的git，我就将其迁移到github上面);</p>
 <p>本文参考资料如下:<br><a href="https://blog.csdn.net/mlq8087/article/details/81360025" target="_blank" rel="noopener">如何快速关联/ 修改 Git 远程仓库地址</a></p>
 
       
@@ -336,7 +336,7 @@
         <p><span>本文标题:</span><a href="/2019/04/30/如何快速关联-修改Git远程仓库地址/">如何快速关联/修改Git远程仓库地址</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2019-04-30, 11:27:54</p>
-        <p><span>最后更新:</span>2019-04-30, 20:12:45</p>
+        <p><span>最后更新:</span>2019-05-01, 11:33:03</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/04/30/如何快速关联-修改Git远程仓库地址/" title="如何快速关联/修改Git远程仓库地址">http://developers-youcong.github.io/2019/04/30/如何快速关联-修改Git远程仓库地址/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/04/30/如何快速关联-修改Git远程仓库地址/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -366,7 +366,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">如何快速关联/修改Git远程仓库地址?按照如下步骤即可快速实现关联/修改Git远程仓库地址:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">删除本地仓库当前关联的无效远程地址，再为本地仓库添加新的远程仓库地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">直接修改本地仓库所关联的远程仓库的地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-text">修改 .git 配置文件</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-text">如何快速关联/修改Git远程仓库地址的应用场景有哪些?</span></a></li>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">如何快速关联/修改Git远程仓库地址?按照如下步骤即可快速实现关联/修改Git远程仓库地址:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.0.1.</span> <span class="toc-text">删除本地仓库当前关联的无效远程地址，再为本地仓库添加新的远程仓库地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.0.2.</span> <span class="toc-text">直接修改本地仓库所关联的远程仓库的地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.0.3.</span> <span class="toc-text">修改 .git 配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.0.4.</span> <span class="toc-text">如何快速关联/修改Git远程仓库地址的应用场景有哪些?</span></a></li></ol></li></ol>
         
     </div>
     <style>
