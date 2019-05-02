@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>使用sqlyog连接 Mysql 出现1251错误</title>
+      <link href="/2019/05/02/%E4%BD%BF%E7%94%A8sqlyog%E8%BF%9E%E6%8E%A5-Mysql-%E5%87%BA%E7%8E%B01251%E9%94%99%E8%AF%AF/"/>
+      <url>/2019/05/02/%E4%BD%BF%E7%94%A8sqlyog%E8%BF%9E%E6%8E%A5-Mysql-%E5%87%BA%E7%8E%B01251%E9%94%99%E8%AF%AF/</url>
+      
+        <content type="html"><![CDATA[<p>错误如图所示:<br><img src="/2019/05/02/使用sqlyog连接-Mysql-出现1251错误/01.png" alt=""></p><p>错误详情信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1251 client does not support authentication protocol requested by server;consider upgrading Mysql client</span><br><span class="line"></span><br><span class="line">ERROR 1396 (HY000): Operation ALTER USER failed for &apos;root&apos;@&apos;localhost&apos;</span><br></pre></td></tr></table></figure></p><p>问题原因:<br>主要是由于mysql8以前的加密规则与mysql8以后的存在差异。</p><p>解决办法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;password&apos; PASSWORD EXPIRE NEVER;  ##修改加密规则</span><br><span class="line"></span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;password&apos;; ##更新一下用户的密码 password 为自己想要重新设置的密码</span><br><span class="line"></span><br><span class="line">FLUSH PRIVILEGES; ##刷新权限</span><br></pre></td></tr></table></figure></p><p>本文参考资料如下:<br><a href="https://blog.csdn.net/SUNbrightness/article/details/80600953" target="_blank" rel="noopener">Navicat 连接 Mysql 出现1251错误</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>The server time zone value &#39;ÖÐ¹ú±ê×¼Ê±¼ä&#39; is unrecognized or represents more than one time zone.</title>
+      <link href="/2019/05/01/The-server-time-zone-value-O%C3%90%C2%B9u%C2%B1e%C3%97%C2%BCE%C2%B1%C2%BCa-is-unrecognized-or-represents-more-than-one-time-zone/"/>
+      <url>/2019/05/01/The-server-time-zone-value-O%C3%90%C2%B9u%C2%B1e%C3%97%C2%BCE%C2%B1%C2%BCa-is-unrecognized-or-represents-more-than-one-time-zone/</url>
+      
+        <content type="html"><![CDATA[<p>问题背景:<br>在Java中使用JDBC操作数据库，该数据库版本为8.0.15属于高版本(如果是低版本的话，通常是不会出现这些问题的)</p><p>详细错误信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.sql.SQLException: The server time zone value &apos;ÖÐ¹ú±ê×¼Ê±¼ä&apos; is unrecognized or represents more than one time zone. You must configure either the server or JDBC driver (via the serverTimezone configuration property) to use a more specifc time zone value if you want to utilize time zone support.</span><br></pre></td></tr></table></figure></p><p>这个问题的原因是市区问题。</p><p>解决办法:<br>在jdbc对应的url加上serverTimezone=UTC即可解决，例如jdbc:mysql://localhost:3308/mysql?serverTimezone=UTC</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>如何快速关联/修改Git远程仓库地址</title>
       <link href="/2019/04/30/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%85%B3%E8%81%94-%E4%BF%AE%E6%94%B9Git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80/"/>
       <url>/2019/04/30/%E5%A6%82%E4%BD%95%E5%BF%AB%E9%80%9F%E5%85%B3%E8%81%94-%E4%BF%AE%E6%94%B9Git%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%9C%B0%E5%9D%80/</url>
