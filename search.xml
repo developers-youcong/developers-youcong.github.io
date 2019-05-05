@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>windows上hexo: command not found</title>
+      <link href="/2019/05/05/windows%E4%B8%8Ahexo-command-not-found/"/>
+      <url>/2019/05/05/windows%E4%B8%8Ahexo-command-not-found/</url>
+      
+        <content type="html"><![CDATA[<p>使用hexo写博客已经有好几个月了，今天突然出现hexo: command not found，应该与我白天的时候调一下环境变量等有关。<br>在对应的path添加环境变量，即可解决该问题。我的环境变量路径为:E:\Hexo\node_modules\hexo\bin<br><a id="more"></a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SyntaxError: Non-ASCII character &#39;æ&#39; in file csdn.py on line 7, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details</title>
       <link href="/2019/05/03/SyntaxError-Non-ASCII-character-xe6-in-file-csdn-py-on-line-7-but-no-encoding-declared-see-http-python-org-dev-peps-pep-0263-for-details/"/>
       <url>/2019/05/03/SyntaxError-Non-ASCII-character-xe6-in-file-csdn-py-on-line-7-but-no-encoding-declared-see-http-python-org-dev-peps-pep-0263-for-details/</url>
