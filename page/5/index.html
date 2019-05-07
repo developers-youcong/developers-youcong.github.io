@@ -281,6 +281,150 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-大型网站架构模式" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/08/大型网站架构模式/" class="article-date">
+      <time datetime="2019-04-08T05:59:10.000Z" itemprop="datePublished">2019-04-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/大型网站架构模式/">大型网站架构模式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>关于什么是模式,这个来自建筑师的词汇是这样定义的:”每一个模式描述了一个在我们周围不断重复发生的问题及该问题解决方案的核心。这样，你就能一次又一次地使用该方案而不必做重复的工作”。</p>
+<p>模式的关键在于模式的可重复性，问题与场景的可重复性带来的解决方案的可重复使用。</p>
+<p><strong>联系实际开发</strong>:<br>每个做前后台开发的小伙伴们都会发现一点，一个正儿八经的后台系统，80%是重复的，20%是特别的(可以称作个性化定制)。</p>
+<p>举个例子:<br>人人开源的后台系统:<br><img src="/2019/04/08/大型网站架构模式/model01.png" alt=""></p>
+<p>Jeesite4的后台系统:<br><img src="/2019/04/08/大型网站架构模式/model02.png" alt=""></p>
+<p>从这两者进行比对就可以明显的发现公共的部分非常相似(只不过展现的形式不一样，renren-security中的角色管理是直接在菜单中显示，而jeesite4则放在权限管理中，只需点击即可看到对应的角色管理)<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/08/大型网站架构模式/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-博客中的文章归档是如何实现的" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/07/博客中的文章归档是如何实现的/" class="article-date">
+      <time datetime="2019-04-07T07:39:40.000Z" itemprop="datePublished">2019-04-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/07/博客中的文章归档是如何实现的/">博客中的文章归档是如何实现的</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>我的效果图如下(这个是我实现的):<br><img src="/2019/04/07/博客中的文章归档是如何实现的/blog01.png" alt=""></p>
+<p>wordpress的效果图如下:<br><img src="/2019/04/07/博客中的文章归档是如何实现的/blog02.png" alt=""><br>sql代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT YEAR(post.post_modified)AS `year`,MONTH(post.post_modified) AS `month` FROM wp_posts AS post</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/07/博客中的文章归档是如何实现的/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -816,144 +960,6 @@
       
         <p class="article-more-link">
           <a href="/2019/04/03/layui之确认框/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Node-js读取文件内容并返回值-非异步" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/02/Node-js读取文件内容并返回值-非异步/" class="article-date">
-      <time datetime="2019-04-02T06:43:59.000Z" itemprop="datePublished">2019-04-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/02/Node-js读取文件内容并返回值-非异步/">Node.js读取文件内容并返回值(非异步)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>主要解决的问题的，以最近VsCode插件开发为例，每次请求都需要token,而vscode并不支持cookie这样的存储，所以就采用粗暴点办法，存到某个用户目录下并读取。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/02/Node-js读取文件内容并返回值-非异步/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" class="article-date">
-      <time datetime="2019-04-01T13:31:47.000Z" itemprop="datePublished">2019-04-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/">springboot1.5.4 配置druid1.1.0(使用druid-spring-boot-starter)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、导入Maven依赖"><a href="#一、导入Maven依赖" class="headerlink" title="一、导入Maven依赖"></a>一、导入Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

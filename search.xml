@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>Ubuntu16.04忘记MySQL5.7的root用户密码之解决方案</title>
+      <link href="/2019/05/07/Ubuntu16-04%E5%BF%98%E8%AE%B0MySQL5-7%E7%9A%84root%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E4%B9%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <url>/2019/05/07/Ubuntu16-04%E5%BF%98%E8%AE%B0MySQL5-7%E7%9A%84root%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E4%B9%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      
+        <content type="html"><![CDATA[<p>其实也就四步，如下:<br><a id="more"></a></p><h2><span id="修改配置文件">修改配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vimi /etc/mysql/mysql.conf.d/mysqld.cnf</span><br></pre></td></tr></table></figure><p>并在 在[mysqld]下方的skip-external-locking下面添加一行：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">skip-grant-tables</span><br></pre></td></tr></table></figure><p>然后再重启MySQL<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/mysql restart</span><br></pre></td></tr></table></figure></p><h2><span id="进入mysql修改密码">进入MySQL修改密码</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure><p>一路回车，免密登录</p><p>设置密码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE mysql.user SET authentication_string=password(&apos;kdfaslf&apos;) WHERE User=&apos;root&apos; AND Host =&apos;localhost&apos;;</span><br></pre></td></tr></table></figure></p><p>刷新权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></p><p>退出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">quit</span><br></pre></td></tr></table></figure></p><h2><span id="修改配置文件sudo-vimi-etcmysqlmysqlconfdmysqldcnf">修改配置文件(sudo vimi /etc/mysql/mysql.conf.d/mysqld.cnf)</span></h2><p>并将在[mysqld]下方的skip-external-locking下面添加一行的skip-grant-tables去除</p><h2><span id="重启mysql让配置生效回归正常">重启MySQL让配置生效，回归正常</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/mysql restart</span><br></pre></td></tr></table></figure><p>参考资料如下:<br><a href="https://blog.csdn.net/mr_hui_/article/details/83011202" target="_blank" rel="noopener">Ubuntu 16.04下忘记MySQL密码解决方法</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Windowns下code: command not found</title>
+      <link href="/2019/05/07/Windowns%E4%B8%8Bcode-command-not-found/"/>
+      <url>/2019/05/07/Windowns%E4%B8%8Bcode-command-not-found/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:code: command not found’</p><p>解决办法:<br>配置VsCode环境变量<br><a id="more"></a><br>首先找到VsCode点击其属性，查看路径<br><img src="/2019/05/07/Windowns下code-command-not-found/01.png" alt=""></p><p>进入这个路径后<br><img src="/2019/05/07/Windowns下code-command-not-found/02.png" alt=""></p><p>将D:\Program Files\Microsoft VS Code\bin添加到环境变量即可</p><p>code这个命令很重要，比如最近我做的一个叫作根据vscode插件名称去对应的插件市场下载插件就需要用到code命令。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> VsCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux下CRMEB环境搭建</title>
       <link href="/2019/05/06/Linux%E4%B8%8BCRMEB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
       <url>/2019/05/06/Linux%E4%B8%8BCRMEB%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
