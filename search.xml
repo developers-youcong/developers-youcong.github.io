@@ -4,6 +4,158 @@
   
     
     <entry>
+      <title>算法图解之数组和链表</title>
+      <link href="/2019/05/12/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E4%B9%8B%E6%95%B0%E7%BB%84%E5%92%8C%E9%93%BE%E8%A1%A8/"/>
+      <url>/2019/05/12/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E4%B9%8B%E6%95%B0%E7%BB%84%E5%92%8C%E9%93%BE%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="数组和链表">数组和链表</span></h2><h3><span id="1数组">1.数组</span></h3><p>以添加第四个待办事项为例，但后面的那个抽屉已经放了别人的东西<br><img src="/2019/05/12/算法图解之数组和链表/array01.png" alt=""><br>这就像你与朋友去看电影，找到地方就坐后又来了一位朋友，但原来坐的地方没有空位置，只得再找一个方可坐下所有人的地方。在这种情况下，你需要请求计算机重新分配一块可容纳4个待办事项的内存，再将所有待办事项移到那里。<br><a id="more"></a><br>如果又来了一位朋友，而当前坐的地方也没有空位，你们就得再次转移，这是一件非常麻烦的事情。同样，在数组中添加新的元素也可能很麻烦。如果没有了空间，就得移到内存的其他地方，因此添加新的元素的速度会很慢一种解决之道是“预留座位”：即便当前只有3个待办事项，也请求计算机提供10个位置，以防需要添加待办事项。这样只要待办事项不超过10个，就无需转移。这是一个不错的权变措施，但是它也有如下两个缺点:<br>(1)浪费内存。比如本来四个就可以存储，你却申请了10个。<br>(2)如果超过了10个以上，还得转移。</p><h3><span id="2链表">2.链表</span></h3><p>链表中的元素可存储在内存的任何地方，如下图所示:<br><img src="/2019/05/12/算法图解之数组和链表/linkedlist.png" alt=""></p><p>链表的每个元素都存储了下一个元素的地址，从而使一系列随机的内存地址串在一起。</p><p>使用链表时，根本就不需要移动元素。这还可避免另外一个问题。假设你与五位朋友去看一部很火的电影。你们六个人想坐在一起，但看电影的人较多，没有六个在一起的座位。使用数组时有时就会遇到这样的情况。假设你要为数组分配10000个位置，内存中有10000个位置，但不都靠在一起。在这种情况下，你将无法为该数组分配内存。链表在此相当于说:”我们分开来说”，因此，只要有足够的内存空间，就能为链表分配内存。</p><h3><span id="3常见数组和链表操作的运行时间">3.常见数组和链表操作的运行时间</span></h3><p><img src="/2019/05/12/算法图解之数组和链表/array_linkedlist.png" alt=""></p><p>练习1:<br>假设你要编写一个记账的应用程序，每天将所有的支出记录下来，并在月底统计支出算算当月花了多少钱。因此，你执行的插入操作很多，但读取操作很少。该使用数组还是链表?</p><p>我的回答是:<br>使用链表。因为链表的插入和删除数据是非常快的，如果仅仅只是读取可以采用数组。</p><p>练习2:<br>假设你要为饭店创建一个接受顾客点菜单的应用程序。这个应用程序存储一系列点菜单。服务员添加点菜单，二厨师去除点菜单并制作菜肴。这是一个点菜单队列:服务员在队尾添加点菜单，厨师取出队列开头的点菜单并制定佳肴。<br><img src="/2019/05/12/算法图解之数组和链表/diancaiduilie.png" alt=""><br>你是使用数组还是链表来实现这个队列?</p><p>我的回答是:<br>从这幅图中可以看出这是一个先进先出队列。先进先出一般使用链表。<br>而且根据题中信息，插入删除功能较多，插入是服务员添加点菜单，厨师取出点菜单意味着完成炒菜(相当于删除点菜单)。所以我觉得应该使用链表来实现这个队列。</p><p>练习题3:<br>我们来做一个思考实验。假设Facebook记录一系列用户名，每当有用户视图登录Facebook时，都查找其用户名，如果找到就允许用户登录。由于经常有用户登录Facebook，因此需要执行大量的用户名查找操作。假设Facebook实验二分查找算法，而这种算法要求能够随机访问-立即获取中间的用户名。考虑到这一点，应使用数组还是链表来存储用户名呢?</p><p>我的回答是:<br>首先可以从题中获取的关键消息是需要执行大量的用户名查询操作，这就意味着查询会非常多。链表在插入和删除方面效率非常高，但是查询却不是很高。数组则与其相反。在此我认为应用使用数组。理由是因为根据题目要求中说算法要求随机访问。</p><p>练习题4:<br>经常有用户在Facebook注册。假设你已决定使用数组来存储用户名，在插入方面数组有何缺点呢?具体地说，在数组中添加新用户将会出现什么情况?<br>我的回答是:<br>针对这两种情况，有必要复习一下数组，分析数组的优缺点:</p><p>数组的优点如下:<br>(1)按照索引查询元素速度快;<br>(2)能存储大量数据;<br>(3)索引遍历数组方便;</p><p>数组的缺点:<br>(1)根据内容查找速度慢;<br>(2)数组的大小一经确定不能改变;<br>(3)数组只能存储一种类型的数组;<br>(4)增加、删除元素效率慢;<br>(5)未封装任何方法，所有操作都需要用户自己定义;</p><p>分析完后，再回到问题上，答案就已经出来的。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>算法图解之大O表示法</title>
+      <link href="/2019/05/12/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E4%B9%8B%E5%A4%A7O%E8%A1%A8%E7%A4%BA%E6%B3%95/"/>
+      <url>/2019/05/12/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E4%B9%8B%E5%A4%A7O%E8%A1%A8%E7%A4%BA%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="大o表示法">大O表示法</span></h2><p>大O表示法是一种特殊的表示法，指出了算法的速度有多快。</p><h2><span id="1算法的运行时间以不同的速度增加">1.算法的运行时间以不同的速度增加</span></h2><p>关于算法的运行时间以不同的速度增加，我联系到平时写代码，严谨的代码(易读，可扩展，精悍，经过多方测试等)，通常运行速度与那些不严谨的代码(完全相反)的代码进行对比，你会发现前者的运行速度是大于后者，这个虽然不能说绝对，大多情况都是这样的。<br>以我之前VsCode插件开发的一个反面例子为例:<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">const fs = require(&apos;fs&apos;);</span><br><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line">const vscode = require(&apos;vscode&apos;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//存储token</span><br><span class="line">function storeToken(token) &#123;</span><br><span class="line"></span><br><span class="line">console.log(&quot;----------------access deep token-----------:&quot;+token);</span><br><span class="line"></span><br><span class="line">const pathMain = &apos;d:\\Workspace&apos;; //项目存放路径</span><br><span class="line"></span><br><span class="line">var pathToken = pathMain + &apos;\\&apos; + &quot;token&quot;; //创建toekn目录</span><br><span class="line"></span><br><span class="line">//判断项目存放目录是否存在</span><br><span class="line">if (fs.existsSync(pathMain)) &#123;</span><br><span class="line"></span><br><span class="line">//判断token目录是否存在</span><br><span class="line">if (!fs.existsSync(pathToken)) &#123;</span><br><span class="line"></span><br><span class="line">fs.mkdir(pathToken, function (err) &#123;</span><br><span class="line">if (err) &#123;</span><br><span class="line">return console.error(err);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//写入文件</span><br><span class="line">fs.writeFile(&quot;D://Workspace//token//token.txt&quot;, token, &apos;utf8&apos;, function (error) &#123;</span><br><span class="line"></span><br><span class="line">if (error) &#123;</span><br><span class="line">console.log(error);</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">console.log(&apos;write success&apos;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">fs.mkdir(pathMain, function (err) &#123;</span><br><span class="line">if (err) &#123;</span><br><span class="line">return console.error(err);</span><br><span class="line">&#125;</span><br><span class="line">fs.mkdir(pathToken, function (err) &#123;</span><br><span class="line">if (err) &#123;</span><br><span class="line">return console.error(err);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//写入文件</span><br><span class="line">fs.writeFile(&quot;D://Workspace//token//token.txt&quot;, token, &apos;utf8&apos;, function (error) &#123;</span><br><span class="line"></span><br><span class="line">if (error) &#123;</span><br><span class="line">console.log(error);</span><br><span class="line">return false;</span><br><span class="line">&#125;</span><br><span class="line">console.log(&apos;write success&apos;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">module.exports = storeToken;</span><br></pre></td></tr></table></figure></p><p>这段代码的意思实际上就是判断某个文件夹是否存在，如果存在则进行下一步，也就是写入对应的文件，否则创建对应的文件并写入对应的文件。<br>这段代码完全可以简化很多，爱好程序的朋友基本上都知道，程序都是自上往下执行的，代码越短，执行速度也就是会越快，像上面这样的函数，其实可以简化很多，也就代表着执行速度也会很快(也体现着运行时间减少)。</p><p>大O表示法指的并非以秒为单位的速度。</p><p>大O表示法让你能够比较操作数，它指出算法运行时间的增速。</p><h2><span id="2理解不同的大o运行时间">2.理解不同的大O运行时间</span></h2><p><img src="/2019/05/12/算法图解之大O表示法/gezi.png" alt=""></p><p>假定是一个html,我要将body内容弄成这样有这么几种方式?<br>(1)添加<tr><td>等这样的很多个(手工劳动);<br>(2)使用for循环进行遍历(这个算法就是简单算法的一个实现);</td></tr></p><p>翻看了后面的答案，发现其实跟我上面说的内容本质上没有差别。</p><h2><span id="3大o表示法指出了最糟情况下的运行时间">3.大O表示法指出了最糟情况下的运行时间</span></h2><p>假设你使用简单查找在电话簿中找人。你知道，简单查找的运行时间为O(n)，这意味着在最糟情况下，必须查看电话簿中的每个条目。如果要查找的是Adit-电话簿中的第一个人，一次就能找到，无需查看多个条目。考虑到一次就找到Adit，请问这种算法的运行时间是O(n)还是O(1)呢？<br>我觉得是O(n)，理由是接下来万一是Bob或是Y先生呢。</p><h2><span id="4一些常见的大o运行运行时间">4.一些常见的大O运行运行时间</span></h2><p><img src="/2019/05/12/算法图解之大O表示法/gezi.png" alt=""></p><ul><li>算法的速度指的并非时间，而是操作数的增速。</li></ul><ul><li>谈论算法的速度时，我们说的是随着输入的增加，其运行时间将以什么样的速度增加。</li></ul><ul><li>算法的运行时间用大O表示法表示</li></ul><ul><li>O(log n)比O(n)快，当需要搜索的元素越多时，前者比后者快的越多。</li></ul><p>练习题:<br>(1)在电话簿中根据名字查找电话号码;<br>(2)在电话簿中根据电话号码找人(提示:你必须查找整个电话簿);<br>(3)阅读电话簿中每个人的电话号码;<br>(4)阅读电话簿中姓名以A打头的人的电话号码。这个问题比较棘手，它涉及第四章的概念，答案可能让你感到惊讶。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>算法图解之内存的工作原理</title>
+      <link href="/2019/05/12/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E4%B9%8B%E5%86%85%E5%AD%98%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/"/>
+      <url>/2019/05/12/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E4%B9%8B%E5%86%85%E5%AD%98%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2019/05/12/算法图解之内存的工作原理/memory_work.png" alt=""><br>其中fe0ffeeb是一个内存单元的地址，需要将数据存储到内存时，你请求计算机提供存储空间，计算机给你一个存储地址。需要存储多项数据时，有两种基本方式，一种是数组，另外一种是链表。但它们并非都适用于所有情形，因此知道它们的差别非常重要。<br><a id="more"></a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>算法图解之二分查找</title>
+      <link href="/2019/05/12/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E4%B9%8B%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/"/>
+      <url>/2019/05/12/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E4%B9%8B%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+      
+        <content type="html"><![CDATA[<p>简单查找，如下图:</p><p><img src="/2019/05/12/算法图解之二分查找/simple_select.png" alt=""></p><p>从图可知那个眼镜男从1开始猜，猜到100，大家都知道这种猜法最终都会得到答案，就是时间问题而已。100毕竟是这个列表的最大长度。但是换言之，如果是一万、百万、上千亿呢？那么这种猜法虽然能够得到答案，但是时间方面的成本将会非常大。于是二分法应需而生。<br><a id="more"></a><br>二分法，如下图:<br><img src="/2019/05/12/算法图解之二分查找/dichotomy.png" alt=""></p><p>从图可知这次眼镜男学聪明了，从中间入手一分为二。以100为例猜大小，假定要猜的数字为65，这时眼镜男说50，于是小姐姐说小了，眼镜男再猜70，小姐姐说大了，这时眼镜男可以肯定的范围应该在51~69这个范围内，相比简单查找，这种方式效率要高的多。最终眼镜男肯定会猜到正确的数字，花费的时间与简单查找相比，花费时间肯定是很少的。</p><p>二分法也有其局限性，局限性就是必须要确保列表是有序的才行。</p><p>以代码来讲解:<br>简单查找，以数组为例，索引从0开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void testSelect() throws Exception &#123;</span><br><span class="line"></span><br><span class="line">int [] num = new int[] &#123;1,2,3,4,5,6&#125;;</span><br><span class="line">for (int i = 0; i &lt; num.length; i++) &#123;</span><br><span class="line">System.out.println(num[i]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>二分法，例子如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void testSelect() throws Exception &#123;</span><br><span class="line"></span><br><span class="line">int[] num = new int[] &#123;1,3,5,7,9,11&#125;;</span><br><span class="line"></span><br><span class="line">int start = 0;</span><br><span class="line"></span><br><span class="line">int end = num.length - 1;</span><br><span class="line">int i = 14;</span><br><span class="line"></span><br><span class="line">while(true) &#123;</span><br><span class="line">int mid = (start+end) / 2;</span><br><span class="line"></span><br><span class="line">if(i == num[mid]) &#123;</span><br><span class="line">System.out.println(&quot;index:&quot;+mid);</span><br><span class="line">break;</span><br><span class="line">&#125;else &#123;</span><br><span class="line">if(i &lt; num[mid]) &#123;</span><br><span class="line">end = mid - 1;</span><br><span class="line">&#125;else &#123;</span><br><span class="line">start = mid + 1;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">if(start &gt; end) &#123;</span><br><span class="line">System.out.println(&quot;no find,will insert in:&quot;+start);</span><br><span class="line">break;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>关于命和运</title>
+      <link href="/2019/05/12/%E5%85%B3%E4%BA%8E%E5%91%BD%E5%92%8C%E8%BF%90/"/>
+      <url>/2019/05/12/%E5%85%B3%E4%BA%8E%E5%91%BD%E5%92%8C%E8%BF%90/</url>
+      
+        <content type="html"><![CDATA[<p>在《见识》这本书中开篇的序言就是”命和运决定人的一生”。</p><p>一个人想得到命运之神的呵护并不容易。要想命好，首先认识命的重要性，即信命和认命。 信命是知道自己有所不能(清楚认识自己),认命则是不超越命运给自己的画的线，对于得不到的坦然接受。<br><a id="more"></a><br>影响命的因素:环境因素+我们自己对未来走向划定的方向。</p><p>正如雷军曾经说的，在风口上，猪也能飞起来。记得曾经诺基亚在手机市场上无疑是一个大巨头，但是这个大巨人随着智能手机时代的到来，没有把握好机会，从而不复当年了。</p><p>所谓命就是一个人看待问题和做事情的方法，如此而已，但它们决定了人的一生。</p><p>以下撒切尔夫人说的这样一句话，挺有启示意义的:<br><strong>注意你的想法，因为它能决定你的言辞和行动。<br>注意你的言辞和行动，因为它能主导你的行为。<br>注意你的行为，因为它能变成你的习惯。<br>注意你的习惯，因为它能塑造你的性格。<br>注意你的性格，因为它能决定你的命运。</strong></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>老黄牛读后感</title>
+      <link href="/2019/05/12/%E8%80%81%E9%BB%84%E7%89%9B%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+      <url>/2019/05/12/%E8%80%81%E9%BB%84%E7%89%9B%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
+      
+        <content type="html"><![CDATA[<p>感悟: 有句话叫做，一千个人里面就有一千个哈姆莱特，通常表示着不同的人对某个事物看法不同。 今天再读这篇文章时，联想到2018年的程序员跳楼事件。至于为什么跳楼，真相究竟是什么，这里不作探究。这里想说的是，放眼整个世界，每天都有像老黄牛这样的例子。<br><a id="more"></a><br>老黄牛的例子让我战战兢兢如履薄冰，丝毫不敢松懈自己。因为我不想自己的未来像老黄牛这样。</p><p>记得曾经参加过一个读书会活动，与一个前辈交谈，那个前辈跟我说了他闺蜜的事情，说他闺蜜老公快35了，在华为公司做纯技术性方面的，他闺蜜为此忧心忡忡，因此而加班加点的学习，防止以后万一有什么情况，好歹有个应对办法。对于传统社会而言，男人就是顶梁柱。一旦这个顶梁柱倒了，随之而来对于这个家族，将会是非常大的打击。</p><p>联想到如今，初中级开发工程师层出不穷，软件开发的市场逐渐饱满，我不禁问自己未来的核心竞争力在哪？也许目前我已经具备了全栈开发的技术储备，但是我并没有全栈的眼界。什么是眼界？眼界就好比一个人的见识，正如吴军写的一本书《见识》中说的那样，你能走多远，取决于他的见识。</p><p>记得我哥哥当初对我说过一句话，未来的人才将是T字型的，要想不断前行，唯一不断提高自己的核心竞争力(这个核心竞争力不单单是吃饭的家伙，还有很多，比如人际交往能力、判断力、思考力等)。</p><p>绝大多数的人常常满足于已知的，缺乏探索的勇气(换言之缺乏接收新生事物的勇气，比如我就是如此)，每年我想除了给自己定flag并实现它，同时也应该提高自己在其它方面的能力，比如做软件开发的同时，我是不是也应该了解了解产品、运营等他们的工作。或者是做IT的，也应该接触接触一些非IT的人士。再换言之就个人而言，我是不是应该也可以去接触一下我摄影方面的等或者是给自己一个假期来一个说走就走的旅行。</p><p>正文如下(大家可以好好思考读一读):<br>还没有像往年一样为主人犁完五亩地，老黄牛的一条腿断了。<br><strong>    折腿的事就发生在昨天。<br>    昨天的天气很好，风和日丽。这是个今年开春以来少有的好日子，农夫们不用互相招呼就纷纷踏上仍有些峭寒的田垄，一年的农事在鞭子的抽打声和吆喝声中开始了。老黄牛是一头经验丰富的耕牛，忠心耿耿，勤奋劳作。他像往年一样卖力耕田，但他在时光的打磨中已经很衰老了，拉着一驾犁好像拉着一座大山在走，异常沉重。主人斥责他，他羞愧难当，叹了一口气，一咬牙一使劲，他听到了发自身体内部的一声响，一条腿断了，他知道这意味着什么，这是生命戛然而止的声音。<br>    暮霭落尽，黑夜升满。老黄牛独自蜷伏在牛栏里，想着自己的心事。他抬起疲惫的头颅，凝视着星空下那片肥沃的黑土，心中充满眷念和回忆。他把自己的爱与恨、乐与苦、血与汗以及生命中的一切都交给了这片土地。日月作证，鲜嫩的青草作证，金黄的果实作证，还有孩子作证。<br>    那是主人家的孩子，胖嘟嘟红扑扑的样子，一个很阳光的男孩。那天中午，小男孩跑到牛栏前，向老黄牛宣读了他的一篇获奖作文：“……我家的这头老黄牛，又高又大，浑身的皮毛是灰褐色的。嘴巴像个簸箕口，眼睛圆鼓鼓的很有神，一对牛角像拉满的弓箭，威武有力。它干起活儿来劲头大，也舍得卖力气。有一天中午，天气热极了，太阳像个火球似的挂在头顶，简直让人喘不过气来，我以为老黄牛一定不干活儿了，就跑到田间去看，它仍然还在拉犁耕田。它身上粘着一块块干泥巴，喘着粗气，双腿踏进没膝深的烂泥中，一步一步拉着犁，没有一点要停下来的样子。”老黄牛记得，那天小男孩给了它一把嫩青草和一个敬礼。<br>昨天下午，村里的兽医被请来。兽医一边查伤情一边摇头，只是对伤口作了简单的象征性包扎。兽医当着老黄牛的面对主人说：“一头废牛，这种牛还能拉犁，真是怪事。主人呐，现在你只有一件事要做，宰掉它，然后卖钱。”主人望着老黄牛，目光变得闪烁不定，但老黄牛知道，那里面暗藏着可怕的杀戮凶光。<br>     夜已三更，天空的星星被风吹得了无踪影，整个村子沉浸在死一般的寂静和黑暗中。倏然间，主人家正屋的灯亮了，磨刀的声音和屠夫特有的浑浊笑声敲碎了夜的寂寥。老黄牛知道大限将至。闭了眼任所有的泪水流尽。老黄牛最后大吼一声，用自己的方式结果了自己。<br>听到一声闷响，主人急忙领着提了刀的屠夫赶到牛栏。他们看到的只是扭断了脖子扑倒在地的老黄牛和一面粘满了老黄牛鲜血的土墙。<br>    屠夫气愤地骂道，畜生，我这把刀白磨了。<br>    主人却笑了，这畜生倒是挺体贴我呢，要我少花钱。</strong></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>背影读后感</title>
+      <link href="/2019/05/12/%E8%83%8C%E5%BD%B1%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
+      <url>/2019/05/12/%E8%83%8C%E5%BD%B1%E8%AF%BB%E5%90%8E%E6%84%9F/</url>
+      
+        <content type="html"><![CDATA[<p>这篇文章不记得是学生时期那个时期学的，只单单记得初读时还没有深刻的体会。而如今读起来，不禁让人眼睛闪烁着泪光，有种想哭的感觉。 正如一句诗歌所说的那样，“初闻不知曲中意，再听已是曲中人”。<br><a id="more"></a><br>原文如下(大家可以细细品味，每天工作再怎么繁忙，还是得留点时间读读书，让自己的心沉静下来):<br><strong>我与父亲不相见已二年余了，我最不能忘记的是他的背影 。<br>　　那年冬天，祖母死了，父亲的差使也交卸了，正是祸不单行的日子。我从北京到徐州打算跟着父亲奔丧回家。到徐州见着父亲，看见满院狼藉的东西，又想起祖母，不禁簌簌地流下眼泪。父亲说：“事已如此，不必难过，好在天无绝人之路！”<br>　　回家变卖典质，父亲还了亏空；又借钱办了丧事。这些日子，家中光景很是惨淡，一半因为丧事，一半因为父亲赋闲。丧事完毕，父亲要到南京谋事，我也要回北京念书，我们便同行。<br>　　到南京时，有朋友约去游逛，勾留了一日；第二日上午便须渡江到浦口，下午上车北去。父亲因为事忙，本已说定不送我，叫旅馆里一个熟识的茶房陪我同去。他再三嘱咐茶房，甚是仔细。但他终于不放心，怕茶房不妥帖；颇踌躇了一会。其实我那年已二十岁，北京已来往过两三次，是没有什么要紧的了。他踌躇了一会，终于决定还是自己送我去。我再三劝他不必去；他只说：“不要紧，他们去不好！”<br>　　我们过了江，进了车站。我买票，他忙着照看行李。行李太多了，得向脚夫行些小费才可过去。他便又忙着和他们讲价钱。我那时真是聪明过分，总觉他说话不大漂亮，非自己插嘴不可，但他终于讲定了价钱；就送我上车。他给我拣定了靠车门的一张椅子；我将他给我做的紫毛大衣铺好座位。他嘱我路上小心，夜里要警醒些，不要受凉。又嘱托茶房好好照应我。我心里暗笑他的迂；他们只认得钱，托他们只是白托！而且我这样大年纪的人，难道还不能料理自己么？唉，我现在想想，那时真是太聪明了！<br>　　我说道：“爸爸，你走吧。”他往车外看了看说：“我买几个橘子去。你就在此地，不要走动。”我看那边月台的栅栏外有几个卖东西的等着顾客。走到那边月台，须穿过铁道，须跳下去又爬上去。父亲是一个胖子，走过去自然要费事些。我本来要去的，他不肯，只好让他去。我看见他戴着黑布小帽，穿着黑布大马褂，深青布棉袍，蹒跚地走到铁道边，慢慢探身下去，尚不大难。可是他穿过铁道，要爬上那边月台，就不容易了。他用两手攀着上面，两脚再向上缩；他肥胖的身子向左微倾，显出努力的样子，这时我看见他的背影，我的泪很快地流下来了。我赶紧拭干了泪。怕他看见，也怕别人看见。我再向外看时，他已抱了朱红的桔子往回走了。过铁道时，他先将桔子散放在地上，自己慢慢爬下，再抱起桔子走。到这边时，我赶紧去搀他。他和我走到车上，将桔子一股脑儿放在我的皮大衣上。于是扑扑衣上的泥土，心里很轻松似的。过一会儿说：“我走了，到那边来信！”我望着他走出去。他走了几步，回过头看见我，说：“进去吧，里边没人。”等他的背影混入来来往往的人里，再找不着了，我便进来坐下，我的眼泪又来了。<br>　　近几年来，父亲和我都是东奔西走，家中光景是一日不如一日。他少年出外谋生，独立支持，做了许多大事。哪知老境却如此颓唐！他触目伤怀，自然情不能自已。情郁于中，自然要发之于外；家庭琐屑便往往触他之怒。他待我渐渐不同往日。但最近两年不见，他终于忘却我的不好，只是惦记着我，惦记着我的儿子。我北来后，他写了一信给我，信中说道：“我身体平安，惟膀子疼痛厉害，举箸提笔，诸多不便，大约大去之期不远矣。”我读到此处，在晶莹的泪光中，又看见那肥胖的、青布棉袍黑布马褂的背影。唉！我不知何时再能与他相见！</strong></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>富爸爸财务自由之路</title>
+      <link href="/2019/05/12/%E5%AF%8C%E7%88%B8%E7%88%B8%E8%B4%A2%E5%8A%A1%E8%87%AA%E7%94%B1%E4%B9%8B%E8%B7%AF/"/>
+      <url>/2019/05/12/%E5%AF%8C%E7%88%B8%E7%88%B8%E8%B4%A2%E5%8A%A1%E8%87%AA%E7%94%B1%E4%B9%8B%E8%B7%AF/</url>
+      
+        <content type="html"><![CDATA[<p>最近阅读一本书《富爸爸财务自由之路》，看序言和其中一部分内容比较有感触</p><p>一、你在哪个象限？这个象限适合你吗?<br>在书中开篇贴了一张图，如下所示:<br><img src="/2019/05/12/富爸爸财务自由之路/ebsi.jpg" alt=""><br><a id="more"></a><br>这四个英文字母分别代表的意思是 E，对应的单词是Employee，即雇员; B,对应的单词是Business owner,即企业所有者(老板); S,对应的单词Self-employed，即自由职业者; I,对应的单词Investor,即投资人;</p><p>我现在所处的象限和大多数人那样，均为E。</p><p>要说这个象限是否适合我，就目前而言还是比较适合我的。</p><p>不过人还是要心存理想，我还是希望日后我能成为一名Business owner或者投资人。</p><p>二、长大后想做什么?<br>长大后想做什么？ 相信90后的朋友们，每个人从小都会有这样一个梦想，想成为一名科学家或者是老师、大老板、救世的大英雄。 这些梦想的来源为身边的人(包括父母、朋友、亲戚、同学、阅读的书籍等等)。 从中可以看出耳濡目染的影响。 所处的环境决定你会成为什么样的人，这就好比为什么很多家长为什么想让自己的孩子进入重点中学，并不仅仅是重点中学师资资源多么好(当然了，这个也很重要)，还有一个重要因素就是环境，有句话叫做，近朱者赤近墨者黑。</p><p>三、水的故事，两个人竞争<br>水的故事，个人感触极深，以软件开发为例，我在想为什么程序员被称作码农，是因为我们一直在做重复劳动，将脑力劳动硬是变成了体力。 比如一段代码出现五到六次以上，为什么就不能将其抽象成一个函数调用？再比如明知动手直接开干会出问题，为什么就不能事先好好思考，用笔画一个流程图梳理一下(尽管可能有点丑，但这并不是最重要的，最重要的是把业务逻辑想清楚)。 书中水的故事，两个人竞争，一个人累死累活起早贪黑去很远的地方用桶装水，另一个则在这段时间写了一个商业规划书，拉了几笔投资，用作通水的不锈钢管道。 最后的结果是，起早贪黑的人面临失业，而另外一个人，无时无刻不再赚钱，而且非常轻松。 这让我想到一个词，“规矩”，在软件开发中也有规矩，比如代码规范(每个人编码的方式存在差异，但是如果将其统一化，团队主义多一点，个人英雄主义少一点，那么我想加班的频率也就不那么多了)。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Ubuntu16.04忘记MySQL5.7的root用户密码之解决方案</title>
       <link href="/2019/05/07/Ubuntu16-04%E5%BF%98%E8%AE%B0MySQL5-7%E7%9A%84root%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E4%B9%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
       <url>/2019/05/07/Ubuntu16-04%E5%BF%98%E8%AE%B0MySQL5-7%E7%9A%84root%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E4%B9%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
