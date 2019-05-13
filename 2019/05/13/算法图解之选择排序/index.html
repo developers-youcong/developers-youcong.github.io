@@ -15,21 +15,21 @@
 
 
 
-<meta name="description" content="今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。">
-<meta name="keywords" content="Python">
+<meta name="description" content="假设你的计算机存储了很多乐趣。对于每个乐队，你都记录了其作品被播放的次数。">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python实现机器人聊天">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/index.html">
+<meta property="og:title" content="算法图解之选择排序">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。">
+<meta property="og:description" content="假设你的计算机存储了很多乐趣。对于每个乐队，你都记录了其作品被播放的次数。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/rebot01.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/rebot02.png">
-<meta property="og:updated_time" content="2019-04-11T13:36:12.056Z">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/01.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/02.png">
+<meta property="og:updated_time" content="2019-05-13T14:04:24.426Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python实现机器人聊天">
-<meta name="twitter:description" content="今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/rebot01.png">
+<meta name="twitter:title" content="算法图解之选择排序">
+<meta name="twitter:description" content="假设你的计算机存储了很多乐趣。对于每个乐队，你都记录了其作品被播放的次数。">
+<meta name="twitter:image" content="http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/01.png">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -61,7 +61,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Python实现机器人聊天 | Blog</title>
+<title>算法图解之选择排序 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -282,11 +282,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Python实现机器人聊天" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-算法图解之选择排序" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/01/Python实现机器人聊天/" class="article-date">
-      <time datetime="2019-03-01T13:56:13.000Z" itemprop="datePublished">2019-03-01</time>
+      <a href="/2019/05/13/算法图解之选择排序/" class="article-date">
+      <time datetime="2019-05-13T12:04:42.000Z" itemprop="datePublished">2019-05-13</time>
 </a>
 
 
@@ -301,7 +301,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Python实现机器人聊天
+      算法图解之选择排序
     </h1>
   
 
@@ -312,7 +312,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -322,15 +322,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。<br><a id="more"></a><br>于是用其写了一个简单的Python聊天，源码如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf-8 -*-</span><br><span class="line">import aiml</span><br><span class="line">import sys</span><br><span class="line">import os</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">def get_module_dir(name):</span><br><span class="line"> print(&quot;module&quot;, sys.modules[name])</span><br><span class="line"> path = getattr(sys.modules[name], &apos;__file__&apos;, None)</span><br><span class="line"> print(path)</span><br><span class="line"> if not path:</span><br><span class="line">  raise AttributeError(&apos;module %s has not attribute __file__&apos; % name)</span><br><span class="line"> return os.path.dirname(os.path.abspath(path))</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">alice_path = get_module_dir(&apos;aiml&apos;) + &apos;\\botdata\\alice&apos;</span><br><span class="line"> </span><br><span class="line">os.chdir(alice_path)  # 切换到语料库所在工作目录</span><br><span class="line"> </span><br><span class="line">alice = aiml.Kernel()  # 创建机器人alice对象</span><br><span class="line">alice.learn(&quot;startup.xml&quot;) # 加载...\\botdata\\alice\\startup.xml</span><br><span class="line">alice.respond(&apos;LOAD ALICE&apos;) # 加载...\\botdata\\alice目录下的语料库</span><br><span class="line">  </span><br><span class="line">while True:</span><br><span class="line"> message = input(&quot;Enter your message &gt;&gt; &quot;)</span><br><span class="line"> if(&quot;exit&quot; == message):</span><br><span class="line">  exit()</span><br><span class="line"> response = alice.respond(message) # 机器人应答</span><br><span class="line"> print(response)</span><br></pre></td></tr></table></figure></p>
-<p>注意:如果出现某某模块找不到的时候，记得使用pip安装对应的模块。</p>
-<p>效果图如下所示:<br><img src="/2019/03/01/Python实现机器人聊天/rebot01.png" alt=""></p>
-<p>唯一美中不足的是英文，不过没关系，国内有图灵机器人。</p>
-<p>代码如下所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line">from urllib.request import urlopen,Request</span><br><span class="line">from urllib.error import URLError</span><br><span class="line">from urllib.parse import urlencode</span><br><span class="line">import json</span><br><span class="line"></span><br><span class="line">class TuringChatMode(object):</span><br><span class="line">    &quot;&quot;&quot;this mode base on turing robot&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">    def __init__(self):</span><br><span class="line">        # API接口地址</span><br><span class="line">        self.turing_url = &apos;http://www.tuling123.com/openapi/api?&apos;</span><br><span class="line"></span><br><span class="line">    def get_turing_text(self,text):</span><br><span class="line">        &apos;&apos;&apos; 请求方式:   HTTP POST</span><br><span class="line">            请求参数:   参数      是否必须        长度          说明</span><br><span class="line">                        key        必须          32           APIkey</span><br><span class="line">                        info       必须          1-32         请求内容，编码方式为&quot;utf-8&quot;</span><br><span class="line">                        userid     必须          32           MAC地址或ID</span><br><span class="line">        &apos;&apos;&apos;</span><br><span class="line">        turing_url_data = dict(</span><br><span class="line">            key = &apos;fcbf9efe277e493993e889eabca5b331&apos;,</span><br><span class="line">            info = text,</span><br><span class="line">            userid = &apos;60-14-B3-BA-E1-4D&apos;,</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line">        # print(&quot;The things to Request is:&quot;,self.turing_url + urlencode(turing_url_data))</span><br><span class="line">        self.request = Request(self.turing_url + urlencode(turing_url_data))</span><br><span class="line">        # print(&quot;The result of Request is:&quot;,self.request)</span><br><span class="line"></span><br><span class="line">        try:</span><br><span class="line">            w_data = urlopen(self.request)</span><br><span class="line">            # print(&quot;Type of the data from urlopen:&quot;,type(w_data))</span><br><span class="line">            # print(&quot;The data from urlopen is:&quot;,w_data)</span><br><span class="line">        except URLError:</span><br><span class="line">            raise IndexError(&quot;No internet connection available to transfer txt data&quot;)</span><br><span class="line">            # 如果发生网络错误，断言提示没有可用的网络连接来传输文本信息</span><br><span class="line">        except:</span><br><span class="line">            raise KeyError(&quot;Server wouldn&apos;t respond (invalid key or quota has been maxed out)&quot;)</span><br><span class="line">            # 其他情况断言提示服务相应次数已经达到上限</span><br><span class="line"></span><br><span class="line">        response_text = w_data.read().decode(&apos;utf-8&apos;)</span><br><span class="line">        # print(&quot;Type of the response_text :&quot;,type(response_text))</span><br><span class="line">        # print(&quot;response_text :&quot;,response_text)</span><br><span class="line"></span><br><span class="line">        json_result = json.loads(response_text)</span><br><span class="line">        # print(&quot;Type of the json_result :&quot;,type(json_result))</span><br><span class="line">        return json_result[&apos;text&apos;]</span><br><span class="line"></span><br><span class="line">if __name__ == &apos;__main__&apos;:</span><br><span class="line">    print(&quot;Now u can type in something &amp; input q to quit&quot;)</span><br><span class="line"></span><br><span class="line">    turing = TuringChatMode()</span><br><span class="line"></span><br><span class="line">    while True:</span><br><span class="line">        msg = input(&quot;\nMaster:&quot;)</span><br><span class="line">        if msg == &apos;q&apos;:</span><br><span class="line">            exit(&quot;u r quit the chat !&quot;)         # 设定输入q，退出聊天。</span><br><span class="line">        else:</span><br><span class="line">            turing_data = turing.get_turing_text(msg)</span><br><span class="line">            print(&quot;Robot:&quot;,turing_data)</span><br></pre></td></tr></table></figure></p>
-<p>效果图如下:<br><img src="/2019/03/01/Python实现机器人聊天/rebot02.png" alt=""></p>
-<p>可能由于机器人智能太低了，有点答非所问。</p>
-<p>更多精彩可以去图灵机器人官网了解:<a href="http://www.tuling123.com" target="_blank" rel="noopener">http://www.tuling123.com</a></p>
-<p>编程的世界是有趣的，你去探索，你会发现很多有意思的事情。</p>
+        <p>假设你的计算机存储了很多乐趣。对于每个乐队，你都记录了其作品被播放的次数。<br><img src="/2019/05/13/算法图解之选择排序/01.png" alt=""><br><a id="more"></a><br>如果你要将这个列表按播放次数从多到少的顺序排列，从而将你喜欢的乐队排序。该如何做呢?</p>
+<p>我第一眼看到这个问题时，想到的是通过sql解决这个问题<br>假设如果这是一个数据表的话，我很容易就可以通过order by 字段名 desc进行降序排序(也就是从大到小)</p>
+<p>不过我觉得sql反而麻烦，于是转用冒泡排序。代码示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package cn.pratice.simple;</span><br><span class="line"></span><br><span class="line">public class BubbleSort &#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">	</span><br><span class="line">		int [] arr = &#123;156,141,35,94,88,61,111&#125;;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;排序前数组为:&quot;);</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		for (int i = 0; i &lt; arr.length-1; i++) &#123; //外层循环控制排序趟数</span><br><span class="line">				for (int j = 0; j &lt; arr.length-1-i; j++) &#123;//内层循环控制每一趟排序多少次</span><br><span class="line">					if(arr[j]&gt;arr[j+1]) &#123;</span><br><span class="line">						int temp = arr[j];</span><br><span class="line">						arr[j] = arr[j+1];</span><br><span class="line">						arr[j+1]=temp;</span><br><span class="line">					&#125;</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;排序后的数组为:&quot;);</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这段代码的输出结果是:<br><img src="/2019/05/13/算法图解之选择排序/02.png" alt=""><br>但是该结果输出的是从小到大，显然不符合我的期望。<br>顺便提一下冒泡排序的原理:<strong>比较两个相邻的元素，将值大的元素交换至右端</strong></p>
+<p>不过以Java开发为例，一般情况我们拿轮子里面的东西即可实现，如下面代码所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package cn.pratice.simple;</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">public class BubbleSort &#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">	</span><br><span class="line">		int [] arr = &#123;156,141,35,94,88,61,111&#125;;</span><br><span class="line">		</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		Arrays.sort(arr);</span><br><span class="line">		</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>回到正题，那么我们如何将其变为降序?实现代码如下(还是复用现有的轮子)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package cn.pratice.simple;</span><br><span class="line">import java.util.Comparator;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class BubbleSort &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">		Integer[] array = new Integer[] &#123; 156, 141, 35, 94, 88, 61, 111 &#125;;</span><br><span class="line">		java.util.Arrays.sort(array, new Comparator&lt;Integer&gt;() &#123;</span><br><span class="line">			public int compare(Integer o1, Integer o2) &#123;</span><br><span class="line">				return o2 - o1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		for (int i = 0; i &lt; array.length; i++) &#123;</span><br><span class="line">			Integer integer = array[i];</span><br><span class="line">			System.out.println(&quot;integer:&quot; + integer);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们再来看看选择排序的例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">package cn.pratice.simple;</span><br><span class="line">import java.util.Comparator;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class BubbleSort &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">	</span><br><span class="line">		long startTime = System.currentTimeMillis();    //获取开始时间</span><br><span class="line"></span><br><span class="line">		int[] arr = new int[] &#123; 156, 141, 35, 94, 88, 61, 111&#125;;</span><br><span class="line">		System.out.println(&quot;交换前&quot;);</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		for (int i = 0; i &lt; arr.length - 1; i++) &#123;</span><br><span class="line">			int k = i;</span><br><span class="line">			for (int j = k + 1; j &lt; arr.length; j++) &#123;</span><br><span class="line">				if(arr[j] &lt; arr[k]) &#123;</span><br><span class="line">					k = j;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			if(i!=k) &#123;</span><br><span class="line">				int temp = arr[i];</span><br><span class="line">				arr[i] = arr[k];</span><br><span class="line">				arr[k] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;交换后:&quot;);</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		long endTime = System.currentTimeMillis();    //获取结束时间</span><br><span class="line"></span><br><span class="line">		System.out.println(&quot;程序运行时间：&quot; + (endTime - startTime) + &quot;ms&quot;);    //输出程序运行时间</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>那么选择排序的原理又是什么呢?<br>每一趟从待排序的记录中选出最小的元素，顺序放在已排好序的序列最后，直到全部记录排序完毕。也就是:每一趟在n-i+1(i=1,2…n-1)个记录中选取关键字最小的记录作为有序序列中第i个记录。基于此思想的有简单选择排序、树形选择排序和堆排序。我们现在所说的就是简单排序。</p>
+<p>最后比较一下冒泡排序和简单排序的区别(从概念上分析):<br><strong>冒泡排序:</strong><br>依次比较相邻的两个数，将小数放在前面，大数放在后面。即第一趟比较第一个和第二个数，将小数放前，大数放后。然后比较第二个数和第三个数，嫁给你小数放前，大数放后，如此继续，直至比较最后两个数，嫁给你小数放前，大数放后。至此第一趟结束，将最大的数放在最后。如此下去，重复以上过程，直至最终完成。</p>
+<p><strong>选择排序</strong><br>第一次从下标为0的开始，下标为0的这个数与后面的n-1个进行比较，找出最小或者最大的放在下标为0的这个位置，第二次从下标为1的开始比较，查询剩下的最大或者最小值，放在下标为1的位置，以此类推，直至排序完成。</p>
 
       
     </div>
@@ -339,13 +340,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/03/01/Python实现机器人聊天/">Python实现机器人聊天</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/13/算法图解之选择排序/">算法图解之选择排序</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-03-01, 21:56:13</p>
-        <p><span>最后更新:</span>2019-04-11, 21:36:12</p>
+        <p><span>发布时间:</span>2019-05-13, 20:04:42</p>
+        <p><span>最后更新:</span>2019-05-13, 22:04:24</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/03/01/Python实现机器人聊天/" title="Python实现机器人聊天">http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/03/01/Python实现机器人聊天/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/13/算法图解之选择排序/" title="算法图解之选择排序">http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -357,16 +358,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/03/01/VsCode插件开发之通信/">
-                    VsCode插件开发之通信
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/03/01/node-js使用express框架进行文件上传/">
-                    node.js使用express框架进行文件上传
+                <a href="/2019/05/12/算法图解之数组和链表/">
+                    算法图解之数组和链表
                 </a>
             </div>
         
@@ -414,7 +409,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Python实现机器人聊天　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"算法图解之选择排序　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -436,15 +431,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/03/01/VsCode插件开发之通信/" title="上一篇: VsCode插件开发之通信">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/03/01/node-js使用express框架进行文件上传/" title="下一篇: node.js使用express框架进行文件上传">
+            <a href="/2019/05/12/算法图解之数组和链表/" title="下一篇: 算法图解之数组和链表">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -480,8 +473,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Fri Mar 01 2019 21:56:13 GMT+0800',
-			  title: 'Python实现机器人聊天',
+			  id: 'Mon May 13 2019 20:04:42 GMT+0800',
+			  title: '算法图解之选择排序',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
