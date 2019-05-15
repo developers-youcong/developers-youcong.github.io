@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>MySQL5.7授权用户远程访问</title>
+      <link href="/2019/05/15/MySQL5-7%E6%8E%88%E6%9D%83%E7%94%A8%E6%88%B7%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE/"/>
+      <url>/2019/05/15/MySQL5-7%E6%8E%88%E6%9D%83%E7%94%A8%E6%88%B7%E8%BF%9C%E7%A8%8B%E8%AE%BF%E9%97%AE/</url>
+      
+        <content type="html"><![CDATA[<p>做个记录，每次弄环境的时候，特别是弄mysql环境，时不时都要用到下面的命令</p><p>命令如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to &apos;root&apos;@&apos;%&apos; identified by &apos;oa123456&apos; with grant option;</span><br><span class="line">flush privileges;</span><br><span class="line">quit;</span><br></pre></td></tr></table></figure></p><a id="more"></a><p><strong>注意:</strong><br>上面的命令原型如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on *.* to &apos;username&apos;@&apos;%&apos; identified by &apos;password&apos; with grant option;</span><br></pre></td></tr></table></figure></p><p>命令中的“%”相当于授权任意主机。</p><p>另外还有就是通常授权用户远程连接，还需要修改配置文件，以Ubuntu16.04为例，需要修改mysqld.cnf配置文件，将里面的bind=127.0.0.1注释掉即可<br>然后重启一下mysql服务，这时你就可以通过sqlyong或navicat连接mysql服务。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>在Git中如何撤销上一次的commit</title>
       <link href="/2019/05/15/%E5%9C%A8Git%E4%B8%AD%E5%A6%82%E4%BD%95%E6%92%A4%E9%94%80%E4%B8%8A%E4%B8%80%E6%AC%A1%E7%9A%84commit/"/>
       <url>/2019/05/15/%E5%9C%A8Git%E4%B8%AD%E5%A6%82%E4%BD%95%E6%92%A4%E9%94%80%E4%B8%8A%E4%B8%80%E6%AC%A1%E7%9A%84commit/</url>
