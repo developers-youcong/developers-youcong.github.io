@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>在Git中如何撤销上一次的commit</title>
+      <link href="/2019/05/15/%E5%9C%A8Git%E4%B8%AD%E5%A6%82%E4%BD%95%E6%92%A4%E9%94%80%E4%B8%8A%E4%B8%80%E6%AC%A1%E7%9A%84commit/"/>
+      <url>/2019/05/15/%E5%9C%A8Git%E4%B8%AD%E5%A6%82%E4%BD%95%E6%92%A4%E9%94%80%E4%B8%8A%E4%B8%80%E6%AC%A1%E7%9A%84commit/</url>
+      
+        <content type="html"><![CDATA[<p>有的时候我们一不小心就git commit -m ‘commit message info’<br>解决办法，很简单，只需执行<code>git reset HEAD~</code>这条命令即可，即能保证你原本的修改还在，也能撤销本次提交失误。</p><p>这种撤销上一次提交是比较好的，如果是版本回退的话也能解决这个问题，但是版本回退只适合于你本次提交并没有改动什么或者改动不大的情况。如果你改动太多，版本回退意味着着你需要重新复制一遍，当然了，解决这种问题的办法有很多，分支开发的方式也能解决这种问题。<br><a id="more"></a><br>顺便补充到，如果git add 失误呢？如何解决呢？<br>执行如下命令即可:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r dir_name --cached</span><br></pre></td></tr></table></figure></p><p>dir_nameo可以是.也可以是你git add 某个目录，如git add src/<br>你只需git rm -r src/ –cached 便可删除git add src/ 添加到的暂存区，从而达到撤销git add 的失误操作</p><p><a href="https://blog.csdn.net/svap1/article/details/80537198" target="_blank" rel="noopener">git撤销add操作</a><br><a href="https://www.jianshu.com/p/9f11d398111f" target="_blank" rel="noopener">[译] 在Git中如何撤销上一次的commit(s)？</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用Ajax异步上传文件</title>
       <link href="/2019/05/14/%E4%BD%BF%E7%94%A8Ajax%E5%BC%82%E6%AD%A5%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/"/>
       <url>/2019/05/14/%E4%BD%BF%E7%94%A8Ajax%E5%BC%82%E6%AD%A5%E4%B8%8A%E4%BC%A0%E6%96%87%E4%BB%B6/</url>

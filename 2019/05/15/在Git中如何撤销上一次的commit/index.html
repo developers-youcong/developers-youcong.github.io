@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="错误信息如下:ERROR 1820 (HY000): You must reset your password using ALTER USER statementbefore executing this statement. 翻译过来的意思是:错误1820 (HY000):您必须使用ALTER USER语句重置密码在执行此语句之前。">
-<meta name="keywords" content="MySQL">
+<meta name="description" content="有的时候我们一不小心就git commit -m ‘commit message info’解决办法，很简单，只需执行git reset HEAD~这条命令即可，即能保证你原本的修改还在，也能撤销本次提交失误。 这种撤销上一次提交是比较好的，如果是版本回退的话也能解决这个问题，但是版本回退只适合于你本次提交并没有改动什么或者改动不大的情况。如果你改动太多，版本回退意味着着你需要重新复制一遍，当然了">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/index.html">
+<meta property="og:title" content="在Git中如何撤销上一次的commit">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/05/15/在Git中如何撤销上一次的commit/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="错误信息如下:ERROR 1820 (HY000): You must reset your password using ALTER USER statementbefore executing this statement. 翻译过来的意思是:错误1820 (HY000):您必须使用ALTER USER语句重置密码在执行此语句之前。">
+<meta property="og:description" content="有的时候我们一不小心就git commit -m ‘commit message info’解决办法，很简单，只需执行git reset HEAD~这条命令即可，即能保证你原本的修改还在，也能撤销本次提交失误。 这种撤销上一次提交是比较好的，如果是版本回退的话也能解决这个问题，但是版本回退只适合于你本次提交并没有改动什么或者改动不大的情况。如果你改动太多，版本回退意味着着你需要重新复制一遍，当然了">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-24T09:13:14.973Z">
+<meta property="og:updated_time" content="2019-05-15T11:57:27.303Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.">
-<meta name="twitter:description" content="错误信息如下:ERROR 1820 (HY000): You must reset your password using ALTER USER statementbefore executing this statement. 翻译过来的意思是:错误1820 (HY000):您必须使用ALTER USER语句重置密码在执行此语句之前。">
+<meta name="twitter:title" content="在Git中如何撤销上一次的commit">
+<meta name="twitter:description" content="有的时候我们一不小心就git commit -m ‘commit message info’解决办法，很简单，只需执行git reset HEAD~这条命令即可，即能保证你原本的修改还在，也能撤销本次提交失误。 这种撤销上一次提交是比较好的，如果是版本回退的话也能解决这个问题，但是版本回退只适合于你本次提交并没有改动什么或者改动不大的情况。如果你改动太多，版本回退意味着着你需要重新复制一遍，当然了">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement. | Blog</title>
+<title>在Git中如何撤销上一次的commit | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -279,11 +279,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-在Git中如何撤销上一次的commit" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/" class="article-date">
-      <time datetime="2019-04-23T15:10:04.000Z" itemprop="datePublished">2019-04-23</time>
+      <a href="/2019/05/15/在Git中如何撤销上一次的commit/" class="article-date">
+      <time datetime="2019-05-15T03:58:39.000Z" itemprop="datePublished">2019-05-15</time>
 </a>
 
 
@@ -298,7 +298,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.
+      在Git中如何撤销上一次的commit
     </h1>
   
 
@@ -309,7 +309,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -319,9 +319,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>错误信息如下:<br>ERROR 1820 (HY000): You must reset your password using ALTER USER statement<br>before executing this statement.</p>
-<p>翻译过来的意思是:<br>错误1820 (HY000):您必须使用ALTER USER语句重置密码<br>在执行此语句之前。<br><a id="more"></a><br>所以解决办法就是使用重置密码命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;youpassword&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>参考资料如下:<br><a href="https://www.cnblogs.com/lmx123/p/9321792.html" target="_blank" rel="noopener">mysql 报错ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executin</a><br><a href="https://blog.csdn.net/qq_37350706/article/details/81707862" target="_blank" rel="noopener">MySQL 8.0.15安装教程(windows 64位)</a></p>
+        <p>有的时候我们一不小心就git commit -m ‘commit message info’<br>解决办法，很简单，只需执行<code>git reset HEAD~</code>这条命令即可，即能保证你原本的修改还在，也能撤销本次提交失误。</p>
+<p>这种撤销上一次提交是比较好的，如果是版本回退的话也能解决这个问题，但是版本回退只适合于你本次提交并没有改动什么或者改动不大的情况。如果你改动太多，版本回退意味着着你需要重新复制一遍，当然了，解决这种问题的办法有很多，分支开发的方式也能解决这种问题。<br><a id="more"></a><br>顺便补充到，如果git add 失误呢？如何解决呢？<br>执行如下命令即可:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rm -r dir_name --cached</span><br></pre></td></tr></table></figure></p>
+<p>dir_nameo可以是.也可以是你git add 某个目录，如git add src/<br>你只需git rm -r src/ –cached 便可删除git add src/ 添加到的暂存区，从而达到撤销git add 的失误操作</p>
+<p><a href="https://blog.csdn.net/svap1/article/details/80537198" target="_blank" rel="noopener">git撤销add操作</a><br><a href="https://www.jianshu.com/p/9f11d398111f" target="_blank" rel="noopener">[译] 在Git中如何撤销上一次的commit(s)？</a></p>
 
       
     </div>
@@ -330,13 +331,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/">ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/15/在Git中如何撤销上一次的commit/">在Git中如何撤销上一次的commit</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-04-23, 23:10:04</p>
-        <p><span>最后更新:</span>2019-04-24, 17:13:14</p>
+        <p><span>发布时间:</span>2019-05-15, 11:58:39</p>
+        <p><span>最后更新:</span>2019-05-15, 19:57:27</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/" title="ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.">http://developers-youcong.github.io/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/15/在Git中如何撤销上一次的commit/" title="在Git中如何撤销上一次的commit">http://developers-youcong.github.io/2019/05/15/在Git中如何撤销上一次的commit/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/15/在Git中如何撤销上一次的commit/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -348,16 +349,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/24/springfox-swagger之swagger-bootstrap-ui/">
-                    springfox-swagger之swagger-bootstrap-ui
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/22/An-internal-error-occurred-during-Initializing-Java-Tooling/">
-                    An internal error occurred during: Initializing Java Tooling.
+                <a href="/2019/05/14/使用Ajax异步上传文件/">
+                    使用Ajax异步上传文件
                 </a>
             </div>
         
@@ -405,7 +400,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"在Git中如何撤销上一次的commit　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -427,15 +422,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/24/springfox-swagger之swagger-bootstrap-ui/" title="上一篇: springfox-swagger之swagger-bootstrap-ui">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/22/An-internal-error-occurred-during-Initializing-Java-Tooling/" title="下一篇: An internal error occurred during: Initializing Java Tooling.">
+            <a href="/2019/05/14/使用Ajax异步上传文件/" title="下一篇: 使用Ajax异步上传文件">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -471,8 +464,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Tue Apr 23 2019 23:10:04 GMT+0800',
-			  title: 'ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.',
+			  id: 'Wed May 15 2019 11:58:39 GMT+0800',
+			  title: '在Git中如何撤销上一次的commit',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
