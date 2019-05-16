@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="单体应用自动化部署脚本:">
+<meta name="description" content="问题信息:116-May-2019 10:41:10.630 WARNING [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单体应用自动化部署">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/04/11/单体应用自动化部署/index.html">
+<meta property="og:title" content="Ubuntu16.04启动tomcat缓慢问题之解决方案">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/05/16/Ubuntu16-04启动tomcat缓慢问题之解决方案/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="单体应用自动化部署脚本:">
+<meta property="og:description" content="问题信息:116-May-2019 10:41:10.630 WARNING [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-11T13:40:21.669Z">
+<meta property="og:updated_time" content="2019-05-16T12:10:30.105Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单体应用自动化部署">
-<meta name="twitter:description" content="单体应用自动化部署脚本:">
+<meta name="twitter:title" content="Ubuntu16.04启动tomcat缓慢问题之解决方案">
+<meta name="twitter:description" content="问题信息:116-May-2019 10:41:10.630 WARNING [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>单体应用自动化部署 | Blog</title>
+<title>Ubuntu16.04启动tomcat缓慢问题之解决方案 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -279,11 +279,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-单体应用自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Ubuntu16-04启动tomcat缓慢问题之解决方案" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/11/单体应用自动化部署/" class="article-date">
-      <time datetime="2019-04-11T02:58:53.000Z" itemprop="datePublished">2019-04-11</time>
+      <a href="/2019/05/16/Ubuntu16-04启动tomcat缓慢问题之解决方案/" class="article-date">
+      <time datetime="2019-05-16T02:48:18.000Z" itemprop="datePublished">2019-05-16</time>
 </a>
 
 
@@ -298,7 +298,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      单体应用自动化部署
+      Ubuntu16.04启动tomcat缓慢问题之解决方案
     </h1>
   
 
@@ -319,13 +319,15 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>单体应用自动化部署脚本:<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">DATE=$(date +%Y%m%d)</span><br><span class="line"></span><br><span class="line">time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line">git clone https://code.aliyun.com/test/blog.git</span><br><span class="line"></span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line">mvn clean package</span><br><span class="line"></span><br><span class="line">if [ $? -ne 0 ]; then</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目失败,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署失败，请登录服务器查看&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line">else</span><br><span class="line"></span><br><span class="line">    cp -r /home/project/blog/target/blog.war /home/project/tomcat8/webapps/</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/startup.sh</span><br><span class="line"></span><br><span class="line">    rm -r /home/project/blog</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目成功,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署成功&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
-<p>其中涉及到邮件在服务器发生，我在这里使用的是heirloom-mailx</p>
-<p>安装使用流程如下(以Ubuntu16.04为例):</p>
-<h3><span id="1安装heirloom-mailx">1.安装heirloom-mailx</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install heirloom-mailx</span><br></pre></td></tr></table></figure>
-<h3><span id="2修改etcs-nailrc并在尾部添加如下内容这里使用的是163详情可去163邮箱了解">2.修改/etc/s-nail.rc并在尾部添加如下内容(这里使用的是163，详情可去163邮箱了解)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set from=&quot;xxx@163.com&quot;</span><br><span class="line">set smtp=&quot;smtps://smtp.163.com:465&quot;</span><br><span class="line">set smtp-auth-user=&quot;xxxm@163.com&quot;</span><br><span class="line">set smtp-auth-password=&quot;123456&quot;</span><br><span class="line">set smtp-auth=login</span><br></pre></td></tr></table></figure>
-<h3><span id="3测试">3.测试</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;this is test&apos; | mail -s &quot;test email.&quot; 123@qq.com</span><br></pre></td></tr></table></figure>
-<p>邮箱这里我主要参考:<br><a href="https://blog.csdn.net/just_shunjian/article/details/78677054" target="_blank" rel="noopener">ubuntu16.04 heirloom-mailx 通过外部SMTP服务器发送邮件</a></p>
+        <p>问题信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">16-May-2019 10:41:10.630 WARNING [localhost-startStop-1] org.apache.catalina.util.SessionIdGeneratorBase.createSecureRandom Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [117,835] milliseconds.</span><br></pre></td></tr></table></figure></p>
+<p>问题描述:<br>去官网下载tomcat后，解压本地并启动，发现启动极其缓慢，启动一个tomcat居然要十几分钟或者是始终启动不起来。<br><a id="more"></a></p>
+<p>问题原因:<br>是因为Tomcat8熵池阻塞变慢</p>
+<p>解决方案:</p>
+<p>(1)找到java.security文件(请执行该命令:cd /usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/security)</p>
+<p>(2)编辑该文件(vim java.security)</p>
+<p>将文件中的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">securerandom.source=file:/dev/random</span><br></pre></td></tr></table></figure></p>
+<p>改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">securerandom.source=file:/dev/.urandom</span><br></pre></td></tr></table></figure></p>
+<p>参考问题解决链接:<br><a href="http://www.cnblogs.com/thinkingandworkinghard/p/6729705.html" target="_blank" rel="noopener">tomcat启动很慢 停留在 At least one JAR was scanned for TLDs yet contained no TLDs.</a></p>
 
       
     </div>
@@ -334,13 +336,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/11/单体应用自动化部署/">单体应用自动化部署</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/16/Ubuntu16-04启动tomcat缓慢问题之解决方案/">Ubuntu16.04启动tomcat缓慢问题之解决方案</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-04-11, 10:58:53</p>
-        <p><span>最后更新:</span>2019-04-11, 21:40:21</p>
+        <p><span>发布时间:</span>2019-05-16, 10:48:18</p>
+        <p><span>最后更新:</span>2019-05-16, 20:10:30</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/11/单体应用自动化部署/" title="单体应用自动化部署">http://developers-youcong.github.io/2019/04/11/单体应用自动化部署/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/04/11/单体应用自动化部署/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/16/Ubuntu16-04启动tomcat缓慢问题之解决方案/" title="Ubuntu16.04启动tomcat缓慢问题之解决方案">http://developers-youcong.github.io/2019/05/16/Ubuntu16-04启动tomcat缓慢问题之解决方案/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/16/Ubuntu16-04启动tomcat缓慢问题之解决方案/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -352,16 +354,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/11/多模块应用自动化部署/">
-                    多模块应用自动化部署
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/10/Edusoho之LNMP环境搭建/">
-                    Edusoho之LNMP环境搭建
+                <a href="/2019/05/15/MySQL5-7授权用户远程访问/">
+                    MySQL5.7授权用户远程访问
                 </a>
             </div>
         
@@ -373,7 +369,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">1.安装heirloom-mailx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">2.修改/etc/s-nail.rc并在尾部添加如下内容(这里使用的是163，详情可去163邮箱了解)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">3.测试</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -409,7 +405,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"单体应用自动化部署　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Ubuntu16.04启动tomcat缓慢问题之解决方案　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -431,15 +427,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/11/多模块应用自动化部署/" title="上一篇: 多模块应用自动化部署">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/10/Edusoho之LNMP环境搭建/" title="下一篇: Edusoho之LNMP环境搭建">
+            <a href="/2019/05/15/MySQL5-7授权用户远程访问/" title="下一篇: MySQL5.7授权用户远程访问">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -475,8 +469,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Thu Apr 11 2019 10:58:53 GMT+0800',
-			  title: '单体应用自动化部署',
+			  id: 'Thu May 16 2019 10:48:18 GMT+0800',
+			  title: 'Ubuntu16.04启动tomcat缓慢问题之解决方案',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
