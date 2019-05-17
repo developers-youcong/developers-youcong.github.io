@@ -15,29 +15,18 @@
 
 
 
-<meta name="description" content="环境准备:PHP7.0.33MySQL5.7Apache2.4 PHP环境安装: 123sudo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \    php7.0-dev php7.0-fpm php7.0-json php7.0-mbstring php7.0-mcrypt \    php7.0-mysql ph">
+<meta name="description" content="具体步骤不是特别复杂，有些细枝末节我可能忽略了，不过参考我的这个教程，应该可以配置好的，如果朋友们有问题，可以留言给我。参考资料如下:Linux + Apache2 环境下配置 https (腾讯云免费证书) Ubuntu系统Apache 2部署SSL证书 虽然说很多不记得了，但是有这么几点必须要提。 第一、去阿里云下载证书，通过winscp或者xftp上传文件到服务器上第二、解压证书zip包，并">
 <meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Linux下CRMEB环境搭建">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/index.html">
+<meta property="og:title" content="Ubuntu16.04之Apache2.4配置SSL证书">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/05/17/Ubuntu16-04之Apache2-4配置SSL证书/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="环境准备:PHP7.0.33MySQL5.7Apache2.4 PHP环境安装: 123sudo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \    php7.0-dev php7.0-fpm php7.0-json php7.0-mbstring php7.0-mcrypt \    php7.0-mysql ph">
+<meta property="og:description" content="具体步骤不是特别复杂，有些细枝末节我可能忽略了，不过参考我的这个教程，应该可以配置好的，如果朋友们有问题，可以留言给我。参考资料如下:Linux + Apache2 环境下配置 https (腾讯云免费证书) Ubuntu系统Apache 2部署SSL证书 虽然说很多不记得了，但是有这么几点必须要提。 第一、去阿里云下载证书，通过winscp或者xftp上传文件到服务器上第二、解压证书zip包，并">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/01.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/02.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/03.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/04.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/05.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/06.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/07.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/08.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/09.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/10.png">
-<meta property="og:updated_time" content="2019-05-07T03:31:12.735Z">
+<meta property="og:updated_time" content="2019-05-17T10:00:30.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linux下CRMEB环境搭建">
-<meta name="twitter:description" content="环境准备:PHP7.0.33MySQL5.7Apache2.4 PHP环境安装: 123sudo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \    php7.0-dev php7.0-fpm php7.0-json php7.0-mbstring php7.0-mcrypt \    php7.0-mysql ph">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/01.png">
+<meta name="twitter:title" content="Ubuntu16.04之Apache2.4配置SSL证书">
+<meta name="twitter:description" content="具体步骤不是特别复杂，有些细枝末节我可能忽略了，不过参考我的这个教程，应该可以配置好的，如果朋友们有问题，可以留言给我。参考资料如下:Linux + Apache2 环境下配置 https (腾讯云免费证书) Ubuntu系统Apache 2部署SSL证书 虽然说很多不记得了，但是有这么几点必须要提。 第一、去阿里云下载证书，通过winscp或者xftp上传文件到服务器上第二、解压证书zip包，并">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -69,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Linux下CRMEB环境搭建 | Blog</title>
+<title>Ubuntu16.04之Apache2.4配置SSL证书 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -290,11 +279,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Linux下CRMEB环境搭建" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Ubuntu16-04之Apache2-4配置SSL证书" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/06/Linux下CRMEB环境搭建/" class="article-date">
-      <time datetime="2019-05-06T08:47:48.000Z" itemprop="datePublished">2019-05-06</time>
+      <a href="/2019/05/17/Ubuntu16-04之Apache2-4配置SSL证书/" class="article-date">
+      <time datetime="2019-05-17T09:39:12.000Z" itemprop="datePublished">2019-05-17</time>
 </a>
 
 
@@ -309,7 +298,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Linux下CRMEB环境搭建
+      Ubuntu16.04之Apache2.4配置SSL证书
     </h1>
   
 
@@ -330,33 +319,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>环境准备:<br>PHP7.0.33<br>MySQL5.7<br>Apache2.4</p>
-<p>PHP环境安装:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \</span><br><span class="line">    php7.0-dev php7.0-fpm php7.0-json php7.0-mbstring php7.0-mcrypt \</span><br><span class="line">    php7.0-mysql php7.0-opcache php7.0-zip php7.0-intl php7.0-gd php7.0-xml</span><br></pre></td></tr></table></figure>
-<p>MySQL环境安装:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mysql-client mysql-server</span><br></pre></td></tr></table></figure></p>
-<p>Apache2.4环境安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<h2><span id="克隆gitee项目">克隆Gitee项目</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www/html</span><br><span class="line"></span><br><span class="line">git clone https://gitee.com/ZhongBangKeJi/CRMEB</span><br></pre></td></tr></table></figure>
-<h2><span id="修改apache的配置vim-etcapache2apache2conf">修改apache的配置(vim /etc/apache2/apache2.conf)</span></h2><p>可以通过<code>/Option</code>快速定位查找<br>配置文件如下:<br><img src="/2019/05/06/Linux下CRMEB环境搭建/01.png" alt=""></p>
-<p>将其改为如下:<br><img src="/2019/05/06/Linux下CRMEB环境搭建/02.png" alt=""></p>
-<p>修改完apache配置文件后，记得重启一下apache(重启可以让配置文件生效)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure></p>
-<h2><span id="访问httpipcrmeb出现如图">访问</span></h2><p><img src="/2019/05/06/Linux下CRMEB环境搭建/03.png" alt=""></p>
-<p>解决办法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt-get install libapache2-mod-php</span><br></pre></td></tr></table></figure></p>
-<p>这个问题的原因是因为apache没有对php的解析模块导致的，安装一下就好了。<br>安装后记得重启一下apache2</p>
-<p>这时在访问时，出现如图:<br><img src="/2019/05/06/Linux下CRMEB环境搭建/04.png" alt=""></p>
-<p>这样就表示没有问题了，这时你只需输入<a href="http://IP/CRMEB/public/install进入安装即可" target="_blank" rel="noopener">http://IP/CRMEB/public/install进入安装即可</a><br>再进入安装前，先给目录授权一下，不然监测环境会出现目录、文件权限监测不通过问题</p>
-<h2><span id="授权">授权</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd /var/www/html/CRMEB</span><br><span class="line"></span><br><span class="line">chmod -R 777 public</span><br><span class="line">chmod -R 777 runtime</span><br><span class="line">chmod -R 777 application</span><br></pre></td></tr></table></figure>
-<h2><span id="安装流程">安装流程</span></h2><p>(1)安装向导<br><img src="/2019/05/06/Linux下CRMEB环境搭建/05.png" alt=""></p>
-<p>(2)检测环境<br><img src="/2019/05/06/Linux下CRMEB环境搭建/06.png" alt=""><br>红色标记处是常见错误，可参考后面的问题解决链接。</p>
-<p>(3)创建数据库<br><img src="/2019/05/06/Linux下CRMEB环境搭建/07.png" alt=""><br>红色标记处是常见错误，可参考后面的问题解决链接。</p>
-<p>(4)安装成功<br><img src="/2019/05/06/Linux下CRMEB环境搭建/08.png" alt=""></p>
-<p>点击进入后台,如图:</p>
-<p><img src="/2019/05/06/Linux下CRMEB环境搭建/09.png" alt=""></p>
-<p>后台管理界面如图:<br><img src="/2019/05/06/Linux下CRMEB环境搭建/10.png" alt=""><br>本地虚拟机访问地址:<a href="http://IP/CRMEB/admin/login/index.html" target="_blank" rel="noopener">http://IP/CRMEB/admin/login/index.html</a><br>如果是远程服务器，访问地址就变更为:<a href="http://IP/index.php/admin/login/index.html" target="_blank" rel="noopener">http://IP/index.php/admin/login/index.html</a></p>
-<p>注意如果你访问后台管理界面并不像上面那样，而是出现没有样式的登录界面，请在/var/www/html/CRMEB目录下执行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r ./* ../</span><br></pre></td></tr></table></figure></p>
-<p>最后再重启一下apache服务器发现就正常可以看到登录界面了。</p>
-<p>问题解决链接:<br><a href="https://developers-youcong.github.io/2019/05/06/PHP%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8curl-init-%E5%87%BD%E6%95%B0/">PHP无法使用curl_init()函数</a><br><a href="https://developers-youcong.github.io/2019/05/06/%E8%AF%B7%E5%9C%A8mysql%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BF%AEsql-mode%E6%88%96sql-mode%E4%B8%BANO-AUTO-CREATE-USER-NO-ENGINE-SUBSTITUTION/">请在mysql配置文件修sql-mode或sql_mode为NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION</a></p>
-<p>参考资料如下:<br><a href="https://www.kancloud.cn/crmeb/crmeb/895383" target="_blank" rel="noopener">CRMEB官方安装文档</a></p>
+        <p>具体步骤不是特别复杂，有些细枝末节我可能忽略了，不过参考我的这个教程，应该可以配置好的，如果朋友们有问题，可以留言给我。<br>参考资料如下:<br><a href="https://blog.csdn.net/m_zhurunfeng/article/details/79980320" target="_blank" rel="noopener">Linux + Apache2 环境下配置 https (腾讯云免费证书)</a></p>
+<p><a href="https://help.aliyun.com/document_detail/102450.html" target="_blank" rel="noopener">Ubuntu系统Apache 2部署SSL证书</a></p>
+<p>虽然说很多不记得了，但是有这么几点必须要提。</p>
+<p>第一、去阿里云下载证书，通过winscp或者xftp上传文件到服务器上<br>第二、解压证书zip包，并将其放入某个文件夹下<br>第三、安装apache，并按照如下步骤:<br><a id="more"></a><br>安装Apache、启动SSL模块、重写模块等:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2</span><br><span class="line"></span><br><span class="line">a2enmod ssl</span><br><span class="line"></span><br><span class="line">a2enmod rewrite</span><br></pre></td></tr></table></figure></p>
+<p>编辑default-ssl.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/apache2/sites-available/default-ssl.conf</span><br></pre></td></tr></table></figure></p>
+<p>修改如下(记住该文件默认就有，将对应的crt、key等修改为阿里云证书或者腾讯云证书对应的,下面是我阿里云对应的):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SSLCertificateFile /home/yc/apache_https/1854029_www.yc.com_public.crt</span><br><span class="line">SSLCertificateKeyFile /home/yc/apache_https/1854029_www.yc.com.key</span><br><span class="line">SSLCertificateChainFile /home/yc/apache_https/1854029_www.yc.com_chain.crt</span><br></pre></td></tr></table></figure></p>
+<p>建立软链接:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-enabled/001-ssl.conf</span><br></pre></td></tr></table></figure></p>
+<p>重启Apache:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure></p>
+<p>最后你发现访问你的域名<a href="https://yourdomain.com" target="_blank" rel="noopener">https://yourdomain.com</a> 出现apache的欢迎页就表示OK了</p>
+<p>另外如果你发现访问不了的话，记得在default-ssl.conf配置文件添加如下，然后重启一下Apache即可:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;Directory &quot;/var/www/html&quot;&gt;</span><br><span class="line">  Options FollowSymLinks ExecCGI</span><br><span class="line"> AllowOverride All</span><br><span class="line"> Order allow,deny</span><br><span class="line"> Allow from all</span><br><span class="line"> Require all granted</span><br><span class="line">  &lt;/Directory&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -365,13 +337,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/06/Linux下CRMEB环境搭建/">Linux下CRMEB环境搭建</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/17/Ubuntu16-04之Apache2-4配置SSL证书/">Ubuntu16.04之Apache2.4配置SSL证书</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-05-06, 16:47:48</p>
-        <p><span>最后更新:</span>2019-05-07, 11:31:12</p>
+        <p><span>发布时间:</span>2019-05-17, 17:39:12</p>
+        <p><span>最后更新:</span>2019-05-17, 18:00:30</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/06/Linux下CRMEB环境搭建/" title="Linux下CRMEB环境搭建">http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/06/Linux下CRMEB环境搭建/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/17/Ubuntu16-04之Apache2-4配置SSL证书/" title="Ubuntu16.04之Apache2.4配置SSL证书">http://developers-youcong.github.io/2019/05/17/Ubuntu16-04之Apache2-4配置SSL证书/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/17/Ubuntu16-04之Apache2-4配置SSL证书/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -383,16 +355,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/07/Windowns下code-command-not-found/">
-                    Windowns下code: command not found
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/06/PHP无法使用curl-init-函数/">
-                    PHP无法使用curl_init()函数
+                <a href="/2019/05/16/Ubuntu16-04启动tomcat缓慢问题之解决方案/">
+                    Ubuntu16.04启动tomcat缓慢问题之解决方案
                 </a>
             </div>
         
@@ -404,7 +370,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">克隆Gitee项目</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">修改apache的配置(vim /etc/apache2/apache2.conf)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">访问</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">授权</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">安装流程</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -440,7 +406,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Linux下CRMEB环境搭建　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Ubuntu16.04之Apache2.4配置SSL证书　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -462,15 +428,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/07/Windowns下code-command-not-found/" title="上一篇: Windowns下code: command not found">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/06/PHP无法使用curl-init-函数/" title="下一篇: PHP无法使用curl_init()函数">
+            <a href="/2019/05/16/Ubuntu16-04启动tomcat缓慢问题之解决方案/" title="下一篇: Ubuntu16.04启动tomcat缓慢问题之解决方案">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -506,8 +470,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Mon May 06 2019 16:47:48 GMT+0800',
-			  title: 'Linux下CRMEB环境搭建',
+			  id: 'Fri May 17 2019 17:39:12 GMT+0800',
+			  title: 'Ubuntu16.04之Apache2.4配置SSL证书',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
