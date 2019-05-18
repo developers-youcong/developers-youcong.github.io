@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>windows安装composer</title>
+      <link href="/2019/05/18/windows%E5%AE%89%E8%A3%85composer/"/>
+      <url>/2019/05/18/windows%E5%AE%89%E8%A3%85composer/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="下载composer-setupexe">下载Composer-Setup.exe</span></h2><p>请点击该链接即可<a href="https://getcomposer.org/Composer-Setup.exe" target="_blank" rel="noopener">下载Composer</a></p><p>通常下载完后是一个exe文件，双击安装即可。</p><p>注意:默认会搜索你的php安装路径，建议最好把php安装好。</p><p>关于php安装，可以去php官网上下载zip包解压某个配置配置环境变量即可。<br><a id="more"></a></p><h2><span id="走完安装流程后在控制台输入composer-version出现对应的版本号表示ok">走完安装流程后，在控制台输入composer –version，出现对应的版本号表示OK</span></h2><p><img src="/2019/05/18/windows安装composer/composer.png" alt=""></p><h2><span id="更换镜像">更换镜像</span></h2><p>执行如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer config -g repo.packagist composer https://packagist.phpcomposer.com</span><br></pre></td></tr></table></figure></p><p>之所以更换镜像，主要是加快相关库的下载速度。</p><p>以我搭建ThinkPHP5.0开发环境为例，第一步执行<code>composer create-project topthink/think tp</code>就卡了半天不动，当我执行更换镜像后，一下就好了。</p><p>参考资料如下:<br><a href="https://blog.csdn.net/sanbingyutuoniao123/article/details/70314651" target="_blank" rel="noopener">Windows环境下Composer的安装教程</a></p><p>说明:我并没有完全按照上述参考资料上一步一步的来，不过有几点很关键，那就是必须要下载composer并按照相关步骤操作和本地有php环境。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Docker </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Ubuntu16.04之Apache2.4配置SSL证书</title>
       <link href="/2019/05/17/Ubuntu16-04%E4%B9%8BApache2-4%E9%85%8D%E7%BD%AESSL%E8%AF%81%E4%B9%A6/"/>
       <url>/2019/05/17/Ubuntu16-04%E4%B9%8BApache2-4%E9%85%8D%E7%BD%AESSL%E8%AF%81%E4%B9%A6/</url>
