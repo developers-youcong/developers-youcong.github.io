@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="vue-electron官方文档(中文):https://simulatedgreg.gitbooks.io/electron-vue/content/cnvue-electron官方文档(英文):https://simulatedgreg.gitbooks.io/electron-vue/content/en 1.脚手架搭建流程步骤12345678# 安装 vue-cli 和 脚手架样板代码np">
-<meta name="keywords" content="Electron">
+<meta name="description" content="问题描述:安装CRMEB后，只能通过https://域名//index.php/admin访问到后台，而不能直接通过https://域名/admin访问到后台，以至于导致进入系统后台出现有的功能界面可用，有的功能界面则出现404或者服务器异常之类的，从浏览器上看就是路径方面的原因导致的，实际原因则是apache没有开启重写模块导致的。">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue-electron脚手架">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/04/04/vue-electron脚手架/index.html">
+<meta property="og:title" content="CRMEB中因为重写规则导致的服务器异常和404之解决办法">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="vue-electron官方文档(中文):https://simulatedgreg.gitbooks.io/electron-vue/content/cnvue-electron官方文档(英文):https://simulatedgreg.gitbooks.io/electron-vue/content/en 1.脚手架搭建流程步骤12345678# 安装 vue-cli 和 脚手架样板代码np">
+<meta property="og:description" content="问题描述:安装CRMEB后，只能通过https://域名//index.php/admin访问到后台，而不能直接通过https://域名/admin访问到后台，以至于导致进入系统后台出现有的功能界面可用，有的功能界面则出现404或者服务器异常之类的，从浏览器上看就是路径方面的原因导致的，实际原因则是apache没有开启重写模块导致的。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/04/04/vue-electron脚手架/electron.png">
-<meta property="og:updated_time" content="2019-04-11T13:39:20.854Z">
+<meta property="og:updated_time" content="2019-05-21T06:06:01.784Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue-electron脚手架">
-<meta name="twitter:description" content="vue-electron官方文档(中文):https://simulatedgreg.gitbooks.io/electron-vue/content/cnvue-electron官方文档(英文):https://simulatedgreg.gitbooks.io/electron-vue/content/en 1.脚手架搭建流程步骤12345678# 安装 vue-cli 和 脚手架样板代码np">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/04/04/vue-electron脚手架/electron.png">
+<meta name="twitter:title" content="CRMEB中因为重写规则导致的服务器异常和404之解决办法">
+<meta name="twitter:description" content="问题描述:安装CRMEB后，只能通过https://域名//index.php/admin访问到后台，而不能直接通过https://域名/admin访问到后台，以至于导致进入系统后台出现有的功能界面可用，有的功能界面则出现404或者服务器异常之类的，从浏览器上看就是路径方面的原因导致的，实际原因则是apache没有开启重写模块导致的。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>vue-electron脚手架 | Blog</title>
+<title>CRMEB中因为重写规则导致的服务器异常和404之解决办法 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -281,11 +279,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-vue-electron脚手架" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-CRMEB中因为重写规则导致的服务器异常和404之解决办法" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/04/vue-electron脚手架/" class="article-date">
-      <time datetime="2019-04-04T02:02:58.000Z" itemprop="datePublished">2019-04-04</time>
+      <a href="/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/" class="article-date">
+      <time datetime="2019-05-21T05:52:35.000Z" itemprop="datePublished">2019-05-21</time>
 </a>
 
 
@@ -300,7 +298,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      vue-electron脚手架
+      CRMEB中因为重写规则导致的服务器异常和404之解决办法
     </h1>
   
 
@@ -311,7 +309,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Electron/">Electron</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -321,11 +319,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>vue-electron官方文档(中文):<a href="https://simulatedgreg.gitbooks.io/electron-vue/content/cn" target="_blank" rel="noopener">https://simulatedgreg.gitbooks.io/electron-vue/content/cn</a><br>vue-electron官方文档(英文):<a href="https://simulatedgreg.gitbooks.io/electron-vue/content/en" target="_blank" rel="noopener">https://simulatedgreg.gitbooks.io/electron-vue/content/en</a></p>
-<h2><span id="1脚手架搭建流程步骤">1.脚手架搭建流程步骤</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 安装 vue-cli 和 脚手架样板代码</span><br><span class="line">npm install -g vue-cli</span><br><span class="line">vue init simulatedgreg/electron-vue my-project</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"># 安装依赖并运行你的程序</span><br><span class="line">cd my-project</span><br><span class="line">yarn # 或者 npm install</span><br><span class="line">yarn run dev # 或者 npm run dev</span><br></pre></td></tr></table></figure>
-<h2><span id="2效果图">2.效果图</span></h2><p><img src="/2019/04/04/vue-electron脚手架/electron.png" alt=""></p>
-<p>注意:<br>(1)环境问题:<br>可以参考我的这篇文章<a href="https://www.cnblogs.com/youcong/p/10230091.html" target="_blank" rel="noopener">VsCode源码编译运行</a><br>环境与其保持一致，基本上就不会出什么问题。</p>
-<p>(2)包管理工具问题:<br>关于npm和yarn，两者都是包的管理工具<br>我用npm install总是在报Error之类的错误，用yarn就好了。</p>
+        <p>问题描述:<br>安装CRMEB后，只能通过https://域名//index.php/admin访问到后台，而不能直接通过https://域名/admin访问到后台，以至于导致进入系统后台出现有的功能界面可用，有的功能界面则出现404或者服务器异常之类的，从浏览器上看就是路径方面的原因导致的，实际原因则是apache没有开启重写模块导致的。<br><a id="more"></a><br>问题解决方案:<br>第一、.htaccess(根目录有一个.htaccess，这个要与如下保持一致)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;IfModule mod_rewrite.c&gt;</span><br><span class="line">Options +FollowSymlinks -Multiviews</span><br><span class="line">RewriteEngine on</span><br><span class="line"></span><br><span class="line">RewriteCond %&#123;REQUEST_FILENAME&#125; !-d</span><br><span class="line">RewriteCond %&#123;REQUEST_FILENAME&#125; !-f</span><br><span class="line">RewriteRule ^(.*)$ index.php?/$1 [QSA,PT,L]</span><br><span class="line">&lt;/IfModule&gt;</span><br></pre></td></tr></table></figure></p>
+<p>第二、开启rewrite重写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod rewrite</span><br><span class="line">/etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure></p>
+<p>参考问题解决方案:<br><a href="https://www.cnblogs.com/li-mei/p/5959217.html" target="_blank" rel="noopener">apache开启rewrite重写</a></p>
 
       
     </div>
@@ -334,13 +330,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/04/vue-electron脚手架/">vue-electron脚手架</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/">CRMEB中因为重写规则导致的服务器异常和404之解决办法</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-04-04, 10:02:58</p>
-        <p><span>最后更新:</span>2019-04-11, 21:39:20</p>
+        <p><span>发布时间:</span>2019-05-21, 13:52:35</p>
+        <p><span>最后更新:</span>2019-05-21, 14:06:01</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/04/vue-electron脚手架/" title="vue-electron脚手架">http://developers-youcong.github.io/2019/04/04/vue-electron脚手架/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/04/04/vue-electron脚手架/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/" title="CRMEB中因为重写规则导致的服务器异常和404之解决办法">http://developers-youcong.github.io/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -352,16 +348,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/05/layui之日期和时间组件/">
-                    layui之日期和时间组件
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/03/GitHub-Contributions贡献值没有增加/">
-                    GitHub Contributions贡献值没有增加
+                <a href="/2019/05/20/算法图解之递归/">
+                    算法图解之递归
                 </a>
             </div>
         
@@ -373,7 +363,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">1.脚手架搭建流程步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">2.效果图</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -409,7 +399,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"vue-electron脚手架　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"CRMEB中因为重写规则导致的服务器异常和404之解决办法　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -431,15 +421,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/05/layui之日期和时间组件/" title="上一篇: layui之日期和时间组件">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/03/GitHub-Contributions贡献值没有增加/" title="下一篇: GitHub Contributions贡献值没有增加">
+            <a href="/2019/05/20/算法图解之递归/" title="下一篇: 算法图解之递归">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -475,8 +463,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Thu Apr 04 2019 10:02:58 GMT+0800',
-			  title: 'vue-electron脚手架',
+			  id: 'Tue May 21 2019 13:52:35 GMT+0800',
+			  title: 'CRMEB中因为重写规则导致的服务器异常和404之解决办法',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
