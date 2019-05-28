@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="mod_proxy ，主代理模块Apache模块用于重定向连接;它允许Apache充当底层应用程序服务器的网关。mod_proxy_http ，它增加了对代理HTTP连接的支持。mod_proxy_balancer和mod_lbmethod_byrequests ，它为多个后端服务器添加负载平衡功能。 为了保证配置流程正常，请执行如下命令:12345sudo a2enmod proxysudo a">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-28T03:02:41.641Z">
+<meta property="og:updated_time" content="2019-05-28T03:43:26.623Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu16.04Apache负载均衡+集群">
 <meta name="twitter:description" content="mod_proxy ，主代理模块Apache模块用于重定向连接;它允许Apache充当底层应用程序服务器的网关。mod_proxy_http ，它增加了对代理HTTP连接的支持。mod_proxy_balancer和mod_lbmethod_byrequests ，它为多个后端服务器添加负载平衡功能。 为了保证配置流程正常，请执行如下命令:12345sudo a2enmod proxysudo a">
@@ -327,6 +327,7 @@
           
         <p>mod_proxy ，主代理模块Apache模块用于重定向连接;它允许Apache充当底层应用程序服务器的网关。<br>mod_proxy_http ，它增加了对代理HTTP连接的支持。<br>mod_proxy_balancer和mod_lbmethod_byrequests ，它为多个后端服务器添加负载平衡功能。</p>
 <p>为了保证配置流程正常，请执行如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod proxy</span><br><span class="line">sudo a2enmod proxy_http</span><br><span class="line">sudo a2enmod proxy_balancer</span><br><span class="line">sudo a2enmod lbmethod_byrequests</span><br><span class="line">/etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <p>编辑该配置文件(vim /etc/apache2/sites-available/000-default.conf)，添加如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ProxyPreserveHost On</span><br><span class="line"></span><br><span class="line">    ProxyPass / http://127.0.0.1:8080/</span><br><span class="line">    ProxyPassReverse / http://127.0.0.1:8080/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure></p>
 <p>这样就可以访问了，但是如果是多台服务器的话，添加如下配置:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">&lt;Proxy balancer://mycluster&gt;</span><br><span class="line">    BalancerMember http://127.0.0.1:8080</span><br><span class="line">    BalancerMember http://127.0.0.1:8081</span><br><span class="line">&lt;/Proxy&gt;</span><br><span class="line"></span><br><span class="line">    ProxyPreserveHost On</span><br><span class="line"></span><br><span class="line">    ProxyPass / balancer://mycluster/</span><br><span class="line">    ProxyPassReverse / balancer://mycluster/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure></p>
 <p>换言之如果是https请求，配置也是一样的，不一样的是文件不同(如果是配置https，需要修改/etc/apache2/sites-available/default-ssl.conf)<br>内容与上面一样，唯一不一样的是端口，SSL默认是443端口。</p>
@@ -343,7 +344,7 @@
         <p><span>本文标题:</span><a href="/2019/05/28/Ubuntu16-04Apache负载均衡-集群/">Ubuntu16.04Apache负载均衡+集群</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2019-05-28, 10:42:40</p>
-        <p><span>最后更新:</span>2019-05-28, 11:02:41</p>
+        <p><span>最后更新:</span>2019-05-28, 11:43:26</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/05/28/Ubuntu16-04Apache负载均衡-集群/" title="Ubuntu16.04Apache负载均衡+集群">http://developers-youcong.github.io/2019/05/28/Ubuntu16-04Apache负载均衡-集群/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/28/Ubuntu16-04Apache负载均衡-集群/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
