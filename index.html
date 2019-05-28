@@ -102,7 +102,13 @@
     </script>
 
 
-
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-9661683683826351",
+    enable_page_level_ads: true
+  });
+</script>
 
 </head></html>
 <body>
@@ -280,6 +286,77 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-Ubuntu16-04Apache负载均衡-集群" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/05/28/Ubuntu16-04Apache负载均衡-集群/" class="article-date">
+      <time datetime="2019-05-28T02:42:40.000Z" itemprop="datePublished">2019-05-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/28/Ubuntu16-04Apache负载均衡-集群/">Ubuntu16.04Apache负载均衡+集群</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>mod_proxy ，主代理模块Apache模块用于重定向连接;它允许Apache充当底层应用程序服务器的网关。<br>mod_proxy_http ，它增加了对代理HTTP连接的支持。<br>mod_proxy_balancer和mod_lbmethod_byrequests ，它为多个后端服务器添加负载平衡功能。</p>
+<p>为了保证配置流程正常，请执行如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod proxy</span><br><span class="line">sudo a2enmod proxy_http</span><br><span class="line">sudo a2enmod proxy_balancer</span><br><span class="line">sudo a2enmod lbmethod_byrequests</span><br><span class="line">/etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure></p>
+<p>编辑该配置文件(vim /etc/apache2/sites-available/000-default.conf)，添加如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">    ProxyPreserveHost On</span><br><span class="line"></span><br><span class="line">    ProxyPass / http://127.0.0.1:8080/</span><br><span class="line">    ProxyPassReverse / http://127.0.0.1:8080/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样就可以访问了，但是如果是多台服务器的话，添加如下配置:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *:80&gt;</span><br><span class="line">&lt;Proxy balancer://mycluster&gt;</span><br><span class="line">    BalancerMember http://127.0.0.1:8080</span><br><span class="line">    BalancerMember http://127.0.0.1:8081</span><br><span class="line">&lt;/Proxy&gt;</span><br><span class="line"></span><br><span class="line">    ProxyPreserveHost On</span><br><span class="line"></span><br><span class="line">    ProxyPass / balancer://mycluster/</span><br><span class="line">    ProxyPassReverse / balancer://mycluster/</span><br><span class="line">&lt;/VirtualHost&gt;</span><br></pre></td></tr></table></figure></p>
+<p>换言之如果是https请求，配置也是一样的，不一样的是文件不同(如果是配置https，需要修改/etc/apache2/sites-available/default-ssl.conf)<br>内容与上面一样，唯一不一样的是端口，SSL默认是443端口。</p>
+<p>如果你不知道apache如何配置https,可以参考我的这篇博客<a href="https://developers-youcong.github.io/2019/05/17/Ubuntu16-04%E4%B9%8BApache2-4%E9%85%8D%E7%BD%AESSL%E8%AF%81%E4%B9%A6/">Ubuntu16.04之Apache2.4配置SSL证书</a></p>
+<p>本文参考链接资料如下:<br><a href="https://www.howtoing.com/how-to-use-apache-as-a-reverse-proxy-with-mod-proxy-on-ubuntu-16-04" target="_blank" rel="noopener">如何在Ubuntu 16.04上使用Apache的mod_proxy作为反向代理</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
   
     <article id="post-致所有的开发者们" class="article article-type-post" itemscope="" itemprop="blogPost">
   
@@ -894,75 +971,6 @@
       
         <p class="article-more-link">
           <a href="/2019/05/15/在Git中如何撤销上一次的commit/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-使用Ajax异步上传文件" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/14/使用Ajax异步上传文件/" class="article-date">
-      <time datetime="2019-05-14T02:37:00.000Z" itemprop="datePublished">2019-05-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/14/使用Ajax异步上传文件/">使用Ajax异步上传文件</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>使用Ajax上传文件的应用场景颇多，比如上传用户头像、博客文章中插入图片、对认证用户相关身份进行校验等等很多很多。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/14/使用Ajax异步上传文件/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
