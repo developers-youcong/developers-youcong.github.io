@@ -777,80 +777,6 @@
 <!--gitment 评论 end-->
 
   
-    <article id="post-JSON-stringify-和JSON-parse-的作用" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/03/22/JSON-stringify-和JSON-parse-的作用/" class="article-date">
-      <time datetime="2019-03-22T08:44:36.000Z" itemprop="datePublished">2019-03-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/22/JSON-stringify-和JSON-parse-的作用/">JSON.stringify()和JSON.parse()的作用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>(1)JSON.stringify() 从一个对象中解析出字符串</p>
-<p>JSON.stringify({“a”:”1”,”b”:”2”})</p>
-<p>结果是：”{“a”:”1”,”b”:”2”}”</p>
-<p>(2)JSON.parse()从一个字符串中解析出JSON对象</p>
-<p>var str = ‘{“a”:”1”,”b”:”2”}’;</p>
-<p>JSON.parse(str);</p>
-<p>结果是：Object{a:”1”,b:”2”}</p>
-<p>应用场景:</p>
-<p>针对(1)，比如后台Java对应的RequestMapping参数列表中的参数为一个对象时，前台多个传输需要经过JSON.stringify()处理，否则会出现参数解析异常。</p>
-<p>针对(2)，比如向后台请求，后台返回一大堆字符串，这时前台页面渲染需要将其以对象的形式展现，这时可以用到JSON.parse()。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
     <article id="post-mysql备份命令" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -967,6 +893,76 @@
       
         <p class="article-more-link">
           <a href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Uncaught-ReferenceError-layer-is-not-defined" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" class="article-date">
+      <time datetime="2019-03-19T12:35:10.000Z" itemprop="datePublished">2019-03-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/">Uncaught ReferenceError: layer is not defined</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>错误详细信息,如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught ReferenceError: layer is not defined&apos;</span><br></pre></td></tr></table></figure></p>
+<p>关键词就是not defined 未定义，那么解决方案就是给它定义。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

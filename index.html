@@ -287,11 +287,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-Node-js之文件下载" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-JSON-stringify-和JSON-parse-的作用" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/30/Node-js之文件下载/" class="article-date">
-      <time datetime="2019-05-30T08:08:16.000Z" itemprop="datePublished">2019-05-30</time>
+      <a href="/2019/05/30/JSON-stringify-和JSON-parse-的作用/" class="article-date">
+      <time datetime="2019-05-30T08:28:01.898Z" itemprop="datePublished">2019-05-30</time>
 </a>
 
 
@@ -302,24 +302,21 @@
       <input type="hidden" class="isFancy">
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/30/Node-js之文件下载/">Node.js之文件下载</a>
-    </h1>
-  
-
-      </header>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>Node.js之文件下载，主要最近解决我的一个需求。</p>
-<p>需求描述:<br>如何将腾讯云上传的文件存储到本地某个目录下，如果用js来实现，纯JavaScript没有这样的功能(也许有)，正好我这个项目用node.js比较多，正好可以利用node.js丰富的API实现该功能。</p>
-<p>如下示例代码，演示下载远程文件:<br></p>
-          
+        <hr>
+<p>title: JSON.stringify()和JSON.parse()的作用<br>date: 2019-03-22T16:44:36.000Z</p>
+<h2><span id="tags-javascript">tags: javascript</span></h2><p>(1)JSON.stringify() 从一个对象中解析出字符串</p>
+<p>JSON.stringify({“a”:”1”,”b”:”2”})</p>
+<p>结果是：”{“a”:”1”,”b”:”2”}”</p>
+<p>(2)JSON.parse()从一个字符串中解析出JSON对象</p>
+<p>var str = ‘{“a”:”1”,”b”:”2”}’;</p>
+<p>JSON.parse(str);</p>
+<p>结果是：Object{a:”1”,b:”2”}</p>
+<p>应用场景:<br>针对(1)，比如后台Java对应的RequestMapping参数列表中的参数为一个对象时，前台多个传输需要经过JSON.stringify()处理，否则会出现参数解析异常。</p>
+<p>针对(2)，比如向后台请求，后台返回一大堆字符串，这时前台页面渲染需要将其以对象的形式展现，这时可以用到JSON.parse()。</p>
+
       
     </div>
     
@@ -328,14 +325,6 @@
       
 
       
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/30/Node-js之文件下载/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>

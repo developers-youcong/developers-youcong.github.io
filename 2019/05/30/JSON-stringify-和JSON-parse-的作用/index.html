@@ -15,18 +15,17 @@
 
 
 
-<meta name="description" content="主要解决的问题的，以最近VsCode插件开发为例，每次请求都需要token,而vscode并不支持cookie这样的存储，所以就采用粗暴点办法，存到某个用户目录下并读取。">
-<meta name="keywords" content="Node.js">
+<meta name="description" content="title: JSON.stringify()和JSON.parse()的作用date: 2019-03-22T16:44:36.000Z tags: javascript(1)JSON.stringify() 从一个对象中解析出字符串 JSON.stringify({“a”:”1”,”b”:”2”}) 结果是：”{“a”:”1”,”b”:”2”}” (2)JSON.parse()从一个字符串中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node.js读取文件内容并返回值(非异步)">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/04/02/Node-js读取文件内容并返回值-非异步/index.html">
+<meta property="og:title" content="Blog">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/05/30/JSON-stringify-和JSON-parse-的作用/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="主要解决的问题的，以最近VsCode插件开发为例，每次请求都需要token,而vscode并不支持cookie这样的存储，所以就采用粗暴点办法，存到某个用户目录下并读取。">
+<meta property="og:description" content="title: JSON.stringify()和JSON.parse()的作用date: 2019-03-22T16:44:36.000Z tags: javascript(1)JSON.stringify() 从一个对象中解析出字符串 JSON.stringify({“a”:”1”,”b”:”2”}) 结果是：”{“a”:”1”,”b”:”2”}” (2)JSON.parse()从一个字符串中">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-29T14:52:20.433Z">
+<meta property="og:updated_time" content="2019-05-30T08:28:01.898Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node.js读取文件内容并返回值(非异步)">
-<meta name="twitter:description" content="主要解决的问题的，以最近VsCode插件开发为例，每次请求都需要token,而vscode并不支持cookie这样的存储，所以就采用粗暴点办法，存到某个用户目录下并读取。">
+<meta name="twitter:title" content="Blog">
+<meta name="twitter:description" content="title: JSON.stringify()和JSON.parse()的作用date: 2019-03-22T16:44:36.000Z tags: javascript(1)JSON.stringify() 从一个对象中解析出字符串 JSON.stringify({“a”:”1”,”b”:”2”}) 结果是：”{“a”:”1”,”b”:”2”}” (2)JSON.parse()从一个字符串中">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +57,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Node.js读取文件内容并返回值(非异步) | Blog</title>
+<title>Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -285,11 +284,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Node-js读取文件内容并返回值-非异步" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JSON-stringify-和JSON-parse-的作用" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/02/Node-js读取文件内容并返回值-非异步/" class="article-date">
-      <time datetime="2019-04-02T06:43:59.000Z" itemprop="datePublished">2019-04-02</time>
+      <a href="/2019/05/30/JSON-stringify-和JSON-parse-的作用/" class="article-date">
+      <time datetime="2019-05-30T08:28:01.898Z" itemprop="datePublished">2019-05-30</time>
 </a>
 
 
@@ -300,34 +299,20 @@
       <input type="hidden" class="isFancy">
     
     
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Node.js读取文件内容并返回值(非异步)
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>主要解决的问题的，以最近VsCode插件开发为例，每次请求都需要token,而vscode并不支持cookie这样的存储，所以就采用粗暴点办法，存到某个用户目录下并读取。</p>
-<a id="more"></a>
-<p>源码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">var fs=require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line"> function getToken(isRelease) &#123;</span><br><span class="line">		//是否为正式版本，路径不一样</span><br><span class="line">		if (isRelease) &#123;</span><br><span class="line">			const scriptSrc = path.dirname(__filename);</span><br><span class="line">			const jsName = scriptSrc.split(&apos;\\&apos;);</span><br><span class="line">			var i = jsName.length;</span><br><span class="line">			var finpath = &quot;&quot;;</span><br><span class="line">			for (var j = 0; j &lt; i - 3; j++) &#123;</span><br><span class="line">				if (j == 0) &#123;</span><br><span class="line">					finpath = jsName[j];</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					finpath = finpath + &apos;\\&apos; + jsName[j];</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			finpath = finpath + &apos;\\token.txt&apos;;</span><br><span class="line"></span><br><span class="line">		&#125; else &#123; </span><br><span class="line">			finpath = &apos;D://Workspace//token//token.txt&apos;;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		if (fs.existsSync(finpath)) &#123; //判断是否存在该文件</span><br><span class="line">			try &#123;</span><br><span class="line">				let result = fs.readFileSync(finpath);</span><br><span class="line">				console.log(result.toString());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">				return result.toString();</span><br><span class="line">			</span><br><span class="line">			&#125; catch (e) &#123;</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	console.log(getToken());</span><br></pre></td></tr></table></figure></p>
+        <hr>
+<p>title: JSON.stringify()和JSON.parse()的作用<br>date: 2019-03-22T16:44:36.000Z</p>
+<h2><span id="tags-javascript">tags: javascript</span></h2><p>(1)JSON.stringify() 从一个对象中解析出字符串</p>
+<p>JSON.stringify({“a”:”1”,”b”:”2”})</p>
+<p>结果是：”{“a”:”1”,”b”:”2”}”</p>
+<p>(2)JSON.parse()从一个字符串中解析出JSON对象</p>
+<p>var str = ‘{“a”:”1”,”b”:”2”}’;</p>
+<p>JSON.parse(str);</p>
+<p>结果是：Object{a:”1”,b:”2”}</p>
+<p>应用场景:<br>针对(1)，比如后台Java对应的RequestMapping参数列表中的参数为一个对象时，前台多个传输需要经过JSON.stringify()处理，否则会出现参数解析异常。</p>
+<p>针对(2)，比如向后台请求，后台返回一大堆字符串，这时前台页面渲染需要将其以对象的形式展现，这时可以用到JSON.parse()。</p>
 
       
     </div>
@@ -336,13 +321,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/02/Node-js读取文件内容并返回值-非异步/">Node.js读取文件内容并返回值(非异步)</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/30/JSON-stringify-和JSON-parse-的作用/"></a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-04-02, 14:43:59</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:20</p>
+        <p><span>发布时间:</span>2019-05-30, 16:28:01</p>
+        <p><span>最后更新:</span>2019-05-30, 16:28:01</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/02/Node-js读取文件内容并返回值-非异步/" title="Node.js读取文件内容并返回值(非异步)">http://developers-youcong.github.io/2019/04/02/Node-js读取文件内容并返回值-非异步/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/04/02/Node-js读取文件内容并返回值-非异步/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/30/JSON-stringify-和JSON-parse-的作用/" title="">http://developers-youcong.github.io/2019/05/30/JSON-stringify-和JSON-parse-的作用/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/30/JSON-stringify-和JSON-parse-的作用/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -354,16 +339,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/03/layui之确认框/">
-                    layui之确认框
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/">
-                    springboot1.5.4 配置druid1.1.0(使用druid-spring-boot-starter)
+                <a href="/2019/05/28/算法图解之快速排序/">
+                    算法图解之快速排序
                 </a>
             </div>
         
@@ -375,7 +354,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">tags: javascript</span></a></li></ol>
         
     </div>
     <style>
@@ -411,7 +390,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Node.js读取文件内容并返回值(非异步)　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -433,15 +412,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/03/layui之确认框/" title="上一篇: layui之确认框">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" title="下一篇: springboot1.5.4 配置druid1.1.0(使用druid-spring-boot-starter)">
+            <a href="/2019/05/28/算法图解之快速排序/" title="下一篇: 算法图解之快速排序">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -477,8 +454,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Tue Apr 02 2019 14:43:59 GMT+0800',
-			  title: 'Node.js读取文件内容并返回值(非异步)',
+			  id: 'Thu May 30 2019 16:28:01 GMT+0800',
+			  title: '',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
