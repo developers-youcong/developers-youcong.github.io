@@ -15,21 +15,18 @@
 
 
 
-<meta name="description" content="详细错误信息:123456789101112131415FATAL Cannot read property &amp;apos;replace&amp;apos; of nullTypeError: Cannot read property &amp;apos;replace&amp;apos; of null    at fs.exists.then.then.then.config (E:\Hexo\node_module">
-<meta name="keywords" content="Hexo">
+<meta name="description" content="Node.js之文件下载，主要最近解决我的一个需求。 需求描述:如何将腾讯云上传的文件存储到本地某个目录下，如果用js来实现，纯JavaScript没有这样的功能(也许有)，正好我这个项目用node.js比较多，正好可以利用node.js丰富的API实现该功能。">
+<meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo 报错 Cannot read property &#39;replace&#39; of null">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/index.html">
+<meta property="og:title" content="Node.js之文件下载">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/05/31/Node-js之文件下载/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="详细错误信息:123456789101112131415FATAL Cannot read property &amp;apos;replace&amp;apos; of nullTypeError: Cannot read property &amp;apos;replace&amp;apos; of null    at fs.exists.then.then.then.config (E:\Hexo\node_module">
+<meta property="og:description" content="Node.js之文件下载，主要最近解决我的一个需求。 需求描述:如何将腾讯云上传的文件存储到本地某个目录下，如果用js来实现，纯JavaScript没有这样的功能(也许有)，正好我这个项目用node.js比较多，正好可以利用node.js丰富的API实现该功能。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/01.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/02.png">
-<meta property="og:updated_time" content="2019-05-29T14:52:20.497Z">
+<meta property="og:updated_time" content="2019-06-01T14:10:02.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hexo 报错 Cannot read property &#39;replace&#39; of null">
-<meta name="twitter:description" content="详细错误信息:123456789101112131415FATAL Cannot read property &amp;apos;replace&amp;apos; of nullTypeError: Cannot read property &amp;apos;replace&amp;apos; of null    at fs.exists.then.then.then.config (E:\Hexo\node_module">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/01.png">
+<meta name="twitter:title" content="Node.js之文件下载">
+<meta name="twitter:description" content="Node.js之文件下载，主要最近解决我的一个需求。 需求描述:如何将腾讯云上传的文件存储到本地某个目录下，如果用js来实现，纯JavaScript没有这样的功能(也许有)，正好我这个项目用node.js比较多，正好可以利用node.js丰富的API实现该功能。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -61,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>hexo 报错 Cannot read property &#39;replace&#39; of null | Blog</title>
+<title>Node.js之文件下载 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -288,11 +285,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-hexo-报错-Cannot-read-property-replace-of-null" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Node-js之文件下载" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/" class="article-date">
-      <time datetime="2019-04-22T01:39:28.000Z" itemprop="datePublished">2019-04-22</time>
+      <a href="/2019/05/31/Node-js之文件下载/" class="article-date">
+      <time datetime="2019-05-31T08:06:33.000Z" itemprop="datePublished">2019-05-31</time>
 </a>
 
 
@@ -307,7 +304,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hexo 报错 Cannot read property &#39;replace&#39; of null
+      Node.js之文件下载
     </h1>
   
 
@@ -318,7 +315,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -328,12 +325,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">FATAL Cannot read property &apos;replace&apos; of null</span><br><span class="line">TypeError: Cannot read property &apos;replace&apos; of null</span><br><span class="line">    at fs.exists.then.then.then.config (E:\Hexo\node_modules\hexo\lib\hexo\load_config.js:34:31)</span><br><span class="line">    at tryCatcher (E:\Hexo\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (E:\Hexo\node_modules\bluebird\js\release\promise.js:512:31)</span><br><span class="line">    at Promise._settlePromise (E:\Hexo\node_modules\bluebird\js\release\promise.js:569:18)</span><br><span class="line">    at Promise._settlePromise0 (E:\Hexo\node_modules\bluebird\js\release\promise.js:614:10)</span><br><span class="line">    at Promise._settlePromises (E:\Hexo\node_modules\bluebird\js\release\promise.js:694:18)</span><br><span class="line">    at _drainQueueStep (E:\Hexo\node_modules\bluebird\js\release\async.js:138:12)</span><br><span class="line">    at _drainQueue (E:\Hexo\node_modules\bluebird\js\release\async.js:131:9)</span><br><span class="line">    at Async._drainQueues (E:\Hexo\node_modules\bluebird\js\release\async.js:147:5)</span><br><span class="line">    at Immediate.Async.drainQueues (E:\Hexo\node_modules\bluebird\js\release\async.js:17:14)</span><br><span class="line">    at runCallback (timers.js:810:20)</span><br><span class="line">    at tryOnImmediate (timers.js:768:5)</span><br><span class="line">    at processImmediate [as _immediateCallback] (timers.js:745:5)</span><br></pre></td></tr></table></figure></p>
-<p>关键信息: Cannot read property ‘replace’ of null</p>
-<p>问题原因:<br>我为了将我的wiki链接到hexo修改了root路径，如下图所示:<br><img src="/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/01.png" alt=""></p>
-<p>解决办法(将root改为原来的/即可解决这个问题):<br><img src="/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/02.png" alt=""></p>
-<p>这个/相当于默认指向developers-youcong.github.io</p>
-<p>参考解决办法:<br><a href="https://www.jianshu.com/p/449accb044b4" target="_blank" rel="noopener">hexo 报错 Cannot read property ‘replace’ of null</a></p>
+        <p>Node.js之文件下载，主要最近解决我的一个需求。</p>
+<p>需求描述:<br>如何将腾讯云上传的文件存储到本地某个目录下，如果用js来实现，纯JavaScript没有这样的功能(也许有)，正好我这个项目用node.js比较多，正好可以利用node.js丰富的API实现该功能。<br><a id="more"></a><br>如下示例代码，演示下载远程文件:</p>
+<p>源码如下(download.js):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//下载参数</span><br><span class="line">var http = require(&quot;http&quot;);</span><br><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line">var path = require(&quot;path&quot;);</span><br><span class="line">var downFlag = false;</span><br><span class="line">var downUrl = &apos;&apos;;</span><br><span class="line">var downFileName = &apos;&apos;;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 下载回调</span><br><span class="line"> */</span><br><span class="line">function getHttpReqCallback (imgSrc, dirName, fileName) &#123;</span><br><span class="line"></span><br><span class="line">    var callback = function(res) &#123;</span><br><span class="line">        console.log(&quot;request: &quot; + imgSrc + &quot; return status: &quot; + res.statusCode);</span><br><span class="line">        var contentLength = parseInt(res.headers[&apos;content-length&apos;]);</span><br><span class="line">        </span><br><span class="line">        var downLength = 0;</span><br><span class="line">    </span><br><span class="line">        var out = fs.createWriteStream(dirName + &quot;/&quot; + fileName);</span><br><span class="line">        res.on(&apos;data&apos;, function (chunk) &#123;</span><br><span class="line">            </span><br><span class="line">            downLength += chunk.length;</span><br><span class="line">            var progress =  Math.floor(downLength*100 / contentLength);</span><br><span class="line">            var str = &quot;下载：&quot;+ progress +&quot;%&quot;;</span><br><span class="line">            console.log(str);</span><br><span class="line">            </span><br><span class="line">            //写文件</span><br><span class="line">            out.write(chunk, function () &#123;</span><br><span class="line">                //console.log(chunk.length);</span><br><span class="line">                </span><br><span class="line">            &#125;);</span><br><span class="line">            </span><br><span class="line">        &#125;);</span><br><span class="line">        res.on(&apos;end&apos;, function() &#123;</span><br><span class="line">            downFlag = false;</span><br><span class="line">            console.log(&quot;end downloading &quot; + imgSrc);</span><br><span class="line">            if (isNaN(contentLength)) &#123;</span><br><span class="line">                console.log(imgSrc + &quot; content length error&quot;);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">            if (downLength &lt; contentLength) &#123;</span><br><span class="line">                console.log(imgSrc + &quot; download error, try again&quot;);</span><br><span class="line">                return;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    return callback;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 下载开始</span><br><span class="line"> */</span><br><span class="line">function startDownloadTask (imgSrc, dirName,fileName) &#123;</span><br><span class="line">    console.log(&quot;start downloading &quot; + imgSrc);</span><br><span class="line">    var req = http.request(imgSrc, getHttpReqCallback(imgSrc, dirName, fileName));</span><br><span class="line">    req.on(&apos;error&apos;, function(e)&#123;</span><br><span class="line">        console.log(&quot;request &quot; + imgSrc + &quot; error, try again&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">    req.end();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">startDownloadTask(&apos;http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.41/bin/apache-tomcat-8.5.41.tar.gz&apos;,&apos;D://1024Workspace//extension&apos;,&apos;apache-tomcat-8.5.41.tar.gz&apos;);</span><br><span class="line"></span><br><span class="line">//startDownloadTask(&apos;下载地址&apos;,&apos;本地存储路径&apos;,&apos;文件名&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>代码经过测试，没有问题。</p>
+<p>本文主要参考资料如下:<br>Node.js文件下载</p>
 
       
     </div>
@@ -342,13 +338,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/">hexo 报错 Cannot read property &#39;replace&#39; of null</a></p>
+        <p><span>本文标题:</span><a href="/2019/05/31/Node-js之文件下载/">Node.js之文件下载</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-04-22, 09:39:28</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:20</p>
+        <p><span>发布时间:</span>2019-05-31, 16:06:33</p>
+        <p><span>最后更新:</span>2019-06-01, 22:10:02</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/" title="hexo 报错 Cannot read property &#39;replace&#39; of null">http://developers-youcong.github.io/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/05/31/Node-js之文件下载/" title="Node.js之文件下载">http://developers-youcong.github.io/2019/05/31/Node-js之文件下载/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/31/Node-js之文件下载/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -361,15 +357,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/22/An-internal-error-occurred-during-Initializing-Java-Tooling/">
-                    An internal error occurred during: Initializing Java Tooling.
+                <a href="/2019/06/01/初学者摸索之算法学习/">
+                    初学者摸索之算法学习
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/20/ftp配置详解/">
-                    ftp配置详解
+                <a href="/2019/05/28/算法图解之快速排序/">
+                    算法图解之快速排序
                 </a>
             </div>
         
@@ -417,7 +413,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"hexo 报错 Cannot read property 'replace' of null　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Node.js之文件下载　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -439,7 +435,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/22/An-internal-error-occurred-during-Initializing-Java-Tooling/" title="上一篇: An internal error occurred during: Initializing Java Tooling.">
+            <a href="/2019/06/01/初学者摸索之算法学习/" title="上一篇: 初学者摸索之算法学习">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -447,7 +443,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/20/ftp配置详解/" title="下一篇: ftp配置详解">
+            <a href="/2019/05/28/算法图解之快速排序/" title="下一篇: 算法图解之快速排序">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -483,8 +479,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Mon Apr 22 2019 09:39:28 GMT+0800',
-			  title: 'hexo 报错 Cannot read property &#39;replace&#39; of null',
+			  id: 'Fri May 31 2019 16:06:33 GMT+0800',
+			  title: 'Node.js之文件下载',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
