@@ -287,6 +287,75 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Jenkins持续集成实践之java项目自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/16/Jenkins持续集成实践之java项目自动化部署/" class="article-date">
+      <time datetime="2019-04-16T08:22:01.000Z" itemprop="datePublished">2019-04-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/16/Jenkins持续集成实践之java项目自动化部署/">Jenkins持续集成实践之java项目自动化部署</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>关于Linux安装Jenkins可以参考我的这篇博文<a href="https://www.cnblogs.com/youcong/p/8710025.html" target="_blank" rel="noopener">Ubuntu16.04环境安装jenkins</a><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jenkins/">jenkins</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/16/Jenkins持续集成实践之java项目自动化部署/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Ubuntu16-04安装和配置RabbitMQ" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -903,76 +972,6 @@
         <p class="article-more-link">
           <a href="/2019/04/10/Edusoho之LAMP环境搭建/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/10/E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem/" class="article-date">
-      <time datetime="2019-04-10T07:13:12.000Z" itemprop="datePublished">2019-04-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/10/E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem/">E:dpkg was interrupted, you must manually run&#39;dpkg配置&#39;to correct the problem.</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>执行sudo apt-get install安装对应的软件出现如下错误</p>
-<p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarily unavailable)</span><br><span class="line">E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?</span><br></pre></td></tr></table></figure></p>
-<p>错误原因:是因为引用错误的链接导致的。</p>
-<p>解决办法(删除这些引用即可):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /var/lib/dpkg/updates</span><br><span class="line">rm -r ./*</span><br></pre></td></tr></table></figure></p>
-<p>删除完后，执行sudo apt-get update即可，这时就可以正常安装软件了。</p>
-<p>参考解决办法链接:<br><a href="https://www.helplib.com/ubuntu/article_158303" target="_blank" rel="noopener">14.04消息’E:dpkg was interrupted, you must manually run’dpkg配置’to correct the problem.’</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
