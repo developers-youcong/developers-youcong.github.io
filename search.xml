@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Git bash Error: Could not fork child process: There are no available terminals (-1)</title>
+      <link href="/2019/06/16/Git-bash-Error-Could-not-fork-child-process-There-are-no-available-terminals-1/"/>
+      <url>/2019/06/16/Git-bash-Error-Could-not-fork-child-process-There-are-no-available-terminals-1/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:<br>Error: Could not fork child process: There are no available terminals (-1)<br><a id="more"></a><br>截图如下:<br><img src="/2019/06/16/Git-bash-Error-Could-not-fork-child-process-There-are-no-available-terminals-1/01.png" alt=""></p><p>解决办法:</p><p>(1)使用cmd命令tasklist，找到git bash的进程</p><p>(2)找到红色标记处<br><img src="/2019/06/16/Git-bash-Error-Could-not-fork-child-process-There-are-no-available-terminals-1/02.png" alt=""></p><p>(3)执行命令(<code>taskkill /pid 9872 -t -f</code>)将其杀死即可</p><p><img src="/2019/06/16/Git-bash-Error-Could-not-fork-child-process-There-are-no-available-terminals-1/03.png" alt=""></p><p>参考问题解决链接:<br><a href="https://blog.csdn.net/qq_2300688967/article/details/78642300" target="_blank" rel="noopener">Git bash Error: Could not fork child process: There are no available terminals (-1)</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Windows本地搭建Edusoho环境</title>
       <link href="/2019/06/12/Windows%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BAEdusoho%E7%8E%AF%E5%A2%83/"/>
       <url>/2019/06/12/Windows%E6%9C%AC%E5%9C%B0%E6%90%AD%E5%BB%BAEdusoho%E7%8E%AF%E5%A2%83/</url>
