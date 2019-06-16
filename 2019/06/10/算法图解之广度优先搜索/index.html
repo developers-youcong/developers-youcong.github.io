@@ -15,14 +15,29 @@
 
 
 
+<meta name="description" content="广度优先搜索的应用场景，如下:(1)编写国际跳棋AI，计算最少走多少步就可获胜;(2)编写拼写检查器，计算最少编辑多个地方就可将错拼的单词改为正确的单词，如将READED改为READER需要编辑一个地方;(3)根据你的人际关系网络找到关系最近的医生;">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法图解之广度优先搜索">
 <meta property="og:url" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/index.html">
 <meta property="og:site_name" content="Blog">
+<meta property="og:description" content="广度优先搜索的应用场景，如下:(1)编写国际跳棋AI，计算最少走多少步就可获胜;(2)编写拼写检查器，计算最少编辑多个地方就可将错拼的单词改为正确的单词，如将READED改为READER需要编辑一个地方;(3)根据你的人际关系网络找到关系最近的医生;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-10T12:27:10.839Z">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/01.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/02.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/03.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/04.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/05.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/06.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/07.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/08.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/09.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/10.png">
+<meta property="og:updated_time" content="2019-06-16T11:03:46.412Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法图解之广度优先搜索">
+<meta name="twitter:description" content="广度优先搜索的应用场景，如下:(1)编写国际跳棋AI，计算最少走多少步就可获胜;(2)编写拼写检查器，计算最少编辑多个地方就可将错拼的单词改为正确的单词，如将READED改为READER需要编辑一个地方;(3)根据你的人际关系网络找到关系最近的医生;">
+<meta name="twitter:image" content="http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/01.png">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -310,6 +325,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -317,7 +336,39 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        
+        <p>广度优先搜索的应用场景，如下:<br>(1)编写国际跳棋AI，计算最少走多少步就可获胜;<br>(2)编写拼写检查器，计算最少编辑多个地方就可将错拼的单词改为正确的单词，如将READED改为READER需要编辑一个地方;<br>(3)根据你的人际关系网络找到关系最近的医生;<br><a id="more"></a></p>
+<h2><span id="图简介">图简介</span></h2><p>假设你居住在旧金山，要从双子峰前往金门大桥。你想乘公交车前往，并希望换乘最少。可乘坐的公交车如下:<br><img src="/2019/06/10/算法图解之广度优先搜索/01.png" alt=""></p>
+<p>由图可知，换乘最少的路线是:步行-&gt;44路公交车-&gt;28路公交车(一共三步,这种问题也被称作为最短路径问题，解决最短路径问题的算法，又称广度优先搜索)</p>
+<p>要确定如何从双子峰前往金门大桥，需要两个步骤:<br>(1)使用图来建立问题模型;<br>(2)使用广度优先搜索解决问题;</p>
+<h2><span id="什么是图">什么是图</span></h2><p>图模拟一组连接。</p>
+<p>例如，假设你与朋友玩牌，并要模拟谁欠谁钱，可像下面这样指出Alex欠Rama前，如图:<br><img src="/2019/06/10/算法图解之广度优先搜索/02.png" alt=""></p>
+<p>完整的欠钱图可能类似于下面这样。</p>
+<p><img src="/2019/06/10/算法图解之广度优先搜索/03.png" alt=""><br>Alex欠Rama钱、Tom欠Adit钱，等等。</p>
+<p>图由节点和边组成，如图所示:<br><img src="/2019/06/10/算法图解之广度优先搜索/04.png" alt=""></p>
+<p>一个节点可能与众多节点直接相连，这些节点被称为邻居。<br>在起前面的欠钱图中，Rama是Alex的邻居。Adit不是Alex的邻居，因为他们不直接相连。但Adit既是Rama的邻居，又是Tom的邻居。</p>
+<p>图用于模拟不同的东西是如何相连的。</p>
+<p>联系工程研发:<br>通常研发工程师面对业务需求，需要画流程图帮助自己梳理一下业务流程，减少编码过程中的不必要的错误(这个不必要主要包含业务理解等)。<br>业务流程图其实也相当于在模拟业务在实际中是如何运作的。</p>
+<h2><span id="广度优先搜索">广度优先搜索</span></h2><p>广度优先搜索是一种用于图的查找算法，可帮助回答两类问题:</p>
+<ul>
+<li>第一类问题:从节点A出发，前往节点B的路径</li>
+<li>第二类问题:从节点A出发，前往节点B的哪条路径最短</li>
+</ul>
+<h3><span id="查找最短路径问题">查找最短路径问题</span></h3><p>这个图主要反映的是解决第一类问题看你周围的朋友有哪些是芒果商。<br><img src="/2019/06/10/算法图解之广度优先搜索/05.png" alt=""></p>
+<p>第二类问题，主要强调是是哪个芒果商与你的关系最近。例如，朋友是一度关系，朋友的朋友是二度关系。</p>
+<p>下图可形象生动的表现出来:<br><img src="/2019/06/10/算法图解之广度优先搜索/06.png" alt=""></p>
+<p>搜索范围从起点开始逐渐向外延伸，即先检查一度关系，再检查二度关系。<br>首先按照顺序检查名单中的每个人，看看他是否是芒果销售商。这将在一度关系种查找，再在二度关系中查找，因此找到的是关系最近的芒果销售商。广度优先搜索不仅查找从A到B的路径，而且找到的是最短的路径。</p>
+<p>如图分析:<br><img src="/2019/06/10/算法图解之广度优先搜索/07.png" alt=""></p>
+<p>注意,只有按添加顺序查找时，才能实现这样的目的。换句话说，如果Claire先于Anuj加入名单，就需要先检查Claire，再检查Anuj。如果Claire和Anuj都是芒果销售商，而你先检查Anuj再检查Claire，结果将如何呢？找到的芒果销售商并非是与你关系最近的，因为Anuj是你朋友的朋友，而Claire是你的朋友。因此，你需要按添加顺序进行检查。有一个可实现这种目的的数据结构，那就是队列。</p>
+<h3><span id="队列">队列</span></h3><p>队列的工作原理与现实生活中的队列完全相同。</p>
+<p>假设你与朋友一起在公交车站排队，如果你排在他的前面，你将先上车。队列的工作原理与此相同。队列类似于栈。你不能随机地访问队列中的元素。队列只支持两种操作:入队和出队。</p>
+<p><img src="/2019/06/10/算法图解之广度优先搜索/08.png" alt=""><br>如果你将两个元素加入队列，先加入的元素将在后加入的元素之前出队。因此，你可使用队列来表示查找名单。这样，先加入的人将先出队并先被检查。</p>
+<p>队列是一种先进先出的数据结构，而栈是一种后进先出的数据结构，如图:<br><img src="/2019/06/10/算法图解之广度优先搜索/09.png" alt=""></p>
+<h2><span id="实现图">实现图</span></h2><p>图由多个节点组成。</p>
+<p>每个节点都与邻近节点相连，如果表示类似于”you-&gt;Bob”这样的关系，可以使用散列表。</p>
+<p>关于有向图和无向图，如下所示:<br><img src="/2019/06/10/算法图解之广度优先搜索/10.png" alt=""></p>
+<p>关于运行时间:<br>如果你在你的整个人际关系网中搜索芒果销售商，就意味着你将沿每条边前行(记住，边是从一个人到另外一个人的箭头或连接)，因此运行时间至少为O(边数)</p>
+<p>你还使用了一个队列，其中包含要检查的每个人。将一个人添加到队列需要的时间是固定的，即为O(1)，因此对每个人都这样做需要的总时间为O(人数)。所以，广度优先搜索的运行时间为O(人数+边数)，这通常写作O(V+E),其中V为顶点数，E为边数。</p>
+
       
     </div>
     
@@ -328,7 +379,7 @@
         <p><span>本文标题:</span><a href="/2019/06/10/算法图解之广度优先搜索/">算法图解之广度优先搜索</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2019-06-10, 20:27:10</p>
-        <p><span>最后更新:</span>2019-06-10, 20:27:10</p>
+        <p><span>最后更新:</span>2019-06-16, 19:03:46</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2019/06/10/算法图解之广度优先搜索/" title="算法图解之广度优先搜索">http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/06/10/算法图解之广度优先搜索/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -364,7 +415,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">图简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">什么是图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">广度优先搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">查找最短路径问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">队列</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">实现图</span></a></li></ol>
         
     </div>
     <style>
