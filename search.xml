@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>vscode插件开发之如何玩转vscode命令</title>
+      <link href="/2019/06/17/vscode%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B9%8B%E5%A6%82%E4%BD%95%E7%8E%A9%E8%BD%ACvscode%E5%91%BD%E4%BB%A4/"/>
+      <url>/2019/06/17/vscode%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E4%B9%8B%E5%A6%82%E4%BD%95%E7%8E%A9%E8%BD%ACvscode%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<p>这里以插件开发为例，VsCode之所以那么强大是因为它背后有千千万万的开发者们为其开发大量功能插件，WordPress同理。</p><p>那么如何玩转VsCode命令呢(以插件开发为例)?<br><a id="more"></a></p><h2><span id="官方文档必不可少">官方文档必不可少</span></h2><p><a href="https://code.visualstudio.com/api" target="_blank" rel="noopener">https://code.visualstudio.com/api</a></p><h2><span id="要像产品经理那样面对产品时多点点多看看多想想">要像产品经理那样面对产品时，多点点多看看多想想</span></h2><p>举个例子说明:<br>以关闭VsCode窗口为例<br>我从VsCode的源码中找到了相关的关闭窗口方法，但是无奈插件API不支持这样的，为此我只得另寻其它方法。最后找到的方法是通过VsCode API命令执行的方式完成此功能。</p><h3><span id="如何查看vscode快捷键及其对应的命令记住该功能很重要">如何查看VsCode快捷键及其对应的命令(记住该功能很重要)</span></h3><p><img src="/2019/06/17/vscode插件开发之如何玩转vscode命令/01.png" alt=""></p><h3><span id="键盘快捷方式效果如下">键盘快捷方式效果如下</span></h3><p>基本上系统自带和所安装的其它扩展命令都在这<br><img src="/2019/06/17/vscode插件开发之如何玩转vscode命令/02.png" alt=""></p><h2><span id="如何充分玩转这些命令让其为我所用呢插件为例很简单">如何充分玩转这些命令，让其为我所用呢(插件为例)，很简单</span></h2><p>如下简单的代码，在我最近开发VsCode插件中十分常用(主要体现在调用VsCode强大丰富的API完成一些特定的功能):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vscode.commands.executeCommand(&apos;命令放置处&apos;);</span><br></pre></td></tr></table></figure></p><p>关闭VsCode窗口示例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vscode.commands.executeCommand(&apos;workbench.action.closeWindow&apos;);</span><br></pre></td></tr></table></figure></p><p>当然了，如果想要调用vscode这个API(Node.js中调用的话),需要导入这段代码<code>const vscode = require(&#39;vscode&#39;);</code></p><h2><span id="总结">总结</span></h2><p>基本上把VsCode中系统常用快捷键掌握好(知道怎么查和对应什么意思)，再结合其它插件，你也能开发出一个属于自己的IDE(编辑器)，这个IDE可以叫XXIDE，也可以叫YYIDE，纯看个人兴趣。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> VsCode </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>layui如何自定义弹出层关闭事件</title>
+      <link href="/2019/06/17/layui%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%B9%E5%87%BA%E5%B1%82%E5%85%B3%E9%97%AD%E4%BA%8B%E4%BB%B6/"/>
+      <url>/2019/06/17/layui%E5%A6%82%E4%BD%95%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%B9%E5%87%BA%E5%B1%82%E5%85%B3%E9%97%AD%E4%BA%8B%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>再某些业务场景下，我们需要自定义弹出层关闭事件，代码示例如下:<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">layui.use(&apos;layer&apos;, function () &#123;</span><br><span class="line"></span><br><span class="line">var layer = layui.layer;</span><br><span class="line"></span><br><span class="line">layer.open(&#123;</span><br><span class="line">skin: &apos;demo-class&apos;,</span><br><span class="line">type: 1,</span><br><span class="line">title: &apos;登录&apos;,</span><br><span class="line">area: [&apos;600px&apos;, &apos;700px&apos;],</span><br><span class="line">closeBtn :0,</span><br><span class="line">content: $(&apos;.login&apos;), //这里content是一个普通的String</span><br><span class="line">cancel: function () &#123;</span><br><span class="line">vscode.postMessage(&#123;</span><br><span class="line">command: &apos;close&apos;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>layui如何隐藏弹出层关闭的按钮</title>
+      <link href="/2019/06/17/layui%E5%A6%82%E4%BD%95%E9%9A%90%E8%97%8F%E5%BC%B9%E5%87%BA%E5%B1%82%E5%85%B3%E9%97%AD%E7%9A%84%E6%8C%89%E9%92%AE/"/>
+      <url>/2019/06/17/layui%E5%A6%82%E4%BD%95%E9%9A%90%E8%97%8F%E5%BC%B9%E5%87%BA%E5%B1%82%E5%85%B3%E9%97%AD%E7%9A%84%E6%8C%89%E9%92%AE/</url>
+      
+        <content type="html"><![CDATA[<p>layui默认弹出层是带有关闭按钮的，但是在某些场景我们不需要layui的关闭按钮，这时只需添加<code>closeBtn :0</code>即可<br><a id="more"></a><br>效果图如下:<br><img src="/2019/06/17/layui如何隐藏弹出层关闭的按钮/01.png" alt=""></p><p>示例代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">layui.use(&apos;layer&apos;, function () &#123;</span><br><span class="line"></span><br><span class="line">var layer = layui.layer;</span><br><span class="line"></span><br><span class="line">layer.open(&#123;</span><br><span class="line">skin: &apos;demo-class&apos;,</span><br><span class="line">type: 1,</span><br><span class="line">title: &apos;登录&apos;,</span><br><span class="line">area: [&apos;600px&apos;, &apos;700px&apos;],</span><br><span class="line">closeBtn :0,</span><br><span class="line">content: $(&apos;.login&apos;)//这里content是一个普通的String</span><br><span class="line">&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p><p>更多详细资料可参考<a href="https://www.layui.com/" target="_blank" rel="noopener">layui官方文档</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Git bash Error: Could not fork child process: There are no available terminals (-1)</title>
       <link href="/2019/06/16/Git-bash-Error-Could-not-fork-child-process-There-are-no-available-terminals-1/"/>
       <url>/2019/06/16/Git-bash-Error-Could-not-fork-child-process-There-are-no-available-terminals-1/</url>
