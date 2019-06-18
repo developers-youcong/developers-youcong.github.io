@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。">
-<meta name="keywords" content="javascript">
+<meta name="description" content="应用场景:1.VsCode插件开发(主要针对以javascript为主的vscode插件);2.使用Node.js开发的客户端程序 Node.js之http请求(客户端)">
+<meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Uncaught ReferenceError: layer is not defined">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/index.html">
+<meta property="og:title" content="node.js之客户端发起https和http请求">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/06/18/node-js之客户端发起https和http请求/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。">
+<meta property="og:description" content="应用场景:1.VsCode插件开发(主要针对以javascript为主的vscode插件);2.使用Node.js开发的客户端程序 Node.js之http请求(客户端)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-29T14:52:20.484Z">
+<meta property="og:updated_time" content="2019-06-18T12:29:21.654Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Uncaught ReferenceError: layer is not defined">
-<meta name="twitter:description" content="错误详细信息,如下:1Uncaught ReferenceError: layer is not defined&amp;apos; 关键词就是not defined 未定义，那么解决方案就是给它定义。">
+<meta name="twitter:title" content="node.js之客户端发起https和http请求">
+<meta name="twitter:description" content="应用场景:1.VsCode插件开发(主要针对以javascript为主的vscode插件);2.使用Node.js开发的客户端程序 Node.js之http请求(客户端)">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Uncaught ReferenceError: layer is not defined | Blog</title>
+<title>node.js之客户端发起https和http请求 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -285,11 +285,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Uncaught-ReferenceError-layer-is-not-defined" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-node-js之客户端发起https和http请求" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" class="article-date">
-      <time datetime="2019-03-19T12:35:10.000Z" itemprop="datePublished">2019-03-19</time>
+      <a href="/2019/06/18/node-js之客户端发起https和http请求/" class="article-date">
+      <time datetime="2019-06-18T12:18:59.000Z" itemprop="datePublished">2019-06-18</time>
 </a>
 
 
@@ -304,7 +304,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Uncaught ReferenceError: layer is not defined
+      node.js之客户端发起https和http请求
     </h1>
   
 
@@ -315,7 +315,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -325,11 +325,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>错误详细信息,如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Uncaught ReferenceError: layer is not defined&apos;</span><br></pre></td></tr></table></figure></p>
-<p>关键词就是not defined 未定义，那么解决方案就是给它定义。<br><a id="more"></a><br>原来的问题代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>这样在我的博客首页是可以生效的，不会出现未定义。但是当我将其抽象为一个函数的时候，其它地方就不行了。</p>
-<p>通过声明定义后，代码就变成如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">layui.use(&apos;layer&apos;,function () &#123; </span><br><span class="line">       	</span><br><span class="line">       layer.confirm(&apos;确认要退出吗？&apos;, &#123;</span><br><span class="line">           btn : [ &apos;确定&apos;, &apos;取消&apos; ]//按钮</span><br><span class="line">       &#125;, function(index) &#123;</span><br><span class="line">       	</span><br><span class="line">           layer.close(index);</span><br><span class="line">           //此处请求后台程序，下方是成功后的前台处理……</span><br><span class="line">           var index = layer.load(0,&#123;shade: [0.7, &apos;#393D49&apos;]&#125;, &#123;shadeClose: true&#125;); //0代表加载的风格，支持0-2</span><br><span class="line">           </span><br><span class="line">           delete_cookie(&quot;userId&quot;, &quot;/&quot;);</span><br><span class="line"></span><br><span class="line">        window.location.href = &quot;index.html&quot;;</span><br><span class="line"></span><br><span class="line">       &#125;);</span><br><span class="line">       </span><br><span class="line">       &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>当时我在想引入layer.js来解决这个问题，但是仔细一看这并不是问题的关键所在。<br>解决问题，在于更好的理解问题，当然了，把握关键词也是很重要的(事半功倍)。</p>
+        <p>应用场景:<br>1.VsCode插件开发(主要针对以javascript为主的vscode插件);<br>2.使用Node.js开发的客户端程序</p>
+<h3><span id="nodejs之http请求客户端">Node.js之http请求(客户端)</span></h3><a id="more"></a>
+<p>代码示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);  </span><br><span class="line">  </span><br><span class="line">var qs = require(&apos;querystring&apos;);  </span><br><span class="line"></span><br><span class="line">var userCode = &quot;1&quot;;</span><br><span class="line"></span><br><span class="line">var post_data = &#123;  </span><br><span class="line">    userCode: userCode&#125;;//这是需要提交的数据  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">var content = qs.stringify(post_data);  </span><br><span class="line">  </span><br><span class="line">var options = &#123;  </span><br><span class="line">    hostname: &apos;www.test.com&apos;,  </span><br><span class="line">    port: 80,  </span><br><span class="line">    path: &apos;/test-web/api/sysUser/getUserCodeByInfo&apos;,  </span><br><span class="line">    method: &apos;POST&apos;,  </span><br><span class="line">    headers: &#123;  </span><br><span class="line">        &apos;Content-Type&apos;: &apos;application/x-www-form-urlencoded; charset=UTF-8&apos;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;  </span><br><span class="line">  </span><br><span class="line">var req = http.request(options, function (res) &#123;  </span><br><span class="line">    console.log(&apos;STATUS: &apos; + res.statusCode);  </span><br><span class="line">    console.log(&apos;HEADERS: &apos; + JSON.stringify(res.headers));  </span><br><span class="line">    res.setEncoding(&apos;utf8&apos;);  </span><br><span class="line">    res.on(&apos;data&apos;, function (chunk) &#123;  </span><br><span class="line">        console.log(&apos;BODY: &apos; + chunk);  </span><br><span class="line">		</span><br><span class="line">		var data = JSON.parse(chunk);</span><br><span class="line">		console.log(data.returnCode);</span><br><span class="line">    &#125;);  </span><br><span class="line">&#125;);  </span><br><span class="line">  </span><br><span class="line">req.on(&apos;error&apos;, function (e) &#123;  </span><br><span class="line">    console.log(&apos;problem with request: &apos; + e.message);  </span><br><span class="line">&#125;);  </span><br><span class="line">  </span><br><span class="line">// 将数据写入请求体</span><br><span class="line">req.write(content);//注意这个地方  </span><br><span class="line">  </span><br><span class="line">req.end();</span><br></pre></td></tr></table></figure></p>
+<h3><span id="nodejs之https请求客户端">Node.js之https请求(客户端)</span></h3><p>代码示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">var querystring = require(&apos;querystring&apos;);</span><br><span class="line"></span><br><span class="line">const https = require(&quot;https&quot;);</span><br><span class="line">    var userCode = &quot;1&quot;;</span><br><span class="line">	var post_data = &#123; userCode: userCode &#125;</span><br><span class="line">	var contents = querystring.stringify(post_data);</span><br><span class="line"></span><br><span class="line">	var options = &#123;</span><br><span class="line">		hostname: &quot;www.test.com&quot;,</span><br><span class="line">		port: 443, //443</span><br><span class="line">		path: &quot;/test-web/api/sysUser/getUserCodeByInfo?&quot;+contents ,</span><br><span class="line">		method: &quot;POST&quot;,</span><br><span class="line">		rejectUnauthorized: false,</span><br><span class="line">		headers: &#123;</span><br><span class="line">			Accept: &quot;*/*&quot;,</span><br><span class="line">			&quot;Accept-Encoding&quot;: &quot;utf-8&quot;,</span><br><span class="line">			&quot;Accept-Language&quot;: &quot;zh-CN,zh;q=0.8&quot;,</span><br><span class="line">			Connection: &quot;keep-alive&quot;,</span><br><span class="line">			Host: &quot;www.test.com&quot;</span><br><span class="line">		&#125;,</span><br><span class="line"></span><br><span class="line">	&#125;;</span><br><span class="line">	var mData = &apos;&apos;;</span><br><span class="line">	var req = https.request(options, function (res) &#123;</span><br><span class="line">		res.setEncoding(&apos;utf-8&apos;);</span><br><span class="line">		</span><br><span class="line">		 res.on(&apos;data&apos;, function (chunk) &#123;  </span><br><span class="line">		 var data = JSON.parse(chunk);</span><br><span class="line">         console.log(&apos;BODY: &apos; + data);  </span><br><span class="line">    &#125;); </span><br><span class="line">	&#125;);</span><br><span class="line">	// req.write(contents);</span><br><span class="line">	req.on(&quot;error&quot;, function (e) &#123;</span><br><span class="line">		console.error(&quot;====================================================&quot; + e);</span><br><span class="line">	&#125;);</span><br><span class="line">	req.end();</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -338,13 +337,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/">Uncaught ReferenceError: layer is not defined</a></p>
+        <p><span>本文标题:</span><a href="/2019/06/18/node-js之客户端发起https和http请求/">node.js之客户端发起https和http请求</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-03-19, 20:35:10</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:20</p>
+        <p><span>发布时间:</span>2019-06-18, 20:18:59</p>
+        <p><span>最后更新:</span>2019-06-18, 20:29:21</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" title="Uncaught ReferenceError: layer is not defined">http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/06/18/node-js之客户端发起https和http请求/" title="node.js之客户端发起https和http请求">http://developers-youcong.github.io/2019/06/18/node-js之客户端发起https和http请求/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/06/18/node-js之客户端发起https和http请求/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -356,16 +355,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/">
-                    js获取访问IP、地区、、当前操作浏览器
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/03/19/Error-listen-EADDRINUSE-3000/">
-                    Error: listen EADDRINUSE :::3000
+                <a href="/2019/06/17/vscode插件开发之如何玩转vscode命令/">
+                    vscode插件开发之如何玩转vscode命令
                 </a>
             </div>
         
@@ -377,7 +370,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Node.js之http请求(客户端)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">Node.js之https请求(客户端)</span></a></li></ol>
         
     </div>
     <style>
@@ -413,7 +406,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Uncaught ReferenceError: layer is not defined　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"node.js之客户端发起https和http请求　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -435,15 +428,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" title="上一篇: js获取访问IP、地区、、当前操作浏览器">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/03/19/Error-listen-EADDRINUSE-3000/" title="下一篇: Error: listen EADDRINUSE :::3000">
+            <a href="/2019/06/17/vscode插件开发之如何玩转vscode命令/" title="下一篇: vscode插件开发之如何玩转vscode命令">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -479,8 +470,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Tue Mar 19 2019 20:35:10 GMT+0800',
-			  title: 'Uncaught ReferenceError: layer is not defined',
+			  id: 'Tue Jun 18 2019 20:18:59 GMT+0800',
+			  title: 'node.js之客户端发起https和http请求',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
