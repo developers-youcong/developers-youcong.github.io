@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>/usr/bin/xauth:  file /home/user/.Xauthority does not exist</title>
+      <link href="/2019/06/19/usr-bin-xauth-file-home-youcong-Xauthority-does-not-exist/"/>
+      <url>/2019/06/19/usr-bin-xauth-file-home-youcong-Xauthority-does-not-exist/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/xauth: file /home/user/.Xauthority does not exist</span><br></pre></td></tr></table></figure></p><a id="more"></a><p><strong>错误原因:</strong><br>是因为添加用户时没有授权对应的目录，仅仅执行了useradd user而没有授权对应的家目录</p><p>直接解决办法如下(执行如下命令，以后就登录到终端上就不会出现上面的错误信息):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown username:username -R /home/user_dir</span><br></pre></td></tr></table></figure></p><p>不过一般是可以避免这种情况的出现，添加用户执行如下命令即可:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">useradd username -m (-m 相当于会创建对应的用户家目录)</span><br><span class="line"></span><br><span class="line">usermod -s /bin/bash username (指定shell，否则会非常不便于终端操作)</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>node.js之客户端发起https和http请求</title>
       <link href="/2019/06/18/node-js%E4%B9%8B%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%8F%91%E8%B5%B7https%E5%92%8Chttp%E8%AF%B7%E6%B1%82/"/>
       <url>/2019/06/18/node-js%E4%B9%8B%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%8F%91%E8%B5%B7https%E5%92%8Chttp%E8%AF%B7%E6%B1%82/</url>
@@ -489,9 +508,9 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> Java </tag>
+            
+            <tag> javascript </tag>
             
         </tags>
       
