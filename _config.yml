@@ -90,8 +90,7 @@ post_wordcount:
 deploy:
   type: git
   repo: git@github.com:developers-youcong/developers-youcong.github.io.git
-  branch: gh-pages
-
+  branch: master
   
   
 
