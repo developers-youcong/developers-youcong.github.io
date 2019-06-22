@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>javascript如何动态修改iframe的src</title>
+      <link href="/2019/06/22/javascript%E5%A6%82%E4%BD%95%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9iframe%E7%9A%84src/"/>
+      <url>/2019/06/22/javascript%E5%A6%82%E4%BD%95%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9iframe%E7%9A%84src/</url>
+      
+        <content type="html"><![CDATA[<p>为什么需要动态修改iframe的src?<br>一般情况我们使用iframe,其中的src通常是写死的，但是有些时候我们不希望它是死的src，而是一个活的src。<br><a id="more"></a></p><p>示例代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">&lt;title&gt;测试&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;iframe</span><br><span class="line">width = &quot;100%&quot;</span><br><span class="line">height = &quot;800&quot; id=&quot;iframe&quot;&gt;</span><br><span class="line">&lt;/iframe&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">iframe.src = &quot;https://www.baidu.com&quot;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>记一次edusoho问题</title>
       <link href="/2019/06/21/%E8%AE%B0%E4%B8%80%E6%AC%A1edusoho%E9%97%AE%E9%A2%98/"/>
       <url>/2019/06/21/%E8%AE%B0%E4%B8%80%E6%AC%A1edusoho%E9%97%AE%E9%A2%98/</url>

@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):">
-<meta name="keywords" content="Linux">
+<meta name="description" content="为什么需要动态修改iframe的src?一般情况我们使用iframe,其中的src通常是写死的，但是有些时候我们不希望它是死的src，而是一个活的src。">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="多模块应用自动化部署">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/04/11/多模块应用自动化部署/index.html">
+<meta property="og:title" content="javascript如何动态修改iframe的src">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/06/22/javascript如何动态修改iframe的src/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):">
+<meta property="og:description" content="为什么需要动态修改iframe的src?一般情况我们使用iframe,其中的src通常是写死的，但是有些时候我们不希望它是死的src，而是一个活的src。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-29T14:52:22.122Z">
+<meta property="og:updated_time" content="2019-06-22T05:37:50.084Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="多模块应用自动化部署">
-<meta name="twitter:description" content="多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):">
+<meta name="twitter:title" content="javascript如何动态修改iframe的src">
+<meta name="twitter:description" content="为什么需要动态修改iframe的src?一般情况我们使用iframe,其中的src通常是写死的，但是有些时候我们不希望它是死的src，而是一个活的src。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>多模块应用自动化部署 | Blog</title>
+<title>javascript如何动态修改iframe的src | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -285,11 +285,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-多模块应用自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-javascript如何动态修改iframe的src" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/11/多模块应用自动化部署/" class="article-date">
-      <time datetime="2019-04-11T07:16:04.000Z" itemprop="datePublished">2019-04-11</time>
+      <a href="/2019/06/22/javascript如何动态修改iframe的src/" class="article-date">
+      <time datetime="2019-06-22T03:40:01.000Z" itemprop="datePublished">2019-06-22</time>
 </a>
 
 
@@ -304,7 +304,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      多模块应用自动化部署
+      javascript如何动态修改iframe的src
     </h1>
   
 
@@ -315,7 +315,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -325,12 +325,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git clone https://code.aliyun.com/test/bfi.git</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cd /home/project/bfi/bfi-saas/bfi-web/src</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rm -r ./test/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cd /home/project/bfi/bfi-saas</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mvn clean package</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if [ $? -ne 0 ]; then</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署bfi项目失败,当前日期为:&quot;$time &gt;&gt; /home/project/bfi_deploy.log</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    echo &apos;部署失败，请登录服务器查看&apos; | mail -s &quot;bfi部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">else</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    cp -r /home/project/bfi/bfi-saas/bfi-web/target/bfi-web.war /home/project/tomcat8/webapps/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/startup.sh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    rm -r /home/project/bfi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署bfi项目成功,当前日期为:&quot;$time &gt;&gt; /home/project/bfi_deploy.log</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    echo &apos;部署成功&apos; | mail -s &quot;bfi部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p>
-<!--more-->
-<p>注意:</p>
-<p>(1)maven打包通常也会执行mvn test，也就是会将src/test/java下面的单元测试代码全部执行一遍，如果你的单元测试其中某个方法有问题也会导致构建失败。上述我的其中一步操作rm -r ./test/主要就是将单元测试代码删除防止影响构建，实际上是不应该这样做的，但是由于某种原因我必须要这样做(不建议开发者将单元测试删除后部署，单测也是一种上线部署的保障;</p>
-<p>(2)模块之间最好界限分明，否则会有不必要的依赖错误;</p>
-<p>关于脚本中的邮件发送，可以参考我的这篇博客<a href="https://developers-youcong.github.io/2019/04/11/%E5%8D%95%E4%BD%93%E5%BA%94%E7%94%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">单体应用自动化部署</a></p>
+        <p>为什么需要动态修改iframe的src?<br>一般情况我们使用iframe,其中的src通常是写死的，但是有些时候我们不希望它是死的src，而是一个活的src。<br><a id="more"></a></p>
+<p>示例代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">&lt;title&gt;测试&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;iframe</span><br><span class="line">width = &quot;100%&quot;</span><br><span class="line">height = &quot;800&quot; id=&quot;iframe&quot;&gt;</span><br><span class="line">&lt;/iframe&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">iframe.src = &quot;https://www.baidu.com&quot;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -339,13 +335,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/11/多模块应用自动化部署/">多模块应用自动化部署</a></p>
+        <p><span>本文标题:</span><a href="/2019/06/22/javascript如何动态修改iframe的src/">javascript如何动态修改iframe的src</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-04-11, 15:16:04</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:22</p>
+        <p><span>发布时间:</span>2019-06-22, 11:40:01</p>
+        <p><span>最后更新:</span>2019-06-22, 13:37:50</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/11/多模块应用自动化部署/" title="多模块应用自动化部署">http://developers-youcong.github.io/2019/04/11/多模块应用自动化部署/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/04/11/多模块应用自动化部署/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/06/22/javascript如何动态修改iframe的src/" title="javascript如何动态修改iframe的src">http://developers-youcong.github.io/2019/06/22/javascript如何动态修改iframe的src/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/06/22/javascript如何动态修改iframe的src/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -357,16 +353,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/12/大型网站核心架构因素/">
-                    大型网站核心架构因素
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/11/单体应用自动化部署/">
-                    单体应用自动化部署
+                <a href="/2019/06/21/记一次edusoho问题/">
+                    记一次edusoho问题
                 </a>
             </div>
         
@@ -414,7 +404,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"多模块应用自动化部署　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"javascript如何动态修改iframe的src　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -436,15 +426,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/12/大型网站核心架构因素/" title="上一篇: 大型网站核心架构因素">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/11/单体应用自动化部署/" title="下一篇: 单体应用自动化部署">
+            <a href="/2019/06/21/记一次edusoho问题/" title="下一篇: 记一次edusoho问题">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -480,8 +468,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Thu Apr 11 2019 15:16:04 GMT+0800',
-			  title: '多模块应用自动化部署',
+			  id: 'Sat Jun 22 2019 11:40:01 GMT+0800',
+			  title: 'javascript如何动态修改iframe的src',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
