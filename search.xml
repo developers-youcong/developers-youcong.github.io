@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Java使用Jsoup之爬取博客数据应用实例</title>
+      <link href="/2019/06/29/Java%E4%BD%BF%E7%94%A8Jsoup%E4%B9%8B%E7%88%AC%E5%8F%96%E5%8D%9A%E5%AE%A2%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/"/>
+      <url>/2019/06/29/Java%E4%BD%BF%E7%94%A8Jsoup%E4%B9%8B%E7%88%AC%E5%8F%96%E5%8D%9A%E5%AE%A2%E6%95%B0%E6%8D%AE%E5%BA%94%E7%94%A8%E5%AE%9E%E4%BE%8B/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="导入maven依赖">导入Maven依赖</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.jsoup/jsoup --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.jsoup&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;jsoup&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.11.3&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><a id="more"></a><h2><span id="选择你要爬取网站这里我以爬取自己的博客文章为例">选择你要爬取网站(这里我以爬取自己的博客文章为例)</span></h2><h3><span id="通过浏览器进入这个网址如httpswwwcnblogscomyoucong">通过浏览器进入这个网址，如</span></h3><h3><span id="使用浏览器调试工具后面会说到这个目的">使用浏览器调试工具(后面会说到这个目的)</span></h3><p><img src="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/01.png" alt=""></p><h3><span id="编写对应的java的代码">编写对应的Java的代码</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">package cn.test;</span><br><span class="line">import org.jsoup.Connection;</span><br><span class="line">import org.jsoup.Jsoup;</span><br><span class="line">import org.jsoup.nodes.Document;</span><br><span class="line">import org.jsoup.nodes.Element;</span><br><span class="line">import org.jsoup.select.Elements;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * A simple example, used on the jsoup website.</span><br><span class="line"> */</span><br><span class="line">public class BlogJsoup &#123;</span><br><span class="line">/**</span><br><span class="line"> * 获取博客最近十篇文章</span><br><span class="line"> * @param args</span><br><span class="line"> * @throws IOException</span><br><span class="line"> */</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">    </span><br><span class="line">Connection connection = Jsoup.connect(&quot;https://www.cnblogs.com/youcong/&quot;);</span><br><span class="line">        </span><br><span class="line">        connection.header(&quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36&quot;);</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">           </span><br><span class="line">            Document document = connection.timeout(100000).get();</span><br><span class="line"></span><br><span class="line">            //包含所有列表的文章</span><br><span class="line">            Elements elements = document.getElementsByClass(&quot;postTitle2&quot;);</span><br><span class="line">     </span><br><span class="line">            for (Element element : elements) &#123;</span><br><span class="line">         </span><br><span class="line">                String path = element.attr(&quot;href&quot;);</span><br><span class="line">            String text = element.text();</span><br><span class="line">                String msg = text+&quot; &quot;+path;</span><br><span class="line">    System.out.println(msg);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">            </span><br><span class="line"></span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">        </span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">             </span><br><span class="line"></span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>上面的代码，用流程可以梳理为如下:<br>连接爬取的网站-&gt;设置浏览器请求头(防止因浏览器的限制导致爬取数据失败)-&gt;获取整个HTML(实际就是一个html)-&gt;选择HTML中的某一个元素(如类选择器postTitle2，如果不指定对应的元素选择器，那么直接爬取的就是整个HTML)-&gt;爬取数据并输出</p><p>输出结果如图:<br><img src="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/02.png" alt=""></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>javascript如何动态修改iframe的src</title>
       <link href="/2019/06/22/javascript%E5%A6%82%E4%BD%95%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9iframe%E7%9A%84src/"/>
       <url>/2019/06/22/javascript%E5%A6%82%E4%BD%95%E5%8A%A8%E6%80%81%E4%BF%AE%E6%94%B9iframe%E7%9A%84src/</url>
@@ -565,9 +584,9 @@
       
         <tags>
             
-            <tag> Java </tag>
-            
             <tag> javascript </tag>
+            
+            <tag> Java </tag>
             
         </tags>
       

@@ -15,18 +15,21 @@
 
 
 
-<meta name="description" content="玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。">
-<meta name="keywords" content="MyBatis">
+<meta name="description" content="导入Maven依赖123456&amp;lt;!-- https://mvnrepository.com/artifact/org.jsoup/jsoup --&amp;gt;	&amp;lt;dependency&amp;gt;	    &amp;lt;groupId&amp;gt;org.jsoup&amp;lt;/groupId&amp;gt;	    &amp;lt;artifactId&amp;gt;jsoup&amp;lt;/artifactId&amp;gt;	    &amp;lt;">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/index.html">
+<meta property="og:title" content="Java使用Jsoup之爬取博客数据应用实例">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。">
+<meta property="og:description" content="导入Maven依赖123456&amp;lt;!-- https://mvnrepository.com/artifact/org.jsoup/jsoup --&amp;gt;	&amp;lt;dependency&amp;gt;	    &amp;lt;groupId&amp;gt;org.jsoup&amp;lt;/groupId&amp;gt;	    &amp;lt;artifactId&amp;gt;jsoup&amp;lt;/artifactId&amp;gt;	    &amp;lt;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-29T14:52:22.059Z">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/01.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/02.png">
+<meta property="og:updated_time" content="2019-06-29T14:03:48.096Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)">
-<meta name="twitter:description" content="玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。">
+<meta name="twitter:title" content="Java使用Jsoup之爬取博客数据应用实例">
+<meta name="twitter:description" content="导入Maven依赖123456&amp;lt;!-- https://mvnrepository.com/artifact/org.jsoup/jsoup --&amp;gt;	&amp;lt;dependency&amp;gt;	    &amp;lt;groupId&amp;gt;org.jsoup&amp;lt;/groupId&amp;gt;	    &amp;lt;artifactId&amp;gt;jsoup&amp;lt;/artifactId&amp;gt;	    &amp;lt;">
+<meta name="twitter:image" content="http://developers-youcong.github.io/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/01.png">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +61,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found) | Blog</title>
+<title>Java使用Jsoup之爬取博客数据应用实例 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -285,11 +288,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Java使用Jsoup之爬取博客数据应用实例" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" class="article-date">
-      <time datetime="2019-03-05T13:16:45.000Z" itemprop="datePublished">2019-03-05</time>
+      <a href="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/" class="article-date">
+      <time datetime="2019-06-29T13:41:59.000Z" itemprop="datePublished">2019-06-29</time>
 </a>
 
 
@@ -304,7 +307,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)
+      Java使用Jsoup之爬取博客数据应用实例
     </h1>
   
 
@@ -315,7 +318,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -325,17 +328,12 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。<br><a id="more"></a><br>错误信息如下:<br>org.apache.ibatis.binding.BindingException: Invalid bound statement<br>  (not found)</p>
-<p>通常原因是因为Mapper interface和xml文件的定义对不上，通常需要检查包名、namespace、函数名等。</p>
-<p>出现这个错误的原因是我太过相信自我了，觉得自觉没有错，于是手打，结果就是一个单词写错了。</p>
-<p>看代码示例:</p>
-<p>xml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;resentPosts&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line"> 	SELECT post_title FROM `wp_posts` WHERE post_status = &apos;publish&apos; ORDER BY post_modified DESC LIMIT 0,5 </span><br><span class="line"> &lt;/select&gt;</span><br></pre></td></tr></table></figure></p>
-<p>dao(interface):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//近期文章</span><br><span class="line">public List&lt;Posts&gt; recentPosts();</span><br></pre></td></tr></table></figure></p>
-<p>大家很容易会看出select标签中的id与dao中的接口函数名不对应。这就是问题的根源，改成一样的，如下(即可解决问题)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;select id=&quot;recentPosts&quot; resultMap=&quot;BaseResultMap&quot;&gt;</span><br><span class="line">  	SELECT post_title FROM `wp_posts` WHERE post_status = &apos;publish&apos; ORDER BY post_modified DESC LIMIT 0,5 </span><br><span class="line">  &lt;/select&gt;</span><br></pre></td></tr></table></figure>
-<p>最后说一句，遇到问题不要慌，找到问题关键信息，复制到百度上/谷歌或者stackoverflow即可找到答案。</p>
-<p>太阳底下没有新鲜事儿，你遇到过的，说不定别人也遇到过。</p>
-<p>参考链接:<a href="https://www.cnblogs.com/lfm601508022/p/InvalidBoundStatement.html" target="_blank" rel="noopener">https://www.cnblogs.com/lfm601508022/p/InvalidBoundStatement.html</a></p>
+        <h2><span id="导入maven依赖">导入Maven依赖</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.jsoup/jsoup --&gt;</span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line">	    &lt;groupId&gt;org.jsoup&lt;/groupId&gt;</span><br><span class="line">	    &lt;artifactId&gt;jsoup&lt;/artifactId&gt;</span><br><span class="line">	    &lt;version&gt;1.11.3&lt;/version&gt;</span><br><span class="line">	&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2><span id="选择你要爬取网站这里我以爬取自己的博客文章为例">选择你要爬取网站(这里我以爬取自己的博客文章为例)</span></h2><h3><span id="通过浏览器进入这个网址如httpswwwcnblogscomyoucong">通过浏览器进入这个网址，如</span></h3><h3><span id="使用浏览器调试工具后面会说到这个目的">使用浏览器调试工具(后面会说到这个目的)</span></h3><p><img src="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/01.png" alt=""></p>
+<h3><span id="编写对应的java的代码">编写对应的Java的代码</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line">package cn.test;</span><br><span class="line">import org.jsoup.Connection;</span><br><span class="line">import org.jsoup.Jsoup;</span><br><span class="line">import org.jsoup.nodes.Document;</span><br><span class="line">import org.jsoup.nodes.Element;</span><br><span class="line">import org.jsoup.select.Elements;</span><br><span class="line">import java.io.IOException;</span><br><span class="line">import java.util.ArrayList;</span><br><span class="line">import java.util.List;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * A simple example, used on the jsoup website.</span><br><span class="line"> */</span><br><span class="line">public class BlogJsoup &#123;</span><br><span class="line">	/**</span><br><span class="line">	 * 获取博客最近十篇文章</span><br><span class="line">	 * @param args</span><br><span class="line">	 * @throws IOException</span><br><span class="line">	 */</span><br><span class="line">    public static void main(String[] args) throws IOException &#123;</span><br><span class="line">    	</span><br><span class="line">		Connection connection = Jsoup.connect(&quot;https://www.cnblogs.com/youcong/&quot;);</span><br><span class="line">        </span><br><span class="line">        connection.header(&quot;User-Agent&quot;, &quot;Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36&quot;);</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">           </span><br><span class="line">            Document document = connection.timeout(100000).get();</span><br><span class="line"></span><br><span class="line">            //包含所有列表的文章</span><br><span class="line">            Elements elements = document.getElementsByClass(&quot;postTitle2&quot;);</span><br><span class="line">     </span><br><span class="line">            for (Element element : elements) &#123;</span><br><span class="line">         </span><br><span class="line">                String path = element.attr(&quot;href&quot;);</span><br><span class="line">            	String text = element.text();</span><br><span class="line">                String msg = text+&quot; &quot;+path;</span><br><span class="line">			    System.out.println(msg);</span><br><span class="line"></span><br><span class="line">			&#125;</span><br><span class="line">            </span><br><span class="line"></span><br><span class="line">        &#125; catch (IOException e) &#123;</span><br><span class="line">       	 </span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">             </span><br><span class="line"></span><br><span class="line">   </span><br><span class="line">&#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码，用流程可以梳理为如下:<br>连接爬取的网站-&gt;设置浏览器请求头(防止因浏览器的限制导致爬取数据失败)-&gt;获取整个HTML(实际就是一个html)-&gt;选择HTML中的某一个元素(如类选择器postTitle2，如果不指定对应的元素选择器，那么直接爬取的就是整个HTML)-&gt;爬取数据并输出</p>
+<p>输出结果如图:<br><img src="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/02.png" alt=""></p>
 
       
     </div>
@@ -344,13 +342,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)</a></p>
+        <p><span>本文标题:</span><a href="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/">Java使用Jsoup之爬取博客数据应用实例</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-03-05, 21:16:45</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:22</p>
+        <p><span>发布时间:</span>2019-06-29, 21:41:59</p>
+        <p><span>最后更新:</span>2019-06-29, 22:03:48</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" title="mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)">http://developers-youcong.github.io/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/" title="Java使用Jsoup之爬取博客数据应用实例">http://developers-youcong.github.io/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -362,16 +360,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/03/06/mybatis之一对多/">
-                    mybatis之一对多
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/">
-                    node.js服务端程序在Linux上持久运行
+                <a href="/2019/06/22/javascript如何动态修改iframe的src/">
+                    javascript如何动态修改iframe的src
                 </a>
             </div>
         
@@ -383,7 +375,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">导入Maven依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">选择你要爬取网站(这里我以爬取自己的博客文章为例)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">通过浏览器进入这个网址，如</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">使用浏览器调试工具(后面会说到这个目的)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">编写对应的Java的代码</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -419,7 +411,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Java使用Jsoup之爬取博客数据应用实例　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -441,15 +433,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/03/06/mybatis之一对多/" title="上一篇: mybatis之一对多">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/" title="下一篇: node.js服务端程序在Linux上持久运行">
+            <a href="/2019/06/22/javascript如何动态修改iframe的src/" title="下一篇: javascript如何动态修改iframe的src">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -485,8 +475,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Tue Mar 05 2019 21:16:45 GMT+0800',
-			  title: 'mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)',
+			  id: 'Sat Jun 29 2019 21:41:59 GMT+0800',
+			  title: 'Java使用Jsoup之爬取博客数据应用实例',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
