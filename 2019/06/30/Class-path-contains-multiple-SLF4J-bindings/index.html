@@ -15,18 +15,21 @@
 
 
 
-<meta name="description" content="如果要想在服务端部署node.js程序，让其持久化运行，就不能单单使用npm start命令运行，当然了，这样运行是毫无问题的，但是当关闭xshell窗口或者是关闭进程的时候(其实关闭xshell窗口相当于默认关闭进程)，就无法访问对应的node.js服务端程序了。 那么该如何才能持久访问呢？ 其实也就两步">
-<meta name="keywords" content="Node.js">
+<meta name="description" content="详细错误信息如下:SLF4J: Class path contains multiple SLF4J bindings.SLF4J: Found binding in [jar:file:/C:/Users/eluzhu/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/St">
+<meta name="keywords" content="Maven">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node.js服务端程序在Linux上持久运行">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/index.html">
+<meta property="og:title" content="Class path contains multiple SLF4J bindings.">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="如果要想在服务端部署node.js程序，让其持久化运行，就不能单单使用npm start命令运行，当然了，这样运行是毫无问题的，但是当关闭xshell窗口或者是关闭进程的时候(其实关闭xshell窗口相当于默认关闭进程)，就无法访问对应的node.js服务端程序了。 那么该如何才能持久访问呢？ 其实也就两步">
+<meta property="og:description" content="详细错误信息如下:SLF4J: Class path contains multiple SLF4J bindings.SLF4J: Found binding in [jar:file:/C:/Users/eluzhu/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/St">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-29T14:52:22.080Z">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/01.png">
+<meta property="og:image" content="http://developers-youcong.github.io/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/02.png">
+<meta property="og:updated_time" content="2019-06-30T13:08:14.240Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node.js服务端程序在Linux上持久运行">
-<meta name="twitter:description" content="如果要想在服务端部署node.js程序，让其持久化运行，就不能单单使用npm start命令运行，当然了，这样运行是毫无问题的，但是当关闭xshell窗口或者是关闭进程的时候(其实关闭xshell窗口相当于默认关闭进程)，就无法访问对应的node.js服务端程序了。 那么该如何才能持久访问呢？ 其实也就两步">
+<meta name="twitter:title" content="Class path contains multiple SLF4J bindings.">
+<meta name="twitter:description" content="详细错误信息如下:SLF4J: Class path contains multiple SLF4J bindings.SLF4J: Found binding in [jar:file:/C:/Users/eluzhu/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/St">
+<meta name="twitter:image" content="http://developers-youcong.github.io/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/01.png">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +61,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>node.js服务端程序在Linux上持久运行 | Blog</title>
+<title>Class path contains multiple SLF4J bindings. | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -285,11 +288,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-node-js服务端程序在Linux上持久运行" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Class-path-contains-multiple-SLF4J-bindings" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/" class="article-date">
-      <time datetime="2019-03-05T06:04:07.000Z" itemprop="datePublished">2019-03-05</time>
+      <a href="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/" class="article-date">
+      <time datetime="2019-06-30T12:53:16.000Z" itemprop="datePublished">2019-06-30</time>
 </a>
 
 
@@ -304,7 +307,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      node.js服务端程序在Linux上持久运行
+      Class path contains multiple SLF4J bindings.
     </h1>
   
 
@@ -315,7 +318,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -325,23 +328,17 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>如果要想在服务端部署node.js程序，让其持久化运行，就不能单单使用npm start命令运行，当然了，这样运行是毫无问题的，但是当关闭xshell窗口或者是关闭进程的时候(其实关闭xshell窗口相当于默认关闭进程)，就无法访问对应的node.js服务端程序了。</p>
-<p>那么该如何才能持久访问呢？</p>
-<p>其实也就两步<br><a id="more"></a></p>
-<h4><span id="第一步安装forever">第一步安装forever</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install forever 或者 npminstall -g forever</span><br></pre></td></tr></table></figure>
-<h4><span id="第二步运行对应的js">第二步运行对应的js</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">forver start index.js</span><br></pre></td></tr></table></figure>
-<h5><span id="注意你可能会遇到如下错误">注意(你可能会遇到如下错误):</span></h5><p>错误信息:<br>forever: command not found</p>
-<p>原因:以Windows来说，通常这种错误是因为没有配置好环境变量，解决方案也很简单就是配置好环境变量或者是使用绝对路径</p>
-<p>解决方式(Linux演示，这里我使用绝对路径):</p>
-<h5><span id="如何找到绝对路径呢">如何找到绝对路径呢？</span></h5><p>通过该命令可以获取node.js的安装模块,npm list -g –depth 0<br>├── <a href="mailto:ali-oss@6.1.0" target="_blank" rel="noopener">ali-oss@6.1.0</a><br>├── <a href="mailto:forever@0.15.3" target="_blank" rel="noopener">forever@0.15.3</a><br>└── <a href="mailto:npm@6.4.1" target="_blank" rel="noopener">npm@6.4.1</a></p>
-<p>再通过关键字搜索 find / -name forever<br>/home/youcong/mock-github-api/node_modules/forever<br>/home/youcong/mock-github-api/node_modules/forever/lib/forever<br>/home/youcong/mock-github-api/node_modules/forever/bin/forever<br>/home/youcong/mock-github-api/node_modules/.bin/forever<br>/home/youcong/nodejs/lib/node_modules/forever<br>/home/youcong/nodejs/lib/node_modules/forever/lib/forever<br>/home/youcong/nodejs/lib/node_modules/forever/bin/forever<br>/home/youcong/nodejs/bin/forever</p>
-<p>最后通过/home/youcong/mock-github-api/node_modules/forever/bin/forever start index.js 即可实现node.js服务端程序在Linux上持久运行。</p>
-<h5><span id="forever常用命令">forever常用命令</span></h5><p>forever start app.js //启动程序</p>
-<p>forever stop app.js //关闭程序</p>
-<p>forever start -l forever.log -o out.log -e err.log app.js //启动程序并输出日志</p>
-<p>forever restart app.js //重启程序</p>
-<p>forever list //查看正在运行的进程</p>
-<h6><span id="参考链接">参考链接:</span></h6><p>forever:command not found:<a href="https://blog.csdn.net/xgbm_k/article/details/78132293" target="_blank" rel="noopener">https://blog.csdn.net/xgbm_k/article/details/78132293</a><br>node.js在Linux上如何持久运行:<a href="https://blog.csdn.net/shakdy/article/details/82938679" target="_blank" rel="noopener">https://blog.csdn.net/shakdy/article/details/82938679</a><br>node.js后台运行方法:<a href="https://blog.csdn.net/zdyueguanyun/article/details/79043483" target="_blank" rel="noopener">https://blog.csdn.net/zdyueguanyun/article/details/79043483</a></p>
+        <p>详细错误信息如下:<br>SLF4J: Class path contains multiple SLF4J bindings.<br>SLF4J: Found binding in [jar:file:/C:/Users/eluzhu/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]<br>SLF4J: Found binding in [jar:file:/C:/Users/eluzhu/.m2/repository/ch/qos/logback/logback-classic/1.1.11/logback-classic-1.1.11.jar!/org/slf4j/impl/StaticLoggerBinder.class]<br>SLF4J: See <a href="http://www.slf4j.org/codes.html#multiple_bindings" target="_blank" rel="noopener">http://www.slf4j.org/codes.html#multiple_bindings</a> for an explanation.<br>SLF4J: Detected both log4j-over-slf4j.jar AND bound slf4j-log4j12.jar on the class path, preempting StackOverflowError.<br>SLF4J: See also <a href="http://www.slf4j.org/codes.html#log4jDelegationLoop" target="_blank" rel="noopener">http://www.slf4j.org/codes.html#log4jDelegationLoop</a> for more details.<br>Exception in thread “main” java.lang.ExceptionInInitializerError<br>    at org.slf4j.impl.StaticLoggerBinder.<init>(StaticLoggerBinder.java:72)<br>    at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:45)<br>    at org.slf4j.LoggerFactory.bind(LoggerFactory.java:149)<br>    at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:124)<br>    at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:390)<br>    at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:340)<br>    at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:361)<br>    at com.eluzhu.sass.Application.<clinit>(Application.java:13)<br>Caused by: java.lang.IllegalStateException: Detected both log4j-over-slf4j.jar AND bound slf4j-log4j12.jar on the class path, preempting StackOverflowError. See also <a href="http://www.slf4j.org/codes.html#log4jDelegationLoop" target="_blank" rel="noopener">http://www.slf4j.org/codes.html#log4jDelegationLoop</a> for more details.<br>    at org.slf4j.impl.Log4jLoggerFactory.<clinit>(Log4jLoggerFactory.java:54)<br>    … 8 more</clinit></clinit></clinit></init></p>
+<a id="more"></a>
+<p>如图所示:<br><img src="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/01.png" alt="图一"></p>
+<p>关键错误信息:Class path contains multiple SLF4J bindings.</p>
+<p>翻译过来的意思是:类路径包含多个SLF4J绑定。</p>
+<p>分析原因:类路径包含多个SLF4J绑定，也就是代表这有很多个SLF4J，这就表示重复了，在Maven中出现这种情况，会导致一个叫Maven冲突的玩意，主要体现jar方面的冲突。</p>
+<p>解决办法:<br>排除即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 腾讯云 --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">	&lt;groupId&gt;com.qcloud&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;cos_api&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;5.2.4&lt;/version&gt;</span><br><span class="line">	&lt;exclusions&gt;</span><br><span class="line">		&lt;exclusion&gt;</span><br><span class="line">			&lt;groupId&gt;org.slf4j&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;slf4j-log4j12&lt;/artifactId&gt;</span><br><span class="line">		&lt;/exclusion&gt;</span><br><span class="line">		&lt;exclusion&gt;</span><br><span class="line">			&lt;groupId&gt;log4j&lt;/groupId&gt;</span><br><span class="line">			&lt;artifactId&gt;log4j&lt;/artifactId&gt;</span><br><span class="line">		&lt;/exclusion&gt;</span><br><span class="line">	&lt;/exclusions&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<p>使用exclusion就可以排除相关的依赖</p>
+<p>那么为什么会出现这种情况呢？<br>是因为Maven一个重要特性，即依赖传递。依赖传递的表现是，一个maven依赖可能包含多个相关Jar，结合实际开发项目，为了实现某些特定的功能，我们需要引入特定的jar(当然了，也可以选择自己动手写一个，不过那样的话，时间成本会比较高)，特定的Jar对应特定的功能，通常一个Maven项目需要引入多个依赖(jar)。</p>
+<p>如果你还是不太明白什么是依赖传递，如图所示(我相信图能够生动形象的体现出来):<br><img src="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/02.png" alt="图二"></p>
 
       
     </div>
@@ -350,13 +347,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/03/05/node-js服务端程序在Linux上持久运行/">node.js服务端程序在Linux上持久运行</a></p>
+        <p><span>本文标题:</span><a href="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/">Class path contains multiple SLF4J bindings.</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-03-05, 14:04:07</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:22</p>
+        <p><span>发布时间:</span>2019-06-30, 20:53:16</p>
+        <p><span>最后更新:</span>2019-06-30, 21:08:14</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/03/05/node-js服务端程序在Linux上持久运行/" title="node.js服务端程序在Linux上持久运行">http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/03/05/node-js服务端程序在Linux上持久运行/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/" title="Class path contains multiple SLF4J bindings.">http://developers-youcong.github.io/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -368,16 +365,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">
-                    mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/03/04/node-js读写文件/">
-                    node.js读写文件
+                <a href="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/">
+                    Java使用Jsoup之爬取博客数据应用实例
                 </a>
             </div>
         
@@ -389,7 +380,7 @@
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">第一步安装forever</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">第二步运行对应的js</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">注意(你可能会遇到如下错误):</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">如何找到绝对路径呢？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">forever常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.1.</span> <span class="toc-text">参考链接:</span></a></li></ol></li></ol></li></ol>
+            
         
     </div>
     <style>
@@ -425,7 +416,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"node.js服务端程序在Linux上持久运行　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Class path contains multiple SLF4J bindings.　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -447,15 +438,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" title="上一篇: mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/03/04/node-js读写文件/" title="下一篇: node.js读写文件">
+            <a href="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/" title="下一篇: Java使用Jsoup之爬取博客数据应用实例">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -491,8 +480,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Tue Mar 05 2019 14:04:07 GMT+0800',
-			  title: 'node.js服务端程序在Linux上持久运行',
+			  id: 'Sun Jun 30 2019 20:53:16 GMT+0800',
+			  title: 'Class path contains multiple SLF4J bindings.',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
