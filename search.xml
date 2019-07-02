@@ -4,6 +4,46 @@
   
     
     <entry>
+      <title>Edusoho之X-Auth-Token</title>
+      <link href="/2019/07/02/Edusoho%E4%B9%8BX-Auth-Token/"/>
+      <url>/2019/07/02/Edusoho%E4%B9%8BX-Auth-Token/</url>
+      
+        <content type="html"><![CDATA[<p>昨天这篇文章<a href="https://developers-youcong.github.io/2019/07/01/Edusoho%E4%B9%8BBasic-Authentication/">Edusoho之Basic Authentication</a>提到了X-Auth-Token。今天我主要讲的是Edusoho之X-Auth-Token的请求API方式。</p><p>至于为什么建议不要用HTTP Basic Authentication，上面这篇文章已经说清楚了。</p><p>不过我还是要强调一下这一点。因为本篇文章就是着重说这个的。下面进入正文:<br><a id="more"></a><br>还是以Edusoho对外API为例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl-X POST -H &quot;Accept:application/vnd.edusoho.v2+json&quot; -H &quot;X-Auth-Token: nzGrtcsDsrFzrId2hoLYfUafskRJ0pb9&quot; http://demo.edusoho.com/api/tokens</span><br></pre></td></tr></table></figure></p><p>初看时，我不太明白这个X-Auth-Token是如何产生的，为此我通过搜索引擎搜了又搜，仍然找不到我想要的答案。</p><p>随后我转念一想，也许Http Basic Authentication与X-AUTH-Token存在某种联系。</p><p>于是我用Http Basic Authentication的方式请求获取对应的数据后，如图:<br><img src="/2019/07/02/Edusoho之X-Auth-Token/01.png" alt="图一"></p><p>然后我将这个token复制，随后再使用X-AUTH-TOKEN的方式请求其它Edusoho API，发现我的猜想果然是对的(成功请求并获取对应的数据)，如图:<br><img src="/2019/07/02/Edusoho之X-Auth-Token/02.png" alt="图二"></p><p>如果要说为什么要使用X-Auth-Token这种方式请求需要认证的接口数据，我经过测试接口对比(使用Http Basic Authentication的方式和X-Auth-Token方式)，得出的结论如下:<br>正如一些博文的作者所倡导的那样，之所以不建议使用Basic Authentication的方式是因为对于需要认证的接口，每次请求都需要携带用户名和密码(base64加密的，同时也可以解密，存在极大的安全风险)。而X-AUTH-TOKEN就显得安全的多，因为只需第一次这样做，随后拿到对应的token后，就不必这样做了。而且这个token并不是base64，至于是什么我也不知道(我用了在线加解密网站解密(acs,des等)，都发现解密不了)，由此可见X-AUTH-TOKEN还是要比HTTP Basic Authentication这种认证方式要安全的多。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Edusoho </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Symfony之入门学习</title>
+      <link href="/2019/07/02/Symfony%E4%B9%8B%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/"/>
+      <url>/2019/07/02/Symfony%E4%B9%8B%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<p>最近因业务需要，主要针对Edusoho进行二次开发。但是对于Symfony，我并不熟悉，我所了解的是，它的那套与我在Java中常用的开发模式MVC，本质上并不多大差异，就是所使用的语言不一样而已。下面开始Symfony从无到有的脚手架搭建。<br><a id="more"></a><br>本文中需要compoer和php，</p><p>关于composer下载和安装(windows)，可参考该链接:<br><a href="https://getcomposer.org/download/" target="_blank" rel="noopener">https://getcomposer.org/download/</a></p><p>关于php下载和安装，可参考该链接:<br><a href="https://www.php.net/" target="_blank" rel="noopener">https://www.php.net/</a></p><h2><span id="安装和设置symfony框架请确保网速足够好需要下载symfony很多库">安装和设置Symfony框架(请确保网速足够好，需要下载Symfony很多库)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project symfony/website-skeleton project_name</span><br></pre></td></tr></table></figure><p>或者是如果你需要构建微服务，可执行该命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer create-project symfony/skeleton my-project</span><br></pre></td></tr></table></figure></p><p>框架搭建成功,如图:<br><img src="/2019/07/02/Symfony之入门学习/01.png" alt="图一"></p><p>项目结构，如图:<br><img src="/2019/07/02/Symfony之入门学习/02.png" alt="图二"></p><h2><span id="安装web服务器软件包">安装Web服务器软件包</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">composer require --dev symfony/web-server-bundle</span><br></pre></td></tr></table></figure><h2><span id="运行symfony应用程序">运行Symfony应用程序</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/console server:start(默认端口为8000)</span><br></pre></td></tr></table></figure><p>或者也可以指定端口，如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/console server:start 0.0.0.0:8050</span><br></pre></td></tr></table></figure></p><p>效果图(运行正常如下):<br><img src="/2019/07/02/Symfony之入门学习/03.png" alt="图三"></p><h2><span id="创建页面路由">创建页面路由</span></h2><p>通常是在Controller(controller目录)里面创建</p><p>CompanyController.java<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">namespace App\Controller;</span><br><span class="line"></span><br><span class="line">use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;</span><br><span class="line">use Symfony\Component\Routing\Annotation\Route;</span><br><span class="line"></span><br><span class="line">class CompanyController extends AbstractController</span><br><span class="line">&#123;</span><br><span class="line">/**</span><br><span class="line">     * Matches /about exactly</span><br><span class="line">     *</span><br><span class="line">     * @Route(&quot;/about&quot;, name=&quot;about&quot;)</span><br><span class="line">     */</span><br><span class="line">    public function about()</span><br><span class="line">    &#123;</span><br><span class="line">        return $this-&gt;render(&apos;blog/about.html.twig&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>模板语言(通常放在template目录下):<br>about.html.twing<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;h1&gt;About Me&lt;/h1&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">alert(&quot;hello world&quot;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p><p>配置该路由就不需要每次都要重复配置:<br>编辑该文件 config\routes\annotations.yaml<br>内容修改为如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">controllers:</span><br><span class="line">    resource: ../../src/Controller/</span><br><span class="line">    type: annotation</span><br></pre></td></tr></table></figure></p><p>最后执行如下命令，相当于重新启动<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">php bin/console server:start 0.0.0.0:8050</span><br></pre></td></tr></table></figure></p><p>访问:<a href="http://localhost:8050/about" target="_blank" rel="noopener">http://localhost:8050/about</a> ， 效果图如下:</p><p><img src="/2019/07/02/Symfony之入门学习/04.png" alt="图四"></p><p>本次示例代码，我已经放到我的github，欢迎朋友们git clone或者提相关的issue。</p><p>Symfondy示例代码:<a href="https://github.com/developers-youcong/SymfonyLearning" target="_blank" rel="noopener">https://github.com/developers-youcong/SymfonyLearning</a></p><p>关于Symfony学习可参考资料如下:<br><a href="https://symfony.com/doc/current/index.html" target="_blank" rel="noopener">Symfony官方文档</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> PHP </tag>
+            
+            <tag> Symfony </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Edusoho之Basic Authentication</title>
       <link href="/2019/07/01/Edusoho%E4%B9%8BBasic-Authentication/"/>
       <url>/2019/07/01/Edusoho%E4%B9%8BBasic-Authentication/</url>
@@ -641,9 +681,9 @@
       
         <tags>
             
-            <tag> javascript </tag>
-            
             <tag> Java </tag>
+            
+            <tag> javascript </tag>
             
         </tags>
       
