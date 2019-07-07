@@ -1,7 +1,7 @@
 ---
 title: Edusoho之LAMP环境搭建
 date: 2019-04-10 15:45:01
-tags: "Linux"
+tags: [Linux,Edusoho]
 ---
 主要参考官方文档[Ubuntu16.04+Apache+PHP+MySQL+EduSoho 安装教程](http://www.qiqiuyu.com/course/20/task/2708/show)
 LAMP环境按照如下搭建是没有问题的，本地虚拟机试验是完全没有问题的。

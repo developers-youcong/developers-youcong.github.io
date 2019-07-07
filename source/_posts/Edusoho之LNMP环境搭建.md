@@ -1,7 +1,7 @@
 ---
 title: Edusoho之LNMP环境搭建
 date: 2019-04-10 16:55:14
-tags: "Linux"
+tags: [Linux,Edusoho]
 ---
 
 

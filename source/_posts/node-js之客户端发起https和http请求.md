@@ -25,7 +25,7 @@ var post_data = {
 var content = qs.stringify(post_data);  
   
 var options = {  
-    hostname: 'www.test.com',  
+    hostname: 'www.test.com',
     port: 80,  
     path: '/test-web/api/sysUser/getUserCodeByInfo',  
     method: 'POST',  
@@ -99,3 +99,19 @@ const https = require("https");
 	req.end();
 
 ```
+
+上面的hostname，如果不是域名修改为ip地址，请修改成这样，将www.test.com改为192.168.126.130，
+切不可指定为
+http://192.168.126.130
+
+否则会出现请求失败，主要体现为如下错误:
+![](node-js之客户端发起https和http请求/01.png)
+
+还有一点需要强调，如果参数不用querystring.stringify()包裹的话，会出现如下错误:
+```
+Request path contains unescaped characters
+
+```
+
+那么为什么需要querystring呢？
+因为querystring.stringify()能将对象序列化成URL的形式，以&进行拼接。
