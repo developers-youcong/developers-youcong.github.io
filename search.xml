@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>lnmp环境脚本快速搭建</title>
+      <link href="/2019/07/15/lnmp%E7%8E%AF%E5%A2%83%E8%84%9A%E6%9C%AC%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/"/>
+      <url>/2019/07/15/lnmp%E7%8E%AF%E5%A2%83%E8%84%9A%E6%9C%AC%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="进入lnmp官网">进入lnmp官网</span></h2><p><a href="https://lnmp.org/download.html" target="_blank" rel="noopener">https://lnmp.org/download.html</a></p><p>如图:<br><img src="/2019/07/15/lnmp环境脚本快速搭建/01.png" alt="图一"><br><a id="more"></a></p><h2><span id="进入linux服务器并执行wget命令下载">进入Linux服务器并执行wget命令下载</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://soft.vpser.net/lnmp/lnmp1.6-full.tar.gz</span><br></pre></td></tr></table></figure><h2><span id="解压该压缩包">解压该压缩包</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf lnmp1.6-full.tar.gz</span><br></pre></td></tr></table></figure><h2><span id="执行安装脚本">执行安装脚本</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd lnmp1.6-full</span><br><span class="line">sh/bash install.sh</span><br></pre></td></tr></table></figure><p><img src="/2019/07/15/lnmp环境脚本快速搭建/02.png" alt="图二"></p><p>执行脚本后，会有让你选择对应的mysql版本和php版本，只需输入对应的序列号即可</p><h2><span id="安装成功标志">安装成功标志</span></h2><p><img src="/2019/07/15/lnmp环境脚本快速搭建/03.png" alt="图三"></p><p>访问IP对应的效果图如下:<br><img src="/2019/07/15/lnmp环境脚本快速搭建/04.png" alt="图四"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>智能语音交互之简单实例</title>
       <link href="/2019/07/07/%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A4%E4%BA%92%E4%B9%8B%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/"/>
       <url>/2019/07/07/%E6%99%BA%E8%83%BD%E8%AF%AD%E9%9F%B3%E4%BA%A4%E4%BA%92%E4%B9%8B%E7%AE%80%E5%8D%95%E5%AE%9E%E4%BE%8B/</url>
