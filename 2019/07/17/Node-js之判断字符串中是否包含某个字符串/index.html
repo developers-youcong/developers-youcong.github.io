@@ -15,21 +15,18 @@
 
 
 
-<meta name="description" content="简单查找，如下图:  从图可知那个眼镜男从1开始猜，猜到100，大家都知道这种猜法最终都会得到答案，就是时间问题而已。100毕竟是这个列表的最大长度。但是换言之，如果是一万、百万、上千亿呢？那么这种猜法虽然能够得到答案，但是时间方面的成本将会非常大。于是二分法应需而生。">
-<meta name="keywords" content="读书笔记">
+<meta name="description" content="server.txt内容如下:1阿里云服务器 关于应用场景，就不多说了，字符串是不论是后端开发还是前端开发等，都是要经常打交道了。 test.js(node.js代码，只要被本地装了node.js环境，直接可通过node test.js运行看效果):">
+<meta name="keywords" content="Node.js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法图解之二分查找">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/05/12/算法图解之二分查找/index.html">
+<meta property="og:title" content="Node.js之判断字符串中是否包含某个字符串">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/07/17/Node-js之判断字符串中是否包含某个字符串/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="简单查找，如下图:  从图可知那个眼镜男从1开始猜，猜到100，大家都知道这种猜法最终都会得到答案，就是时间问题而已。100毕竟是这个列表的最大长度。但是换言之，如果是一万、百万、上千亿呢？那么这种猜法虽然能够得到答案，但是时间方面的成本将会非常大。于是二分法应需而生。">
+<meta property="og:description" content="server.txt内容如下:1阿里云服务器 关于应用场景，就不多说了，字符串是不论是后端开发还是前端开发等，都是要经常打交道了。 test.js(node.js代码，只要被本地装了node.js环境，直接可通过node test.js运行看效果):">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/12/算法图解之二分查找/simple_select.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/12/算法图解之二分查找/dichotomy.png">
-<meta property="og:updated_time" content="2019-05-29T14:52:22.341Z">
+<meta property="og:updated_time" content="2019-07-17T07:08:57.188Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法图解之二分查找">
-<meta name="twitter:description" content="简单查找，如下图:  从图可知那个眼镜男从1开始猜，猜到100，大家都知道这种猜法最终都会得到答案，就是时间问题而已。100毕竟是这个列表的最大长度。但是换言之，如果是一万、百万、上千亿呢？那么这种猜法虽然能够得到答案，但是时间方面的成本将会非常大。于是二分法应需而生。">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/05/12/算法图解之二分查找/simple_select.png">
+<meta name="twitter:title" content="Node.js之判断字符串中是否包含某个字符串">
+<meta name="twitter:description" content="server.txt内容如下:1阿里云服务器 关于应用场景，就不多说了，字符串是不论是后端开发还是前端开发等，都是要经常打交道了。 test.js(node.js代码，只要被本地装了node.js环境，直接可通过node test.js运行看效果):">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -61,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>算法图解之二分查找 | Blog</title>
+<title>Node.js之判断字符串中是否包含某个字符串 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -288,11 +285,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-算法图解之二分查找" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Node-js之判断字符串中是否包含某个字符串" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/12/算法图解之二分查找/" class="article-date">
-      <time datetime="2019-05-12T06:30:31.000Z" itemprop="datePublished">2019-05-12</time>
+      <a href="/2019/07/17/Node-js之判断字符串中是否包含某个字符串/" class="article-date">
+      <time datetime="2019-07-17T07:02:26.000Z" itemprop="datePublished">2019-07-17</time>
 </a>
 
 
@@ -307,7 +304,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      算法图解之二分查找
+      Node.js之判断字符串中是否包含某个字符串
     </h1>
   
 
@@ -318,7 +315,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -328,13 +325,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>简单查找，如下图:</p>
-<p><img src="/2019/05/12/算法图解之二分查找/simple_select.png" alt=""></p>
-<p>从图可知那个眼镜男从1开始猜，猜到100，大家都知道这种猜法最终都会得到答案，就是时间问题而已。100毕竟是这个列表的最大长度。但是换言之，如果是一万、百万、上千亿呢？那么这种猜法虽然能够得到答案，但是时间方面的成本将会非常大。于是二分法应需而生。<br><a id="more"></a><br>二分法，如下图:<br><img src="/2019/05/12/算法图解之二分查找/dichotomy.png" alt=""></p>
-<p>从图可知这次眼镜男学聪明了，从中间入手一分为二。以100为例猜大小，假定要猜的数字为65，这时眼镜男说50，于是小姐姐说小了，眼镜男再猜70，小姐姐说大了，这时眼镜男可以肯定的范围应该在51~69这个范围内，相比简单查找，这种方式效率要高的多。最终眼镜男肯定会猜到正确的数字，花费的时间与简单查找相比，花费时间肯定是很少的。</p>
-<p>二分法也有其局限性，局限性就是必须要确保列表是有序的才行。</p>
-<p>以代码来讲解:<br>简单查找，以数组为例，索引从0开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">		public void testSelect() throws Exception &#123;</span><br><span class="line">			</span><br><span class="line">			int [] num = new int[] &#123;1,2,3,4,5,6&#125;;</span><br><span class="line">			for (int i = 0; i &lt; num.length; i++) &#123;</span><br><span class="line">				System.out.println(num[i]);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></p>
-<p>二分法，例子如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">		public void testSelect() throws Exception &#123;</span><br><span class="line">			</span><br><span class="line">			int[] num = new int[] &#123;1,3,5,7,9,11&#125;;</span><br><span class="line">			</span><br><span class="line">			int start = 0;</span><br><span class="line">			</span><br><span class="line">			int end = num.length - 1;</span><br><span class="line">			int i = 14;</span><br><span class="line">			</span><br><span class="line">			while(true) &#123;</span><br><span class="line">				int mid = (start+end) / 2;</span><br><span class="line">				</span><br><span class="line">				if(i == num[mid]) &#123;</span><br><span class="line">					System.out.println(&quot;index:&quot;+mid);</span><br><span class="line">					break;</span><br><span class="line">				&#125;else &#123;</span><br><span class="line">					if(i &lt; num[mid]) &#123;</span><br><span class="line">						end = mid - 1;</span><br><span class="line">					&#125;else &#123;</span><br><span class="line">						start = mid + 1;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				if(start &gt; end) &#123;</span><br><span class="line">					System.out.println(&quot;no find,will insert in:&quot;+start);</span><br><span class="line">					break;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>server.txt内容如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">阿里云服务器</span><br></pre></td></tr></table></figure></p>
+<p>关于应用场景，就不多说了，字符串是不论是后端开发还是前端开发等，都是要经常打交道了。</p>
+<p>test.js(node.js代码，只要被本地装了node.js环境，直接可通过node test.js运行看效果):<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">var fs = require(&quot;fs&quot;);</span><br><span class="line"></span><br><span class="line">var result = fs.readFileSync(&quot;./server.txt&quot;);</span><br><span class="line"></span><br><span class="line">console.log(&quot;result:&quot;+result);</span><br><span class="line"></span><br><span class="line">if(result.indexOf(&quot;阿里云服务器&quot;) != -1)&#123;</span><br><span class="line">	</span><br><span class="line">	console.log(&quot;ok&quot;);</span><br><span class="line">&#125; else&#123;</span><br><span class="line">	</span><br><span class="line">	console.log(&quot;no&quot;);</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">//indexOf() 方法可返回某个指定的字符串值在字符串中首次出现的位置。如果要检索的字符串值没有出现，则该方法返回 -1。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if(result.toString().search(&quot;1&quot;) != -1)&#123;</span><br><span class="line">	console.log(&quot;ok&quot;);</span><br><span class="line">	</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	console.log(&quot;no&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//search() 方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。如果没有找到任何匹配的子串，则返回 -1。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var reg = RegExp(/阿里云/);</span><br><span class="line">if(result.toString().match(reg))&#123;</span><br><span class="line">    console.log(&quot;ok&quot;);      </span><br><span class="line">&#125;else&#123;</span><br><span class="line">	console.log(&quot;no&quot;);</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line">//match() 方法可在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var reg = RegExp(/阿里云/);</span><br><span class="line">if(reg.test(result))&#123;</span><br><span class="line">	</span><br><span class="line">	console.log(&quot;ok&quot;);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	console.log(&quot;no&quot;);</span><br><span class="line">	</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//test() 方法用于检索字符串中指定的值。返回 true 或 false。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">var reg = RegExp(/阿里云/);</span><br><span class="line">if(reg.exec(result))&#123;	</span><br><span class="line">   	console.log(&quot;ok&quot;);      </span><br><span class="line">&#125;else&#123;</span><br><span class="line">	console.log(&quot;no&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//exec() 方法用于检索字符串中的正则表达式的匹配。返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。</span><br></pre></td></tr></table></figure></p>
+<p>本文主要参考资料如下:<br><a href="https://blog.csdn.net/qq_41033913/article/details/90754507" target="_blank" rel="noopener">js 判断字符串中是否包含某个字符串</a></p>
 
       
     </div>
@@ -343,13 +337,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/12/算法图解之二分查找/">算法图解之二分查找</a></p>
+        <p><span>本文标题:</span><a href="/2019/07/17/Node-js之判断字符串中是否包含某个字符串/">Node.js之判断字符串中是否包含某个字符串</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-05-12, 14:30:31</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:22</p>
+        <p><span>发布时间:</span>2019-07-17, 15:02:26</p>
+        <p><span>最后更新:</span>2019-07-17, 15:08:57</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/12/算法图解之二分查找/" title="算法图解之二分查找">http://developers-youcong.github.io/2019/05/12/算法图解之二分查找/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/12/算法图解之二分查找/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/07/17/Node-js之判断字符串中是否包含某个字符串/" title="Node.js之判断字符串中是否包含某个字符串">http://developers-youcong.github.io/2019/07/17/Node-js之判断字符串中是否包含某个字符串/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/07/17/Node-js之判断字符串中是否包含某个字符串/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -361,16 +355,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/12/算法图解之内存的工作原理/">
-                    算法图解之内存的工作原理
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/12/关于命和运/">
-                    关于命和运
+                <a href="/2019/07/17/EduSoho之插件开发-脚手架搭建/">
+                    EduSoho之插件开发(脚手架搭建)
                 </a>
             </div>
         
@@ -418,7 +406,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"算法图解之二分查找　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Node.js之判断字符串中是否包含某个字符串　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -440,15 +428,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/12/算法图解之内存的工作原理/" title="上一篇: 算法图解之内存的工作原理">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/12/关于命和运/" title="下一篇: 关于命和运">
+            <a href="/2019/07/17/EduSoho之插件开发-脚手架搭建/" title="下一篇: EduSoho之插件开发(脚手架搭建)">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -484,8 +470,8 @@
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Sun May 12 2019 14:30:31 GMT+0800',
-			  title: '算法图解之二分查找',
+			  id: 'Wed Jul 17 2019 15:02:26 GMT+0800',
+			  title: 'Node.js之判断字符串中是否包含某个字符串',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
