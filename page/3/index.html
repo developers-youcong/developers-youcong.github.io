@@ -287,11 +287,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-edusoho上传视频弹出abort之解决方案" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Edusoho之X-Auth-Token" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/06/12/edusoho上传视频弹出abort之解决方案/" class="article-date">
-      <time datetime="2019-06-12T10:03:02.000Z" itemprop="datePublished">2019-06-12</time>
+      <a href="/2019/07/02/Edusoho之X-Auth-Token/" class="article-date">
+      <time datetime="2019-07-02T09:26:55.000Z" itemprop="datePublished">2019-07-02</time>
 </a>
 
 
@@ -306,7 +306,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/12/edusoho上传视频弹出abort之解决方案/">edusoho上传视频弹出abort之解决方案</a>
+      <a class="article-title" href="/2019/07/02/Edusoho之X-Auth-Token/">Edusoho之X-Auth-Token</a>
     </h1>
   
 
@@ -316,9 +316,498 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>错误描述:edusoho上传如avi、mp4等容量大的图片(如100m以上或500m等)弹出abort提示框</p>
-<p>原因:是因为web服务器apache默认上传文件有限制导致的</p>
-<p>解决办法如下:<br></p>
+              <p>昨天这篇文章<a href="https://developers-youcong.github.io/2019/07/01/Edusoho%E4%B9%8BBasic-Authentication/">Edusoho之Basic Authentication</a>提到了X-Auth-Token。今天我主要讲的是Edusoho之X-Auth-Token的请求API方式。</p>
+<p>至于为什么建议不要用HTTP Basic Authentication，上面这篇文章已经说清楚了。</p>
+<p>不过我还是要强调一下这一点。因为本篇文章就是着重说这个的。下面进入正文:<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Edusoho/">Edusoho</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/07/02/Edusoho之X-Auth-Token/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Symfony之入门学习" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/02/Symfony之入门学习/" class="article-date">
+      <time datetime="2019-07-02T05:15:06.000Z" itemprop="datePublished">2019-07-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/02/Symfony之入门学习/">Symfony之入门学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>最近因业务需要，主要针对Edusoho进行二次开发。但是对于Symfony，我并不熟悉，我所了解的是，它的那套与我在Java中常用的开发模式MVC，本质上并不多大差异，就是所使用的语言不一样而已。下面开始Symfony从无到有的脚手架搭建。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Symfony/">Symfony</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/07/02/Symfony之入门学习/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Edusoho之Basic-Authentication" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/01/Edusoho之Basic-Authentication/" class="article-date">
+      <time datetime="2019-07-01T11:45:18.000Z" itemprop="datePublished">2019-07-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/01/Edusoho之Basic-Authentication/">Edusoho之Basic Authentication</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>通过如下代码，可以正常请求并获取对应的数据:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST -H &quot;Accept:application/vnd.edusoho.v2+json&quot; -H &quot;Authorization: Basic dGVzdDJlZHVvc2hvOjEyMzQ1Ng==&quot; http://demo.edusoho.com/api/tokens</span><br></pre></td></tr></table></figure></p>
+<p>但是我想将其中的请求地址替换成我自己的域名，却不行。</p>
+<p>由于Edusoho开发文档并未对其详说，于是我便提相关的issue。</p>
+<p>我提的issue如下:<br><a href="https://github.com/edusoho/edusoho/issues/65" target="_blank" rel="noopener">https://github.com/edusoho/edusoho/issues/65</a><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Edusoho/">Edusoho</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/07/01/Edusoho之Basic-Authentication/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-git之fatal-Could-not-read-from-remote-repository" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/30/git之fatal-Could-not-read-from-remote-repository/" class="article-date">
+      <time datetime="2019-06-30T13:32:22.000Z" itemprop="datePublished">2019-06-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/git之fatal-Could-not-read-from-remote-repository/">git之fatal: Could not read from remote repository</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>问题背景:<br>在git bash中使用hexo g -d命令进行文章发布</p>
+<p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: Connection reset by 13.250.177.223 port 22</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line"></span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (E:\Hexo\node_modules\hexo-util\lib\spawn.js:37:17)</span><br><span class="line">    at emitTwo (events.js:126:13)</span><br><span class="line">    at ChildProcess.emit (events.js:214:7)</span><br><span class="line">    at ChildProcess.cp.emit (E:\Hexo\node_modules\cross-spawn\lib\enoent.js:40:29)</span><br><span class="line">    at maybeClose (internal/child_process.js:915:16)</span><br><span class="line">    at Socket.stream.socket.on (internal/child_process.js:336:11)</span><br><span class="line">    at emitOne (events.js:116:13)</span><br><span class="line">    at Socket.emit (events.js:211:7)</span><br><span class="line">    at Pipe._handle.close [as _onclose] (net.js:561:12)</span><br></pre></td></tr></table></figure></p>
+<p>错误原因是因为ssh key有问题，连接不上服务器。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/06/30/git之fatal-Could-not-read-from-remote-repository/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Class-path-contains-multiple-SLF4J-bindings" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/" class="article-date">
+      <time datetime="2019-06-30T12:53:16.000Z" itemprop="datePublished">2019-06-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/">Class path contains multiple SLF4J bindings.</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>详细错误信息如下:<br>SLF4J: Class path contains multiple SLF4J bindings.<br>SLF4J: Found binding in [jar:file:/C:/Users/eluzhu/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]<br>SLF4J: Found binding in [jar:file:/C:/Users/eluzhu/.m2/repository/ch/qos/logback/logback-classic/1.1.11/logback-classic-1.1.11.jar!/org/slf4j/impl/StaticLoggerBinder.class]<br>SLF4J: See <a href="http://www.slf4j.org/codes.html#multiple_bindings" target="_blank" rel="noopener">http://www.slf4j.org/codes.html#multiple_bindings</a> for an explanation.<br>SLF4J: Detected both log4j-over-slf4j.jar AND bound slf4j-log4j12.jar on the class path, preempting StackOverflowError.<br>SLF4J: See also <a href="http://www.slf4j.org/codes.html#log4jDelegationLoop" target="_blank" rel="noopener">http://www.slf4j.org/codes.html#log4jDelegationLoop</a> for more details.<br>Exception in thread “main” java.lang.ExceptionInInitializerError<br>    at org.slf4j.impl.StaticLoggerBinder.<init>(StaticLoggerBinder.java:72)<br>    at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:45)<br>    at org.slf4j.LoggerFactory.bind(LoggerFactory.java:149)<br>    at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:124)<br>    at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:390)<br>    at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:340)<br>    at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:361)<br>    at com.eluzhu.sass.Application.<clinit>(Application.java:13)<br>Caused by: java.lang.IllegalStateException: Detected both log4j-over-slf4j.jar AND bound slf4j-log4j12.jar on the class path, preempting StackOverflowError. See also <a href="http://www.slf4j.org/codes.html#log4jDelegationLoop" target="_blank" rel="noopener">http://www.slf4j.org/codes.html#log4jDelegationLoop</a> for more details.<br>    at org.slf4j.impl.Log4jLoggerFactory.<clinit>(Log4jLoggerFactory.java:54)<br>    … 8 more</clinit></clinit></clinit></init></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Java使用Jsoup之爬取博客数据应用实例" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/" class="article-date">
+      <time datetime="2019-06-29T13:41:59.000Z" itemprop="datePublished">2019-06-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/">Java使用Jsoup之爬取博客数据应用实例</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="导入Maven依赖"><a href="#导入Maven依赖" class="headerlink" title="导入Maven依赖"></a>导入Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!-- https://mvnrepository.com/artifact/org.jsoup/jsoup --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;dependency&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	    &lt;groupId&gt;org.jsoup&lt;/groupId&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	    &lt;artifactId&gt;jsoup&lt;/artifactId&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	    &lt;version&gt;1.11.3&lt;/version&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-javascript如何动态修改iframe的src" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/22/javascript如何动态修改iframe的src/" class="article-date">
+      <time datetime="2019-06-22T03:40:01.000Z" itemprop="datePublished">2019-06-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/22/javascript如何动态修改iframe的src/">javascript如何动态修改iframe的src</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>为什么需要动态修改iframe的src?<br>一般情况我们使用iframe,其中的src通常是写死的，但是有些时候我们不希望它是死的src，而是一个活的src。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/06/22/javascript如何动态修改iframe的src/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-记一次edusoho问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/21/记一次edusoho问题/" class="article-date">
+      <time datetime="2019-06-21T07:47:01.000Z" itemprop="datePublished">2019-06-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/21/记一次edusoho问题/">记一次edusoho问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>问题描述:<br>Edusoho如何迁移到本地windows或另外一台Linux服务器上</p>
+<p>解决问题步骤:<br></p>
           
       
     </div>
@@ -334,7 +823,7 @@
 
       
         <p class="article-more-link">
-          <a href="/2019/06/12/edusoho上传视频弹出abort之解决方案/#more">more >></a>
+          <a href="/2019/06/21/记一次edusoho问题/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -358,11 +847,11 @@
 <!--gitment 评论 end-->
 
   
-    <article id="post-XAMPP启动mysql遇到的问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-TypeScript之Https通信" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/06/12/XAMPP启动mysql遇到的问题/" class="article-date">
-      <time datetime="2019-06-12T09:58:43.000Z" itemprop="datePublished">2019-06-12</time>
+      <a href="/2019/06/21/TypeScript之Https通信/" class="article-date">
+      <time datetime="2019-06-21T06:39:55.000Z" itemprop="datePublished">2019-06-21</time>
 </a>
 
 
@@ -377,7 +866,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/12/XAMPP启动mysql遇到的问题/">XAMPP启动mysql遇到的问题</a>
+      <a class="article-title" href="/2019/06/21/TypeScript之Https通信/">TypeScript之Https通信</a>
     </h1>
   
 
@@ -387,222 +876,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>错误信息如下:<br>Version: ‘10.1.33-MariaDB’  socket: ‘’  port: 3389  mariadb.org binary distribution<br>2019-06-12 18:00:56 4a04 InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option innodb_use_sys_malloc and with the InnoDB’s internal memory allocator.<br>2019-06-12 18:00:56 18948 [Note] InnoDB: innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to 20MB.</p>
-<p>2019-06-12 18:00:56 18948 [Note] InnoDB: Using mutexes to ref count buffer pool pages<br>2019-06-12 18:00:56 18948 [Note] InnoDB: The InnoDB memory heap is disabled<br>2019-06-12 18:00:56 18948 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions<br>2019-06-12 18:00:56 18948 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier<br>2019-06-12 18:00:56 18948 [Note] InnoDB: Compressed tables use zlib 1.2.3<br>2019-06-12 18:00:56 18948 [Note] InnoDB: Using generic crc32 instructions<br>2019-06-12 18:00:56 18948 [Note] InnoDB: Initializing buffer pool, size = 16.0M<br>2019-06-12 18:00:56 18948 [Note] InnoDB: Completed initialization of buffer pool<br>2019-06-12 18:00:56 18948 [ERROR] InnoDB: \Program Files (x86)\xampp\mysql\data\ibdata1 can’t be opened in read-write mode<br>2019-06-12 18:00:56 18948 [ERROR] InnoDB: The system tablespace must be writable!<br>2019-06-12 18:00:56 18948 [ERROR] Plugin ‘InnoDB’ init function returned error.<br>2019-06-12 18:00:56 18948 [ERROR] Plugin ‘InnoDB’ registration as a STORAGE ENGINE failed.<br>2019-06-12 18:00:56 18948 [Note] Plugin ‘FEEDBACK’ is disabled.<br>2019-06-12 18:00:56 18948 [ERROR] Unknown/unsupported storage engine: InnoDB<br>2019-06-12 18:00:56 18948 [ERROR] Aborting</p>
-<p>解决方案:<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/06/12/XAMPP启动mysql遇到的问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-算法图解之广度优先搜索" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/06/10/算法图解之广度优先搜索/" class="article-date">
-      <time datetime="2019-06-10T12:27:10.000Z" itemprop="datePublished">2019-06-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/10/算法图解之广度优先搜索/">算法图解之广度优先搜索</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>广度优先搜索的应用场景，如下:<br>(1)编写国际跳棋AI，计算最少走多少步就可获胜;<br>(2)编写拼写检查器，计算最少编辑多个地方就可将错拼的单词改为正确的单词，如将READED改为READER需要编辑一个地方;<br>(3)根据你的人际关系网络找到关系最近的医生;<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/06/10/算法图解之广度优先搜索/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-request-fail-url-not-in-domain-list" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/06/05/request-fail-url-not-in-domain-list/" class="article-date">
-      <time datetime="2019-06-05T14:55:41.000Z" itemprop="datePublished">2019-06-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/05/request-fail-url-not-in-domain-list/">request:fail url not in domain list</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误信息:request:fail url not in domain list</p>
-<p>原因:没有配置服务器域名</p>
-<p>解决办法如下:<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序开发/">微信小程序开发</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/06/05/request-fail-url-not-in-domain-list/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-VsCode插件与Node-js交互通信" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/06/05/VsCode插件与Node-js交互通信/" class="article-date">
-      <time datetime="2019-06-05T07:15:48.000Z" itemprop="datePublished">2019-06-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/05/VsCode插件与Node-js交互通信/">VsCode插件与Node.js交互通信</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>首先关于VsCode插件通信，如果不明白的可以参考我的这篇博客<a href="https://www.cnblogs.com/youcong/p/10294758.html" target="_blank" rel="noopener">VsCode插件开发之插件初步通信</a></p>
-<p>如果需要详细例子的话，可以参考<a href="https://github.com/developers-youcong/vscode-extension-dev" target="_blank" rel="noopener">VsCode插件开发</a></p>
-<p>现在又有一个新的需求是，VsCode插件可以通过jQuery的方式/或者引入某种前端通信框架实现与后台交互。但是针对之前某个需求，需求描述:用户登录后在本地某盘创建特定的文件夹。通常像创建特定文件夹的话，一般都是后端语言实现。而我当时编写的这个插件是用JavaScript，JavaScript是不能读写文件的，当然了，有些朋友可能会说可以使用ActiveXObject，但是这个ActiveXObject有局限性，它仅仅只能支持IE浏览器，而不能支持像Google Chrome和火狐这样的通用性广的浏览器。</p>
-<p>为了解决这个需求，我决定结合node.js解决这个问题。</p>
-<p>首先明确一点，vscode插件开发，不管是使用JavaScript还是TypeScript，通常由于本地调试的需求，都需要安装对应库，而管理这个库，通常使用npm或yarn。由此我们便可知，我们直接可以在该插件中编写node.js相关的代码。<br></p>
+              <p>NetWorkRequest.ts(源代码如下)<br></p>
           
       
     </div>
@@ -618,7 +892,7 @@
 
       
         <p class="article-more-link">
-          <a href="/2019/06/05/VsCode插件与Node-js交互通信/#more">more >></a>
+          <a href="/2019/06/21/TypeScript之Https通信/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -642,11 +916,11 @@
 <!--gitment 评论 end-->
 
   
-    <article id="post-算法图解之散列表" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-usr-bin-xauth-file-home-youcong-Xauthority-does-not-exist" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/06/03/算法图解之散列表/" class="article-date">
-      <time datetime="2019-06-03T11:20:49.000Z" itemprop="datePublished">2019-06-03</time>
+      <a href="/2019/06/19/usr-bin-xauth-file-home-youcong-Xauthority-does-not-exist/" class="article-date">
+      <time datetime="2019-06-19T12:22:51.000Z" itemprop="datePublished">2019-06-19</time>
 </a>
 
 
@@ -661,7 +935,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/03/算法图解之散列表/">算法图解之散列表</a>
+      <a class="article-title" href="/2019/06/19/usr-bin-xauth-file-home-youcong-Xauthority-does-not-exist/">/usr/bin/xauth:  file /home/user/.Xauthority does not exist</a>
     </h1>
   
 
@@ -671,288 +945,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h2><p>专业术语表述，”将输入映射到数字”。</p>
-<p>散列函数具有如下要求:<br>(1)它必须是一致的。<br>如你输入blog得到的是wordpress，那么每次输入blog，得到的都必须为wordpress。</p>
-<p>(2)它应将不同的输入映射到不同的数字。<br>如，如果一个散列函数不管输入是什么都返回1，它就不是好的散列函数。最理想的情况是，将不同的输入映射到不同的数字。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/06/03/算法图解之散列表/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-初学者摸索之算法学习" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/06/01/初学者摸索之算法学习/" class="article-date">
-      <time datetime="2019-06-01T13:32:26.000Z" itemprop="datePublished">2019-06-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/01/初学者摸索之算法学习/">初学者摸索之算法学习</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>此文转自我个人微信公众号，时间虽然过去已经四个多月了，但是我个人认为还是能够给大家带来启发意义，所以借这个时间分享给大家，微信公众号分享比较有限，而且时效性也比较差，而博客时效性比较好，而且还能集思广益，欢迎朋友在评论区留言，俗话说，众人拾柴火焰高。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/06/01/初学者摸索之算法学习/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Node-js之文件下载" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/31/Node-js之文件下载/" class="article-date">
-      <time datetime="2019-05-31T08:06:33.000Z" itemprop="datePublished">2019-05-31</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/31/Node-js之文件下载/">Node.js之文件下载</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>Node.js之文件下载，主要最近解决我的一个需求。</p>
-<p>需求描述:<br>如何将腾讯云上传的文件存储到本地某个目录下，如果用js来实现，纯JavaScript没有这样的功能(也许有)，正好我这个项目用node.js比较多，正好可以利用node.js丰富的API实现该功能。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/31/Node-js之文件下载/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-算法图解之快速排序" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/28/算法图解之快速排序/" class="article-date">
-      <time datetime="2019-05-28T13:38:15.000Z" itemprop="datePublished">2019-05-28</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/28/算法图解之快速排序/">算法图解之快速排序</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="分而治之-又称D-amp-C"><a href="#分而治之-又称D-amp-C" class="headerlink" title="分而治之(又称D&amp;C)"></a>分而治之(又称D&amp;C)</h2><p>书中举了一个例子，假设你是农场主，有一块土地，如图所示:<br><img src="/2019/05/28/算法图解之快速排序/01.png" alt=""><br>你要将这块地均匀分成方块，且分出的方块要尽可能大。<br><img src="/2019/05/28/算法图解之快速排序/02.png" alt=""></p>
-<p>从图上看，显然是不符合预期结果的。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/28/算法图解之快速排序/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Ubuntu16-04Apache负载均衡-集群" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/28/Ubuntu16-04Apache负载均衡-集群/" class="article-date">
-      <time datetime="2019-05-28T02:42:40.000Z" itemprop="datePublished">2019-05-28</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/28/Ubuntu16-04Apache负载均衡-集群/">Ubuntu16.04Apache负载均衡+集群</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>mod_proxy ，主代理模块Apache模块用于重定向连接;它允许Apache充当底层应用程序服务器的网关。<br>mod_proxy_http ，它增加了对代理HTTP连接的支持。<br>mod_proxy_balancer和mod_lbmethod_byrequests ，它为多个后端服务器添加负载平衡功能。</p>
-<p>为了保证配置流程正常，请执行如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod proxy</span><br><span class="line">sudo a2enmod proxy_http</span><br><span class="line">sudo a2enmod proxy_balancer</span><br><span class="line">sudo a2enmod lbmethod_byrequests</span><br><span class="line">/etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure></p>
+              <p>错误信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/bin/xauth: file /home/user/.Xauthority does not exist</span><br></pre></td></tr></table></figure></p>
           
       
     </div>
@@ -968,7 +961,7 @@
 
       
         <p class="article-more-link">
-          <a href="/2019/05/28/Ubuntu16-04Apache负载均衡-集群/#more">more >></a>
+          <a href="/2019/06/19/usr-bin-xauth-file-home-youcong-Xauthority-does-not-exist/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -994,7 +987,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 </div>

@@ -287,11 +287,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-谈谈存储系统" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-node-js如何引用其它js文件" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/02/23/谈谈存储系统/" class="article-date">
-      <time datetime="2019-02-23T02:26:04.000Z" itemprop="datePublished">2019-02-23</time>
+      <a href="/2019/03/07/node-js如何引用其它js文件/" class="article-date">
+      <time datetime="2019-03-07T11:50:02.000Z" itemprop="datePublished">2019-03-07</time>
 </a>
 
 
@@ -306,7 +306,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/23/谈谈存储系统/">谈谈存储系统</a>
+      <a class="article-title" href="/2019/03/07/node-js如何引用其它js文件/">node.js如何引用其它js文件</a>
     </h1>
   
 
@@ -316,89 +316,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>文件存储是开发中常常用到的。下面我将对如下存储系统进行说明:</p>
-<ul>
-<li>阿里云OSS</li>
-<li>ftp</li>
-<li>Java常规存储</li>
-</ul>
-<h2 id="一、阿里云OSS"><a href="#一、阿里云OSS" class="headerlink" title="一、阿里云OSS"></a>一、阿里云OSS</h2><p>阿里云对象存储服务（Object Storage Service，简称 OSS），是阿里云提供的海量、安全、低成本、高可靠的云存储服务。其数据设计持久性不低于99.999999999%，服务设计可用性不低于99.99%。具有与平台无关的RESTful API接口，您可以在任何应用、任何时间、任何地点存储和访问任意类型的数据。</p>
-<p>您可以使用阿里云提供的API、SDK接口或者OSS迁移工具轻松地将海量数据移入或移出阿里云OSS。数据存储到阿里云OSS以后，您可以选择标准类型（Standard）的阿里云OSS服务作为移动应用、大型网站、图片分享或热点音视频的主要存储方式，也可以选择成本更低、存储期限更长的低频访问类型（Infrequent Access）和归档类型（Archive）的阿里云OSS服务作为不经常访问数据的备份和归档。<br>(引自官方文档，官方文档可参考:<a href="https://help.aliyun.com/video_detail/39708.html?spm=5176.10695662.1996646101.searchclickresult.6ce04d08gnXv2N" target="_blank" rel="noopener">https://help.aliyun.com/video_detail/39708.html?spm=5176.10695662.1996646101.searchclickresult.6ce04d08gnXv2N</a>)<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/存储/">存储</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/02/23/谈谈存储系统/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-node-js之express框架" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/02/22/node-js之express框架/" class="article-date">
-      <time datetime="2019-02-22T13:06:08.000Z" itemprop="datePublished">2019-02-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/22/node-js之express框架/">node.js之express框架</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>之前学习过node.js接触过express框架，最近为了编写一个mock server正好用到了express。下面正好就跟大家介绍一下关于express。<br>今天的内容主要围绕这么几个方面?</p>
-<ul>
-<li>express框架初步介绍</li>
-<li>express框架中的app.use和app.get/app.post</li>
-<li>mock server 介绍</li>
-<li>mock server的实现思路</li>
-</ul>
+              <p>以Java来说，比如要实现第三方存储，我可能需要导入对应的库，以maven为例，使用腾讯云或者七牛云、阿里云，我需要导入对应的maven依赖。<br>再比如，有些时候我们封装某个类，而那个类不在该包下，我们需要导包(就是指定那个类的路径，如果路径不对，则可能出现找不到这个类之类的错误，通常对应的IDE会提示错误)。</p>
+<p>其实，node.js也是这样的。最近在开发node.js的时候，难免也会遇到需要引入其它js文件。今天我以一个简单示例来说一说node.js如何引用其它js文件。<br></p>
           
       
     </div>
@@ -414,7 +333,7 @@
 
       
         <p class="article-more-link">
-          <a href="/2019/02/22/node-js之express框架/#more">more >></a>
+          <a href="/2019/03/07/node-js如何引用其它js文件/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -438,11 +357,11 @@
 <!--gitment 评论 end-->
 
   
-    <article id="post-SpringBoot之加密" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-jenkins忘记管理员密码之解决方案" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/02/22/SpringBoot之加密/" class="article-date">
-      <time datetime="2019-02-22T12:26:44.000Z" itemprop="datePublished">2019-02-22</time>
+      <a href="/2019/03/07/jenkins忘记管理员密码之解决方案/" class="article-date">
+      <time datetime="2019-03-07T11:34:40.000Z" itemprop="datePublished">2019-03-07</time>
 </a>
 
 
@@ -457,7 +376,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/22/SpringBoot之加密/">SpringBoot之加密</a>
+      <a class="article-title" href="/2019/03/07/jenkins忘记管理员密码之解决方案/">jenkins忘记管理员密码之解决方案</a>
     </h1>
   
 
@@ -467,11 +386,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>最近利用闲暇时间写了一个博客系统，主要参考wordpress，主要目的是为了提高自己的技术能力。</p>
-<p>写代码写了两年多，联系到之前在学校的时候写过的一个博客系统，发现工作中开发的系统，技术上基本一致，业务逻辑方面存在差异。</p>
-<p>比如博客系统可能面对高并发的场景，比如某个时间段访问量，再比如博客系统为了最大程度吸引用户(换句话说，提高用户粘性)，在界面上美观，使用上更加方便。通常界面美观伴随着前端js库的增多，特别是一些非常好看的画面或者图像是极其消耗带宽的，带宽如果不给力的话，页面半天打不开，同样也对于用户而言体验不好。</p>
-<p>只想表达一个意思，软件开发万变不离其宗，本质上基本都是一个CMS系统(也许这句话武断了)。</p>
-<p>话不多说，今天我要讲的关于SpringBoot加密。</p>
+              <p>jenkins忘记管理员密码怎么办？</p>
+<p>通常有这么几种解决方案，如下所示:</p>
           
       
     </div>
@@ -482,12 +398,575 @@
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jenkins/">jenkins</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2019/02/22/SpringBoot之加密/#more">more >></a>
+          <a href="/2019/03/07/jenkins忘记管理员密码之解决方案/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-mybatis之一对多" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/06/mybatis之一对多/" class="article-date">
+      <time datetime="2019-03-06T12:54:56.000Z" itemprop="datePublished">2019-03-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/06/mybatis之一对多/">mybatis之一对多</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>今天主要话题围绕这么几个方面？</p>
+<ul>
+<li>mybatis一对多示例</li>
+<li>sql优化策略</li></ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/06/mybatis之一对多/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" class="article-date">
+      <time datetime="2019-03-05T13:16:45.000Z" itemprop="datePublished">2019-03-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-node-js服务端程序在Linux上持久运行" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/" class="article-date">
+      <time datetime="2019-03-05T06:04:07.000Z" itemprop="datePublished">2019-03-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/05/node-js服务端程序在Linux上持久运行/">node.js服务端程序在Linux上持久运行</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>如果要想在服务端部署node.js程序，让其持久化运行，就不能单单使用npm start命令运行，当然了，这样运行是毫无问题的，但是当关闭xshell窗口或者是关闭进程的时候(其实关闭xshell窗口相当于默认关闭进程)，就无法访问对应的node.js服务端程序了。</p>
+<p>那么该如何才能持久访问呢？</p>
+<p>其实也就两步<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/05/node-js服务端程序在Linux上持久运行/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-node-js读写文件" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/04/node-js读写文件/" class="article-date">
+      <time datetime="2019-03-04T13:32:24.000Z" itemprop="datePublished">2019-03-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/04/node-js读写文件/">node.js读写文件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>关于node.js的读写操作，应用场景有很多。<br>比如其中这样的一个场景，如何获取全局的token。<br>这就涉及到写和读操作了。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/04/node-js读写文件/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-javascript之传输加密" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/04/javascript之传输加密/" class="article-date">
+      <time datetime="2019-03-04T11:52:29.000Z" itemprop="datePublished">2019-03-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/04/javascript之传输加密/">javascript之传输加密</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>为什么要使用javascript加密呢？<br>服务端加密远远不够，客户端或者浏览器端也需要加密，以此保证传输信息过程的安全。</p>
+<p>今天就我工作中说说这么几种加密算法及其对应的应用场景，如下所示:</p>
+<ul>
+<li>base64</li>
+<li>md5</li>
+<li>des</li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/04/javascript之传输加密/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Python实现机器人聊天" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/01/Python实现机器人聊天/" class="article-date">
+      <time datetime="2019-03-01T13:56:13.000Z" itemprop="datePublished">2019-03-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/01/Python实现机器人聊天/">Python实现机器人聊天</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>今天午休的时候，无意之中看了一篇博客，名字叫Python实现机器人，感觉挺有的意思的。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/01/Python实现机器人聊天/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-node-js使用express框架进行文件上传" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/01/node-js使用express框架进行文件上传/" class="article-date">
+      <time datetime="2019-03-01T12:49:08.000Z" itemprop="datePublished">2019-03-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/01/node-js使用express框架进行文件上传/">node.js使用express框架进行文件上传</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>关于node.js使用express框架进行文件上传，主要来自于最近对Settings-Sync插件做的研究。<br>目前的研究算是取得的比较好的进展。<br>Settings-Sync中通过快捷键上传文件，其实主要还是请求后端接口。<br>于是我便使用node.js模拟一个服务，这个服务其实就相当于github api(Settings-Sync实际请求的接口，比如token验证，gist存储创建等都是来自github 对应的api)。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/01/node-js使用express框架进行文件上传/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-nginx让所有的http地址重定向到https" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/01/nginx让所有的http地址重定向到https/" class="article-date">
+      <time datetime="2019-03-01T12:28:22.000Z" itemprop="datePublished">2019-03-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/01/nginx让所有的http地址重定向到https/">nginx让所有的http地址重定向到https</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>问:为什么让所有的http都重定向到https呢？<br>答:因为这样会使网站更安全些。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/01/nginx让所有的http地址重定向到https/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -513,7 +992,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span>
+      <a class="extend prev" rel="prev" href="/page/15/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="extend next" rel="next" href="/page/17/">Next &raquo;</a>
     </nav>
   
 </div>
