@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>shell之批量新增用户脚本(http-basic-auth)</title>
+      <link href="/2019/07/22/shell%E4%B9%8B%E6%89%B9%E9%87%8F%E6%96%B0%E5%A2%9E%E7%94%A8%E6%88%B7%E8%84%9A%E6%9C%AC-http-basic-auth/"/>
+      <url>/2019/07/22/shell%E4%B9%8B%E6%89%B9%E9%87%8F%E6%96%B0%E5%A2%9E%E7%94%A8%E6%88%B7%E8%84%9A%E6%9C%AC-http-basic-auth/</url>
+      
+        <content type="html"><![CDATA[<p>user.txt(用户名记录文件)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test001@163.com</span><br><span class="line">test002@163.com</span><br></pre></td></tr></table></figure></p><p>user.sh(shell脚本):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">for line in `cat user.txt`</span><br><span class="line">do</span><br><span class="line">   echo $line &quot;u&quot;$line</span><br><span class="line">   printf &quot;$line:$(openssl passwd -crypt $line)\n&quot; &gt;&gt; conf.d/passwd</span><br><span class="line"></span><br><span class="line">done</span><br></pre></td></tr></table></figure></p><p>执行完毕后，就可以在passwd看到对应的记录。</p><p>应用场景:<br>比如我开发某个系统，希望有一个双重验证，第一次访问比如有一个HTTP Basic Auth认证(认证一次，浏览器有缓存，就无需再重新验证)，第二次如果你想使用系统的服务的话，还需要登录。<br><a id="more"></a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>为 Nginx 添加 HTTP 基本认证(HTTP Basic Authentication)</title>
+      <link href="/2019/07/22/%E4%B8%BA-Nginx-%E6%B7%BB%E5%8A%A0-HTTP-%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81-HTTP-Basic-Authentication/"/>
+      <url>/2019/07/22/%E4%B8%BA-Nginx-%E6%B7%BB%E5%8A%A0-HTTP-%E5%9F%BA%E6%9C%AC%E8%AE%A4%E8%AF%81-HTTP-Basic-Authentication/</url>
+      
+        <content type="html"><![CDATA[<p>针对sudo apt-get install命令安装的nginx(默认会有/etc/nginx/conf.d)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure></p><h2><span id="生成密码">生成密码</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf &quot;your_username:$(openssl passwd -crypt your_password)\n&quot; &gt;&gt; conf.d/passwd</span><br></pre></td></tr></table></figure><p>如果没有conf.d/passwd这个文件，就自行创建<br><a id="more"></a></p><h2><span id="配置nginx">配置nginx</span></h2><p>修改配置文件:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/nginx/sites-enabled/default</span><br></pre></td></tr></table></figure></p><p>修改内容如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">location /</span><br><span class="line">&#123;</span><br><span class="line">    auth_basic &quot;网站名称&quot;;</span><br><span class="line">    auth_basic_user_file conf.d/passwd; </span><br><span class="line">    autoindex on;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2><span id="重启nginx">重启nginx</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/nginx restart</span><br></pre></td></tr></table></figure><h2><span id="访问效果如下">访问效果如下</span></h2><p><img src="/2019/07/22/为-Nginx-添加-HTTP-基本认证-HTTP-Basic-Authentication/01.png" alt=""></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Nginx </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux搜索所有文件中的内容</title>
       <link href="/2019/07/21/Linux%E6%90%9C%E7%B4%A2%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/"/>
       <url>/2019/07/21/Linux%E6%90%9C%E7%B4%A2%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9/</url>
