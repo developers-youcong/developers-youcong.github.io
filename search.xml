@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>HustOJ二次开发之隐藏菜单栏</title>
+      <link href="/2019/08/08/HustOJ%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%B9%8B%E9%9A%90%E8%97%8F%E8%8F%9C%E5%8D%95%E6%A0%8F/"/>
+      <url>/2019/08/08/HustOJ%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%B9%8B%E9%9A%90%E8%97%8F%E8%8F%9C%E5%8D%95%E6%A0%8F/</url>
+      
+        <content type="html"><![CDATA[<p>通过关键搜索:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name *nav.php</span><br></pre></td></tr></table></figure></p><p>出现如下结果:<br>/home/judge/src/web/template/ie/nav.php<br>/home/judge/src/web/template/ace/nav.php<br>/home/judge/src/web/template/bs3/nav.php<br>/home/judge/src/web/template/sweet/nav.php</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /home/judge/src/web/template/bs3/nav.php</span><br></pre></td></tr></table></figure><a id="more"></a><p>将该片段代码注释即可，如图所示(以隐藏HustOJ的讨论版为例):<br><img src="/2019/08/08/HustOJ二次开发之隐藏菜单栏/01.png" alt="图一"></p><p>这回再看页面，就没有讨论版了，如图所示:<br><img src="/2019/08/08/HustOJ二次开发之隐藏菜单栏/02.png" alt="图二"></p><p>官方的HustOJ菜单栏:<br><img src="/2019/08/08/HustOJ二次开发之隐藏菜单栏/03.png" alt="图二"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> HustOJ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>HustOJ二次开发之修改相关Logo</title>
+      <link href="/2019/08/08/HustOJ%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%B9%8B%E4%BF%AE%E6%94%B9%E7%9B%B8%E5%85%B3Logo/"/>
+      <url>/2019/08/08/HustOJ%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%B9%8B%E4%BF%AE%E6%94%B9%E7%9B%B8%E5%85%B3Logo/</url>
+      
+        <content type="html"><![CDATA[<p>比如将如图中的HUSTOJ进行修改:<br><img src="/2019/08/08/HustOJ二次开发之修改相关Logo/01.png" alt=""></p><p>在Linux上修改，通过关键字搜索，会获取如下两个重要文件，找到都有的文字进行修改即可:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grep -rn &quot;HUSTOJ&quot; *</span><br><span class="line">cd /home/judge/src/web</span><br><span class="line">vim include/db_info.inc.php 修改标题</span><br><span class="line">vim template/bs3/js.php 修改底部</span><br></pre></td></tr></table></figure></p><a id="more"></a>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> HustOJ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>VsCode更新代码问题之解决方案</title>
       <link href="/2019/08/07/VsCode%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81%E9%97%AE%E9%A2%98%E4%B9%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
       <url>/2019/08/07/VsCode%E6%9B%B4%E6%96%B0%E4%BB%A3%E7%A0%81%E9%97%AE%E9%A2%98%E4%B9%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
