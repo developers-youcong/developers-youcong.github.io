@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>js之切换全屏和退出全屏实现</title>
+      <link href="/2019/08/26/js%E4%B9%8B%E5%88%87%E6%8D%A2%E5%85%A8%E5%B1%8F%E5%92%8C%E9%80%80%E5%87%BA%E5%85%A8%E5%B1%8F%E5%AE%9E%E7%8E%B0/"/>
+      <url>/2019/08/26/js%E4%B9%8B%E5%88%87%E6%8D%A2%E5%85%A8%E5%B1%8F%E5%92%8C%E9%80%80%E5%87%BA%E5%85%A8%E5%B1%8F%E5%AE%9E%E7%8E%B0/</url>
+      
+        <content type="html"><![CDATA[<p>应用场景:<br>比如很多网页游戏全屏之类的，或者是网上看小说等。<br><a id="more"></a></p><p>核心代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">//控制全屏</span><br><span class="line">function enterfullscreen() &#123; //进入全屏</span><br><span class="line">$(&quot;#fullscreen&quot;).html(&quot;退出全屏&quot;);</span><br><span class="line">var docElm = document.documentElement;</span><br><span class="line">//W3C</span><br><span class="line">if(docElm.requestFullscreen) &#123;</span><br><span class="line">docElm.requestFullscreen();</span><br><span class="line">&#125;</span><br><span class="line">//FireFox</span><br><span class="line">else if(docElm.mozRequestFullScreen) &#123;</span><br><span class="line">docElm.mozRequestFullScreen();</span><br><span class="line">&#125;</span><br><span class="line">//Chrome等</span><br><span class="line">else if(docElm.webkitRequestFullScreen) &#123;</span><br><span class="line">docElm.webkitRequestFullScreen();</span><br><span class="line">&#125;</span><br><span class="line">//IE11</span><br><span class="line">else if(elem.msRequestFullscreen) &#123;</span><br><span class="line">elem.msRequestFullscreen();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function exitfullscreen() &#123; //退出全屏</span><br><span class="line">$(&quot;#fullscreen&quot;).html(&quot;切换全屏&quot;);</span><br><span class="line">if(document.exitFullscreen) &#123;</span><br><span class="line">document.exitFullscreen();</span><br><span class="line">&#125; else if(document.mozCancelFullScreen) &#123;</span><br><span class="line">document.mozCancelFullScreen();</span><br><span class="line">&#125; else if(document.webkitCancelFullScreen) &#123;</span><br><span class="line">document.webkitCancelFullScreen();</span><br><span class="line">&#125; else if(document.msExitFullscreen) &#123;</span><br><span class="line">document.msExitFullscreen();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a = 0;</span><br><span class="line">$(&apos;#fullscreen&apos;).on(&apos;click&apos;, function() &#123;</span><br><span class="line">a++;</span><br><span class="line">a % 2 == 1 ? enterfullscreen() : exitfullscreen();</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p>前端代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a type=&quot;button&quot; id=&quot;fullscreen&quot; class=&quot;btn btn-default visible-lg visible-md&quot;&gt;&lt;i class=&quot;fa fa-refresh&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt; 切换全屏&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js正则表达式之解决html解析&lt;&gt;标签问题</title>
+      <link href="/2019/08/26/js%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B9%8B%E8%A7%A3%E5%86%B3html%E8%A7%A3%E6%9E%90-%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98/"/>
+      <url>/2019/08/26/js%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B9%8B%E8%A7%A3%E5%86%B3html%E8%A7%A3%E6%9E%90-%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p>应用场景:<br>以博客写文章为例，有的时候我们不经意间写的字符串带标签，然后浏览器将其解析了，实际上我们并不希望其被解析，于是可通过核心代码解决该问题。</p><p>核心代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.codeSource.replace(new RegExp(&quot;&lt;&quot;,&quot;g&quot;),&quot;&amp;lt;&quot;).replace(new RegExp(&quot;&gt;&quot;,&quot;g&quot;),&quot;&amp;gt;&quot;)</span><br></pre></td></tr></table></figure></p><p>data.codeSource在这里相当于与后台交互获取到的数据</p><p>new RegExp是js正则表达式对象</p><p>replace方法，一共有两个参数，一个是原来的字符串，另一个是新的字符串</p><p>replace(old_string,new_string)</p><a id="more"></a>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>HustOJ二次开发之修改数据库连接池</title>
       <link href="/2019/08/15/HustOJ%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%B9%8B%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/"/>
       <url>/2019/08/15/HustOJ%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E4%B9%8B%E4%BF%AE%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E6%B1%A0/</url>
