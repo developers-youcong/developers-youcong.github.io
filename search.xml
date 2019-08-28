@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>bootstrap弹框去除遮罩层效果</title>
+      <link href="/2019/08/28/bootstrap%E5%BC%B9%E6%A1%86%E5%8E%BB%E9%99%A4%E9%81%AE%E7%BD%A9%E5%B1%82%E6%95%88%E6%9E%9C/"/>
+      <url>/2019/08/28/bootstrap%E5%BC%B9%E6%A1%86%E5%8E%BB%E9%99%A4%E9%81%AE%E7%BD%A9%E5%B1%82%E6%95%88%E6%9E%9C/</url>
+      
+        <content type="html"><![CDATA[<p>是通过css解决这个问题,核心css代码如下:<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.modal-backdrop &#123;</span><br><span class="line">filter: alpha(opacity=0)!important;</span><br><span class="line">opacity: 0!important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>alpha和opacity通常是决定透明度。</p><p>alpha和opacity区别是什么?</p><p>相同点:<br>都是值为0表示完全透明，值为1表示完全不透明。</p><p>不同点:<br>alpha可以应用元素特定的属性，只能作用于当前元素，其子元素不能继承，而opacity不仅仅作用于当前元素，也会影响子元素及其子子元素，具有继承性。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>js之切换全屏和退出全屏实现</title>
       <link href="/2019/08/26/js%E4%B9%8B%E5%88%87%E6%8D%A2%E5%85%A8%E5%B1%8F%E5%92%8C%E9%80%80%E5%87%BA%E5%85%A8%E5%B1%8F%E5%AE%9E%E7%8E%B0/"/>
       <url>/2019/08/26/js%E4%B9%8B%E5%88%87%E6%8D%A2%E5%85%A8%E5%B1%8F%E5%92%8C%E9%80%80%E5%87%BA%E5%85%A8%E5%B1%8F%E5%AE%9E%E7%8E%B0/</url>
