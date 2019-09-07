@@ -288,6 +288,152 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Linux远程传输文件免密码" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/29/Linux远程传输文件免密码/" class="article-date">
+      <time datetime="2019-04-29T05:57:15.000Z" itemprop="datePublished">2019-04-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/29/Linux远程传输文件免密码/">Linux远程传输文件免密码</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>首先为什么Linux远程传输要免密码?<br>手动使用scp命令传输每次都要输密码太过麻烦了。</p>
+<p>开发中有一句话，能复制粘贴尽量不要手打。</p>
+<p>运维中有一句话，能脚本化实现尽量不要手动执行。</p>
+<p><strong>远程传输文件免密码的目的:</strong><br>在于为了保证公司数据安全，将相关的备份文件传输到一个或多个备份服务器上防止服务器上面的数据因运维人员失误或者相关运营商失误而导致的严重后果。</p>
+<p>A服务器地址：192.168.1.126，下面简称A<br>B服务器地址：192.168.1.128，下面简称B</p>
+<p>步骤如下:<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/29/Linux远程传输文件免密码/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-sudo-no-tty-present-and-no-askpass-program-specified" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/27/sudo-no-tty-present-and-no-askpass-program-specified/" class="article-date">
+      <time datetime="2019-04-27T14:52:15.000Z" itemprop="datePublished">2019-04-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/27/sudo-no-tty-present-and-no-askpass-program-specified/">sudo: no tty present and no askpass program specified</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo: no tty present and no askpass program specified</span><br></pre></td></tr></table></figure></p>
+<p>错误原因:<br>是由于帐号并没有开启免密码导致的 </p>
+<p>解决办法:</p>
+<p>编辑sudoers文件</p>
+<p>vim /etc/sudoers</p>
+<p>添加免密码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">用户名 ALL = NOPASSWD: ALL</span><br></pre></td></tr></table></figure></p>
+<p>如:jenkins ALL = NOPASSWD: ALL</p>
+<p>参考链接:<br><a href="https://blog.csdn.net/a_little_a_day/article/details/78282983" target="_blank" rel="noopener">sudo: no tty present and no askpass program specified 解决方法</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jenkins/">jenkins</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Node-js如何执行cmd" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -823,144 +969,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/04/17/this-web-application-instance-has-been-stopped-already/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-KindEditor富文本编辑器使用" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/16/KindEditor富文本编辑器使用/" class="article-date">
-      <time datetime="2019-04-16T13:39:31.000Z" itemprop="datePublished">2019-04-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/16/KindEditor富文本编辑器使用/">KindEditor富文本编辑器使用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>我的博客本来打算使用layui的富文本编辑器，但是出了一个问题，无法获取编辑器内容，我参考官方文档，获取内容也就那几个方法而已，但是引入进去后始终获取的值为空，百度和bing都试过了，但是始终还是获取不到值。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/16/KindEditor富文本编辑器使用/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Jenkins持续集成实践之java项目自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/16/Jenkins持续集成实践之java项目自动化部署/" class="article-date">
-      <time datetime="2019-04-16T08:22:01.000Z" itemprop="datePublished">2019-04-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/16/Jenkins持续集成实践之java项目自动化部署/">Jenkins持续集成实践之java项目自动化部署</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>关于Linux安装Jenkins可以参考我的这篇博文<a href="https://www.cnblogs.com/youcong/p/8710025.html" target="_blank" rel="noopener">Ubuntu16.04环境安装jenkins</a><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jenkins/">jenkins</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/16/Jenkins持续集成实践之java项目自动化部署/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
