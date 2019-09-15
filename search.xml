@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>SpringBoot之热部署</title>
+      <link href="/2019/09/15/SpringBoot%E4%B9%8B%E7%83%AD%E9%83%A8%E7%BD%B2/"/>
+      <url>/2019/09/15/SpringBoot%E4%B9%8B%E7%83%AD%E9%83%A8%E7%BD%B2/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="添加依赖">添加依赖</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--实现springboot的热加载--&gt;</span><br><span class="line">&lt;dependency&gt;  </span><br><span class="line">          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">          &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line">          &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">          &lt;scope&gt;true&lt;/scope&gt;</span><br><span class="line">      &lt;/dependency&gt;</span><br></pre></td></tr></table></figure><h2><span id="applicationyml添加对应的配置这里以yml文件为例">application.yml添加对应的配置(这里以yml文件为例)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">devtools:</span><br><span class="line">  restart:</span><br><span class="line">    enabled: true</span><br><span class="line">    additional-paths: src/main/java</span><br><span class="line">    execlude: test/**</span><br></pre></td></tr></table></figure><a id="more"></a><p>接下来修改任意的Java代码，你会发现控制台自己会重新刷新一遍(修改对应的代码保存一下，控制台自动更新)</p><p>热部署主要方便开发人员调试程序，省得每次都要关闭再启动项目，提高开发和调试效率。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MP实战系列(十九)之批量新增</title>
+      <link href="/2019/09/15/MP%E5%AE%9E%E6%88%98%E7%B3%BB%E5%88%97-%E5%8D%81%E4%B9%9D-%E4%B9%8B%E6%89%B9%E9%87%8F%E6%96%B0%E5%A2%9E/"/>
+      <url>/2019/09/15/MP%E5%AE%9E%E6%88%98%E7%B3%BB%E5%88%97-%E5%8D%81%E4%B9%9D-%E4%B9%8B%E6%89%B9%E9%87%8F%E6%96%B0%E5%A2%9E/</url>
+      
+        <content type="html"><![CDATA[<p>批量操作在实际开发中也应用非常多，例如批量下发优惠券、批量添加用户等。</p><p>以MyBatis为例，通常实现批量操作，有这么几种方式?</p><p>第一，单条插入sql语句，进行for循环遍历，基准条件是根据前端传过的数组长度而定，如果传了四个参数过来，也就是长度为4，代表遍历4次(也就是执行四次插入)，这种方式不太建议采用;</p><p>第二、编写相关mapper<br>关于这一点不再赘述，，也参考我的这篇文章<a href="https://www.cnblogs.com/youcong/p/9356776.html" target="_blank" rel="noopener">SSM框架之批量增加示例(同步请求jsp视图解析)</a><br>其主要使用的就是MyBatis的动态sql;</p><p>换做MyBatis-Plus，就不必要编写批量新增相关的sql以及mapper(可以理解为数据访问接口)，因为MyBatis-Plus已经封装好了，你只需按照对应的规则进行调用即可。</p><p>以下面这段路由层代码为例，示例如下:<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">   @PostMapping(&quot;/betchAddUserGroup&quot;)</span><br><span class="line">@ApiOperation(value = &quot;批量添加用户到对应的分组&quot;, notes = &quot;批量添加用户到对应的分组&quot;)</span><br><span class="line">public JSONObject betchAddUserGroup(@RequestParam String[] userIds, @RequestParam String groupId) &#123;</span><br><span class="line"></span><br><span class="line">JSONObject returnJson = new JSONObject();</span><br><span class="line"></span><br><span class="line">       ArrayList&lt;UserGroup&gt; list = new ArrayList&lt;UserGroup&gt;();</span><br><span class="line"></span><br><span class="line">       for (String userId : userIds) &#123;</span><br><span class="line">Console.log(&quot;userId:&quot; + userId);</span><br><span class="line"></span><br><span class="line">UserGroup userGroup = new UserGroup();</span><br><span class="line">userGroup.setGroupId(Integer.parseInt(groupId));</span><br><span class="line">userGroup.setUserId(Integer.parseInt(userId));</span><br><span class="line">list.add(userGroup);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">boolean isAddUserGroup = userGroupService.insertBatch(list);</span><br><span class="line"></span><br><span class="line">if (isAddUserGroup) &#123;</span><br><span class="line">returnJson.put(ResponseUtils.CODE, ResponseUtils.SUCCESS_CODE);</span><br><span class="line">returnJson.put(ResponseUtils.MSG, ResponseUtils.SUCCEESS_MSG);</span><br><span class="line">&#125; else &#123;</span><br><span class="line">returnJson.put(ResponseUtils.CODE, ResponseUtils.ERROR_CODE);</span><br><span class="line">returnJson.put(ResponseUtils.MSG, ResponseUtils.ERROR_MSG);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">return returnJson;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>这里我使用的是insertBetch，关于MyBatis-Plus批量添加或修改相关的API，如图:<br><img src="/2019/09/15/MP实战系列-十九-之批量新增/01.png" alt="图一"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MyBatis-Plus </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>微信小程序之上传图片(含前后端代码例子)</title>
       <link href="/2019/09/11/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87-%E5%90%AB%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E4%BE%8B%E5%AD%90/"/>
       <url>/2019/09/11/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F%E4%B9%8B%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87-%E5%90%AB%E5%89%8D%E5%90%8E%E7%AB%AF%E4%BB%A3%E7%A0%81%E4%BE%8B%E5%AD%90/</url>
