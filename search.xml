@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>SpringBoot之文件上传体积过大问题(解决方案)</title>
+      <link href="/2019/09/19/SpringBoot%E4%B9%8B%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%BD%93%E7%A7%AF%E8%BF%87%E5%A4%A7%E9%97%AE%E9%A2%98-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <url>/2019/09/19/SpringBoot%E4%B9%8B%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E4%BD%93%E7%A7%AF%E8%BF%87%E5%A4%A7%E9%97%AE%E9%A2%98-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息如下(关键):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.apache.tomcat.util.http.fileupload.FileUploadBase$SizeLimitExceededException: the request was rejected because its size (110862330) exceeds the configured maximum (31457280)</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>解决方案(主要是修改application.yml对应的配置):<br>如果觉得300MB不够的话，可以往上调。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  http:</span><br><span class="line">    multipart:</span><br><span class="line">      enabled: true</span><br><span class="line">      max-file-size: 300MB </span><br><span class="line">      max-request-size: 300MB</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringBoot之热部署</title>
       <link href="/2019/09/15/SpringBoot%E4%B9%8B%E7%83%AD%E9%83%A8%E7%BD%B2/"/>
       <url>/2019/09/15/SpringBoot%E4%B9%8B%E7%83%AD%E9%83%A8%E7%BD%B2/</url>
