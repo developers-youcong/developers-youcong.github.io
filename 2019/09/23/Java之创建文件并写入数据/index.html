@@ -15,21 +15,18 @@
 
 
 
-<meta name="description" content="假设你的计算机存储了很多乐趣。对于每个乐队，你都记录了其作品被播放的次数。">
-<meta name="keywords" content="读书笔记">
+<meta name="description" content="应用场景:以OJ项目为例，创建对应的.in或.out文件，并将相关的数据写入。">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法图解之选择排序">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/index.html">
+<meta property="og:title" content="Java之创建文件并写入数据">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/09/23/Java之创建文件并写入数据/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="假设你的计算机存储了很多乐趣。对于每个乐队，你都记录了其作品被播放的次数。">
+<meta property="og:description" content="应用场景:以OJ项目为例，创建对应的.in或.out文件，并将相关的数据写入。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/01.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/02.png">
-<meta property="og:updated_time" content="2019-05-29T14:52:23.129Z">
+<meta property="og:updated_time" content="2019-09-23T08:25:20.749Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法图解之选择排序">
-<meta name="twitter:description" content="假设你的计算机存储了很多乐趣。对于每个乐队，你都记录了其作品被播放的次数。">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/01.png">
+<meta name="twitter:title" content="Java之创建文件并写入数据">
+<meta name="twitter:description" content="应用场景:以OJ项目为例，创建对应的.in或.out文件，并将相关的数据写入。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -61,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>算法图解之选择排序 | Blog</title>
+<title>Java之创建文件并写入数据 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -289,11 +286,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-算法图解之选择排序" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Java之创建文件并写入数据" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/13/算法图解之选择排序/" class="article-date">
-      <time datetime="2019-05-13T12:04:42.000Z" itemprop="datePublished">2019-05-13</time>
+      <a href="/2019/09/23/Java之创建文件并写入数据/" class="article-date">
+      <time datetime="2019-09-23T08:18:00.000Z" itemprop="datePublished">2019-09-23</time>
 </a>
 
 
@@ -308,7 +305,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      算法图解之选择排序
+      Java之创建文件并写入数据
     </h1>
   
 
@@ -319,7 +316,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -329,16 +326,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>假设你的计算机存储了很多乐趣。对于每个乐队，你都记录了其作品被播放的次数。<br><img src="/2019/05/13/算法图解之选择排序/01.png" alt=""><br><a id="more"></a><br>如果你要将这个列表按播放次数从多到少的顺序排列，从而将你喜欢的乐队排序。该如何做呢?</p>
-<p>我第一眼看到这个问题时，想到的是通过sql解决这个问题<br>假设如果这是一个数据表的话，我很容易就可以通过order by 字段名 desc进行降序排序(也就是从大到小)</p>
-<p>不过我觉得sql反而麻烦，于是转用冒泡排序。代码示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package cn.pratice.simple;</span><br><span class="line"></span><br><span class="line">public class BubbleSort &#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">	</span><br><span class="line">		int [] arr = &#123;156,141,35,94,88,61,111&#125;;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;排序前数组为:&quot;);</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		for (int i = 0; i &lt; arr.length-1; i++) &#123; //外层循环控制排序趟数</span><br><span class="line">				for (int j = 0; j &lt; arr.length-1-i; j++) &#123;//内层循环控制每一趟排序多少次</span><br><span class="line">					if(arr[j]&gt;arr[j+1]) &#123;</span><br><span class="line">						int temp = arr[j];</span><br><span class="line">						arr[j] = arr[j+1];</span><br><span class="line">						arr[j+1]=temp;</span><br><span class="line">					&#125;</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br><span class="line">			</span><br><span class="line">		&#125;</span><br><span class="line">		System.out.println(&quot;排序后的数组为:&quot;);</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这段代码的输出结果是:<br><img src="/2019/05/13/算法图解之选择排序/02.png" alt=""><br>但是该结果输出的是从小到大，显然不符合我的期望。<br>顺便提一下冒泡排序的原理:<strong>比较两个相邻的元素，将值大的元素交换至右端</strong></p>
-<p>不过以Java开发为例，一般情况我们拿轮子里面的东西即可实现，如下面代码所示:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">package cn.pratice.simple;</span><br><span class="line"></span><br><span class="line">import java.util.Arrays;</span><br><span class="line"></span><br><span class="line">public class BubbleSort &#123;</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">	</span><br><span class="line">		int [] arr = &#123;156,141,35,94,88,61,111&#125;;</span><br><span class="line">		</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		Arrays.sort(arr);</span><br><span class="line">		</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>回到正题，那么我们如何将其变为降序?实现代码如下(还是复用现有的轮子)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">package cn.pratice.simple;</span><br><span class="line">import java.util.Comparator;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class BubbleSort &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line"></span><br><span class="line">		Integer[] array = new Integer[] &#123; 156, 141, 35, 94, 88, 61, 111 &#125;;</span><br><span class="line">		java.util.Arrays.sort(array, new Comparator&lt;Integer&gt;() &#123;</span><br><span class="line">			public int compare(Integer o1, Integer o2) &#123;</span><br><span class="line">				return o2 - o1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line"></span><br><span class="line">		for (int i = 0; i &lt; array.length; i++) &#123;</span><br><span class="line">			Integer integer = array[i];</span><br><span class="line">			System.out.println(&quot;integer:&quot; + integer);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>我们再来看看选择排序的例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">package cn.pratice.simple;</span><br><span class="line">import java.util.Comparator;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">public class BubbleSort &#123;</span><br><span class="line"></span><br><span class="line">	public static void main(String[] args) &#123;</span><br><span class="line">	</span><br><span class="line">		long startTime = System.currentTimeMillis();    //获取开始时间</span><br><span class="line"></span><br><span class="line">		int[] arr = new int[] &#123; 156, 141, 35, 94, 88, 61, 111&#125;;</span><br><span class="line">		System.out.println(&quot;交换前&quot;);</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		for (int i = 0; i &lt; arr.length - 1; i++) &#123;</span><br><span class="line">			int k = i;</span><br><span class="line">			for (int j = k + 1; j &lt; arr.length; j++) &#123;</span><br><span class="line">				if(arr[j] &lt; arr[k]) &#123;</span><br><span class="line">					k = j;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			if(i!=k) &#123;</span><br><span class="line">				int temp = arr[i];</span><br><span class="line">				arr[i] = arr[k];</span><br><span class="line">				arr[k] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		System.out.println(&quot;交换后:&quot;);</span><br><span class="line">		for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">			System.out.println(&quot;arr:&quot;+arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		long endTime = System.currentTimeMillis();    //获取结束时间</span><br><span class="line"></span><br><span class="line">		System.out.println(&quot;程序运行时间：&quot; + (endTime - startTime) + &quot;ms&quot;);    //输出程序运行时间</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>那么选择排序的原理又是什么呢?<br>每一趟从待排序的记录中选出最小的元素，顺序放在已排好序的序列最后，直到全部记录排序完毕。也就是:每一趟在n-i+1(i=1,2…n-1)个记录中选取关键字最小的记录作为有序序列中第i个记录。基于此思想的有简单选择排序、树形选择排序和堆排序。我们现在所说的就是简单排序。</p>
-<p>最后比较一下冒泡排序和简单排序的区别(从概念上分析):<br><strong>冒泡排序:</strong><br>依次比较相邻的两个数，将小数放在前面，大数放在后面。即第一趟比较第一个和第二个数，将小数放前，大数放后。然后比较第二个数和第三个数，嫁给你小数放前，大数放后，如此继续，直至比较最后两个数，嫁给你小数放前，大数放后。至此第一趟结束，将最大的数放在最后。如此下去，重复以上过程，直至最终完成。</p>
-<p><strong>选择排序</strong><br>第一次从下标为0的开始，下标为0的这个数与后面的n-1个进行比较，找出最小或者最大的放在下标为0的这个位置，第二次从下标为1的开始比较，查询剩下的最大或者最小值，放在下标为1的位置，以此类推，直至排序完成。</p>
+        <p>应用场景:<br>以OJ项目为例，创建对应的.in或.out文件，并将相关的数据写入。<br><a id="more"></a><br>核心代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 创建文件</span><br><span class="line"> * @param data</span><br><span class="line"> * @param basedir</span><br><span class="line"> * @param name</span><br><span class="line"> */</span><br><span class="line">public void createFile(String data, String basedir, String name) &#123;</span><br><span class="line">	try &#123;</span><br><span class="line">			File file = new File(basedir + &quot;/&quot; + name);</span><br><span class="line">	        boolean b = file.createNewFile();</span><br><span class="line">	        if(b) &#123;</span><br><span class="line">	        	Writer out = new FileWriter(file);</span><br><span class="line">				out.write(data);</span><br><span class="line">				out.close();</span><br><span class="line">	        &#125;</span><br><span class="line">	        </span><br><span class="line">	&#125;catch (Exception e) &#123;</span><br><span class="line">		e.printStackTrace();</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -347,13 +335,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/13/算法图解之选择排序/">算法图解之选择排序</a></p>
+        <p><span>本文标题:</span><a href="/2019/09/23/Java之创建文件并写入数据/">Java之创建文件并写入数据</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-05-13, 20:04:42</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:23</p>
+        <p><span>发布时间:</span>2019-09-23, 16:18:00</p>
+        <p><span>最后更新:</span>2019-09-23, 16:25:20</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/13/算法图解之选择排序/" title="算法图解之选择排序">http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/13/算法图解之选择排序/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/09/23/Java之创建文件并写入数据/" title="Java之创建文件并写入数据">http://developers-youcong.github.io/2019/09/23/Java之创建文件并写入数据/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/09/23/Java之创建文件并写入数据/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -365,16 +353,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/14/使用Ajax异步上传文件/">
-                    使用Ajax异步上传文件
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/12/算法图解之数组和链表/">
-                    算法图解之数组和链表
+                <a href="/2019/09/19/SpringBoot之文件上传体积过大问题-解决方案/">
+                    SpringBoot之文件上传体积过大问题(解决方案)
                 </a>
             </div>
         
@@ -422,7 +404,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"算法图解之选择排序　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Java之创建文件并写入数据　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -444,15 +426,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/14/使用Ajax异步上传文件/" title="上一篇: 使用Ajax异步上传文件">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/12/算法图解之数组和链表/" title="下一篇: 算法图解之数组和链表">
+            <a href="/2019/09/19/SpringBoot之文件上传体积过大问题-解决方案/" title="下一篇: SpringBoot之文件上传体积过大问题(解决方案)">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -488,8 +468,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Mon May 13 2019 20:04:42 GMT+0800',
-			  title: '算法图解之选择排序',
+			  id: 'Mon Sep 23 2019 16:18:00 GMT+0800',
+			  title: 'Java之创建文件并写入数据',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
