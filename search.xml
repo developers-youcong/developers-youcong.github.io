@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Incorrect string value: &#39;è·å...&#39; for column &#39;result&#39; at row 1</title>
+      <link href="/2019/10/16/Incorrect-string-value-xE8-x8E-xB7-xE5-x8F-x96-for-column-result-at-row-1/"/>
+      <url>/2019/10/16/Incorrect-string-value-xE8-x8E-xB7-xE5-x8F-x96-for-column-result-at-row-1/</url>
+      
+        <content type="html"><![CDATA[<p>错误详情信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">### Error updating database.  Cause: java.sql.SQLException: Incorrect string value: &apos;\xE8\x8E\xB7\xE5\x8F\x96...&apos; for column &apos;result&apos; at row 1</span><br><span class="line">### The error may involve com.blog.springboot.dao.ApiLogDao.insert-Inline</span><br><span class="line">### The error occurred while setting parameters</span><br><span class="line">### SQL: INSERT INTO wp_api_log   ( class_name,  method_name,  params,  `result`,  consume_time,  update_date )  VALUES   ( ?,  ?,  ?,  ?,  ?,  ? )</span><br><span class="line">### Cause: java.sql.SQLException: Incorrect string value: &apos;\xE8\x8E\xB7\xE5\x8F\x96...&apos; for column &apos;result&apos; at row 1</span><br><span class="line">; uncategorized SQLException for SQL []; SQL state [HY000]; error code [1366]; Incorrect string value: &apos;\xE8\x8E\xB7\xE5\x8F\x96...&apos; for column &apos;result&apos; at row 1; nested exception is java.sql.SQLException: Incorrect string value: &apos;\xE8\x8E\xB7\xE5\x8F\x96...&apos; for column &apos;result&apos; at row 1] with root cause</span><br><span class="line"></span><br><span class="line">java.sql.SQLException: Incorrect string value: &apos;\xE8\x8E\xB7\xE5\x8F\x96...&apos; for column &apos;result&apos; at row 1</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>错误原因分析:<br>插入的数据列中，如果是中文的话，则会出现上面的错误，如果是英文的话，就不会出现错误。<br>故推测与字段列编码有关系，果然查看表对应的字符编码发现都是latin，最后将其改为utf8即可解决。</p><p>如果想永久解决这样的问题，可参考该链接:<a href="https://www.cnblogs.com/youcong/p/9374498.html" target="_blank" rel="noopener">https://www.cnblogs.com/youcong/p/9374498.html</a><br>上面的问题我很久之前就遇到过，所以那个时候就已经记录了解决的办法。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java之创建文件并写入数据</title>
       <link href="/2019/09/23/Java%E4%B9%8B%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%B9%B6%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE/"/>
       <url>/2019/09/23/Java%E4%B9%8B%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E5%B9%B6%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE/</url>
