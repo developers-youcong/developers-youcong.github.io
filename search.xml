@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>git bash 乱码问题之解决方案</title>
+      <link href="/2019/11/03/git-bash-%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E4%B9%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <url>/2019/11/03/git-bash-%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98%E4%B9%8B%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      
+        <content type="html"><![CDATA[<p>解决办法:<br>右击左上方git标识，然后进入到如图中，点击Text，进行操作。<br><img src="/2019/11/03/git-bash-乱码问题之解决方案/01.png" alt=""><br><a id="more"></a></p><p>操作完毕后，关闭git bash，然后再重新打开，执行ls或ll命令，查看对应的以中文作为目录或文件名是否显示乱码，如果之前是乱码，现在打开查看显示正常，那么就表示该问题已解决。</p><p>本文主要参考链接:<a href="https://jingyan.baidu.com/article/c35dbcb0b12d848917fcbc5b.html" target="_blank" rel="noopener">Git Bash终端中文输出显示乱码解决方案</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>nexus没有授权导致的错误</title>
       <link href="/2019/10/26/nexus%E6%B2%A1%E6%9C%89%E6%8E%88%E6%9D%83%E5%AF%BC%E8%87%B4%E7%9A%84%E9%94%99%E8%AF%AF/"/>
       <url>/2019/10/26/nexus%E6%B2%A1%E6%9C%89%E6%8E%88%E6%9D%83%E5%AF%BC%E8%87%B4%E7%9A%84%E9%94%99%E8%AF%AF/</url>
