@@ -288,76 +288,6 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
-    <article id="post-如何快速关联-修改Git远程仓库地址" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/30/如何快速关联-修改Git远程仓库地址/" class="article-date">
-      <time datetime="2019-04-30T03:27:54.000Z" itemprop="datePublished">2019-04-30</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/30/如何快速关联-修改Git远程仓库地址/">如何快速关联/修改Git远程仓库地址</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="如何快速关联-修改Git远程仓库地址-按照如下步骤即可快速实现关联-修改Git远程仓库地址"><a href="#如何快速关联-修改Git远程仓库地址-按照如下步骤即可快速实现关联-修改Git远程仓库地址" class="headerlink" title="如何快速关联/修改Git远程仓库地址?按照如下步骤即可快速实现关联/修改Git远程仓库地址:"></a>如何快速关联/修改Git远程仓库地址?按照如下步骤即可快速实现关联/修改Git远程仓库地址:</h2><h4 id="删除本地仓库当前关联的无效远程地址，再为本地仓库添加新的远程仓库地址"><a href="#删除本地仓库当前关联的无效远程地址，再为本地仓库添加新的远程仓库地址" class="headerlink" title="删除本地仓库当前关联的无效远程地址，再为本地仓库添加新的远程仓库地址"></a>删除本地仓库当前关联的无效远程地址，再为本地仓库添加新的远程仓库地址</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git remote -v //查看git对应的远程仓库地址</span><br><span class="line">git remote rm origin //删除关联对应的远程仓库地址</span><br><span class="line">git remote -v //查看是否删除成功，如果没有任何返回结果，表示OK</span><br><span class="line">git remote add origin https://github.com/developers-youcong/Metronic_Template.git //重新关联git远程仓库地址</span><br></pre></td></tr></table></figure>
-<p>其实不仅仅上述这一种方式，还有如下几种方式:<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/30/如何快速关联-修改Git远程仓库地址/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
     <article id="post-Hutool工具类之HttpUtil使用Https" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -974,6 +904,75 @@ var _hmt = _hmt || [];
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
     </div>
 
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-ftp配置详解" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/20/ftp配置详解/" class="article-date">
+      <time datetime="2019-04-20T13:21:57.000Z" itemprop="datePublished">2019-04-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/20/ftp配置详解/">ftp配置详解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="FTP配置详解"><a href="#FTP配置详解" class="headerlink" title="FTP配置详解"></a>FTP配置详解</h2><p>FTP配置文件位置/etc/vsftpd.conf<br>listen=NO<br>设置为YES时vsftpd以独立运行方式启动，设置为NO时以xinetd方式启动（xinetd是管理守护进程的，将服务集中管理，可以减少大量服务的资源消耗）<br>listen_ipv6=YES<br>以上两个只能一个YES一个NO否则会出错<br>listen_port=port<br>设置控制连接的监听端口号，默认为21<br>listen_address=ip_address<br>将在绑定到指定IP地址运行，适合多网卡<br>connect_from_port_20=YES/NO<br>若为YES，则强迫FTP－DATA的数据传送使用port 20，默认YES<br>anonymous_enable=YES<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/20/ftp配置详解/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
