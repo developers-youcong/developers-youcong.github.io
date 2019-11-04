@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="为什么需要动态修改iframe的src?一般情况我们使用iframe,其中的src通常是写死的，但是有些时候我们不希望它是死的src，而是一个活的src。">
-<meta name="keywords" content="javascript">
+<meta name="description" content="本文主要讲单一职责原则和里氏替换原则。">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="javascript如何动态修改iframe的src">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/06/22/javascript如何动态修改iframe的src/index.html">
+<meta property="og:title" content="《设计模式之禅》之六大设计原则上篇">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/11/04/《设计模式之禅》之六大设计原则上篇/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="为什么需要动态修改iframe的src?一般情况我们使用iframe,其中的src通常是写死的，但是有些时候我们不希望它是死的src，而是一个活的src。">
+<meta property="og:description" content="本文主要讲单一职责原则和里氏替换原则。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-30T13:21:22.855Z">
+<meta property="og:updated_time" content="2019-11-04T07:48:00.172Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript如何动态修改iframe的src">
-<meta name="twitter:description" content="为什么需要动态修改iframe的src?一般情况我们使用iframe,其中的src通常是写死的，但是有些时候我们不希望它是死的src，而是一个活的src。">
+<meta name="twitter:title" content="《设计模式之禅》之六大设计原则上篇">
+<meta name="twitter:description" content="本文主要讲单一职责原则和里氏替换原则。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>javascript如何动态修改iframe的src | Blog</title>
+<title>《设计模式之禅》之六大设计原则上篇 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -286,11 +286,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-javascript如何动态修改iframe的src" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-《设计模式之禅》之六大设计原则上篇" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/06/22/javascript如何动态修改iframe的src/" class="article-date">
-      <time datetime="2019-06-22T03:40:01.000Z" itemprop="datePublished">2019-06-22</time>
+      <a href="/2019/11/04/《设计模式之禅》之六大设计原则上篇/" class="article-date">
+      <time datetime="2019-11-04T05:49:30.000Z" itemprop="datePublished">2019-11-04</time>
 </a>
 
 
@@ -305,7 +305,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      javascript如何动态修改iframe的src
+      《设计模式之禅》之六大设计原则上篇
     </h1>
   
 
@@ -316,7 +316,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -326,8 +326,44 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>为什么需要动态修改iframe的src?<br>一般情况我们使用iframe,其中的src通常是写死的，但是有些时候我们不希望它是死的src，而是一个活的src。<br><a id="more"></a></p>
-<p>示例代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">&lt;title&gt;测试&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;iframe</span><br><span class="line">width = &quot;100%&quot;</span><br><span class="line">height = &quot;800&quot; id=&quot;iframe&quot;&gt;</span><br><span class="line">&lt;/iframe&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">iframe.src = &quot;https://www.baidu.com&quot;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+        <p>本文主要讲单一职责原则和里氏替换原则。<br><a id="more"></a></p>
+<h2><span id="一-单一职责原则">一、单一职责原则</span></h2><h3><span id="1定义">1.定义</span></h3><p>应该有且有一个原因引起类的变更。</p>
+<h3><span id="2单一职责原则的好处">2.单一职责原则的好处</span></h3><h4><span id="好处如下">好处如下:</span></h4><ul>
+<li>类的复杂性降低，实现什么职责都有明确清晰的定义;</li>
+<li>可读性提高，复杂性降低,那当然可读性提高;</li>
+<li>可维护性提高，可读性提高，那当然更容易维护了;</li>
+<li>变更引起的风险降低，变更是不必可少的，如果接口的单一职责做得好，一个接口修改只对相应的实现类有影响，对其他的接口无影响，这对系统的扩展性、维护性都有非常大的帮助;</li>
+</ul>
+<p>注意:<br>单一职责原则提出了一个编写程序的标准，用”职责”或”变化原因”来衡量接口或类设计得是否优良，但是”职责”和”变化原因”都是不可度量得，因项目而异，因黄金而异。</p>
+<h3><span id="3小结">3.小结</span></h3><p>对于单一职责原则，以我实际开发为例，在公司开发项目，基本上沿用得开发模式就是MVC,模型-视图-控制器，每个职责不一样。然后再往大的范围来说，分层，比如数据访问层、业务逻辑层、视图表现层(其中该层就是MVC的应用)。<br>数据访问层，通常编写的就是一些基础的CRUD，而业务逻辑层就是数据访问层里的CRUD一同用于处理某项业务。</p>
+<p>还有就是单一职责的一个体现就是一个函数办一件事情，比方说业务逻辑层中修改密码(设计db操作修改用户信息)，最好是修改密码是一个方法，修改用户基本信息(例如昵称、性别、职位、籍贯等)是另外一个方法。不同的方法(不同的函数)办的事情不一样，我觉得这样也是单一职责的一个最好实践。记得刚工作第一年的时候，写代码基本上数据访问层就和业务逻辑层是一样的，这样的写法导致的后果是，如果是少量的五到六个类还好，但如果数十个的话或成百上千个这样写的话，后果将会非常严重，直接会导致维护成本的上升，可扩展性差、可维护性差等。</p>
+<p>最后归纳一点，单一职责如果是以自己平时写写Demo玩玩而言实现起来并不困难。但是对于公司而言就不一样了，拿我曾经接手的一个项目来说，该项目采用jfinal框架，然后前任架构师对其又再度修改封装了很多东西，可以称之为扩展。当我接手这个项目的时候，初看项目结构，捋了下，大致能根据包名看出功能分层，但当我深入阅读的时候，发现太多的拼接sql，而且业务逻辑层和数据访问层并未分层明确，就像我们一般开发喜欢分为视图、业务、数据这样的分层，而这个项目基本上就是视图(一种是返回jsp，另外一种作为路由返回JSON数据)，业务实现(基本上就是写业务逻辑的)，还有较多的dto、request、response等包名下的众多类。</p>
+<p>通常我所认为的最佳实践就是:<br><strong>1.分层</strong>(表现层-业务逻辑层-数据访问层，每层做的事情不一样);<br><strong>2.一个函数只办一件事情</strong>(也许你会发现你可能会编写比较多的函数，例如用户修改密码，一般可以修改用户信息就能实现，但是一般建议分为两个，因为这样一来当数据表结构发生变化，例如新增或修改字段，会降低很多影响，所以不要为了偷懒就用一个函数办两件或多件事情);</p>
+<p>对于单一职责原则，接口一定要做到单一职责，类的设计尽量做到只有一个原因引起变化。</p>
+<h2><span id="二-里氏替换原则">二、里氏替换原则</span></h2><p>继承的优点:</p>
+<ul>
+<li>代码共享，减少创建类的工作量,每个子类都拥有父类的方法和属性;</li>
+<li>提高代码的重用性;</li>
+<li>子类可以形似父类，但又异于父类，例如”龙生龙，风生风，老鼠生来会打洞”，说的就是子拥有父的”种”;</li>
+<li>“子”是指明子与父的不同;</li>
+<li>提高代码的可扩展性，实现父类的方法就可以”为所欲为”了，君不见很多开源框架的扩张接口都是通过继承父类来完成的;</li>
+<li>提高产品或项目的开放性;</li>
+</ul>
+<p>继承的缺点:</p>
+<ul>
+<li>继承是侵入性的。只要继承，就必须拥有父类的所有属性和方法;</li>
+<li>降低代码的灵活性。子类必须要拥有父类的属性和方法，让子类自由的世界中多了些约束;</li>
+<li>增强耦合性。当父类的常量、变量和方法被修改时，需要考虑子类的修改，而且在缺乏规范的环境下，这种修改可能带来非常糟糕结果-一大段的代码需要重构;</li>
+</ul>
+<h3><span id="1里氏替换原则定义">1.里氏替换原则定义</span></h3><p>那么什么是里氏替换原则呢？<br>所有引用基类的地方必须能透明地使用其子类的对象。</p>
+<p>通俗的来说:只要父类能出现的地方子类就可以出现，而且替换为子类也不会产生任何错误或异常，使用者可能根本就不需要知道是父类还是子类。但是，反过来就不行了，有子类出现的地方，父类未必适应。</p>
+<h3><span id="2规范">2.规范</span></h3><p>里氏替换原则为良好的继承定义了一个规范，一句简单的定义包含4层含义。</p>
+<h4><span id="1子类必须完全实现父类的方法">(1)子类必须完全实现父类的方法</span></h4><p>注意:<br>a.在类中调用其他类时务必要使用父类或接口，如果不能使用父类或接口，则说明类的设计已经违背了LSP原则;<br>b.如果子类不能完整地实现父类的方法，或者父类的某些方法在子类中已经发生”畸变”，则建议断开父子继承关系，采用依赖、聚集、组合等关系代替继承。</p>
+<h4><span id="2子类可以有自己的个性">(2)子类可以有自己的个性</span></h4><p>子类可以有自己的行为和外观，也就是方法与属性，那这里为什么要再提呢?<br>是因为里氏替换原则可以正着用，但是不能反着用。在子类出现的地方，父类未必能胜任。</p>
+<h4><span id="3覆盖或实现父类的方法时输入参数可以被放大">(3)覆盖或实现父类的方法时输入参数可以被放大</span></h4><p>方法中的输入参数称为前置条件，这是什么意思?<br>WebService有一个”契约优先”原则，也就是先定义出WSDL接口，制定好双方的开发协议，然后再各自实现。里氏替换原则也要求制定一个契约，就是父类或接口，这种设计方法也叫做契约设计，与里氏替换原则有着异曲同工之妙。契约制定了，也就同时制定了前置条件和后置条件，前置条件就是你要让我执行，就必须满足我的条件;后置条件就是我执行完了需要反馈，标准是什么。</p>
+<h4><span id="4覆写或实现父类的方法时输出结果可以被缩小">(4)覆写或实现父类的方法时输出结果可以被缩小</span></h4><p>这是什么意思呢?<br>父类的一个方法的返回值是一个类型T，子类的相同方法(重载或覆写)的返回值为S，那么里氏替换原则就要求S必须小于等于T，也就是说，要么S和T是同一个类型，要么S是T的子类，为什么呢?<br>分两种情况:<br>如果是覆写，父类和子类的同名方法的输入参数是相同的，两个方法的范围值小于等于T，这是覆写的要求，这才是重中之重，子类覆写父类的方法，天经地义。<br>如果是重载，则要求方法的输入参数类型或数量不相同，在里氏替换原则要求下，就是子类的输入参数宽于或等于父类的输入参数，也就是说你写的这个方法是不会被调用的，参考上面讲的前置条件。</p>
+<p>采用里氏替换原则的目的就是增强程序的健壮性，版本升级时也可以保持非常好的兼容性。即使增加子类，原有的子类还可以继续运行。在实际项目中，每个子类对应不同的业务含义，使用父类作为参数，传递不同的业务含义，使用父类作为参数，传递不同的子类完成不同的业务逻辑。</p>
+<h3><span id="3小结">3.小结</span></h3><p>在项目中，采用里氏替换原则时，尽量避免子类的”个性”，一旦子类有”个性”，这个子类和父类之间的关系就很难调和了，把子类当做父类使用，子类的”个性”被抹杀；把子类单独作为一个业务来使用，则会让代码间的耦合关系变得扑朔迷离，缺乏类替换的标准。</p>
 
       
     </div>
@@ -336,13 +372,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/06/22/javascript如何动态修改iframe的src/">javascript如何动态修改iframe的src</a></p>
+        <p><span>本文标题:</span><a href="/2019/11/04/《设计模式之禅》之六大设计原则上篇/">《设计模式之禅》之六大设计原则上篇</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-06-22, 11:40:01</p>
-        <p><span>最后更新:</span>2019-06-30, 21:21:22</p>
+        <p><span>发布时间:</span>2019-11-04, 13:49:30</p>
+        <p><span>最后更新:</span>2019-11-04, 15:48:00</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/06/22/javascript如何动态修改iframe的src/" title="javascript如何动态修改iframe的src">http://developers-youcong.github.io/2019/06/22/javascript如何动态修改iframe的src/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/06/22/javascript如何动态修改iframe的src/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/04/《设计模式之禅》之六大设计原则上篇/" title="《设计模式之禅》之六大设计原则上篇">http://developers-youcong.github.io/2019/11/04/《设计模式之禅》之六大设计原则上篇/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/11/04/《设计模式之禅》之六大设计原则上篇/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -355,15 +391,15 @@ var _hmt = _hmt || [];
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/">
-                    Java使用Jsoup之爬取博客数据应用实例
+                <a href="/2019/11/04/《设计模式之禅》之六大设计原则/">
+                    《设计模式之禅》之六大设计原则上篇
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/06/21/记一次edusoho问题/">
-                    记一次edusoho问题
+                <a href="/2019/11/03/git-bash-乱码问题之解决方案/">
+                    git bash 乱码问题之解决方案
                 </a>
             </div>
         
@@ -375,7 +411,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、单一职责原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">2.单一职责原则的好处</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.1.</span> <span class="toc-text">好处如下:</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">3.小结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、里氏替换原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">1.里氏替换原则定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">2.规范</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.1.</span> <span class="toc-text">(1)子类必须完全实现父类的方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.2.</span> <span class="toc-text">(2)子类可以有自己的个性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.3.</span> <span class="toc-text">(3)覆盖或实现父类的方法时输入参数可以被放大</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.4.</span> <span class="toc-text">(4)覆写或实现父类的方法时输出结果可以被缩小</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">3.小结</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -411,7 +447,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"javascript如何动态修改iframe的src　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"《设计模式之禅》之六大设计原则上篇　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -433,7 +469,7 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/06/29/Java使用Jsoup之爬取博客数据应用实例/" title="上一篇: Java使用Jsoup之爬取博客数据应用实例">
+            <a href="/2019/11/04/《设计模式之禅》之六大设计原则/" title="上一篇: 《设计模式之禅》之六大设计原则上篇">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -441,7 +477,7 @@ var _hmt = _hmt || [];
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/06/21/记一次edusoho问题/" title="下一篇: 记一次edusoho问题">
+            <a href="/2019/11/03/git-bash-乱码问题之解决方案/" title="下一篇: git bash 乱码问题之解决方案">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -477,8 +513,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Sat Jun 22 2019 11:40:01 GMT+0800',
-			  title: 'javascript如何动态修改iframe的src',
+			  id: 'Mon Nov 04 2019 13:49:30 GMT+0800',
+			  title: '《设计模式之禅》之六大设计原则上篇',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
