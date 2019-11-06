@@ -288,6 +288,77 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-普通用户使用Docker" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/27/普通用户使用Docker/" class="article-date">
+      <time datetime="2019-03-27T08:54:05.000Z" itemprop="datePublished">2019-03-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/27/普通用户使用Docker/">普通用户使用Docker</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2><span id="1查询是否有docker组">1.查询是否有docker组：</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/group</span><br></pre></td></tr></table></figure>
+<p>如果没有可以通过该命令添加(一般默认是有的)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br><span class="line">&lt;!--more--&gt;</span><br></pre></td></tr></table></figure>
+<h2><span id="2将当前用户添加到docker组">2.将当前用户添加到docker组</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -G docker $(USER)</span><br></pre></td></tr></table></figure>
+<p>例如:sudo usermod -G docker test</p>
+<h2><span id="3重启docker服务">3.重启docker服务</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart docker.service</span><br></pre></td></tr></table></figure>
+<p>参考资料如下:<br>普通用户使用Docker:<a href="https://blog.csdn.net/qq_36713450/article/details/83109477" target="_blank" rel="noopener">https://blog.csdn.net/qq_36713450/article/details/83109477</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Docker安装MySQL并配置远程访问" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -898,75 +969,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/03/19/Error-listen-EADDRINUSE-3000/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-python3-6在linux持久运行django" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/03/19/python3-6在linux持久运行django/" class="article-date">
-      <time datetime="2019-03-19T06:17:45.000Z" itemprop="datePublished">2019-03-19</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/19/python3-6在linux持久运行django/">python3.6在linux持久运行django</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>最近线上运行一个OnlineJudgeServer的项目，通过python manage.py runserver 0.0.0.0:8090运行，如果关闭当前窗口，实际就相当于关闭了这个进程。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/03/19/python3-6在linux持久运行django/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

@@ -15,21 +15,18 @@
 
 
 
-<meta name="description" content="问题背景:在git bash中使用hexo g -d命令进行文章发布 详细错误信息:1234567891011121314151617181920fatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.FATAL">
-<meta name="keywords" content="Git">
+<meta name="description" content="本文主要讲迪米特法则和开闭原则。">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git之fatal: Could not read from remote repository">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/06/30/git之fatal-Could-not-read-from-remote-repository/index.html">
+<meta property="og:title" content="《设计模式之禅》之六大设计原则下篇">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/11/06/《设计模式之禅》之六大设计原则下篇/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="问题背景:在git bash中使用hexo g -d命令进行文章发布 详细错误信息:1234567891011121314151617181920fatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.FATAL">
+<meta property="og:description" content="本文主要讲迪米特法则和开闭原则。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/06/30/git之fatal-Could-not-read-from-remote-repository/01.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/06/30/git之fatal-Could-not-read-from-remote-repository/02.png">
-<meta property="og:updated_time" content="2019-07-18T13:26:11.874Z">
+<meta property="og:updated_time" content="2019-11-06T13:14:03.081Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git之fatal: Could not read from remote repository">
-<meta name="twitter:description" content="问题背景:在git bash中使用hexo g -d命令进行文章发布 详细错误信息:1234567891011121314151617181920fatal: Could not read from remote repository.Please make sure you have the correct access rightsand the repository exists.FATAL">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/06/30/git之fatal-Could-not-read-from-remote-repository/01.png">
+<meta name="twitter:title" content="《设计模式之禅》之六大设计原则下篇">
+<meta name="twitter:description" content="本文主要讲迪米特法则和开闭原则。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -61,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>git之fatal: Could not read from remote repository | Blog</title>
+<title>《设计模式之禅》之六大设计原则下篇 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -289,11 +286,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-git之fatal-Could-not-read-from-remote-repository" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-《设计模式之禅》之六大设计原则下篇" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/06/30/git之fatal-Could-not-read-from-remote-repository/" class="article-date">
-      <time datetime="2019-06-30T13:32:22.000Z" itemprop="datePublished">2019-06-30</time>
+      <a href="/2019/11/06/《设计模式之禅》之六大设计原则下篇/" class="article-date">
+      <time datetime="2019-11-06T11:49:45.000Z" itemprop="datePublished">2019-11-06</time>
 </a>
 
 
@@ -308,7 +305,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      git之fatal: Could not read from remote repository
+      《设计模式之禅》之六大设计原则下篇
     </h1>
   
 
@@ -319,7 +316,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -329,22 +326,35 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>问题背景:<br>在git bash中使用hexo g -d命令进行文章发布</p>
-<p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line">FATAL Something&apos;s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span><br><span class="line">Error: Connection reset by 13.250.177.223 port 22</span><br><span class="line">fatal: Could not read from remote repository.</span><br><span class="line"></span><br><span class="line">Please make sure you have the correct access rights</span><br><span class="line">and the repository exists.</span><br><span class="line"></span><br><span class="line">    at ChildProcess.&lt;anonymous&gt; (E:\Hexo\node_modules\hexo-util\lib\spawn.js:37:17)</span><br><span class="line">    at emitTwo (events.js:126:13)</span><br><span class="line">    at ChildProcess.emit (events.js:214:7)</span><br><span class="line">    at ChildProcess.cp.emit (E:\Hexo\node_modules\cross-spawn\lib\enoent.js:40:29)</span><br><span class="line">    at maybeClose (internal/child_process.js:915:16)</span><br><span class="line">    at Socket.stream.socket.on (internal/child_process.js:336:11)</span><br><span class="line">    at emitOne (events.js:116:13)</span><br><span class="line">    at Socket.emit (events.js:211:7)</span><br><span class="line">    at Pipe._handle.close [as _onclose] (net.js:561:12)</span><br></pre></td></tr></table></figure></p>
-<p>错误原因是因为ssh key有问题，连接不上服务器。</p>
-<a id="more"></a>
-<p>于是我参考如下链接，一步一步操作，最终解决了这个问题:<br><a href="https://blog.csdn.net/jingtingfengguo/article/details/51892864" target="_blank" rel="noopener">git遇到的问题之“Please make sure you have the correct access rights and the repository exists.”</a></p>
-<p>虽然已经有了问题的解决答案，但是我觉得还是需要列举一下相关步骤，梳理一下:</p>
-<p>1.重新在git设置一下身份的名字和邮箱<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;</span><br><span class="line"></span><br><span class="line">git config --global user.email &quot;your@email.com&quot;</span><br></pre></td></tr></table></figure></p>
-<p>这里的yourname必须与github的用户名一致</p>
-<p>这里<a href="mailto:your@email.com" target="_blank" rel="noopener">your@email.com</a>必须与github登录邮箱一致</p>
-<p>2.删除.ssh文件夹下的known_hosts文件(该文件主要作用是域名解析)</p>
-<p>3.ssh-keygen -t rsa -C “<a href="mailto:your@email.com" target="_blank" rel="noopener">your@email.com</a>(填写github对应的邮箱)”</p>
-<p>一路回车即可，无需输入</p>
-<p>4.进入github设置界面</p>
-<p><img src="/2019/06/30/git之fatal-Could-not-read-from-remote-repository/01.png" alt=""></p>
-<p>新增SSH key将id_rsa.pub内容添加到如图中的Key上(title可任意命名):<br><img src="/2019/06/30/git之fatal-Could-not-read-from-remote-repository/02.png" alt=""></p>
-<p>5.最后完美解决这个问题</p>
+        <p>本文主要讲迪米特法则和开闭原则。<br><a id="more"></a></p>
+<h2><span id="一-迪米特法则">一、迪米特法则</span></h2><h3><span id="1定义">1.定义</span></h3><p>迪米特法则也称最少知道原则，虽然名字不同，但描述的是同一个规则:一个对象应该对其他对象有最少的了解。通俗地讲，一个类应该对自己需要耦合或调用的类知道得最少，你(被耦合或调用的类)的内部是如何复杂都和我没关系，那是你的事情，我就知道你提供的这么多public方法，我就调用这么多，其他的我一概不关心。</p>
+<h3><span id="2迪米特法则对类的低耦合提出明确的要求">2.迪米特法则对类的低耦合提出明确的要求</span></h3><p>4层含义如下:</p>
+<h4><span id="1只和朋友交流">(1)只和朋友交流</span></h4><p>迪米特法则还有一个解释是:只与直接的朋友通信。</p>
+<p>什么叫直接的朋友?<br>每个对象都必然会与其他对象有耦合关系，两个对象之间的耦合就成为朋友关系，这种关系的类型有很多，例如组合、聚合、依赖等。</p>
+<p>注意:<br>一个类只和朋友交流，不与陌生类交流，不要出现getA().getB().getC().getD()这种情况(在一种极端的情况下允许出现这种访问，即每个点号后面的返回类型都相同)，类与类之间的关系是建立在类间的，而不是方法间，因此一个方法尽量不引入一个类中不存在的对象，当然，JDK API提供的类例外。</p>
+<h4><span id="2朋友间也是有距离的">(2)朋友间也是有距离的</span></h4><p>人和人之间是有距离的，太远关系逐渐疏离，最终形同陌路；太近就相互刺伤。对朋友关系描述最贴切的故事就是:两只刺猬取暖，太远取不到温暖，太近刺伤对方，必须保持一个既能取暖又不刺伤对方的距离。迪米特法则就是对这个距离进行描述，即使是朋友类之间也不能无话不说，无所不知。</p>
+<p>注意:迪米特法则要求类”羞涩”一点，尽量不要对外公布太多public方法和非静态的public变量，尽量内敛，多使用private、package-private、protected等访问权限。</p>
+<h4><span id="3是自己的就是自己的">(3)是自己的就是自己的</span></h4><p>在实际应用中经常会出现这样一个方法:放在本类中也可以，放在其他类中也没有错，那怎么去衡量呢?你可以坚持这样一个原则:如果一个方法放在本类中，既不增加类间关系，也对本类不产生负面影响，那就放置在本类中。</p>
+<h4><span id="4谨慎使用serializable">(4)谨慎使用Serializable</span></h4><h3><span id="3最佳实践">3.最佳实践</span></h3><p>迪米特法则的核心观念:<br>类间解耦，弱耦合，只有弱耦合了以后，类的复用率才可以提高。其要求的结果就是:产生了大量的中转或跳转类，导致系统的复杂性提高，同时也为维护带来了难度。所以我们在采用迪米特法则时，需要反复权衡，既做到让结构清晰，又做到高内聚低耦合。</p>
+<h2><span id="二-开闭原则">二、开闭原则</span></h2><h3><span id="1定义">1.定义</span></h3><p>一个软件实体如类、模块和函数应该对扩展开放，对修改关闭。</p>
+<p>注意:<br>开闭原则对扩展开放，对修改关闭，并不意味着不做任何修改，低层模块的变更，必然要有高层模块进行耦合，否则就是一个孤立无意义的代码片段。</p>
+<p>变化可以归纳为如下三类:</p>
+<h4><span id="1逻辑变化">(1)逻辑变化</span></h4><p>只变化一个逻辑，而不涉及其他模块，比如原有的一个算法是a<em>b+c，现在需要修改为a</em>b*c，可以通过修改原有类中的方法的方式来完成，前提条件是所有依赖或关联类都按照相同的逻辑处理。</p>
+<h4><span id="2子模块变化">(2)子模块变化</span></h4><p>一个模块变化，会对其他的模块产生影响，特别是一个低层次的模块变化必然引起高层模块的变化，因此在通过扩展完成变化时，高层次的模块修改是必然的。</p>
+<h4><span id="3可见视图变化">(3)可见视图变化</span></h4><p>可见视图是提供给客户使用的界面，如JSP程序、Swing界面等，该部分的变化一般会引起连锁反应(这个连锁反应，我相信使用过JSP作为视图层的朋友们都深有感触)</p>
+<h3><span id="2为什么要采用开闭原则">2.为什么要采用开闭原则</span></h3><p>都说开闭原则是非常重要的，可通过以下几个方面来理解其重要性:</p>
+<h4><span id="1开闭原则对测试的影响">(1)开闭原则对测试的影响</span></h4><h4><span id="2开闭原则可以提高复用性">(2)开闭原则可以提高复用性</span></h4><h4><span id="3开闭原则可以提高可维护性">(3)开闭原则可以提高可维护性</span></h4><h4><span id="4面向对象开发的要求">(4)面向对象开发的要求</span></h4><h3><span id="3如何使用开闭原则">3.如何使用开闭原则</span></h3><h4><span id="1抽象约束">(1)抽象约束</span></h4><p>抽象是对一组事物的通用描述，没有具体的实现，也就表示它可以由非常多的可能性，可以跟随需求的变化而变化。因此，通过接口或抽象类可以约束一组可能变化的行为，并且能够实现对扩展开放，其包含三层含义:<br>第一,通过接口或抽象类约束扩展，对扩展进行边界限定，不允许出现在接口或抽象类中不存在的public方法;<br>第二,参数类型、引用对象尽量使用接口或抽象类，而不是实现类;<br>第三,抽象层尽量保持稳定，一旦确定即不允许修改;</p>
+<h4><span id="2元数据控制模块行为">(2)元数据控制模块行为</span></h4><p>尽量使用元数据来控制程序的行为，减少重复开放。</p>
+<p>什么是元数据?<br>用来描述环境和数据的数据，通俗地说就是配置参数，参数可以从文件中获得，也可以从数据库中获得。</p>
+<h4><span id="3指定项目章程">(3)指定项目章程</span></h4><p>在一个团队中，建立项目章程是非常重要的，因为章程中指定了所有人员都必须遵守的约定，对项目来说，约定优于配置。</p>
+<h4><span id="4封装变化">(4)封装变化</span></h4><p>对变化的封装包含两层含义:<br>第一，将相同的变化封装到一个接口或抽象类中;<br>第二，将不同的变化封装到不同的接口或抽象类中，不应该由两个不同的变化出现在同一个接口或抽象类中;</p>
+<p>封装变化，也就是受保护的变化，找出预计有变化或不稳定的点，我们为这些变化点创建稳定的接口，准确地讲是封装可能发生的变化，一旦预测或”第六感”发觉有变化，就可以进行封装，23种设计模式都是从各个不同的角度对变化进行封装的。</p>
+<h3><span id="4最佳实践">4.最佳实践</span></h3><p>我们在使用开闭原则时要注意以下几个问题?</p>
+<ul>
+<li>开闭原则也只是一个原则(开闭原则只是精神口号，实现拥抱变化的方法非常多，并不局限于6大设计原则，但是遵循这6大设计原则基本上可以应对大多数变化);</li>
+<li>项目规章非常重要(优秀的章程可以给项目带来很多好处，如提高开放效率、降低缺陷率、提高团队士气、提高技术成员水平等);</li>
+<li>预知变化(适应未来的变化，比如未来新增某项功能需求，在不影响现有的架构下，轻松扩展就能实现等);</li>
+</ul>
 
       
     </div>
@@ -353,13 +363,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/06/30/git之fatal-Could-not-read-from-remote-repository/">git之fatal: Could not read from remote repository</a></p>
+        <p><span>本文标题:</span><a href="/2019/11/06/《设计模式之禅》之六大设计原则下篇/">《设计模式之禅》之六大设计原则下篇</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-06-30, 21:32:22</p>
-        <p><span>最后更新:</span>2019-07-18, 21:26:11</p>
+        <p><span>发布时间:</span>2019-11-06, 19:49:45</p>
+        <p><span>最后更新:</span>2019-11-06, 21:14:03</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/06/30/git之fatal-Could-not-read-from-remote-repository/" title="git之fatal: Could not read from remote repository">http://developers-youcong.github.io/2019/06/30/git之fatal-Could-not-read-from-remote-repository/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/06/30/git之fatal-Could-not-read-from-remote-repository/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/06/《设计模式之禅》之六大设计原则下篇/" title="《设计模式之禅》之六大设计原则下篇">http://developers-youcong.github.io/2019/11/06/《设计模式之禅》之六大设计原则下篇/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/11/06/《设计模式之禅》之六大设计原则下篇/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -371,16 +381,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/07/01/Edusoho之Basic-Authentication/">
-                    Edusoho之Basic Authentication
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/">
-                    Class path contains multiple SLF4J bindings.
+                <a href="/2019/11/05/《设计模式之禅》之六大设计原则中篇/">
+                    《设计模式之禅》之六大设计原则中篇
                 </a>
             </div>
         
@@ -392,7 +396,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、迪米特法则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1.定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">2.迪米特法则对类的低耦合提出明确的要求</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.1.</span> <span class="toc-text">(1)只和朋友交流</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.2.</span> <span class="toc-text">(2)朋友间也是有距离的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.3.</span> <span class="toc-text">(3)是自己的就是自己的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.4.</span> <span class="toc-text">(4)谨慎使用Serializable</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">3.最佳实践</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、开闭原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">1.定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.</span> <span class="toc-text">(1)逻辑变化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.2.</span> <span class="toc-text">(2)子模块变化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.3.</span> <span class="toc-text">(3)可见视图变化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">2.为什么要采用开闭原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.1.</span> <span class="toc-text">(1)开闭原则对测试的影响</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.2.</span> <span class="toc-text">(2)开闭原则可以提高复用性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.3.</span> <span class="toc-text">(3)开闭原则可以提高可维护性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.4.</span> <span class="toc-text">(4)面向对象开发的要求</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">3.如何使用开闭原则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.1.</span> <span class="toc-text">(1)抽象约束</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.2.</span> <span class="toc-text">(2)元数据控制模块行为</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.3.</span> <span class="toc-text">(3)指定项目章程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.4.</span> <span class="toc-text">(4)封装变化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">4.最佳实践</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -428,7 +432,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"git之fatal: Could not read from remote repository　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"《设计模式之禅》之六大设计原则下篇　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -450,15 +454,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/07/01/Edusoho之Basic-Authentication/" title="上一篇: Edusoho之Basic Authentication">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/" title="下一篇: Class path contains multiple SLF4J bindings.">
+            <a href="/2019/11/05/《设计模式之禅》之六大设计原则中篇/" title="下一篇: 《设计模式之禅》之六大设计原则中篇">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -494,8 +496,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Sun Jun 30 2019 21:32:22 GMT+0800',
-			  title: 'git之fatal: Could not read from remote repository',
+			  id: 'Wed Nov 06 2019 19:49:45 GMT+0800',
+			  title: '《设计模式之禅》之六大设计原则下篇',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
