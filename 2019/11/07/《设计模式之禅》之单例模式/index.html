@@ -15,23 +15,18 @@
 
 
 
-<meta name="description" content="数组和链表1.数组以添加第四个待办事项为例，但后面的那个抽屉已经放了别人的东西这就像你与朋友去看电影，找到地方就坐后又来了一位朋友，但原来坐的地方没有空位置，只得再找一个方可坐下所有人的地方。在这种情况下，你需要请求计算机重新分配一块可容纳4个待办事项的内存，再将所有待办事项移到那里。">
+<meta name="description" content="一、单例模式定义确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。">
 <meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="算法图解之数组和链表">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/05/12/算法图解之数组和链表/index.html">
+<meta property="og:title" content="《设计模式之禅》之单例模式">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/11/07/《设计模式之禅》之单例模式/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="数组和链表1.数组以添加第四个待办事项为例，但后面的那个抽屉已经放了别人的东西这就像你与朋友去看电影，找到地方就坐后又来了一位朋友，但原来坐的地方没有空位置，只得再找一个方可坐下所有人的地方。在这种情况下，你需要请求计算机重新分配一块可容纳4个待办事项的内存，再将所有待办事项移到那里。">
+<meta property="og:description" content="一、单例模式定义确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/12/算法图解之数组和链表/array01.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/12/算法图解之数组和链表/linkedlist.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/12/算法图解之数组和链表/array_linkedlist.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/12/算法图解之数组和链表/diancaiduilie.png">
-<meta property="og:updated_time" content="2019-05-29T14:52:22.747Z">
+<meta property="og:updated_time" content="2019-11-07T13:50:38.954Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="算法图解之数组和链表">
-<meta name="twitter:description" content="数组和链表1.数组以添加第四个待办事项为例，但后面的那个抽屉已经放了别人的东西这就像你与朋友去看电影，找到地方就坐后又来了一位朋友，但原来坐的地方没有空位置，只得再找一个方可坐下所有人的地方。在这种情况下，你需要请求计算机重新分配一块可容纳4个待办事项的内存，再将所有待办事项移到那里。">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/05/12/算法图解之数组和链表/array01.png">
+<meta name="twitter:title" content="《设计模式之禅》之单例模式">
+<meta name="twitter:description" content="一、单例模式定义确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -63,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>算法图解之数组和链表 | Blog</title>
+<title>《设计模式之禅》之单例模式 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -291,11 +286,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-算法图解之数组和链表" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-《设计模式之禅》之单例模式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/12/算法图解之数组和链表/" class="article-date">
-      <time datetime="2019-05-12T06:39:26.000Z" itemprop="datePublished">2019-05-12</time>
+      <a href="/2019/11/07/《设计模式之禅》之单例模式/" class="article-date">
+      <time datetime="2019-11-07T12:45:31.000Z" itemprop="datePublished">2019-11-07</time>
 </a>
 
 
@@ -310,7 +305,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      算法图解之数组和链表
+      《设计模式之禅》之单例模式
     </h1>
   
 
@@ -331,21 +326,26 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2><span id="数组和链表">数组和链表</span></h2><h3><span id="1数组">1.数组</span></h3><p>以添加第四个待办事项为例，但后面的那个抽屉已经放了别人的东西<br><img src="/2019/05/12/算法图解之数组和链表/array01.png" alt=""><br>这就像你与朋友去看电影，找到地方就坐后又来了一位朋友，但原来坐的地方没有空位置，只得再找一个方可坐下所有人的地方。在这种情况下，你需要请求计算机重新分配一块可容纳4个待办事项的内存，再将所有待办事项移到那里。<br><a id="more"></a><br>如果又来了一位朋友，而当前坐的地方也没有空位，你们就得再次转移，这是一件非常麻烦的事情。同样，在数组中添加新的元素也可能很麻烦。如果没有了空间，就得移到内存的其他地方，因此添加新的元素的速度会很慢一种解决之道是“预留座位”：即便当前只有3个待办事项，也请求计算机提供10个位置，以防需要添加待办事项。这样只要待办事项不超过10个，就无需转移。这是一个不错的权变措施，但是它也有如下两个缺点:<br>(1)浪费内存。比如本来四个就可以存储，你却申请了10个。<br>(2)如果超过了10个以上，还得转移。</p>
-<h3><span id="2链表">2.链表</span></h3><p>链表中的元素可存储在内存的任何地方，如下图所示:<br><img src="/2019/05/12/算法图解之数组和链表/linkedlist.png" alt=""></p>
-<p>链表的每个元素都存储了下一个元素的地址，从而使一系列随机的内存地址串在一起。</p>
-<p>使用链表时，根本就不需要移动元素。这还可避免另外一个问题。假设你与五位朋友去看一部很火的电影。你们六个人想坐在一起，但看电影的人较多，没有六个在一起的座位。使用数组时有时就会遇到这样的情况。假设你要为数组分配10000个位置，内存中有10000个位置，但不都靠在一起。在这种情况下，你将无法为该数组分配内存。链表在此相当于说:”我们分开来说”，因此，只要有足够的内存空间，就能为链表分配内存。</p>
-<h3><span id="3常见数组和链表操作的运行时间">3.常见数组和链表操作的运行时间</span></h3><p><img src="/2019/05/12/算法图解之数组和链表/array_linkedlist.png" alt=""></p>
-<p>练习1:<br>假设你要编写一个记账的应用程序，每天将所有的支出记录下来，并在月底统计支出算算当月花了多少钱。因此，你执行的插入操作很多，但读取操作很少。该使用数组还是链表?</p>
-<p>我的回答是:<br>使用链表。因为链表的插入和删除数据是非常快的，如果仅仅只是读取可以采用数组。</p>
-<p>练习2:<br>假设你要为饭店创建一个接受顾客点菜单的应用程序。这个应用程序存储一系列点菜单。服务员添加点菜单，二厨师去除点菜单并制作菜肴。这是一个点菜单队列:服务员在队尾添加点菜单，厨师取出队列开头的点菜单并制定佳肴。<br><img src="/2019/05/12/算法图解之数组和链表/diancaiduilie.png" alt=""><br>你是使用数组还是链表来实现这个队列?</p>
-<p>我的回答是:<br>从这幅图中可以看出这是一个先进先出队列。先进先出一般使用链表。<br>而且根据题中信息，插入删除功能较多，插入是服务员添加点菜单，厨师取出点菜单意味着完成炒菜(相当于删除点菜单)。所以我觉得应该使用链表来实现这个队列。</p>
-<p>练习题3:<br>我们来做一个思考实验。假设Facebook记录一系列用户名，每当有用户视图登录Facebook时，都查找其用户名，如果找到就允许用户登录。由于经常有用户登录Facebook，因此需要执行大量的用户名查找操作。假设Facebook实验二分查找算法，而这种算法要求能够随机访问-立即获取中间的用户名。考虑到这一点，应使用数组还是链表来存储用户名呢?</p>
-<p>我的回答是:<br>首先可以从题中获取的关键消息是需要执行大量的用户名查询操作，这就意味着查询会非常多。链表在插入和删除方面效率非常高，但是查询却不是很高。数组则与其相反。在此我认为应用使用数组。理由是因为根据题目要求中说算法要求随机访问。</p>
-<p>练习题4:<br>经常有用户在Facebook注册。假设你已决定使用数组来存储用户名，在插入方面数组有何缺点呢?具体地说，在数组中添加新用户将会出现什么情况?<br>我的回答是:<br>针对这两种情况，有必要复习一下数组，分析数组的优缺点:</p>
-<p>数组的优点如下:<br>(1)按照索引查询元素速度快;<br>(2)能存储大量数据;<br>(3)索引遍历数组方便;</p>
-<p>数组的缺点:<br>(1)根据内容查找速度慢;<br>(2)数组的大小一经确定不能改变;<br>(3)数组只能存储一种类型的数组;<br>(4)增加、删除元素效率慢;<br>(5)未封装任何方法，所有操作都需要用户自己定义;</p>
-<p>分析完后，再回到问题上，答案就已经出来的。</p>
+        <h2><span id="一-单例模式定义">一、单例模式定义</span></h2><p>确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。<br><a id="more"></a></p>
+<h2><span id="二-单例模式的应用">二、单例模式的应用</span></h2><h3><span id="1单例模式的优点">1.单例模式的优点</span></h3><ul>
+<li>由于单例模式再内存中只有一个实例，减少了内存开支，特别是一个对象需要频繁地创建、销毁时，而且创建或销毁时性能又无法优化，单例模式的优势就非常明显;</li>
+<li>由于单例模式只生成一个实例，所以减少了系统的性能开销，当一个对象的产生需要比较多的资源时，如读取配置、产生其他依赖对象时，则可以通过在应用启动时直接产生一个单例对象，然后用永久驻留内存的方式解决(在JavaEE中采用单例模式时需要注意JVM垃圾回收机制);</li>
+<li>单例模式可以避免对资源的多重占用，例如一个写文件动作，由于只有一个实例存在内存中，避免对同一个资源文件的同时写操作;</li>
+<li>单例模式可以在系统设置全局的访问点，优化和共享资源访问，例如可以设计一个单例类，负责所有数据表的映射处理;</li>
+</ul>
+<h3><span id="2单例模式的缺点">2.单例模式的缺点</span></h3><ul>
+<li>单例模式一般没有接口，扩展很困难，若要扩展，除了修改代码基本上没有第二种途径可以实现。单例模式为什么不能增加接口呢?因为接口对单例模式是没有意义的，它要求”自行实例化”，并且提供单一实例、接口或抽象类是不可能被实例化的。当然，在特殊情况下，单例模式可以实现接口、被继承等，需要在系统开发中根据环境判断;</li>
+<li>单例模式对测试是不利的。在并行开发环境中，如果单例模式没有完成，是不能进行测试的，没有接口也不能使用mock的方式虚拟一个对象;</li>
+<li>单例模式与单一职责原则有冲突。一个类应该只实现一个逻辑，而不关心它是否是单例的，是不是要单例取决于环境，单例模式把”要单例”和业务逻辑融合在一个类中;</li>
+</ul>
+<h3><span id="3单例模式的使用场景">3.单例模式的使用场景</span></h3><ul>
+<li>要求生成唯一序列号的环境;</li>
+<li>在整个项目中需要把一个共享访问点或共享数据，例如一个Web页面上的计数器，可以不用把每次刷新都记录到数据库中，使用单例模式保持计数器的值，并确保是线程安全的;</li>
+<li>创建一个对象需要消耗的资源过多，如要访问IO和数据库等资源;</li>
+<li>需要定义大量的静态常量和静态方法(如工具类)的环境，可以采用单例模式(当然，也可以直接声明为static的方式);</li>
+</ul>
+<h2><span id="三-最佳实践">三、最佳实践</span></h2><p>单例模式是23个模式中比较简单的模式，应该也非常广泛，如在Spring中，每个Bean默认就是单例的，这样做的优点是Spring容器可以管理这些Bean的生命期，决定什么时候创建出来，什么时候销毁，销毁的时候要如何处理，等等。如果采用非单例模式，则Bean初始化后的管理交由J2EE容器，Spring容器不再跟踪管理Bean的生命周期。</p>
+<p>代码例子:<a href="https://github.com/developers-youcong/DesignPatternPractice/tree/master/Singleton" target="_blank" rel="noopener">https://github.com/developers-youcong/DesignPatternPractice/tree/master/Singleton</a></p>
 
       
     </div>
@@ -354,13 +354,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/12/算法图解之数组和链表/">算法图解之数组和链表</a></p>
+        <p><span>本文标题:</span><a href="/2019/11/07/《设计模式之禅》之单例模式/">《设计模式之禅》之单例模式</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-05-12, 14:39:26</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:22</p>
+        <p><span>发布时间:</span>2019-11-07, 20:45:31</p>
+        <p><span>最后更新:</span>2019-11-07, 21:50:38</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/12/算法图解之数组和链表/" title="算法图解之数组和链表">http://developers-youcong.github.io/2019/05/12/算法图解之数组和链表/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/12/算法图解之数组和链表/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/07/《设计模式之禅》之单例模式/" title="《设计模式之禅》之单例模式">http://developers-youcong.github.io/2019/11/07/《设计模式之禅》之单例模式/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/11/07/《设计模式之禅》之单例模式/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -372,16 +372,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/13/算法图解之选择排序/">
-                    算法图解之选择排序
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/12/算法图解之大O表示法/">
-                    算法图解之大O表示法
+                <a href="/2019/11/06/《设计模式之禅》之六大设计原则下篇/">
+                    《设计模式之禅》之六大设计原则下篇
                 </a>
             </div>
         
@@ -393,7 +387,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">数组和链表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1.数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">2.链表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">3.常见数组和链表操作的运行时间</span></a></li></ol></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、单例模式定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、单例模式的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">1.单例模式的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">2.单例模式的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">3.单例模式的使用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、最佳实践</span></a></li></ol>
         
     </div>
     <style>
@@ -429,7 +423,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"算法图解之数组和链表　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"《设计模式之禅》之单例模式　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -451,15 +445,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/13/算法图解之选择排序/" title="上一篇: 算法图解之选择排序">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/12/算法图解之大O表示法/" title="下一篇: 算法图解之大O表示法">
+            <a href="/2019/11/06/《设计模式之禅》之六大设计原则下篇/" title="下一篇: 《设计模式之禅》之六大设计原则下篇">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -495,8 +487,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Sun May 12 2019 14:39:26 GMT+0800',
-			  title: '算法图解之数组和链表',
+			  id: 'Thu Nov 07 2019 20:45:31 GMT+0800',
+			  title: '《设计模式之禅》之单例模式',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
