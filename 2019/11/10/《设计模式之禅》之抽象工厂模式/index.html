@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="应用场景:1.VsCode插件开发(主要针对以javascript为主的vscode插件);2.使用Node.js开发的客户端程序 Node.js之http请求(客户端)">
-<meta name="keywords" content="Node.js">
+<meta name="description" content="一、抽象工厂模式的定义为创建一组相关或相互依赖的对象提供一个接口，而且无须指定它们的具体类。">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="node.js之客户端发起https和http请求">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/06/18/node-js之客户端发起https和http请求/index.html">
+<meta property="og:title" content="《设计模式之禅》之抽象工厂模式">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/11/10/《设计模式之禅》之抽象工厂模式/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="应用场景:1.VsCode插件开发(主要针对以javascript为主的vscode插件);2.使用Node.js开发的客户端程序 Node.js之http请求(客户端)">
+<meta property="og:description" content="一、抽象工厂模式的定义为创建一组相关或相互依赖的对象提供一个接口，而且无须指定它们的具体类。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/06/18/node-js之客户端发起https和http请求/node-js之客户端发起https和http请求/01.png">
-<meta property="og:updated_time" content="2019-07-18T13:26:12.001Z">
+<meta property="og:updated_time" content="2019-11-10T08:12:08.650Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="node.js之客户端发起https和http请求">
-<meta name="twitter:description" content="应用场景:1.VsCode插件开发(主要针对以javascript为主的vscode插件);2.使用Node.js开发的客户端程序 Node.js之http请求(客户端)">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/06/18/node-js之客户端发起https和http请求/node-js之客户端发起https和http请求/01.png">
+<meta name="twitter:title" content="《设计模式之禅》之抽象工厂模式">
+<meta name="twitter:description" content="一、抽象工厂模式的定义为创建一组相关或相互依赖的对象提供一个接口，而且无须指定它们的具体类。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>node.js之客户端发起https和http请求 | Blog</title>
+<title>《设计模式之禅》之抽象工厂模式 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -288,11 +286,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-node-js之客户端发起https和http请求" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-《设计模式之禅》之抽象工厂模式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/06/18/node-js之客户端发起https和http请求/" class="article-date">
-      <time datetime="2019-06-18T12:18:59.000Z" itemprop="datePublished">2019-06-18</time>
+      <a href="/2019/11/10/《设计模式之禅》之抽象工厂模式/" class="article-date">
+      <time datetime="2019-11-10T06:54:00.000Z" itemprop="datePublished">2019-11-10</time>
 </a>
 
 
@@ -307,7 +305,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      node.js之客户端发起https和http请求
+      《设计模式之禅》之抽象工厂模式
     </h1>
   
 
@@ -318,7 +316,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -328,14 +326,16 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>应用场景:<br>1.VsCode插件开发(主要针对以javascript为主的vscode插件);<br>2.使用Node.js开发的客户端程序</p>
-<h3><span id="nodejs之http请求客户端">Node.js之http请求(客户端)</span></h3><a id="more"></a>
-<p>代码示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">var http = require(&apos;http&apos;);  </span><br><span class="line">  </span><br><span class="line">var qs = require(&apos;querystring&apos;);  </span><br><span class="line"></span><br><span class="line">var userCode = &quot;1&quot;;</span><br><span class="line"></span><br><span class="line">var post_data = &#123;  </span><br><span class="line">    userCode: userCode&#125;;//这是需要提交的数据  </span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">var content = qs.stringify(post_data);  </span><br><span class="line">  </span><br><span class="line">var options = &#123;  </span><br><span class="line">    hostname: &apos;www.test.com&apos;,</span><br><span class="line">    port: 80,  </span><br><span class="line">    path: &apos;/test-web/api/sysUser/getUserCodeByInfo&apos;,  </span><br><span class="line">    method: &apos;POST&apos;,  </span><br><span class="line">    headers: &#123;  </span><br><span class="line">        &apos;Content-Type&apos;: &apos;application/x-www-form-urlencoded; charset=UTF-8&apos;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;  </span><br><span class="line">  </span><br><span class="line">var req = http.request(options, function (res) &#123;  </span><br><span class="line">    console.log(&apos;STATUS: &apos; + res.statusCode);  </span><br><span class="line">    console.log(&apos;HEADERS: &apos; + JSON.stringify(res.headers));  </span><br><span class="line">    res.setEncoding(&apos;utf8&apos;);  </span><br><span class="line">    res.on(&apos;data&apos;, function (chunk) &#123;  </span><br><span class="line">        console.log(&apos;BODY: &apos; + chunk);  </span><br><span class="line">		</span><br><span class="line">		var data = JSON.parse(chunk);</span><br><span class="line">		console.log(data.returnCode);</span><br><span class="line">    &#125;);  </span><br><span class="line">&#125;);  </span><br><span class="line">  </span><br><span class="line">req.on(&apos;error&apos;, function (e) &#123;  </span><br><span class="line">    console.log(&apos;problem with request: &apos; + e.message);  </span><br><span class="line">&#125;);  </span><br><span class="line">  </span><br><span class="line">// 将数据写入请求体</span><br><span class="line">req.write(content);//注意这个地方  </span><br><span class="line">  </span><br><span class="line">req.end();</span><br></pre></td></tr></table></figure></p>
-<h3><span id="nodejs之https请求客户端">Node.js之https请求(客户端)</span></h3><p>代码示例如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">var querystring = require(&apos;querystring&apos;);</span><br><span class="line"></span><br><span class="line">const https = require(&quot;https&quot;);</span><br><span class="line">    var userCode = &quot;1&quot;;</span><br><span class="line">	var post_data = &#123; userCode: userCode &#125;</span><br><span class="line">	var contents = querystring.stringify(post_data);</span><br><span class="line"></span><br><span class="line">	var options = &#123;</span><br><span class="line">		hostname: &quot;www.test.com&quot;,</span><br><span class="line">		port: 443, //443</span><br><span class="line">		path: &quot;/test-web/api/sysUser/getUserCodeByInfo?&quot;+contents ,</span><br><span class="line">		method: &quot;POST&quot;,</span><br><span class="line">		rejectUnauthorized: false,</span><br><span class="line">		headers: &#123;</span><br><span class="line">			Accept: &quot;*/*&quot;,</span><br><span class="line">			&quot;Accept-Encoding&quot;: &quot;utf-8&quot;,</span><br><span class="line">			&quot;Accept-Language&quot;: &quot;zh-CN,zh;q=0.8&quot;,</span><br><span class="line">			Connection: &quot;keep-alive&quot;,</span><br><span class="line">			Host: &quot;www.test.com&quot;</span><br><span class="line">		&#125;,</span><br><span class="line"></span><br><span class="line">	&#125;;</span><br><span class="line">	var mData = &apos;&apos;;</span><br><span class="line">	var req = https.request(options, function (res) &#123;</span><br><span class="line">		res.setEncoding(&apos;utf-8&apos;);</span><br><span class="line">		</span><br><span class="line">		 res.on(&apos;data&apos;, function (chunk) &#123;  </span><br><span class="line">		 var data = JSON.parse(chunk);</span><br><span class="line">         console.log(&apos;BODY: &apos; + data);  </span><br><span class="line">    &#125;); </span><br><span class="line">	&#125;);</span><br><span class="line">	// req.write(contents);</span><br><span class="line">	req.on(&quot;error&quot;, function (e) &#123;</span><br><span class="line">		console.error(&quot;====================================================&quot; + e);</span><br><span class="line">	&#125;);</span><br><span class="line">	req.end();</span><br></pre></td></tr></table></figure></p>
-<p>上面的hostname，如果不是域名修改为ip地址，请修改成这样，将<a href="http://www.test.com改为192.168.126.130，" target="_blank" rel="noopener">www.test.com改为192.168.126.130，</a><br>切不可指定为<br><a href="http://192.168.126.130" target="_blank" rel="noopener">http://192.168.126.130</a></p>
-<p>否则会出现请求失败，主要体现为如下错误:<br><img src="node-js之客户端发起https和http请求/01.png" alt=""></p>
-<p>还有一点需要强调，如果参数不用querystring.stringify()包裹的话，会出现如下错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Request path contains unescaped characters</span><br></pre></td></tr></table></figure></p>
-<p>那么为什么需要querystring呢？<br>因为querystring.stringify()能将对象序列化成URL的形式，以&amp;进行拼接。</p>
+        <h2><span id="一-抽象工厂模式的定义">一、抽象工厂模式的定义</span></h2><p>为创建一组相关或相互依赖的对象提供一个接口，而且无须指定它们的具体类。<br><a id="more"></a></p>
+<h2><span id="二-抽象工厂模式的应用">二、抽象工厂模式的应用</span></h2><h3><span id="1抽象工厂模式的优点">1.抽象工厂模式的优点</span></h3><ul>
+<li><strong>封装性</strong>，每个产品的实现类不是高层模块要关心的，它要关心的是什么？是接口，是抽象，它不关心对象是如何创建出来的，这由谁负责呢？工厂类，只要知道工厂类是谁，我就能创建出一个需要的对象，省时省力，优秀设计就应该如此;</li>
+<li><strong>产品族内的约束为非公开状态</strong>。例如生产男女比例的问题上，猜想女娲娘娘肯定有自己的打算，不能让女盛男衰，否则女性的优点不就体现不出来了吗?那在抽象工厂模式，就应该有这样的约束:每生产1个女性，就同时生产出1.2个男性，这样的生产过程对调用工厂类的高层模块来说是透明的，它不需要知道这个约束，我就是要一个黄色女性产品就可以，具体的产品族内的约束是在工厂内实现的;</li>
+</ul>
+<h3><span id="2抽象工厂模式的缺点">2.抽象工厂模式的缺点</span></h3><p>抽象工厂模式的最大缺点就产品族<strong>扩展非常困难</strong>，为什么这么说呢？我们以通用代码为例，如果要增加一个产品C，也就是说产品家族由原来的2个增加到3个，抽象类AbstractCreator要增加一个方法createProductC()，然后两个实现类毒药修改，想想看，这严重违背了开闭原则，而且我们一直说明抽象类和接口是一个契约。改变契约，所有与契约有关系的代码都要修改，那么这段代码叫有毒代码，只要与这段代码有关系，就可能产生侵害的危险。</p>
+<h3><span id="3抽象工厂模式的使用场景">3.抽象工厂模式的使用场景</span></h3><p>抽象工厂模式的使用场景定义非常简单:一个对象族(或是一组没有任何关系的对象)都有相同的约束，则可以使用抽象工厂模式。<br>什么意思呢?例如一个文本编辑器和一个图片处理器，都是软件实体，但是*nix下的文本编辑器和Window下的文本编辑器虽然功能和界面都相同，但是代码实现是不同的，图片处理器也有类似情况。也就是具有了共同的约束条件:操作系统类型。于是我们可以使用抽象工厂模式，产生不同操作系统下的编辑器和图片处理器。</p>
+<h3><span id="4抽象工厂模式的注意实现">4.抽象工厂模式的注意实现</span></h3><p>在抽象工厂模式的缺点中，我们提到抽象工厂模式的产品族扩展比较困难，但是一定要清楚，是产品族扩展困难，而不是产品等级。在该模式下，产品等级是非常容易扩展的，增加一个产品等级，只要增加一个工厂类负责新增加出来的产品生产任务即可。也就是说<strong>横向扩展容易，纵向扩展困难</strong>。以人类为例子，产品等级中只有男、女两个性别，现实世界还有一种性别:双性人，既是男人也是女人，那我们要扩展这个产品等级也是非常容易，增加三个产品类，分别对应不同肤色，然后再创建一个工厂类，专门负责不同肤色人的双性人的创建任务，完全通过扩展来实现需求的变更，从这一点上看，抽象工厂模式是符合开闭原则的。</p>
+<h2><span id="三-最佳实践">三、最佳实践</span></h2><p>抽象工厂模式是一个简单的模式，使用的场景非常多，大家在软件产品开发过程中，涉及不同操作系统的时候，都可以考虑使用抽象工厂模式，例如一个应用需要在三个不同平台(Window、Linux、Android)上运行，你会怎么设计?分别设计三套不同的应用？非也，通过抽象工厂模式屏蔽掉操作系统对应用的影响。三个不同操作系统上的软件功能、应用逻辑、UI都应该是非常类似的，唯一不同的是调用不同的工厂方法，由不同的产品类去处理与操作系统交互的信息。</p>
+<p>相关代码示例:<a href="https://github.com/developers-youcong/DesignPatternPractice/tree/master/AbstractFactory" target="_blank" rel="noopener">https://github.com/developers-youcong/DesignPatternPractice/tree/master/AbstractFactory</a></p>
 
       
     </div>
@@ -344,13 +344,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/06/18/node-js之客户端发起https和http请求/">node.js之客户端发起https和http请求</a></p>
+        <p><span>本文标题:</span><a href="/2019/11/10/《设计模式之禅》之抽象工厂模式/">《设计模式之禅》之抽象工厂模式</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-06-18, 20:18:59</p>
-        <p><span>最后更新:</span>2019-07-18, 21:26:12</p>
+        <p><span>发布时间:</span>2019-11-10, 14:54:00</p>
+        <p><span>最后更新:</span>2019-11-10, 16:12:08</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/06/18/node-js之客户端发起https和http请求/" title="node.js之客户端发起https和http请求">http://developers-youcong.github.io/2019/06/18/node-js之客户端发起https和http请求/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/06/18/node-js之客户端发起https和http请求/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/11/10/《设计模式之禅》之抽象工厂模式/" title="《设计模式之禅》之抽象工厂模式">http://developers-youcong.github.io/2019/11/10/《设计模式之禅》之抽象工厂模式/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/11/10/《设计模式之禅》之抽象工厂模式/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -362,16 +362,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/06/19/usr-bin-xauth-file-home-youcong-Xauthority-does-not-exist/">
-                    /usr/bin/xauth:  file /home/user/.Xauthority does not exist
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/06/17/vscode插件开发之如何玩转vscode命令/">
-                    vscode插件开发之如何玩转vscode命令
+                <a href="/2019/11/08/《设计模式之禅》之工厂方法模式/">
+                    《设计模式之禅》之工厂方法模式
                 </a>
             </div>
         
@@ -383,7 +377,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">Node.js之http请求(客户端)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">Node.js之https请求(客户端)</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、抽象工厂模式的定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、抽象工厂模式的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">1.抽象工厂模式的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">2.抽象工厂模式的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">3.抽象工厂模式的使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">4.抽象工厂模式的注意实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、最佳实践</span></a></li></ol>
         
     </div>
     <style>
@@ -419,7 +413,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"node.js之客户端发起https和http请求　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"《设计模式之禅》之抽象工厂模式　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -441,15 +435,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/06/19/usr-bin-xauth-file-home-youcong-Xauthority-does-not-exist/" title="上一篇: /usr/bin/xauth:  file /home/user/.Xauthority does not exist">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/06/17/vscode插件开发之如何玩转vscode命令/" title="下一篇: vscode插件开发之如何玩转vscode命令">
+            <a href="/2019/11/08/《设计模式之禅》之工厂方法模式/" title="下一篇: 《设计模式之禅》之工厂方法模式">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -485,8 +477,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Tue Jun 18 2019 20:18:59 GMT+0800',
-			  title: 'node.js之客户端发起https和http请求',
+			  id: 'Sun Nov 10 2019 14:54:00 GMT+0800',
+			  title: '《设计模式之禅》之抽象工厂模式',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
