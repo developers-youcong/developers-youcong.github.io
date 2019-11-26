@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ajax之解析xml</title>
+      <link href="/2019/11/26/ajax%E4%B9%8B%E8%A7%A3%E6%9E%90xml/"/>
+      <url>/2019/11/26/ajax%E4%B9%8B%E8%A7%A3%E6%9E%90xml/</url>
+      
+        <content type="html"><![CDATA[<p>今天之所以要分享这个例子，也是因为最近做博客开发，将第三方博客相关文章迁移到我自己的平台来。</p><p>通常迁移到自己的平台上有这么几种方式(以博客园为例):<br>1.导出xml，使用java程序遍历读取并存入对应的数据表;<br>2.博客园有自己公开的API，可以通过请求API拿到对应的xml数据，插入数据表;<br>3.使用爬虫技术;</p><p>上述三种我都尝试过，今天我要说的是其中2，也就是根据博客园API拿到xml数据。</p><p>今天不说后端，后端我已经将博客园API做了一定的封装，今天主要说ajax如何解析xml，并获得想要的数据。<br><a id="more"></a><br>前端代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">  &lt;title&gt;blog-analyze-xml-example&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script src=&quot;http://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">type: &quot;GET&quot;,</span><br><span class="line">url: &quot;http://localhost:2019/blog-web/cnblogs/get48HoursTopViewPosts/20&quot;,</span><br><span class="line">dataType: &quot;xml&quot;,</span><br><span class="line">success: function (ResponseText) &#123;</span><br><span class="line">alert(ResponseText);</span><br><span class="line"></span><br><span class="line">$(ResponseText).find(&apos;author&apos;).each(function () &#123;</span><br><span class="line">var name = $(this).find(&apos;name&apos;).text();</span><br><span class="line"></span><br><span class="line">console.log(&quot;name:&quot;+name);</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p><p>这段代码关键就是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$(ResponseText).find(&apos;author&apos;).each(function () &#123;</span><br><span class="line">var name = $(this).find(&apos;name&apos;).text();</span><br><span class="line"></span><br><span class="line">console.log(&quot;name:&quot;+name);</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p><p>xml是一个文档树形结构数据，通过find()找到你想要的节点，拿到对应的值，这时你想做什么就做什么。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《设计模式之禅》之建造者模式</title>
       <link href="/2019/11/23/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
       <url>/2019/11/23/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
