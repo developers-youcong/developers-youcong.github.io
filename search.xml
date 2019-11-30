@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>BeanCreationException: Error creating bean with name &#39;classPathFileSystemWatcher&#39;之解决办法</title>
+      <link href="/2019/11/30/BeanCreationException-Error-creating-bean-with-name-classPathFileSystemWatcher-%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+      <url>/2019/11/30/BeanCreationException-Error-creating-bean-with-name-classPathFileSystemWatcher-%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>错误关键信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BeanCreationException: Error creating bean with name &apos;classPathFileSystemWatcher&apos;</span><br></pre></td></tr></table></figure></p><p>错误原因:<br>Idea不支持热加载，application-test.yml中的热加载配置去除后，就能正常启动了，对应的服务也能正常访问。<br><a id="more"></a></p><p>解决办法:<br>去除热加载中的代码配置，如可修改为这样:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   devtools:</span><br><span class="line">      restart:</span><br><span class="line">         enabled: true</span><br><span class="line">#        additional-paths: src/main/java</span><br><span class="line">         execlude: test/**</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>org.springframework.beans.factory.BeanCreationException: Error creating bean with name &#39;jpaMappingContext&#39;: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException之解决办法</title>
+      <link href="/2019/11/30/org-springframework-beans-factory-BeanCreationException-Error-creating-bean-with-name-jpaMappingContext-Invocation-of-init-method-failed-nested-exception-is-java-lang-IllegalArgumentException%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+      <url>/2019/11/30/org-springframework-beans-factory-BeanCreationException-Error-creating-bean-with-name-jpaMappingContext-Invocation-of-init-method-failed-nested-exception-is-java-lang-IllegalArgumentException%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>错误产生背景:<br>将之前用Eclipse写的Blog项目迁移到Idea上面。Ecilpse项目一直是没有问题的。<br><a id="more"></a><br>错误原因分析:<br>原因是项目依赖中引入的jpa,另外也与Idea比较智能也有关系</p><p>解决办法:</p><p>第一，在启动类中加上如下注解代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootApplication(exclude = &#123;DataSourceAutoConfiguration.class,JpaRepositoriesAutoConfiguration.class,HibernateJpaAutoConfiguration.class&#125;)</span><br></pre></td></tr></table></figure></p><p>第二，maven依赖中排除该依赖(尽管在pom.xml去除了，但是不要忘记maven有依赖传递的特性)</p><p>参考解决办法链接(stackoverflow上面找到的解决方案):<br><a href="https://stackoverflow.com/questions/40738818/illegalargumentexception-at-least-one-jpa-metamodel-must-be-present" target="_blank" rel="noopener">https://stackoverflow.com/questions/40738818/illegalargumentexception-at-least-one-jpa-metamodel-must-be-present</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Postman测试后台使用@RequestBody接收参数的坑</title>
       <link href="/2019/11/30/Postman%E6%B5%8B%E8%AF%95%E5%90%8E%E5%8F%B0%E4%BD%BF%E7%94%A8-RequestBody%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E7%9A%84%E5%9D%91/"/>
       <url>/2019/11/30/Postman%E6%B5%8B%E8%AF%95%E5%90%8E%E5%8F%B0%E4%BD%BF%E7%94%A8-RequestBody%E6%8E%A5%E6%94%B6%E5%8F%82%E6%95%B0%E7%9A%84%E5%9D%91/</url>
