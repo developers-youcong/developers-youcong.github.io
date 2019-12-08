@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>《设计模式之禅》之代理模式</title>
+      <link href="/2019/12/08/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2019/12/08/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-代理模式的定义">一、代理模式的定义</span></h2><p>为其他对象提供一种代理以控制对这个对象的访问。</p><p>代理模式也叫委托模式，它是一项基本设计技巧。许多其他的模式，如状态模式、策略模式、访问者模式本质上是在更特殊的场合采用了委托模式，而且在日常的应用中，代理模式可以提供非常好的访问控制。如Struts2的Form元素映射就是采用了代理模式。<br><a id="more"></a><br>代理模式通用类:</p><h3><span id="1subject抽象主题角色">1.Subject抽象主题角色</span></h3><p>抽象主题类可以是抽象类也可以是接口，是一个最普通的业务类型定义，无特殊要求。</p><h3><span id="2realsubject具体主题角色">2.RealSubject具体主题角色</span></h3><p>也叫做被委托角色、被代理角色。它才是业务逻辑的具体执行者。</p><h3><span id="3proxy代理主题角色">3.Proxy代理主题角色</span></h3><p>也叫做委托类、代理类。它负责对真实角色的应用，把所有抽象主题类定义的方法限制委托给真实主题角色的实现，并且在真实主题角色处理完毕前后做预处理和善后处理工作。</p><h2><span id="二-代理模式的应用">二、代理模式的应用</span></h2><h3><span id="1代理模式的优点">1.代理模式的优点</span></h3><h4><span id="1职责清晰">(1)职责清晰</span></h4><p>真实的角色就是实现实际的业务逻辑，不用关心其他非本职责的事务，通过后期的代理完成一件事务，附带的结果就是编程简洁清晰。</p><h4><span id="2高扩展性">(2)高扩展性</span></h4><p>具体主题角色是随时都会发生变化的，只要它实现了接口，不管它如何变化，都逃不脱接口，那我们的代理类完全就可以在不做任何修改的情况下使用。</p><h4><span id="3智能化">(3)智能化</span></h4><p>动态代理可以体现出来</p><h3><span id="2代理模式的使用场景">2.代理模式的使用场景</span></h3><p>结合现实生活，以打官司为例，打官司为什么要找个律师？因为你不想参与中间过程的是是非非，只要完成自己的答辩就成，其他的如事前调查、事后追查都由律师来搞定，这就是为了减轻你的负担。SpringAop，就是一个非常典型的动态代理。</p><h2><span id="三-最佳实践">三、最佳实践</span></h2><p>代理模式的应用非常广泛，大到一个系统框架、企业平台，小到代码片段、事务处理，稍不留意就用到代理模式。</p><p>注意:<br>在学习AOP框架时，弄清楚几个名词就成:切面(Aspect)、切入点(JoinPoint)、通知(Advice)、织入(Weave)就足够了，理解了这几个名词，有助于更好的学习和理解其原理。</p><p>github示例代码:<a href="https://github.com/developers-youcong/DesignPatternPractice/tree/master/Proxy" target="_blank" rel="noopener">https://github.com/developers-youcong/DesignPatternPractice/tree/master/Proxy</a></p><p>此章有待补充普通代理、强制代理、动态代理……</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>portal项目启动问题</title>
       <link href="/2019/12/04/portal%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98/"/>
       <url>/2019/12/04/portal%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98/</url>
