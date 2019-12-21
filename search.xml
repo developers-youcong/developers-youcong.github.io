@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Command line is too long. Shorten command line for *** or also for Spring Boot default configuration</title>
+      <link href="/2019/12/21/Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration/"/>
+      <url>/2019/12/21/Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Command line is too long. Shorten command line for *** or also for Spring Boot default configuration</span><br></pre></td></tr></table></figure></p><p>通常会导致的后果是无法启动项目。</p><p>解决办法:</p><p>修改项目下 .idea\workspace.xml，找到标签 <component name="PropertiesComponent"> ， 在标签里加一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &lt;property name=&quot;dynamic.classpath&quot; value=&quot;true&quot; /&gt;</span><br></pre></td></tr></table></figure></component></p><p>参考解决办法链接:<a href="https://blog.csdn.net/weixin_41235754/article/details/100514000" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41235754/article/details/100514000</a><br><a id="more"></a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Idea </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《设计模式之禅》之代理模式</title>
       <link href="/2019/12/08/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
       <url>/2019/12/08/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</url>
