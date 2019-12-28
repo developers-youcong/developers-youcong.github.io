@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Idea设置热加载</title>
+      <link href="/2019/12/28/Idea%E8%AE%BE%E7%BD%AE%E7%83%AD%E5%8A%A0%E8%BD%BD/"/>
+      <url>/2019/12/28/Idea%E8%AE%BE%E7%BD%AE%E7%83%AD%E5%8A%A0%E8%BD%BD/</url>
+      
+        <content type="html"><![CDATA[<p>最近转使用Idea,Idea热加载据说很不友好，但是我没有试过，由于个人项目迁移到Idea上面开发，发现连改个HTML，都要重启，太TM气人了。<br>最后果断的搜索Idea热加载怎么做，先不管友好不，先试试看，最后改完后，发现并没有想象中的那么坏，也许是个人项目比较小的缘故。</p><p>参考解决办法链接:<a href="https://blog.csdn.net/qq_42685050/article/details/81588584" target="_blank" rel="noopener">Idea之热加载实现</a><br><a id="more"></a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Idea </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Command line is too long. Shorten command line for *** or also for Spring Boot default configuration</title>
       <link href="/2019/12/21/Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration/"/>
       <url>/2019/12/21/Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration/</url>
