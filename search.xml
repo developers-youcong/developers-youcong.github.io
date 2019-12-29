@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>《设计模式之禅》之原型模式</title>
+      <link href="/2019/12/29/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2019/12/29/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-原型模式定义">一、原型模式定义</span></h2><p>用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。<br><a id="more"></a></p><h2><span id="二-原型模式的应用">二、原型模式的应用</span></h2><h3><span id="1原型模式的优点">1.原型模式的优点</span></h3><h4><span id="1性能优良">(1)性能优良</span></h4><p>原型模式是在内存二进制流的拷贝，要比直接new一个对象性能好很多，特别是要在一个循环体内产生大量的对象时，原型模式可以更好地体现其优点。</p><h4><span id="2逃避构造函数的约束">(2)逃避构造函数的约束</span></h4><p>这既是它的优点也是它的缺点，直接在内存中拷贝，构造函数是不会执行的。优点就是减少了约束，缺点也是减少了约束，需要大家在实际应用时考虑。</p><h3><span id="2原型模式的使用场景">2.原型模式的使用场景</span></h3><h4><span id="1资源优化场景">(1)资源优化场景</span></h4><p>类初始化需要消化非常多的资源，这个资源包括数据、硬件资源等。</p><h4><span id="2性能和安全要求的场景">(2)性能和安全要求的场景</span></h4><p>通过new产生一个对象需要非常繁琐的数据准备或访问权限，则可以使用原型模式。</p><h4><span id="3一个对象多个修改者的场景">(3)一个对象多个修改者的场景</span></h4><p>一个对象需要提供给其他对象访问，而且各个调用者可能都需要修改其值时，可以考虑使用原型模式拷贝多个对象供调用者使用。</p><p>在实际项目中，原型模式很少单独出现，一般是和工厂方法模式一起出现，通过clone的方法创建一个对象，然后由工厂方法提供给调用者。原型模式已经与Java融为一体，大家可以随手拿来使用。</p><h2><span id="三-原型模式的注意事项">三、原型模式的注意事项</span></h2><h3><span id="1构造函数不会被执行">1.构造函数不会被执行</span></h3><h3><span id="2浅拷贝和深拷贝">2.浅拷贝和深拷贝</span></h3><p>注意1:深拷贝和浅拷贝建议不要混合使用，特别是在涉及类的继承时，父类有多个引用的情况就非常复杂，建议的方案是深拷贝和浅拷贝分开实现。</p><p>注意2:使用原型模式时，引用的成员变量必须满足两个条件才不会被拷贝:一是类的成员变量，而不是方法内变量;二是必须是一个可变的引用对象，而不是一个原始类型或不可变对象。</p><h3><span id="3clone和final">3.clone和final</span></h3><p>注意:要使用clone方法，类的成员变量上不要增加final关键字</p><h2><span id="四-代码例子">四、代码例子</span></h2><p>已放到github仓库，地址为:<a href="https://github.com/developers-youcong/DesignPatternPractice/tree/master/Prototype" target="_blank" rel="noopener">https://github.com/developers-youcong/DesignPatternPractice/tree/master/Prototype</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Idea设置热加载</title>
       <link href="/2019/12/28/Idea%E8%AE%BE%E7%BD%AE%E7%83%AD%E5%8A%A0%E8%BD%BD/"/>
       <url>/2019/12/28/Idea%E8%AE%BE%E7%BD%AE%E7%83%AD%E5%8A%A0%E8%BD%BD/</url>

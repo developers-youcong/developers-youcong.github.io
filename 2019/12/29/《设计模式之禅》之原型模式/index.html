@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="错误信息如下:ERROR 1820 (HY000): You must reset your password using ALTER USER statementbefore executing this statement. 翻译过来的意思是:错误1820 (HY000):您必须使用ALTER USER语句重置密码在执行此语句之前。">
-<meta name="keywords" content="MySQL">
+<meta name="description" content="一、原型模式定义用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/index.html">
+<meta property="og:title" content="《设计模式之禅》之原型模式">
+<meta property="og:url" content="http://developers-youcong.github.io/2019/12/29/《设计模式之禅》之原型模式/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="错误信息如下:ERROR 1820 (HY000): You must reset your password using ALTER USER statementbefore executing this statement. 翻译过来的意思是:错误1820 (HY000):您必须使用ALTER USER语句重置密码在执行此语句之前。">
+<meta property="og:description" content="一、原型模式定义用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-29T14:52:20.212Z">
+<meta property="og:updated_time" content="2019-12-29T11:04:32.001Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.">
-<meta name="twitter:description" content="错误信息如下:ERROR 1820 (HY000): You must reset your password using ALTER USER statementbefore executing this statement. 翻译过来的意思是:错误1820 (HY000):您必须使用ALTER USER语句重置密码在执行此语句之前。">
+<meta name="twitter:title" content="《设计模式之禅》之原型模式">
+<meta name="twitter:description" content="一、原型模式定义用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement. | Blog</title>
+<title>《设计模式之禅》之原型模式 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -286,11 +286,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-《设计模式之禅》之原型模式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/" class="article-date">
-      <time datetime="2019-04-23T15:10:04.000Z" itemprop="datePublished">2019-04-23</time>
+      <a href="/2019/12/29/《设计模式之禅》之原型模式/" class="article-date">
+      <time datetime="2019-12-29T10:32:34.000Z" itemprop="datePublished">2019-12-29</time>
 </a>
 
 
@@ -305,7 +305,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.
+      《设计模式之禅》之原型模式
     </h1>
   
 
@@ -316,7 +316,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -326,9 +326,17 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>错误信息如下:<br>ERROR 1820 (HY000): You must reset your password using ALTER USER statement<br>before executing this statement.</p>
-<p>翻译过来的意思是:<br>错误1820 (HY000):您必须使用ALTER USER语句重置密码<br>在执行此语句之前。<br><a id="more"></a><br>所以解决办法就是使用重置密码命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alter user &apos;root&apos;@&apos;localhost&apos; identified by &apos;youpassword&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>参考资料如下:<br><a href="https://www.cnblogs.com/lmx123/p/9321792.html" target="_blank" rel="noopener">mysql 报错ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executin</a><br><a href="https://blog.csdn.net/qq_37350706/article/details/81707862" target="_blank" rel="noopener">MySQL 8.0.15安装教程(windows 64位)</a></p>
+        <h2><span id="一-原型模式定义">一、原型模式定义</span></h2><p>用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。<br><a id="more"></a></p>
+<h2><span id="二-原型模式的应用">二、原型模式的应用</span></h2><h3><span id="1原型模式的优点">1.原型模式的优点</span></h3><h4><span id="1性能优良">(1)性能优良</span></h4><p>原型模式是在内存二进制流的拷贝，要比直接new一个对象性能好很多，特别是要在一个循环体内产生大量的对象时，原型模式可以更好地体现其优点。</p>
+<h4><span id="2逃避构造函数的约束">(2)逃避构造函数的约束</span></h4><p>这既是它的优点也是它的缺点，直接在内存中拷贝，构造函数是不会执行的。优点就是减少了约束，缺点也是减少了约束，需要大家在实际应用时考虑。</p>
+<h3><span id="2原型模式的使用场景">2.原型模式的使用场景</span></h3><h4><span id="1资源优化场景">(1)资源优化场景</span></h4><p>类初始化需要消化非常多的资源，这个资源包括数据、硬件资源等。</p>
+<h4><span id="2性能和安全要求的场景">(2)性能和安全要求的场景</span></h4><p>通过new产生一个对象需要非常繁琐的数据准备或访问权限，则可以使用原型模式。</p>
+<h4><span id="3一个对象多个修改者的场景">(3)一个对象多个修改者的场景</span></h4><p>一个对象需要提供给其他对象访问，而且各个调用者可能都需要修改其值时，可以考虑使用原型模式拷贝多个对象供调用者使用。</p>
+<p>在实际项目中，原型模式很少单独出现，一般是和工厂方法模式一起出现，通过clone的方法创建一个对象，然后由工厂方法提供给调用者。原型模式已经与Java融为一体，大家可以随手拿来使用。</p>
+<h2><span id="三-原型模式的注意事项">三、原型模式的注意事项</span></h2><h3><span id="1构造函数不会被执行">1.构造函数不会被执行</span></h3><h3><span id="2浅拷贝和深拷贝">2.浅拷贝和深拷贝</span></h3><p>注意1:深拷贝和浅拷贝建议不要混合使用，特别是在涉及类的继承时，父类有多个引用的情况就非常复杂，建议的方案是深拷贝和浅拷贝分开实现。</p>
+<p>注意2:使用原型模式时，引用的成员变量必须满足两个条件才不会被拷贝:一是类的成员变量，而不是方法内变量;二是必须是一个可变的引用对象，而不是一个原始类型或不可变对象。</p>
+<h3><span id="3clone和final">3.clone和final</span></h3><p>注意:要使用clone方法，类的成员变量上不要增加final关键字</p>
+<h2><span id="四-代码例子">四、代码例子</span></h2><p>已放到github仓库，地址为:<a href="https://github.com/developers-youcong/DesignPatternPractice/tree/master/Prototype" target="_blank" rel="noopener">https://github.com/developers-youcong/DesignPatternPractice/tree/master/Prototype</a></p>
 
       
     </div>
@@ -337,13 +345,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/">ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.</a></p>
+        <p><span>本文标题:</span><a href="/2019/12/29/《设计模式之禅》之原型模式/">《设计模式之禅》之原型模式</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-04-23, 23:10:04</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:20</p>
+        <p><span>发布时间:</span>2019-12-29, 18:32:34</p>
+        <p><span>最后更新:</span>2019-12-29, 19:04:32</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/" title="ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.">http://developers-youcong.github.io/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/04/23/ERROR-1820-HY000-You-must-reset-your-password-using-ALTER-USER-statement-before-executing-this-statement/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/12/29/《设计模式之禅》之原型模式/" title="《设计模式之禅》之原型模式">http://developers-youcong.github.io/2019/12/29/《设计模式之禅》之原型模式/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/12/29/《设计模式之禅》之原型模式/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -355,16 +363,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/24/springfox-swagger之swagger-bootstrap-ui/">
-                    springfox-swagger之swagger-bootstrap-ui
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/22/An-internal-error-occurred-during-Initializing-Java-Tooling/">
-                    An internal error occurred during: Initializing Java Tooling.
+                <a href="/2019/12/28/Idea设置热加载/">
+                    Idea设置热加载
                 </a>
             </div>
         
@@ -376,7 +378,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、原型模式定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、原型模式的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">1.原型模式的优点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.</span> <span class="toc-text">(1)性能优良</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.2.</span> <span class="toc-text">(2)逃避构造函数的约束</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">2.原型模式的使用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.1.</span> <span class="toc-text">(1)资源优化场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.2.</span> <span class="toc-text">(2)性能和安全要求的场景</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.3.</span> <span class="toc-text">(3)一个对象多个修改者的场景</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、原型模式的注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">1.构造函数不会被执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">2.浅拷贝和深拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.3.</span> <span class="toc-text">3.clone和final</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、代码例子</span></a></li></ol>
         
     </div>
     <style>
@@ -412,7 +414,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"《设计模式之禅》之原型模式　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -434,15 +436,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/24/springfox-swagger之swagger-bootstrap-ui/" title="上一篇: springfox-swagger之swagger-bootstrap-ui">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/22/An-internal-error-occurred-during-Initializing-Java-Tooling/" title="下一篇: An internal error occurred during: Initializing Java Tooling.">
+            <a href="/2019/12/28/Idea设置热加载/" title="下一篇: Idea设置热加载">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -478,8 +478,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Tue Apr 23 2019 23:10:04 GMT+0800',
-			  title: 'ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.',
+			  id: 'Sun Dec 29 2019 18:32:34 GMT+0800',
+			  title: '《设计模式之禅》之原型模式',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
