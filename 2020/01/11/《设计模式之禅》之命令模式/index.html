@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="错误如图所示: 错误详情信息:1231251 client does not support authentication protocol requested by server;consider upgrading Mysql clientERROR 1396 (HY000): Operation ALTER USER failed for &amp;apos;root&amp;apos;@&amp;apos;loc">
-<meta name="keywords" content="MySQL">
+<meta name="description" content="一、命令模式定义将一个请求封装成一个对象，从而让你使用不同的请求把客户端参数化，对请求排队或记录请求日志，可以提供命令的撤销和恢复功能。 命令模式的通用类图(这里我抽象为如下):">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用sqlyog连接 Mysql 出现1251错误">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/05/02/使用sqlyog连接-Mysql-出现1251错误/index.html">
+<meta property="og:title" content="《设计模式之禅》之命令模式">
+<meta property="og:url" content="http://developers-youcong.github.io/2020/01/11/《设计模式之禅》之命令模式/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="错误如图所示: 错误详情信息:1231251 client does not support authentication protocol requested by server;consider upgrading Mysql clientERROR 1396 (HY000): Operation ALTER USER failed for &amp;apos;root&amp;apos;@&amp;apos;loc">
+<meta property="og:description" content="一、命令模式定义将一个请求封装成一个对象，从而让你使用不同的请求把客户端参数化，对请求排队或记录请求日志，可以提供命令的撤销和恢复功能。 命令模式的通用类图(这里我抽象为如下):">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/05/02/使用sqlyog连接-Mysql-出现1251错误/01.png">
-<meta property="og:updated_time" content="2019-05-29T14:52:22.108Z">
+<meta property="og:updated_time" content="2020-01-11T12:02:17.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="使用sqlyog连接 Mysql 出现1251错误">
-<meta name="twitter:description" content="错误如图所示: 错误详情信息:1231251 client does not support authentication protocol requested by server;consider upgrading Mysql clientERROR 1396 (HY000): Operation ALTER USER failed for &amp;apos;root&amp;apos;@&amp;apos;loc">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/05/02/使用sqlyog连接-Mysql-出现1251错误/01.png">
+<meta name="twitter:title" content="《设计模式之禅》之命令模式">
+<meta name="twitter:description" content="一、命令模式定义将一个请求封装成一个对象，从而让你使用不同的请求把客户端参数化，对请求排队或记录请求日志，可以提供命令的撤销和恢复功能。 命令模式的通用类图(这里我抽象为如下):">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>使用sqlyog连接 Mysql 出现1251错误 | Blog</title>
+<title>《设计模式之禅》之命令模式 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -288,11 +286,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-使用sqlyog连接-Mysql-出现1251错误" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-《设计模式之禅》之命令模式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/05/02/使用sqlyog连接-Mysql-出现1251错误/" class="article-date">
-      <time datetime="2019-05-01T16:06:49.000Z" itemprop="datePublished">2019-05-02</time>
+      <a href="/2020/01/11/《设计模式之禅》之命令模式/" class="article-date">
+      <time datetime="2020-01-11T10:32:52.000Z" itemprop="datePublished">2020-01-11</time>
 </a>
 
 
@@ -307,7 +305,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      使用sqlyog连接 Mysql 出现1251错误
+      《设计模式之禅》之命令模式
     </h1>
   
 
@@ -318,7 +316,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -328,12 +326,17 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>错误如图所示:<br><img src="/2019/05/02/使用sqlyog连接-Mysql-出现1251错误/01.png" alt=""></p>
-<p>错误详情信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1251 client does not support authentication protocol requested by server;consider upgrading Mysql client</span><br><span class="line"></span><br><span class="line">ERROR 1396 (HY000): Operation ALTER USER failed for &apos;root&apos;@&apos;localhost&apos;</span><br></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>问题原因:<br>主要是由于mysql8以前的加密规则与mysql8以后的存在差异。</p>
-<p>解决办法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED BY &apos;password&apos; PASSWORD EXPIRE NEVER;  ##修改加密规则</span><br><span class="line"></span><br><span class="line">ALTER USER &apos;root&apos;@&apos;localhost&apos; IDENTIFIED WITH mysql_native_password BY &apos;password&apos;; ##更新一下用户的密码 password 为自己想要重新设置的密码</span><br><span class="line"></span><br><span class="line">FLUSH PRIVILEGES; ##刷新权限</span><br></pre></td></tr></table></figure></p>
-<p>本文参考资料如下:<br><a href="https://blog.csdn.net/SUNbrightness/article/details/80600953" target="_blank" rel="noopener">Navicat 连接 Mysql 出现1251错误</a></p>
+        <h2><span id="一-命令模式定义">一、命令模式定义</span></h2><p>将一个请求封装成一个对象，从而让你使用不同的请求把客户端参数化，对请求排队或记录请求日志，可以提供命令的撤销和恢复功能。</p>
+<p>命令模式的通用类图(这里我抽象为如下):<br><a id="more"></a></p>
+<h3><span id="1receive接收者角色">1.Receive接收者角色</span></h3><p>该角色就是干活的角色，命令传递到这里是应该被执行的。</p>
+<h3><span id="2command命令角色">2.Command命令角色</span></h3><p>需要执行的所有命令都在这里声明。</p>
+<h3><span id="3invoker调用者角色">3.Invoker调用者角色</span></h3><p>接收到命令，并执行命令。</p>
+<h2><span id="二-命令模式的应用">二、命令模式的应用</span></h2><h3><span id="1命令模式的优点">1.命令模式的优点</span></h3><h4><span id="a类间解耦">a.类间解耦</span></h4><p>调用者角色与接受者角色之间没有任何依赖关系，调用者实现功能时只需调用Command抽象类的execute方法就可以，不需要了解到底是哪个接收者执行。</p>
+<h4><span id="b可扩展性">b.可扩展性</span></h4><p>Command的子类可以非常容易地扩展，而调用者Invoker和高层次的模式Client不产生严重的代码耦合。</p>
+<h4><span id="c命令模式结合其他模式会更优秀">c.命令模式结合其他模式会更优秀</span></h4><p>命令模式可以结合责任链模式，实现命令族解析任务;结合模板方法模式，则可以减少Command子类的膨胀问题。</p>
+<h3><span id="2命令模式的缺点">2.命令模式的缺点</span></h3><p>命令模式也有其缺点的，请看Command的子类:如果有N个命令，问题就出来了，Command的子类就可不是几个，而是N个，这个类膨胀得非常大，这个就需要读者在项目中慎重考虑使用。</p>
+<h3><span id="3命令模式的使用场景">3.命令模式的使用场景</span></h3><p>只要你认为是命令的地方就可以采用命令模式，例如GUI开发中，一个按钮的点击是一个命令，可以采用命令模式;模拟DOS命令的时候也是要采用命令模式;触发-反馈机制的处理也亦如此。</p>
+<h2><span id="三-最佳实践">三、最佳实践</span></h2><p>每一个模式到实际应用的时候都会有一些变形，命令模式的Receiver在实际应用中一般都会被封装掉(除非非常必要，例如撤销处理)，那是因为在项目中:约定的优先级最高，每一个命令是对一个或多个的Receiver的封装，我们可以在项目中通过有意义的类名或命令名处理命令角色和接收者角色的耦合关系(这就是约定)，减少高层模块(Client类)对低层模块(Receiver角色类)的依赖关系，提高系统整体的稳定性。因此，建议大家在实际的项目开发时采用封闭Receiver的方式，减少Client对Reciver的依赖，该方案只是对Command抽象类及其子类有一定的修改。<br>代码地址:<a href="https://github.com/developers-youcong/DesignPatternPractice/tree/master/Command" target="_blank" rel="noopener">https://github.com/developers-youcong/DesignPatternPractice/tree/master/Command</a></p>
 
       
     </div>
@@ -342,13 +345,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/05/02/使用sqlyog连接-Mysql-出现1251错误/">使用sqlyog连接 Mysql 出现1251错误</a></p>
+        <p><span>本文标题:</span><a href="/2020/01/11/《设计模式之禅》之命令模式/">《设计模式之禅》之命令模式</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-05-02, 00:06:49</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:22</p>
+        <p><span>发布时间:</span>2020-01-11, 18:32:52</p>
+        <p><span>最后更新:</span>2020-01-11, 20:02:17</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/05/02/使用sqlyog连接-Mysql-出现1251错误/" title="使用sqlyog连接 Mysql 出现1251错误">http://developers-youcong.github.io/2019/05/02/使用sqlyog连接-Mysql-出现1251错误/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/05/02/使用sqlyog连接-Mysql-出现1251错误/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/01/11/《设计模式之禅》之命令模式/" title="《设计模式之禅》之命令模式">http://developers-youcong.github.io/2020/01/11/《设计模式之禅》之命令模式/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/01/11/《设计模式之禅》之命令模式/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -360,16 +363,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/05/02/深入分析JavaWeb之JSP/">
-                    深入分析JavaWeb之JSP
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/05/01/The-server-time-zone-value-OÐ¹u±e×¼E±¼a-is-unrecognized-or-represents-more-than-one-time-zone/">
-                    The server time zone value &#39;ÖÐ¹ú±ê×¼Ê±¼ä&#39; is unrecognized or represents more than one time zone.
+                <a href="/2020/01/05/《设计模式之禅》之中介者模式/">
+                    《设计模式之禅》之中介者模式
                 </a>
             </div>
         
@@ -381,7 +378,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、命令模式定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1.Receive接收者角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">2.Command命令角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">3.Invoker调用者角色</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、命令模式的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">1.命令模式的优点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.</span> <span class="toc-text">a.类间解耦</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.2.</span> <span class="toc-text">b.可扩展性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.3.</span> <span class="toc-text">c.命令模式结合其他模式会更优秀</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">2.命令模式的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">3.命令模式的使用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、最佳实践</span></a></li></ol>
         
     </div>
     <style>
@@ -417,7 +414,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"使用sqlyog连接 Mysql 出现1251错误　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"《设计模式之禅》之命令模式　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -439,15 +436,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/05/02/深入分析JavaWeb之JSP/" title="上一篇: 深入分析JavaWeb之JSP">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/05/01/The-server-time-zone-value-OÐ¹u±e×¼E±¼a-is-unrecognized-or-represents-more-than-one-time-zone/" title="下一篇: The server time zone value &#39;ÖÐ¹ú±ê×¼Ê±¼ä&#39; is unrecognized or represents more than one time zone.">
+            <a href="/2020/01/05/《设计模式之禅》之中介者模式/" title="下一篇: 《设计模式之禅》之中介者模式">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -483,8 +478,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Thu May 02 2019 00:06:49 GMT+0800',
-			  title: '使用sqlyog连接 Mysql 出现1251错误',
+			  id: 'Sat Jan 11 2020 18:32:52 GMT+0800',
+			  title: '《设计模式之禅》之命令模式',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {

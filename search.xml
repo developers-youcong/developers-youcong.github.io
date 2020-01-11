@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>《设计模式之禅》之命令模式</title>
+      <link href="/2020/01/11/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2020/01/11/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-命令模式定义">一、命令模式定义</span></h2><p>将一个请求封装成一个对象，从而让你使用不同的请求把客户端参数化，对请求排队或记录请求日志，可以提供命令的撤销和恢复功能。</p><p>命令模式的通用类图(这里我抽象为如下):<br><a id="more"></a></p><h3><span id="1receive接收者角色">1.Receive接收者角色</span></h3><p>该角色就是干活的角色，命令传递到这里是应该被执行的。</p><h3><span id="2command命令角色">2.Command命令角色</span></h3><p>需要执行的所有命令都在这里声明。</p><h3><span id="3invoker调用者角色">3.Invoker调用者角色</span></h3><p>接收到命令，并执行命令。</p><h2><span id="二-命令模式的应用">二、命令模式的应用</span></h2><h3><span id="1命令模式的优点">1.命令模式的优点</span></h3><h4><span id="a类间解耦">a.类间解耦</span></h4><p>调用者角色与接受者角色之间没有任何依赖关系，调用者实现功能时只需调用Command抽象类的execute方法就可以，不需要了解到底是哪个接收者执行。</p><h4><span id="b可扩展性">b.可扩展性</span></h4><p>Command的子类可以非常容易地扩展，而调用者Invoker和高层次的模式Client不产生严重的代码耦合。</p><h4><span id="c命令模式结合其他模式会更优秀">c.命令模式结合其他模式会更优秀</span></h4><p>命令模式可以结合责任链模式，实现命令族解析任务;结合模板方法模式，则可以减少Command子类的膨胀问题。</p><h3><span id="2命令模式的缺点">2.命令模式的缺点</span></h3><p>命令模式也有其缺点的，请看Command的子类:如果有N个命令，问题就出来了，Command的子类就可不是几个，而是N个，这个类膨胀得非常大，这个就需要读者在项目中慎重考虑使用。</p><h3><span id="3命令模式的使用场景">3.命令模式的使用场景</span></h3><p>只要你认为是命令的地方就可以采用命令模式，例如GUI开发中，一个按钮的点击是一个命令，可以采用命令模式;模拟DOS命令的时候也是要采用命令模式;触发-反馈机制的处理也亦如此。</p><h2><span id="三-最佳实践">三、最佳实践</span></h2><p>每一个模式到实际应用的时候都会有一些变形，命令模式的Receiver在实际应用中一般都会被封装掉(除非非常必要，例如撤销处理)，那是因为在项目中:约定的优先级最高，每一个命令是对一个或多个的Receiver的封装，我们可以在项目中通过有意义的类名或命令名处理命令角色和接收者角色的耦合关系(这就是约定)，减少高层模块(Client类)对低层模块(Receiver角色类)的依赖关系，提高系统整体的稳定性。因此，建议大家在实际的项目开发时采用封闭Receiver的方式，减少Client对Reciver的依赖，该方案只是对Command抽象类及其子类有一定的修改。<br>代码地址:<a href="https://github.com/developers-youcong/DesignPatternPractice/tree/master/Command" target="_blank" rel="noopener">https://github.com/developers-youcong/DesignPatternPractice/tree/master/Command</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《设计模式之禅》之中介者模式</title>
       <link href="/2020/01/05/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
       <url>/2020/01/05/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
