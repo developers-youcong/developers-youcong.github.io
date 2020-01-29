@@ -292,6 +292,75 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-多模块应用自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/11/多模块应用自动化部署/" class="article-date">
+      <time datetime="2019-04-11T07:16:04.000Z" itemprop="datePublished">2019-04-11</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/11/多模块应用自动化部署/">多模块应用自动化部署</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/11/多模块应用自动化部署/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-单体应用自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -905,76 +974,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/04/08/大型网站架构模式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-博客中的文章归档是如何实现的" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/07/博客中的文章归档是如何实现的/" class="article-date">
-      <time datetime="2019-04-07T07:39:40.000Z" itemprop="datePublished">2019-04-07</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/07/博客中的文章归档是如何实现的/">博客中的文章归档是如何实现的</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>我的效果图如下(这个是我实现的):<br><img src="/2019/04/07/博客中的文章归档是如何实现的/blog01.png" alt=""></p>
-<p>wordpress的效果图如下:<br><img src="/2019/04/07/博客中的文章归档是如何实现的/blog02.png" alt=""><br>sql代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT YEAR(post.post_modified)AS `year`,MONTH(post.post_modified) AS `month` FROM wp_posts AS post</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/07/博客中的文章归档是如何实现的/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
