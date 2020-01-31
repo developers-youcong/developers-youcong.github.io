@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="应用场景:比如像Eclipse这样的IDE，右击项目，出现选项，点击选项中的删除，就可以删除这个项目及其下的子目录包含文件(使用electron开发的桌面端项目多少都会用到)。">
-<meta name="keywords" content="Node.js">
+<meta name="description" content="表达的逻辑一、为什么要用金字塔结构">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Node.js之删除文件夹(含递归删除)">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/07/20/Node-js之删除文件夹-含递归删除/index.html">
+<meta property="og:title" content="《金字塔原理》阅读笔记">
+<meta property="og:url" content="http://developers-youcong.github.io/2020/01/31/《金字塔原理》阅读笔记/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="应用场景:比如像Eclipse这样的IDE，右击项目，出现选项，点击选项中的删除，就可以删除这个项目及其下的子目录包含文件(使用electron开发的桌面端项目多少都会用到)。">
+<meta property="og:description" content="表达的逻辑一、为什么要用金字塔结构">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-16T08:22:33.343Z">
+<meta property="og:updated_time" content="2020-01-31T11:18:53.779Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Node.js之删除文件夹(含递归删除)">
-<meta name="twitter:description" content="应用场景:比如像Eclipse这样的IDE，右击项目，出现选项，点击选项中的删除，就可以删除这个项目及其下的子目录包含文件(使用electron开发的桌面端项目多少都会用到)。">
+<meta name="twitter:title" content="《金字塔原理》阅读笔记">
+<meta name="twitter:description" content="表达的逻辑一、为什么要用金字塔结构">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Node.js之删除文件夹(含递归删除) | Blog</title>
+<title>《金字塔原理》阅读笔记 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -290,11 +290,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Node-js之删除文件夹-含递归删除" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-《金字塔原理》阅读笔记" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/07/20/Node-js之删除文件夹-含递归删除/" class="article-date">
-      <time datetime="2019-07-20T04:10:11.000Z" itemprop="datePublished">2019-07-20</time>
+      <a href="/2020/01/31/《金字塔原理》阅读笔记/" class="article-date">
+      <time datetime="2020-01-31T10:56:58.000Z" itemprop="datePublished">2020-01-31</time>
 </a>
 
 
@@ -309,7 +309,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      Node.js之删除文件夹(含递归删除)
+      《金字塔原理》阅读笔记
     </h1>
   
 
@@ -320,7 +320,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -330,8 +330,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>应用场景:比如像Eclipse这样的IDE，右击项目，出现选项，点击选项中的删除，就可以删除这个项目及其下的子目录包含文件(使用electron开发的桌面端项目多少都会用到)。<br><a id="more"></a><br>核心代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">	 *</span><br><span class="line">	 * @param &#123;*&#125; url</span><br><span class="line">	 */</span><br><span class="line">	function deleteFolderRecursive(url) &#123;</span><br><span class="line">		var files = [];</span><br><span class="line">		/**</span><br><span class="line">		 * 判断给定的路径是否存在</span><br><span class="line">		 */</span><br><span class="line">		if (fs.existsSync(url)) &#123;</span><br><span class="line">			/**</span><br><span class="line">			 * 返回文件和子目录的数组</span><br><span class="line">			 */</span><br><span class="line">			files = fs.readdirSync(url);</span><br><span class="line">			files.forEach(function (file, index) &#123;</span><br><span class="line"></span><br><span class="line">				var curPath = path.join(url, file);</span><br><span class="line">				/**</span><br><span class="line">				 * fs.statSync同步读取文件夹文件，如果是文件夹，在重复触发函数</span><br><span class="line">				 */</span><br><span class="line">				if (fs.statSync(curPath).isDirectory()) &#123; // recurse</span><br><span class="line">					deleteFolderRecursive(curPath);</span><br><span class="line"></span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					fs.unlinkSync(curPath);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;);</span><br><span class="line">			/**</span><br><span class="line">			 * 清除文件夹</span><br><span class="line">			 */</span><br><span class="line">			fs.rmdirSync(url);</span><br><span class="line">		&#125; else &#123;</span><br><span class="line">			console.log(&quot;给定的路径不存在，请给出正确的路径&quot;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
-
+        <h1><span id="表达的逻辑">表达的逻辑</span></h1><h2><span id="一-为什么要用金字塔结构">一、为什么要用金字塔结构</span></h2><a id="more"></a>
+<h3><span id="1归类分组将思想组织成金字塔">1.归类分组，将思想组织成金字塔</span></h3><h3><span id="2自上而下表达结论先行">2.自上而下表达，结论先行</span></h3><h3><span id="3自下而上思考总结概况">3.自下而上思考，总结概况</span></h3><h2><span id="二-金字塔内部的结构">二、金字塔内部的结构</span></h2><h3><span id="1纵向关系">1.纵向关系</span></h3><h3><span id="2横向关系">2.横向关系</span></h3><h3><span id="3序言的结构">3.序言的结构</span></h3><h2><span id="三-如何构建金字塔">三、如何构建金字塔</span></h2><h3><span id="1自上而下法">1.自上而下法</span></h3><h3><span id="2自下而上法">2.自下而上法</span></h3><h3><span id="3初学者注意事项">3.初学者注意事项</span></h3><h2><span id="四-序言的具体写法">四、序言的具体写法</span></h2><h3><span id="1序言的讲故事结构">1.序言的讲故事结构</span></h3><h3><span id="2序言的常见模式">2.序言的常见模式</span></h3><h3><span id="3序言的常见模式以咨询为例">3.序言的常见模式–以咨询为例</span></h3><h2><span id="五-演绎推理与归纳推理">五、演绎推理与归纳推理</span></h2><h3><span id="1演绎推理">1.演绎推理</span></h3><h3><span id="2归纳推理">2.归纳推理</span></h3><h3><span id="3演绎推理与归纳推理的区别">3.演绎推理与归纳推理的区别</span></h3><h1><span id="思考的逻辑">思考的逻辑</span></h1><h2><span id="一-应用逻辑顺序">一、应用逻辑顺序</span></h2><h3><span id="1时间顺序">1.时间顺序</span></h3><h3><span id="2结构顺序">2.结构顺序</span></h3><h3><span id="3程度顺序">3.程度顺序</span></h3><h2><span id="二-概括各组思想">二、概括各组思想</span></h2><h3><span id="1总结句避免使用缺乏思想的句子">1.总结句避免使用”缺乏思想”的句子</span></h3><h3><span id="2总结句要说明行动产生的结果目标">2.总结句要说明行动产生的结果/目标</span></h3><h3><span id="3找出各结论之间的共性">3.找出各结论之间的共性</span></h3><h1><span id="解决问题的逻辑">解决问题的逻辑</span></h1><h2><span id="一-界定问题">一、界定问题</span></h2><h3><span id="1界定问题的框架">1.界定问题的框架</span></h3><h3><span id="2展开问题的各要素">2.展开问题的各要素</span></h3><h3><span id="3发掘读者的疑问">3.发掘读者的疑问</span></h3><h3><span id="4开始写序言">4.开始写序言</span></h3><h3><span id="5实战案例">5.实战案例</span></h3><h2><span id="二-结构化分析问题">二、结构化分析问题</span></h2><h3><span id="1从信息资料入手">1.从信息资料入手</span></h3><h3><span id="2设计诊断框架">2.设计诊断框架</span></h3><h3><span id="3使用诊断框架">3.使用诊断框架</span></h3><h3><span id="4建立逻辑树">4.建立逻辑树</span></h3><h3><span id="5是非问题分析">5.是非问题分析</span></h3><h1><span id="演示的逻辑">演示的逻辑</span></h1><h2><span id="一-在书面上呈现金字塔">一、在书面上呈现金字塔</span></h2><h3><span id="1突出显示文章的框架结构">1.突出显示文章的框架结构</span></h3><h3><span id="2上下文之间要有过渡">2.上下文之间要有过渡</span></h3><h2><span id="二-在ppt演示文稿中呈现金字塔">二、在PPT演示文稿中呈现金字塔</span></h2><h3><span id="1设计文字ppt幻灯片">1.设计文字PPT幻灯片</span></h3><h3><span id="2设计图表ppt幻灯片">2.设计图表PPT幻灯片</span></h3><h3><span id="3故事梗概">3.故事梗概</span></h3><h2><span id="三-在字里行间呈现金字塔">三、在字里行间呈现金字塔</span></h2><h3><span id="1画脑图在大脑中画图像">1.画脑图(在大脑中画图像)</span></h3><h3><span id="2把图像复制成文字">2.把图像复制成文字</span></h3>
       
     </div>
     
@@ -339,13 +339,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/07/20/Node-js之删除文件夹-含递归删除/">Node.js之删除文件夹(含递归删除)</a></p>
+        <p><span>本文标题:</span><a href="/2020/01/31/《金字塔原理》阅读笔记/">《金字塔原理》阅读笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-07-20, 12:10:11</p>
-        <p><span>最后更新:</span>2019-08-16, 16:22:33</p>
+        <p><span>发布时间:</span>2020-01-31, 18:56:58</p>
+        <p><span>最后更新:</span>2020-01-31, 19:18:53</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/07/20/Node-js之删除文件夹-含递归删除/" title="Node.js之删除文件夹(含递归删除)">http://developers-youcong.github.io/2019/07/20/Node-js之删除文件夹-含递归删除/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/07/20/Node-js之删除文件夹-含递归删除/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/01/31/《金字塔原理》阅读笔记/" title="《金字塔原理》阅读笔记">http://developers-youcong.github.io/2020/01/31/《金字塔原理》阅读笔记/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/01/31/《金字塔原理》阅读笔记/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -357,16 +357,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/07/21/Linux搜索所有文件中的内容/">
-                    Linux搜索所有文件中的内容
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/07/19/微信小程序开发之页面传参/">
-                    微信小程序之页面传参
+                <a href="/2020/01/29/《跟小贤学运营》阅读笔记/">
+                    《跟小贤学运营》阅读笔记
                 </a>
             </div>
         
@@ -378,7 +372,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">表达的逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">一、为什么要用金字塔结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.归类分组，将思想组织成金字塔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.自上而下表达，结论先行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.3.</span> <span class="toc-text">3.自下而上思考，总结概况</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">二、金字塔内部的结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.纵向关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.横向关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.序言的结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">三、如何构建金字塔</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.1.</span> <span class="toc-text">1.自上而下法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.2.</span> <span class="toc-text">2.自下而上法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.初学者注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">四、序言的具体写法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.1.</span> <span class="toc-text">1.序言的讲故事结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.2.</span> <span class="toc-text">2.序言的常见模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.3.</span> <span class="toc-text">3.序言的常见模式–以咨询为例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.</span> <span class="toc-text">五、演绎推理与归纳推理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.1.</span> <span class="toc-text">1.演绎推理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.2.</span> <span class="toc-text">2.归纳推理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.5.3.</span> <span class="toc-text">3.演绎推理与归纳推理的区别</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">思考的逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">一、应用逻辑顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.1.</span> <span class="toc-text">1.时间顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.2.</span> <span class="toc-text">2.结构顺序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.3.</span> <span class="toc-text">3.程度顺序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">二、概括各组思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.1.</span> <span class="toc-text">1.总结句避免使用”缺乏思想”的句子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.2.</span> <span class="toc-text">2.总结句要说明行动产生的结果/目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.3.</span> <span class="toc-text">3.找出各结论之间的共性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">解决问题的逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">一、界定问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.1.</span> <span class="toc-text">1.界定问题的框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.2.</span> <span class="toc-text">2.展开问题的各要素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.3.</span> <span class="toc-text">3.发掘读者的疑问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.4.</span> <span class="toc-text">4.开始写序言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.5.</span> <span class="toc-text">5.实战案例</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">二、结构化分析问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.1.</span> <span class="toc-text">1.从信息资料入手</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.设计诊断框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.3.</span> <span class="toc-text">3.使用诊断框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.4.</span> <span class="toc-text">4.建立逻辑树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.5.</span> <span class="toc-text">5.是非问题分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">演示的逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.1.</span> <span class="toc-text">一、在书面上呈现金字塔</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.1.1.</span> <span class="toc-text">1.突出显示文章的框架结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.1.2.</span> <span class="toc-text">2.上下文之间要有过渡</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.2.</span> <span class="toc-text">二、在PPT演示文稿中呈现金字塔</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.2.1.</span> <span class="toc-text">1.设计文字PPT幻灯片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.2.2.</span> <span class="toc-text">2.设计图表PPT幻灯片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.2.3.</span> <span class="toc-text">3.故事梗概</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.3.</span> <span class="toc-text">三、在字里行间呈现金字塔</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.3.1.</span> <span class="toc-text">1.画脑图(在大脑中画图像)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.3.2.</span> <span class="toc-text">2.把图像复制成文字</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -414,7 +408,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Node.js之删除文件夹(含递归删除)　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"《金字塔原理》阅读笔记　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -436,15 +430,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/07/21/Linux搜索所有文件中的内容/" title="上一篇: Linux搜索所有文件中的内容">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/07/19/微信小程序开发之页面传参/" title="下一篇: 微信小程序之页面传参">
+            <a href="/2020/01/29/《跟小贤学运营》阅读笔记/" title="下一篇: 《跟小贤学运营》阅读笔记">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -480,8 +472,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Sat Jul 20 2019 12:10:11 GMT+0800',
-			  title: 'Node.js之删除文件夹(含递归删除)',
+			  id: 'Fri Jan 31 2020 18:56:58 GMT+0800',
+			  title: '《金字塔原理》阅读笔记',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
