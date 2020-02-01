@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>《设计模式之禅》之装饰模式</title>
+      <link href="/2020/02/01/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/"/>
+      <url>/2020/02/01/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-装饰模式的定义">一、装饰模式的定义</span></h2><p>装饰模式是一种笔记常见的模式，其定义如下:<br>动态地给一个对象添加一些额外的职责。就增加功能来说，装饰模式相比生成子类更为灵活。<br><a id="more"></a></p><h3><span id="装饰模式通用类说明">装饰模式通用类说明</span></h3><h4><span id="component抽象构件">Component抽象构件</span></h4><p>Component是一个接口或者是抽象类，就是定义我们最核心的对象。也就是最原始的对象。</p><p><strong>注意:</strong><br>在装饰模式中，必然有一个最基本、最核心、最原始的接口或抽象类充当Component抽象构件。</p><h4><span id="concretecomponent具体构件">ConcreteComponent具体构件</span></h4><p>ConcreteComponent是最核心、最原始、最基本的接口或抽象类的实现，你要装饰的就是它。</p><h4><span id="decorator装饰角色">Decorator装饰角色</span></h4><p>一般是一个抽象类，做什么用呢？实现接口或者抽象方法，它里面可不一定有抽象的方法，在它的属性里必然有一个private变量指向Component抽象构件。</p><h4><span id="具体装饰角色">具体装饰角色</span></h4><p>ConcreteDecoratorA和ConcreteDecoratorB是两个具体的装饰类，你要把最核心的、最原始的、最基本的东西装饰成其他东西。</p><p><strong>注意:</strong><br>原始方法和装饰方法的执行顺序在具体的装饰类是固定的，可以通过方法重载实现多种执行顺序。</p><h2><span id="二-装饰模式应用">二、装饰模式应用</span></h2><h3><span id="1装饰模式的优点">1.装饰模式的优点</span></h3><h4><span id="a装饰类和被装饰类可以独立发展而不会相互耦合-换句话说component类无须知道decorator类decorator类是从外部来扩展component类的功能而decorator也不用知道具体的构件">a.装饰类和被装饰类可以独立发展，而不会相互耦合。换句话说，Component类无须知道Decorator类，Decorator类是从外部来扩展Component类的功能，而Decorator也不用知道具体的构件。</span></h4><h4><span id="b装饰模式是继承关系的一个替代方案-我们看装饰类decorator不管装饰多少层返回的对象还是component实现的还是is-a的关系">b.装饰模式是继承关系的一个替代方案。我们看装饰类Decorator，不管装饰多少层，返回的对象还是Component，实现的还是is-a的关系。</span></h4><h4><span id="c装饰模式可以动态地扩展一个实现类的功能">c.装饰模式可以动态地扩展一个实现类的功能。</span></h4><h3><span id="2装饰模式的缺点">2.装饰模式的缺点</span></h3><h4><span id="如果装饰类的数量过高会增加系统的复杂性">如果装饰类的数量过高，会增加系统的复杂性。</span></h4><h3><span id="3装饰模式的使用场景">3.装饰模式的使用场景</span></h3><h4><span id="a需要扩展一个类的功能或给一个类增加附加功能">a.需要扩展一个类的功能，或给一个类增加附加功能。</span></h4><h4><span id="b需要动态给一个对象增加功能这些功能可以再动态地撤销">b.需要动态给一个对象增加功能，这些功能可以再动态地撤销。</span></h4><h4><span id="c需要为一批的兄弟类进行改装或加装功能">c.需要为一批的兄弟类进行改装或加装功能。</span></h4><h2><span id="三-最佳实践">三、最佳实践</span></h2><p>装饰模式是对继承的有力补充。你要知道继承并不是万能的，继承可以解决实际的问题，但是在项目中你要考虑诸如易维护、易扩展、易复用等，而且在一些情况下，你要是用继承就会增加很多子类，灵活性非常差，也就是说装饰模式可以替代继承，解决类膨胀问题。</p><p>代码例子:<a href="https://github.com/developers-youcong/DesignPatternPractice/tree/master/Decorator" target="_blank" rel="noopener">https://github.com/developers-youcong/DesignPatternPractice/tree/master/Decorator</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 读书笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《金字塔原理》阅读笔记</title>
       <link href="/2020/01/31/%E3%80%8A%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
       <url>/2020/01/31/%E3%80%8A%E9%87%91%E5%AD%97%E5%A1%94%E5%8E%9F%E7%90%86%E3%80%8B%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</url>
