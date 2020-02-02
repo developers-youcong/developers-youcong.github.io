@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="Nginx配置phpmyadmin流程如下: 一、准备软件和环境(这里我以ubuntu16.04为例)1.安装php7.112345sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/phpsudo apt-get updatesudo apt-get install php-pear php7.1-cli php7.1-common php7.1-">
-<meta name="keywords" content="Linux">
+<meta name="description" content="为什么查询会慢?响应时间过长。如果把查询看做是一个任务，那么它由一系列子任务组成，每个子任务都会消耗一定的时间。如果要优化查询，实际上优化其子任务，要么消除其中一些子任务，要么减少子任务的执行次数，要么让子任务运行得更快。">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nginx上配置phpmyadmin">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/index.html">
+<meta property="og:title" content="《高性能MySQL》之MySQL查询性能优化">
+<meta property="og:url" content="http://developers-youcong.github.io/2020/02/02/《高性能MySQL》之MySQL查询性能优化/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="Nginx配置phpmyadmin流程如下: 一、准备软件和环境(这里我以ubuntu16.04为例)1.安装php7.112345sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/phpsudo apt-get updatesudo apt-get install php-pear php7.1-cli php7.1-common php7.1-">
+<meta property="og:description" content="为什么查询会慢?响应时间过长。如果把查询看做是一个任务，那么它由一系列子任务组成，每个子任务都会消耗一定的时间。如果要优化查询，实际上优化其子任务，要么消除其中一些子任务，要么减少子任务的执行次数，要么让子任务运行得更快。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/phpmyadmin.png">
-<meta property="og:updated_time" content="2019-05-29T14:52:22.060Z">
+<meta property="og:updated_time" content="2020-02-02T06:22:42.970Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nginx上配置phpmyadmin">
-<meta name="twitter:description" content="Nginx配置phpmyadmin流程如下: 一、准备软件和环境(这里我以ubuntu16.04为例)1.安装php7.112345sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/phpsudo apt-get updatesudo apt-get install php-pear php7.1-cli php7.1-common php7.1-">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/phpmyadmin.png">
+<meta name="twitter:title" content="《高性能MySQL》之MySQL查询性能优化">
+<meta name="twitter:description" content="为什么查询会慢?响应时间过长。如果把查询看做是一个任务，那么它由一系列子任务组成，每个子任务都会消耗一定的时间。如果要优化查询，实际上优化其子任务，要么消除其中一些子任务，要么减少子任务的执行次数，要么让子任务运行得更快。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>nginx上配置phpmyadmin | Blog</title>
+<title>《高性能MySQL》之MySQL查询性能优化 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -292,11 +290,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-nginx上配置phpmyadmin" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-《高性能MySQL》之MySQL查询性能优化" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/04/10/nginx上配置phpmyadmin/" class="article-date">
-      <time datetime="2019-04-10T03:23:44.000Z" itemprop="datePublished">2019-04-10</time>
+      <a href="/2020/02/02/《高性能MySQL》之MySQL查询性能优化/" class="article-date">
+      <time datetime="2020-02-02T06:21:01.000Z" itemprop="datePublished">2020-02-02</time>
 </a>
 
 
@@ -311,7 +309,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      nginx上配置phpmyadmin
+      《高性能MySQL》之MySQL查询性能优化
     </h1>
   
 
@@ -322,7 +320,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -332,22 +330,87 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>Nginx配置phpmyadmin流程如下:</p>
-<h2><span id="一-准备软件和环境这里我以ubuntu1604为例">一、准备软件和环境(这里我以ubuntu16.04为例)</span></h2><h3><span id="1安装php71">1.安装php7.1</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install php-pear php7.1-cli php7.1-common php7.1-curl \</span><br><span class="line">    php7.1-dev php7.1-fpm php7.1-json php7.1-mbstring php7.1-mcrypt \</span><br><span class="line">    php7.1-mysql php7.1-opcache php7.1-zip php7.1-intl php7.1-gd php7.1-xml</span><br></pre></td></tr></table></figure>
-<h4><span id="1修改-php-fpm-监听方式为1270019000">(1)修改 PHP-FPM 监听方式为127.0.0.1:9000</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sed -i &apos;s/listen = .*/listen = 127.0.0.1:9000/g&apos; /etc/php/7.1/fpm/pool.d/www.conf</span><br></pre></td></tr></table></figure>
-<h4><span id="2重启-php-fpm-服务进程">(2)重启 PHP-FPM 服务进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service php7.1-fpm restart</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3><span id="2安装mysql">2.安装mysql</span></h3><h4><span id="1配置mysql57源">(1)配置mysql5.7源</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 可在 http://dev.mysql.com/downloads/repo/apt/ 页面找到 mysql-apt-config 的最新版本。</span><br><span class="line">wget http://dev.mysql.com/get/mysql-apt-config_0.8.7-1_all.deb</span><br><span class="line">sudo dpkg -i mysql-apt-config_0.8.7-1_all.deb</span><br></pre></td></tr></table></figure>
-<p>这时会弹出让你选择，将：</p>
-<p>MySQL Server修改为： mysql-5.7<br>MySQL Tools &amp; Connectors (Currently selected: Enabled)修改为Disabled。<br>MySQL Preview Packages修改过为 Disabled。</p>
-<h4><span id="2安装mysql服务端">(2)安装mysql服务端</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install mysql-server</span><br></pre></td></tr></table></figure>
-<h3><span id="3下载最新版phpmyadmin可以到官网去下载">3.下载最新版phpmyadmin，可以到去下载:</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://files.phpmyadmin.net/phpMyAdmin/4.8.5/phpMyAdmin-4.8.5-all-languages.zip</span><br><span class="line">unzip phpMyAdmin-4.8.5-all-languages.zip</span><br><span class="line">mv phpMyAdmin-4.8.5-all-languages.zip phpmyadmin</span><br></pre></td></tr></table></figure>
-<h3><span id="4安装nginx">4.安装nginx:</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:nginx/stable</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
-<h2><span id="二-将phpmyadmin复制到varwww目录下">二、将phpmyadmin复制到/var/www目录下</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp -r phpmyadmin /var/www</span><br></pre></td></tr></table></figure>
-<h2><span id="三-配置nginx主要修改nginxconf配置文件">三、配置nginx(主要修改nginx.conf配置文件)</span></h2><p>这段代码放到http{}里面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">listen 8090;</span><br><span class="line">root /var/www/phpmyadmin;</span><br><span class="line">index index.php;</span><br><span class="line"></span><br><span class="line">location ~ \.php$ &#123;</span><br><span class="line">  include snippets/fastcgi-php.conf;</span><br><span class="line">  fastcgi_pass unix:/run/php/php7.1-fpm.sock;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>四、重启nginx<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/nginx restart</span><br></pre></td></tr></table></figure></p>
-<p>访问:<a href="http://IP地址:8090/即可看到" target="_blank" rel="noopener">http://IP地址:8090/即可看到</a><br>效果图如下:<br><img src="/2019/04/10/nginx上配置phpmyadmin/phpmyadmin.png" alt=""></p>
+        <h2><span id="为什么查询会慢">为什么查询会慢?</span></h2><p>响应时间过长。如果把查询看做是一个任务，那么它由一系列子任务组成，每个子任务都会消耗一定的时间。如果要优化查询，实际上优化其子任务，要么消除其中一些子任务，要么减少子任务的执行次数，要么让子任务运行得更快。<br><a id="more"></a><br>查询的生命周期:</p>
+<p>客户端-&gt;服务器-&gt;服务器上解析-&gt;生成执行计划-&gt;执行-&gt;返回结果给客户端。</p>
+<p>其中”执行”包括大量为了检索数据到存储引擎的调用以及调用后的数据处理，包括排序、分组等。</p>
+<h2><span id="慢查询优化数据访问">慢查询:优化数据访问</span></h2><p>查询性能低下最基本的原因:访问的数据太多。</p>
+<p>低效查询分析:</p>
+<p>1.确认应用程序是否在检索大量超过需要的数据;</p>
+<p>2.确认MySQL服务器层是否在分析大量超过需要的数据行;</p>
+<h3><span id="是否向数据库请求了不需要的数据">是否向数据库请求了不需要的数据</span></h3><p>典型案例(主要体现为了省事，使用SELECT *):</p>
+<ul>
+<li>查询不需要的记录</li>
+<li>多表关联时返回全部列</li>
+<li>总是取出全部列</li>
+<li>重复查询相同数据</li>
+</ul>
+<h3><span id="mysql是否在扫描额外的记录">MySQL是否在扫描额外的记录</span></h3><p>在确定查询只返回需要的数据以后，接下来看查询为了返回结果是否扫描过多的数据。对于MySQL,最简单的衡量查询开销的三个指标:</p>
+<h4><span id="响应时间">响应时间</span></h4><p>响应时间包含服务时间和排队时间。</p>
+<p>服务时间是指数据库处理这个查询真正花了多长时间。</p>
+<p>排队时间是指服务器因为等待某些资源而没有真正执行查询的时间，可能等I/O操作完成，也可能等待行锁。</p>
+<h4><span id="扫描的行数和返回的列数">扫描的行数和返回的列数</span></h4><p>在一定程度上能够说明该查询找出需要的数据的效率高不高。<br>理想情况下扫描行数和返回的行数应该是相同的。</p>
+<h4><span id="扫描的行数和访问类型">扫描的行数和访问类型</span></h4><p>访问类型主要指全表扫描、索引扫描、范围扫描、唯一索引查询、常数引用。</p>
+<p>一般MySQL能够使用如下三种方式应用WHERE条件，从好到坏依次为:</p>
+<ul>
+<li>在索引中使用WHERE条件来过滤不匹配的记录。这是存储引擎层完成的。</li>
+<li>使用索引覆盖扫描(在Extra列中出现了Using index)来返回记录，直接从索引中过滤不需要的记录并返回命中的结果。这是在MySQL服务器层完成的，但无须再回表查询记录。</li>
+<li>从数据表中返回数据，然后过滤不满足条件的记录(在Extra列中出现Using Where)。这在MySQL服务器层完成，MySQL需要先从数据表读出记录然后过滤。</li>
+<li></li>
+</ul>
+<p>如果发现查询需要扫描大量的数据但只返回少数的行，那么通常可以尝试下面的技巧去优化它:</p>
+<ul>
+<li>使用索引覆盖扫描，把所有需要用的列都放在索引中，这样存储引擎无须回表获取对应行就可以返回结果了。</li>
+<li>改变库表结构。例如使用单独的汇总表。</li>
+<li>重写这个复杂查询，让MySQL优化器能够以更优化的方式执行这个查询。</li>
+</ul>
+<h3><span id="重构查询的方式">重构查询的方式</span></h3><h4><span id="复杂查询拆分多个简单查询">复杂查询拆分多个简单查询</span></h4><h4><span id="切分查询">切分查询</span></h4><p>将大查询拆分为小查询，每个查询功能完全一样，只完成一小部分，每次只返回一小部分查询结果。</p>
+<h4><span id="分解关联查询">分解关联查询</span></h4><p>用分解关联查询的方式重构查询有如下优势:</p>
+<ul>
+<li>让缓存效率更高。</li>
+<li>将查询分解后，执行单个查询可以减少锁的竞争。</li>
+<li>在应用层做关联，可以更容易对数据库进行拆分，更容易做到高性能和可扩展。</li>
+<li>查询本身效率也可能会有所提升。</li>
+<li>可以减少冗余记录的查询。</li>
+<li>相当于在应用中实现了哈希关联，而不是使用MySQL的嵌套循环关联。</li>
+<li><h3><span id="查询执行的基础">查询执行的基础</span></h3>1.客户端发送一条查询给服务器。</li>
+</ul>
+<p>2.服务器先检查查询缓存，如果命中缓存，则立刻返回存储在缓存中的结果。否则进入下一阶段。</p>
+<p>3.服务器端进行SQL解析、预处理，再由优化器生成对应的执行计划。</p>
+<p>4.MySQL根据优化器生成的执行计划，调用存储引擎的API来执行查询。</p>
+<p>5.将结果返回给客户端。</p>
+<h3><span id="优化特定类型的查询">优化特定类型的查询</span></h3><h4><span id="优化count查询">优化COUNT()查询</span></h4><h4><span id="优化关联查询">优化关联查询</span></h4><ul>
+<li>确保ON或USING子句中的列上有索引。</li>
+<li>确保任何GROUP BY和ORDER BY 中的表达式只涉及到一个表中的列，这样MySQL才有可能使用索引来优化这个过程。</li>
+<li>当升级MySQL的时候需要注意:关联语法、运算符优先级等其他可能会发生变化的地方。因为以前是普通关联的地方可能会变成笛卡尔积，不同类型的关联可能会生成不同的结果等。</li>
+</ul>
+<h4><span id="优化子查询">优化子查询</span></h4><p>对于子查询的优化，尽可能使用关联查询代替。</p>
+<h4><span id="优化group-by-和-order-by">优化GROUP BY 和 ORDER BY</span></h4><p>最有效的优化办法是使用索引。</p>
+<p>当无法使用索引时，可以使用临时表或者文件排序来做分组。</p>
+<p>另外如果需要对关联查询做分组，并且是按照查找表中的某个列进行分组，那么通常采用查找表的标识列分组的效率会比其他列更高。</p>
+<h4><span id="优化limit-分页">优化LIMIT 分页</span></h4><p>在系统中需要进行分页操作的时候，我们通常会使用LIMIT 加上偏移量的办法实现，同时加上合适的ORDER BY子句。如果有对应的索引，通常效率会不错，否则，MySQL需要做大量的文件排序操作。</p>
+<h4><span id="优化union查询">优化UNION查询</span></h4><h4><span id="静态查询分析">静态查询分析</span></h4><h4><span id="使用用户自定义变量">使用用户自定义变量</span></h4><p>那些场景不能使用用户自定义变量:</p>
+<ul>
+<li>使用自定义变量的查询，无法使用查询缓存;</li>
+<li>不能再使用常量或者标识符的地方使用自定义变量，例如表名、列名和LIMIT子句中。</li>
+<li>用户自定义变量的生命周期是在一个连接中有效，所以不能用它们来做连接间的通信。</li>
+<li>如果使用连接池或者持久化连接，自定义变量可能让看起来毫无关系的代码发生交互。</li>
+<li>在5.0之前的版本，是大小写敏感的，所以要注意代码在不同MySQL版本间的兼容性问题。</li>
+<li>不能显式地声明自定义变量的类型。确定未定义变量的具体类型的时机在不同MySQL版本中也可能不一样。如果你希望变量是整数类型，那么最好在初始化的时候就赋值为0，如果希望是浮点型则赋值为0.0，如果希望是字符串则赋值为’’，用户自定义变量的类型在赋值的时候会改变。MySQL的用户自定义变量是一个动态类型。</li>
+<li>MySQL优化器在某项些场景下可能会将这些变量优化掉，这可能导致代码不按预想的方式运行。</li>
+<li>赋值的顺序和赋值的时间点并不总是固定的，这依赖于优化器的决定，实际情况可能很让人困惑，后面我们将看到这一点。</li>
+<li>赋值符号:=的优先级非常低，所以需要注意，赋值表达式应该使用明确的括号。</li>
+<li>使用未定义变量不会产生任何语法错误，如果没有意识到这一点，非常容易犯错。</li>
+</ul>
+<p>用户自定义变量的用法:</p>
+<ul>
+<li>查询运行时计算总数和平均值。</li>
+<li>模拟GROUP BY语句中的函数FIRST()和LAST()。</li>
+<li>对大量数据做一些数据计算。</li>
+<li>计算一个大表的MD5散列值。</li>
+<li>编写一个样本处理函数，当样本中的数值超过某个边界值的时候将其变为0。</li>
+<li>模拟读/写游标。</li>
+<li>在SHOW语句的WHERE子句中加入变量值。</li>
+</ul>
 
       
     </div>
@@ -356,13 +419,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/04/10/nginx上配置phpmyadmin/">nginx上配置phpmyadmin</a></p>
+        <p><span>本文标题:</span><a href="/2020/02/02/《高性能MySQL》之MySQL查询性能优化/">《高性能MySQL》之MySQL查询性能优化</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-04-10, 11:23:44</p>
-        <p><span>最后更新:</span>2019-05-29, 22:52:22</p>
+        <p><span>发布时间:</span>2020-02-02, 14:21:01</p>
+        <p><span>最后更新:</span>2020-02-02, 14:22:42</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/04/10/nginx上配置phpmyadmin/" title="nginx上配置phpmyadmin">http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/02/02/《高性能MySQL》之MySQL查询性能优化/" title="《高性能MySQL》之MySQL查询性能优化">http://developers-youcong.github.io/2020/02/02/《高性能MySQL》之MySQL查询性能优化/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/02/02/《高性能MySQL》之MySQL查询性能优化/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -374,16 +437,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/04/10/Ubuntu16-04中php如何切换版本/">
-                    Ubuntu16.04中php如何切换版本
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/">
-                    Spring Boot:The field file exceeds its maximum permitted size of 1048576 bytes
+                <a href="/2020/02/02/《学会提问》阅读笔记/">
+                    《学会提问》阅读笔记
                 </a>
             </div>
         
@@ -395,7 +452,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、准备软件和环境(这里我以ubuntu16.04为例)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1.安装php7.1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.1.</span> <span class="toc-text">(1)修改 PHP-FPM 监听方式为127.0.0.1:9000</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.2.</span> <span class="toc-text">(2)重启 PHP-FPM 服务进程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">2.安装mysql</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.1.</span> <span class="toc-text">(1)配置mysql5.7源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.2.</span> <span class="toc-text">(2)安装mysql服务端</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">3.下载最新版phpmyadmin，可以到去下载:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">4.安装nginx:</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、将phpmyadmin复制到/var/www目录下</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、配置nginx(主要修改nginx.conf配置文件)</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">为什么查询会慢?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">慢查询:优化数据访问</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">是否向数据库请求了不需要的数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">MySQL是否在扫描额外的记录</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.1.</span> <span class="toc-text">响应时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.2.</span> <span class="toc-text">扫描的行数和返回的列数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.3.</span> <span class="toc-text">扫描的行数和访问类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">重构查询的方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.1.</span> <span class="toc-text">复杂查询拆分多个简单查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.2.</span> <span class="toc-text">切分查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.3.</span> <span class="toc-text">分解关联查询</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">查询执行的基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.</span> <span class="toc-text">优化特定类型的查询</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.1.</span> <span class="toc-text">优化COUNT()查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.2.</span> <span class="toc-text">优化关联查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.3.</span> <span class="toc-text">优化子查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.4.</span> <span class="toc-text">优化GROUP BY 和 ORDER BY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.5.</span> <span class="toc-text">优化LIMIT 分页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.6.</span> <span class="toc-text">优化UNION查询</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.7.</span> <span class="toc-text">静态查询分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.5.8.</span> <span class="toc-text">使用用户自定义变量</span></a></li></ol></li></ol></li></ol>
         
     </div>
     <style>
@@ -431,7 +488,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"nginx上配置phpmyadmin　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"《高性能MySQL》之MySQL查询性能优化　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -453,15 +510,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/04/10/Ubuntu16-04中php如何切换版本/" title="上一篇: Ubuntu16.04中php如何切换版本">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/" title="下一篇: Spring Boot:The field file exceeds its maximum permitted size of 1048576 bytes">
+            <a href="/2020/02/02/《学会提问》阅读笔记/" title="下一篇: 《学会提问》阅读笔记">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -497,8 +552,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Wed Apr 10 2019 11:23:44 GMT+0800',
-			  title: 'nginx上配置phpmyadmin',
+			  id: 'Sun Feb 02 2020 14:21:01 GMT+0800',
+			  title: '《高性能MySQL》之MySQL查询性能优化',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {

@@ -292,6 +292,80 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-js正则表达式之解决html解析-标签问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/08/26/js正则表达式之解决html解析-标签问题/" class="article-date">
+      <time datetime="2019-08-26T08:28:15.000Z" itemprop="datePublished">2019-08-26</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/26/js正则表达式之解决html解析-标签问题/">js正则表达式之解决html解析&lt;&gt;标签问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>应用场景:<br>以博客写文章为例，有的时候我们不经意间写的字符串带标签，然后浏览器将其解析了，实际上我们并不希望其被解析，于是可通过核心代码解决该问题。</p>
+<p>核心代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data.codeSource.replace(new RegExp(&quot;&lt;&quot;,&quot;g&quot;),&quot;&amp;lt;&quot;).replace(new RegExp(&quot;&gt;&quot;,&quot;g&quot;),&quot;&amp;gt;&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>data.codeSource在这里相当于与后台交互获取到的数据</p>
+<p>new RegExp是js正则表达式对象</p>
+<p>replace方法，一共有两个参数，一个是原来的字符串，另一个是新的字符串</p>
+<p>replace(old_string,new_string)</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/08/26/js正则表达式之解决html解析-标签问题/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-HustOJ二次开发之修改数据库连接池" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -898,75 +972,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/07/31/原则之读书笔记-生活篇/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-MySQL之replace函数应用" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/31/MySQL之replace函数应用/" class="article-date">
-      <time datetime="2019-07-31T07:41:46.000Z" itemprop="datePublished">2019-07-31</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/31/MySQL之replace函数应用/">MySQL之replace函数应用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>replace函数，从字面上看其主要作用就是替换。实际它的作用确实是替换。<br>那么替换有哪些应用场景呢？<br>比如A表和B表有一个关联的字段就是id，但是在A中id是数字，在B中id也是数字，但是B中id多一个前缀字母t等，那么如果我要想让他们关联该怎么办呢？<br>通过replace就能实现这个目的，不用加字段或者强行修改让它们完全一致。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/07/31/MySQL之replace函数应用/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
