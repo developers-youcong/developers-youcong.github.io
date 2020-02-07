@@ -15,20 +15,18 @@
 
 
 
-<meta name="description" content="本次用到的是阿里云的智能语音交互，参考文档地址如下:https://help.aliyun.com/product/30413.html?spm=5176.10695662.1157759.3.3ffb16e40gDXyf">
-<meta name="keywords" content="计算机">
+<meta name="description" content="mysql查询结果多列拼接查询,主要场景是，列表中其中一列涉及另外一张表的多条数据，但是我只需要多条数据中的其中某一列(主子表场景) 关键字:GROUP_CONCAT sql语句如下:1234567SELECT            r.id,b.NAME AS group_name,GROUP_CONCAT( a.`name` ) province_name            FROM co">
+<meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="智能语音交互之简单实例">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/07/07/智能语音交互之简单实例/index.html">
+<meta property="og:title" content="mysql查询结果多列拼接查询">
+<meta property="og:url" content="http://developers-youcong.github.io/2020/02/08/mysql查询结果多列拼接查询/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="本次用到的是阿里云的智能语音交互，参考文档地址如下:https://help.aliyun.com/product/30413.html?spm=5176.10695662.1157759.3.3ffb16e40gDXyf">
+<meta property="og:description" content="mysql查询结果多列拼接查询,主要场景是，列表中其中一列涉及另外一张表的多条数据，但是我只需要多条数据中的其中某一列(主子表场景) 关键字:GROUP_CONCAT sql语句如下:1234567SELECT            r.id,b.NAME AS group_name,GROUP_CONCAT( a.`name` ) province_name            FROM co">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/07/07/智能语音交互之简单实例/01.png">
-<meta property="og:updated_time" content="2019-07-18T13:26:12.029Z">
+<meta property="og:updated_time" content="2020-02-07T16:08:06.839Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="智能语音交互之简单实例">
-<meta name="twitter:description" content="本次用到的是阿里云的智能语音交互，参考文档地址如下:https://help.aliyun.com/product/30413.html?spm=5176.10695662.1157759.3.3ffb16e40gDXyf">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/07/07/智能语音交互之简单实例/01.png">
+<meta name="twitter:title" content="mysql查询结果多列拼接查询">
+<meta name="twitter:description" content="mysql查询结果多列拼接查询,主要场景是，列表中其中一列涉及另外一张表的多条数据，但是我只需要多条数据中的其中某一列(主子表场景) 关键字:GROUP_CONCAT sql语句如下:1234567SELECT            r.id,b.NAME AS group_name,GROUP_CONCAT( a.`name` ) province_name            FROM co">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -60,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>智能语音交互之简单实例 | Blog</title>
+<title>mysql查询结果多列拼接查询 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -292,11 +290,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-智能语音交互之简单实例" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-mysql查询结果多列拼接查询" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/07/07/智能语音交互之简单实例/" class="article-date">
-      <time datetime="2019-07-07T15:22:27.000Z" itemprop="datePublished">2019-07-07</time>
+      <a href="/2020/02/08/mysql查询结果多列拼接查询/" class="article-date">
+      <time datetime="2020-02-07T16:06:42.000Z" itemprop="datePublished">2020-02-08</time>
 </a>
 
 
@@ -311,7 +309,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      智能语音交互之简单实例
+      mysql查询结果多列拼接查询
     </h1>
   
 
@@ -322,7 +320,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -332,10 +330,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>本次用到的是阿里云的智能语音交互，参考文档地址如下:<a href="https://help.aliyun.com/product/30413.html?spm=5176.10695662.1157759.3.3ffb16e40gDXyf" target="_blank" rel="noopener">https://help.aliyun.com/product/30413.html?spm=5176.10695662.1157759.3.3ffb16e40gDXyf</a><br><a id="more"></a><br>本次示例代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css&quot;&gt;</span><br><span class="line">		&lt;script src=&quot;https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">		&lt;script src=&quot;https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;br/&gt;</span><br><span class="line">		&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">			&lt;div class=&quot;row&quot;&gt;</span><br><span class="line">				&lt;div class=&quot;col-xs-5&quot;&gt;</span><br><span class="line">					&lt;textarea id=&quot;content&quot; rows=&quot;30&quot; cols=&quot;80&quot; placeholder=&quot;请输入文本内容&quot;&gt;&lt;/textarea&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;col-xs-2&quot;&gt;</span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">				&lt;div class=&quot;col-xs-5&quot;&gt;</span><br><span class="line"></span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Xiaoyun&quot;&gt;标准女声(支持中文及中英文混合场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Xiaogang&quot;&gt;标准男声(支持中文及中英文混合场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Xiaomeng&quot;&gt;标准女声(支持中文及中英文混合场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Xiaowei&quot;&gt;标准男声 (支持中文及中英文混合场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Ruoxi&quot;&gt;温柔女声(支持中文及中英文混合场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Siqi&quot;&gt;温柔女声(支持中文及中英文混合场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Sijia&quot;&gt;标准女声(支持中文及中英文混合场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Sicheng&quot;&gt;标准男声(支持中文及中英文混合场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Aiqi&quot;&gt;温柔女声(支持中文及中英文混合场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Aijia&quot;&gt;标准女声(支持中文及中英文混合场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Aida&quot;&gt;标准男声(支持中文及中英文混合场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Ninger&quot;&gt;标准女声(仅支持纯中文场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Ruilin&quot;&gt;标准女声(仅支持纯中文场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Amei&quot;&gt;甜美女声(支持中文及中英文混合场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Xiaoxue&quot;&gt;温柔女声(支持中文及中英文混合场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Siyue&quot;&gt;标准女声(支持中文及中英文混合场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Aixia&quot;&gt;亲和女声(支持中文及中英文混合场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Aimei&quot;&gt;甜美女声(支持中文及中英文混合场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Aiyu&quot;&gt;自然女声(支持中文及中英文混合场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Aiyue&quot;&gt;温柔女声(支持中文及中英文混合场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Aijing&quot;&gt;严厉女声(支持中文及中英文混合场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Xiaomei&quot;&gt;甜美女声(支持中文及中英文混合场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Yina&quot;&gt;浙普女声(仅支持纯中文场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Sijing&quot;&gt;严厉女声(仅支持纯中文场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Sitong&quot;&gt;儿童音(仅支持纯中文场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Xiaobei&quot;&gt;萝莉女声(仅支持纯中文场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Aibao&quot;&gt;萝莉女声(仅支持纯中文场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Halen&quot;&gt;英音女声(仅支持英文场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Harry&quot;&gt;英音男声(仅支持英文场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Wendy&quot;&gt;英音女声(仅支持英文场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;William&quot;&gt;英音男声(仅支持英文场景) &amp;nbsp;&amp;nbsp;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Olivia&quot;&gt;英音女声(仅支持英文场景)&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;checkbox&quot; name=&quot;test&quot; value=&quot;Shanshan&quot;&gt;粤语女声(支持标准粤文（简体）及粤英文混合场景)</span><br><span class="line">					&lt;br/&gt;</span><br><span class="line">					&lt;input type=&quot;button&quot; value=&quot;播放&quot; id=&quot;bf&quot;&gt;</span><br><span class="line"></span><br><span class="line">				&lt;/div&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line"></span><br><span class="line">		&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">		&lt;iframe id=&quot;iframe&quot; style=&quot;display:none;&quot;&gt;</span><br><span class="line">&lt;/iframe&gt;</span><br><span class="line"></span><br><span class="line">		&lt;script&gt;</span><br><span class="line">			$(&quot;#bf&quot;).click(function() &#123;</span><br><span class="line">				var text = $(&quot;#content&quot;).val();</span><br><span class="line"></span><br><span class="line">				var voice = $(&apos;input[name=&quot;test&quot;]:checked&apos;).val();</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">					iframe.src = &quot;https://nls-gateway.cn-shanghai.aliyuncs.com/stream/v1/tts?appkey=&#123;appkey&#125;&amp;token=&#123;token&#125;&amp;text=&quot; + text + &quot;&amp;format=wav&amp;sample_rate=16000&amp;voice=&quot; + voice;</span><br><span class="line"></span><br><span class="line">			&#125;);</span><br><span class="line">		&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">	&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>代码中的{appkey}和{token}需要替换成自己的。具体可参考上述提到的官方文档。</p>
-<p>代码效果如图:<br><img src="/2019/07/07/智能语音交互之简单实例/01.png" alt=""></p>
-<p>在文本框中输入任意的文字，并选择对应的checkbox，然后点击播放就能有对应类型的语音。</p>
+        <p>mysql查询结果多列拼接查询,主要场景是，列表中其中一列涉及另外一张表的多条数据，但是我只需要多条数据中的其中某一列(主子表场景)</p>
+<p>关键字:GROUP_CONCAT</p>
+<p>sql语句如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">            r.id,b.NAME AS group_name,GROUP_CONCAT( a.`name` ) province_name</span><br><span class="line">            FROM config_rule AS r</span><br><span class="line">            LEFT JOIN group AS g ON ( r.svg_id = g.id )</span><br><span class="line">            LEFT JOIN config_rule_detail AS rd ON ( r.id = rd.chat_config_rule_id )</span><br><span class="line">            LEFT JOIN area AS a ON ( rd.province_id = a.id )</span><br><span class="line">            WHERE r.company_id = 1 AND r.delete_flag = &apos;N&apos; AND rd.delete_flag = &apos;N&apos; and r.chat_mongo_id = &apos;123456&apos;</span><br></pre></td></tr></table></figure></p>
+<p>参考地址:<a href="https://blog.csdn.net/qq_35548288/article/details/81771978" target="_blank" rel="noopener">https://blog.csdn.net/qq_35548288/article/details/81771978</a></p>
 
       
     </div>
@@ -344,13 +342,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/07/07/智能语音交互之简单实例/">智能语音交互之简单实例</a></p>
+        <p><span>本文标题:</span><a href="/2020/02/08/mysql查询结果多列拼接查询/">mysql查询结果多列拼接查询</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-07-07, 23:22:27</p>
-        <p><span>最后更新:</span>2019-07-18, 21:26:12</p>
+        <p><span>发布时间:</span>2020-02-08, 00:06:42</p>
+        <p><span>最后更新:</span>2020-02-08, 00:08:06</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/07/07/智能语音交互之简单实例/" title="智能语音交互之简单实例">http://developers-youcong.github.io/2019/07/07/智能语音交互之简单实例/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/07/07/智能语音交互之简单实例/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/02/08/mysql查询结果多列拼接查询/" title="mysql查询结果多列拼接查询">http://developers-youcong.github.io/2020/02/08/mysql查询结果多列拼接查询/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/02/08/mysql查询结果多列拼接查询/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -362,16 +360,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/07/15/lnmp环境脚本快速搭建/">
-                    lnmp环境脚本快速搭建
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/07/02/Edusoho之X-Auth-Token/">
-                    Edusoho之X-Auth-Token
+                <a href="/2020/02/02/《高性能MySQL》之EXPLAIN/">
+                    《高性能MySQL》之EXPLAIN
                 </a>
             </div>
         
@@ -419,7 +411,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"智能语音交互之简单实例　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"mysql查询结果多列拼接查询　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -441,15 +433,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/07/15/lnmp环境脚本快速搭建/" title="上一篇: lnmp环境脚本快速搭建">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/07/02/Edusoho之X-Auth-Token/" title="下一篇: Edusoho之X-Auth-Token">
+            <a href="/2020/02/02/《高性能MySQL》之EXPLAIN/" title="下一篇: 《高性能MySQL》之EXPLAIN">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -485,8 +475,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Sun Jul 07 2019 23:22:27 GMT+0800',
-			  title: '智能语音交互之简单实例',
+			  id: 'Sat Feb 08 2020 00:06:42 GMT+0800',
+			  title: 'mysql查询结果多列拼接查询',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
