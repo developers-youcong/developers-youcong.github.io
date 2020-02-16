@@ -4,6 +4,196 @@
   
     
     <entry>
+      <title>计算机科学速成课笔记之早期的编程方式</title>
+      <link href="/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%97%A9%E6%9C%9F%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/"/>
+      <url>/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%97%A9%E6%9C%9F%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<p>打孔纸卡-&gt;插线板-&gt;面板拔开关<br><a id="more"></a></p><h2><span id="1程序如何进入计算机">1.程序如何进入计算机</span></h2><h2><span id="2拿纺织业距离给机器编程的需求远在计算机出现前就有了">2.拿纺织业距离，给机器编程的需求远在计算机出现前就有了</span></h2><h2><span id="3打孔纸卡">3.打孔纸卡</span></h2><h2><span id="4插线板">4.插线板</span></h2><h2><span id="5冯诺依曼架构">5.冯诺依曼架构</span></h2><h2><span id="6面板编程">6.面板编程</span></h2><h2><span id="7第一款取得商业成功的家用计算机altair8800">7.第一款取得商业成功的家用计算机:Altair8800</span></h2><h2><span id="8编程依然很困难人们需要更友好更简单的方式编程">8.编程依然很困难，人们需要更友好更简单的方式编程</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之高级CPU设计</title>
+      <link href="/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%AB%98%E7%BA%A7CPU%E8%AE%BE%E8%AE%A1/"/>
+      <url>/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%AB%98%E7%BA%A7CPU%E8%AE%BE%E8%AE%A1/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1早期是加快晶体管切换速度来提升cpu速度">1.早期是加快晶体管切换速度，来提升CPU速度</span></h2><a id="more"></a><h2><span id="2给cpu专门的除法电路其他电路来做复杂操作比如游戏视频解码">2.给CPU专门的除法电路+其他电路来做复杂操作，比如游戏，视频解码</span></h2><h2><span id="3给cpu加缓存提高数据存取速度更快喂给cpu用计算餐馆销售额举例">3.给CPU加缓存，提高数据存取速度，更快喂给CPU，用计算餐馆销售额举例</span></h2><h2><span id="4脏位-dirty-bit">4.脏位-Dirty bit</span></h2><h2><span id="5流水线设计用1个洗衣机和1个干燥机举例">5.流水线设计，用1个洗衣机和1个干燥机举例</span></h2><h2><span id="6并行处理">6.并行处理</span></h2><h2><span id="7乱序执行">7.乱序执行</span></h2><h2><span id="8推测执行">8.推测执行</span></h2><h2><span id="9分支预测">9.分支预测</span></h2><h2><span id="10多个alu">10.多个ALU</span></h2><h2><span id="11多核">11.多核</span></h2><h2><span id="12多个独立cpu">12.多个独立CPU</span></h2><h2><span id="13超级计算机中国的神威太湖之光">13.超级计算机，中国的”神威太湖之光”</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之指令和程序</title>
+      <link href="/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%8C%87%E4%BB%A4%E5%92%8C%E7%A8%8B%E5%BA%8F/"/>
+      <url>/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%8C%87%E4%BB%A4%E5%92%8C%E7%A8%8B%E5%BA%8F/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1介绍指令集的概念">1.介绍’指令集’的概念</span></h2><p>LOAD_A,LOAD_B,SUB,JUMP,ADD,HALT等指令</p><h2><span id="2带条件跳转jump-negative是负数才跳转还有其他类型的jump">2.带条件跳转，JUMP NEGATIVE是负数才跳转，还有其他类型的JUMP</span></h2><h2><span id="3真正现代cpu用更多指令集-位数更长">3.真正现代CPU用更多指令集。位数更长。</span></h2><h2><span id="41971年的英特尔4004处理器有46个指令">4.1971年的英特尔4004处理器，有46个指令</span></h2><h2><span id="5如今英特尔酷睿i7有上千条指令">5.如今英特尔酷睿i7，有上千条指令。</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之中央处理器</title>
+      <link href="/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8/"/>
+      <url>/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%B8%AD%E5%A4%AE%E5%A4%84%E7%90%86%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1拼个cpu出来">1.拼个CPU出来</span></h2><h2><span id="2cpu怎么执行命令">2.CPU怎么执行命令</span></h2><h3><span id="aram寄存器alu做个cpu">a.RAM+寄存器+ALU做个CPU</span></h3><h3><span id="b解释取指令-gt解释-gt执行这个循环">b.解释取指令-&gt;解释-&gt;执行这个循环</span></h3><h3><span id="c时钟是什么时钟速度和赫兹">c.时钟是什么，时钟速度和赫兹</span></h3><h3><span id="d超频提升性能降频省电">d.超频提升性能，降频省电</span></h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之寄存器和内存</title>
+      <link href="/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A8%E5%92%8C%E5%86%85%E5%AD%98/"/>
+      <url>/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%AF%84%E5%AD%98%E5%99%A8%E5%92%8C%E5%86%85%E5%AD%98/</url>
+      
+        <content type="html"><![CDATA[<h1><span id="存储内存两种含义">存储/内存两种含义</span></h1><a id="more"></a><h2><span id="1存1位gated-latch-锁存器">1.存1位(Gated Latch-锁存器)</span></h2><h2><span id="2存8位register-寄存器">2.存8位(Register-寄存器)</span></h2><h2><span id="316x16的矩阵存256位">3.16x16的矩阵存256位</span></h2><p>数据选择器/多路复用器(Multiplexer)解码8位地址，定位到单个锁存器</p><h2><span id="44位代表行4位代表列">4.4位代表行，4位代表列</span></h2><h2><span id="5组合256位内存多路复用器">5.组合256位内存+多路复用器</span></h2><h2><span id="6可寻址的256字节内存">6.可寻址的256字节内存</span></h2><p>一条1980年代的内存，1M大小</p><h2><span id="78个模块每个模块有32个小方块">7.8个模块，每个模块有32个小方块</span></h2><p>每个小方块有4个小块，每个小块是128位X64位</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之算数逻辑单元-ALU</title>
+      <link href="/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%AE%97%E6%95%B0%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83-ALU/"/>
+      <url>/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%AE%97%E6%95%B0%E9%80%BB%E8%BE%91%E5%8D%95%E5%85%83-ALU/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1简单介绍alu英特尔74181">1.简单介绍ALU，英特尔74181</span></h2><h2><span id="2alu有2个单元1个算术单元和1一个逻辑单元">2.ALU有2个单元，1个算术单元和1一个逻辑单元</span></h2><a id="more"></a><h2><span id="3算术单元">3.算术单元</span></h2><p>半加器(处理1个bit，2个输入)</p><p>全加器(处理1个bit，3个输入)</p><p>8bit加法(1个半加器，7个全加器)</p><p>溢出的概念，吃豆人的例子</p><p>乘法除法</p><h2><span id="4逻辑单元">4.逻辑单元</span></h2><p>检测数字是否为0的电路(一堆OR门最后加个NOT门)</p><p>ALU抽象成一个V符号</p><p>Flag标志(是否相等，是否小于，是否溢出等等)</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之二进制</title>
+      <link href="/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/"/>
+      <url>/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%BA%8C%E8%BF%9B%E5%88%B6/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1用十进制举例二进制的原理演示二进制加法-存储单位mb-gb-tb等">1.用十进制举例二进制的原理，演示二进制加法。存储单位MB GB TB等</span></h2><h2><span id="2正数负数整数浮点数的表示">2.正数，负数，整数，浮点数的表示</span></h2><h2><span id="3美国信息交换标准代码-ascii用来表示字符">3.美国信息交换标准代码-ASCII,用来表示字符</span></h2><h2><span id="4unicode-1992年诞生是字符编码标准解决asciibug表达所有语言的问题">4.UNICODE 1992年诞生，是字符编码标准，解决ASCIIbug表达所有语言的问题</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之布尔逻辑和逻辑门</title>
+      <link href="/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%B8%83%E5%B0%94%E9%80%BB%E8%BE%91%E5%92%8C%E9%80%BB%E8%BE%91%E9%97%A8/"/>
+      <url>/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%B8%83%E5%B0%94%E9%80%BB%E8%BE%91%E5%92%8C%E9%80%BB%E8%BE%91%E9%97%A8/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1什么是二进制为什么用二进制布尔逻辑">1.什么是二进制，为什么用二进制，布尔逻辑</span></h2><h2><span id="23个基本操作notandor">2.3个基本操作:NOT,AND,OR</span></h2><h2><span id="3解释3个基本操作">3.解释3个基本操作</span></h2><h2><span id="4xor-异或">4.XOR 异或</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之电子计算机</title>
+      <link href="/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%94%B5%E5%AD%90%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+      <url>/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%94%B5%E5%AD%90%E8%AE%A1%E7%AE%97%E6%9C%BA/</url>
+      
+        <content type="html"><![CDATA[<p>提到的设备:继电器-&gt;真空管-&gt;晶体管<br><a id="more"></a></p><h2><span id="120世纪的发展要求更强的计算能力-柜子大小的计算机发展到房间大小">1.20世纪的发展要求更强的计算能力。柜子大小的计算机发展到房间大小。</span></h2><h2><span id="2哈佛mark1号ibm1944年做的">2.哈佛Mark1号，IBM1944年做的。</span></h2><h2><span id="3继电器继电器一秒最多50次开关">3.继电器，继电器一秒最多50次开关。</span></h2><h2><span id="4继电器出bug">4.继电器出bug</span></h2><h2><span id="51904年热电子管出现第一个真空管-改进后变成和继电器的功能一样">5.1904年，热电子管出现，第一个真空管。改进后变成和继电器的功能一样。</span></h2><h2><span id="6巨人1号计算机在英国布莱切利园首次大规模使用真空管-但编程麻烦还要配置">6.”巨人1号”计算机在英国布莱切利园首次大规模使用真空管。但编程麻烦，还要配置。</span></h2><h2><span id="71946年宾夕法尼亚大学的eniac是第一个通用可编程计算机">7.1946年，宾夕法尼亚大学的ENIAC是第一个通用可编程计算机</span></h2><h2><span id="81947年贝尔实验室做出了晶体管晶体管有诸多好处ibm很快全面转向晶体管">8.1947年，贝尔实验室做出了晶体管，晶体管有诸多好处，IBM很快全面转向晶体管。</span></h2><h2><span id="9硅谷的典故很多晶体管和半导体的开发都是这里做的-而生产半导体最常见的材料是硅">9.硅谷的典故:很多晶体管和半导体的开发都是这里做的。而生产半导体最常见的材料是硅</span></h2><h2><span id="10肖克利半导体-gt仙童半导体-gt英特尔">10.肖克利半导体-&gt;仙童半导体-&gt;英特尔</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之计算机早期历史</title>
+      <link href="/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%97%A9%E6%9C%9F%E5%8E%86%E5%8F%B2/"/>
+      <url>/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%97%A9%E6%9C%9F%E5%8E%86%E5%8F%B2/</url>
+      
+        <content type="html"><![CDATA[<p>提到的设备:算盘-&gt;步进计算器-&gt;差分机-&gt;分析机-&gt;打孔卡片制表机</p><p>提到的人名:Charles Babbage,Ada Lovelace<br><a id="more"></a></p><h2><span id="1最早的计算设备是算盘">1.最早的计算设备是算盘</span></h2><h2><span id="2computer从指代职业变成指代机器">2.Computer从指代职业变成指代机器</span></h2><h2><span id="3机器里有名的是步进计算器-第一个可以做加减乘除的机器">3.机器里有名的是:步进计算器。第一个可以做加减乘除的机器。</span></h2><h2><span id="4炮弹为了精准要计算弹道二战是查表来做二战中炮兵-但每次改设计了就需要做一张新表">4.炮弹为了精准，要计算弹道，二战是查表来做(二战中炮兵)。但每次改设计了就需要做一张新表。</span></h2><h2><span id="5charles-babbage提出了差分机在构造差分机期间想出了分析机分析机是通用计算机">5.Charles Babbage提出了”差分机”，在构造差分机期间，想出了分析机，分析机是通用计算机。</span></h2><h2><span id="6lovelace给分析机械了假想程序因此成为了第一位程序员">6.Lovelace给分析机械了假想程序，因此成为了第一位程序员。</span></h2><h2><span id="7人口普查10年一次herman-hollerith的打孔卡片制表机大大提升了效率">7.人口普查10年一次，Herman Hollerith的打孔卡片制表机大大提升了效率。</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《设计模式之禅》之策略模式</title>
       <link href="/2020/02/12/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
       <url>/2020/02/12/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/</url>
