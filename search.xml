@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>计算机科学速成课笔记之文件系统</title>
+      <link href="/2020/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2020/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1文件格式可以随便存文件数据但按格式存会更方便">1.文件格式:可以随便存文件数据，但按格式存会更方便</span></h2><h2><span id="2txt-文本文件ascii">2.TXT 文本文件:ASCII</span></h2><h2><span id="3wav音频文件每秒上千次的音频采样数字">3.WAV音频文件:每秒上千次的音频采样数字</span></h2><a id="more"></a><h2><span id="4bmp图片文件像素的红绿蓝rgb值">4.BMP图片文件:像素的红绿蓝RGB值</span></h2><h2><span id="5文件系统很早期空间少整个存储器就像一整个文件-后来随容量增长多文件非常必要">5.文件系统:很早期空间少，整个存储器就像一整个文件。后来随容量增长，多文件非常必要</span></h2><h2><span id="6目录文件用来解决多文件问题存其他文件的信息比如开头结尾创建时间等">6.目录文件:用来解决多文件问题，存其他文件的信息，比如开头，结尾，创建时间等。</span></h2><h2><span id="7平面文件系统-flat-file-system文件都在同一个层次早期空间小只有十几个文件平面系统够用">7.平面文件系统-Flat File System:文件都在同一个层次，早期空间小，只有十几个文件，平面系统够用。</span></h2><h2><span id="8如果文件紧密的一个个前后排序会造成问题所以文件系统会">8.如果文件紧密的一个个前后排序会造成问题，所以文件系统会:</span></h2><p>1.把文件划分成一块块</p><p>2.文件拆分存在多个块里</p><h2><span id="9文件的增删改查会不可避免的造成文件散落在各个块里如果是磁带这样的存储介质就会造成问题所以做碎片整理">9.文件的增删改查会不可避免的造成文件散落在各个块里，如果是磁带这样的存储介质就会造成问题，所以做碎片整理</span></h2><h2><span id="10分层文件系统有不同文件夹文件夹可以层层嵌套">10.分层文件系统:有不同文件夹，文件夹可以层层嵌套</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之内存&amp;储存介质</title>
+      <link href="/2020/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%86%85%E5%AD%98-%E5%82%A8%E5%AD%98%E4%BB%8B%E8%B4%A8/"/>
+      <url>/2020/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%86%85%E5%AD%98-%E5%82%A8%E5%AD%98%E4%BB%8B%E8%B4%A8/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1纸卡">1.纸卡</span></h2><a id="more"></a><h2><span id="2延迟线存储器">2.延迟线存储器</span></h2><h2><span id="3磁芯">3.磁芯</span></h2><h2><span id="4磁带">4.磁带</span></h2><h2><span id="5磁鼓">5.磁鼓</span></h2><h2><span id="6硬盘">6.硬盘</span></h2><h2><span id="7内存层次结构">7.内存层次结构</span></h2><h2><span id="8软盘">8.软盘</span></h2><h2><span id="9光盘">9.光盘</span></h2><h2><span id="10固态硬盘">10.固态硬盘</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机科学速成课笔记之操作系统</title>
       <link href="/2020/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
       <url>/2020/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
