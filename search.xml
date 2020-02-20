@@ -4,6 +4,139 @@
   
     
     <entry>
+      <title>计算机科学速成课笔记之集成电路&amp;摩尔定律</title>
+      <link href="/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF-%E6%91%A9%E5%B0%94%E5%AE%9A%E5%BE%8B/"/>
+      <url>/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF-%E6%91%A9%E5%B0%94%E5%AE%9A%E5%BE%8B/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1分立元件">1.分立元件</span></h2><h2><span id="2数字暴政是1960年代工程师碰到的问题">2.数字暴政是1960年代工程师碰到的问题</span></h2><p>意思是如果想加强电脑性能，就要更多部件，这导致更多线路，更复杂。所以很难做。</p><h2><span id="3光刻">3.光刻</span></h2><a id="more"></a><h2><span id="4晶圆">4.晶圆</span></h2><h2><span id="5光刻胶">5.光刻胶</span></h2><h2><span id="6光掩膜">6.光掩膜</span></h2><h2><span id="7掺杂">7.掺杂</span></h2><h2><span id="8摩尔定律">8.摩尔定律</span></h2><h2><span id="9英特尔">9.英特尔</span></h2><h2><span id="10晶体管数量大幅度增长1980年三万个1990年一百万个2000年三千万个2010年是十亿个">10.晶体管数量大幅度增长，1980年三万个，1990年一百万个，2000年三千万个，2010年是十亿个</span></h2><h2><span id="11进一步小型化会碰到两个问题">11.进一步小型化会碰到两个问题</span></h2><p>1.光的波长不足以制作更精细的设计</p><p>2.量子隧穿效应</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之软件工程</title>
+      <link href="/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/"/>
+      <url>/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1对象-object">1.对象 Object</span></h2><h2><span id="2面向对象编程-ojbect">2.面向对象编程 Ojbect</span></h2><h2><span id="3api-application-programming-interface">3.API Application Programming Interface</span></h2><a id="more"></a><h2><span id="4publicprivate">4.public,private</span></h2><h2><span id="5集成开发环境-ide">5.集成开发环境 IDE</span></h2><h2><span id="6调试">6.调试</span></h2><h2><span id="7文档和注释">7.文档和注释</span></h2><h2><span id="8版本控制">8.版本控制</span></h2><h2><span id="9质量控制">9.质量控制</span></h2><h2><span id="10betaalpha">10.Beta,Alpha</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之阿兰.图灵</title>
+      <link href="/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%98%BF%E5%85%B0-%E5%9B%BE%E7%81%B5/"/>
+      <url>/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%98%BF%E5%85%B0-%E5%9B%BE%E7%81%B5/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1介绍图灵">1.介绍图灵</span></h2><h2><span id="2可判定性问题">2.可判定性问题</span></h2><h2><span id="3阿隆佐丘奇lambda算子">3.阿隆佐.丘奇,Lambda算子</span></h2><h2><span id="4图灵机">4.图灵机</span></h2><h2><span id="5停机问题">5.停机问题</span></h2><h2><span id="6破解德军英格玛加密机">6.破解德军英格玛加密机</span></h2><h2><span id="7图灵测试">7.图灵测试</span></h2><h2><span id="8图灵的个人生活">8.图灵的个人生活</span></h2><h2><span id="9图灵奖">9.图灵奖</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之数据结构</title>
+      <link href="/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <url>/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1数组">1.数组</span></h2><a id="more"></a><h2><span id="2字符串">2.字符串</span></h2><h2><span id="3矩阵">3.矩阵</span></h2><h2><span id="4结构体">4.结构体</span></h2><h2><span id="5指针">5.指针</span></h2><h2><span id="6节点">6.节点</span></h2><h2><span id="7链表">7.链表</span></h2><h2><span id="8队列">8.队列</span></h2><h2><span id="9栈">9.栈</span></h2><h2><span id="10树">10.树</span></h2><h2><span id="11二叉树">11.二叉树</span></h2><h2><span id="12图">12.图</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之算法入门</title>
+      <link href="/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/"/>
+      <url>/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1选择排序">1.选择排序</span></h2><h2><span id="2大o表示法">2.大O表示法</span></h2><h2><span id="3归并排序">3.归并排序</span></h2><h2><span id="4dijkstra算法">4.Dijkstra算法</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之编译原理-语句和函数</title>
+      <link href="/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E5%8F%A5%E5%92%8C%E5%87%BD%E6%95%B0/"/>
+      <url>/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86-%E8%AF%AD%E5%8F%A5%E5%92%8C%E5%87%BD%E6%95%B0/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1变量-赋值语句">1.变量、赋值语句</span></h2><h2><span id="2grace-hopper拍虫子游戏">2.Grace Hopper拍虫子游戏</span></h2><h2><span id="3if判断">3.if判断</span></h2><h2><span id="4while循环">4.while循环</span></h2><h2><span id="5for循环">5.for循环</span></h2><h2><span id="6函数">6.函数</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之编程语言发展史</title>
+      <link href="/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8F%B2/"/>
+      <url>/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80%E5%8F%91%E5%B1%95%E5%8F%B2/</url>
+      
+        <content type="html"><![CDATA[<p>编程:二进制-&gt;助记符(汇编器)-&gt;A-0(编译器)-&gt;FORTRAIN<br><a id="more"></a></p><h2><span id="1二进制写程序先纸上写伪代码手工转二进制">1.二进制写程序，先纸上写伪代码，手工转二进制</span></h2><h2><span id="2用助记符写代码load_a-14-为了把助记符转二进制汇编器诞生">2.用”助记符”写代码(LOAD_A 14) 为了把助记符转二进制，汇编器诞生</span></h2><h2><span id="3葛丽丝霍普-哈佛1号计算机首批程序员">3.葛丽丝.霍普-哈佛1号计算机首批程序员</span></h2><h2><span id="4grace设计编程语言a-0">4.Grace设计编程语言A-0</span></h2><h2><span id="5grace-1952年做了第一个编译器实现a-0">5.Grace 1952年做了第一个编译器，实现A-0</span></h2><h2><span id="6变量">6.变量</span></h2><h2><span id="7fortran">7.FORTRAN</span></h2><h2><span id="8cobol">8.COBOL</span></h2><h2><span id="9新语言">9.新语言</span></h2><p>1960年代:ALGOL,LISP,BASIC</p><p>1970年代:Pascal,C,Smalltalk</p><p>1980年代:C++,Object-C,Perl</p><p>1990年代:Python,Ruby,Java</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机科学速成课笔记之早期的编程方式</title>
       <link href="/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%97%A9%E6%9C%9F%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/"/>
       <url>/2020/02/16/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%97%A9%E6%9C%9F%E7%9A%84%E7%BC%96%E7%A8%8B%E6%96%B9%E5%BC%8F/</url>
