@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>计算机科学速成课笔记之操作系统</title>
+      <link href="/2020/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <url>/2020/02/21/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1操作系统">1.操作系统</span></h2><h2><span id="2批处理">2.批处理</span></h2><h2><span id="3计算机变便宜变多有不同配置写程序处理不同硬件细节很痛苦因此操作系统负责抽象硬件">3.计算机变便宜变多，有不同配置，写程序处理不同硬件细节很痛苦，因此操作系统负责抽象硬件</span></h2><a id="more"></a><h2><span id="4外部设备">4.外部设备</span></h2><h2><span id="5设备驱动程序">5.设备驱动程序</span></h2><h2><span id="6多任务处理">6.多任务处理</span></h2><h2><span id="7虚拟内存">7.虚拟内存</span></h2><h2><span id="8动态内存分配">8.动态内存分配</span></h2><h2><span id="9内存保护">9.内存保护</span></h2><h2><span id="101970年代计算机足够便宜大学买了让学生用多个学生用多个终端连接到主机">10.1970年代，计算机足够便宜，大学买了让学生用，多个学生用多个”终端”连接到主机</span></h2><h2><span id="11多用户分时操作系统multics">11.多用户分时操作系统,Multics</span></h2><h2><span id="12unix">12.Unix</span></h2><h2><span id="13ms-dos">13.MS-DOS</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机科学速成课笔记之集成电路&amp;摩尔定律</title>
       <link href="/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF-%E6%91%A9%E5%B0%94%E5%AE%9A%E5%BE%8B/"/>
       <url>/2020/02/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E9%9B%86%E6%88%90%E7%94%B5%E8%B7%AF-%E6%91%A9%E5%B0%94%E5%AE%9A%E5%BE%8B/</url>
