@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>关于Idea安装插件问题</title>
+      <link href="/2020/02/28/%E5%85%B3%E4%BA%8EIdea%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E9%97%AE%E9%A2%98/"/>
+      <url>/2020/02/28/%E5%85%B3%E4%BA%8EIdea%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p>今天安装一个叫apidoc的插件出现了问题，Idea安装插件同Eclipse安装插件一样简单，都支持线上搜索直接安装和本地下载后安装。<br><a id="more"></a></p><p>我的Idea是2018年的版本，不知道由于什么原因搜索不到插件。</p><p>然后我参考这个链接解决搜索不到插件问题:</p><p>Idea搜索不了插件解决办法:<br><a href="https://blog.csdn.net/chenchunlin526/article/details/85339082" target="_blank" rel="noopener">https://blog.csdn.net/chenchunlin526/article/details/85339082</a></p><p>使用这个方法解决后，突然发现还是不行，插件虽然都出来了，但是搜索关键字失效，没有用。实在没有办法我只能采取本地安装插件的方式。</p><p>Idea插件市场(PC端):<br><a href="https://plugins.jetbrains.com/idea" target="_blank" rel="noopener">https://plugins.jetbrains.com/idea</a></p><p>本地安装插件很简单，步骤如下:</p><p>(1)下载地址:<a href="https://plugins.jetbrains.com/idea" target="_blank" rel="noopener">https://plugins.jetbrains.com/idea</a></p><p>(2)搜索插件名称</p><p>(3)下载IDEA对应版本号的插件</p><p>(4)将插件解压到IDEA安装目录的plugs文件夹下后重启Idea</p><p>如果不太明白的话，可以参考如下链接进行本地安装:<br><a href="https://jingyan.baidu.com/article/3d69c5513e5953f0cf02d7b4.html" target="_blank" rel="noopener">https://jingyan.baidu.com/article/3d69c5513e5953f0cf02d7b4.html</a></p><p>不过有一个注意事项，就是IDEA插件与IDEA版本需要匹配，不然可能会报如下错误(英语不错的，看到该信息就明白了原因，所以作为程序员必须要把英语学好):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plugin xxxx is incompatible</span><br></pre></td></tr></table></figure></p><p>该错误解决办法就是安装与Idea版本相匹配的插件。</p><p>对该错误有疑惑的话，可参考如下链接:</p><p>Intellij IDEA 安装插件 报 ‘plugin xxxx is incompatible‘ 解决方案:<br><a href="https://blog.csdn.net/github_38410229/article/details/79475745" target="_blank" rel="noopener">https://blog.csdn.net/github_38410229/article/details/79475745</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> IDEA </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>attempted to return null from a method with a primitive return type (int).</title>
+      <link href="/2020/02/28/attempted-to-return-null-from-a-method-with-a-primitive-return-type-int/"/>
+      <url>/2020/02/28/attempted-to-return-null-from-a-method-with-a-primitive-return-type-int/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">attempted to return null from a method with a primitive return type (int).</span><br></pre></td></tr></table></figure></p><p>错误原因:<br>实际查询sql并没有这个值，出现空值，就会报这个异常。<br><a id="more"></a></p><p>错误sql(发生问题):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select sum(id) from post where post.author = ?</span><br></pre></td></tr></table></figure></p><p>正确sql(解决问题):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select IFNULL(sum(id),0) from post where post.author = ?</span><br></pre></td></tr></table></figure></p><p>关键在于使用了IFNULL，有了这个判断可避免任何情况空值导致的错误。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MyBatis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机科学速成课笔记之压缩</title>
       <link href="/2020/02/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%8E%8B%E7%BC%A9/"/>
       <url>/2020/02/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%8E%8B%E7%BC%A9/</url>
@@ -2894,6 +2932,19 @@
     
     
     <entry>
+      <title></title>
+      <link href="/2019/05/30/%E5%8D%95%E4%BD%93%E5%BA%94%E7%94%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
+      <url>/2019/05/30/%E5%8D%95%E4%BD%93%E5%BA%94%E7%94%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
+      
+        <content type="html"><![CDATA[<hr><p>title: 单体应用自动化部署<br>date: 2019-04-11T10:58:53.000Z</p><h2><span id="tags-linux">tags: Linux</span></h2><p>单体应用自动化部署脚本:<br><a id="more"></a></p><pre><code>DATE=$(date +%Y%m%d)time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)git clone https://code.aliyun.com/test/blog.gitcd blogmvn clean packageif [ $? -ne 0 ]; then    echo &quot;自动化部署blog项目失败,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log    echo &apos;部署失败，请登录服务器查看&apos; | mail -s &quot;blog部署&quot; test@163.comelse    cp -r /home/project/blog/target/blog.war /home/project/tomcat8/webapps/    /home/project/tomcat8/bin/shutdown.sh    /home/project/tomcat8/bin/startup.sh    rm -r /home/project/blog    echo &quot;自动化部署blog项目成功,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log    echo &apos;部署成功&apos; | mail -s &quot;blog部署&quot; test@163.comfi</code></pre><p>其中涉及到邮件在服务器发生，我在这里使用的是heirloom-mailx</p><p>安装使用流程如下(以Ubuntu16.04为例):</p><h3><span id="1安装heirloom-mailx">1.安装heirloom-mailx</span></h3><pre><code>apt install heirloom-mailx</code></pre><h3><span id="2修改etcs-nailrc并在尾部添加如下内容这里使用的是163详情可去163邮箱了解">2.修改/etc/s-nail.rc并在尾部添加如下内容(这里使用的是163，详情可去163邮箱了解)</span></h3><pre><code>set from=&quot;xxx@163.com&quot;set smtp=&quot;smtps://smtp.163.com:465&quot;set smtp-auth-user=&quot;xxxm@163.com&quot;set smtp-auth-password=&quot;123456&quot;set smtp-auth=login</code></pre><h3><span id="3测试">3.测试</span></h3><pre><code>echo &apos;this is test&apos; | mail -s &quot;test email.&quot; 123@qq.com</code></pre><p>邮箱这里我主要参考:<br><a href="https://blog.csdn.net/just_shunjian/article/details/78677054" target="_blank" rel="noopener">ubuntu16.04 heirloom-mailx 通过外部SMTP服务器发送邮件</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>算法图解之快速排序</title>
       <link href="/2019/05/28/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E4%B9%8B%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/"/>
       <url>/2019/05/28/%E7%AE%97%E6%B3%95%E5%9B%BE%E8%A7%A3%E4%B9%8B%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F/</url>
@@ -3889,25 +3940,6 @@
       <url>/2019/04/11/%E5%A4%9A%E6%A8%A1%E5%9D%97%E5%BA%94%E7%94%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
       
         <content type="html"><![CDATA[<p>多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git clone https://code.aliyun.com/test/bfi.git</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cd /home/project/bfi/bfi-saas/bfi-web/src</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">rm -r ./test/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cd /home/project/bfi/bfi-saas</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">mvn clean package</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if [ $? -ne 0 ]; then</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署bfi项目失败,当前日期为:&quot;$time &gt;&gt; /home/project/bfi_deploy.log</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    echo &apos;部署失败，请登录服务器查看&apos; | mail -s &quot;bfi部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">else</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    cp -r /home/project/bfi/bfi-saas/bfi-web/target/bfi-web.war /home/project/tomcat8/webapps/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/startup.sh</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    rm -r /home/project/bfi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署bfi项目成功,当前日期为:&quot;$time &gt;&gt; /home/project/bfi_deploy.log</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    echo &apos;部署成功&apos; | mail -s &quot;bfi部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p><!--more--><p>注意:</p><p>(1)maven打包通常也会执行mvn test，也就是会将src/test/java下面的单元测试代码全部执行一遍，如果你的单元测试其中某个方法有问题也会导致构建失败。上述我的其中一步操作rm -r ./test/主要就是将单元测试代码删除防止影响构建，实际上是不应该这样做的，但是由于某种原因我必须要这样做(不建议开发者将单元测试删除后部署，单测也是一种上线部署的保障;</p><p>(2)模块之间最好界限分明，否则会有不必要的依赖错误;</p><p>关于脚本中的邮件发送，可以参考我的这篇博客<a href="https://developers-youcong.github.io/2019/04/11/%E5%8D%95%E4%BD%93%E5%BA%94%E7%94%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/">单体应用自动化部署</a></p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Linux </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>单体应用自动化部署</title>
-      <link href="/2019/04/11/%E5%8D%95%E4%BD%93%E5%BA%94%E7%94%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/"/>
-      <url>/2019/04/11/%E5%8D%95%E4%BD%93%E5%BA%94%E7%94%A8%E8%87%AA%E5%8A%A8%E5%8C%96%E9%83%A8%E7%BD%B2/</url>
-      
-        <content type="html"><![CDATA[<p>单体应用自动化部署脚本:<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">DATE=$(date +%Y%m%d)</span><br><span class="line"></span><br><span class="line">time=$(date &quot;+%Y-%m-%d %H:%M:%S&quot;)</span><br><span class="line"></span><br><span class="line">git clone https://code.aliyun.com/test/blog.git</span><br><span class="line"></span><br><span class="line">cd blog</span><br><span class="line"></span><br><span class="line">mvn clean package</span><br><span class="line"></span><br><span class="line">if [ $? -ne 0 ]; then</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目失败,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署失败，请登录服务器查看&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line">else</span><br><span class="line"></span><br><span class="line">    cp -r /home/project/blog/target/blog.war /home/project/tomcat8/webapps/</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/shutdown.sh</span><br><span class="line"></span><br><span class="line">    /home/project/tomcat8/bin/startup.sh</span><br><span class="line"></span><br><span class="line">    rm -r /home/project/blog</span><br><span class="line"></span><br><span class="line">    echo &quot;自动化部署blog项目成功,当前日期为:&quot;$time &gt;&gt; /home/project/blog_deploy.log</span><br><span class="line">    echo &apos;部署成功&apos; | mail -s &quot;blog部署&quot; test@163.com</span><br><span class="line"></span><br><span class="line">fi</span><br></pre></td></tr></table></figure></p><p>其中涉及到邮件在服务器发生，我在这里使用的是heirloom-mailx</p><p>安装使用流程如下(以Ubuntu16.04为例):</p><h3><span id="1安装heirloom-mailx">1.安装heirloom-mailx</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install heirloom-mailx</span><br></pre></td></tr></table></figure><h3><span id="2修改etcs-nailrc并在尾部添加如下内容这里使用的是163详情可去163邮箱了解">2.修改/etc/s-nail.rc并在尾部添加如下内容(这里使用的是163，详情可去163邮箱了解)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">set from=&quot;xxx@163.com&quot;</span><br><span class="line">set smtp=&quot;smtps://smtp.163.com:465&quot;</span><br><span class="line">set smtp-auth-user=&quot;xxxm@163.com&quot;</span><br><span class="line">set smtp-auth-password=&quot;123456&quot;</span><br><span class="line">set smtp-auth=login</span><br></pre></td></tr></table></figure><h3><span id="3测试">3.测试</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &apos;this is test&apos; | mail -s &quot;test email.&quot; 123@qq.com</span><br></pre></td></tr></table></figure><p>邮箱这里我主要参考:<br><a href="https://blog.csdn.net/just_shunjian/article/details/78677054" target="_blank" rel="noopener">ubuntu16.04 heirloom-mailx 通过外部SMTP服务器发送邮件</a></p>]]></content>
       
       
       
