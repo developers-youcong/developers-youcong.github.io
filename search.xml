@@ -4,6 +4,177 @@
   
     
     <entry>
+      <title>计算机科学速成课笔记之万维网</title>
+      <link href="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%B8%87%E7%BB%B4%E7%BD%91/"/>
+      <url>/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%B8%87%E7%BB%B4%E7%BD%91/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1超链接">1.超链接</span></h2><h2><span id="2url-统一资源定位器">2.URL - 统一资源定位器</span></h2><a id="more"></a><h2><span id="3http-超文本传输协议">3.HTTP - 超文本传输协议</span></h2><h2><span id="4html-超文本标记语言">4.HTML - 超文本标记语言</span></h2><h2><span id="5写一个简单网页用到相关html标签">5.写一个简单网页，用到相关HTML标签</span></h2><h2><span id="6第一个浏览器和服务器是tim-berners-lee-花了2个月在cern写的">6.第一个浏览器和服务器是Tim Berners-Lee 花了2个月在CERN写的</span></h2><h2><span id="71991年正式发布万维网就此诞生">7.1991年正式发布，万维网就此诞生</span></h2><h2><span id="8开始讲搜索引擎的故事">8.开始讲搜索引擎的故事</span></h2><h2><span id="9jerry和david的万维网指南-后来改名yahoo">9.Jerry和David的万维网指南 后来改名Yahoo</span></h2><h2><span id="10搜索引擎-jumpstation">10.搜索引擎 JumpStation</span></h2><h2><span id="11搜索引擎-google">11.搜索引擎 Google</span></h2><h2><span id="12网络中立性">12.网络中立性</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之互联网</title>
+      <link href="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%BA%92%E8%81%94%E7%BD%91/"/>
+      <url>/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%BA%92%E8%81%94%E7%BD%91/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1ip-互联网协议">1.IP - 互联网协议</span></h2><h2><span id="2udp-用户数据报协议">2.UDP - 用户数据报协议</span></h2><a id="more"></a><h2><span id="3校验和-checksum">3.校验和 - Checksum</span></h2><h2><span id="4tcp-传输控制协议">4.TCP - 传输控制协议</span></h2><h2><span id="5dns-域名系统">5.DNS - 域名系统</span></h2><h2><span id="6osi-开放式系统互联网通信参考模型">6.OSI - 开放式系统互联网通信参考模型</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之计算机网络</title>
+      <link href="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+      <url>/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1局域网">1.局域网</span></h2><h2><span id="2媒体访问控制地址">2.媒体访问控制地址</span></h2><a id="more"></a><h2><span id="3载波侦听多路访问">3.载波侦听多路访问</span></h2><h2><span id="4指数退避">4.指数退避</span></h2><h2><span id="5冲突域">5.冲突域</span></h2><h2><span id="6电路交换">6.电路交换</span></h2><h2><span id="7报文交换">7.报文交换</span></h2><h2><span id="8分组交换">8.分组交换</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之3D图形</title>
+      <link href="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B3D%E5%9B%BE%E5%BD%A2/"/>
+      <url>/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B3D%E5%9B%BE%E5%BD%A2/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1线框渲染">1.线框渲染</span></h2><h2><span id="2正交投影">2.正交投影</span></h2><h2><span id="3透视投射">3.透视投射</span></h2><a id="more"></a><h2><span id="4网格">4.网格</span></h2><h2><span id="5三角形更常用因为能定义唯一的平面">5.三角形更常用因为能定义唯一的平面</span></h2><h2><span id="6扫描线渲染">6.扫描线渲染</span></h2><h2><span id="7遮挡">7.遮挡</span></h2><h2><span id="8画家算法">8.画家算法</span></h2><h2><span id="9深度缓存">9.深度缓存</span></h2><h2><span id="10z-fighting-错误">10.Z Fighting 错误</span></h2><h2><span id="11背面剔除">11.背面剔除</span></h2><h2><span id="12表面法线">12.表面法线</span></h2><h2><span id="13平面着色">13.平面着色</span></h2><h2><span id="14高洛德着色">14.高洛德着色</span></h2><h2><span id="15纹理映射">15.纹理映射</span></h2><h2><span id="16图形处理单元">16.图形处理单元</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之图形用户界面</title>
+      <link href="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2/"/>
+      <url>/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%9B%BE%E5%BD%A2%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1图形界面先驱道格拉斯恩格尔巴特">1.图形界面先驱:道格拉斯.恩格尔巴特</span></h2><h2><span id="21970年成立帕洛阿尔托研究中心">2.1970年成立帕洛阿尔托研究中心</span></h2><a id="more"></a><h2><span id="31973年完成xerox-alto施乐奥托计算机">3.1973年完成Xerox Alto(施乐奥托)计算机</span></h2><h2><span id="4举例写一个简单的gui程序">4.举例:写一个简单的GUI程序</span></h2><h2><span id="51981年的xerox-star-system施乐之星系统">5.1981年的Xerox Star System(施乐之星系统)</span></h2><h2><span id="6史蒂夫乔布斯去施乐参观">6.史蒂夫.乔布斯去施乐参观</span></h2><h2><span id="7所见即所得">7.所见即所得</span></h2><h2><span id="81983年推出apple-lisa">8.1983年推出Apple Lisa</span></h2><h2><span id="91984年推出macintosh">9.1984年推出Macintosh</span></h2><h2><span id="101985年推出windows10之后出到31">10.1985年推出Windows1.0,之后出到3.1</span></h2><h2><span id="111995年推出windows95提供图形界面">11.1995年推出Windows95提供图形界面</span></h2><h2><span id="121995年微软做失败的microsoft-bob">12.1995年微软做失败的Microsoft Bob</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之个人计算机革命</title>
+      <link href="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%B8%AA%E4%BA%BA%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%9D%A9%E5%91%BD/"/>
+      <url>/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E4%B8%AA%E4%BA%BA%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%9D%A9%E5%91%BD/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="11970年代初成本下降个人计算机变得可行">1.1970年代初成本下降，个人计算机变得可行</span></h2><a id="more"></a><h2><span id="2altair-8800">2.Altair 8800</span></h2><h2><span id="3比尔盖茨和保罗艾伦写basic解释器">3.比尔.盖茨和保罗.艾伦写BASIC解释器</span></h2><h2><span id="4乔布斯提议卖组装好的计算机apple-l诞生">4.乔布斯提议卖组装好的计算机，Apple-l诞生</span></h2><h2><span id="51977年出现3款开箱即用计算机">5.1977年出现3款开箱即用计算机</span></h2><p>“Apple-ll”,”TRS-80 Model l”,”Commodore PET 20001”</p><h2><span id="6ibm意识到个人计算机市场">6.IBM意识到个人计算机市场</span></h2><p>IBM PC发布，采用开放架构，兼容的机器都叫IBM Compatible(IBM兼容)</p><p>生态系统产生雪球效应:</p><p>因为用户多，软硬件开放人员更愿意花精力在这个平台</p><p>因为软硬件多，用户也更乐意买”IBM兼容”的计算机。</p><h2><span id="7苹果选封闭架构一切都自己来只有苹果在非ibm兼容下保持了足够市场份额">7.苹果选封闭架构，一切都自己来，只有苹果在非”IBM兼容”下保持了足够市场份额</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之冷战和消费主义</title>
+      <link href="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%86%B7%E6%88%98%E5%92%8C%E6%B6%88%E8%B4%B9%E4%B8%BB%E4%B9%89/"/>
+      <url>/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%86%B7%E6%88%98%E5%92%8C%E6%B6%88%E8%B4%B9%E4%B8%BB%E4%B9%89/</url>
+      
+        <content type="html"><![CDATA[<p>冷战导致美国往计算机领域投入大量资源。<br><a id="more"></a></p><p>范内瓦.布什遇见了计算机的潜力，提出假想机器Memex</p><p>帮助建立国家科学基金，给科学研究提供资金。</p><p>1950年代消费者开始买晶体管收音机，为日本半导体行业崛起埋下种子。</p><p>苏联1961年把宇航员加加林送上天空，导致美国提出登月NASA预算大大增加，用集成电路来制作登月计算机。</p><p>集成电路的发展实际是由军事应用大大推进的，阿波罗登月毕竟只有17次</p><p>美国造超级计算机进一步推进集成电路。</p><p>美国半导体行业一开始靠政府高利润合同活着，忽略消费者市场，1970年代冷战渐消，行业开始衰败，很多公司倒闭，英特尔转型处理器。</p><p>末尾总结:政府和消费者推动了计算机的发展。<br>早期靠政府资金，让技术发展到足够商用，然后消费者购买商用产品继续推动产品发展。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之屏幕与2D图形显示</title>
+      <link href="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%B1%8F%E5%B9%95%E4%B8%8E2D%E5%9B%BE%E5%BD%A2%E6%98%BE%E7%A4%BA/"/>
+      <url>/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%B1%8F%E5%B9%95%E4%B8%8E2D%E5%9B%BE%E5%BD%A2%E6%98%BE%E7%A4%BA/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="1pdp-1计算机-键盘和显示器分开屏幕显示临时值">1.PDP-1计算机。键盘和显示器分开，屏幕显示临时值</span></h2><a id="more"></a><h2><span id="2阴极射线管cathode-ray-tube">2.阴极射线管(Cathode Ray Tube)</span></h2><h2><span id="3crt有两种绘图方式">3.CRT有两种绘图方式</span></h2><p>矢量扫描</p><p>光栅扫描</p><h2><span id="4液晶显示器">4.液晶显示器</span></h2><h2><span id="5字符生成器">5.字符生成器</span></h2><h2><span id="6屏幕缓冲区">6.屏幕缓冲区</span></h2><h2><span id="7矢量命令画图">7.矢量命令画图</span></h2><h2><span id="8sketchpad光笔">8.Sketchpad，光笔</span></h2><h2><span id="9函数画线矩形">9.函数画线，矩形</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算机科学速成课笔记之命令行界面</title>
+      <link href="/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2/"/>
+      <url>/2020/02/29/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E9%80%9F%E6%88%90%E8%AF%BE%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%95%8C%E9%9D%A2/</url>
+      
+        <content type="html"><![CDATA[<p>计算机早期同时输入程序和数据(用纸卡/纸带)<br>运行开始到结束，中间没有人类进行操作。<br>原因是计算机很贵，不能等人类慢慢输入，执行完结果打印到纸上。<br><a id="more"></a></p><p>到1950年代，计算机足够便宜+快，人类和计算机交互式操作变得可行。</p><p>为了让人类输入到计算机，改造之前就有的打字机，变成电传打字机。</p><p>到1970年代末，屏幕成本足够低，屏幕代替电传打字机，屏幕成为标配。</p><h2><span id="1人机交互">1.人机交互</span></h2><h2><span id="2早期输出数据是打印到纸上而输入是用纸卡纸带一次性把程序和数据都给进去">2.早期输出数据是打印到纸上，而输入是用纸卡/纸带一次性把程序和数据都给进去</span></h2><h2><span id="3qwerty打字机的发展克里斯托弗莱瑟姆肖尔斯发明于1868年">3.QWERTY打字机的发展，克里斯托弗.莱瑟姆.肖尔斯发明于1868年</span></h2><h2><span id="4电传打字机">4.电传打字机</span></h2><h2><span id="5命令行界面">5.命令行界面</span></h2><h2><span id="6ls命令">6.ls命令</span></h2><h2><span id="7早期文字游戏-zork1977年">7.早期文字游戏 Zork(1977年)</span></h2><h2><span id="8cd命令">8.cd命令</span></h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机科学速成课笔记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《设计模式之禅》之迭代器模式</title>
       <link href="/2020/02/29/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
       <url>/2020/02/29/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</url>
