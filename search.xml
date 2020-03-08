@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>&#39;artifactId&#39; is missing. @ line 2, column 109</title>
+      <link href="/2020/03/08/artifactId-is-missing-line-2-column-109/"/>
+      <url>/2020/03/08/artifactId-is-missing-line-2-column-109/</url>
+      
+        <content type="html"><![CDATA[<p>错误背景:<br>本地能够正常启动和调试应用，就是打包构建失败。<br><a id="more"></a></p><p>详细错误信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[ERROR] [ERROR] Some problems were encountered while processing the POMs:</span><br><span class="line">[FATAL] &apos;artifactId&apos; is missing. @ line 2, column 109</span><br><span class="line">[WARNING] &apos;build.plugins.plugin.(groupId:artifactId)&apos; must be unique but found duplicate declaration of plugin org.springframework.boot:spring-boot-maven-plugin @ line 90, column 21</span><br><span class="line">[WARNING] &apos;dependencies.dependency.scope&apos; for org.springframework.boot:spring-boot-devtools:jar must be one of [provided, compile, runtime, test, system] but is &apos;true&apos;. @ line 253, column 11</span><br><span class="line"> @ </span><br><span class="line">[ERROR] The build could not read 1 project -&gt; [Help 1]</span><br><span class="line">[ERROR]   </span><br><span class="line">[ERROR]   The project cn.challengertech.blog:[unknown-artifact-id]:[unknown-version] (/home/test/blog/blog-web/pom.xml) has 1 error</span><br><span class="line">[ERROR]     &apos;artifactId&apos; is missing. @ line 2, column 109</span><br><span class="line">[ERROR] </span><br><span class="line">[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.</span><br><span class="line">[ERROR] Re-run Maven using the -X switch to enable full debug logging.</span><br><span class="line">[ERROR] </span><br><span class="line">[ERROR] For more information about the errors and possible solutions, please read the following articles:</span><br><span class="line">[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/ProjectBuildingException</span><br></pre></td></tr></table></figure></p><p>最关键的信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[ERROR]     &apos;artifactId&apos; is missing. @ line 2, column 109</span><br></pre></td></tr></table></figure></p><p>错误原因:<br>子pom文件不经意间操作不小心去除了artifactId，导致项目构建打包时找不到对应的子模块，从而无法构建，导致报错。</p><p>解决方式:<br>加上即可,如下图所示:<br><img src="/2020/03/08/artifactId-is-missing-line-2-column-109/01.png" alt=""></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Maven </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《设计模式之禅》之组合模式</title>
       <link href="/2020/03/06/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/"/>
       <url>/2020/03/06/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F/</url>
