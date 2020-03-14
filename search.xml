@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Java Date实现+天之核心代码</title>
+      <link href="/2020/03/15/Java-Date%E5%AE%9E%E7%8E%B0-%E5%A4%A9%E4%B9%8B%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81/"/>
+      <url>/2020/03/15/Java-Date%E5%AE%9E%E7%8E%B0-%E5%A4%A9%E4%B9%8B%E6%A0%B8%E5%BF%83%E4%BB%A3%E7%A0%81/</url>
+      
+        <content type="html"><![CDATA[<p>reqDTO是传递对象，而getValidNum是具体的时间，默认为int类型,根据前台传递的数字进行天数相加。<br><a id="more"></a><br>核心代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Calendar c = Calendar.getInstance();</span><br><span class="line">c.setTime(new Date());</span><br><span class="line">c.add(Calendar.DAY_OF_MONTH, reqDTO.getValidNum());</span><br><span class="line">Date expireTime = c.getTime();</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>&#39;artifactId&#39; is missing. @ line 2, column 109</title>
       <link href="/2020/03/08/artifactId-is-missing-line-2-column-109/"/>
       <url>/2020/03/08/artifactId-is-missing-line-2-column-109/</url>
