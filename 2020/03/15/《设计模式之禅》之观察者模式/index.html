@@ -15,21 +15,18 @@
 
 
 
-<meta name="description" content="效果图:">
-<meta name="keywords" content="微信小程序开发">
+<meta name="description" content="一、观察者模式的定义观察者模式也叫做发布订阅模式，它是一个在项目中经常使用的模式，其定义如下:定义对象间一种一对多的依赖关系，使得没当一个对象改变状态，则所有依赖于它的对象都会得到通知并被自动更新。">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="微信小程序之页面传参">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/07/19/微信小程序开发之页面传参/index.html">
+<meta property="og:title" content="《设计模式之禅》之观察者模式">
+<meta property="og:url" content="http://developers-youcong.github.io/2020/03/15/《设计模式之禅》之观察者模式/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="效果图:">
+<meta property="og:description" content="一、观察者模式的定义观察者模式也叫做发布订阅模式，它是一个在项目中经常使用的模式，其定义如下:定义对象间一种一对多的依赖关系，使得没当一个对象改变状态，则所有依赖于它的对象都会得到通知并被自动更新。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/07/19/微信小程序开发之页面传参/01.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/07/19/微信小程序开发之页面传参/02.png">
-<meta property="og:updated_time" content="2019-08-16T08:22:33.427Z">
+<meta property="og:updated_time" content="2020-03-15T07:56:31.927Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="微信小程序之页面传参">
-<meta name="twitter:description" content="效果图:">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/07/19/微信小程序开发之页面传参/01.png">
+<meta name="twitter:title" content="《设计模式之禅》之观察者模式">
+<meta name="twitter:description" content="一、观察者模式的定义观察者模式也叫做发布订阅模式，它是一个在项目中经常使用的模式，其定义如下:定义对象间一种一对多的依赖关系，使得没当一个对象改变状态，则所有依赖于它的对象都会得到通知并被自动更新。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -61,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>微信小程序之页面传参 | Blog</title>
+<title>《设计模式之禅》之观察者模式 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -293,11 +290,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-微信小程序开发之页面传参" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-《设计模式之禅》之观察者模式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/07/19/微信小程序开发之页面传参/" class="article-date">
-      <time datetime="2019-07-19T10:45:43.000Z" itemprop="datePublished">2019-07-19</time>
+      <a href="/2020/03/15/《设计模式之禅》之观察者模式/" class="article-date">
+      <time datetime="2020-03-15T07:15:57.000Z" itemprop="datePublished">2020-03-15</time>
 </a>
 
 
@@ -312,7 +309,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      微信小程序之页面传参
+      《设计模式之禅》之观察者模式
     </h1>
   
 
@@ -323,7 +320,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序开发/">微信小程序开发</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -333,11 +330,32 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>效果图:<br><img src="/2019/07/19/微信小程序开发之页面传参/01.png" alt="图一"><br><a id="more"></a><br><img src="/2019/07/19/微信小程序开发之页面传参/02.png" alt="图一"></p>
-<p>点击编辑值传过去了，那么编辑支出类型这个界面又是如何获取到值呢？</p>
-<p>传值代码:<br>type.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">editType: function (e) &#123;</span><br><span class="line">   var typeId =  e.currentTarget.dataset[&apos;id&apos;];</span><br><span class="line">   console.log(&quot;edit:&quot;+typeId);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  wx.navigateTo(&#123;</span><br><span class="line">    url: &apos;../type_edit/type_edit?typeId=&apos; + typeId</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>type.wxml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;text bindtap=&apos;editType&apos; data-id=&quot;&#123;&#123;item.typeId&#125;&#125;&quot;&gt;编辑&lt;/text&gt;</span><br></pre></td></tr></table></figure></p>
-<p>接收值核心代码如下(这段代码通常放在onLoad函数体内):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var that = this;</span><br><span class="line">   that.setData(&#123; //this.setData的方法用于把传递过来的id转化成小程序模板语言</span><br><span class="line">     typeId: options.typeId</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line"> console.log(&quot;typeId:&quot; + that.data.typeId);</span><br></pre></td></tr></table></figure></p>
+        <h2><span id="一-观察者模式的定义">一、观察者模式的定义</span></h2><p>观察者模式也叫做发布订阅模式，它是一个在项目中经常使用的模式，其定义如下:<br><strong>定义对象间一种一对多的依赖关系，使得没当一个对象改变状态，则所有依赖于它的对象都会得到通知并被自动更新。</strong><br><a id="more"></a></p>
+<h3><span id="观察者模式的几种角色名称">观察者模式的几种角色名称:</span></h3><h4><span id="1subject被观察者">(1)Subject被观察者</span></h4><p>定义被观察者必须实现的职责，它必须能够动态地增加、取消观察者。它一般是抽象类或者实现类，仅仅完成作为被观察者必须实现的职责:管理观察者并通知观察者。</p>
+<h4><span id="2observer观察者">(2)Observer观察者</span></h4><p>观察者接收到消息后，即进行update(更新方法)操作，对接收到的信息进行处理。</p>
+<h4><span id="3concretesubject具体的被观察者">(3)ConcreteSubject具体的被观察者</span></h4><p>定义被观察者自己的业务逻辑，同时定义对哪些事件进行通知。</p>
+<h4><span id="4concreteobject具体的观察者">(4)ConcreteObject具体的观察者</span></h4><p>每个观察在接收到消息后的处理反应是不同的，各个观察者有自己的处理逻辑。</p>
+<h2><span id="二-观察者模式的应用">二、观察者模式的应用</span></h2><h3><span id="1观察者模式的优点">1.观察者模式的优点</span></h3><p>(1)观察者和被观察者之间是抽象耦合</p>
+<p>(2)建立一套触发机制</p>
+<h3><span id="2观察者模式的缺点">2.观察者模式的缺点</span></h3><p>观察者模式需要考虑一下开发效率和运行效率问题，一个被观察者，多个观察者，开发和调试就会比较复杂，而且在Java中消息的通知默认是顺序执行，一个观察者卡壳，会影响整体的执行效率。在这种情况下，一般考虑采用异步的方式。</p>
+<h3><span id="3观察者模式的使用场景">3.观察者模式的使用场景</span></h3><ul>
+<li>关联行为场景。需要注意的是，关联行为是可拆分的，而不是”组合”关系。</li>
+<li>事件多级触发场景。</li>
+<li>跨系统的消息交换场景，如消息列的处理机制。</li>
+</ul>
+<h3><span id="4观察者模式的注意事项">4.观察者模式的注意事项</span></h3><p>(1)广播链的问题</p>
+<p><strong>注意:</strong>它和责任链模式的最大区别就是观察者广播链在传播的过程中消息是随时更改的，它是有相邻的两个节点协商的消息结构;而责任链模式在消息传递过程中基本上保持消息不可变，如果要改变，也只是在原有的消息上进行修正。</p>
+<p>(2)异步处理问题<br>针对观察者比较多，处理时间较长，使用异步，异步处理就要考虑线程安全和队列的问题，如消息队列。</p>
+<h2><span id="三-最佳实践">三、最佳实践</span></h2><p>观察者模式在实际项目和生活中非常常见，我们举例子说明。</p>
+<h3><span id="1文件系统">1.文件系统</span></h3><p>比如，在一个目录下新建立一个文件，这个动作会同时通知目录管理器增加该目录，并通知磁盘管理器减少1KB的空间，也就是说”文件”是一个被观察者，”目录管理器”和”磁盘管理器”则是观察者。</p>
+<h3><span id="2猫鼠游戏">2.猫鼠游戏</span></h3><p>夜里猫叫一声，家里老鼠撒腿就跑，同时也吵醒了熟睡的主人，这个场景中,”猫”就是被观察者，老鼠和人则是观察者。</p>
+<h3><span id="3atm取钱">3.ATM取钱</span></h3><p>你到ATM机器上取钱，多次输错密码，卡就会被ATM吞掉，吞卡动作发生的时候，会触发哪些事件？</p>
+<p>第一，摄像头连续快拍</p>
+<p>第二，通知监控系统，吞卡发生</p>
+<p>第三，初始化ATM机屏幕，返回最初状态</p>
+<p>一般前两个动作都是观察者模式来完成的，后一个动作是异常来完成的。</p>
+<h3><span id="4广播收音机">4.广播收音机</span></h3><p>电台在广播，你可以打开一个收音机，或者两个收音机来收听，电台就是被观察者，收音机就是观察者。</p>
+<p>代码例子:<br><a href="https://github.com/developers-youcong/DesignPatternPractice/tree/master/ObServer" target="_blank" rel="noopener">https://github.com/developers-youcong/DesignPatternPractice/tree/master/ObServer</a></p>
 
       
     </div>
@@ -346,13 +364,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/07/19/微信小程序开发之页面传参/">微信小程序之页面传参</a></p>
+        <p><span>本文标题:</span><a href="/2020/03/15/《设计模式之禅》之观察者模式/">《设计模式之禅》之观察者模式</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-07-19, 18:45:43</p>
-        <p><span>最后更新:</span>2019-08-16, 16:22:33</p>
+        <p><span>发布时间:</span>2020-03-15, 15:15:57</p>
+        <p><span>最后更新:</span>2020-03-15, 15:56:31</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/07/19/微信小程序开发之页面传参/" title="微信小程序之页面传参">http://developers-youcong.github.io/2019/07/19/微信小程序开发之页面传参/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/07/19/微信小程序开发之页面传参/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/03/15/《设计模式之禅》之观察者模式/" title="《设计模式之禅》之观察者模式">http://developers-youcong.github.io/2020/03/15/《设计模式之禅》之观察者模式/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/03/15/《设计模式之禅》之观察者模式/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -364,16 +382,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/07/20/Node-js之删除文件夹-含递归删除/">
-                    Node.js之删除文件夹(含递归删除)
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/07/19/微信小程序之确认框实现/">
-                    微信小程序之确认框实现
+                <a href="/2020/03/15/Java-Date实现-天之核心代码/">
+                    Java Date实现+天之核心代码
                 </a>
             </div>
         
@@ -385,7 +397,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、观察者模式的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">观察者模式的几种角色名称:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.1.</span> <span class="toc-text">(1)Subject被观察者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.2.</span> <span class="toc-text">(2)Observer观察者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.3.</span> <span class="toc-text">(3)ConcreteSubject具体的被观察者</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.4.</span> <span class="toc-text">(4)ConcreteObject具体的观察者</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、观察者模式的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">1.观察者模式的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">2.观察者模式的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">3.观察者模式的使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">4.观察者模式的注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、最佳实践</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">1.文件系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">2.猫鼠游戏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.3.</span> <span class="toc-text">3.ATM取钱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.4.</span> <span class="toc-text">4.广播收音机</span></a></li></ol></li></ol>
         
     </div>
     <style>
@@ -421,7 +433,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"微信小程序之页面传参　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"《设计模式之禅》之观察者模式　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -443,15 +455,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/07/20/Node-js之删除文件夹-含递归删除/" title="上一篇: Node.js之删除文件夹(含递归删除)">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/07/19/微信小程序之确认框实现/" title="下一篇: 微信小程序之确认框实现">
+            <a href="/2020/03/15/Java-Date实现-天之核心代码/" title="下一篇: Java Date实现+天之核心代码">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -487,8 +497,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Fri Jul 19 2019 18:45:43 GMT+0800',
-			  title: '微信小程序之页面传参',
+			  id: 'Sun Mar 15 2020 15:15:57 GMT+0800',
+			  title: '《设计模式之禅》之观察者模式',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
