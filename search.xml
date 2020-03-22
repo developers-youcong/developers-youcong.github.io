@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Error:java:JDK isn&#39;t specified for module</title>
+      <link href="/2020/03/22/Error-java-JDK-isn-t-specified-for-module/"/>
+      <url>/2020/03/22/Error-java-JDK-isn-t-specified-for-module/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error:java:JDK isn&apos;t specified for module &quot;XXXX&quot;</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>错误原因:项目中的.idea文件夹被删掉，导致项目目录出错</p><p>解决办法:<br>idea中关掉该项目并删除，然后重新import引入该项目，在弹出是否重写.idea选择是</p><p>参考解决办法链接:<br><a href="https://blog.csdn.net/zzzU5U6/article/details/88951286" target="_blank" rel="noopener">https://blog.csdn.net/zzzU5U6/article/details/88951286</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Idea </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《设计模式之禅》之观察者模式</title>
       <link href="/2020/03/15/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
       <url>/2020/03/15/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
