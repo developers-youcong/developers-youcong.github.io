@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>MySQL日期字符串转换</title>
+      <link href="/2020/03/22/MySQL%E6%97%A5%E6%9C%9F%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2/"/>
+      <url>/2020/03/22/MySQL%E6%97%A5%E6%9C%9F%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2/</url>
+      
+        <content type="html"><![CDATA[<p>最近用到两个日期转字符串(DATE_FORMAT(date,pattern))以及字符串转日期(str_to_date(dateStr,pattern))。<br><a id="more"></a></p><p>具体详情参考链接(包含MySQL日期字符串转换):<br><a href="https://blog.csdn.net/yamadeee/article/details/80137780" target="_blank" rel="noopener">https://blog.csdn.net/yamadeee/article/details/80137780</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Error:java:JDK isn&#39;t specified for module</title>
       <link href="/2020/03/22/Error-java-JDK-isn-t-specified-for-module/"/>
       <url>/2020/03/22/Error-java-JDK-isn-t-specified-for-module/</url>
