@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>windows配置多个git用户</title>
+      <link href="/2020/03/29/windows%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgit%E7%94%A8%E6%88%B7/"/>
+      <url>/2020/03/29/windows%E9%85%8D%E7%BD%AE%E5%A4%9A%E4%B8%AAgit%E7%94%A8%E6%88%B7/</url>
+      
+        <content type="html"><![CDATA[<p>最近想尝试在自己电脑上配置多个git用户玩玩。<br>主要参考该博客地址实现:<br><a href="https://www.cnblogs.com/zengming/p/7908171.html" target="_blank" rel="noopener">https://www.cnblogs.com/zengming/p/7908171.html</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《设计模式之禅》之门面模式</title>
       <link href="/2020/03/28/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/"/>
       <url>/2020/03/28/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E9%97%A8%E9%9D%A2%E6%A8%A1%E5%BC%8F/</url>
