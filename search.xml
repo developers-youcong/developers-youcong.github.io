@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode characters in position 0-2: ordinal not in range(128)</title>
+      <link href="/2020/04/05/UnicodeEncodeError-ascii-codec-can-t-encode-characters-in-position-0-2-ordinal-not-in-range-128/"/>
+      <url>/2020/04/05/UnicodeEncodeError-ascii-codec-can-t-encode-characters-in-position-0-2-ordinal-not-in-range-128/</url>
+      
+        <content type="html"><![CDATA[<p>错误背景:<br>使用Python2.7写一个简单爬虫报的错。</p><p>错误详细信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnicodeEncodeError: &apos;ascii&apos; codec can&apos;t encode characters in position 0-2: ordinal not in range(128)</span><br></pre></td></tr></table></figure></p><p>错误原因:<br>1.python默认使用ASCII处理字符流。</p><p>2.Unicode编码与ASCII编码的不兼容，Python脚本文件是由utf-8编码的。</p><p>解决方法(在当前python文件最上面加上如下代码):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(&apos;utf-8&apos;)</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《设计模式之禅》之解释器模式</title>
       <link href="/2020/04/05/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/"/>
       <url>/2020/04/05/%E3%80%8A%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B9%8B%E7%A6%85%E3%80%8B%E4%B9%8B%E8%A7%A3%E9%87%8A%E5%99%A8%E6%A8%A1%E5%BC%8F/</url>
