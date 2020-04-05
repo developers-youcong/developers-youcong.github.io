@@ -15,22 +15,18 @@
 
 
 
-<meta name="description" content="通过如下代码，可以正常请求并获取对应的数据:1curl -X POST -H &amp;quot;Accept:application/vnd.edusoho.v2+json&amp;quot; -H &amp;quot;Authorization: Basic dGVzdDJlZHVvc2hvOjEyMzQ1Ng==&amp;quot; http://demo.edusoho.com/api/tokens 但是我想将其中的请求">
-<meta name="keywords" content="Edusoho">
+<meta name="description" content="一、解释器模式的定义解释器模式是一种按照指定规定语法进行解析的方案，在现在项目中使用较少，其定义如下:给定一门语言，定义它的文法的一种表示，并定义一个解释器，该解释器使用该表示来解释语言中的句子。">
+<meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Edusoho之Basic Authentication">
-<meta property="og:url" content="http://developers-youcong.github.io/2019/07/01/Edusoho之Basic-Authentication/index.html">
+<meta property="og:title" content="《设计模式之禅》之解释器模式">
+<meta property="og:url" content="http://developers-youcong.github.io/2020/04/05/《设计模式之禅》之解释器模式/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="通过如下代码，可以正常请求并获取对应的数据:1curl -X POST -H &amp;quot;Accept:application/vnd.edusoho.v2+json&amp;quot; -H &amp;quot;Authorization: Basic dGVzdDJlZHVvc2hvOjEyMzQ1Ng==&amp;quot; http://demo.edusoho.com/api/tokens 但是我想将其中的请求">
+<meta property="og:description" content="一、解释器模式的定义解释器模式是一种按照指定规定语法进行解析的方案，在现在项目中使用较少，其定义如下:给定一门语言，定义它的文法的一种表示，并定义一个解释器，该解释器使用该表示来解释语言中的句子。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/07/01/Edusoho之Basic-Authentication/01.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/07/01/Edusoho之Basic-Authentication/02.png">
-<meta property="og:image" content="http://developers-youcong.github.io/2019/07/01/Edusoho之Basic-Authentication/03.png">
-<meta property="og:updated_time" content="2019-07-18T13:26:11.476Z">
+<meta property="og:updated_time" content="2020-04-05T06:50:40.505Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Edusoho之Basic Authentication">
-<meta name="twitter:description" content="通过如下代码，可以正常请求并获取对应的数据:1curl -X POST -H &amp;quot;Accept:application/vnd.edusoho.v2+json&amp;quot; -H &amp;quot;Authorization: Basic dGVzdDJlZHVvc2hvOjEyMzQ1Ng==&amp;quot; http://demo.edusoho.com/api/tokens 但是我想将其中的请求">
-<meta name="twitter:image" content="http://developers-youcong.github.io/2019/07/01/Edusoho之Basic-Authentication/01.png">
+<meta name="twitter:title" content="《设计模式之禅》之解释器模式">
+<meta name="twitter:description" content="一、解释器模式的定义解释器模式是一种按照指定规定语法进行解析的方案，在现在项目中使用较少，其定义如下:给定一门语言，定义它的文法的一种表示，并定义一个解释器，该解释器使用该表示来解释语言中的句子。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -62,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Edusoho之Basic Authentication | Blog</title>
+<title>《设计模式之禅》之解释器模式 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -294,11 +290,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-Edusoho之Basic-Authentication" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-《设计模式之禅》之解释器模式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2019/07/01/Edusoho之Basic-Authentication/" class="article-date">
-      <time datetime="2019-07-01T11:45:18.000Z" itemprop="datePublished">2019-07-01</time>
+      <a href="/2020/04/05/《设计模式之禅》之解释器模式/" class="article-date">
+      <time datetime="2020-04-05T06:12:00.000Z" itemprop="datePublished">2020-04-05</time>
 </a>
 
 
@@ -313,7 +309,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      Edusoho之Basic Authentication
+      《设计模式之禅》之解释器模式
     </h1>
   
 
@@ -324,7 +320,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Edusoho/">Edusoho</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -334,30 +330,19 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>通过如下代码，可以正常请求并获取对应的数据:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -X POST -H &quot;Accept:application/vnd.edusoho.v2+json&quot; -H &quot;Authorization: Basic dGVzdDJlZHVvc2hvOjEyMzQ1Ng==&quot; http://demo.edusoho.com/api/tokens</span><br></pre></td></tr></table></figure></p>
-<p>但是我想将其中的请求地址替换成我自己的域名，却不行。</p>
-<p>由于Edusoho开发文档并未对其详说，于是我便提相关的issue。</p>
-<p>我提的issue如下:<br><a href="https://github.com/edusoho/edusoho/issues/65" target="_blank" rel="noopener">https://github.com/edusoho/edusoho/issues/65</a><br><a id="more"></a></p>
-<p>最后这个问题，还是解决了。本次问题的原因还是我对于Http Basic Authentication(又称HTTP基本认证)缺乏了解，不然早就可以解决了。</p>
-<p>本次解决主要参考这篇文章<a href="https://www.cnblogs.com/yuqiangli0616/p/9389273.html" target="_blank" rel="noopener">HTTP Basic Authentication认证</a></p>
-<p>这篇文章让我知道Authorization对于的值到底是什么意思。之前之所以得不到预想的结果就是因为不理解不知道。<br>当我知道dGVzdDJlZHVvc2hvOjEyMzQ1Ng，对应的实际上是用户名:密码(使用Base64加密))后，一切问题皆迎刃而解。</p>
-<p>最后通过在线Base64加密<a href="http://tool.oschina.net/encrypt?type=3" target="_blank" rel="noopener">http://tool.oschina.net/encrypt?type=3</a><br>将对应用户名:密码这种格式进行加密后成功，再次请求对应的接口，如图所示:</p>
-<p><img src="/2019/07/01/Edusoho之Basic-Authentication/01.png" alt="图一"></p>
-<p>记住加密一定要按照如下格式：<br>格式=&gt; 用户名:密码(中间加冒号)<br><img src="/2019/07/01/Edusoho之Basic-Authentication/02.png" alt="图二"></p>
-<p>请求成功获取token，拿到token后，这时你就可以玩玩其他的接口(建议对Edusoho二次开发的朋友们可以试试，非二次开发的朋友也可以借鉴它的这种接口鉴权方式，然后为其所用)。</p>
-<p>Edusoho API地址为:<a href="http://developer.edusoho.com/api" target="_blank" rel="noopener">http://developer.edusoho.com/api</a></p>
-<p>关于HTTP常用的场景，如图所示(这种就比较常见了):<br><img src="/2019/07/01/Edusoho之Basic-Authentication/03.png" alt="图二"></p>
-<p>相信这种场景，大家都不陌生。</p>
-<p>Http常用认证如下五种:</p>
-<p>Http Basic Auth</p>
-<p>OAuth</p>
-<p>Cookie Auth</p>
-<p>Token Auth</p>
-<p>基于JWT的Token认证机制</p>
-<p>认证的根本目的就是让用户访问更加安全，防止不法分子窃取用户名和密码做一些违法的事情。</p>
-<p>关于上面的认证，后续用到后，会有一个详解。</p>
-<p>顺便补充一点，实际开发系统并不建议使用Http Basic Auth这种方式，因为它简单(每次请求API都提供用户的username和password)，参数中携带如此敏感信息，有着极大的暴露风险，所以在生产环境中被使用的越来越少。</p>
-<p>参考资料如下:<br><a href="https://blog.csdn.net/ctwy291314/article/details/83275456" target="_blank" rel="noopener">HTTP 几种常用的认证机制</a><br><a href="https://www.cnblogs.com/yuqiangli0616/p/9389273.html" target="_blank" rel="noopener">HTTP Basic Authentication认证</a></p>
+        <h2><span id="一-解释器模式的定义">一、解释器模式的定义</span></h2><p>解释器模式是一种按照指定规定语法进行解析的方案，在现在项目中使用较少，其定义如下:<br>给定一门语言，定义它的文法的一种表示，并定义一个解释器，该解释器使用该表示来解释语言中的句子。<br><a id="more"></a></p>
+<h3><span id="解释器模式通用类">解释器模式通用类:</span></h3><h4><span id="1abstractexpression抽象解释器">(1)AbstractExpression–抽象解释器</span></h4><p>具体的解释任务由各个实现类完成，具体的解释器分别由TerminalExpression和Non-terminalExpression完成</p>
+<h4><span id="2terminalexpression终结符表达式">(2)TerminalExpression–终结符表达式</span></h4><p>实现与文法中的元素相关联的解释操作，通常一个解释器模式中只有一个终结符表达式，但有多个实例，对应不同的终结符。具体到我们例子就是Var-Expression类，表达式中的每个终结符都在栈中产生了一个VarExpression对象。</p>
+<h4><span id="3nonterminalexpression非终结符表达式">(3)NonterminalExpression–非终结符表达式</span></h4><p>文法中的每条规则对应于一个非终结表达式，具体到我们的例子就是加减法规则分别对应AddExpression和SubExpression两个类。非终结符表达式根据逻辑的复杂程度而增加，原则上每个文法规则都对应一个非终结符表达式。</p>
+<h4><span id="4context环境角色">(4)Context–环境角色</span></h4><p>具体到我们的例子中是采用Hash-Map代替。</p>
+<h2><span id="二-解释器模式的应用">二、解释器模式的应用</span></h2><h3><span id="1解释器模式的优点">1.解释器模式的优点</span></h3><p>解释器是一个简单语法分析工具，它最显著的优点就是扩展性，修改语法规则只要修改相应的非终结符表达式就可以了，若扩展语法，则只要增加非终结符类就可以了。</p>
+<h3><span id="2解释器模式的缺点">2.解释器模式的缺点</span></h3><h4><span id="1解释器模式会引起类膨胀">(1)解释器模式会引起类膨胀</span></h4><p>每个语法都要产生一个非终结符表达式，语法规则比较复杂时，就可能产生大量的类文件，为维护带来了非常多的麻烦。</p>
+<h4><span id="2解释器模式采用递归调用方法">(2)解释器模式采用递归调用方法</span></h4><p>每个非终结符表达式只关心与自己有关的表达式，必须一层一层地剥茧，无论是面向过程的语言还是面向对象的语言，递归都是在必要条件下使用的，它导致调试非常复杂。想想看，如果要排查一个语法错误，我们是不是要一个断点地调试下去，直到最小的语法单元。</p>
+<h4><span id="3效率问题">(3)效率问题</span></h4><p>解释器模式由于使用了大量的循环和递归，效率是一个不容忽视的问题，特别是用于解析复杂、冗长的语法时，效率是难以忍受的。</p>
+<h3><span id="3解释器模式使用的场景">3.解释器模式使用的场景</span></h3><h4><span id="1重复发生的问题可以使用解释器模式">(1)重复发生的问题可以使用解释器模式</span></h4><p>例如，多个应用服务器，每天产生大量的日志，需要对日志文件进行分析处理，由于各个服务器的日志格式不同，但是数据要素是相同的，按照解释器的说法就是终结符表达式都是相同的，但是非终结符表达式就需要制定了。在这种情况下，可以通过程序来一劳永逸地解决该问题。</p>
+<h4><span id="2一个简单语法需要解释的场景">(2)一个简单语法需要解释的场景</span></h4><p>为什么是简单？<br>看看非终结表达式，文法规则越多，复杂度越高，而且类间还要进行递归调用。想想看，多个类之间的调用你需要什么样的耐心和信心去排查问题。因此，解释器模式一般用来解析比较标准的字符集，例如SQL语法分析，不过该部分逐渐被专用工具所取代。</p>
+<h3><span id="4解释器模式的注意事项">4.解释器模式的注意事项</span></h3><p>尽量不要在重要的模块中使用解释器模式，否则维护会是一个很大的问题。在项目中可以使用shell、JRuby、Groovy等脚本语言来代替解释器模式，弥补Java编译型语言的不足。我们在一个银行的分析型项目中就采用JRuby进行运算处理，避免使用解释器模式的四则运算，效率和性能各方面表现良好。</p>
+<h2><span id="三-最佳实践">三、最佳实践</span></h2><p>解释器模式在实际的系统开发中使用得非常少，因为它会引起效率、性能以及维护等问题，一般在大中型的框架型项目能够找到它的身影，如一些数据分析工具、报表设计工具、科学计算工具等，若你确实遇到”一种特定类型的问题发生的频率足够高”的情况，准备使用解释器模式时，可以考虑Expression4J、MESP、Jep等开源的解析工具包，功能异常强大，而且非常容易使用，效率也还不错，实现大多数的数学运算完全没有问题，自己没有必要从头开始编写解释器。<br>代码例子:<br><a href="https://github.com/developers-youcong/DesignPatternPractice/tree/master/Interpreter" target="_blank" rel="noopener">https://github.com/developers-youcong/DesignPatternPractice/tree/master/Interpreter</a></p>
 
       
     </div>
@@ -366,13 +351,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2019/07/01/Edusoho之Basic-Authentication/">Edusoho之Basic Authentication</a></p>
+        <p><span>本文标题:</span><a href="/2020/04/05/《设计模式之禅》之解释器模式/">《设计模式之禅》之解释器模式</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2019-07-01, 19:45:18</p>
-        <p><span>最后更新:</span>2019-07-18, 21:26:11</p>
+        <p><span>发布时间:</span>2020-04-05, 14:12:00</p>
+        <p><span>最后更新:</span>2020-04-05, 14:50:40</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/07/01/Edusoho之Basic-Authentication/" title="Edusoho之Basic Authentication">http://developers-youcong.github.io/2019/07/01/Edusoho之Basic-Authentication/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2019/07/01/Edusoho之Basic-Authentication/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/04/05/《设计模式之禅》之解释器模式/" title="《设计模式之禅》之解释器模式">http://developers-youcong.github.io/2020/04/05/《设计模式之禅》之解释器模式/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/04/05/《设计模式之禅》之解释器模式/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -384,16 +369,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2019/07/02/Symfony之入门学习/">
-                    Symfony之入门学习
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2019/06/30/git之fatal-Could-not-read-from-remote-repository/">
-                    git之fatal: Could not read from remote repository
+                <a href="/2020/04/05/《设计模式之禅》之状态模式/">
+                    《设计模式之禅》之状态模式
                 </a>
             </div>
         
@@ -405,7 +384,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、解释器模式的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">解释器模式通用类:</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.1.</span> <span class="toc-text">(1)AbstractExpression–抽象解释器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.2.</span> <span class="toc-text">(2)TerminalExpression–终结符表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.3.</span> <span class="toc-text">(3)NonterminalExpression–非终结符表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.4.</span> <span class="toc-text">(4)Context–环境角色</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、解释器模式的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.1.</span> <span class="toc-text">1.解释器模式的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.</span> <span class="toc-text">2.解释器模式的缺点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.1.</span> <span class="toc-text">(1)解释器模式会引起类膨胀</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.2.</span> <span class="toc-text">(2)解释器模式采用递归调用方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.2.3.</span> <span class="toc-text">(3)效率问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.</span> <span class="toc-text">3.解释器模式使用的场景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.1.</span> <span class="toc-text">(1)重复发生的问题可以使用解释器模式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">2.3.2.</span> <span class="toc-text">(2)一个简单语法需要解释的场景</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.4.</span> <span class="toc-text">4.解释器模式的注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、最佳实践</span></a></li></ol>
         
     </div>
     <style>
@@ -441,7 +420,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"Edusoho之Basic Authentication　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"《设计模式之禅》之解释器模式　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -463,15 +442,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2019/07/02/Symfony之入门学习/" title="上一篇: Symfony之入门学习">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2019/06/30/git之fatal-Could-not-read-from-remote-repository/" title="下一篇: git之fatal: Could not read from remote repository">
+            <a href="/2020/04/05/《设计模式之禅》之状态模式/" title="下一篇: 《设计模式之禅》之状态模式">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -507,8 +484,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Mon Jul 01 2019 19:45:18 GMT+0800',
-			  title: 'Edusoho之Basic Authentication',
+			  id: 'Sun Apr 05 2020 14:12:00 GMT+0800',
+			  title: '《设计模式之禅》之解释器模式',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
