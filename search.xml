@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Git修改commit提交信息</title>
+      <link href="/2020/04/13/Git%E4%BF%AE%E6%94%B9commit%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF/"/>
+      <url>/2020/04/13/Git%E4%BF%AE%E6%94%B9commit%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF/</url>
+      
+        <content type="html"><![CDATA[<p>有些时候不小心git commit -m ‘提交信息’中的提交信息写错了。<br><a id="more"></a><br>不怕，执行如下命令即可修改(注意，仅仅只能针对最后一次提交):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend -m &quot;新的修改提交信息&quot;</span><br></pre></td></tr></table></figure></p><p>参考解决问题地址:<br><a href="https://www.softwhy.com/article-8492-1.html" target="_blank" rel="noopener">https://www.softwhy.com/article-8492-1.html</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode characters in position 0-2: ordinal not in range(128)</title>
       <link href="/2020/04/05/UnicodeEncodeError-ascii-codec-can-t-encode-characters-in-position-0-2-ordinal-not-in-range-128/"/>
       <url>/2020/04/05/UnicodeEncodeError-ascii-codec-can-t-encode-characters-in-position-0-2-ordinal-not-in-range-128/</url>
