@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>脚本是个好东西</title>
+      <link href="/2020/05/06/%E8%84%9A%E6%9C%AC%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/"/>
+      <url>/2020/05/06/%E8%84%9A%E6%9C%AC%E6%98%AF%E4%B8%AA%E5%A5%BD%E4%B8%9C%E8%A5%BF/</url>
+      
+        <content type="html"><![CDATA[<p>Linux下使用shell脚本可以完成很多任务，如执行脚本部署测试环境、批量添加系统用户(之前做edusoho二次开发时用到)、监控项目运行情况(如果宕机，自动重启)等。<br><a id="more"></a></p><p>总而言之，一台或者多台Linux，如果你不能熟练的掌握shell脚本的话，如巡检之类的重复性工作会累死人的。</p><p>另外不仅仅是Linux，像我本地自己平时兴趣爱好写一些小demo也用到shell脚本或bat脚本。</p><p>如最近博客项目需要启动Redis、Mongodb、ES等，但一个个手动启动实在是非常麻烦，于是我将其抽为一个bat脚本，只需桌面点击，应用全部启动，非常节约时间。</p><p>我的bat脚本内容如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">echo start</span><br><span class="line"></span><br><span class="line">echo mongo START</span><br><span class="line">start /d &quot;D:\Program Files\MongoDB\Server\4.2\bin&quot; mongo.exe</span><br><span class="line"></span><br><span class="line">echo redis START</span><br><span class="line">start /d &quot;D:\Program Files\Redis-x64-3.2.100&quot; redis-server.exe</span><br><span class="line"></span><br><span class="line">echo elasticsearch START</span><br><span class="line">start /d &quot;D:\Program Files\elasticsearch-5.6.16\bin&quot; elasticsearch.bat</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 计算机 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>availableProcessors is already set to [8], rejecting [8]</title>
+      <link href="/2020/05/06/availableProcessors-is-already-set-to-8-rejecting-8/"/>
+      <url>/2020/05/06/availableProcessors-is-already-set-to-8-rejecting-8/</url>
+      
+        <content type="html"><![CDATA[<p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;elasticsearchClient&apos; defined in class path resource [org/springframework/boot/autoconfigure/data/elasticsearch/ElasticsearchAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.elasticsearch.client.transport.TransportClient]: Factory method &apos;elasticsearchClient&apos; threw exception; nested exception is java.lang.IllegalStateException: availableProcessors is already set to [8], rejecting [8]</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>关键信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.lang.IllegalStateException: availableProcessors is already set to [8], rejecting [8]</span><br></pre></td></tr></table></figure></p><p>通过关键字搜索，找到了解决办法，<strong>原因是因为SpringBoot的netty和elasticsearch的netty相关jar冲突</strong></p><p>只需在启动类加入如下代码即可解决(注意，这段代码要放在SpringApplication.run(Application.class, args)之前才行，否则不会生效):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.setProperty(&quot;es.set.netty.runtime.available.processors&quot;, &quot;false&quot;);</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《读懂一本书:樊登读书法》之读书笔记</title>
       <link href="/2020/05/02/%E3%80%8A%E8%AF%BB%E6%87%82%E4%B8%80%E6%9C%AC%E4%B9%A6-%E6%A8%8A%E7%99%BB%E8%AF%BB%E4%B9%A6%E6%B3%95%E3%80%8B%E4%B9%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
       <url>/2020/05/02/%E3%80%8A%E8%AF%BB%E6%87%82%E4%B8%80%E6%9C%AC%E4%B9%A6-%E6%A8%8A%E7%99%BB%E8%AF%BB%E4%B9%A6%E6%B3%95%E3%80%8B%E4%B9%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
