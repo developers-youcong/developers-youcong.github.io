@@ -292,6 +292,219 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-VsCode插件与Node-js交互通信" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/05/VsCode插件与Node-js交互通信/" class="article-date">
+      <time datetime="2019-06-05T07:15:48.000Z" itemprop="datePublished">2019-06-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/05/VsCode插件与Node-js交互通信/">VsCode插件与Node.js交互通信</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>首先关于VsCode插件通信，如果不明白的可以参考我的这篇博客<a href="https://www.cnblogs.com/youcong/p/10294758.html" target="_blank" rel="noopener">VsCode插件开发之插件初步通信</a></p>
+<p>如果需要详细例子的话，可以参考<a href="https://github.com/developers-youcong/vscode-extension-dev" target="_blank" rel="noopener">VsCode插件开发</a></p>
+<p>现在又有一个新的需求是，VsCode插件可以通过jQuery的方式/或者引入某种前端通信框架实现与后台交互。但是针对之前某个需求，需求描述:用户登录后在本地某盘创建特定的文件夹。通常像创建特定文件夹的话，一般都是后端语言实现。而我当时编写的这个插件是用JavaScript，JavaScript是不能读写文件的，当然了，有些朋友可能会说可以使用ActiveXObject，但是这个ActiveXObject有局限性，它仅仅只能支持IE浏览器，而不能支持像Google Chrome和火狐这样的通用性广的浏览器。</p>
+<p>为了解决这个需求，我决定结合node.js解决这个问题。</p>
+<p>首先明确一点，vscode插件开发，不管是使用JavaScript还是TypeScript，通常由于本地调试的需求，都需要安装对应库，而管理这个库，通常使用npm或yarn。由此我们便可知，我们直接可以在该插件中编写node.js相关的代码。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/06/05/VsCode插件与Node-js交互通信/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-算法图解之散列表" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/03/算法图解之散列表/" class="article-date">
+      <time datetime="2019-06-03T11:20:49.000Z" itemprop="datePublished">2019-06-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/03/算法图解之散列表/">算法图解之散列表</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="散列函数"><a href="#散列函数" class="headerlink" title="散列函数"></a>散列函数</h2><p>专业术语表述，”将输入映射到数字”。</p>
+<p>散列函数具有如下要求:<br>(1)它必须是一致的。<br>如你输入blog得到的是wordpress，那么每次输入blog，得到的都必须为wordpress。</p>
+<p>(2)它应将不同的输入映射到不同的数字。<br>如，如果一个散列函数不管输入是什么都返回1，它就不是好的散列函数。最理想的情况是，将不同的输入映射到不同的数字。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/06/03/算法图解之散列表/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-初学者摸索之算法学习" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/01/初学者摸索之算法学习/" class="article-date">
+      <time datetime="2019-06-01T13:32:26.000Z" itemprop="datePublished">2019-06-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/01/初学者摸索之算法学习/">初学者摸索之算法学习</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>此文转自我个人微信公众号，时间虽然过去已经四个多月了，但是我个人认为还是能够给大家带来启发意义，所以借这个时间分享给大家，微信公众号分享比较有限，而且时效性也比较差，而博客时效性比较好，而且还能集思广益，欢迎朋友在评论区留言，俗话说，众人拾柴火焰高。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/06/01/初学者摸索之算法学习/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Node-js之文件下载" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -746,221 +959,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-算法图解之递归" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/20/算法图解之递归/" class="article-date">
-      <time datetime="2019-05-20T13:01:02.000Z" itemprop="datePublished">2019-05-20</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/20/算法图解之递归/">算法图解之递归</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><p><img src="/2019/05/20/算法图解之递归/01.png" alt="图一"></p>
-<p><img src="/2019/05/20/算法图解之递归/02.png" alt="图二"></p>
-<p>图一和图二对比，它们的作用都是相同的。从流程上分析，图一流程相对比较复杂，而图二则简单明了，<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/20/算法图解之递归/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-windows安装composer" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/18/windows安装composer/" class="article-date">
-      <time datetime="2019-05-18T14:53:50.000Z" itemprop="datePublished">2019-05-18</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/18/windows安装composer/">windows安装composer</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="下载Composer-Setup-exe"><a href="#下载Composer-Setup-exe" class="headerlink" title="下载Composer-Setup.exe"></a>下载Composer-Setup.exe</h2><p>请点击该链接即可<a href="https://getcomposer.org/Composer-Setup.exe" target="_blank" rel="noopener">下载Composer</a></p>
-<p>通常下载完后是一个exe文件，双击安装即可。</p>
-<p>注意:默认会搜索你的php安装路径，建议最好把php安装好。</p>
-<p>关于php安装，可以去php官网上下载zip包解压某个配置配置环境变量即可。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/18/windows安装composer/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Ubuntu16-04之Apache2-4配置SSL证书" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/17/Ubuntu16-04之Apache2-4配置SSL证书/" class="article-date">
-      <time datetime="2019-05-17T09:39:12.000Z" itemprop="datePublished">2019-05-17</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/17/Ubuntu16-04之Apache2-4配置SSL证书/">Ubuntu16.04之Apache2.4配置SSL证书</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>具体步骤不是特别复杂，有些细枝末节我可能忽略了，不过参考我的这个教程，应该可以配置好的，如果朋友们有问题，可以留言给我。<br>参考资料如下:<br><a href="https://blog.csdn.net/m_zhurunfeng/article/details/79980320" target="_blank" rel="noopener">Linux + Apache2 环境下配置 https (腾讯云免费证书)</a></p>
-<p><a href="https://help.aliyun.com/document_detail/102450.html" target="_blank" rel="noopener">Ubuntu系统Apache 2部署SSL证书</a></p>
-<p>虽然说很多不记得了，但是有这么几点必须要提。</p>
-<p>第一、去阿里云下载证书，通过winscp或者xftp上传文件到服务器上<br>第二、解压证书zip包，并将其放入某个文件夹下<br>第三、安装apache，并按照如下步骤:<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/17/Ubuntu16-04之Apache2-4配置SSL证书/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
