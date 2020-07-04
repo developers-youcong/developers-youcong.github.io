@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Drools之基础语法</title>
+      <link href="/2020/07/04/Drools%E4%B9%8B%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/"/>
+      <url>/2020/07/04/Drools%E4%B9%8B%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-规则文件">一、规则文件</span></h2><p>标准的规则文件以”.drl”结尾。<br><a id="more"></a><br>一套完整的规则文件内容如下:</p><ul><li>package:包名，只限于逻辑上的管理，若自定义的查询或函数位于同一包名，不管物理位置如何，都可以直接调用。</li><li>import:规则引用问题，导入类或静态方法。</li><li>global:全局变量，使用时需要单独定义变量类型</li><li>function:自定义函数，可以理解为Java静态方法的一种变形，与JavaScript函数定义相似。</li><li>queried:查询。</li><li>rule end:规则内容中的规则体，是进行业务规则判断、处理业务结果的部分。</li></ul><h2><span id="二-规则体语法结构">二、规则体语法结构</span></h2><p>一个规则体包含三个部分，唯有attributes部分是可选，其他关键字都是必填信息。属性可选并不表示没有，属性是有默认值的，如规则默认是被激活的。<br>规则体语法结构如下:</p><ul><li>rule:规则开始，参数是规则的唯一名称</li><li>attributes:规则属性，是rule与when之间的参数，为可选项</li><li>when:规则条件部分，默认为true</li><li>then:规则结果部分</li><li>end:当前规则结束</li></ul><h2><span id="三-匹配模式">三、匹配模式</span></h2><p>LHS部分由一个或多个条件组成，条件又称pattern。多个pattern之间既可以使用and或or连接，又可以使用小括号确定pattern的优先级，默认条件是true。</p><p>pattern的”绑定变量名”是可选的，当前规则的RHS部分需要操作pattern匹配的参数，若要用到某些对象，则可以通过为该对象设定一个绑定变量名来实现对它的操作。对于绑定变量的命名，通常是为其添加一个”$”符号作为前缀，与对象的命名方法相同;绑定变量不仅可以用在对象上，也可以用在对象的属性上，作用是方便RHS部分的操作，同时也避免与Fact对象属性的使用相混淆。</p><p>“Field约束”是指当前对象中属性或方法的使用，如添加条件限制”name==’YC’,age==24”.</p><p>规则体中LHS部分绑定变量基本上有两种形式:一种是整个Fact变量的绑定，另一种是约束条件属性变量的绑定。</p><h2><span id="四-运算符">四、运算符</span></h2><p>运算符是在程序中最常用的计算方法，一般的运算符包括”+、-、*、/、%”等，优先级与Java相同。</p><h2><span id="五-约束连接">五、约束连接</span></h2><p>匹配模式中有多种约束符的连接，常用的有”&amp;&amp;”(and)、”||”(or)、”,”(and)。这3个连接符号如果没有用括号来显示定义的优先级，那么”&amp;&amp;”优先级大于”||”优先级。</p><p>Drools自带的约束，共有6种比较操作符。</p><h3><span id="1contains比较操作符">1.contains比较操作符</span></h3><p>contains是用来检查一个Fact对象的某个属性值是否包含一个指定的对象值。其语法格式为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object[field[Collection/Array] contains | not contains value]</span><br></pre></td></tr></table></figure></p><h3><span id="2not-contains-比较运算符">2.not contains 比较运算符</span></h3><p>not contains的作用与contains相反，它是用来判断一个Fact对象的某个字段不包含一个指定的对象。</p><h3><span id="3memberof比较运算符">3.memberOf比较运算符</span></h3><p>memberOf用来判断某个Fact对象的某个字段是否在一个或多个集合中。其语法格式为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object(fieldName memberOf | not memberOf value[Collection/Array])</span><br></pre></td></tr></table></figure></p><h3><span id="4not-memberof比较运算符">4.not memberOf比较运算符</span></h3><p>not memberOf与memberOf的作用相反，是用来判断Fact对象中某个字段不在某个集合中。</p><h3><span id="5matches比较运算符">5.matches比较运算符</span></h3><p>matches用来对某个Fact对象的字段与标准的Java正则表达式进行相似匹配，被比较的字符串可以是一个标准的Java正则表达式。但需要注意的是，正则表达式字符串中不用考虑”\”的转义问题，其语法为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object(fieldName matches | not matches &quot;正则表达式&quot;)</span><br></pre></td></tr></table></figure></p><h3><span id="6not-matches-比较运算符">6.not matches 比较运算符</span></h3><p>not matches的作用与matches相反，是用来将某个Fact对象的字段与一个Java标准正则表达式进行匹配，若与正则表达式不匹配，则规则成立。</p><h3><span id="7soundlike比较运算符">7.soundlike比较运算符</span></h3><p>soundlike用来检查单词是否具有与给定值几乎相同的声音(使用英语发音)。基于Soundex算法的语法为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object(fieldName soundlike &apos;value&apos;)</span><br></pre></td></tr></table></figure></p><h3><span id="8str比较运算符">8.str比较运算符</span></h3><p>str不仅检查String字段是否以某一值开头/结尾，还可以判断字符串长度，其语法为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Object(fieldName str[startWith|endWith|length] &quot;String&quot;|1)</span><br></pre></td></tr></table></figure></p><h2><span id="六-语法扩展">六、语法扩展</span></h2><p>主要指List、Set、Map等元素操作。</p><h2><span id="七-规则文件drl">七、规则文件drl</span></h2><h3><span id="1单行注释使用进行标记">1.单行注释(使用”//“进行标记)</span></h3><h3><span id="2多行注释以开始以结束">2.多行注释(以”<code>/*</code>“开始，以”<code>*/</code>“结束)</span></h3>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Drools </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SpringBoot之整合Drools</title>
       <link href="/2020/07/04/SpringBoot%E4%B9%8B%E6%95%B4%E5%90%88Drools/"/>
       <url>/2020/07/04/SpringBoot%E4%B9%8B%E6%95%B4%E5%90%88Drools/</url>
@@ -65,7 +84,7 @@
       <link href="/2020/07/03/%E8%B0%88%E8%B0%88%E6%8A%95%E8%B5%84%E8%BF%99%E4%BB%B6%E4%BA%8B/"/>
       <url>/2020/07/03/%E8%B0%88%E8%B0%88%E6%8A%95%E8%B5%84%E8%BF%99%E4%BB%B6%E4%BA%8B/</url>
       
-        <content type="html"><![CDATA[<h2><span id="一-什么是投资">一、什么是投资？</span></h2><p>投资，指国家或企业以及个人，为了特定目的，与对方签订协议，促进社会发展，实现互惠互利，输送资金的过程。又是特定经济主体为了在未来可预见的时期内获得收益或是资金增值，在一定时期内向一定领域投放足够数额的资金或实物的货币等价物的经济行为。可分为实物投资、资本投资和证券投资等。前者是以货币投入企业，通过生产经营活动取得一定利润，后者是以货币购买企业发行的股票和公司债券，间接参与企业的利润分配。</p><p>投资是创新创业项目孵化的一种形式，是对项目产业化综合体进行资本助推发展的经济活动。</p><p>投资是货币收入或其他任何能以货币计量其价值的财富拥有者牺牲当前消费、购买或购置资本品以期在未来实现价值增值的谋利性经营性活动。</p><h2><span id="二-投资的范围有哪些">二、投资的范围有哪些？</span></h2><h3><span id="1房产">1.房产</span></h3><h3><span id="2债劵">2.债劵</span></h3><h3><span id="3股票">3.股票</span></h3><h3><span id="4贵金属通常指的是黄金">4.贵金属(通常指的是黄金)</span></h3><h3><span id="5基金">5.基金</span></h3><h3><span id="6银行短期理财产品">6.银行短期理财产品</span></h3><h3><span id="7信托">7.信托</span></h3><h3><span id="8钱币古董的收藏">8.钱币古董的收藏</span></h3><h3><span id="9民间借贷">9.民间借贷</span></h3><h3><span id="10短期投资在一年内套现">10.短期投资(在一年内套现)</span></h3><h2><span id="三-投资不等于理财这是两码事">三、投资不等于理财，这是两码事</span></h2><p>投资就是”钱生钱”用钱去赚更多钱,以此达到利益最大化，投资看重回报，关注投入产出比。</p><p>理财就是打理自己财务的过程(包含怎么花钱、怎么省钱、怎么存钱)，注重资产布局，同时理财也包含投资，投资是理财的一种手段。</p><h2><span id="四">四、</span></h2>]]></content>
+        <content type="html"><![CDATA[<h2><span id="一-什么是投资">一、什么是投资？</span></h2><p>投资，指国家或企业以及个人，为了特定目的，与对方签订协议，促进社会发展，实现互惠互利，输送资金的过程。又是特定经济主体为了在未来可预见的时期内获得收益或是资金增值，在一定时期内向一定领域投放足够数额的资金或实物的货币等价物的经济行为。可分为实物投资、资本投资和证券投资等。前者是以货币投入企业，通过生产经营活动取得一定利润，后者是以货币购买企业发行的股票和公司债券，间接参与企业的利润分配。</p><p>投资是创新创业项目孵化的一种形式，是对项目产业化综合体进行资本助推发展的经济活动。</p><p>投资是货币收入或其他任何能以货币计量其价值的财富拥有者牺牲当前消费、购买或购置资本品以期在未来实现价值增值的谋利性经营性活动。</p><h2><span id="二-投资的范围有哪些">二、投资的范围有哪些？</span></h2><h3><span id="1房产">1.房产</span></h3><h3><span id="2债劵">2.债劵</span></h3><h3><span id="3股票">3.股票</span></h3><h3><span id="4贵金属通常指的是黄金">4.贵金属(通常指的是黄金)</span></h3><h3><span id="5基金">5.基金</span></h3><h3><span id="6银行短期理财产品">6.银行短期理财产品</span></h3><h3><span id="7信托">7.信托</span></h3><h3><span id="8钱币古董的收藏">8.钱币古董的收藏</span></h3><h3><span id="9民间借贷">9.民间借贷</span></h3><h3><span id="10短期投资在一年内套现">10.短期投资(在一年内套现)</span></h3><h2><span id="三-投资不等于理财这是两码事">三、投资不等于理财，这是两码事</span></h2><p>投资就是”钱生钱”用钱去赚更多钱,以此达到利益最大化，投资看重回报，关注投入产出比。</p><p>理财就是打理自己财务的过程(包含怎么花钱、怎么省钱、怎么存钱)，注重资产布局，同时理财也包含投资，投资是理财的一种手段。</p>]]></content>
       
       
       
