@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="1.介绍’指令集’的概念LOAD_A,LOAD_B,SUB,JUMP,ADD,HALT等指令 2.带条件跳转，JUMP NEGATIVE是负数才跳转，还有其他类型的JUMP3.真正现代CPU用更多指令集。位数更长。4.1971年的英特尔4004处理器，有46个指令5.如今英特尔酷睿i7，有上千条指令。">
-<meta name="keywords" content="计算机科学速成课笔记">
+<meta name="description" content="问题背景:地址栏传参有中文，中文截取后出现乱码问题。">
+<meta name="keywords" content="javascript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="计算机科学速成课笔记之指令和程序">
-<meta property="og:url" content="http://developers-youcong.github.io/2020/02/16/计算机科学速成课笔记之指令和程序/index.html">
+<meta property="og:title" content="解决js地址栏中传递中文乱码的问题">
+<meta property="og:url" content="http://developers-youcong.github.io/2020/07/05/解决js地址栏中传递中文乱码的问题/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="1.介绍’指令集’的概念LOAD_A,LOAD_B,SUB,JUMP,ADD,HALT等指令 2.带条件跳转，JUMP NEGATIVE是负数才跳转，还有其他类型的JUMP3.真正现代CPU用更多指令集。位数更长。4.1971年的英特尔4004处理器，有46个指令5.如今英特尔酷睿i7，有上千条指令。">
+<meta property="og:description" content="问题背景:地址栏传参有中文，中文截取后出现乱码问题。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-02-16T13:33:08.973Z">
+<meta property="og:updated_time" content="2020-07-05T02:24:14.366Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="计算机科学速成课笔记之指令和程序">
-<meta name="twitter:description" content="1.介绍’指令集’的概念LOAD_A,LOAD_B,SUB,JUMP,ADD,HALT等指令 2.带条件跳转，JUMP NEGATIVE是负数才跳转，还有其他类型的JUMP3.真正现代CPU用更多指令集。位数更长。4.1971年的英特尔4004处理器，有46个指令5.如今英特尔酷睿i7，有上千条指令。">
+<meta name="twitter:title" content="解决js地址栏中传递中文乱码的问题">
+<meta name="twitter:description" content="问题背景:地址栏传参有中文，中文截取后出现乱码问题。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>计算机科学速成课笔记之指令和程序 | Blog</title>
+<title>解决js地址栏中传递中文乱码的问题 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -290,11 +290,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-计算机科学速成课笔记之指令和程序" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-解决js地址栏中传递中文乱码的问题" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/02/16/计算机科学速成课笔记之指令和程序/" class="article-date">
-      <time datetime="2020-02-16T13:30:32.000Z" itemprop="datePublished">2020-02-16</time>
+      <a href="/2020/07/05/解决js地址栏中传递中文乱码的问题/" class="article-date">
+      <time datetime="2020-07-05T02:21:07.000Z" itemprop="datePublished">2020-07-05</time>
 </a>
 
 
@@ -309,7 +309,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      计算机科学速成课笔记之指令和程序
+      解决js地址栏中传递中文乱码的问题
     </h1>
   
 
@@ -320,7 +320,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机科学速成课笔记/">计算机科学速成课笔记</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -330,8 +330,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2><span id="1介绍指令集的概念">1.介绍’指令集’的概念</span></h2><p>LOAD_A,LOAD_B,SUB,JUMP,ADD,HALT等指令</p>
-<h2><span id="2带条件跳转jump-negative是负数才跳转还有其他类型的jump">2.带条件跳转，JUMP NEGATIVE是负数才跳转，还有其他类型的JUMP</span></h2><h2><span id="3真正现代cpu用更多指令集-位数更长">3.真正现代CPU用更多指令集。位数更长。</span></h2><h2><span id="41971年的英特尔4004处理器有46个指令">4.1971年的英特尔4004处理器，有46个指令</span></h2><h2><span id="5如今英特尔酷睿i7有上千条指令">5.如今英特尔酷睿i7，有上千条指令。</span></h2>
+        <p>问题背景:<br>地址栏传参有中文，中文截取后出现乱码问题。<br><a id="more"></a><br>问题代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function getQueryString(name)</span><br><span class="line">&#123;</span><br><span class="line">     var reg = new RegExp(&quot;(^|&amp;)&quot;+ name +&quot;=([^&amp;]*)(&amp;|$)&quot;);</span><br><span class="line">     var r = window.location.search.substr(1).match(reg);</span><br><span class="line">     if(r!=null)return  unescape(r[2]); return null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>解决问题代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function getUrlParam(key) &#123;</span><br><span class="line">    // 获取参数</span><br><span class="line">    var url = window.location.search;</span><br><span class="line">    // 正则筛选地址栏</span><br><span class="line">    var reg = new RegExp(&quot;(^|&amp;)&quot; + key + &quot;=([^&amp;]*)(&amp;|$)&quot;);</span><br><span class="line">    // 匹配目标参数</span><br><span class="line">    var result = url.substr(1).match(reg);</span><br><span class="line">    //返回参数值</span><br><span class="line">    return result ? decodeURIComponent(result[2]) : null;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>参考解决问题链接:<br><a href="https://www.cnblogs.com/jorzen1984/p/6632918.html" target="_blank" rel="noopener">js地址栏获取参数的方法，解决中文乱码问题，能支持中文参数</a></p>
+
       
     </div>
     
@@ -339,13 +341,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/02/16/计算机科学速成课笔记之指令和程序/">计算机科学速成课笔记之指令和程序</a></p>
+        <p><span>本文标题:</span><a href="/2020/07/05/解决js地址栏中传递中文乱码的问题/">解决js地址栏中传递中文乱码的问题</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2020-02-16, 21:30:32</p>
-        <p><span>最后更新:</span>2020-02-16, 21:33:08</p>
+        <p><span>发布时间:</span>2020-07-05, 10:21:07</p>
+        <p><span>最后更新:</span>2020-07-05, 10:24:14</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/02/16/计算机科学速成课笔记之指令和程序/" title="计算机科学速成课笔记之指令和程序">http://developers-youcong.github.io/2020/02/16/计算机科学速成课笔记之指令和程序/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/02/16/计算机科学速成课笔记之指令和程序/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/07/05/解决js地址栏中传递中文乱码的问题/" title="解决js地址栏中传递中文乱码的问题">http://developers-youcong.github.io/2020/07/05/解决js地址栏中传递中文乱码的问题/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/07/05/解决js地址栏中传递中文乱码的问题/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -357,16 +359,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/02/16/计算机科学速成课笔记之高级CPU设计/">
-                    计算机科学速成课笔记之高级CPU设计
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/02/16/计算机科学速成课笔记之中央处理器/">
-                    计算机科学速成课笔记之中央处理器
+                <a href="/2020/07/05/《架构整洁之道》之开闭原则/">
+                    《架构整洁之道》之开闭原则
                 </a>
             </div>
         
@@ -378,7 +374,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">1.介绍’指令集’的概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">2.带条件跳转，JUMP NEGATIVE是负数才跳转，还有其他类型的JUMP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">3.真正现代CPU用更多指令集。位数更长。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">4.1971年的英特尔4004处理器，有46个指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">5.如今英特尔酷睿i7，有上千条指令。</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -414,7 +410,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"计算机科学速成课笔记之指令和程序　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"解决js地址栏中传递中文乱码的问题　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -436,15 +432,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/02/16/计算机科学速成课笔记之高级CPU设计/" title="上一篇: 计算机科学速成课笔记之高级CPU设计">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/02/16/计算机科学速成课笔记之中央处理器/" title="下一篇: 计算机科学速成课笔记之中央处理器">
+            <a href="/2020/07/05/《架构整洁之道》之开闭原则/" title="下一篇: 《架构整洁之道》之开闭原则">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -480,8 +474,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Sun Feb 16 2020 21:30:32 GMT+0800',
-			  title: '计算机科学速成课笔记之指令和程序',
+			  id: 'Sun Jul 05 2020 10:21:07 GMT+0800',
+			  title: '解决js地址栏中传递中文乱码的问题',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
