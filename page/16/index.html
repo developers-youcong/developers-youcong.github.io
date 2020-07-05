@@ -292,6 +292,75 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Incorrect-string-value-xE8-x8E-xB7-xE5-x8F-x96-for-column-result-at-row-1" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/10/16/Incorrect-string-value-xE8-x8E-xB7-xE5-x8F-x96-for-column-result-at-row-1/" class="article-date">
+      <time datetime="2019-10-16T07:59:23.000Z" itemprop="datePublished">2019-10-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/16/Incorrect-string-value-xE8-x8E-xB7-xE5-x8F-x96-for-column-result-at-row-1/">Incorrect string value: &#39;è·å...&#39; for column &#39;result&#39; at row 1</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>错误详情信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">### Error updating database.  Cause: java.sql.SQLException: Incorrect string value: &apos;\xE8\x8E\xB7\xE5\x8F\x96...&apos; for column &apos;result&apos; at row 1</span><br><span class="line">### The error may involve com.blog.springboot.dao.ApiLogDao.insert-Inline</span><br><span class="line">### The error occurred while setting parameters</span><br><span class="line">### SQL: INSERT INTO wp_api_log   ( class_name,  method_name,  params,  `result`,  consume_time,  update_date )  VALUES   ( ?,  ?,  ?,  ?,  ?,  ? )</span><br><span class="line">### Cause: java.sql.SQLException: Incorrect string value: &apos;\xE8\x8E\xB7\xE5\x8F\x96...&apos; for column &apos;result&apos; at row 1</span><br><span class="line">; uncategorized SQLException for SQL []; SQL state [HY000]; error code [1366]; Incorrect string value: &apos;\xE8\x8E\xB7\xE5\x8F\x96...&apos; for column &apos;result&apos; at row 1; nested exception is java.sql.SQLException: Incorrect string value: &apos;\xE8\x8E\xB7\xE5\x8F\x96...&apos; for column &apos;result&apos; at row 1] with root cause</span><br><span class="line"></span><br><span class="line">java.sql.SQLException: Incorrect string value: &apos;\xE8\x8E\xB7\xE5\x8F\x96...&apos; for column &apos;result&apos; at row 1</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/10/16/Incorrect-string-value-xE8-x8E-xB7-xE5-x8F-x96-for-column-result-at-row-1/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Java之创建文件并写入数据" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -906,77 +975,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/09/07/SpringBoot之KindEditor文件上传/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Swagger-BootStrap-UI生成的接口文档如何加Basic校验" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/09/07/Swagger-BootStrap-UI生成的接口文档如何加Basic校验/" class="article-date">
-      <time datetime="2019-09-07T11:37:11.000Z" itemprop="datePublished">2019-09-07</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/07/Swagger-BootStrap-UI生成的接口文档如何加Basic校验/">Swagger-BootStrap-UI生成的接口文档如何加Basic校验</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>首先我们来看看swagger-bootstrap-ui的效果，如图所示:<br><img src="/2019/09/07/Swagger-BootStrap-UI生成的接口文档如何加Basic校验/01.png" alt=""><br>看起来是不是比Swagger要大气的多。</p>
-<p>回到重点上，为什么要给接口文档加密呢？</p>
-<p>只对内开放，不对外开放，防止被第三方非公司人员进行非法窃取。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/09/07/Swagger-BootStrap-UI生成的接口文档如何加Basic校验/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
