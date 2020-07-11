@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>js实现美化json数据格式</title>
+      <link href="/2020/07/11/js%E5%AE%9E%E7%8E%B0%E7%BE%8E%E5%8C%96json%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/"/>
+      <url>/2020/07/11/js%E5%AE%9E%E7%8E%B0%E7%BE%8E%E5%8C%96json%E6%95%B0%E6%8D%AE%E6%A0%BC%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-核心方法代码">一、核心方法代码</span></h2><a id="more"></a><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//json格式美化</span><br><span class="line">function prettyFormat(str) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        // 设置缩进为2个空格</span><br><span class="line">        str = JSON.stringify(JSON.parse(str), null, 2);</span><br><span class="line">        str = str</span><br><span class="line">            .replace(/&amp;/g, &apos;&amp;amp;&apos;)</span><br><span class="line">            .replace(/&lt;/g, &apos;&amp;lt;&apos;)</span><br><span class="line">            .replace(/&gt;/g, &apos;&amp;gt;&apos;);</span><br><span class="line">        return str.replace(/(&quot;(\\u[a-zA-Z0-9]&#123;4&#125;|\\[^u]|[^\\&quot;])*&quot;(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) &#123;</span><br><span class="line">            var cls = &apos;number&apos;;</span><br><span class="line">            if (/^&quot;/.test(match)) &#123;</span><br><span class="line">                if (/:$/.test(match)) &#123;</span><br><span class="line">                    cls = &apos;key&apos;;</span><br><span class="line">                &#125; else &#123;</span><br><span class="line">                    cls = &apos;string&apos;;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else if (/true|false/.test(match)) &#123;</span><br><span class="line">                cls = &apos;boolean&apos;;</span><br><span class="line">            &#125; else if (/null/.test(match)) &#123;</span><br><span class="line">                cls = &apos;null&apos;;</span><br><span class="line">            &#125;</span><br><span class="line">            return &apos;&lt;span class=&quot;&apos; + cls + &apos;&quot;&gt;&apos; + match + &apos;&lt;/span&gt;&apos;;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; catch (e) &#123;</span><br><span class="line">        alert(&quot;异常信息:&quot; + e);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2><span id="二-函数调用">二、函数调用</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(&quot;#show&quot;).html(&quot;&lt;pre&gt;&quot; + prettyFormat(data) + &quot;&lt;/pre&gt;&quot;);</span><br></pre></td></tr></table></figure><h2><span id="三-html中引用">三、html中引用</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;show&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js实现复制功能</title>
+      <link href="/2020/07/11/js%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD/"/>
+      <url>/2020/07/11/js%E5%AE%9E%E7%8E%B0%E5%A4%8D%E5%88%B6%E5%8A%9F%E8%83%BD/</url>
+      
+        <content type="html"><![CDATA[<p>应用场景:<br>最近我做的一个在线工具网站(参考现在的JSON网站做的)，其中有一个功能叫做JSON格式化和校验，通过复制JSON数据点击格式化后，得到美化的JSON数据，再点击按钮”复制”就能获取美化后JSON数据。<br><a id="more"></a></p><p>核心代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function selectText(element) &#123;</span><br><span class="line">    var text = document.getElementById(element);</span><br><span class="line"></span><br><span class="line">    if (document.body.createTextRange) &#123;</span><br><span class="line">        //createTextRange是用在IE中的</span><br><span class="line">        var range = document.body.createTextRange();</span><br><span class="line">        range.moveToElementText(text);</span><br><span class="line">        range.select();</span><br><span class="line">    &#125; else if (window.getSelection) &#123;</span><br><span class="line">        var selection = window.getSelection();</span><br><span class="line">        var range = document.createRange();</span><br><span class="line">        range.selectNodeContents(text);</span><br><span class="line">        selection.removeAllRanges();</span><br><span class="line">        selection.addRange(range);</span><br><span class="line">        document.execCommand(&quot;Copy&quot;)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        alert(&quot;none&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>《架构整洁之道》之组件聚合</title>
       <link href="/2020/07/10/%E3%80%8A%E6%9E%B6%E6%9E%84%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E3%80%8B%E4%B9%8B%E7%BB%84%E4%BB%B6%E8%81%9A%E5%90%88/"/>
       <url>/2020/07/10/%E3%80%8A%E6%9E%B6%E6%9E%84%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93%E3%80%8B%E4%B9%8B%E7%BB%84%E4%BB%B6%E8%81%9A%E5%90%88/</url>
