@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Cannot create resource output directory</title>
+      <link href="/2020/07/28/Cannot-create-resource-output-directory/"/>
+      <url>/2020/07/28/Cannot-create-resource-output-directory/</url>
+      
+        <content type="html"><![CDATA[<p>错误背景:<br>mvn clean package下报错<br><a id="more"></a><br>错误关键信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cannot create resource output directory</span><br></pre></td></tr></table></figure></p><p>错误原因:<br>有其它地方占用该资源。</p><p>解决办法:<br>关闭其它占用该资源的地方即可解决该问题。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Maven </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>SQL优化之博客案例</title>
       <link href="/2020/07/26/SQL%E4%BC%98%E5%8C%96%E4%B9%8B%E5%8D%9A%E5%AE%A2%E6%A1%88%E4%BE%8B/"/>
       <url>/2020/07/26/SQL%E4%BC%98%E5%8C%96%E4%B9%8B%E5%8D%9A%E5%AE%A2%E6%A1%88%E4%BE%8B/</url>
