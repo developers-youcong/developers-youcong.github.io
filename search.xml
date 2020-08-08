@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>IDEA中导入项目后的main方法右键没有Run</title>
+      <link href="/2020/08/07/IDEA%E4%B8%AD%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84main%E6%96%B9%E6%B3%95%E5%8F%B3%E9%94%AE%E6%B2%A1%E6%9C%89Run/"/>
+      <url>/2020/08/07/IDEA%E4%B8%AD%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E5%90%8E%E7%9A%84main%E6%96%B9%E6%B3%95%E5%8F%B3%E9%94%AE%E6%B2%A1%E6%9C%89Run/</url>
+      
+        <content type="html"><![CDATA[<p>参考解决问题链接:<br><a href="https://blog.csdn.net/q15102780705/article/details/99686399" target="_blank" rel="noopener">IDEA中导入项目后的main方法右键没有Run</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Idea </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Idea导入jar包的两种方法</title>
+      <link href="/2020/08/07/Idea%E5%AF%BC%E5%85%A5jar%E5%8C%85%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+      <url>/2020/08/07/Idea%E5%AF%BC%E5%85%A5jar%E5%8C%85%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>参考解决问题链接:<br><a href="https://blog.csdn.net/Golden_soft/article/details/80952243" target="_blank" rel="noopener">Idea导入jar包的两种方法</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Idea </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Error:java: 无效的源发行版: 11</title>
+      <link href="/2020/08/07/Error-java-%E6%97%A0%E6%95%88%E7%9A%84%E6%BA%90%E5%8F%91%E8%A1%8C%E7%89%88-11/"/>
+      <url>/2020/08/07/Error-java-%E6%97%A0%E6%95%88%E7%9A%84%E6%BA%90%E5%8F%91%E8%A1%8C%E7%89%88-11/</url>
+      
+        <content type="html"><![CDATA[<p>参考解决办法链接:<br><a href="https://www.cnblogs.com/hui-run/p/11137296.html" target="_blank" rel="noopener">Error:java: 无效的源发行版: 11</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Idea </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>jQuery之遍历</title>
       <link href="/2020/07/31/jQuery%E4%B9%8B%E9%81%8D%E5%8E%86/"/>
       <url>/2020/07/31/jQuery%E4%B9%8B%E9%81%8D%E5%8E%86/</url>
