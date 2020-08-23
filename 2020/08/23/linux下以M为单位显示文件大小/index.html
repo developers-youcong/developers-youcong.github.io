@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="一、迭代器模式的定义它提供一种方法访问一个容器对象中各个元素，而又不需暴露该对象的内部细节。">
-<meta name="keywords" content="读书笔记">
+<meta name="description" content="此命令用于查看当前目录各文件夹及文件所占用大小:ls -l --block-size=M">
+<meta name="keywords" content="Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《设计模式之禅》之迭代器模式">
-<meta property="og:url" content="http://developers-youcong.github.io/2020/02/29/《设计模式之禅》之迭代器模式/index.html">
+<meta property="og:title" content="linux下以M为单位显示文件大小">
+<meta property="og:url" content="http://developers-youcong.github.io/2020/08/23/linux下以M为单位显示文件大小/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="一、迭代器模式的定义它提供一种方法访问一个容器对象中各个元素，而又不需暴露该对象的内部细节。">
+<meta property="og:description" content="此命令用于查看当前目录各文件夹及文件所占用大小:ls -l --block-size=M">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-03-01T03:04:07.260Z">
+<meta property="og:updated_time" content="2020-08-23T04:07:18.805Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《设计模式之禅》之迭代器模式">
-<meta name="twitter:description" content="一、迭代器模式的定义它提供一种方法访问一个容器对象中各个元素，而又不需暴露该对象的内部细节。">
+<meta name="twitter:title" content="linux下以M为单位显示文件大小">
+<meta name="twitter:description" content="此命令用于查看当前目录各文件夹及文件所占用大小:ls -l --block-size=M">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>《设计模式之禅》之迭代器模式 | Blog</title>
+<title>linux下以M为单位显示文件大小 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -290,11 +290,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-《设计模式之禅》之迭代器模式" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-linux下以M为单位显示文件大小" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/02/29/《设计模式之禅》之迭代器模式/" class="article-date">
-      <time datetime="2020-02-29T13:12:49.000Z" itemprop="datePublished">2020-02-29</time>
+      <a href="/2020/08/23/linux下以M为单位显示文件大小/" class="article-date">
+      <time datetime="2020-08-23T04:02:14.000Z" itemprop="datePublished">2020-08-23</time>
 </a>
 
 
@@ -309,7 +309,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      《设计模式之禅》之迭代器模式
+      linux下以M为单位显示文件大小
     </h1>
   
 
@@ -320,7 +320,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -330,15 +330,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2><span id="一-迭代器模式的定义">一、迭代器模式的定义</span></h2><p><strong>它提供一种方法访问一个容器对象中各个元素，而又不需暴露该对象的内部细节。</strong><br><a id="more"></a><br>迭代器是为容器服务的，那什么是容器?</p>
-<p>能容纳对象的所有类型都可以称之为容器，例如Collection集合类型、Set类型等，迭代器就是为解决遍历这些容器中的元素而诞生的。</p>
-<h3><span id="iterator抽象迭代器">Iterator抽象迭代器</span></h3><p>抽象迭代器负责定义访问和遍历元素的接口，而且基本上是有固定的3个方法:first()获得第一个元素，next()访问下一个元素，isDone()是否已经访问到底部(Java叫做hasNext()方法)</p>
-<h3><span id="concreateiterator具体迭代器">ConcreateIterator具体迭代器</span></h3><p>具体迭代器角色要实现迭代器接口，完成容器元素的遍历。</p>
-<h3><span id="aggregate抽象容器">Aggregate抽象容器</span></h3><p>容器角色负责提供创建具体迭代器角色的接口，必然提供一个类似creteIterator()这样的方法，在Java中一般是iterator()方法。</p>
-<h3><span id="concrete-aggregate具体容器">Concrete Aggregate具体容器</span></h3><p>具体容器实现容器接口定义的方法，创建出容纳迭代器的对象。</p>
-<h2><span id="二-迭代器的应用">二、迭代器的应用</span></h2><p>一些大师级人物甚至建议把迭代器模式从23个模式中删除，为什么呢？<br>就是因为它太普通了，已经融入到各个语言和工具中，比如PHP中你能找到它的身影，Perl也有它的存在，甚至是前台页面技术Ajax也可以有它的出现。基本上，只要你不是在使用那些古董级的编程语言的话，都不用自己动手写迭代器。</p>
-<h2><span id="三-最佳实践">三、最佳实践</span></h2><p>如果你是做Java开发，尽量不要自己写迭代器模式，使用Java提供的Iterator一般就能满足你的要求。</p>
-<p>代码例子:<br><a href="https://github.com/developers-youcong/DesignPatternPractice/tree/master/Iterator" target="_blank" rel="noopener">https://github.com/developers-youcong/DesignPatternPractice/tree/master/Iterator</a></p>
+        <p>此命令用于查看当前目录各文件夹及文件所占用大小:<br><code>ls -l --block-size=M</code></p>
 
       
     </div>
@@ -347,13 +339,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/02/29/《设计模式之禅》之迭代器模式/">《设计模式之禅》之迭代器模式</a></p>
+        <p><span>本文标题:</span><a href="/2020/08/23/linux下以M为单位显示文件大小/">linux下以M为单位显示文件大小</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2020-02-29, 21:12:49</p>
-        <p><span>最后更新:</span>2020-03-01, 11:04:07</p>
+        <p><span>发布时间:</span>2020-08-23, 12:02:14</p>
+        <p><span>最后更新:</span>2020-08-23, 12:07:18</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/02/29/《设计模式之禅》之迭代器模式/" title="《设计模式之禅》之迭代器模式">http://developers-youcong.github.io/2020/02/29/《设计模式之禅》之迭代器模式/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/02/29/《设计模式之禅》之迭代器模式/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/08/23/linux下以M为单位显示文件大小/" title="linux下以M为单位显示文件大小">http://developers-youcong.github.io/2020/08/23/linux下以M为单位显示文件大小/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/08/23/linux下以M为单位显示文件大小/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -365,16 +357,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/02/29/计算机科学速成课笔记之命令行界面/">
-                    计算机科学速成课笔记之命令行界面
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/02/28/关于Idea安装插件问题/">
-                    关于Idea安装插件问题
+                <a href="/2020/08/23/SpringAop之日志-读配置文件方式/">
+                    SpringAop之日志(读配置文件方式)
                 </a>
             </div>
         
@@ -386,7 +372,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、迭代器模式的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">Iterator抽象迭代器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">ConcreateIterator具体迭代器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.3.</span> <span class="toc-text">Aggregate抽象容器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.4.</span> <span class="toc-text">Concrete Aggregate具体容器</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、迭代器的应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、最佳实践</span></a></li></ol>
+            
         
     </div>
     <style>
@@ -422,7 +408,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"《设计模式之禅》之迭代器模式　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"linux下以M为单位显示文件大小　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -444,15 +430,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/02/29/计算机科学速成课笔记之命令行界面/" title="上一篇: 计算机科学速成课笔记之命令行界面">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/02/28/关于Idea安装插件问题/" title="下一篇: 关于Idea安装插件问题">
+            <a href="/2020/08/23/SpringAop之日志-读配置文件方式/" title="下一篇: SpringAop之日志(读配置文件方式)">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -488,8 +472,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Sat Feb 29 2020 21:12:49 GMT+0800',
-			  title: '《设计模式之禅》之迭代器模式',
+			  id: 'Sun Aug 23 2020 12:02:14 GMT+0800',
+			  title: 'linux下以M为单位显示文件大小',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
