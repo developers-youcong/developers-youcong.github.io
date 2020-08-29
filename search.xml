@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>js存储token</title>
+      <link href="/2020/08/29/js%E5%AD%98%E5%82%A8token/"/>
+      <url>/2020/08/29/js%E5%AD%98%E5%82%A8token/</url>
+      
+        <content type="html"><![CDATA[<p>关于存储token有多种方式(针对前端而言，如react可以使用redux存储token，js可以使用cookie存储token,还有今天说的通过sessionStorage保存token等)。</p><a id="more"></a><p>sessionStorage相关操作核心代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">sessionStorage.setItem(&quot;key&quot;,&quot;value&quot;); //存储数据</span><br><span class="line"></span><br><span class="line">sessionStorage.getItem(&quot;key&quot;); //获取数据</span><br><span class="line"></span><br><span class="line">sessionStorage.removeItem(&quot;key&quot;); //删除数据</span><br><span class="line"></span><br><span class="line">sessionStorage.clear(); //清除所有数据</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringCloudGateWay之网关跨域问题解决</title>
+      <link href="/2020/08/29/SpringCloudGateWay%E4%B9%8B%E7%BD%91%E5%85%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+      <url>/2020/08/29/SpringCloudGateWay%E4%B9%8B%E7%BD%91%E5%85%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
+      
+        <content type="html"><![CDATA[<p>应用场景:<br>所有的微服务是通过网关这个入口，在和前端对接口时，必然设计到有关跨域的问题。关于服务端跨域有很多方案，可以加注解(指定具体的路径允许跨域)，也可以统一配置。</p><a id="more"></a><p>另外如果不在网关入口这配置，势必会造成一个很大的影响，那就是前端通过网关入口调用其它微服务，通常会出现如下错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Access to XMLHttpRequest at &apos;xxx&apos; from origin &apos;xxx&apos; has been been blocked by CORS policy</span><br></pre></td></tr></table></figure></p><p>核心代码(解决方案):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">import org.springframework.context.annotation.Bean;</span><br><span class="line">import org.springframework.context.annotation.Configuration;</span><br><span class="line">import org.springframework.web.cors.CorsConfiguration;</span><br><span class="line">import org.springframework.web.cors.reactive.CorsWebFilter;</span><br><span class="line">import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;</span><br><span class="line">import org.springframework.web.util.pattern.PathPatternParser;</span><br><span class="line"></span><br><span class="line">@Configuration</span><br><span class="line">public class CorsConfig &#123;</span><br><span class="line"></span><br><span class="line">    @Bean</span><br><span class="line">    public CorsWebFilter corsFilter() &#123;</span><br><span class="line">        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(new PathPatternParser());</span><br><span class="line">        source.registerCorsConfiguration(&quot;/**&quot;, buildConfig());</span><br><span class="line">        return new CorsWebFilter(source);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private CorsConfiguration buildConfig() &#123;</span><br><span class="line">        CorsConfiguration corsConfiguration = new CorsConfiguration();</span><br><span class="line">        //在生产环境上最好指定域名，以免产生跨域安全问题</span><br><span class="line">        corsConfiguration.addAllowedOrigin(&quot;*&quot;);</span><br><span class="line">        corsConfiguration.addAllowedHeader(&quot;*&quot;);</span><br><span class="line">        corsConfiguration.addAllowedMethod(&quot;*&quot;);</span><br><span class="line">        return corsConfiguration;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>SpirngCloud GateWay解决方案:<br><a href="https://blog.csdn.net/a294634473/article/details/90715903" target="_blank" rel="noopener">Spring Cloud Gateway – Cors解决跨域问题</a></p><p>注解解决方案:<br><a href="https://blog.csdn.net/weixin_41796956/article/details/84133901" target="_blank" rel="noopener">java后端解决跨域问题（过滤器或者注解）</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>linux下以M为单位显示文件大小</title>
       <link href="/2020/08/23/linux%E4%B8%8B%E4%BB%A5M%E4%B8%BA%E5%8D%95%E4%BD%8D%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F/"/>
       <url>/2020/08/23/linux%E4%B8%8B%E4%BB%A5M%E4%B8%BA%E5%8D%95%E4%BD%8D%E6%98%BE%E7%A4%BA%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F/</url>
