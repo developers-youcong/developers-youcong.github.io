@@ -4,6 +4,101 @@
   
     
     <entry>
+      <title>java.lang.IllegalStateException: Service id not legal hostname (/test-gw-aqa)</title>
+      <link href="/2020/09/05/java-lang-IllegalStateException-Service-id-not-legal-hostname-test-gw-aqa/"/>
+      <url>/2020/09/05/java-lang-IllegalStateException-Service-id-not-legal-hostname-test-gw-aqa/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.IllegalStateException: Service id not legal hostname (/test-gw-aqa)</span><br></pre></td></tr></table></figure></p><p>错误原因和解决方案:</p><p>FeignClient错误写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@FeignClient(&quot;/test-gw-aqa&quot;)</span><br></pre></td></tr></table></figure></p><p>FeignClient正确写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@FeignClient(&quot;test-gw-aqa&quot;)</span><br></pre></td></tr></table></figure></p><p>这种错误会直接导致微服务之间调用失败，因为找不到这个微服务。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SpringCloud </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>org.springframework.context.ApplicationContextException: Unable to start web server; nested exceptio</title>
+      <link href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/"/>
+      <url>/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/</url>
+      
+        <content type="html"><![CDATA[<p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.</span><br></pre></td></tr></table></figure></p><p>常规解决办法:<br>参考如下链接即可:<br><a href="https://cloud.tencent.com/developer/article/1536938" target="_blank" rel="noopener">org.springframework.context.ApplicationContextException: Unable to start web server; nested exceptio</a></p><p>但是也分情况。比分我这次遇到是关于不同Maven多模块相互依赖关系导致此类错误，理解Maven多模块之间的依赖关系即可解决。</p><p>由此可以看出Maven多模块一定得设计好以及依赖关系一定要明确，否则项目启动报错、打包报错等各种奇葩错误弄得你怀疑人生。</p><p>不过兵来将挡，水来土淹。经过这几年得错误洗礼，面对错误，我也不再像过去烦躁或胆怯，因为我知道烦躁和胆怯是解决不了问题的。面对错误，就是要直接面对它，然后解决它。我提供我的<strong>通用思路</strong>:<br><a id="more"></a><br><strong>1.把握关键错误信息</strong></p><p><strong>2.根据错误信息推断可能是什么原因</strong></p><p><strong>3.要有详细复现步骤(页面操作，IDE Debug调试)</strong></p><p><strong>4.找到错误根本原因</strong></p><p><strong>5.最终解决它</strong></p><p>有的时候不能面面俱到做到这五步，因为项目非常紧急的情况下和任务繁重，直接把握好第一步，然后把关键错误信息放搜索引擎一搜基本上就能得到现成的解决方案。</p><p>当然了，这需要你具有甄别正确或错误的能力，不然的话，很容易被坑。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nacos的三种部署方式</title>
+      <link href="/2020/09/05/nacos%E7%9A%84%E4%B8%89%E7%A7%8D%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/"/>
+      <url>/2020/09/05/nacos%E7%9A%84%E4%B8%89%E7%A7%8D%E9%83%A8%E7%BD%B2%E6%96%B9%E5%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<p>单机模式 - 用于测试和单机试用。<br>集群模式 - 用于生产环境，确保高可用。<br>多集群模式 - 用于多数据中心场景。</p><p>参考地址(参考官方文档即可):<br><a href="https://nacos.io/zh-cn/docs/deployment.html" target="_blank" rel="noopener">https://nacos.io/zh-cn/docs/deployment.html</a><br><a id="more"></a><br>我这边直接wget nacos微小版 然后执行如下命令，就实现了单部署:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">wget https://developers-youcong.github.io/tags/https://github.com/alibaba/nacos/releases/download/1.3.0/nacos-server-1.3.0.zip</span><br><span class="line"></span><br><span class="line">unzip nacos-server-1.3.0</span><br><span class="line"></span><br><span class="line">cd nacos-server-1.3.0</span><br><span class="line"></span><br><span class="line">cd bin</span><br><span class="line">sh startup.sh -m standalone</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>o.s.c.a.n.c.NacosPropertySourceBuilder : get data from Nacos error,dataId:application-dev.yaml</title>
+      <link href="/2020/09/02/o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml/"/>
+      <url>/2020/09/02/o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml/</url>
+      
+        <content type="html"><![CDATA[<p>昨天部署项目到公司内部开发服务器上，部署显示是成功，结果出现了这样的错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o.s.c.a.n.c.NacosPropertySourceBuilder : get data from Nacos error,dataId:application-dev.yaml</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>通常这样的错误是因为IDE对应的文件字符编码，改下字符编码就可以了。</p><p>但我本地是正常的，只是部署Linux出现问题。</p><p>最后每次对应的微服务启动，都会显示无法解析共享配置文件(application-dev.yml)</p><p>共享配置文件主要的作用是请求URL不拦截、负载均衡、feign等。</p><p>现在的问题是一直访问不到请求，表示被拦截，这样加上日志输出的错误原因，我因此判定就是解析不到的原因。</p><p>但为什么解析不到呢？<br>可能与Linux字符集有关。</p><p>查看Linux对应的全局字符文件(vim /etc/locale.conf):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LANG=&quot;zh_CN&quot;</span><br></pre></td></tr></table></figure></p><p>最后我加上如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LANG=&quot;zh_CN.UTF-8&quot;</span><br></pre></td></tr></table></figure></p><p>最后问题全部得到解决了。包括之前项目启动输出日志是乱码的问题都得到了解决。</p><p>由于之前操作Ubuntu16.04一直没有出现过这样的问题，这次操作的Linux系统是CentOS7.8。</p><p>看来有些时候字符集真的要命。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java使用split注意事项</title>
+      <link href="/2020/09/02/java%E4%BD%BF%E7%94%A8split%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/"/>
+      <url>/2020/09/02/java%E4%BD%BF%E7%94%A8split%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+      
+        <content type="html"><![CDATA[<p>java使用split的应用场景，通常是针对字符串进行分割。<br><a id="more"></a><br>比方说:<br>前端有这样一个参数，如{“year”:”2018|2019|2020”}</p><p>而我后端接收需要进一步处理，如需要将2018|2019|2020一个个分割出来，就需要用到split方法。</p><p>我在使用split分割字符串时，遇到这样一个问题。</p><p>错误代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String[] year = reqDTO.getYear().split(&quot;|&quot;);</span><br></pre></td></tr></table></figure></p><p>实际上并不能分割输出如下结果:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">2018</span><br><span class="line">2019</span><br><span class="line">2020</span><br></pre></td></tr></table></figure></p><p>正确代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String[] year = reqDTO.getYear().split(&quot;\\|&quot;);</span><br></pre></td></tr></table></figure></p><p>那么问题来了，为什么需要转义?</p><p>查看对应的源码，如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public String[] split(String regex) &#123;</span><br><span class="line">    return split(regex, 0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>答案是底层根据正则表达式匹配。如果不使用转义符，java自带的转义可能就识别为将2019|2018|2020一个个分割，最后分割出来的肯定是单个，如2、0、1、9、|这样的。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>js存储token</title>
       <link href="/2020/08/29/js%E5%AD%98%E5%82%A8token/"/>
       <url>/2020/08/29/js%E5%AD%98%E5%82%A8token/</url>
