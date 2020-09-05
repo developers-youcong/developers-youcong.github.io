@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="应用场景:最近我做的一个在线工具网站(参考现在的JSON网站做的)，其中有一个功能叫做JSON格式化和校验，通过复制JSON数据点击格式化后，得到美化的JSON数据，再点击按钮”复制”就能获取美化后JSON数据。">
-<meta name="keywords" content="javascript">
+<meta name="description" content="这是我上家教育saas公司前端同事整理出来的(当时我们公司主要用的前端框架是React)，当时我在这家公司除了主写后端之外，还需要写一些前端代码，按照这个规范写，前端代码可读性、可维护性、可扩展性以及性能都会大大提高。">
+<meta name="keywords" content="代码规范">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js实现复制功能">
-<meta property="og:url" content="http://developers-youcong.github.io/2020/07/11/js实现复制功能/index.html">
+<meta property="og:title" content="前端代码规范">
+<meta property="og:url" content="http://developers-youcong.github.io/2020/09/05/前端代码规范/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="应用场景:最近我做的一个在线工具网站(参考现在的JSON网站做的)，其中有一个功能叫做JSON格式化和校验，通过复制JSON数据点击格式化后，得到美化的JSON数据，再点击按钮”复制”就能获取美化后JSON数据。">
+<meta property="og:description" content="这是我上家教育saas公司前端同事整理出来的(当时我们公司主要用的前端框架是React)，当时我在这家公司除了主写后端之外，还需要写一些前端代码，按照这个规范写，前端代码可读性、可维护性、可扩展性以及性能都会大大提高。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-11T02:31:26.920Z">
+<meta property="og:updated_time" content="2020-09-05T08:42:15.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js实现复制功能">
-<meta name="twitter:description" content="应用场景:最近我做的一个在线工具网站(参考现在的JSON网站做的)，其中有一个功能叫做JSON格式化和校验，通过复制JSON数据点击格式化后，得到美化的JSON数据，再点击按钮”复制”就能获取美化后JSON数据。">
+<meta name="twitter:title" content="前端代码规范">
+<meta name="twitter:description" content="这是我上家教育saas公司前端同事整理出来的(当时我们公司主要用的前端框架是React)，当时我在这家公司除了主写后端之外，还需要写一些前端代码，按照这个规范写，前端代码可读性、可维护性、可扩展性以及性能都会大大提高。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -58,7 +58,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>js实现复制功能 | Blog</title>
+<title>前端代码规范 | Blog</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -290,11 +290,11 @@ var _hmt = _hmt || [];
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><article id="post-js实现复制功能" class="article article-type-post" itemscope="" itemprop="blogPost">
+      <div class="body-wrap"><article id="post-前端代码规范" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/07/11/js实现复制功能/" class="article-date">
-      <time datetime="2020-07-11T02:28:22.000Z" itemprop="datePublished">2020-07-11</time>
+      <a href="/2020/09/05/前端代码规范/" class="article-date">
+      <time datetime="2020-09-05T08:25:40.000Z" itemprop="datePublished">2020-09-05</time>
 </a>
 
 
@@ -309,7 +309,7 @@ var _hmt = _hmt || [];
         
   
     <h1 class="article-title" itemprop="name">
-      js实现复制功能
+      前端代码规范
     </h1>
   
 
@@ -320,7 +320,7 @@ var _hmt = _hmt || [];
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码规范/">代码规范</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -330,8 +330,44 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>应用场景:<br>最近我做的一个在线工具网站(参考现在的JSON网站做的)，其中有一个功能叫做JSON格式化和校验，通过复制JSON数据点击格式化后，得到美化的JSON数据，再点击按钮”复制”就能获取美化后JSON数据。<br><a id="more"></a></p>
-<p>核心代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function selectText(element) &#123;</span><br><span class="line">    var text = document.getElementById(element);</span><br><span class="line"></span><br><span class="line">    if (document.body.createTextRange) &#123;</span><br><span class="line">        //createTextRange是用在IE中的</span><br><span class="line">        var range = document.body.createTextRange();</span><br><span class="line">        range.moveToElementText(text);</span><br><span class="line">        range.select();</span><br><span class="line">    &#125; else if (window.getSelection) &#123;</span><br><span class="line">        var selection = window.getSelection();</span><br><span class="line">        var range = document.createRange();</span><br><span class="line">        range.selectNodeContents(text);</span><br><span class="line">        selection.removeAllRanges();</span><br><span class="line">        selection.addRange(range);</span><br><span class="line">        document.execCommand(&quot;Copy&quot;)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        alert(&quot;none&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>这是我上家教育saas公司前端同事整理出来的(当时我们公司主要用的前端框架是React)，当时我在这家公司除了主写后端之外，还需要写一些前端代码，按照这个规范写，前端代码可读性、可维护性、可扩展性以及性能都会大大提高。</p>
+<a id="more"></a>
+<h2><span id="一-js篇">一、JS篇</span></h2><h3><span id="1变量包括声明函数参数">1.变量（包括声明，函数参数）</span></h3><p>(1)变量均用英文单词（不会要去翻译）</p>
+<p>(2)变量较长时用驼峰命名（状态+变量），例如：currentCourseId</p>
+<p>或者下划线形式区分，例如：current_courseId</p>
+<p>注：无论那种方式代码里只能出现一种</p>
+<p>(3)字符串中包含变量：<code>你是最${isPig ? &#39;胖&#39; : &#39;完美&#39;}的吗?</code></p>
+<p>(4)对象属性遵循 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">const itemName = &apos;优秀&apos;;</span><br><span class="line"></span><br><span class="line">const newObject = &#123; itemName &#125; </span><br><span class="line"></span><br><span class="line">const newObject = &#123; itemName: itemName &#125;;</span><br></pre></td></tr></table></figure>
+<p>(5)对象结构赋值，兼容处理 例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">const &#123; listData = [], ...props &#125; = this.props;</span><br></pre></td></tr></table></figure>
+<p>(6)对象取值 尽量采用 … 扩展运算符完成组件间多props的情况</p>
+<h3><span id="2方法">2.方法</span></h3><p>(1)方法命名必须遵循驼峰命名，不怕长就怕看不懂，</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">handleChangeChecked = () =&gt; &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>(2)方法采用es6写法（可省去react绑定当前组件代码）</p>
+<p>(3)对于用户交互方法作用于组件的方法，遵循以下: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;div onClick = &#123; handleClick = () =&gt; &#123;&#125; &#125;&gt;点击事件&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<p>(4)接口请求方法语义化明确 例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">getListData = () =&gt; &#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>(5)js方法（filter，map，find等等）遍历时尽可能区分到遍历的是什么item</p>
+<p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">listData.map（testItem =&gt; ( &lt;div&gt;&lt;/div&gt;)）</span><br></pre></td></tr></table></figure>
+<p>(6)善于运用箭头函数来缩短代码行数,例如过滤: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">listData.filter(item =&gt; !!item.showFlag)</span><br></pre></td></tr></table></figure>
+<h2><span id="二-标签篇">二、标签篇</span></h2><p>(1)文本展示的不要去用自带样式标签，用div/span去代替h1….h5/p</p>
+<p>(2)减少无用标签层级，没有样式功能的层级去掉</p>
+<h2><span id="三-样式篇">三、样式篇</span></h2><p>(1)sass/less文件必须层级嵌套（防止污染全局样式），当定义一个js文件时，需要给到当前唯一className，并在less样式文件里用className包裹样式</p>
+<p>(2)className的值语义化明确，要用‘-’符号隔开，并且不要出现汉字</p>
+<p>无变量情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">className = &quot;course-list-item&quot;</span><br></pre></td></tr></table></figure>
+<p>有变量情况：不要在className里面去判断，已变量方式 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">const status = isOpen ? &apos;open&apos; : &apos;close&apos;; className=&#123;`item-content-$&#123;status&#125;`&#125;</span><br></pre></td></tr></table></figure>
+<h2><span id="四-整体优化篇">四、整体优化篇</span></h2><p>(1)遍历之后item取值做好兼容后，再赋值给标签（方便控制Dom显隐）</p>
+<p>(2)抽离基础纯UI展示无状态组件，减少一个render方法层级和行数</p>
+<p>(3)render方法拆分化，renderTop，renderMiddle，renderFooter，简称布局大法</p>
+<p>(4)一个less样式文件对应一个js文件，用className联通，形成封闭区内的样式渲染</p>
+<p>(5)控制单个文件代码&lt;500行</p>
 
       
     </div>
@@ -340,13 +376,13 @@ var _hmt = _hmt || [];
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2020/07/11/js实现复制功能/">js实现复制功能</a></p>
+        <p><span>本文标题:</span><a href="/2020/09/05/前端代码规范/">前端代码规范</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
-        <p><span>发布时间:</span>2020-07-11, 10:28:22</p>
-        <p><span>最后更新:</span>2020-07-11, 10:31:26</p>
+        <p><span>发布时间:</span>2020-09-05, 16:25:40</p>
+        <p><span>最后更新:</span>2020-09-05, 16:42:15</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2020/07/11/js实现复制功能/" title="js实现复制功能">http://developers-youcong.github.io/2020/07/11/js实现复制功能/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/07/11/js实现复制功能/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2020/09/05/前端代码规范/" title="前端代码规范">http://developers-youcong.github.io/2020/09/05/前端代码规范/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/09/05/前端代码规范/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
         <p>
@@ -358,16 +394,10 @@ var _hmt = _hmt || [];
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2020/07/11/js实现美化json数据格式/">
-                    js实现美化json数据格式
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2020/07/10/《架构整洁之道》之组件聚合/">
-                    《架构整洁之道》之组件聚合
+                <a href="/2020/09/05/java8新特性之List处理/">
+                    java8新特性之List处理
                 </a>
             </div>
         
@@ -379,7 +409,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、JS篇</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1.变量（包括声明，函数参数）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">2.方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、标签篇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、样式篇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、整体优化篇</span></a></li></ol>
         
     </div>
     <style>
@@ -415,7 +445,7 @@ var _hmt = _hmt || [];
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"js实现复制功能　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"前端代码规范　| Blog　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -437,15 +467,13 @@ var _hmt = _hmt || [];
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2020/07/11/js实现美化json数据格式/" title="上一篇: js实现美化json数据格式">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2020/07/10/《架构整洁之道》之组件聚合/" title="下一篇: 《架构整洁之道》之组件聚合">
+            <a href="/2020/09/05/java8新特性之List处理/" title="下一篇: java8新特性之List处理">
                 <i class="fa fa-angle-right"></i>
             </a>
         
@@ -481,8 +509,8 @@ var _hmt = _hmt || [];
      
       <script type="text/javascript">
         var gitment = new Gitment({
-			  id: 'Sat Jul 11 2020 10:28:22 GMT+0800',
-			  title: 'js实现复制功能',
+			  id: 'Sat Sep 05 2020 16:25:40 GMT+0800',
+			  title: '前端代码规范',
 			  owner: 'developers-youcong',
 			  repo: 'developers-youcong.github.io',
 			  oauth: {
