@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>java8新特性之List处理</title>
+      <link href="/2020/09/05/java8%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BList%E5%A4%84%E7%90%86/"/>
+      <url>/2020/09/05/java8%E6%96%B0%E7%89%B9%E6%80%A7%E4%B9%8BList%E5%A4%84%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<p>分组:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, List&lt;T&gt;&gt; yearData = allData.stream().collect(Collectors.groupingBy(T::getYear));</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>过滤筛选(单条件):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;T&gt; filterList = appleList.stream().filter(a -&gt; a.getName().equals(&quot;YC&quot;)).collect(Collectors.toList());</span><br></pre></td></tr></table></figure></p><p>过滤筛选(多条件):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;T&gt; filterList = dayVoList.</span><br><span class="line">                      stream().filter(a -&gt; a.getYEAR().equals(item)).collect(Collectors.toList())</span><br><span class="line">                      .stream().filter(a -&gt; a.getPrice() != &quot;0&quot; &amp;&amp; a.getPrice() != &quot;0.0&quot;).collect(Collectors.toList());</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>node.js之linux安装(centos7.8)</title>
       <link href="/2020/09/05/node-js%E4%B9%8Blinux%E5%AE%89%E8%A3%85-centos7-8/"/>
       <url>/2020/09/05/node-js%E4%B9%8Blinux%E5%AE%89%E8%A3%85-centos7-8/</url>
