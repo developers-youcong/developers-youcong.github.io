@@ -292,6 +292,147 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-SpringBoot-MyBatis-Plus实现多数据源" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/05/21/SpringBoot-MyBatis-Plus实现多数据源/" class="article-date">
+      <time datetime="2020-05-21T08:24:43.000Z" itemprop="datePublished">2020-05-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/21/SpringBoot-MyBatis-Plus实现多数据源/">SpringBoot+MyBatis-Plus实现多数据源</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1><span id="一-介绍">一、介绍</span></h1><p>dynamic-datasource-spring-boot-starter 是一个基于springboot的快速集成多数据源的启动器。</p>
+<h2><span id="1dynamic-datasource-spring-boot-starter开源地址">1.dynamic-datasource-spring-boot-starter开源地址</span></h2><p>GitHub开源地址(具体详情可参考官方文档):<br><a href="https://github.com/baomidou/dynamic-datasource-spring-boot-starter" target="_blank" rel="noopener">https://github.com/baomidou/dynamic-datasource-spring-boot-starter</a></p>
+<h2><span id="2说明和应用场景">2.说明和应用场景</span></h2><p>可用于主从分离、读写分离、分布式事务等。</p>
+<h1><span id="二-详细整合步骤">二、详细整合步骤</span></h1><h2><span id="1导入maven依赖">1.导入Maven依赖</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.baomidou&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;dynamic-datasource-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;2.5.4&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2><span id="2applicationyml配置">2.application.yml配置</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  datasource:</span><br><span class="line">    dynamic:</span><br><span class="line">      primary: db1 #设置默认的数据源,默认值为master</span><br><span class="line">      datasource:</span><br><span class="line">        db1:  #数据源db1</span><br><span class="line">          driver-class-name: com.mysql.jdbc.Driver</span><br><span class="line">          url: jdbc:mysql://127.0.0.1:3306/wordpress_master?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai</span><br><span class="line">          username: root</span><br><span class="line">          password: 123456</span><br><span class="line">        db2: #数据源db2</span><br><span class="line">          driver-class-name: com.mysql.jdbc.Driver</span><br><span class="line">          url: jdbc:mysql://127.0.0.1:3306/wordpress_slave?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=Asia/Shanghai</span><br><span class="line">          username: root</span><br><span class="line">          password: 123456</span><br><span class="line">      type: com.alibaba.druid.pool.DruidDataSource</span><br><span class="line">      druid:</span><br><span class="line">        initial-size: 10</span><br><span class="line">        max-active: 100</span><br><span class="line">        min-idle: 10</span><br><span class="line">        max-wait: 60000</span><br><span class="line">        pool-prepared-statements: true</span><br><span class="line">        max-pool-prepared-statement-per-connection-size: 20</span><br><span class="line">        time-between-eviction-runs-millis: 60000</span><br><span class="line">        min-evictable-idle-time-millis: 300000</span><br><span class="line">        #Oracle需要打开注释</span><br><span class="line">        #validation-query: SELECT 1 FROM DUAL</span><br><span class="line">        test-while-idle: true</span><br><span class="line">        test-on-borrow: false</span><br><span class="line">        test-on-return: false</span><br><span class="line">        stat-view-servlet:</span><br><span class="line">          enabled: true</span><br><span class="line">          url-pattern: /druid/*</span><br><span class="line">          #login-username: admin</span><br><span class="line">          #login-password: admin</span><br><span class="line">        filter:</span><br><span class="line">          stat:</span><br><span class="line">            log-slow-sql: true</span><br><span class="line">            slow-sql-millis: 1000</span><br><span class="line">            merge-sql: false</span><br><span class="line">          wall:</span><br><span class="line">            config:</span><br><span class="line">              multi-statement-allow: true</span><br></pre></td></tr></table></figure>
+<h2><span id="3完成1-2步后启动应用">3.完成1、2步后，启动应用</span></h2><p>如果控制台不报错且出现如下图所示，就表示成功整合:<br><img src="/2020/05/21/SpringBoot-MyBatis-Plus实现多数据源/01.png" alt=""></p>
+<h2><span id="4注意事项">4.注意事项</span></h2><p>启动主类需要排除Druid相关依赖，否则会出现如下错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">***************************</span><br><span class="line">APPLICATION FAILED TO START</span><br><span class="line">***************************</span><br><span class="line"></span><br><span class="line">Description:</span><br><span class="line"></span><br><span class="line">Failed to configure a DataSource: &apos;url&apos; attribute is not specified and no embedded datasource could be configured.</span><br><span class="line"></span><br><span class="line">Reason: Failed to determine a suitable driver class</span><br></pre></td></tr></table></figure></p>
+<p>解决办法，加上如下代码即可:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@SpringBootApplication(exclude = DruidDataSourceAutoConfigure.class)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Iaas、Paas、Saas对比分析" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/05/21/Iaas、Paas、Saas对比分析/" class="article-date">
+      <time datetime="2020-05-21T06:49:41.000Z" itemprop="datePublished">2020-05-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/21/Iaas、Paas、Saas对比分析/">Iaas、Paas、Saas对比分析</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="Iaas、Paas、Saas对比分析"><a href="#Iaas、Paas、Saas对比分析" class="headerlink" title="Iaas、Paas、Saas对比分析"></a>Iaas、Paas、Saas对比分析</h1><p>从Iaas、Paas到Saas，客户所要管理负责由多到少，成本也越来越低。下面所列举的，足以看出。<br>以我所待的公司，无论是外包还是创业公司也好。基本上采用的都是Saas这种模式，Sass对于客户而言省事省时省钱(从Applications到Compute无需管理)。对于供应商，也就是我们而言，由于从应用开发到部署，再到维护都由我们负责，从一定程度上降低一些问题排错的时间成本(过去写一套系统部署在不同的操作系统，不同的操作系统的版本环境存在差异，可能会遇到在这个系统正常运行，在那个系统出现一些问题，不排除是因为代码的原因，但有的时候也与环境有极大的关系)。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/05/21/Iaas、Paas、Saas对比分析/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-《Java编程思想》之对象导论" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -846,147 +987,9 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-UnicodeEncodeError-ascii-codec-can-t-encode-characters-in-position-0-2-ordinal-not-in-range-128" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/04/05/UnicodeEncodeError-ascii-codec-can-t-encode-characters-in-position-0-2-ordinal-not-in-range-128/" class="article-date">
-      <time datetime="2020-04-05T15:33:40.000Z" itemprop="datePublished">2020-04-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/05/UnicodeEncodeError-ascii-codec-can-t-encode-characters-in-position-0-2-ordinal-not-in-range-128/">UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode characters in position 0-2: ordinal not in range(128)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>错误背景:<br>使用Python2.7写一个简单爬虫报的错。</p>
-<p>错误详细信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnicodeEncodeError: &apos;ascii&apos; codec can&apos;t encode characters in position 0-2: ordinal not in range(128)</span><br></pre></td></tr></table></figure></p>
-<p>错误原因:<br>1.python默认使用ASCII处理字符流。</p>
-<p>2.Unicode编码与ASCII编码的不兼容，Python脚本文件是由utf-8编码的。</p>
-<p>解决方法(在当前python文件最上面加上如下代码):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(&apos;utf-8&apos;)</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-《设计模式之禅》之解释器模式" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/04/05/《设计模式之禅》之解释器模式/" class="article-date">
-      <time datetime="2020-04-05T06:12:00.000Z" itemprop="datePublished">2020-04-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/05/《设计模式之禅》之解释器模式/">《设计模式之禅》之解释器模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、解释器模式的定义"><a href="#一、解释器模式的定义" class="headerlink" title="一、解释器模式的定义"></a>一、解释器模式的定义</h2><p>解释器模式是一种按照指定规定语法进行解析的方案，在现在项目中使用较少，其定义如下:<br>给定一门语言，定义它的文法的一种表示，并定义一个解释器，该解释器使用该表示来解释语言中的句子。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/04/05/《设计模式之禅》之解释器模式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/40/">40</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/8/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" href="/page/10/">Next &raquo;</a>
     </nav>
   
 </div>
