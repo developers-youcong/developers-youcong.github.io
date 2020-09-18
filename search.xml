@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>centos7通过yum安装jdk8</title>
+      <link href="/2020/09/18/centos7%E9%80%9A%E8%BF%87yum%E5%AE%89%E8%A3%85jdk8/"/>
+      <url>/2020/09/18/centos7%E9%80%9A%E8%BF%87yum%E5%AE%89%E8%A3%85jdk8/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-查看系统是否已有自带的jdk">一、查看系统是否已有自带的jdk</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa |grep java</span><br><span class="line"></span><br><span class="line">rpm -qa |grep jdk</span><br><span class="line"></span><br><span class="line">rpm -qa |grep gcj</span><br></pre></td></tr></table></figure><a id="more"></a><p>如果没有输出信息，则说明系统没有安装。如果有输出信息，则执行下面的命令卸载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep java | xargs rpm -e --nodeps</span><br></pre></td></tr></table></figure></p><h2><span id="二-列出所有可安装的rpm软件包">二、列出所有可安装的rpm软件包</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list java-1.8*</span><br></pre></td></tr></table></figure><h2><span id="三-安装jdk8">三、安装jdk8</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install java-1.8.0-openjdk* -y</span><br></pre></td></tr></table></figure><p>验证安装是否成功:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -version</span><br></pre></td></tr></table></figure></p><p>参考链接:<br><a href="https://my.oschina.net/u/3455207/blog/1858639" target="_blank" rel="noopener">Centos7通过yum安装jdk8</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>centos7.8安装rabbitmq</title>
+      <link href="/2020/09/18/centos7-8%E5%AE%89%E8%A3%85rabbitmq/"/>
+      <url>/2020/09/18/centos7-8%E5%AE%89%E8%A3%85rabbitmq/</url>
+      
+        <content type="html"><![CDATA[<p>以安装3.7.28为例，步骤如下:<br><a id="more"></a></p><h2><span id="一-安装erlang">一、安装erlang</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash</span><br><span class="line"></span><br><span class="line">yum install -y erlang</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">erl -version</span><br></pre></td></tr></table></figure><h2><span id="二-安装rabbitmq">二、安装rabbitmq</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">wget https://dl.bintray.com/rabbitmq/all/rabbitmq-server/3.7.28/rabbitmq-server-3.7.28-1.el7.noarch.rpm</span><br><span class="line"></span><br><span class="line">yum install rabbitmq-server-3.7.28-1.el7.noarch.rpm</span><br><span class="line"></span><br><span class="line">## 开启管理后台界面</span><br><span class="line">rabbitmq-plugins enable rabbitmq_management</span><br><span class="line"></span><br><span class="line">## 必须执行，否则会导致启动rabbitmq-server失败</span><br><span class="line">chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie</span><br></pre></td></tr></table></figure><h2><span id="三-rabbitmq常用命令">三、rabbitmq常用命令</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#前台启动服务</span><br><span class="line">rabbitmq-server</span><br><span class="line"> </span><br><span class="line">#后台启动服务</span><br><span class="line">rabbitmq-server -detached </span><br><span class="line"> </span><br><span class="line">#停止服务</span><br><span class="line">rabbitmqctl stop </span><br><span class="line"> </span><br><span class="line">#查看状态</span><br><span class="line">rabbitmqctl status</span><br></pre></td></tr></table></figure><h2><span id="四-rabbitmq添加用户">四、rabbitmq添加用户</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#添加账户，用户名test 密码123456</span><br><span class="line">rabbitmqctl add_user test 123456</span><br><span class="line"> </span><br><span class="line">#授予用户角色，总共有四种角色，这里授予的是administrator</span><br><span class="line">rabbitmqctl set_user_tags test administrator</span><br><span class="line"> </span><br><span class="line">#设置用户允许访问的vhost</span><br><span class="line">rabbitmqctl set_permissions -p /  test &apos;.*&apos; &apos;.*&apos; &apos;.*&apos;</span><br></pre></td></tr></table></figure><h2><span id="五-注意事项常见问题">五、注意事项(常见问题)</span></h2><p>错误信息1:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/lib/rabbitmq/bin/rabbitmq-server:行51: /var/lib/rabbitmq/mnesia/rabbit@test.pid: 权限不够</span><br></pre></td></tr></table></figure></p><p>解决办法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown -R rabbitmq:rabbitmq /var/lib/rabbitmq/mnesia/</span><br></pre></td></tr></table></figure></p><p>错误信息2:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">启动rabbitmq：ERROR: distribution port 25672 in use on localhost (by non-Erlang process?)</span><br></pre></td></tr></table></figure></p><p>解决办法:<br>参考该链接即可:<br><a href="https://blog.csdn.net/silenceray/article/details/82655651" target="_blank" rel="noopener">启动rabbitmq：ERROR: distribution port 25672 in use on localhost (by non-Erlang process?)</a></p><p>参考资料如下:<br><a href="https://blog.csdn.net/jiguquan3839/article/details/91346261?utm_medium=distribute.pc_relevant_ask_down.none-task-blog-baidujs-3.nonecase&amp;depth_1-utm_source=distribute.pc_relevant_ask_down.none-task-blog-baidujs-3.nonecase" target="_blank" rel="noopener">rabbitmq安装(centos7.8)</a></p><p><a href="https://www.cnblogs.com/passerbywl/p/13617372.html" target="_blank" rel="noopener">RabbitMQ 3.8.7 在 centos7 上安装</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>com.sun.org.apache.regexp.internal不存在</title>
       <link href="/2020/09/16/com-sun-org-apache-regexp-internal%E4%B8%8D%E5%AD%98%E5%9C%A8/"/>
       <url>/2020/09/16/com-sun-org-apache-regexp-internal%E4%B8%8D%E5%AD%98%E5%9C%A8/</url>
