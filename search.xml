@@ -4,6 +4,101 @@
   
     
     <entry>
+      <title>redis集群之节点少于六个错误-解决</title>
+      <link href="/2020/09/22/redis%E9%9B%86%E7%BE%A4%E4%B9%8B%E8%8A%82%E7%82%B9%E5%B0%91%E4%BA%8E%E5%85%AD%E4%B8%AA%E9%94%99%E8%AF%AF-%E8%A7%A3%E5%86%B3/"/>
+      <url>/2020/09/22/redis%E9%9B%86%E7%BE%A4%E4%B9%8B%E8%8A%82%E7%82%B9%E5%B0%91%E4%BA%8E%E5%85%AD%E4%B8%AA%E9%94%99%E8%AF%AF-%E8%A7%A3%E5%86%B3/</url>
+      
+        <content type="html"><![CDATA[<p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** ERROR: Invalid configuration for cluster creation.</span><br><span class="line">*** Redis Cluster requires at least 3 master nodes.</span><br><span class="line">*** This is not possible with 4 nodes and 1 replicas per node.</span><br><span class="line">*** At least 6 nodes are required.</span><br></pre></td></tr></table></figure></p><p>解决方案:<br>增加节点即可。</p><p>参考资料:<br><a href="https://www.cnblogs.com/linyilong3/p/6033901.html" target="_blank" rel="noopener">当节点数量少于6个时候会提示如下信息,初始化一个集群的时候需要6个节点，为什么??</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>There is no normal TM</title>
+      <link href="/2020/09/22/There-is-no-normal-TM/"/>
+      <url>/2020/09/22/There-is-no-normal-TM/</url>
+      
+        <content type="html"><![CDATA[<p>错误关键信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">There is no normal TM</span><br></pre></td></tr></table></figure></p><p>只需在配置文件添加如下代码即可(application.properties):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tx-lcn.manager.host=0.0.0.0</span><br></pre></td></tr></table></figure></p><p>错误原因:<br>与redis没有开放远程连接问题性质一样。</p><p>参考资料:<br><a href="https://blog.csdn.net/qq_43371556/article/details/105757288" target="_blank" rel="noopener">记录一次Tx_LCN连接失败的问题( There is no normal TM )</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 分布式事务 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>LCN 错误: attempts to join the non-existent transaction group</title>
+      <link href="/2020/09/22/LCN-%E9%94%99%E8%AF%AF-attempts-to-join-the-non-existent-transaction-group/"/>
+      <url>/2020/09/22/LCN-%E9%94%99%E8%AF%AF-attempts-to-join-the-non-existent-transaction-group/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">com.codingapi.txlcn.logger.AbstractTxLogger.error(AbstractTxLogger.java:70) - business code error</span><br><span class="line"></span><br><span class="line">attempts to join the non-existent transaction group</span><br><span class="line"></span><br><span class="line">rpc execute service error. action: joinGroup</span><br></pre></td></tr></table></figure></p><p>解决办法:<br>在tx-lcn项目配置如下内容，即可解决:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 分布式事务执行总时间(ms). 默认为36000</span><br><span class="line">tx-lcn.manager.dtx-time=600000</span><br></pre></td></tr></table></figure></p><p>配置完需要重新打包。</p><p>参考资料:<br><a href="https://blog.csdn.net/qq_41463655/article/details/106483312" target="_blank" rel="noopener">LCN 错误: attempts to join the non-existent transaction group</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 分布式事务 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>redis集群搭建</title>
+      <link href="/2020/09/22/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/"/>
+      <url>/2020/09/22/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<p>参考博客文章:<br><a href="https://www.cnblogs.com/fousor/p/10598400.html" target="_blank" rel="noopener">redis5.0.4 集群搭建</a><br>说明:<br>就目前亲测，redis5.0以上版本都可以这么做。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>redis集群报错:(error) CLUSTERDOWN Hash slot not served</title>
+      <link href="/2020/09/22/redis%E9%9B%86%E7%BE%A4%E6%8A%A5%E9%94%99-error-CLUSTERDOWN-Hash-slot-not-served/"/>
+      <url>/2020/09/22/redis%E9%9B%86%E7%BE%A4%E6%8A%A5%E9%94%99-error-CLUSTERDOWN-Hash-slot-not-served/</url>
+      
+        <content type="html"><![CDATA[<p>错误关键信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(error) CLUSTERDOWN Hash slot not served</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>错误原因:<br>没有分配槽，因为redis集群要分配16384个槽来储存数据，那么没有分配槽则报如上错误</p><p>解决办法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Can I set the above configuration? (type &apos;yes&apos; to accept): </span><br><span class="line"></span><br><span class="line">你需要输入yes,而并非缩写 y，因为玩linux的都习惯的会输入 y，但是这里不行，要全拼yes才可以。</span><br><span class="line"></span><br><span class="line">就是这个错误引起的分配槽失败。</span><br></pre></td></tr></table></figure></p><p>参考解决方案:<br><a href="https://www.cnblogs.com/hanguoqing/p/10411128.html" target="_blank" rel="noopener">redis集群报错:(error) CLUSTERDOWN Hash slot not served</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>TX-LCN分布式事务框架使用</title>
       <link href="/2020/09/19/TX-LCN%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/"/>
       <url>/2020/09/19/TX-LCN%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E6%A1%86%E6%9E%B6%E4%BD%BF%E7%94%A8/</url>

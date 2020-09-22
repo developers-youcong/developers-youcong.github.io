@@ -292,6 +292,356 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-An-internal-error-occurred-during-Initializing-Java-Tooling" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/22/An-internal-error-occurred-during-Initializing-Java-Tooling/" class="article-date">
+      <time datetime="2019-04-22T02:42:45.000Z" itemprop="datePublished">2019-04-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/22/An-internal-error-occurred-during-Initializing-Java-Tooling/">An internal error occurred during: Initializing Java Tooling.</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">An internal error occurred during: &quot;Initializing Java Tooling&quot;.</span><br><span class="line">java.lang.NullPointerException</span><br></pre></td></tr></table></figure></p>
+<p>问题原因:不合理关闭Eclipse导致的<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Eclipse/">Eclipse</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/22/An-internal-error-occurred-during-Initializing-Java-Tooling/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-hexo-报错-Cannot-read-property-replace-of-null" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/" class="article-date">
+      <time datetime="2019-04-22T01:39:28.000Z" itemprop="datePublished">2019-04-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/">hexo 报错 Cannot read property &#39;replace&#39; of null</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">FATAL Cannot read property &apos;replace&apos; of null</span><br><span class="line">TypeError: Cannot read property &apos;replace&apos; of null</span><br><span class="line">    at fs.exists.then.then.then.config (E:\Hexo\node_modules\hexo\lib\hexo\load_config.js:34:31)</span><br><span class="line">    at tryCatcher (E:\Hexo\node_modules\bluebird\js\release\util.js:16:23)</span><br><span class="line">    at Promise._settlePromiseFromHandler (E:\Hexo\node_modules\bluebird\js\release\promise.js:512:31)</span><br><span class="line">    at Promise._settlePromise (E:\Hexo\node_modules\bluebird\js\release\promise.js:569:18)</span><br><span class="line">    at Promise._settlePromise0 (E:\Hexo\node_modules\bluebird\js\release\promise.js:614:10)</span><br><span class="line">    at Promise._settlePromises (E:\Hexo\node_modules\bluebird\js\release\promise.js:694:18)</span><br><span class="line">    at _drainQueueStep (E:\Hexo\node_modules\bluebird\js\release\async.js:138:12)</span><br><span class="line">    at _drainQueue (E:\Hexo\node_modules\bluebird\js\release\async.js:131:9)</span><br><span class="line">    at Async._drainQueues (E:\Hexo\node_modules\bluebird\js\release\async.js:147:5)</span><br><span class="line">    at Immediate.Async.drainQueues (E:\Hexo\node_modules\bluebird\js\release\async.js:17:14)</span><br><span class="line">    at runCallback (timers.js:810:20)</span><br><span class="line">    at tryOnImmediate (timers.js:768:5)</span><br><span class="line">    at processImmediate [as _immediateCallback] (timers.js:745:5)</span><br></pre></td></tr></table></figure></p>
+<p>关键信息: Cannot read property ‘replace’ of null</p>
+<p>问题原因:<br>我为了将我的wiki链接到hexo修改了root路径，如下图所示:<br><img src="/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/01.png" alt=""></p>
+<p>解决办法(将root改为原来的/即可解决这个问题):<br><img src="/2019/04/22/hexo-报错-Cannot-read-property-replace-of-null/02.png" alt=""></p>
+<p>这个/相当于默认指向developers-youcong.github.io</p>
+<p>参考解决办法:<br><a href="https://www.jianshu.com/p/449accb044b4" target="_blank" rel="noopener">hexo 报错 Cannot read property ‘replace’ of null</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-ftp配置详解" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/20/ftp配置详解/" class="article-date">
+      <time datetime="2019-04-20T13:21:57.000Z" itemprop="datePublished">2019-04-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/20/ftp配置详解/">ftp配置详解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="FTP配置详解"><a href="#FTP配置详解" class="headerlink" title="FTP配置详解"></a>FTP配置详解</h2><p>FTP配置文件位置/etc/vsftpd.conf<br>listen=NO<br>设置为YES时vsftpd以独立运行方式启动，设置为NO时以xinetd方式启动（xinetd是管理守护进程的，将服务集中管理，可以减少大量服务的资源消耗）<br>listen_ipv6=YES<br>以上两个只能一个YES一个NO否则会出错<br>listen_port=port<br>设置控制连接的监听端口号，默认为21<br>listen_address=ip_address<br>将在绑定到指定IP地址运行，适合多网卡<br>connect_from_port_20=YES/NO<br>若为YES，则强迫FTP－DATA的数据传送使用port 20，默认YES<br>anonymous_enable=YES<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/20/ftp配置详解/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/18/点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢/" class="article-date">
+      <time datetime="2019-04-18T12:22:44.000Z" itemprop="datePublished">2019-04-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/18/点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢/">点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>效果图如下:<br><img src="/2019/04/18/点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢/computer.png" alt=""></p>
+<p>从中我们可以get到处理器、内存、系统类型、系统版本等信息。</p>
+<p>联系到实际这些信息有什么用呢？<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/18/点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-this-web-application-instance-has-been-stopped-already" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/17/this-web-application-instance-has-been-stopped-already/" class="article-date">
+      <time datetime="2019-04-17T06:56:49.000Z" itemprop="datePublished">2019-04-17</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/17/this-web-application-instance-has-been-stopped-already/">this web application instance has been stopped already</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>详细错误信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[mybatis-plus MapperRefresh] org.apache.catalina.loader.WebappClassLoaderBase.checkStateForResourceLoading Illegal access: this web application instance has been stopped already. Could not load [META-INF/services/javax.xml.xpath.XPathFactory]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.</span><br><span class="line"> java.lang.IllegalStateException: Illegal access: this web application instance has been stopped already. Could not load [META-INF/services/javax.xml.xpath.XPathFactory]. The following stack trace is thrown for debugging purposes as well as to attempt to terminate the thread which caused the illegal access.</span><br></pre></td></tr></table></figure></p>
+<p>关键信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">this web application instance has been stopped already</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/17/this-web-application-instance-has-been-stopped-already/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-KindEditor富文本编辑器使用" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -637,371 +987,9 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-shell杀死指定端口的进程" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/13/shell杀死指定端口的进程/" class="article-date">
-      <time datetime="2019-04-13T07:23:07.000Z" itemprop="datePublished">2019-04-13</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/13/shell杀死指定端口的进程/">shell杀死指定端口的进程</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>杀死端口代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">lsof -i:2019</span><br><span class="line"></span><br><span class="line">kill -9 PID</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/13/shell杀死指定端口的进程/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-大型网站核心架构因素" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/12/大型网站核心架构因素/" class="article-date">
-      <time datetime="2019-04-12T02:54:27.000Z" itemprop="datePublished">2019-04-12</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/12/大型网站核心架构因素/">大型网站核心架构因素</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>关于什么是架构，一种比较通俗的说法是 “最高层次的规划，难以改变的决定”，这些规划和决定奠定了事物未来发展的方向和最终蓝图。</p>
-<p>从这个意义上说，人生规划也是一种架构。选什么学校、学什么专业、进什么公司、找什么对象、过什么样的生活，都是自己人生的架构。</p>
-<p><strong>联系到软件开发:</strong><br>实际上业务类型+技术选型往往也决定整个项目的架构是怎么样的。</p>
-<p>具体到软件架构，维基百科是这样定义的:”有关软件整体结构与组件的抽象描述，用于指导大型软件系统各个方面的设计”。</p>
-<p>系统的各个重要组成部分及其关系构成了系统的架构，这些组成部分可以是具体的功能模块，也可以是非功能的设计与决策，他们相互关系组成一个整体，共同构成了软件系统的架构。</p>
-<p>大型网站核心架构的五个因素:</p>
-<ul>
-<li>性能</li>
-<li>可用性</li>
-<li>伸缩性</li>
-<li>扩展性</li>
-<li>安全性</li>
-</ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/12/大型网站核心架构因素/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-多模块应用自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/11/多模块应用自动化部署/" class="article-date">
-      <time datetime="2019-04-11T07:16:04.000Z" itemprop="datePublished">2019-04-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/11/多模块应用自动化部署/">多模块应用自动化部署</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/11/多模块应用自动化部署/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Edusoho之LNMP环境搭建" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/10/Edusoho之LNMP环境搭建/" class="article-date">
-      <time datetime="2019-04-10T08:55:14.000Z" itemprop="datePublished">2019-04-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/10/Edusoho之LNMP环境搭建/">Edusoho之LNMP环境搭建</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="1-更新"><a href="#1-更新" class="headerlink" title="1.更新"></a>1.更新</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
-<h2 id="2-安装Nginx"><a href="#2-安装Nginx" class="headerlink" title="2.安装Nginx"></a>2.安装Nginx</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nginx</span><br></pre></td></tr></table></figure>
-<h2 id="3-安装php"><a href="#3-安装php" class="headerlink" title="3.安装php"></a>3.安装php</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install php-pear php7.0-cli php7.0-common php7.0-curl \</span><br><span class="line">    php7.0-dev php7.0-fpm php7.0-json php7.0-mbstring php7.0-mcrypt \</span><br><span class="line">    php7.0-mysql php7.0-opcache php7.0-zip php7.0-intl php7.0-gd php7.0-xml</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Edusoho/">Edusoho</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/10/Edusoho之LNMP环境搭建/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Edusoho之LAMP环境搭建" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/10/Edusoho之LAMP环境搭建/" class="article-date">
-      <time datetime="2019-04-10T07:45:01.000Z" itemprop="datePublished">2019-04-10</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/10/Edusoho之LAMP环境搭建/">Edusoho之LAMP环境搭建</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>主要参考官方文档<a href="http://www.qiqiuyu.com/course/20/task/2708/show" target="_blank" rel="noopener">Ubuntu16.04+Apache+PHP+MySQL+EduSoho 安装教程</a><br>LAMP环境按照如下搭建是没有问题的，本地虚拟机试验是完全没有问题的。</p>
-<h2 id="1-更新"><a href="#1-更新" class="headerlink" title="1.更新"></a>1.更新</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure>
-<h2 id="2-安装apache2"><a href="#2-安装apache2" class="headerlink" title="2.安装apache2"></a>2.安装apache2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install apache2 </span><br><span class="line">sudo apt-get install libapache2-mod-xsendfile</span><br></pre></td></tr></table></figure>
-<p>通常sudo apt-get install apache2 默认是安装apache2.4(通过apache -v可以查看对应的apache版本)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod rewrite   #启用rewrite模块</span><br><span class="line">sudo a2enmod xsendfile    #启用xsendfile模块</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Edusoho/">Edusoho</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/10/Edusoho之LAMP环境搭建/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/33/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/page/41/">41</a><a class="extend next" rel="next" href="/page/35/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/33/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/32/">32</a><a class="page-number" href="/page/33/">33</a><span class="page-number current">34</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="extend next" rel="next" href="/page/35/">Next &raquo;</a>
     </nav>
   
 </div>
