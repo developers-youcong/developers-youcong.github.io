@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>ubuntu16.04防火墙开启</title>
+      <link href="/2020/09/26/ubuntu16-04%E9%98%B2%E7%81%AB%E5%A2%99%E5%BC%80%E5%90%AF/"/>
+      <url>/2020/09/26/ubuntu16-04%E9%98%B2%E7%81%AB%E5%A2%99%E5%BC%80%E5%90%AF/</url>
+      
+        <content type="html"><![CDATA[<p>ubuntu16.04防火墙开启和常用命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ufw #安装防火墙</span><br><span class="line">sudo ufw status #防火墙状态</span><br><span class="line">sudo ufw enable #开启防火墙</span><br><span class="line">sudo ufw allow 22  #开启端口</span><br><span class="line">sudo ufw reload  #重启防火墙</span><br><span class="line">sudo ufw delete allow 8001/tcp #关闭端口</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>参考资料:<br><a href="https://blog.csdn.net/qq_36938617/article/details/95234909" target="_blank" rel="noopener">ubuntu16.04防火墙开启</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>scp带密码拷贝文件</title>
+      <link href="/2020/09/24/scp%E5%B8%A6%E5%AF%86%E7%A0%81%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6/"/>
+      <url>/2020/09/24/scp%E5%B8%A6%E5%AF%86%E7%A0%81%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>应用场景:<br>将B服务器的文件传输到A服务器。<br><a id="more"></a><br>核心命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sshpass -p 123456 scp ubuntu@192.168.52.1:/home/ubuntu/&quot;TEST&quot;&apos;&apos;$(date +&quot;%Y&quot;)&apos;&apos;$[$(date +&quot;%j&quot;+$i)] /home/test</span><br></pre></td></tr></table></figure></p><p>需要安装sshpass。</p><p>ubuntu16.04执行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install sshpass</span><br></pre></td></tr></table></figure></p><p>centos7执行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install sshpass</span><br></pre></td></tr></table></figure></p><p>为什么不纯用SCP?<br>主要考虑到服务器之间传输需要密码授权。<br>当然了，也可以免密，但是免密一般来说不太安全，同时呢？考虑到是从B服务器拉取文件到A服务器，scp做起来比较麻烦。<br>如果是纯粹从B服务器免密传文件到A服务器的话，scp免密做起来很方便。<br>关于Linux免密传输，可以参考我的这篇博客:<br><a href="https://www.cnblogs.com/youcong/p/10809056.html" target="_blank" rel="noopener">Linux远程传输文件免密码</a></p><p>本文主要参考资料:<br><a href="https://blog.csdn.net/d1240673769/article/details/99947375" target="_blank" rel="noopener">scp带密码拷贝文件</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>redis集群之节点少于六个错误-解决</title>
       <link href="/2020/09/22/redis%E9%9B%86%E7%BE%A4%E4%B9%8B%E8%8A%82%E7%82%B9%E5%B0%91%E4%BA%8E%E5%85%AD%E4%B8%AA%E9%94%99%E8%AF%AF-%E8%A7%A3%E5%86%B3/"/>
       <url>/2020/09/22/redis%E9%9B%86%E7%BE%A4%E4%B9%8B%E8%8A%82%E7%82%B9%E5%B0%91%E4%BA%8E%E5%85%AD%E4%B8%AA%E9%94%99%E8%AF%AF-%E8%A7%A3%E5%86%B3/</url>
