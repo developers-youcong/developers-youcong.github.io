@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Handler dispatch failed; nested exception is java.lang.OutOfMemoryError: GC overhead limit exceeded</title>
+      <link href="/2020/09/26/Handler-dispatch-failed-nested-exception-is-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/"/>
+      <url>/2020/09/26/Handler-dispatch-failed-nested-exception-is-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/</url>
+      
+        <content type="html"><![CDATA[<p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">org.springframework.web.util.NestedServletException: Handler dispatch failed; nested exception is java.lang.OutOfMemoryError: GC overhead limit exceeded</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>错误原因:<br>部署springboot微服务时，<br>java -Xms64m -Xmx128m -jar xxx.jar<br>分配内存过小导致。</p><p>解决方案:<br>设置大点或去除-Xms64m -Xmx128m ，就能解决这个问题。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ubuntu16.04防火墙开启</title>
       <link href="/2020/09/26/ubuntu16-04%E9%98%B2%E7%81%AB%E5%A2%99%E5%BC%80%E5%90%AF/"/>
       <url>/2020/09/26/ubuntu16-04%E9%98%B2%E7%81%AB%E5%A2%99%E5%BC%80%E5%90%AF/</url>
