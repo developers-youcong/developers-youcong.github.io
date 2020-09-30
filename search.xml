@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>Centos7 cache/buff过高处理方法</title>
+      <link href="/2020/09/30/Centos7-cache-buff%E8%BF%87%E9%AB%98%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/"/>
+      <url>/2020/09/30/Centos7-cache-buff%E8%BF%87%E9%AB%98%E5%A4%84%E7%90%86%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>核心三条命令，即可清理cache/buff:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo 1 &gt; /proc/sys/vm/drop_caches</span><br><span class="line"></span><br><span class="line">echo 2 &gt; /proc/sys/vm/drop_caches</span><br><span class="line"></span><br><span class="line">echo 3 &gt; /proc/sys/vm/drop_caches</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>参考资料:<br><a href="https://blog.51cto.com/13578154/2150303?source=dra" target="_blank" rel="noopener">Centos7 cache/buff过高处理方法</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>net.sf.jsqlparser.statement.select.PlainSelect.getGroupByColumnReferences()Ljava/util/List;</title>
+      <link href="/2020/09/30/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List/"/>
+      <url>/2020/09/30/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net.sf.jsqlparser.statement.select.PlainSelect.getGroupByColumnReferences()Ljava/util/List;</span><br></pre></td></tr></table></figure></p><p>这个错误导致我启动项目失败。<br><a id="more"></a></p><p>错误原因:<br>发现是pagehelper插件冲突导致的(我引入了一个pagehelper，同事又引入了一个pagehelper，版本不一样，去除她的就好了)。</p><p>搜了相关资料说是它的冲突:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">&lt;groupId&gt;com.github.jsqlparser&lt;/groupId&gt;</span><br><span class="line">&lt;artifactId&gt;jsqlparser&lt;/artifactId&gt;</span><br><span class="line">&lt;version&gt;3.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p><p>但是我的项目并沒有引入它(估计可能是maven的依赖传递)。</p><p>参考资料:<br><a href="https://blog.csdn.net/qq_44804469/article/details/105906831" target="_blank" rel="noopener">net.sf.jsqlparser.statement.select.PlainSelect.getGroupByColumnReferences()Ljava/util/List;</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>mysql出现unblock with &#39;mysqladmin flush-hosts&#39;</title>
+      <link href="/2020/09/30/mysql%E5%87%BA%E7%8E%B0unblock-with-mysqladmin-flush-hosts/"/>
+      <url>/2020/09/30/mysql%E5%87%BA%E7%8E%B0unblock-with-mysqladmin-flush-hosts/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unblock with &apos;mysqladmin flush-hosts&apos;</span><br></pre></td></tr></table></figure></p><p>这个错误导致我无法远程连接MySQL(使用navicat或sqlyog等mysql客户端工具)<br><a id="more"></a></p><p>解决办法:<br>修改max_connect_errors的值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(1)进入Mysql数据库查看max_connect_errors：</span><br><span class="line">&gt; show variables like &apos;%max_connect_errors%&apos;;</span><br><span class="line">(2)修改max_connect_errors的值：</span><br><span class="line">&gt; set global max_connect_errors = 100;</span><br><span class="line">(3)查看是否修改成功</span><br><span class="line">&gt; show variables like &apos;%max_connect_errors%&apos;;</span><br></pre></td></tr></table></figure></p><p>参考资料:<br><a href="https://www.cnblogs.com/abclife/p/9469622.html" target="_blank" rel="noopener">mysql出现unblock with ‘mysqladmin flush-hosts’</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Handler dispatch failed; nested exception is java.lang.OutOfMemoryError: GC overhead limit exceeded</title>
       <link href="/2020/09/26/Handler-dispatch-failed-nested-exception-is-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/"/>
       <url>/2020/09/26/Handler-dispatch-failed-nested-exception-is-java-lang-OutOfMemoryError-GC-overhead-limit-exceeded/</url>
