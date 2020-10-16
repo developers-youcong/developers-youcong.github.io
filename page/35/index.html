@@ -292,6 +292,75 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-ftp配置详解" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/20/ftp配置详解/" class="article-date">
+      <time datetime="2019-04-20T13:21:57.000Z" itemprop="datePublished">2019-04-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/20/ftp配置详解/">ftp配置详解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="FTP配置详解"><a href="#FTP配置详解" class="headerlink" title="FTP配置详解"></a>FTP配置详解</h2><p>FTP配置文件位置/etc/vsftpd.conf<br>listen=NO<br>设置为YES时vsftpd以独立运行方式启动，设置为NO时以xinetd方式启动（xinetd是管理守护进程的，将服务集中管理，可以减少大量服务的资源消耗）<br>listen_ipv6=YES<br>以上两个只能一个YES一个NO否则会出错<br>listen_port=port<br>设置控制连接的监听端口号，默认为21<br>listen_address=ip_address<br>将在绑定到指定IP地址运行，适合多网卡<br>connect_from_port_20=YES/NO<br>若为YES，则强迫FTP－DATA的数据传送使用port 20，默认YES<br>anonymous_enable=YES<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/20/ftp配置详解/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-点击此电脑，查看属性获取计算机的基本信息，可以获取那些计算机基础知识信息呢" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -905,75 +974,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/04/12/大型网站核心架构因素/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-多模块应用自动化部署" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/11/多模块应用自动化部署/" class="article-date">
-      <time datetime="2019-04-11T07:16:04.000Z" itemprop="datePublished">2019-04-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/11/多模块应用自动化部署/">多模块应用自动化部署</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>多模块应用自动化部署脚本(一个maven项目可以是单体的，也可以有很多子模块，以我之前博客为例，我的博客有这么几个模块，blog-common、blog-service、blog-web、blog-generator等，这种模块打包的时候，全部都不能缺，缺一不可，否则就会报错，也就是构建失败):<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/11/多模块应用自动化部署/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

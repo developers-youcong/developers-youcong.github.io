@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>NET::ERR_INCOMPLETE_CHUNKED_ENCODING 200 (OK)</title>
+      <link href="/2020/10/16/NET-ERR-INCOMPLETE-CHUNKED-ENCODING-200-OK/"/>
+      <url>/2020/10/16/NET-ERR-INCOMPLETE-CHUNKED-ENCODING-200-OK/</url>
+      
+        <content type="html"><![CDATA[<p><strong>错误信息:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">NET::ERR_INCOMPLETE_CHUNKED_ENCODING 200 (OK)</span><br></pre></td></tr></table></figure></p><a id="more"></a><p><strong>错误背景:</strong><br>微服务不通过统一的nginx端口访问，能够正常请求接口并获取对应的响应。<br>但是通过nginx的话，则出现请求通(也就是响应200)，但始终没有得到正确的响应，同时上述错误 NET::ERR_INCOMPLETE_CHUNKED_ENCODING 200 (OK)。</p><p><strong>解决办法:</strong><br>在nginx中的对应的反向代理配置如下内容，即可解决:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">proxy_buffer_size 1024k;</span><br><span class="line">proxy_buffers 16 1024k;</span><br><span class="line">proxy_busy_buffers_size 2048k;</span><br><span class="line">proxy_temp_file_write_size 2048k;</span><br></pre></td></tr></table></figure></p><p>我的反向代理完整配置:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">location /forecast &#123;</span><br><span class="line"></span><br><span class="line"> proxy_pass http://127.0.0.1:9999/;</span><br><span class="line"> proxy_buffer_size 1024k;</span><br><span class="line"> proxy_buffers 16 1024k;</span><br><span class="line"> proxy_busy_buffers_size 2048k;</span><br><span class="line"> proxy_temp_file_write_size 2048k;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><strong>错误原因分析:</strong><br>1.nginx配置缓存区设置过小<br>2.nginx的临时目录（/proxy_temp）过大或没有权限写入缓存文件<br>3.磁盘空间不足</p><p>经过验证是第一种原因(nginx配置缓冲区设置过小)</p><p><strong>问</strong>:nginx的缓冲区作用是什么？</p><p><strong>答</strong>:如果客户端到nginx速度快，nginx到服务器速度慢，没有缓冲区，一点点数据量就直接发到客户端，十分浪费性能。<br>有了缓冲区，积累到一定量，再传输到客户端，减少了Tcp请求。<br>相反，客户端到nginx速度慢，nginx到服务器速度快，没有缓冲区，<br>nginx到服务器的连接就会一直保持在那边，直到客户端接受完毕。<br>有了缓冲区，返回内容放到缓冲区后，nginx到服务器的连接就能断开了，客户端从缓冲区拉取即可。</p><p>参考解决办法:</p><p><a href="https://blog.csdn.net/willingtolove/article/details/103372199" target="_blank" rel="noopener">NET::ERR_INCOMPLETE_CHUNKED_ENCODING 200 (OK)解决办法</a></p><p><a href="https://www.jianshu.com/p/c1559fd01828" target="_blank" rel="noopener">缓冲区的作用</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2020年的一些思考和总结</title>
       <link href="/2020/10/07/2020%E5%B9%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83%E5%92%8C%E6%80%BB%E7%BB%93/"/>
       <url>/2020/10/07/2020%E5%B9%B4%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83%E5%92%8C%E6%80%BB%E7%BB%93/</url>
