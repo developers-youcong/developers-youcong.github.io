@@ -25,7 +25,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2020/10/17/谈谈FTP/01.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2020/10/17/谈谈FTP/02.png">
-<meta property="og:updated_time" content="2020-10-17T12:37:49.278Z">
+<meta property="og:updated_time" content="2020-10-17T12:45:13.287Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="谈谈FTP">
 <meta name="twitter:description" content="一、关于FTP1.FTP是什么？FTP，全称”文件传输协议”。属于TCP/IP四层模型中的应用层。">
@@ -378,7 +378,7 @@ var _hmt = _hmt || [];
 <li>b.SFTP;</li>
 </ul>
 <p>但除此之外，还有很多第三方的文件存储方案如前面提到腾讯云对象存储、阿里云对象存储、七牛云对象存储等。</p>
-<p>当然了，一切根据公司业务情况和公司背景情况而定，很多公司之所以不使用主入腾讯云、阿里云、七牛云的存储方案，因为存储的东西非常重要，放在第三方不安全，害怕对方可能窃取其中的重要信息。</p>
+<p>当然了，一切根据公司业务情况和公司背景情况而定，很多公司之所以不使用例如腾讯云、阿里云、七牛云的存储方案，是因为存储的东西非常重要，放在第三方不安全，害怕对方可能窃取其中的重要信息。</p>
 <p>这也是为什么微信会有企业微信、阿里会有钉钉、美团会有大象的重要原因。</p>
 <h3><span id="6关于ftp的安装">6.关于FTP的安装</span></h3><h4><span id="1centos7安装ftp">(1)CentOS7安装FTP</span></h4><p>参考如下流程，一步步执行即可:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">#安装FTP</span><br><span class="line">yum -y install vsftpd</span><br><span class="line"></span><br><span class="line">#修改配置文件</span><br><span class="line">vim /etc/vsftpd/vsftpd.conf</span><br><span class="line"></span><br><span class="line">修改第12行为： anonymous_enable=NO  禁止匿名登录</span><br><span class="line"></span><br><span class="line">取消第102行chroot_list_enable=YES，104行chroot_list_file=/etc/vsftpd/chroot_list的注释  </span><br><span class="line"></span><br><span class="line">在最后一行新增 allow_writeable_chroot=YES</span><br><span class="line"></span><br><span class="line">#新建用户</span><br><span class="line">useradd test</span><br><span class="line">passwd test</span><br><span class="line"></span><br><span class="line">#防火墙放行</span><br><span class="line">firewall-cmd --permanent --zone=public --add-service=ftp</span><br><span class="line">firewall-cmd --reload</span><br><span class="line"></span><br><span class="line">#ftp命令</span><br><span class="line">#设置开机启动</span><br><span class="line">systemctl enable vsftpd.service</span><br><span class="line"></span><br><span class="line">#启动</span><br><span class="line">systemctl start vsftpd.service</span><br><span class="line"></span><br><span class="line">#停止</span><br><span class="line">systemctl stop vsftpd.service</span><br><span class="line"></span><br><span class="line">#查看状态</span><br><span class="line">systemctl status vsftpd.service</span><br><span class="line"></span><br><span class="line">#重启ftp服务器</span><br><span class="line">systemctl restart vsftpd.service</span><br></pre></td></tr></table></figure></p>
 <h4><span id="2ubuntu1604安装ftp">(2)Ubuntu16.04安装FTP</span></h4><p><a href="ubuntu16.04搭建ftp服务器">https://www.cnblogs.com/YangJieCheng/p/8252577.html</a></p>
@@ -441,7 +441,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2020/10/17/谈谈FTP/">谈谈FTP</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2020-10-17, 13:55:09</p>
-        <p><span>最后更新:</span>2020-10-17, 20:37:49</p>
+        <p><span>最后更新:</span>2020-10-17, 20:45:13</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/10/17/谈谈FTP/" title="谈谈FTP">http://developers-youcong.github.io/2020/10/17/谈谈FTP/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/10/17/谈谈FTP/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
