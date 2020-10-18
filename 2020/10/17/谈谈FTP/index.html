@@ -25,7 +25,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2020/10/17/谈谈FTP/01.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2020/10/17/谈谈FTP/02.png">
-<meta property="og:updated_time" content="2020-10-17T12:45:13.287Z">
+<meta property="og:updated_time" content="2020-10-18T03:24:08.516Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="谈谈FTP">
 <meta name="twitter:description" content="一、关于FTP1.FTP是什么？FTP，全称”文件传输协议”。属于TCP/IP四层模型中的应用层。">
@@ -419,7 +419,7 @@ var _hmt = _hmt || [];
 <li>主动模式：服务器向客户端敲门，然后客户端开门;</li>
 <li>被动模式：客户端向服务器敲门，然后服务器开门。</li>
 </ul>
-<h4><span id="问为什么要使用被动模式">问:为什么要使用被动模式？</span></h4><p>从上面的FTP的主动模式和被动模式的区别，我们就能得知为什么要使用被动模式不是主动模式。因为主动模式是服务端主动连接客户端，而被动模式是服务端等待客户端连接。实际应用中，客户端的端口是多变的，而服务端的端口则相对统一。所以千万不要因为是被动模式就理解为是客户端去连接服务端。</p>
+<h4><span id="问为什么要使用被动模式">问:为什么要使用被动模式？</span></h4><p>从上面的FTP的主动模式和被动模式的区别，我们就能得知为什么要使用被动模式不是主动模式。因为主动模式是服务端主动连接客户端，而被动模式是服务端等待客户端连接。实际应用中，客户端的端口是多变的，而服务端的端口则相对统一。所以千万不要因为是被动模式就理解为是服务端去连接客户端。</p>
 <h4><span id="问被动模式的优缺点有哪些">问:被动模式的优缺点有哪些？</span></h4><p>被动FTP对FTP客户端的管理有利，但对服务器端的管理不利。因为客户端要与服务器端建立两个连接，其中一个连到一个高位随机端口，而这个端口很有可能被服务器端的防火墙阻塞掉。</p>
 <h3><span id="6ftp下载过慢如何提高速率">6.FTP下载过慢如何提高速率？</span></h3><p>这里需要修改配置，增加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">local_max_rate = 1048576(相当于下载M/S) #单位，默认为字节</span><br></pre></td></tr></table></figure></p>
 <h3><span id="7ftp太慢了使用临时方案写shell脚本脚本里处理文件和传输文件">7.FTP太慢了，使用临时方案写shell脚本，脚本里处理文件和传输文件。</span></h3><p>针对FTP下载实在太慢了，我想到了一个临时的办法使用scp来进行文件传输。但是呢？scp免密登录处理不太安全，于是我想到了一个办法使用sshpass。<br><a href="https://www.cnblogs.com/youcong/p/13734601.html" target="_blank" rel="noopener">sshpass和scp相结合</a></p>
@@ -441,7 +441,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2020/10/17/谈谈FTP/">谈谈FTP</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2020-10-17, 13:55:09</p>
-        <p><span>最后更新:</span>2020-10-17, 20:45:13</p>
+        <p><span>最后更新:</span>2020-10-18, 11:24:08</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/10/17/谈谈FTP/" title="谈谈FTP">http://developers-youcong.github.io/2020/10/17/谈谈FTP/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/10/17/谈谈FTP/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
