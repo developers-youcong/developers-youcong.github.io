@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>springboot整合CXF时，启动报错</title>
+      <link href="/2020/10/25/springboot%E6%95%B4%E5%90%88CXF%E6%97%B6%EF%BC%8C%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/"/>
+      <url>/2020/10/25/springboot%E6%95%B4%E5%90%88CXF%E6%97%B6%EF%BC%8C%E5%90%AF%E5%8A%A8%E6%8A%A5%E9%94%99/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">***************************</span><br><span class="line">APPLICATION FAILED TO START</span><br><span class="line">***************************</span><br><span class="line">Description:</span><br><span class="line">Parameter 1 of constructor in org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration required a bean of type &apos;org.springframework.boot.autoconfigure.web.servlet.DispatcherServletPath&apos; that could not be found.</span><br><span class="line">The following candidates were found but could not be injected:</span><br><span class="line">    - Bean method &apos;dispatcherServletRegistration&apos; in &apos;DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration&apos; not loaded because DispatcherServlet Registration found non dispatcher servlet dispatcherServlet</span><br><span class="line">Action:</span><br><span class="line">Consider revisiting the entries above or defining a bean of type &apos;org.springframework.boot.autoconfigure.web.servlet.DispatcherServletPath&apos; in your configuration.</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>通过搜索，说是和SpringBoot版本冲突导致的。</p><p>我的SpringBoot版本为2.2.6.RELEASE</p><p>整合的Apache CXF版本为3.2.4</p><p>我的CXF配置类代码有一段这样的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Bean</span><br><span class="line">    public ServletRegistrationBean dispatcherServlet() &#123;</span><br><span class="line">        return new ServletRegistrationBean(new CXFServlet(), &quot;/cxf/*&quot;);// 发布服务名称 localhost:8080/cxf</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p><p>我将其去除并在application.yml配置这行代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cxf:</span><br><span class="line">  path: /cxf</span><br></pre></td></tr></table></figure></p><p>最终项目启动起来了，问题得到解决。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我对测试的思考</title>
       <link href="/2020/10/25/%E6%88%91%E5%AF%B9%E6%B5%8B%E8%AF%95%E7%9A%84%E6%80%9D%E8%80%83/"/>
       <url>/2020/10/25/%E6%88%91%E5%AF%B9%E6%B5%8B%E8%AF%95%E7%9A%84%E6%80%9D%E8%80%83/</url>
