@@ -292,6 +292,143 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Node-js之mysql增删改查" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/27/Node-js之mysql增删改查/" class="article-date">
+      <time datetime="2019-03-27T07:37:45.000Z" itemprop="datePublished">2019-03-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/27/Node-js之mysql增删改查/">Node.js之mysql增删改查</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="1-安装库"><a href="#1-安装库" class="headerlink" title="1.安装库"></a>1.安装库</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install mysql</span><br></pre></td></tr></table></figure>
+<h2 id="2-编写db-js-用作公共模块"><a href="#2-编写db-js-用作公共模块" class="headerlink" title="2.编写db.js(用作公共模块)"></a>2.编写db.js(用作公共模块)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//连接MySQL数据库</span><br><span class="line">var mysql = require(&quot;mysql&quot;);</span><br><span class="line"></span><br><span class="line">var pool = mysql.createPool(&#123;</span><br><span class="line">    host:&quot;127.0.0.1&quot;,</span><br><span class="line">    user:&quot;root&quot;,</span><br><span class="line">    password:&quot;123456&quot;,</span><br><span class="line">    database:&quot;wordpress&quot;,</span><br><span class="line">	port:3306</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function query(sql,callback)&#123;</span><br><span class="line">    pool.getConnection(function(err,connection)&#123;</span><br><span class="line">        connection.query(sql, function (err,rows) &#123;</span><br><span class="line">            callback(err,rows);</span><br><span class="line">            connection.release();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exports.query = query;</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/27/Node-js之mysql增删改查/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-node-js获取时间" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/27/node-js获取时间/" class="article-date">
+      <time datetime="2019-03-27T03:28:44.000Z" itemprop="datePublished">2019-03-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/27/node-js获取时间/">node.js获取时间</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2><span id="1nodejs安装时间库">1.Node.js安装时间库</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g silly-datetime 或 npm install silly-datetime</span><br></pre></td></tr></table></figure>
+<h2><span id="2使用代码">2.使用代码</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var sd = require(&apos;silly-datetime&apos;);</span><br><span class="line">var time=sd.format(new Date(), &apos;YYYY-MM-DD HH:mm&apos;);</span><br><span class="line">console.log(time);</span><br></pre></td></tr></table></figure>
+<p>展示效果如下:<br><img src="/2019/03/27/node-js获取时间/date.png" alt=""></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-node-js-api文档生成" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -852,153 +989,9 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-PostgreSQL安装和使用" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/03/16/PostgreSQL安装和使用/" class="article-date">
-      <time datetime="2019-03-16T11:41:45.000Z" itemprop="datePublished">2019-03-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/16/PostgreSQL安装和使用/">PostgreSQL安装和使用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>青岛OJ系统用的关系型数据库是PostgreSQL,为此对PostgreSQL大致了解下。</p>
-<p>今天的主要话题围绕下面两个方面:</p>
-<ul>
-<li>PostgreSQL安装</li>
-<li>PostgreSQL使用</li>
-</ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/03/16/PostgreSQL安装和使用/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-npm-run-dev-在Linux上持久运行" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/03/16/npm-run-dev-在Linux上持久运行/" class="article-date">
-      <time datetime="2019-03-16T07:32:42.000Z" itemprop="datePublished">2019-03-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/16/npm-run-dev-在Linux上持久运行/">npm run dev 在Linux上持久运行</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>关于node.js应用程序如何持久运行，我在<a href="https://developers-youcong.github.io/2019/03/05/node-js%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%A8%8B%E5%BA%8F%E5%9C%A8Linux%E4%B8%8A%E6%8C%81%E4%B9%85%E8%BF%90%E8%A1%8C/">node.js服务端程序在Linux上持久运行</a>用过。</p>
-<p>这次主要是针对是一个vue.js应用程序。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/03/16/npm-run-dev-在Linux上持久运行/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/39/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="page-number" href="/page/39/">39</a><span class="page-number current">40</span><a class="page-number" href="/page/41/">41</a><a class="page-number" href="/page/42/">42</a><a class="page-number" href="/page/43/">43</a><a class="extend next" rel="next" href="/page/41/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/39/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/38/">38</a><a class="page-number" href="/page/39/">39</a><span class="page-number current">40</span><a class="page-number" href="/page/41/">41</a><a class="page-number" href="/page/42/">42</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/41/">Next &raquo;</a>
     </nav>
   
 </div>
