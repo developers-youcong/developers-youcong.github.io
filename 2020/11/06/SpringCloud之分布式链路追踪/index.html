@@ -25,7 +25,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2020/11/06/SpringCloud之分布式链路追踪/01.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2020/11/06/SpringCloud之分布式链路追踪/02.png">
-<meta property="og:updated_time" content="2020-11-06T15:00:19.510Z">
+<meta property="og:updated_time" content="2020-11-06T15:25:50.461Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringCloud之分布式链路追踪">
 <meta name="twitter:description" content="一、为什么要有分布式链路追踪链路追踪的主要目的在于让我们知道A微服务调用B微服务，B微服务调用C微服务，C微服务调用D微服务，D微服务调用A微服务等整个流程是怎样的。 二、SpringCloud整合Sleuth+Zipkin1.Maven依赖123456789101112&amp;lt;!-- SpringCloud Sleuth --&amp;gt;&amp;lt;dependency&amp;gt;    &amp;lt;group">
@@ -341,7 +341,7 @@ var _hmt = _hmt || [];
 <h2><span id="三-编译运行zipkin">三、编译运行zipkin</span></h2><p>这里我推荐看官网:<br><a href="https://zipkin.io/pages/quickstart.html" target="_blank" rel="noopener">https://zipkin.io/pages/quickstart.html</a></p>
 <p>按照官网流程，执行如下即可(我做了适当修改，主要讲./mvnw改为mvn):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># get the latest source</span><br><span class="line">git clone https://github.com/openzipkin/zipkin</span><br><span class="line">cd zipkin</span><br><span class="line"># Build the server and also make its dependencies</span><br><span class="line">mvn -DskipTests --also-make -pl zipkin-server clean install</span><br><span class="line"># Run the server</span><br><span class="line">java -jar ./zipkin-server/target/zipkin-server-*exec.jar</span><br></pre></td></tr></table></figure></p>
 <p>运行成功，效果图，如下:<br><img src="/2020/11/06/SpringCloud之分布式链路追踪/02.png" alt="图二"></p>
-<h2><span id="四-注意事项">四、注意事项</span></h2><p>注意重要一点，SpringBoot和SpringCloud版本，否则即便按照上面的配置，但是仍无法看到调用的效果。</p>
+<h2><span id="四-注意事项">四、注意事项</span></h2><p>注意重要一点，SpringBoot和SpringCloud版本要匹配，否则即便按照上面的配置，但是仍无法看到调用的效果。</p>
 
       
     </div>
@@ -353,7 +353,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2020/11/06/SpringCloud之分布式链路追踪/">SpringCloud之分布式链路追踪</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2020-11-06, 22:46:49</p>
-        <p><span>最后更新:</span>2020-11-06, 23:00:19</p>
+        <p><span>最后更新:</span>2020-11-06, 23:25:50</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/11/06/SpringCloud之分布式链路追踪/" title="SpringCloud之分布式链路追踪">http://developers-youcong.github.io/2020/11/06/SpringCloud之分布式链路追踪/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/11/06/SpringCloud之分布式链路追踪/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
