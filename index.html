@@ -292,6 +292,356 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-SpringCloud之分布式链路追踪" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/06/SpringCloud之分布式链路追踪/" class="article-date">
+      <time datetime="2020-11-06T14:46:49.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/SpringCloud之分布式链路追踪/">SpringCloud之分布式链路追踪</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2><span id="一-为什么要有分布式链路追踪">一、为什么要有分布式链路追踪</span></h2><p>链路追踪的主要目的在于让我们知道A微服务调用B微服务，B微服务调用C微服务，C微服务调用D微服务，D微服务调用A微服务等整个流程是怎样的。</p>
+<h2><span id="二-springcloud整合sleuthzipkin">二、SpringCloud整合Sleuth+Zipkin</span></h2><h3><span id="1maven依赖">1.Maven依赖</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;!-- SpringCloud Sleuth --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-starter-sleuth&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- SpringCloud ZipKin--&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-cloud-sleuth-zipkin&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h3><span id="2核心配置文件">2.核心配置文件</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  application:</span><br><span class="line">    name: blog-api</span><br><span class="line">  zipkin:</span><br><span class="line">    base-url: http://127.0.0.1:9411</span><br><span class="line">  sleuth:</span><br><span class="line">    sampler:</span><br><span class="line">      probability: 1</span><br></pre></td></tr></table></figure>
+<p><strong>注意:</strong><br>实际probability的值应该设置为0.1,1的话主要用于调试查看详细信息。</p>
+<h3><span id="3测试接口效果如下">3.测试接口，效果如下</span></h3><p><img src="/2020/11/06/SpringCloud之分布式链路追踪/01.png" alt="图一"></p>
+<h2><span id="三-编译运行zipkin">三、编译运行zipkin</span></h2><p>这里我推荐看官网:<br><a href="https://zipkin.io/pages/quickstart.html" target="_blank" rel="noopener">https://zipkin.io/pages/quickstart.html</a></p>
+<p>按照官网流程，执行如下即可(我做了适当修改，主要讲./mvnw改为mvn):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># get the latest source</span><br><span class="line">git clone https://github.com/openzipkin/zipkin</span><br><span class="line">cd zipkin</span><br><span class="line"># Build the server and also make its dependencies</span><br><span class="line">mvn -DskipTests --also-make -pl zipkin-server clean install</span><br><span class="line"># Run the server</span><br><span class="line">java -jar ./zipkin-server/target/zipkin-server-*exec.jar</span><br></pre></td></tr></table></figure></p>
+<p>运行成功，效果图，如下:<br><img src="/2020/11/06/SpringCloud之分布式链路追踪/02.png" alt="图二"></p>
+<h2><span id="四-注意事项">四、注意事项</span></h2><p>注意重要一点，SpringBoot和SpringCloud版本，否则即便按照上面的配置，但是仍无法看到调用的效果。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Jar指定运行main方法" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/06/Jar指定运行main方法/" class="article-date">
+      <time datetime="2020-11-06T13:50:52.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/Jar指定运行main方法/">Jar指定运行main方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>最近在试验某个功能遇到这样的需求，并不需要项目一直运行，这是在某个特定的时候运行即可，而且只运行main方法里面的应用程序。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/11/06/Jar指定运行main方法/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-SpringBoot整合Redisson-集群版" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/06/SpringBoot整合Redisson-集群版/" class="article-date">
+      <time datetime="2020-11-06T13:40:47.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/SpringBoot整合Redisson-集群版/">SpringBoot整合Redisson(集群版)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>之前写了一篇关于SpringBoot整合Redisson的单机版，这篇是集群版。</p>
+<p>关于如何在Linux搭建Redis集群，可以参考这篇文章:<br><a href="https://developers-youcong.github.io/2020/09/22/redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/">redis集群搭建</a><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/11/06/SpringBoot整合Redisson-集群版/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-SpringBoot整合Redisson-单机版" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/06/SpringBoot整合Redisson-单机版/" class="article-date">
+      <time datetime="2020-11-06T12:05:21.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/SpringBoot整合Redisson-单机版/">SpringBoot整合Redisson(单机版)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="一、为什么选择使用Redisson"><a href="#一、为什么选择使用Redisson" class="headerlink" title="一、为什么选择使用Redisson"></a>一、为什么选择使用Redisson</h2><p>因为它非常适用于分布式锁，而我们的一项业务需要考虑分布式锁这个应用场景，于是我整合它做一个初步简单的例子(和整合redis一样)。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/11/06/SpringBoot整合Redisson-单机版/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Consider-defining-a-bean-of-type-org-springframework-http-codec-ServerCodecConfigurer-in-your-configuration" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/11/06/Consider-defining-a-bean-of-type-org-springframework-http-codec-ServerCodecConfigurer-in-your-configuration/" class="article-date">
+      <time datetime="2020-11-06T11:47:34.000Z" itemprop="datePublished">2020-11-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/06/Consider-defining-a-bean-of-type-org-springframework-http-codec-ServerCodecConfigurer-in-your-configuration/">Consider defining a bean of type &#39;org.springframework.http.codec.ServerCodecConfigurer&#39; in your configuration.</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">***************************</span><br><span class="line">APPLICATION FAILED TO START</span><br><span class="line">***************************</span><br><span class="line"></span><br><span class="line">Description:</span><br><span class="line"></span><br><span class="line">Parameter 1 of constructor in com.alibaba.cloud.sentinel.gateway.scg.SentinelSCGAutoConfiguration required a bean of type &apos;org.springframework.http.codec.ServerCodecConfigurer&apos; that could not be found.</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Action:</span><br><span class="line"></span><br><span class="line">Consider defining a bean of type &apos;org.springframework.http.codec.ServerCodecConfigurer&apos; in your configuration.</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/11/06/Consider-defining-a-bean-of-type-org-springframework-http-codec-ServerCodecConfigurer-in-your-configuration/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-为什么bootstrap-yml比application-yml优先级高" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -642,355 +992,9 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-Linux之监控微服务shell脚本" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/10/25/Linux之监控微服务shell脚本/" class="article-date">
-      <time datetime="2020-10-25T12:47:33.000Z" itemprop="datePublished">2020-10-25</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/25/Linux之监控微服务shell脚本/">Linux之监控微服务shell脚本</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>监控微服务shell脚本内容(包含邮件告警):<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/10/25/Linux之监控微服务shell脚本/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-springboot整合CXF时，启动报错" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/10/25/springboot整合CXF时，启动报错/" class="article-date">
-      <time datetime="2020-10-25T12:16:05.000Z" itemprop="datePublished">2020-10-25</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/25/springboot整合CXF时，启动报错/">springboot整合CXF时，启动报错</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">***************************</span><br><span class="line">APPLICATION FAILED TO START</span><br><span class="line">***************************</span><br><span class="line">Description:</span><br><span class="line">Parameter 1 of constructor in org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration required a bean of type &apos;org.springframework.boot.autoconfigure.web.servlet.DispatcherServletPath&apos; that could not be found.</span><br><span class="line">The following candidates were found but could not be injected:</span><br><span class="line">    - Bean method &apos;dispatcherServletRegistration&apos; in &apos;DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration&apos; not loaded because DispatcherServlet Registration found non dispatcher servlet dispatcherServlet</span><br><span class="line">Action:</span><br><span class="line">Consider revisiting the entries above or defining a bean of type &apos;org.springframework.boot.autoconfigure.web.servlet.DispatcherServletPath&apos; in your configuration.</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/10/25/springboot整合CXF时，启动报错/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-我对测试的思考" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/10/25/我对测试的思考/" class="article-date">
-      <time datetime="2020-10-25T05:43:45.000Z" itemprop="datePublished">2020-10-25</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/25/我对测试的思考/">我对测试的思考</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>说起来人生第一家互联网公司，教会了我蛮多的东西，虽然比较杂。如运维、测试、实施、开发等。基本上那个时候，哪里有需要，哪里就有我。</p>
-<p>之前曾写过这么一篇文章<a href="https://www.cnblogs.com/youcong/p/9291184.html" target="_blank" rel="noopener">论单元测试之重要性</a><br>这篇文章的背景是我处于创业公司的时期，那个时候做的比较杂，由于前后端一起做，功能越来越多，bug也就越来越多。最后发现因为赶着发布周期，不得不快，快的我们连单元测试以及自测都懒得弄。最后发布前，经理测试了一下，发现了一堆bug。于是我们周末加班改bug。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/职业生涯思考/">职业生涯思考</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/10/25/我对测试的思考/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-SpringBoot整合Apache-CXF实践" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/10/24/SpringBoot整合Apache-CXF实践/" class="article-date">
-      <time datetime="2020-10-24T15:48:35.000Z" itemprop="datePublished">2020-10-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/24/SpringBoot整合Apache-CXF实践/">SpringBoot整合Apache-CXF实践</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、Apache-CXF是什么？"><a href="#一、Apache-CXF是什么？" class="headerlink" title="一、Apache CXF是什么？"></a>一、Apache CXF是什么？</h2><p>Apache CXF 是一个开源的 Services 框架，CXF 帮助您利用 Frontend 编程 API 来构建和开发 Services ，像 JAX-WS 。这些 Services 可以支持多种协议，比如：SOAP、XML/HTTP、RESTful HTTP 或者 CORBA ，并且可以在多种传输协议上运行，比如：HTTP、JMS 或者 JBI，CXF 大大简化了 Services 的创建，同时它继承了 XFire 传统，一样可以天然地和 Spring 进行无缝集成。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/10/24/SpringBoot整合Apache-CXF实践/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-我对运维的思考" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/10/24/我对运维的思考/" class="article-date">
-      <time datetime="2020-10-24T05:25:12.000Z" itemprop="datePublished">2020-10-24</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/24/我对运维的思考/">我对运维的思考</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>我是一名Java后端研发工程师，在我的职业生涯中，曾做过一小段时间专业的运维，而后在一段很长的时间里兼任我运维职责，只不过职责范围在小和大之间来回奔跑。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/职业生涯思考/">职业生涯思考</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/10/24/我对运维的思考/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/44/">44</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 </div>
