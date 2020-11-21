@@ -292,6 +292,286 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Ubuntu16-04中php如何切换版本" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/10/Ubuntu16-04中php如何切换版本/" class="article-date">
+      <time datetime="2019-04-10T06:09:51.000Z" itemprop="datePublished">2019-04-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/10/Ubuntu16-04中php如何切换版本/">Ubuntu16.04中php如何切换版本</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>其实就是一条Linux命令,如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo update-alternatives --config php</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/10/Ubuntu16-04中php如何切换版本/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-nginx上配置phpmyadmin" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/10/nginx上配置phpmyadmin/" class="article-date">
+      <time datetime="2019-04-10T03:23:44.000Z" itemprop="datePublished">2019-04-10</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/10/nginx上配置phpmyadmin/">nginx上配置phpmyadmin</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>Nginx配置phpmyadmin流程如下:</p>
+<h2 id="一、准备软件和环境-这里我以ubuntu16-04为例"><a href="#一、准备软件和环境-这里我以ubuntu16-04为例" class="headerlink" title="一、准备软件和环境(这里我以ubuntu16.04为例)"></a>一、准备软件和环境(这里我以ubuntu16.04为例)</h2><h3 id="1-安装php7-1"><a href="#1-安装php7-1" class="headerlink" title="1.安装php7.1"></a>1.安装php7.1</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo LC_ALL=C.UTF-8 add-apt-repository ppa:ondrej/php</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install php-pear php7.1-cli php7.1-common php7.1-curl \</span><br><span class="line">    php7.1-dev php7.1-fpm php7.1-json php7.1-mbstring php7.1-mcrypt \</span><br><span class="line">    php7.1-mysql php7.1-opcache php7.1-zip php7.1-intl php7.1-gd php7.1-xml</span><br></pre></td></tr></table></figure>
+<h4 id="1-修改-PHP-FPM-监听方式为127-0-0-1-9000"><a href="#1-修改-PHP-FPM-监听方式为127-0-0-1-9000" class="headerlink" title="(1)修改 PHP-FPM 监听方式为127.0.0.1:9000"></a>(1)修改 PHP-FPM 监听方式为127.0.0.1:9000</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sed -i &apos;s/listen = .*/listen = 127.0.0.1:9000/g&apos; /etc/php/7.1/fpm/pool.d/www.conf</span><br></pre></td></tr></table></figure>
+<h4 id="2-重启-PHP-FPM-服务进程"><a href="#2-重启-PHP-FPM-服务进程" class="headerlink" title="(2)重启 PHP-FPM 服务进程"></a>(2)重启 PHP-FPM 服务进程</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service php7.1-fpm restart</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/10/nginx上配置phpmyadmin/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/" class="article-date">
+      <time datetime="2019-04-08T13:11:29.000Z" itemprop="datePublished">2019-04-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/">Spring Boot:The field file exceeds its maximum permitted size of 1048576 bytes</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>错误信息:The field file exceeds its maximum permitted size of 1048576 bytes<br>原因是因为SpringBoot内嵌tomcat默认所能上传的文件大小为1M,超出这个就会报错。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-SpringBoot打包成war" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/08/SpringBoot打包成war/" class="article-date">
+      <time datetime="2019-04-08T08:08:12.000Z" itemprop="datePublished">2019-04-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/SpringBoot打包成war/">SpringBoot打包成war</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>关于SpringBoot打成jar包以及jar包如何在Linux持久运行，我在前面已经说过了，所以本次不再赘述。</p>
+<p>关于SpringBoot打包成war，其实步骤特别简单，如下图所示(如果是jar，通常是没有图中红色标记处，因为默认就是jar):<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/08/SpringBoot打包成war/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-大型网站架构模式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -699,279 +979,6 @@ var _hmt = _hmt || [];
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Electron/">Electron</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-GitHub-Contributions贡献值没有增加" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/03/GitHub-Contributions贡献值没有增加/" class="article-date">
-      <time datetime="2019-04-03T13:50:56.000Z" itemprop="datePublished">2019-04-03</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/03/GitHub-Contributions贡献值没有增加/">GitHub Contributions贡献值没有增加</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>今天一个同事提交代码到Github上，发现自己的贡献值并没有增加，我从来没有遇到这种情况。<br>问题的原因是因为我的这位同事邮箱设置问题。他是参考如下链接解决的问题。本次做一个记录，说不定我以后也会遇到这种情况或者是我的朋友们。</p>
-<p>参考解决问题:<br>GitHub Contributions贡献值没有增加或者提示提交者的邮箱不对的解决方法:<a href="https://www.jianshu.com/p/f3be25ccd92d" target="_blank" rel="noopener">https://www.jianshu.com/p/f3be25ccd92d</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-记一次layui弹框关闭问题" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/03/记一次layui弹框关闭问题/" class="article-date">
-      <time datetime="2019-04-03T13:19:05.000Z" itemprop="datePublished">2019-04-03</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/03/记一次layui弹框关闭问题/">记一次layui弹框关闭问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>我在博客园记录过layui关于弹框关闭问题，文章为<a href="https://www.cnblogs.com/youcong/p/10371988.html" target="_blank" rel="noopener">layui关闭弹出层</a>，这次出现了特殊情况，之前是通过<code>layer.closeAll()</code>解决了这个问题，但是这次解决不了。<br>而换成<code>parent.layer.closeAll()</code>问题就迎刃而解。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/03/记一次layui弹框关闭问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-js获取select标签选中的值" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/03/js获取select标签选中的值/" class="article-date">
-      <time datetime="2019-04-03T11:51:30.000Z" itemprop="datePublished">2019-04-03</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/03/js获取select标签选中的值/">js获取select标签选中的值</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>两种方式，原生js和jQuery。<br>特别是作为全栈开发工程师，学会使用框架固然重要，但是也要使用的基础上，由浅入深，搞懂原理，这样才能在技术进化迅速的时代立于不败之地。<br>举个例子说明以下，以我这篇文章为例<a href="https://www.cnblogs.com/youcong/p/10503099.html" target="_blank" rel="noopener">node.js之十大Web框架</a>，当你学会Node.js的语法，有过使用Node.js开发几个简单Demo的经验，你会发现这些并不难。但是如果你想深入的理解Node.js，比如VsCode就是在Electron+TypeScript等基础上研发出来，但是Electron 是基于 Chromium 和 Node.js，如果你对Node.js和Chromium毫不了解，自己深入到Electron，注定是要吃亏的。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/03/js获取select标签选中的值/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-layui之确认框" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/03/layui之确认框/" class="article-date">
-      <time datetime="2019-04-03T04:30:30.000Z" itemprop="datePublished">2019-04-03</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/03/layui之确认框/">layui之确认框</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>要使用layui的确认框，需要导入layui的两个库，分别为layer.js和layer.css，除此之外layui.js和layui.css的库也是要导入，这个请注意。<br>所有说你需要分别导入四个库layer.js、layer.css、layui.js、layui.css，四个库多少也会占用带宽，这时你可以使用cdn或者将其放到nginx做缓存也行。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/03/layui之确认框/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>

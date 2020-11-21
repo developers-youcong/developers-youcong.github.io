@@ -292,6 +292,298 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-GitHub-Pages-Hexo-配置来自阿里云的域名或腾讯云的域名" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/05/29/GitHub-Pages-Hexo-配置来自阿里云的域名或腾讯云的域名/" class="article-date">
+      <time datetime="2020-05-29T06:54:15.000Z" itemprop="datePublished">2020-05-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/29/GitHub-Pages-Hexo-配置来自阿里云的域名或腾讯云的域名/">GitHub Pages Hexo 配置来自阿里云的域名或腾讯云的域名</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>参考地址如下(亲试有效，我的博客应该试过了，可以指向我的域名，之所以我没有指向是因为博客的阅读量和访问等目前不能迁移所以就不做指向了):<br><a href="https://blog.csdn.net/heimu24/article/details/81159099" target="_blank" rel="noopener">Github个人博客：绑定域名 腾讯云</a><br><a href="https://www.cnblogs.com/JobbyM/p/8315253.html" target="_blank" rel="noopener">GitHub Pages Hexo 配置来自阿里云的域名</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-MySQL体系结构和存储引擎" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/05/29/MySQL体系结构和存储引擎/" class="article-date">
+      <time datetime="2020-05-29T02:46:58.000Z" itemprop="datePublished">2020-05-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/29/MySQL体系结构和存储引擎/">MySQL体系结构和存储引擎</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2><span id="一-定义数据库和实例">一、定义数据库和实例</span></h2><p>数据库和实例在数据库领域很容易被混淆。作为常见的数据库术语，这两个词定义如下:</p>
+<h3><span id="数据库">数据库</span></h3><p>物理操作系统文件或其他形式文件类型的集合。在MySQL数据库中，数据库文件可以是frm、MYD、MYI、ibd结尾的文件。当使用NDB引擎时，数据库的文件可能不是操作系统上的文件，而是存放于内存之中的文件，但是定义仍然不变。</p>
+<p><strong>那么什么是NDB引擎(这里稍微普及一下)?</strong><br>NDB也称为NDB CLUSTER, 是另一种存储引擎，但是它主要存储数据在内存中，并且独立于MySQL Server实例。它是MySQL Cluster使用的存储引擎。 NDB代表“网络数据库”。</p>
+<p>参考资料:<br><a href="https://www.cnblogs.com/margiex/p/12706567.html" target="_blank" rel="noopener">InnoDB和NDB，MySQL群集和InnoDB群集之间有什么区别？</a></p>
+<h3><span id="实例">实例</span></h3><p>MySQL数据库由后台线程以及一个共享内存区组成。共享内存可以被运行的后台线程所共享。需要牢记的是，<strong>数据库实例才是真正用于操作数据库文件的。</strong></p>
+<p>两个词的可以互换使用，但两者的概念完全不同。<br>因为在MySQL数据库中，实例与数据库的关系通常是一一对应的，即一个实例对应一个数据库，一个数据库对应一个实例。但是，在集群情况下可能存在一个数据库被多个数据实例使用的情况。</p>
+<p>关于MySQL集群可以参考:<br><a href="https://blog.csdn.net/qq_21153619/article/details/81529880" target="_blank" rel="noopener">Mysql集群搭建（多实例、主从）</a><br><a href="https://www.howtoing.com/how-to-install-a-mysql-cluster-on-ubuntu-16-04/" target="_blank" rel="noopener">如何在Ubuntu 16.04上安装MySQL集群</a></p>
+<h2><span id="mysql体系结构">MySQL体系结构</span></h2><h3><span id="数据库和数据库实例容易混淆">数据库和数据库实例容易混淆?</span></h3><p>从概念上来说，<br>数据库是文件的集合，是依照某种数据模型组织起来并存放于二级存储器中的数据集合;<br>数据库实例是程序，是位于用户与操作系统之间的一层数据管理软件，用户对数据库数据的任何操作，包括数据库定义、数据查询、数据维护、数据库运行控制等都是在数据库实例下进行的，应用程序只有通过数据库实例才能和数据库打交道。</p>
+<p>MySQL数据库体系结构，如下图所示:<br><img src="/2020/05/29/MySQL体系结构和存储引擎/01.png" alt=""></p>
+<p>由图可知，MySQL由以下几部分组成:<br>连接池组件<br>管理服务和工具组件<br>SQL接口组件<br>查询分析器组件<br>优化器组件<br>缓存组件<br>插件式存储组件<br>物理文件</p>
+<p><strong>MySQL区别于其他数据库的最重要的一个特点是骑插件式的表存储引擎。</strong></p>
+<p><strong>存储引擎是基于表的，而不是数据库。</strong></p>
+<h2><span id="二-mysql存储引擎">二、MySQL存储引擎</span></h2><p>存储引擎是MySQL区别于其他数据库的一个最重要特性。</p>
+<p>存储引擎的好处是，每个存储引擎都有各自的特点，能够根据具体的应用建立不同存储引擎表。</p>
+<h3><span id="1innodb存储">1.InnoDB存储</span></h3><p>InnoDB存储引擎支持事务，其设计目标主要面向在线事务处理的应用。</p>
+<p>特点:行锁设置、支持外键、并支持类似于Oracle的非锁定读(默认读取操作不会产生锁)。</p>
+<p>从MySQL数据库5.5.8版本开始InnoDB是默认的存储引擎。</p>
+<p>每个InnoDB存储引擎的表单独放到一个独立的ibd文件中。</p>
+<p>InnoDB存储引擎支持用裸设备用来建立表空间。</p>
+<p>InnoDB通过使用多版本并发控制来获得高并发性，并且实现了SQL标准的4种隔离级别，默认为RE-PEATABLE级别。同时使用了next-key locking的策略避免幻读现象的产生。</p>
+<p>InnoDB存储引擎还提供了插入缓冲、二次写、自适应哈希索引、预读等高性能和高可用的功能。</p>
+<p>对于表中数据的存储，InnoDB存储引擎采用了聚集的方式，因此每张表的存储都是按主键的顺序进行存放。如果没有显式地在表定义时指定主键，InnoDB存储引擎会为每一行生成一个6字节的ROWID，并以此作为主键。</p>
+<p>InnoDB存储引擎是MySQL数据库最为常用的一种引擎。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Java程序员的两项通用能力" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/05/25/Java程序员的两项通用能力/" class="article-date">
+      <time datetime="2020-05-25T12:26:32.000Z" itemprop="datePublished">2020-05-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/25/Java程序员的两项通用能力/">Java程序员的两项通用能力</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>工作这几年来，经历了很多。从小白到中级(手机里有一款叫中国象棋的游戏，里面给对弈中电脑水平分为小白、菜鸟、新手、入门、初级、中级、高级、大师、特级大师，编程我暂且按照这样来区分)。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/职业生涯思考/">职业生涯思考</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/05/25/Java程序员的两项通用能力/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-SpringBoot之整合Dubbo" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/05/22/SpringBoot之整合Dubbo/" class="article-date">
+      <time datetime="2020-05-22T02:00:04.000Z" itemprop="datePublished">2020-05-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/22/SpringBoot之整合Dubbo/">SpringBoot之整合Dubbo</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="一、下载Dubbo-Admin并导入本地"><a href="#一、下载Dubbo-Admin并导入本地" class="headerlink" title="一、下载Dubbo-Admin并导入本地"></a>一、下载Dubbo-Admin并导入本地</h2><p>dubbo-admin地址为:<br><a href="https://github.com/apache/dubbo-admin" target="_blank" rel="noopener">https://github.com/apache/dubbo-admin</a></p>
+<p>官方文档:<br><a href="https://github.com/apache/dubbo-admin/blob/develop/README_ZH.md" target="_blank" rel="noopener">https://github.com/apache/dubbo-admin/blob/develop/README_ZH.md</a></p>
+<p>注意需要安装Zookeeper(因为Dubbo使用Zookeeper作为注册中心)<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/05/22/SpringBoot之整合Dubbo/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-SpringBoot整合Xxl-Job" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -688,282 +980,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2020/05/06/脚本是个好东西/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-availableProcessors-is-already-set-to-8-rejecting-8" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/05/06/availableProcessors-is-already-set-to-8-rejecting-8/" class="article-date">
-      <time datetime="2020-05-06T15:42:55.000Z" itemprop="datePublished">2020-05-06</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/06/availableProcessors-is-already-set-to-8-rejecting-8/">availableProcessors is already set to [8], rejecting [8]</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.beans.factory.BeanCreationException: Error creating bean with name &apos;elasticsearchClient&apos; defined in class path resource [org/springframework/boot/autoconfigure/data/elasticsearch/ElasticsearchAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.elasticsearch.client.transport.TransportClient]: Factory method &apos;elasticsearchClient&apos; threw exception; nested exception is java.lang.IllegalStateException: availableProcessors is already set to [8], rejecting [8]</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/05/06/availableProcessors-is-already-set-to-8-rejecting-8/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-《读懂一本书-樊登读书法》之读书笔记" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/05/02/《读懂一本书-樊登读书法》之读书笔记/" class="article-date">
-      <time datetime="2020-05-02T05:41:14.000Z" itemprop="datePublished">2020-05-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/02/《读懂一本书-樊登读书法》之读书笔记/">《读懂一本书:樊登读书法》之读书笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、会读书，更要会讲书"><a href="#一、会读书，更要会讲书" class="headerlink" title="一、会读书，更要会讲书"></a>一、会读书，更要会讲书</h2>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/05/02/《读懂一本书-樊登读书法》之读书笔记/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-《程序员的自我修养》之读书笔记" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/04/30/《程序员的自我修养》之读书笔记/" class="article-date">
-      <time datetime="2020-04-30T14:01:21.000Z" itemprop="datePublished">2020-04-30</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/30/《程序员的自我修养》之读书笔记/">《程序员的自我修养》之读书笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="谈职业生涯"><a href="#谈职业生涯" class="headerlink" title="谈职业生涯"></a>谈职业生涯</h2>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/04/30/《程序员的自我修养》之读书笔记/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-《设计模式之禅》之桥梁模式" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/04/20/《设计模式之禅》之桥梁模式/" class="article-date">
-      <time datetime="2020-04-20T14:59:53.000Z" itemprop="datePublished">2020-04-20</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/20/《设计模式之禅》之桥梁模式/">《设计模式之禅》之桥梁模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、桥梁模式的定义"><a href="#一、桥梁模式的定义" class="headerlink" title="一、桥梁模式的定义"></a>一、桥梁模式的定义</h2><p>桥梁模式也叫桥接模式，是一个比较简单的模式，其定义如下:<br><strong>将抽象和实现解耦，使得两者可以独立地变化。</strong><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/04/20/《设计模式之禅》之桥梁模式/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
