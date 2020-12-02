@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>第三方API之获取IP</title>
+      <link href="/2020/12/02/%E7%AC%AC%E4%B8%89%E6%96%B9API%E4%B9%8B%E8%8E%B7%E5%8F%96IP/"/>
+      <url>/2020/12/02/%E7%AC%AC%E4%B8%89%E6%96%B9API%E4%B9%8B%E8%8E%B7%E5%8F%96IP/</url>
+      
+        <content type="html"><![CDATA[<p>近来因业务需要，需要用到第三方获取用户真实IP地址的接口。<br><a id="more"></a></p><p>通过调研找到了这些免费的API:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">https://extreme-ip-lookup.com/json/</span><br><span class="line"></span><br><span class="line">https://api.ipify.org/ 或 https://api.ipify.org/?format=jsonp&amp;callback=getIP</span><br><span class="line"></span><br><span class="line">http://pv.sohu.com/cityjson?ie=utf-8</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 第三方API </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nginx安装配置lua支持</title>
+      <link href="/2020/12/02/nginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AElua%E6%94%AF%E6%8C%81/"/>
+      <url>/2020/12/02/nginx%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AElua%E6%94%AF%E6%8C%81/</url>
+      
+        <content type="html"><![CDATA[<p>nginx安装很简单，配置lua相关的支持就需要额外的安装一些库和编译。<br><a id="more"></a></p><h2><span id="一-准备环境">一、准备环境</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum -y install lua*</span><br><span class="line">wget https://luajit.org/download/LuaJIT-2.0.4.tar.gz</span><br><span class="line">wget https://github.com/simpl/ngx_devel_kit/archive/v0.2.19.tar.gz</span><br><span class="line">wget https://github.com/openresty/lua-nginx-module/archive/v0.10.13.tar.gz</span><br></pre></td></tr></table></figure><h2><span id="二-解压ngx_devel_kit以及lua-nginx-module">二、解压ngx_devel_kit以及lua-nginx-module</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar xf v0.2.19.tar.gz</span><br><span class="line">tar xf v0.10.13.tar.gz</span><br></pre></td></tr></table></figure><h2><span id="三-编译安装luajit即lua及时编译器">三、编译安装LuaJIT，即Lua及时编译器</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar xf LuaJIT-2.0.4.tar.gz</span><br><span class="line">cd LuaJIT-2.0.4/</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure><h2><span id="四-进入解压的nginx执行命令">四、进入解压的nginx执行命令</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/software/nginx_lua --with-http_ssl_module --with-http_stub_status_module --with-http_dav_module --with-file-aio --with-http_dav_module --add-module=../ngx_devel_kit-0.2.19/ --add-module=../lua-nginx-module-0.10.13/</span><br></pre></td></tr></table></figure><h2><span id="五-写个hello-world测试">五、写个hello world测试</span></h2><p>nginx.conf配置如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">location /test_lua &#123;</span><br><span class="line">    default_type text/html;</span><br><span class="line">    content_by_lua_block &#123;</span><br><span class="line">            ngx.say(&quot;Hello Lua!&quot;) </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>修改配置文件后，重启。</p><p>通过浏览器访问/test_lua，有hello world出现，说明配置lua成功。</p><p>本文参考资料如下:<br><a href="https://blog.csdn.net/qq_31725371/article/details/85226116?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control&amp;depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-3.control" target="_blank" rel="noopener">Nginx安装配置Lua支持</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>error while loading shared libraries: libluajit-5.1.so.2</title>
+      <link href="/2020/12/02/error-while-loading-shared-libraries-libluajit-5-1-so-2/"/>
+      <url>/2020/12/02/error-while-loading-shared-libraries-libluajit-5-1-so-2/</url>
+      
+        <content type="html"><![CDATA[<p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./sbin/nginx: error while loading shared libraries: libluajit-5.1.so.2: </span><br><span class="line">cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>错误背景:<br>搭建nginx+lua环境，启动nginx遇到这样的错误。</p><p>错误原因:<br>nginx中有lua相关库需要有lua环境才能运行起来。</p><p>解决错误，核心代码(安装lua环境即可):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install lua*</span><br></pre></td></tr></table></figure></p><p>参考解决问题链接:<br><a href="https://blog.csdn.net/weixin_45093060/article/details/104037482" target="_blank" rel="noopener">/usr/local/nginx/sbin/nginx: error while loading shared libraries: libluajit-5.1.so.2: cannot open</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>nacos之配置文件实时刷新</title>
       <link href="/2020/11/30/nacos%E4%B9%8B%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%AE%9E%E6%97%B6%E5%88%B7%E6%96%B0/"/>
       <url>/2020/11/30/nacos%E4%B9%8B%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E5%AE%9E%E6%97%B6%E5%88%B7%E6%96%B0/</url>

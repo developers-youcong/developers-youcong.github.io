@@ -292,6 +292,210 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-scp带密码拷贝文件" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/24/scp带密码拷贝文件/" class="article-date">
+      <time datetime="2020-09-24T14:35:28.000Z" itemprop="datePublished">2020-09-24</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/24/scp带密码拷贝文件/">scp带密码拷贝文件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>应用场景:<br>将B服务器的文件传输到A服务器。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/09/24/scp带密码拷贝文件/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-redis集群之节点少于六个错误-解决" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/22/redis集群之节点少于六个错误-解决/" class="article-date">
+      <time datetime="2020-09-22T11:57:17.000Z" itemprop="datePublished">2020-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/22/redis集群之节点少于六个错误-解决/">redis集群之节点少于六个错误-解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** ERROR: Invalid configuration for cluster creation.</span><br><span class="line">*** Redis Cluster requires at least 3 master nodes.</span><br><span class="line">*** This is not possible with 4 nodes and 1 replicas per node.</span><br><span class="line">*** At least 6 nodes are required.</span><br></pre></td></tr></table></figure></p>
+<p>解决方案:<br>增加节点即可。</p>
+<p>参考资料:<br><a href="https://www.cnblogs.com/linyilong3/p/6033901.html" target="_blank" rel="noopener">当节点数量少于6个时候会提示如下信息,初始化一个集群的时候需要6个节点，为什么??</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-There-is-no-normal-TM" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/22/There-is-no-normal-TM/" class="article-date">
+      <time datetime="2020-09-22T11:52:57.000Z" itemprop="datePublished">2020-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/22/There-is-no-normal-TM/">There is no normal TM</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>错误关键信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">There is no normal TM</span><br></pre></td></tr></table></figure></p>
+<p>只需在配置文件添加如下代码即可(application.properties):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tx-lcn.manager.host=0.0.0.0</span><br></pre></td></tr></table></figure></p>
+<p>错误原因:<br>与redis没有开放远程连接问题性质一样。</p>
+<p>参考资料:<br><a href="https://blog.csdn.net/qq_43371556/article/details/105757288" target="_blank" rel="noopener">记录一次Tx_LCN连接失败的问题( There is no normal TM )</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式事务/">分布式事务</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-LCN-错误-attempts-to-join-the-non-existent-transaction-group" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -751,210 +955,6 @@ var _hmt = _hmt || [];
         <p class="article-more-link">
           <a href="/2020/09/16/com-sun-org-apache-regexp-internal不存在/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-closing-inbound-before-receiving-peer-s-close-notify" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/16/closing-inbound-before-receiving-peer-s-close-notify/" class="article-date">
-      <time datetime="2020-09-16T13:31:51.000Z" itemprop="datePublished">2020-09-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/16/closing-inbound-before-receiving-peer-s-close-notify/">closing inbound before receiving peer&#39;s close_notify</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">javax.net.ssl.SSLException: closing inbound before receiving peer&apos;s close_notify</span><br><span class="line">    at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:129)</span><br><span class="line">    at java.base/sun.security.ssl.Alert.createSSLException(Alert.java:117)</span><br><span class="line">    at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:308)</span><br><span class="line">    at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:264)</span><br><span class="line">    at java.base/sun.security.ssl.TransportContext.fatal(TransportContext.java:255)</span><br><span class="line">    at java.base/sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:645)</span><br><span class="line">    at java.base/sun.security.ssl.SSLSocketImpl.shutdownInput(SSLSocketImpl.java:624)</span><br><span class="line">    at com.mysql.cj.protocol.a.NativeProtocol.quit(NativeProtocol.java:1312)</span><br><span class="line">    at com.mysql.cj.NativeSession.quit(NativeSession.java:182)</span><br><span class="line">    at com.mysql.cj.jdbc.ConnectionImpl.realClose(ConnectionImpl.java:1750)</span><br><span class="line">    at com.mysql.cj.jdbc.ConnectionImpl.close(ConnectionImpl.java:720)</span><br><span class="line">    at com.zaxxer.hikari.pool.PoolBase.quietlyCloseConnection(PoolBase.java:135)</span><br><span class="line">    at com.zaxxer.hikari.pool.HikariPool.lambda$closeConnection$1(HikariPool.java:441)</span><br><span class="line">    at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)</span><br><span class="line">    at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)</span><br><span class="line">    at java.base/java.lang.Thread.run(Thread.java:834)</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/09/16/closing-inbound-before-receiving-peer-s-close-notify/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Error-creating-bean-with-name-entityManagerFactory-defined-in-class-path-resource" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/16/Error-creating-bean-with-name-entityManagerFactory-defined-in-class-path-resource/" class="article-date">
-      <time datetime="2020-09-16T13:27:43.000Z" itemprop="datePublished">2020-09-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/16/Error-creating-bean-with-name-entityManagerFactory-defined-in-class-path-resource/">Error creating bean with name &#39;entityManagerFactory&#39; defined in class path resource</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error creating bean with name &apos;entityManagerFactory&apos; defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method fail</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea/">Idea</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/09/16/Error-creating-bean-with-name-entityManagerFactory-defined-in-class-path-resource/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-centos7-8之时间不对问题" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/14/centos7-8之时间不对问题/" class="article-date">
-      <time datetime="2020-09-14T11:55:45.000Z" itemprop="datePublished">2020-09-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/14/centos7-8之时间不对问题/">centos7.8之时间不对问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>按照如下命令操作，即可解决问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum install -y ntpdate</span><br><span class="line"></span><br><span class="line">ntpdate us.pool.ntp.org</span><br><span class="line"></span><br><span class="line">date</span><br></pre></td></tr></table></figure></p>
-<p>完成这三条命令后，时间就回归正常了。<br><a href="https://blog.csdn.net/king_wang10086/article/details/76178711" target="_blank" rel="noopener">修改centos系统时间不对的问题</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
