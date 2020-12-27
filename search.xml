@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Linux:设备上没有空间的问题解决</title>
+      <link href="/2020/12/27/Linux-%E8%AE%BE%E5%A4%87%E4%B8%8A%E6%B2%A1%E6%9C%89%E7%A9%BA%E9%97%B4%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+      <url>/2020/12/27/Linux-%E8%AE%BE%E5%A4%87%E4%B8%8A%E6%B2%A1%E6%9C%89%E7%A9%BA%E9%97%B4%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</url>
+      
+        <content type="html"><![CDATA[<p>某天前端跟我说验证码的接口挂掉了，然后我急忙去看日志，发现一切正常，没有问题，服务运行正常，Redis也正常。后来看具体日志发现，出现这样的错误，设备上没有空间。<br><a id="more"></a><br>于是我通过关键字搜索，一路排查问题，发现是因为没有磁盘空间导致的，我记得磁盘空间明明很多的。</p><p>通过df -hl命令排查，找到了原因，执行df -hl命令，结果如图所示:<br><img src="/2020/12/27/Linux-设备上没有空间的问题解决/01.png" alt=""></p><p>从这张图发现，/home目录下的磁盘空间没有得到充分的利用。</p><p>至于解决办法，就是将/下的部分文件给删除(如日志)以及一些如JDK、Redis、代码文件、文件服务存储迁移到/home下，这样一来，将/home充分利用起来，问题就迎刃而解。</p><p>参考解决问题链接:<br><a href="https://zhuanlan.zhihu.com/p/150681695" target="_blank" rel="noopener">Linux:设备上没有空间的问题解决</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>接口之多种返回数据类型</title>
       <link href="/2020/12/19/%E6%8E%A5%E5%8F%A3%E4%B9%8B%E5%A4%9A%E7%A7%8D%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
       <url>/2020/12/19/%E6%8E%A5%E5%8F%A3%E4%B9%8B%E5%A4%9A%E7%A7%8D%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
