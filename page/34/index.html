@@ -292,6 +292,77 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-XAMPP启动mysql遇到的问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/12/XAMPP启动mysql遇到的问题/" class="article-date">
+      <time datetime="2019-06-12T09:58:43.000Z" itemprop="datePublished">2019-06-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/12/XAMPP启动mysql遇到的问题/">XAMPP启动mysql遇到的问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>错误信息如下:<br>Version: ‘10.1.33-MariaDB’  socket: ‘’  port: 3389  mariadb.org binary distribution<br>2019-06-12 18:00:56 4a04 InnoDB: Warning: Using innodb_additional_mem_pool_size is DEPRECATED. This option may be removed in future releases, together with the option innodb_use_sys_malloc and with the InnoDB’s internal memory allocator.<br>2019-06-12 18:00:56 18948 [Note] InnoDB: innodb_empty_free_list_algorithm has been changed to legacy because of small buffer pool size. In order to use backoff, increase buffer pool at least up to 20MB.</p>
+<p>2019-06-12 18:00:56 18948 [Note] InnoDB: Using mutexes to ref count buffer pool pages<br>2019-06-12 18:00:56 18948 [Note] InnoDB: The InnoDB memory heap is disabled<br>2019-06-12 18:00:56 18948 [Note] InnoDB: Mutexes and rw_locks use Windows interlocked functions<br>2019-06-12 18:00:56 18948 [Note] InnoDB: _mm_lfence() and _mm_sfence() are used for memory barrier<br>2019-06-12 18:00:56 18948 [Note] InnoDB: Compressed tables use zlib 1.2.3<br>2019-06-12 18:00:56 18948 [Note] InnoDB: Using generic crc32 instructions<br>2019-06-12 18:00:56 18948 [Note] InnoDB: Initializing buffer pool, size = 16.0M<br>2019-06-12 18:00:56 18948 [Note] InnoDB: Completed initialization of buffer pool<br>2019-06-12 18:00:56 18948 [ERROR] InnoDB: \Program Files (x86)\xampp\mysql\data\ibdata1 can’t be opened in read-write mode<br>2019-06-12 18:00:56 18948 [ERROR] InnoDB: The system tablespace must be writable!<br>2019-06-12 18:00:56 18948 [ERROR] Plugin ‘InnoDB’ init function returned error.<br>2019-06-12 18:00:56 18948 [ERROR] Plugin ‘InnoDB’ registration as a STORAGE ENGINE failed.<br>2019-06-12 18:00:56 18948 [Note] Plugin ‘FEEDBACK’ is disabled.<br>2019-06-12 18:00:56 18948 [ERROR] Unknown/unsupported storage engine: InnoDB<br>2019-06-12 18:00:56 18948 [ERROR] Aborting</p>
+<p>解决方案:<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/06/12/XAMPP启动mysql遇到的问题/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-算法图解之广度优先搜索" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -874,76 +945,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/05/28/算法图解之快速排序/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Ubuntu16-04Apache负载均衡-集群" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/28/Ubuntu16-04Apache负载均衡-集群/" class="article-date">
-      <time datetime="2019-05-28T02:42:40.000Z" itemprop="datePublished">2019-05-28</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/28/Ubuntu16-04Apache负载均衡-集群/">Ubuntu16.04Apache负载均衡+集群</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>mod_proxy ，主代理模块Apache模块用于重定向连接;它允许Apache充当底层应用程序服务器的网关。<br>mod_proxy_http ，它增加了对代理HTTP连接的支持。<br>mod_proxy_balancer和mod_lbmethod_byrequests ，它为多个后端服务器添加负载平衡功能。</p>
-<p>为了保证配置流程正常，请执行如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod proxy</span><br><span class="line">sudo a2enmod proxy_http</span><br><span class="line">sudo a2enmod proxy_balancer</span><br><span class="line">sudo a2enmod lbmethod_byrequests</span><br><span class="line">/etc/init.d/apache2 restart</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/28/Ubuntu16-04Apache负载均衡-集群/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
