@@ -292,6 +292,74 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-springboot-jar包部署如何不占用过多的服务器内存" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/05/springboot-jar包部署如何不占用过多的服务器内存/" class="article-date">
+      <time datetime="2020-09-05T07:45:46.000Z" itemprop="datePublished">2020-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/05/springboot-jar包部署如何不占用过多的服务器内存/">springboot jar包部署如何不占用过多的服务器内存</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>springboot部署方案有很多，可以将其打成war部署到tomcat，也可以直接jar部署(利用内嵌的tomcat),还可以使用docker部署等。</p>
+<p>今天主要说的是springboot jar包部署占用内存确实有些大，该怎么调整呢？其实很简单，核心代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -Xms64m -Xmx128m -jar blog-gateway-2.0.0.jar  &gt; blog-gateway.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></p>
+<p>最关键的是-Xms64m -Xmx128m，与JVM有关。</p>
+<p>关于JVM内存设置可以参考如下链接:<br><a href="https://www.cnblogs.com/jack204/archive/2012/07/02/2572932.html" target="_blank" rel="noopener">https://www.cnblogs.com/jack204/archive/2012/07/02/2572932.html</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-pom-xml设置字符编码" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -889,75 +957,6 @@ var _hmt = _hmt || [];
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
     </div>
 
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-SpringAop之日志-读配置文件方式" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/08/23/SpringAop之日志-读配置文件方式/" class="article-date">
-      <time datetime="2020-08-23T03:44:51.000Z" itemprop="datePublished">2020-08-23</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/23/SpringAop之日志-读配置文件方式/">SpringAop之日志(读配置文件方式)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>读配置文件的目的在于减少代码上的冗余，这个冗余通常指加注解之类的。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/08/23/SpringAop之日志-读配置文件方式/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
