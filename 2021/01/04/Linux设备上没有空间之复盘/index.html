@@ -24,7 +24,8 @@
 <meta property="og:description" content="一、问题是如何发现的以及如何解决的">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://developers-youcong.github.io/2020/12/27/Linux-%E8%AE%BE%E5%A4%87%E4%B8%8A%E6%B2%A1%E6%9C%89%E7%A9%BA%E9%97%B4%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/01.png">
-<meta property="og:updated_time" content="2021-01-04T14:55:54.855Z">
+<meta property="og:image" content="http://developers-youcong.github.io/2021/01/04/Linux设备上没有空间之复盘/01.png">
+<meta property="og:updated_time" content="2021-01-05T11:52:10.008Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux设备上没有空间之复盘">
 <meta name="twitter:description" content="一、问题是如何发现的以及如何解决的">
@@ -361,8 +362,22 @@ var _hmt = _hmt || [];
 <li>修改Maven配置文件，仓库地址指向/home下的某个用户目录。</li>
 </ul>
 <p>最终解决了这个问题，释放了50%的空间，其中还有15%暂时不能动。<br>这样一来，/dev/mapper/centos-root这个系统盘得到了充分释放，同时/dev/mapper/centos-home也得到了充分利用(不再资源闲置)。</p>
-<h3><span id="四-问题的根本原因是什么为什么我需要排查这么长时间才定位到这个原因呢">四、问题的根本原因是什么？为什么我需要排查这么长时间才定位到这个原因呢？</span></h3><p>问题的根本原因在于不规范性。正常来说，不应该将用户磁盘空间做的事情放在系统磁盘空间(与Windows同理)。从这一刻起，我也深深意识到规范性的重要，不规范性导致的bug何止千千万万，仔细想来我的开发经历，造成bug的绝大多数原因均是因为不规范，因为不规范，暴露出各种奇奇怪怪的bug。<br>另外从我排查问题来看也是很有问题的，问题在于没有用正确的态度对待日志，其实一开始仔细排查日志，定位到这个关键信息，然后将这样的关键信息复制搜索引擎来寻找解决办法，这样一来就不必浪费了近一个多小时来捣鼓这样的事情。</p>
-<h3><span id="五-如何避免这样的问题再现以及通过这样的问题总结出什么样的原则">五、如何避免这样的问题再现？以及通过这样的问题总结出什么样的原则？</span></h3><p>首先这样的问题属于运维范畴，而我作为公司的兼职运维，面对这样的问题，首先从规范入手，制定可行的规范，从根本上杜绝这样的问题再现，对于这样的问题，<strong>我总结的原则如下:</strong></p>
+<h3><span id="四-问题列表和具体解决措施">四、问题列表和具体解决措施</span></h3><h4><span id="1如何通过linux命令知道当前磁盘空间使用情况">1.如何通过Linux命令知道当前磁盘空间使用情况?</span></h4><p>命令格式如下:<br>du -sh 文件路径<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">du -sh *</span><br></pre></td></tr></table></figure></p>
+<p>执行就能看到当前文件以及文件夹所占用内存。占用内存多的，可进一步查看到底是什么原因占用这么多内存的。</p>
+<p>下面就是我通过du -sh *命令查看内存占用最多的应用:</p>
+<ul>
+<li>Nacos;</li>
+<li>MySQL;</li>
+<li>Nginx;</li>
+<li>Project。</li>
+</ul>
+<h4><span id="2为什么nacos会占用这么多内存呢它仅仅是一个服务注册中心并不对外提供服务">2.为什么Nacos会占用这么多内存呢？它仅仅是一个服务注册中心并不对外提供服务。</span></h4><p>通过du -sh <em>命令，我排查到原来是nacos下的bin目录占用内存最多，其它很少，于是我进一步查看，发现bin目录下的log目录占用内存最多，因为该log目录下主要是nacos的访问日志，最后我通过du -sh </em>命令查看，如图所示:<br><img src="/2021/01/04/Linux设备上没有空间之复盘/01.png" alt="图一"><br>由图可知，平均一个日志文件就是一百多M，足足占了十几个G也就不足为奇了。</p>
+<p>我的解决办法很简单，分为两个方面:<br>第一方面是定时删除仅保留一个和备份迁移到/home下的某个目录;<br>第二个方面通过修改nacos的配置解决，具体参考如下链接:<br><a href="https://blog.csdn.net/qq_43437874/article/details/108027122" target="_blank" rel="noopener">Nacos系列(4)-Nacos各种日志太多问题的终极解决办法</a></p>
+<h4><span id="3为什么mysql会占用这么多磁盘空间">3.为什么MySQL会占用这么多磁盘空间？</span></h4><p>通过命令排查(即du -sh *)，我发现是MySQL下的data目录占用磁盘空间最大，其中有一个足足占了4个多G，针对这样的问题，我将其直接由/usr/software目录下迁移到/home下，这样一来系统盘的空间再度得到释放，迁移后需要改mysql的配置文件(即my.cnf文件)。</p>
+<h4><span id="4nginx为何占用这么多磁盘空间">4.Nginx为何占用这么多磁盘空间？</span></h4><p>之所以占用这么多，前面我提到过是因为离线地图，离线地图包括街道地图和卫星地图，两个加在一起足足二十多G，为此我将其迁移到/home下的某个目录，然后修改Nginx的核心配置nginx.conf文件进行映射，这样一来系统盘的空间再次得到释放，同时用户盘的空间得到了充分利用。</p>
+<h4><span id="5关于project">5.关于Project</span></h4><p>Project主要放源代码和打包成功产生的jar，我还是用老办法将其迁移(迁移到/home下的某个目录)。</p>
+<h3><span id="五-问题的根本原因是什么为什么我需要排查这么长时间才定位到这个原因呢">五、问题的根本原因是什么？为什么我需要排查这么长时间才定位到这个原因呢？</span></h3><p>问题的根本原因在于不规范性。正常来说，不应该将用户磁盘空间做的事情放在系统磁盘空间(与Windows同理)。从这一刻起，我也深深意识到规范性的重要，不规范性导致的bug何止千千万万，仔细想来我的开发经历，造成bug的绝大多数原因均是因为不规范，因为不规范，暴露出各种奇奇怪怪的bug。<br>另外从我排查问题来看也是很有问题的，问题在于没有用正确的态度对待日志，其实一开始仔细排查日志，定位到这个关键信息，然后将这样的关键信息复制搜索引擎来寻找解决办法，这样一来就不必浪费了近一个多小时来捣鼓这样的事情。</p>
+<h3><span id="六-如何避免这样的问题再现以及通过这样的问题总结出什么样的原则">六、如何避免这样的问题再现？以及通过这样的问题总结出什么样的原则？</span></h3><p>首先这样的问题属于运维范畴，而我作为公司的兼职运维，面对这样的问题，首先从规范入手，制定可行的规范，从根本上杜绝这样的问题再现，对于这样的问题，<strong>我总结的原则如下:</strong></p>
 <ul>
 <li>(1)不同的用户做不同的事情，保持Linux用户的功能专一性(后面会提到一个重大bug,是因为违反这样的原则导致的)；</li>
 <li>(2)遇到问题，分为两个方面来解决，见过和没有见过，见过表示过去我遇到过这样的问题，可以借鉴以往经验来快速解决这个问题；没有见过的问题，严格遵守的流程:复现问题-&gt;仔细查看日志-&gt;定位问题-&gt;解决问题-&gt;总结并存入知识库(如有必要进行定期复盘)。总而言之，最关键的在于定位问题(如何定位问题，可通过重复复现问题-&gt;仔细查看日志这样的步骤来定位；</li>
@@ -380,7 +395,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2021/01/04/Linux设备上没有空间之复盘/">Linux设备上没有空间之复盘</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2021-01-04, 21:22:35</p>
-        <p><span>最后更新:</span>2021-01-04, 22:55:54</p>
+        <p><span>最后更新:</span>2021-01-05, 19:52:10</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2021/01/04/Linux设备上没有空间之复盘/" title="Linux设备上没有空间之复盘">http://developers-youcong.github.io/2021/01/04/Linux设备上没有空间之复盘/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2021/01/04/Linux设备上没有空间之复盘/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -410,7 +425,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、问题是如何发现的以及如何解决的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、当时我很疑惑为什么/dev/mapper/centos-root一下就满了呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、问题已经定位到了，那么我是如何解决这个问题的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、问题的根本原因是什么？为什么我需要排查这么长时间才定位到这个原因呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">五、如何避免这样的问题再现？以及通过这样的问题总结出什么样的原则？</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、问题是如何发现的以及如何解决的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、当时我很疑惑为什么/dev/mapper/centos-root一下就满了呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、问题已经定位到了，那么我是如何解决这个问题的？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、问题列表和具体解决措施</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">4.1.</span> <span class="toc-text">1.如何通过Linux命令知道当前磁盘空间使用情况?</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">4.2.</span> <span class="toc-text">2.为什么Nacos会占用这么多内存呢？它仅仅是一个服务注册中心并不对外提供服务。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">4.3.</span> <span class="toc-text">3.为什么MySQL会占用这么多磁盘空间？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">4.4.</span> <span class="toc-text">4.Nginx为何占用这么多磁盘空间？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#undefined"><span class="toc-number">4.5.</span> <span class="toc-text">5.关于Project</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">5.</span> <span class="toc-text">五、问题的根本原因是什么？为什么我需要排查这么长时间才定位到这个原因呢？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">6.</span> <span class="toc-text">六、如何避免这样的问题再现？以及通过这样的问题总结出什么样的原则？</span></a></li></ol>
         
     </div>
     <style>
