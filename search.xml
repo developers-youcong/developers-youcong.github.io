@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ERROR 1006 (HY000): Can&#39;t create database</title>
+      <link href="/2021/01/11/ERROR-1006-HY000-Can-t-create-database/"/>
+      <url>/2021/01/11/ERROR-1006-HY000-Can-t-create-database/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1006 (HY000): Can&apos;&apos;t create database</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>错误原因(针对编译安装MySQL而非直接安装MySQL):<br>与授权有关，我改了mysql所在目录下的权限，导致我创建数据库失败。</p><p>解决办法:<br>重新授权。如chown -R mysql /usr/software/mysql。</p><p>参考链接:<br><a href="https://blog.csdn.net/kexiaoling/article/details/50259569" target="_blank" rel="noopener">MySQL: 1006 - Can’t create database ‘***’ (errno: 13) 错误 解决方法</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>RedisCommandExecutionException: MISCONF Redis is configured to save RDB snapshots, but it is current</title>
       <link href="/2021/01/11/RedisCommandExecutionException-MISCONF-Redis-is-configured-to-save-RDB-snapshots-but-it-is-current/"/>
       <url>/2021/01/11/RedisCommandExecutionException-MISCONF-Redis-is-configured-to-save-RDB-snapshots-but-it-is-current/</url>
