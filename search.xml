@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>RedisCommandExecutionException: MISCONF Redis is configured to save RDB snapshots, but it is current</title>
+      <link href="/2021/01/11/RedisCommandExecutionException-MISCONF-Redis-is-configured-to-save-RDB-snapshots-but-it-is-current/"/>
+      <url>/2021/01/11/RedisCommandExecutionException-MISCONF-Redis-is-configured-to-save-RDB-snapshots-but-it-is-current/</url>
+      
+        <content type="html"><![CDATA[<p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RedisCommandExecutionException: MISCONF Redis is configured to save RDB snapshots, but it is current</span><br></pre></td></tr></table></figure></p><p>出现错误信息的原因:<br>还是因为授权，我的应用部署在/home下的某个用户目录下，而恰好其中一个应用在启动的时候会用到Redis进行数据初始化。初始化需要将MySQL的数据放到Redis中，而Redis则会将数据持久化，持久化涉及到存储，而存储势必会写入，因为Redis我放在/usr/software这个目录下，而我并未给这个用户授权，所以才导致上面的错误。</p><p>解决办法:<br>授权该用户有写入Redis的权限即可。</p><p>参考解决办法:<br><a href="https://cloud.tencent.com/developer/article/1600527" target="_blank" rel="noopener">解决Redis报错Redis is configured to save RDB snapshots, but it is currently not able to persist on disk</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ssh问题之复盘</title>
       <link href="/2021/01/05/ssh%E9%97%AE%E9%A2%98%E4%B9%8B%E5%A4%8D%E7%9B%98/"/>
       <url>/2021/01/05/ssh%E9%97%AE%E9%A2%98%E4%B9%8B%E5%A4%8D%E7%9B%98/</url>
