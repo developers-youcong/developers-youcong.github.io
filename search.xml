@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>windows杀死端口进程命令</title>
+      <link href="/2021/01/12/windows%E6%9D%80%E6%AD%BB%E7%AB%AF%E5%8F%A3%E8%BF%9B%E7%A8%8B%E5%91%BD%E4%BB%A4/"/>
+      <url>/2021/01/12/windows%E6%9D%80%E6%AD%BB%E7%AB%AF%E5%8F%A3%E8%BF%9B%E7%A8%8B%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-windows杀死端口进程步骤">一、windows杀死端口进程步骤</span></h2><h4><span id="1查询端口进程">1.查询端口进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr 端口</span><br></pre></td></tr></table></figure><h4><span id="2找到端口进程占用的应用">2.找到端口进程占用的应用</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist | findstr 进程号</span><br></pre></td></tr></table></figure><h4><span id="3杀死端口进程">3.杀死端口进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill -PID 进程号 -F</span><br></pre></td></tr></table></figure><h2><span id="二-应用场景">二、应用场景</span></h2><p>想杀死某个端口进程，但在服务列表中却找不到，可以之间通过命令行找到这个进程并杀死该进程。这样一来，减少重启电脑和找到问题根源。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Windows </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ERROR 1006 (HY000): Can&#39;t create database</title>
       <link href="/2021/01/11/ERROR-1006-HY000-Can-t-create-database/"/>
       <url>/2021/01/11/ERROR-1006-HY000-Can-t-create-database/</url>
