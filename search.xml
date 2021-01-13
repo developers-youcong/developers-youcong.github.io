@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title>Linux git免密登录</title>
+      <link href="/2021/01/13/Linux-git%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/"/>
+      <url>/2021/01/13/Linux-git%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<p>因为某种原因，内网的git需要对外开放，为了保障git代码库的安全。<br>我让所有的仓库均为不可见，相当于登录才能看到对应的代码仓库，不登录看不到，之前是不登陆也能clone到本地，因为是内网，不怕外界侵入。但因此我的部署脚本需要重复输入用户名和密码，为了只输入一次，我执行了如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br><span class="line"></span><br><span class="line">git config --list</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>参考链接:<br><a href="https://www.jianshu.com/p/d8a6dffd08da" target="_blank" rel="noopener">Linux 的Git客户端免密登录</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title></title>
+      <link href="/2021/01/13/Http%E4%B9%8B413%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/"/>
+      <url>/2021/01/13/Http%E4%B9%8B413%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/</url>
+      
+        <content type="html"><![CDATA[<hr><p>title: Http之413错误解决<br>date: 2021-01-13T19:44:13.000Z</p><h2><span id="tags-linux">tags: Linux</span></h2><h3><span id="1错误信息">1.错误信息</span></h3><pre><code>error:RPC失败。HTTP 413 curl 22 the request URL returned error:413fatal:远端意外挂断了。fatal:远端意外挂断了。</code></pre><a id="more"></a><h3><span id="2错误原因">2.错误原因</span></h3><p>原因在于Nginx配置文件中的client_max_body_size，client_max_body_size如果不设置的话，默认为1m。</p><h3><span id="3解决办法">3.解决办法</span></h3><p>在nginx配置文件中(nginx.conf)添加如下代码:</p><pre><code>client_max_body_size 8m;client_body_buffer_size 128k;fastcgi_intercept_errors on;</code></pre><p>我的完整配置如下:</p><pre><code>location / {      client_max_body_size 8m;      client_body_buffer_size 128k;      fastcgi_intercept_errors on;      proxy_pass   http://eqics-api;}</code></pre><h3><span id="4参考链接">4.参考链接</span></h3><p><a href="https://blog.csdn.net/qq_33571718/article/details/80242556" target="_blank" rel="noopener">HTTP 413错误解决方法</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>windows杀死端口进程命令</title>
       <link href="/2021/01/12/windows%E6%9D%80%E6%AD%BB%E7%AB%AF%E5%8F%A3%E8%BF%9B%E7%A8%8B%E5%91%BD%E4%BB%A4/"/>
       <url>/2021/01/12/windows%E6%9D%80%E6%AD%BB%E7%AB%AF%E5%8F%A3%E8%BF%9B%E7%A8%8B%E5%91%BD%E4%BB%A4/</url>
