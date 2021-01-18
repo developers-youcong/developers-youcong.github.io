@@ -292,6 +292,79 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/" class="article-date">
+      <time datetime="2020-09-05T07:13:12.000Z" itemprop="datePublished">2020-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/">org.springframework.context.ApplicationContextException: Unable to start web server; nested exceptio</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.</span><br></pre></td></tr></table></figure></p>
+<p>常规解决办法:<br>参考如下链接即可:<br><a href="https://cloud.tencent.com/developer/article/1536938" target="_blank" rel="noopener">org.springframework.context.ApplicationContextException: Unable to start web server; nested exceptio</a></p>
+<p>但是也分情况。比分我这次遇到是关于不同Maven多模块相互依赖关系导致此类错误，理解Maven多模块之间的依赖关系即可解决。</p>
+<p>由此可以看出Maven多模块一定得设计好以及依赖关系一定要明确，否则项目启动报错、打包报错等各种奇葩错误弄得你怀疑人生。</p>
+<p>不过兵来将挡，水来土淹。经过这几年得错误洗礼，面对错误，我也不再像过去烦躁或胆怯，因为我知道烦躁和胆怯是解决不了问题的。面对错误，就是要直接面对它，然后解决它。我提供我的<strong>通用思路</strong>:<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-nacos的三种部署方式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -890,75 +963,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2020/08/23/SpringBoot使用Maven打包时减小jar包的大小方法/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-springboot-oauth2-0异常重写处理-针对token失效" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/08/23/springboot-oauth2-0异常重写处理-针对token失效/" class="article-date">
-      <time datetime="2020-08-23T02:35:30.000Z" itemprop="datePublished">2020-08-23</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/23/springboot-oauth2-0异常重写处理-针对token失效/">springboot+oauth2.0异常重写处理(针对token失效)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>近来针对微服务框架开发，其中oauth2.0默认返回XML形式的token失效，不符合我们实际的开发需求，于是我参考网上一些博客重写了它,使其符合我们开发的需求。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/08/23/springboot-oauth2-0异常重写处理-针对token失效/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

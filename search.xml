@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>mysql快速插入数据三种方法</title>
+      <link href="/2021/01/18/mysql%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
+      <url>/2021/01/18/mysql%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<p>今日发现一个独立的api微服务插入数据过慢，主要体现在日志aop的数据入库。于是我通过搜索想知道如何提高mysql数据库插入数据的效率。通过搜索我找到了三种:</p><ul><li>(1)修改mysql配置文件(mysql的ini文件增加bulk_insert_buffer_size=100M);</li><li>(2)改写insert语句(使用insert delayed into);</li><li>(3)一次插入多条数据(使用insert into table values(‘张三’,’18’),(‘李四’,’22’),(‘王五’,’28’)…;)。</li></ul><p>其中我尝试了第二种，效果能直接看到，只不过有延迟，没有普通insert into那样实时性(从字面上就很好理解，即延迟插入)，<br>这种方法和我用线程池异步处理效果很相似。</p><p>参考资料如下:<br><a href="https://www.cnblogs.com/wangsongbai/p/10493700.html" target="_blank" rel="noopener">mysql千万级数据库插入速度和读取速度的调整记录</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Linux git免密登录</title>
       <link href="/2021/01/13/Linux-git%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/"/>
       <url>/2021/01/13/Linux-git%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95/</url>
