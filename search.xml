@@ -4,6 +4,63 @@
   
     
     <entry>
+      <title>413 Request Entity Too Large</title>
+      <link href="/2021/01/22/413-Request-Entity-Too-Large/"/>
+      <url>/2021/01/22/413-Request-Entity-Too-Large/</url>
+      
+        <content type="html"><![CDATA[<p>之前遇到413的错误信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">error:RPC失败。HTTP 413 curl 22 the request URL returned error:413</span><br><span class="line"></span><br><span class="line">fatal:远端意外挂断了。</span><br><span class="line"></span><br><span class="line">fatal:远端意外挂断了。</span><br></pre></td></tr></table></figure></p><p>这个错误是git推送代码，代码文件过多导致的。</p><p>之前的解决办法，可以参考如下:<br><a href="https://developers-youcong.github.io/2021/01/13/Http%E4%B9%8B413%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/">Http之413错误解决</a></p><p>今天遇到的这个错误关键核心信息是:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">413 Request Entity Too Large</span><br></pre></td></tr></table></figure></p><p>翻译过来，请求数据量过大。<br><a id="more"></a><br>问题的原因基本一样，都与请求数据有关，解决办法自然一样，只不过表达形式不一样,只需在nginx代理配置如下，即可解决(其中client_max_box_size配置多大，与请求数据量有关):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">client_max_body_size 20m;</span><br><span class="line"></span><br><span class="line">client_body_buffer_size 128k;</span><br><span class="line"></span><br><span class="line">fastcgi_intercept_errors on;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MyBatis分页插件失效问题之解决</title>
+      <link href="/2021/01/22/MyBatis%E5%88%86%E9%A1%B5%E6%8F%92%E4%BB%B6%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98%E4%B9%8B%E8%A7%A3%E5%86%B3/"/>
+      <url>/2021/01/22/MyBatis%E5%88%86%E9%A1%B5%E6%8F%92%E4%BB%B6%E5%A4%B1%E6%95%88%E9%97%AE%E9%A2%98%E4%B9%8B%E8%A7%A3%E5%86%B3/</url>
+      
+        <content type="html"><![CDATA[<p>今天遇到一个问题，MyBatis分页插件失效，导致分页无效，分页失效的原因是我在Controller里做了分页，但业务逻辑实现类对应的方法却写了两个SQL，第一个SQL是查询一条数据判断，第二个SQL是查询列表(是需要分页的)，结果通过日志打印SQL，我发现它却对第一个SQL做分页。最后我的解决办法是，在业务逻辑实现类对应的方法做分页，解决了这个问题。<br><a id="more"></a></p><p>MyBatis实现分页很简单，需要引入如下两个依赖(以SpringBoot+MyBatis为例):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">     &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">     &lt;artifactId&gt;pagehelper&lt;/artifactId&gt;</span><br><span class="line">     &lt;version&gt;5.1.6&lt;/version&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br><span class="line"> &lt;dependency&gt;</span><br><span class="line">     &lt;groupId&gt;com.github.pagehelper&lt;/groupId&gt;</span><br><span class="line">     &lt;artifactId&gt;pagehelper-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">     &lt;version&gt;1.2.12&lt;/version&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p><p>核心模板代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PageHelper.startPage(pageNum,pageSize);</span><br><span class="line">List&lt;T&gt; list = xxxService.getAll();</span><br><span class="line">PageInfo&lt;User&gt; pageInfo = new PageInfo&lt;&gt;(list);</span><br></pre></td></tr></table></figure></p><p>通常建议这段代码写入Service层，最好不要写在Controller里面。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MyBatis </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>nginx之MySQL代理</title>
+      <link href="/2021/01/22/nginx%E4%B9%8BMySQL%E4%BB%A3%E7%90%86/"/>
+      <url>/2021/01/22/nginx%E4%B9%8BMySQL%E4%BB%A3%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<p>修改nginx.conf，添加如下配置(注意:stream和http是同级的):<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">stream &#123;</span><br><span class="line">    upstream cloudsocket &#123;</span><br><span class="line">       hash $remote_addr consistent;</span><br><span class="line">       server 192.168.1.101:3389 weight=5 max_fails=3 fail_timeout=30s;</span><br><span class="line">    &#125;</span><br><span class="line">    server &#123;</span><br><span class="line">       listen 25674; # 数据库服务器监听端口</span><br><span class="line">       proxy_connect_timeout 10s;</span><br><span class="line">       proxy_timeout 300s; # 设置客户端和代理服务之间的超时时间，如果5分钟内没操作将自动断开。</span><br><span class="line">       proxy_pass cloudsocket;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>配置stream的前提，该Nginx要按照如下命令编译安装才行，否则会报错:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/nginx-mysql --with-http_stub_status_module --with-http_ssl_module --with-pcre=/usr/local/src/pcre-8.35 --with-stream</span><br></pre></td></tr></table></figure></p><p>参考链接:<br><a href="https://www.cnblogs.com/DreamFather/p/11358131.html" target="_blank" rel="noopener">nginx转发mysql连接</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mysql快速插入数据三种方法</title>
       <link href="/2021/01/18/mysql%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/"/>
       <url>/2021/01/18/mysql%E5%BF%AB%E9%80%9F%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%E4%B8%89%E7%A7%8D%E6%96%B9%E6%B3%95/</url>

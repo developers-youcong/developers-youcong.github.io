@@ -292,6 +292,207 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-There-is-no-normal-TM" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/22/There-is-no-normal-TM/" class="article-date">
+      <time datetime="2020-09-22T11:52:57.000Z" itemprop="datePublished">2020-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/22/There-is-no-normal-TM/">There is no normal TM</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>错误关键信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">There is no normal TM</span><br></pre></td></tr></table></figure></p>
+<p>只需在配置文件添加如下代码即可(application.properties):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tx-lcn.manager.host=0.0.0.0</span><br></pre></td></tr></table></figure></p>
+<p>错误原因:<br>与redis没有开放远程连接问题性质一样。</p>
+<p>参考资料:<br><a href="https://blog.csdn.net/qq_43371556/article/details/105757288" target="_blank" rel="noopener">记录一次Tx_LCN连接失败的问题( There is no normal TM )</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式事务/">分布式事务</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-LCN-错误-attempts-to-join-the-non-existent-transaction-group" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/22/LCN-错误-attempts-to-join-the-non-existent-transaction-group/" class="article-date">
+      <time datetime="2020-09-22T11:49:13.000Z" itemprop="datePublished">2020-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/22/LCN-错误-attempts-to-join-the-non-existent-transaction-group/">LCN 错误: attempts to join the non-existent transaction group</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">com.codingapi.txlcn.logger.AbstractTxLogger.error(AbstractTxLogger.java:70) - business code error</span><br><span class="line"></span><br><span class="line">attempts to join the non-existent transaction group</span><br><span class="line"></span><br><span class="line">rpc execute service error. action: joinGroup</span><br></pre></td></tr></table></figure></p>
+<p>解决办法:<br>在tx-lcn项目配置如下内容，即可解决:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 分布式事务执行总时间(ms). 默认为36000</span><br><span class="line">tx-lcn.manager.dtx-time=600000</span><br></pre></td></tr></table></figure></p>
+<p>配置完需要重新打包。</p>
+<p>参考资料:<br><a href="https://blog.csdn.net/qq_41463655/article/details/106483312" target="_blank" rel="noopener">LCN 错误: attempts to join the non-existent transaction group</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式事务/">分布式事务</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-redis集群搭建" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/22/redis集群搭建/" class="article-date">
+      <time datetime="2020-09-22T11:43:59.000Z" itemprop="datePublished">2020-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/22/redis集群搭建/">redis集群搭建</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>参考博客文章:<br><a href="https://www.cnblogs.com/fousor/p/10598400.html" target="_blank" rel="noopener">redis5.0.4 集群搭建</a><br>说明:<br>就目前亲测，redis5.0以上版本都可以这么做。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-redis集群报错-error-CLUSTERDOWN-Hash-slot-not-served" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -778,212 +979,9 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-centos7-8之时间不对问题" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/14/centos7-8之时间不对问题/" class="article-date">
-      <time datetime="2020-09-14T11:55:45.000Z" itemprop="datePublished">2020-09-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/14/centos7-8之时间不对问题/">centos7.8之时间不对问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>按照如下命令操作，即可解决问题:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">yum install -y ntpdate</span><br><span class="line"></span><br><span class="line">ntpdate us.pool.ntp.org</span><br><span class="line"></span><br><span class="line">date</span><br></pre></td></tr></table></figure></p>
-<p>完成这三条命令后，时间就回归正常了。<br><a href="https://blog.csdn.net/king_wang10086/article/details/76178711" target="_blank" rel="noopener">修改centos系统时间不对的问题</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-SpringBoot应用之运行jar包时指定端口" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/11/SpringBoot应用之运行jar包时指定端口/" class="article-date">
-      <time datetime="2020-09-11T12:26:40.000Z" itemprop="datePublished">2020-09-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/11/SpringBoot应用之运行jar包时指定端口/">SpringBoot应用之运行jar包时指定端口</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>应用场景:<br>同一个jar项目可以在一台服务器多部署。</p>
-<p>核心命令如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar XXXXX.jar --server.port=8080</span><br></pre></td></tr></table></figure></p>
-<p>参考资料:<br><a href="https://blog.csdn.net/wangxiaofeng0010/article/details/78520018" target="_blank" rel="noopener">运行jar包指定端口</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-SpringBoot-MyBatis-Redis-二级缓存" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/11/SpringBoot-MyBatis-Redis-二级缓存/" class="article-date">
-      <time datetime="2020-09-11T12:12:25.000Z" itemprop="datePublished">2020-09-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/11/SpringBoot-MyBatis-Redis-二级缓存/">SpringBoot+MyBatis+Redis(二级缓存)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>应用场景:<br>保存大数据量，避免重复请求。</p>
-<h2 id="一、添加Maven依赖"><a href="#一、添加Maven依赖" class="headerlink" title="一、添加Maven依赖"></a>一、添加Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- SpringBoot Boot Redis --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/09/11/SpringBoot-MyBatis-Redis-二级缓存/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/47/">47</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/6/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/48/">48</a><a class="extend next" rel="next" href="/page/8/">Next &raquo;</a>
     </nav>
   
 </div>
