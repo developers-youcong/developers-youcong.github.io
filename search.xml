@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Error Code: 1153 - Got a packet bigger than &#39;max_allowed_packet&#39; bytes</title>
+      <link href="/2021/02/06/Error-Code-1153-Got-a-packet-bigger-than-max-allowed-packet-bytes/"/>
+      <url>/2021/02/06/Error-Code-1153-Got-a-packet-bigger-than-max-allowed-packet-bytes/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-错误详细信息">一、错误详细信息</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Error occured at:2021-02-02 09:59:41</span><br><span class="line">Line no.:87</span><br><span class="line">Error Code: 1153 - Got a packet bigger than &apos;max_allowed_packet&apos; bytes</span><br></pre></td></tr></table></figure><a id="more"></a><h2><span id="二-错误原因">二、错误原因</span></h2><p>导入的数据库脚本(xxx.sql)文件过大(超过几百M)，就会出现上面的错误。</p><h2><span id="三-解决办法">三、解决办法</span></h2><h3><span id="1临时解决办法mysql一旦重启配置就不生效了">1.临时解决办法(MySQL一旦重启，配置就不生效了)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set global max_allowed_packet=524288000;</span><br></pre></td></tr></table></figure><h3><span id="2全局解决办法不管mysql重启多少次配置永久生效">2.全局解决办法(不管MySQL重启多少次，配置永久生效)</span></h3><p>可通过修改my.ini文件(主要在my.ini添加如下内容):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">max_allowed_packet=600M</span><br></pre></td></tr></table></figure></p><p>修改完毕后，执行<code>/etc/init.d/mysql restart</code>命令即可。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>413 Request Entity Too Large</title>
       <link href="/2021/01/22/413-Request-Entity-Too-Large/"/>
       <url>/2021/01/22/413-Request-Entity-Too-Large/</url>
