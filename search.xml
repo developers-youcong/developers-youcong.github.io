@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>/bin/mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file:</title>
+      <link href="/2021/02/16/bin-mysqld-error-while-loading-shared-libraries-libaio-so-1-cannot-open-shared-object-file/"/>
+      <url>/2021/02/16/bin-mysqld-error-while-loading-shared-libraries-libaio-so-1-cannot-open-shared-object-file/</url>
+      
+        <content type="html"><![CDATA[<p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure></p><p>错误原因分析:<br>是因为缺少初始化所必须的库。</p><p>解决办法:<br>安装对应的库，即可，执行如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y libaio</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Error Code: 1153 - Got a packet bigger than &#39;max_allowed_packet&#39; bytes</title>
       <link href="/2021/02/06/Error-Code-1153-Got-a-packet-bigger-than-max-allowed-packet-bytes/"/>
       <url>/2021/02/06/Error-Code-1153-Got-a-packet-bigger-than-max-allowed-packet-bytes/</url>
