@@ -68,6 +68,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-windows杀死端口进程命令" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2021/01/12/windows杀死端口进程命令/" class="article-date">
+  <time datetime="2021-01-12T11:06:06.000Z" itemprop="datePublished">2021-01-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/12/windows杀死端口进程命令/">windows杀死端口进程命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2><span id="一-windows杀死端口进程步骤">一、windows杀死端口进程步骤</span></h2><h4><span id="1查询端口进程">1.查询端口进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr 端口</span><br></pre></td></tr></table></figure>
+<h4><span id="2找到端口进程占用的应用">2.找到端口进程占用的应用</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist | findstr 进程号</span><br></pre></td></tr></table></figure>
+<h4><span id="3杀死端口进程">3.杀死端口进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill -PID 进程号 -F</span><br></pre></td></tr></table></figure>
+<h2><span id="二-应用场景">二、应用场景</span></h2><p>想杀死某个端口进程，但在服务列表中却找不到，可以之间通过命令行找到这个进程并杀死该进程。这样一来，减少重启电脑和找到问题根源。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2021/01/12/windows杀死端口进程命令/" data-id="cklf60ye600gsnwuhj9zfitn5" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/">Windows</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-ERROR-1006-HY000-Can-t-create-database" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2021/01/11/ERROR-1006-HY000-Can-t-create-database/" class="article-date">
@@ -99,7 +141,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2021/01/11/ERROR-1006-HY000-Can-t-create-database/" data-id="cklax4xbo0016oguh3k121e63" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2021/01/11/ERROR-1006-HY000-Can-t-create-database/" data-id="cklf60y2y0015nwuhjhrax6pa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -141,7 +183,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2021/01/11/RedisCommandExecutionException-MISCONF-Redis-is-configured-to-save-RDB-snapshots-but-it-is-current/" data-id="cklax4xis006aoguhgrv4g0uu" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2021/01/11/RedisCommandExecutionException-MISCONF-Redis-is-configured-to-save-RDB-snapshots-but-it-is-current/" data-id="cklf60y6s006fnwuhmd6651hn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -184,7 +226,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2021/01/05/ssh问题之复盘/" data-id="cklax4xqm00g4oguhq0t2ej93" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2021/01/05/ssh问题之复盘/" data-id="cklf60ydp00g2nwuhays3eutx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -227,7 +269,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2021/01/04/Linux设备上没有空间之复盘/" data-id="cklax4xy400n0oguhbygl4v3g" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2021/01/04/Linux设备上没有空间之复盘/" data-id="cklf60yqu00qvnwuhv8n0etu1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -271,7 +313,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2021/01/04/Openrestry-Lua之静态文件鉴权/" data-id="cklax4xij005xoguhzpeqtram" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2021/01/04/Openrestry-Lua之静态文件鉴权/" data-id="cklf60y6o0068nwuhddj05my5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -317,7 +359,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2021/01/04/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List-版本问题/" data-id="cklax4xnm00dioguho6i524g9" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2021/01/04/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List-版本问题/" data-id="cklf60ybt00djnwuhpy8z8ztl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -360,7 +402,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/12/27/Linux-设备上没有空间的问题解决/" data-id="cklax4xhk0047oguhlj7doys9" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/12/27/Linux-设备上没有空间的问题解决/" data-id="cklf60y5h004cnwuhevkqudax" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -403,7 +445,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/12/19/接口之多种返回数据类型/" data-id="cklax4y3200okoguhjt1o69fu" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/12/19/接口之多种返回数据类型/" data-id="cklf60yjs00mbnwuhg946sjgx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -448,50 +490,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/12/19/Linux当前用户如何免密登录/" data-id="cklax4xhu004moguhmtm6f6s3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-OpenResty源码编译安装" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/12/OpenResty源码编译安装/" class="article-date">
-  <time datetime="2020-12-12T13:30:02.000Z" itemprop="datePublished">2020-12-12</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/12/OpenResty源码编译安装/">OpenResty源码编译安装</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一-下载源码包"><a href="#一-下载源码包" class="headerlink" title="一.下载源码包"></a>一.下载源码包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://openresty.org/download/openresty-1.17.8.1.tar.gz</span><br><span class="line">wget http://labs.frickle.com/files/ngx_cache_purge-2.3.tar.gz</span><br><span class="line">wget https://github.com/yaoweibin/nginx_upstream_check_module/archive/v0.3.0.tar.gz</span><br></pre></td></tr></table></figure>
-        
-          <p class="article-more-link">
-            <a href="/2020/12/12/OpenResty源码编译安装/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/12/12/OpenResty源码编译安装/" data-id="cklax4xil0060oguhonauhkvo" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/12/19/Linux当前用户如何免密登录/" data-id="cklf60y5o004mnwuhn8gtpnpa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -553,6 +552,10 @@
       <ul>
         
           <li>
+            <a href="/2021/02/21/MySQL之集群配置/">MySQL之集群配置</a>
+          </li>
+        
+          <li>
             <a href="/2021/02/18/Java之判断字符串是否为数字-包含浮点型数据/">Java之判断字符串是否为数字(包含浮点型数据)</a>
           </li>
         
@@ -566,10 +569,6 @@
         
           <li>
             <a href="/2021/01/22/413-Request-Entity-Too-Large/">413 Request Entity Too Large</a>
-          </li>
-        
-          <li>
-            <a href="/2021/01/22/MyBatis分页插件失效问题之解决/">MyBatis分页插件失效问题之解决</a>
           </li>
         
       </ul>
