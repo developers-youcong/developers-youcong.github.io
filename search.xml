@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Nginx代理之大文件下载失败问题</title>
+      <link href="/2021/02/28/Nginx%E4%BB%A3%E7%90%86%E4%B9%8B%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/"/>
+      <url>/2021/02/28/Nginx%E4%BB%A3%E7%90%86%E4%B9%8B%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Cloning into &apos;aplanmis-project&apos;...</span><br><span class="line">remote: Enumerating objects: 176887, done.</span><br><span class="line">remote: Counting objects: 100% (176887/176887), done.</span><br><span class="line">remote: Compressing objects: 100% (75181/75181), done.</span><br><span class="line">error: RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: the remote end hung up unexpectedly</span><br><span class="line">fatal: early EOF</span><br><span class="line">fatal: index-pack failed</span><br></pre></td></tr></table></figure></p><a id="more"></a><p>上面的错误信息导致我无法git clone项目到本地。</p><p>通过关键字搜索找到对应的解决方案如下:</p><h3><span id="1缓冲区设置大小">1.缓冲区设置大小</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.postBuffer 524288000 　　    # 2GB</span><br><span class="line">git config --global http.postBuffer 2097152000　　    # 2GB</span><br><span class="line">git config --global http.postBuffer 3194304000 　　   # 3GB</span><br></pre></td></tr></table></figure><h3><span id="2网络原因">2.网络原因</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global http.lowSpeedLimit 0</span><br><span class="line">git config --global http.lowSpeedTime 999999</span><br></pre></td></tr></table></figure><h3><span id="3少git-clone一些">3.少git clone一些</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone git地址 --depth 1</span><br></pre></td></tr></table></figure><p>上面的三个办法我均尝试，但仍然没有解决这个问题。于是我仔细一想，自建的git通过nginx代理，可能与nginx有关，然后我关键字搜索nginx大文件下载失败问题，于是找到了解决方案:</p><p>参考了该链接，如下:<br><a href="http://blog.chinaunix.net/uid-20332519-id-5755724.html" target="_blank" rel="noopener">Nginx反向代理导致大文件下载失败</a></p><p>该链接提供了两个解决方案，我尝试了第一个解决方案就解决了该问题。<br>在nginx代理配置如下(location标签配置即可):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">proxy_redirect default;</span><br><span class="line">proxy_buffering off;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>PageHelper之排序</title>
       <link href="/2021/02/27/PageHelper%E4%B9%8B%E6%8E%92%E5%BA%8F/"/>
       <url>/2021/02/27/PageHelper%E4%B9%8B%E6%8E%92%E5%BA%8F/</url>

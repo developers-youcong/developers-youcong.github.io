@@ -68,6 +68,46 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-express框架之跨域请求" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/13/express框架之跨域请求/" class="article-date">
+  <time datetime="2019-03-13T14:51:59.000Z" itemprop="datePublished">2019-03-13</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/13/express框架之跨域请求/">express框架之跨域请求</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>express.js跨域请求代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.all(&apos;*&apos;, function(req, res, next) &#123;</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Headers&quot;, &quot;X-Requested-With&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Methods&quot;,&quot;PUT,POST,GET,DELETE,OPTIONS&quot;);</span><br><span class="line">    res.header(&quot;X-Powered-By&quot;,&apos; 3.2.1&apos;)</span><br><span class="line">    res.header(&quot;Content-Type&quot;, &quot;application/json;charset=utf-8&quot;);</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>按照上面的代码，即可解决跨域问题。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/13/express框架之跨域请求/" data-id="cklorpmq400b954uhqtw2ngvo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-node-js之Cookie" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/13/node-js之Cookie/" class="article-date">
@@ -99,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/node-js之Cookie/" data-id="cklmc82so00e8touhatd8048h" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/node-js之Cookie/" data-id="cklorpmsj00ec54uhye2c7cv4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -142,7 +182,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/" data-id="cklmc82ra00bqtouhd9encwxu" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/jQuery和js之Cookie实现/" data-id="cklorpmqi00bq54uhyhvhwahp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -188,7 +228,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/SpringBoot之静态资源放行/" data-id="cklmc82oq007gtouhqayx28ns" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/13/SpringBoot之静态资源放行/" data-id="cklorpmmz007j54uhaovebvdw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -235,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/" data-id="cklmc82p7008btouhu1sm134k" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/09/StringRedisTemplate操作Redis/" data-id="cklorpmnl008d54uhff2gbddn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
@@ -281,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" data-id="cklmc82j90013touheho5iaem" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" data-id="cklorpmhl001054uh3c2aokl3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
@@ -324,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/" data-id="cklmc833d00n3touhrb4q8zk6" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/08/大型网站技术架构演化/" data-id="cklorpnmy00sa54uh0bsai5pq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
@@ -369,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js之十大Web框架/" data-id="cklmc82ss00eetouh8x3fknta" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js之十大Web框架/" data-id="cklorpmsg00e754uh5235y536" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -418,7 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/javascript之map/" data-id="cklmc82r700bmtouh4x2yi7w8" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/javascript之map/" data-id="cklorpmqk00bs54uhv7zut4z6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -463,54 +503,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/springboot实现跨域请求/" data-id="cklmc82to00fptouhe4jh9et9" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/07/springboot实现跨域请求/" data-id="cklorpmts00fv54uh9ovm79th" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-node-js如何引用其它js文件" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/07/node-js如何引用其它js文件/" class="article-date">
-  <time datetime="2019-03-07T11:50:02.000Z" itemprop="datePublished">2019-03-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/07/node-js如何引用其它js文件/">node.js如何引用其它js文件</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>以Java来说，比如要实现第三方存储，我可能需要导入对应的库，以maven为例，使用腾讯云或者七牛云、阿里云，我需要导入对应的maven依赖。<br>再比如，有些时候我们封装某个类，而那个类不在该包下，我们需要导包(就是指定那个类的路径，如果路径不对，则可能出现找不到这个类之类的错误，通常对应的IDE会提示错误)。</p>
-<p>其实，node.js也是这样的。最近在开发node.js的时候，难免也会遇到需要引入其它js文件。今天我以一个简单示例来说一说node.js如何引用其它js文件。<br></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/03/07/node-js如何引用其它js文件/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/07/node-js如何引用其它js文件/" data-id="cklmc82sv00ektouhjmz2kw4i" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
 
     </footer>
   </div>
@@ -569,6 +565,10 @@
       <ul>
         
           <li>
+            <a href="/2021/02/28/Nginx代理之大文件下载失败问题/">Nginx代理之大文件下载失败问题</a>
+          </li>
+        
+          <li>
             <a href="/2021/02/27/PageHelper之排序/">PageHelper之排序</a>
           </li>
         
@@ -582,10 +582,6 @@
         
           <li>
             <a href="/2021/02/16/bin-mysqld-error-while-loading-shared-libraries-libaio-so-1-cannot-open-shared-object-file/">/bin/mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file:</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/06/Error-Code-1153-Got-a-packet-bigger-than-max-allowed-packet-bytes/">Error Code: 1153 - Got a packet bigger than &#39;max_allowed_packet&#39; bytes</a>
           </li>
         
       </ul>

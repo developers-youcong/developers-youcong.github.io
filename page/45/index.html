@@ -68,6 +68,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JSON-stringify-和JSON-parse-的作用" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/22/JSON-stringify-和JSON-parse-的作用/" class="article-date">
+  <time datetime="2019-03-22T08:44:36.000Z" itemprop="datePublished">2019-03-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/22/JSON-stringify-和JSON-parse-的作用/">JSON.stringify()和JSON.parse()的作用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>(1)JSON.stringify() 从一个对象中解析出字符串</p>
+<p>JSON.stringify({“a”:”1”,”b”:”2”})</p>
+<p>结果是：”{“a”:”1”,”b”:”2”}”</p>
+<p>(2)JSON.parse()从一个字符串中解析出JSON对象</p>
+<p>var str = ‘{“a”:”1”,”b”:”2”}’;</p>
+<p>JSON.parse(str);</p>
+<p>结果是：Object{a:”1”,b:”2”}</p>
+<p>应用场景:</p>
+<p>针对(1)，比如后台Java对应的RequestMapping参数列表中的参数为一个对象时，前台多个传输需要经过JSON.stringify()处理，否则会出现参数解析异常。</p>
+<p>针对(2)，比如向后台请求，后台返回一大堆字符串，这时前台页面渲染需要将其以对象的形式展现，这时可以用到JSON.parse()。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/03/22/JSON-stringify-和JSON-parse-的作用/" data-id="cklorpmjc003554uh3f7zprx2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-mysql备份命令" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/03/21/mysql备份命令/" class="article-date">
@@ -99,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/21/mysql备份命令/" data-id="cklmc82s700ddtouhql1qwku4" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/21/mysql备份命令/" data-id="cklorpmry00df54uhi09v7n6s" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
@@ -143,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" data-id="cklmc82ro00cgtouh1qe9mrdz" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/21/js获取访问IP、地区、、当前操作浏览器/" data-id="cklorpmr300ce54uhb5k0n0pv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -187,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" data-id="cklmc82pw009ctouh4l737495" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Uncaught-ReferenceError-layer-is-not-defined/" data-id="cklorpmoc009c54uht1naqgzd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -231,7 +279,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Error-listen-EADDRINUSE-3000/" data-id="cklmc82lu002etouh4u8fvcie" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Error-listen-EADDRINUSE-3000/" data-id="cklorpmii002354uhord82dfl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -274,7 +322,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/python3-6在linux持久运行django/" data-id="cklmc82t800f0touhuxsfv0qb" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/python3-6在linux持久运行django/" data-id="cklorpmt800f454uhnw7pseyu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
@@ -317,7 +365,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/" data-id="cklmc82ny0060touhxv3avwg0" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/" data-id="cklorpmlw005y54uhjjge6oz6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -365,7 +413,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/PostgreSQL安装和使用/" data-id="cklmc82o7006htouhc31ox1iq" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/PostgreSQL安装和使用/" data-id="cklorpmm5006b54uhn7rdgy8c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PostgreSQL/">PostgreSQL</a></li></ul>
@@ -409,7 +457,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/" data-id="cklmc82tb00f6touhkad3mbff" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/npm-run-dev-在Linux上持久运行/" data-id="cklorpmt600f054uhaf12wjzs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -452,50 +500,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cklmc82rm00cctouh6czukkfn" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/03/16/js截取url参数/" data-id="cklorpmqx00c854uhvq8ngez5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-express框架之跨域请求" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/13/express框架之跨域请求/" class="article-date">
-  <time datetime="2019-03-13T14:51:59.000Z" itemprop="datePublished">2019-03-13</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/13/express框架之跨域请求/">express框架之跨域请求</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>express.js跨域请求代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">app.all(&apos;*&apos;, function(req, res, next) &#123;</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Origin&quot;, &quot;*&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Headers&quot;, &quot;X-Requested-With&quot;);</span><br><span class="line">    res.header(&quot;Access-Control-Allow-Methods&quot;,&quot;PUT,POST,GET,DELETE,OPTIONS&quot;);</span><br><span class="line">    res.header(&quot;X-Powered-By&quot;,&apos; 3.2.1&apos;)</span><br><span class="line">    res.header(&quot;Content-Type&quot;, &quot;application/json;charset=utf-8&quot;);</span><br><span class="line">    next();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>按照上面的代码，即可解决跨域问题。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/03/13/express框架之跨域请求/" data-id="cklmc82qu00aztouhgtzgcwdc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
 
     </footer>
   </div>
@@ -554,6 +562,10 @@
       <ul>
         
           <li>
+            <a href="/2021/02/28/Nginx代理之大文件下载失败问题/">Nginx代理之大文件下载失败问题</a>
+          </li>
+        
+          <li>
             <a href="/2021/02/27/PageHelper之排序/">PageHelper之排序</a>
           </li>
         
@@ -567,10 +579,6 @@
         
           <li>
             <a href="/2021/02/16/bin-mysqld-error-while-loading-shared-libraries-libaio-so-1-cannot-open-shared-object-file/">/bin/mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file:</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/06/Error-Code-1153-Got-a-packet-bigger-than-max-allowed-packet-bytes/">Error Code: 1153 - Got a packet bigger than &#39;max_allowed_packet&#39; bytes</a>
           </li>
         
       </ul>

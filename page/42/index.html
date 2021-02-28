@@ -68,6 +68,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/04/10/E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem/" class="article-date">
+  <time datetime="2019-04-10T07:13:12.000Z" itemprop="datePublished">2019-04-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/10/E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem/">E:dpkg was interrupted, you must manually run&#39;dpkg配置&#39;to correct the problem.</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>执行sudo apt-get install安装对应的软件出现如下错误</p>
+<p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">E: Could not get lock /var/lib/dpkg/lock-frontend - open (11: Resource temporarily unavailable)</span><br><span class="line">E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?</span><br></pre></td></tr></table></figure></p>
+<p>错误原因:是因为引用错误的链接导致的。</p>
+<p>解决办法(删除这些引用即可):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /var/lib/dpkg/updates</span><br><span class="line">rm -r ./*</span><br></pre></td></tr></table></figure></p>
+<p>删除完后，执行sudo apt-get update即可，这时就可以正常安装软件了。</p>
+<p>参考解决办法链接:<br><a href="https://www.helplib.com/ubuntu/article_158303" target="_blank" rel="noopener">14.04消息’E:dpkg was interrupted, you must manually run’dpkg配置’to correct the problem.’</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/04/10/E-dpkg-was-interrupted-you-must-manually-run-dpkg配置-to-correct-the-problem/" data-id="cklorpmhv001a54uht1g7t8vg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Ubuntu16-04中php如何切换版本" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/04/10/Ubuntu16-04中php如何切换版本/" class="article-date">
@@ -99,7 +143,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/Ubuntu16-04中php如何切换版本/" data-id="cklmc82ps0094touhqkzyr2eg" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/Ubuntu16-04中php如何切换版本/" data-id="cklorpmo5009254uhlglwp5o3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -145,7 +189,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/" data-id="cklmc82sh00dutouhrwenvork" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/10/nginx上配置phpmyadmin/" data-id="cklorpms500ds54uhruzx80yt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -188,7 +232,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/" data-id="cklmc82o9006mtouhvruhxhku" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/Spring-Boot-The-field-file-exceeds-its-maximum-permitted-size-of-1048576-bytes/" data-id="cklorpmmd006n54uhjwnf80hf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -232,7 +276,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/" data-id="cklmc82os007ktouhyfur1uvm" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/SpringBoot打包成war/" data-id="cklorpmn7007t54uh7zifssgy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
@@ -280,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/08/大型网站架构模式/" data-id="cklmc83eh00satouhvvdprt2f" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/08/大型网站架构模式/" data-id="cklorpnmz00sc54uhqwbpfbgs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
@@ -324,7 +368,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/07/博客中的文章归档是如何实现的/" data-id="cklmc833b00n1touhtvz8s9ja" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/07/博客中的文章归档是如何实现的/" data-id="cklorpnmv00s654uhlvzortu8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -365,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/" data-id="cklmc82ic000ntouhpv415mpg" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/" data-id="cklorpmgq000e54uhlh0tolyi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
@@ -419,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/06/git分支开发的好处/" data-id="cklmc82qy00b7touhk93gq6jq" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/06/git分支开发的好处/" data-id="cklorpmpw00b154uhxn6bjntx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
@@ -462,53 +506,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/05/layui之日期和时间组件/" data-id="cklmc82rs00cmtouhnqpn4czo" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/04/05/layui之日期和时间组件/" data-id="cklorpmrb00co54uhmvbnf8ob" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-vue-electron脚手架" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/04/04/vue-electron脚手架/" class="article-date">
-  <time datetime="2019-04-04T02:02:58.000Z" itemprop="datePublished">2019-04-04</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/04/vue-electron脚手架/">vue-electron脚手架</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>vue-electron官方文档(中文):<a href="https://simulatedgreg.gitbooks.io/electron-vue/content/cn" target="_blank" rel="noopener">https://simulatedgreg.gitbooks.io/electron-vue/content/cn</a><br>vue-electron官方文档(英文):<a href="https://simulatedgreg.gitbooks.io/electron-vue/content/en" target="_blank" rel="noopener">https://simulatedgreg.gitbooks.io/electron-vue/content/en</a></p>
-<h2><span id="1脚手架搭建流程步骤">1.脚手架搭建流程步骤</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 安装 vue-cli 和 脚手架样板代码</span><br><span class="line">npm install -g vue-cli</span><br><span class="line">vue init simulatedgreg/electron-vue my-project</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"># 安装依赖并运行你的程序</span><br><span class="line">cd my-project</span><br><span class="line">yarn # 或者 npm install</span><br><span class="line">yarn run dev # 或者 npm run dev</span><br></pre></td></tr></table></figure>
-<h2><span id="2效果图">2.效果图</span></h2><p><img src="/2019/04/04/vue-electron脚手架/electron.png" alt=""></p>
-<p>注意:<br>(1)环境问题:<br>可以参考我的这篇文章<a href="https://www.cnblogs.com/youcong/p/10230091.html" target="_blank" rel="noopener">VsCode源码编译运行</a><br>环境与其保持一致，基本上就不会出什么问题。</p>
-<p>(2)包管理工具问题:<br>关于npm和yarn，两者都是包的管理工具<br>我用npm install总是在报Error之类的错误，用yarn就好了。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/04/04/vue-electron脚手架/" data-id="cklmc82u900gptouhk2nt9r07" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Electron/">Electron</a></li></ul>
 
     </footer>
   </div>
@@ -567,6 +568,10 @@
       <ul>
         
           <li>
+            <a href="/2021/02/28/Nginx代理之大文件下载失败问题/">Nginx代理之大文件下载失败问题</a>
+          </li>
+        
+          <li>
             <a href="/2021/02/27/PageHelper之排序/">PageHelper之排序</a>
           </li>
         
@@ -580,10 +585,6 @@
         
           <li>
             <a href="/2021/02/16/bin-mysqld-error-while-loading-shared-libraries-libaio-so-1-cannot-open-shared-object-file/">/bin/mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file:</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/06/Error-Code-1153-Got-a-packet-bigger-than-max-allowed-packet-bytes/">Error Code: 1153 - Got a packet bigger than &#39;max_allowed_packet&#39; bytes</a>
           </li>
         
       </ul>

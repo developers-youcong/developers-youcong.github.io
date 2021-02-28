@@ -68,6 +68,53 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-VsCode插件与Node-js交互通信" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/06/05/VsCode插件与Node-js交互通信/" class="article-date">
+  <time datetime="2019-06-05T07:15:48.000Z" itemprop="datePublished">2019-06-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/05/VsCode插件与Node-js交互通信/">VsCode插件与Node.js交互通信</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先关于VsCode插件通信，如果不明白的可以参考我的这篇博客<a href="https://www.cnblogs.com/youcong/p/10294758.html" target="_blank" rel="noopener">VsCode插件开发之插件初步通信</a></p>
+<p>如果需要详细例子的话，可以参考<a href="https://github.com/developers-youcong/vscode-extension-dev" target="_blank" rel="noopener">VsCode插件开发</a></p>
+<p>现在又有一个新的需求是，VsCode插件可以通过jQuery的方式/或者引入某种前端通信框架实现与后台交互。但是针对之前某个需求，需求描述:用户登录后在本地某盘创建特定的文件夹。通常像创建特定文件夹的话，一般都是后端语言实现。而我当时编写的这个插件是用JavaScript，JavaScript是不能读写文件的，当然了，有些朋友可能会说可以使用ActiveXObject，但是这个ActiveXObject有局限性，它仅仅只能支持IE浏览器，而不能支持像Google Chrome和火狐这样的通用性广的浏览器。</p>
+<p>为了解决这个需求，我决定结合node.js解决这个问题。</p>
+<p>首先明确一点，vscode插件开发，不管是使用JavaScript还是TypeScript，通常由于本地调试的需求，都需要安装对应库，而管理这个库，通常使用npm或yarn。由此我们便可知，我们直接可以在该插件中编写node.js相关的代码。<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2019/06/05/VsCode插件与Node-js交互通信/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2019/06/05/VsCode插件与Node-js交互通信/" data-id="cklorpmog009i54uh3fwdyees" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-算法图解之散列表" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/06/03/算法图解之散列表/" class="article-date">
@@ -101,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/06/03/算法图解之散列表/" data-id="cklmc83bt00oxtouhbr08jam5" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/06/03/算法图解之散列表/" data-id="cklorpn0400n854uhhegi4v8e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
@@ -144,7 +191,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/06/01/初学者摸索之算法学习/" data-id="cklmc82wk00kmtouhj73z8p2u" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/06/01/初学者摸索之算法学习/" data-id="cklorpmyf00kr54uhj1ooqljb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
@@ -188,7 +235,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/05/31/Node-js之文件下载/" data-id="cklmc82nt005qtouhi66roids" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/05/31/Node-js之文件下载/" data-id="cklorpmln005m54uht0fnpjc9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
@@ -223,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/05/30/老黄牛读后感/" data-id="cklmc83bz00p7touhkhj2mzo4" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/05/30/老黄牛读后感/" data-id="cklorpn0r00o654uhdya7dfi5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -256,7 +303,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/05/30/单体应用自动化部署/" data-id="cklmc82wm00kqtouhvjlp6u09" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/05/30/单体应用自动化部署/" data-id="cklorpmyg00kt54uhjgwl9kae" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,7 +345,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/05/28/算法图解之快速排序/" data-id="cklmc83jw00sltouhtdv48tjg" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/05/28/算法图解之快速排序/" data-id="cklorpnn700sn54uhwnl3k1wn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
@@ -342,7 +389,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/05/28/Ubuntu16-04Apache负载均衡-集群/" data-id="cklmc82pl008stouhcs6khvmn" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/05/28/Ubuntu16-04Apache负载均衡-集群/" data-id="cklorpmny008t54uhz4ysd534" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -389,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/05/27/致所有的开发者们/" data-id="cklmc83qq00sutouhcm5la6ik" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/05/27/致所有的开发者们/" data-id="cklorpnnq00sx54uhfdy4129l" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/程序人生/">程序人生</a></li></ul>
@@ -432,53 +479,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/05/26/公司内部技术分享之vue-js和前端工程化/" data-id="cklmc83ef00s7touhxtqw5050" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2019/05/26/公司内部技术分享之vue-js和前端工程化/" data-id="cklorpnno00sw54uhk8ssg416" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内部技术分享/">内部技术分享</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CRMEB中因为重写规则导致的服务器异常和404之解决办法" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/" class="article-date">
-  <time datetime="2019-05-21T05:52:35.000Z" itemprop="datePublished">2019-05-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/">CRMEB中因为重写规则导致的服务器异常和404之解决办法</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>问题描述:<br>安装CRMEB后，只能通过https://域名//index.php/admin访问到后台，而不能直接通过https://域名/admin访问到后台，以至于导致进入系统后台出现有的功能界面可用，有的功能界面则出现404或者服务器异常之类的，从浏览器上看就是路径方面的原因导致的，实际原因则是apache没有开启重写模块导致的。<br></p>
-        
-          <p class="article-more-link">
-            <a href="/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/" data-id="cklmc82hv000atouhc7txaqck" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
 
     </footer>
   </div>
@@ -537,6 +541,10 @@
       <ul>
         
           <li>
+            <a href="/2021/02/28/Nginx代理之大文件下载失败问题/">Nginx代理之大文件下载失败问题</a>
+          </li>
+        
+          <li>
             <a href="/2021/02/27/PageHelper之排序/">PageHelper之排序</a>
           </li>
         
@@ -550,10 +558,6 @@
         
           <li>
             <a href="/2021/02/16/bin-mysqld-error-while-loading-shared-libraries-libaio-so-1-cannot-open-shared-object-file/">/bin/mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file:</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/06/Error-Code-1153-Got-a-packet-bigger-than-max-allowed-packet-bytes/">Error Code: 1153 - Got a packet bigger than &#39;max_allowed_packet&#39; bytes</a>
           </li>
         
       </ul>
