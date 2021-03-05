@@ -68,6 +68,52 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-java之5分钟插入千万条数据" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/09/09/java之5分钟插入千万条数据/" class="article-date">
+  <time datetime="2020-09-09T13:00:11.000Z" itemprop="datePublished">2020-09-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/09/java之5分钟插入千万条数据/">java之5分钟插入千万条数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>虽说不一定5分钟就插入完毕，因为取决去所插入的字段，如果字段过多会稍微慢点，但不至于太慢。10分钟内基本能看到结果。</p>
+<p>之前我尝试用多线程来实现数据插入(百万条数据)，半个多小时才二十多万条数据。</p>
+<p>线程池数据插入核心代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ExecutorService executorService = Executors.newFixedThreadPool(1000000);</span><br><span class="line">        executorService.submit(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                for (int i = 0; i &lt; 150000; i++) &#123;</span><br><span class="line">                    TestUser user = new TestUser();</span><br><span class="line">                    user.setName(RandomUtil.randomString(20));</span><br><span class="line">                    userDao.insert(user);</span><br><span class="line">                    System.out.println(&quot;插入数据:&quot; + i);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                System.out.println(Thread.currentThread().getName() + &quot;正在执行任务&quot;);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>应用场景:<br>造测试数据，如千万甚至亿万级别的数据自动快速生成。<br></p>
+        
+          <p class="article-more-link">
+            <a href="/2020/09/09/java之5分钟插入千万条数据/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://developers-youcong.github.io/2020/09/09/java之5分钟插入千万条数据/" data-id="cklwdv2nh00bz6wuhafo8wteb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-centos7-8之防火墙常用命令" class="article article-type-post" itemscope="" itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/09/09/centos7-8之防火墙常用命令/" class="article-date">
@@ -99,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/09/09/centos7-8之防火墙常用命令/" data-id="cklorpmp500ad54uhph1jfbjl" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/09/09/centos7-8之防火墙常用命令/" data-id="cklwdv2mp00am6wuh5nx3t58d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -140,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/09/09/Java8之合并list并去重/" data-id="cklorpmjm003c54uhtm9zw47c" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/09/09/Java8之合并list并去重/" data-id="cklwdv2hp003h6wuhubszq4sh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -183,7 +229,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/09/05/前端代码规范/" data-id="cklorpmyh00kv54uhshlk89v8" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/09/05/前端代码规范/" data-id="cklwdv2t800l06wuhpyy5nxfx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码规范/">代码规范</a></li></ul>
@@ -226,7 +272,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/09/05/java8新特性之List处理/" data-id="cklorpmqc00bk54uhcae9zq97" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/09/05/java8新特性之List处理/" data-id="cklwdv2na00bm6wuhh6zeet2e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
@@ -265,7 +311,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/09/05/node-js之linux安装-centos7-8/" data-id="cklorpmsf00e554uhtshox866" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/09/05/node-js之linux安装-centos7-8/" data-id="cklwdv2ou00e86wuhn346m44o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
@@ -304,7 +350,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/09/05/maven多模块项目出现java文件异常-蓝色标记消失，pom-xml存在但仍不能导入对应的包，不能识别java文件等/" data-id="cklorpmrl00d054uh9qqi2x0q" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/09/05/maven多模块项目出现java文件异常-蓝色标记消失，pom-xml存在但仍不能导入对应的包，不能识别java文件等/" data-id="cklwdv2o400d16wuhsd7q1ysr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/idea/">idea</a></li></ul>
@@ -346,7 +392,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/09/05/springboot-jar包部署如何不占用过多的服务器内存/" data-id="cklorpmtn00fn54uhbvhb71yn" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/09/05/springboot-jar包部署如何不占用过多的服务器内存/" data-id="cklwdv2pt00ft6wuhu2e12psw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
@@ -386,7 +432,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/09/05/pom-xml设置字符编码/" data-id="cklorpmt000es54uhvt5xehew" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/09/05/pom-xml设置字符编码/" data-id="cklwdv2pe00f66wuhizfadcj1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
@@ -429,57 +475,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/09/05/java-lang-IllegalStateException-Service-id-not-legal-hostname-test-gw-aqa/" data-id="cklorpmqb00bh54uhds8c50zh" class="article-share-link">Share</a>
+      <a data-url="http://developers-youcong.github.io/2020/09/05/java-lang-IllegalStateException-Service-id-not-legal-hostname-test-gw-aqa/" data-id="cklwdv2n800bi6wuhzp624te2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/" class="article-date">
-  <time datetime="2020-09-05T07:13:12.000Z" itemprop="datePublished">2020-09-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/">org.springframework.context.ApplicationContextException: Unable to start web server; nested exceptio</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.</span><br></pre></td></tr></table></figure></p>
-<p>常规解决办法:<br>参考如下链接即可:<br><a href="https://cloud.tencent.com/developer/article/1536938" target="_blank" rel="noopener">org.springframework.context.ApplicationContextException: Unable to start web server; nested exceptio</a></p>
-<p>但是也分情况。比分我这次遇到是关于不同Maven多模块相互依赖关系导致此类错误，理解Maven多模块之间的依赖关系即可解决。</p>
-<p>由此可以看出Maven多模块一定得设计好以及依赖关系一定要明确，否则项目启动报错、打包报错等各种奇葩错误弄得你怀疑人生。</p>
-<p>不过兵来将挡，水来土淹。经过这几年得错误洗礼，面对错误，我也不再像过去烦躁或胆怯，因为我知道烦躁和胆怯是解决不了问题的。面对错误，就是要直接面对它，然后解决它。我提供我的<strong>通用思路</strong>:<br></p>
-        
-          <p class="article-more-link">
-            <a href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://developers-youcong.github.io/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/" data-id="cklorpmta00f654uh541awld4" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
 
     </footer>
   </div>
@@ -516,7 +515,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Axure/" style="font-size: 10.67px;">Axure</a> <a href="/tags/Docker/" style="font-size: 11.33px;">Docker</a> <a href="/tags/Drools/" style="font-size: 12px;">Drools</a> <a href="/tags/Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/EduSoho/" style="font-size: 10px;">EduSoho</a> <a href="/tags/Edusoho/" style="font-size: 12px;">Edusoho</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 14.67px;">Git</a> <a href="/tags/Hexo/" style="font-size: 11.33px;">Hexo</a> <a href="/tags/HustOJ/" style="font-size: 11.33px;">HustOJ</a> <a href="/tags/IDEA/" style="font-size: 10.67px;">IDEA</a> <a href="/tags/Idea/" style="font-size: 14.67px;">Idea</a> <a href="/tags/Java/" style="font-size: 18px;">Java</a> <a href="/tags/JavaWeb/" style="font-size: 10px;">JavaWeb</a> <a href="/tags/Linux/" style="font-size: 19.33px;">Linux</a> <a href="/tags/Maven/" style="font-size: 14px;">Maven</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/MyBatis/" style="font-size: 15.33px;">MyBatis</a> <a href="/tags/MyBatis-Plus/" style="font-size: 10.67px;">MyBatis-Plus</a> <a href="/tags/MySQL/" style="font-size: 16.67px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.33px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 17.33px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 11.33px;">PHP</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 12px;">Python</a> <a href="/tags/Redis/" style="font-size: 10.67px;">Redis</a> <a href="/tags/Serverless/" style="font-size: 10px;">Serverless</a> <a href="/tags/SpringBoot/" style="font-size: 18px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 16px;">SpringCloud</a> <a href="/tags/Symfony/" style="font-size: 10px;">Symfony</a> <a href="/tags/VsCode/" style="font-size: 13.33px;">VsCode</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/WordPress/" style="font-size: 12px;">WordPress</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javascript/" style="font-size: 18px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 11.33px;">jenkins</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/uni-app/" style="font-size: 12px;">uni-app</a> <a href="/tags/wordpress/" style="font-size: 10.67px;">wordpress</a> <a href="/tags/代码规范/" style="font-size: 10px;">代码规范</a> <a href="/tags/内部技术分享/" style="font-size: 10px;">内部技术分享</a> <a href="/tags/分布式事务/" style="font-size: 11.33px;">分布式事务</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/微信小程序开发/" style="font-size: 15.33px;">微信小程序开发</a> <a href="/tags/技术思考与实践/" style="font-size: 10px;">技术思考与实践</a> <a href="/tags/极客时间笔记/" style="font-size: 10px;">极客时间笔记</a> <a href="/tags/架构/" style="font-size: 11.33px;">架构</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/程序人生/" style="font-size: 10px;">程序人生</a> <a href="/tags/第三方API/" style="font-size: 10.67px;">第三方API</a> <a href="/tags/职业生涯思考/" style="font-size: 12.67px;">职业生涯思考</a> <a href="/tags/计算机/" style="font-size: 14px;">计算机</a> <a href="/tags/计算机科学速成课笔记/" style="font-size: 18.67px;">计算机科学速成课笔记</a> <a href="/tags/读书/" style="font-size: 10px;">读书</a> <a href="/tags/读书笔记/" style="font-size: 20px;">读书笔记</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a>
+      <a href="/tags/Axure/" style="font-size: 10.63px;">Axure</a> <a href="/tags/Docker/" style="font-size: 11.25px;">Docker</a> <a href="/tags/Drools/" style="font-size: 11.88px;">Drools</a> <a href="/tags/Eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/EduSoho/" style="font-size: 10px;">EduSoho</a> <a href="/tags/Edusoho/" style="font-size: 11.88px;">Edusoho</a> <a href="/tags/Electron/" style="font-size: 10px;">Electron</a> <a href="/tags/Git/" style="font-size: 14.38px;">Git</a> <a href="/tags/Hexo/" style="font-size: 11.25px;">Hexo</a> <a href="/tags/HustOJ/" style="font-size: 11.25px;">HustOJ</a> <a href="/tags/IDEA/" style="font-size: 10.63px;">IDEA</a> <a href="/tags/Idea/" style="font-size: 14.38px;">Idea</a> <a href="/tags/Java/" style="font-size: 18.13px;">Java</a> <a href="/tags/JavaWeb/" style="font-size: 10px;">JavaWeb</a> <a href="/tags/Linux/" style="font-size: 19.38px;">Linux</a> <a href="/tags/Maven/" style="font-size: 13.75px;">Maven</a> <a href="/tags/MongoDB/" style="font-size: 10px;">MongoDB</a> <a href="/tags/MyBatis/" style="font-size: 15px;">MyBatis</a> <a href="/tags/MyBatis-Plus/" style="font-size: 10.63px;">MyBatis-Plus</a> <a href="/tags/MySQL/" style="font-size: 16.25px;">MySQL</a> <a href="/tags/Nginx/" style="font-size: 11.25px;">Nginx</a> <a href="/tags/Node-js/" style="font-size: 16.88px;">Node.js</a> <a href="/tags/PHP/" style="font-size: 11.25px;">PHP</a> <a href="/tags/PostgreSQL/" style="font-size: 10px;">PostgreSQL</a> <a href="/tags/Python/" style="font-size: 11.88px;">Python</a> <a href="/tags/Redis/" style="font-size: 10.63px;">Redis</a> <a href="/tags/Serverless/" style="font-size: 10px;">Serverless</a> <a href="/tags/SpringBoot/" style="font-size: 17.5px;">SpringBoot</a> <a href="/tags/SpringCloud/" style="font-size: 15.63px;">SpringCloud</a> <a href="/tags/Symfony/" style="font-size: 10px;">Symfony</a> <a href="/tags/VsCode/" style="font-size: 13.13px;">VsCode</a> <a href="/tags/Windows/" style="font-size: 10px;">Windows</a> <a href="/tags/WordPress/" style="font-size: 11.88px;">WordPress</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/javascript/" style="font-size: 17.5px;">javascript</a> <a href="/tags/jenkins/" style="font-size: 11.25px;">jenkins</a> <a href="/tags/js/" style="font-size: 10px;">js</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/maven/" style="font-size: 10px;">maven</a> <a href="/tags/uni-app/" style="font-size: 11.88px;">uni-app</a> <a href="/tags/wordpress/" style="font-size: 10.63px;">wordpress</a> <a href="/tags/代码规范/" style="font-size: 10px;">代码规范</a> <a href="/tags/内部技术分享/" style="font-size: 10px;">内部技术分享</a> <a href="/tags/分布式事务/" style="font-size: 11.25px;">分布式事务</a> <a href="/tags/存储/" style="font-size: 10px;">存储</a> <a href="/tags/微信小程序开发/" style="font-size: 15px;">微信小程序开发</a> <a href="/tags/技术思考与实践/" style="font-size: 10px;">技术思考与实践</a> <a href="/tags/极客时间笔记/" style="font-size: 10px;">极客时间笔记</a> <a href="/tags/架构/" style="font-size: 11.25px;">架构</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/程序人生/" style="font-size: 10px;">程序人生</a> <a href="/tags/第三方API/" style="font-size: 10.63px;">第三方API</a> <a href="/tags/职业生涯思考/" style="font-size: 12.5px;">职业生涯思考</a> <a href="/tags/计算机/" style="font-size: 13.75px;">计算机</a> <a href="/tags/计算机科学速成课笔记/" style="font-size: 18.75px;">计算机科学速成课笔记</a> <a href="/tags/读书/" style="font-size: 10px;">读书</a> <a href="/tags/读书笔记/" style="font-size: 20px;">读书笔记</a> <a href="/tags/项目管理/" style="font-size: 10px;">项目管理</a>
     </div>
   </div>
 
@@ -525,7 +524,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/03/">March 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/02/">February 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/01/">January 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/12/">December 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/10/">October 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/09/">September 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">August 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">June 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">April 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/03/">March 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">January 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">December 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">July 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/06/">June 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/05/">May 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/04/">April 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">February 2019</a></li></ul>
     </div>
   </div>
 
@@ -536,6 +535,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/03/05/Java之时间处理-当前年的上一年、上一季度、当月、当季/">Java之时间处理(当前年的上一年、上一季度、当月、当季)</a>
+          </li>
         
           <li>
             <a href="/2021/02/28/Nginx代理之大文件下载失败问题/">Nginx代理之大文件下载失败问题</a>
@@ -551,10 +554,6 @@
         
           <li>
             <a href="/2021/02/18/Java之判断字符串是否为数字-包含浮点型数据/">Java之判断字符串是否为数字(包含浮点型数据)</a>
-          </li>
-        
-          <li>
-            <a href="/2021/02/16/bin-mysqld-error-while-loading-shared-libraries-libaio-so-1-cannot-open-shared-object-file/">/bin/mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file:</a>
           </li>
         
       </ul>
