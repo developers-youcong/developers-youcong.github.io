@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Java之for循环内外创建对象的区别</title>
+      <link href="/2021/03/21/Java%E4%B9%8Bfor%E5%BE%AA%E7%8E%AF%E5%86%85%E5%A4%96%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>/2021/03/21/Java%E4%B9%8Bfor%E5%BE%AA%E7%8E%AF%E5%86%85%E5%A4%96%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="for循环内外创建对象的区别哪个性能更优">for循环内外创建对象的区别，哪个性能更优？</span></h2><a id="more"></a><p>for循环内创建对象，就像这样的代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">List&lt;DriverTrack&gt; driverTracks = driverService.selectDriverTrackByExample(example);</span><br><span class="line">List&lt;TrackVo&gt; list = new ArrayList&lt;TrackVo&gt;();</span><br><span class="line">if (driverTracks != null &amp;&amp; driverTracks.size() &gt; 0) &#123;</span><br><span class="line">    for (DriverTrack driverTrack : driverTracks) &#123;</span><br><span class="line">        TrackVo trackVo = new TrackVo();</span><br><span class="line">        trackVo.setLat(driverTrack.getLatitude());</span><br><span class="line">        trackVo.setLng(driverTrack.getLongitude());</span><br><span class="line">        list.add(trackVo);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>for循环外创建对象，就像这样的代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">List&lt;DriverTrack&gt; driverTracks = driverService.selectDriverTrackByExample(example);</span><br><span class="line">List&lt;TrackVo&gt; list = new ArrayList&lt;TrackVo&gt;();</span><br><span class="line">if (driverTracks != null &amp;&amp; driverTracks.size() &gt; 0) &#123;</span><br><span class="line">    TrackVo trackVo = null;</span><br><span class="line">    for (DriverTrack driverTrack : driverTracks) &#123;</span><br><span class="line">        trackVo = new TrackVo();</span><br><span class="line">        trackVo.setLat(driverTrack.getLatitude());</span><br><span class="line">        trackVo.setLng(driverTrack.getLongitude());</span><br><span class="line">        list.add(trackVo);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p><strong>两者写法的对比存在争议,有如下观点:</strong></p><ul><li>A认为后者比前者要好(因为这样写只创建了一个对象的引用，也就是在for循环里面去new对象的时候，都只是将这个引用指向不同的对象)；</li><li>B认为随着JDK不断升级迭代，两者效率是一样；</li><li>C认为JVM早就解决这样的问题，无需担心。</li></ul><p><strong>我的看法:</strong><br>我更偏向于for循环体内定义对象，因为我一直的写法也是如此，特别是JDK从过去的1.5到现在，JDK已经有15了，像这样的问题JDK开发者早已经替我们考虑好了(Java不像C++,对内存的把控非常严，因为已经有JVM替我们管理了，我们只需专注于业务)。<br>但是从另外一个角度来看，弄清楚为什么比仅仅停留在使用层面，能让我们对于这项技术有更深入的了解和掌握，深入的了解和掌握能让我们走得更远。最近公司领导就特别建议在循环体外定义对象而非在循环体内定义对象。</p><p>接着留一个问题，供我以及感兴趣的读者实践研究？<br>for循环体外性能对比，拿出实际的数据证明两者的优劣。</p><p>参考资料如下:<br><a href="https://www.zhihu.com/question/31751468" target="_blank" rel="noopener">【JAVA】变量声明在循环体内还是循环体外的争论，以及怎样才真正叫『避免在循环体中创建对象』？</a></p><p><a href="https://blog.csdn.net/superman__007/article/details/73549921" target="_blank" rel="noopener">java中的for循环里面创建对象和for循环外面创建对象之间的区别</a></p><p><a href="https://www.jianshu.com/p/744587b61148" target="_blank" rel="noopener">for循环中创建对象</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java之基本数据类型和包装数据类型</title>
       <link href="/2021/03/21/Java%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8C%85%E8%A3%85%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"/>
       <url>/2021/03/21/Java%E4%B9%8B%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8C%85%E8%A3%85%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
