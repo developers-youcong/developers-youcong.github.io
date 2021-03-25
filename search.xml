@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>数据表设计之主键自增、UUID或联合主键</title>
+      <link href="/2021/03/25/%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%AE%BE%E8%AE%A1%E4%B9%8B%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E%E3%80%81UUID%E6%88%96%E8%81%94%E5%90%88%E4%B8%BB%E9%94%AE/"/>
+      <url>/2021/03/25/%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%AE%BE%E8%AE%A1%E4%B9%8B%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E%E3%80%81UUID%E6%88%96%E8%81%94%E5%90%88%E4%B8%BB%E9%94%AE/</url>
+      
+        <content type="html"><![CDATA[<p>最近在做数据库设计的时候(以MySQL为主)，遇到不少困惑，因为之前做数据库表设计，基本上主键都是使用自增的形式，最近因为这种做法，被领导指出存在一些不足，于是我想搞明白哪里不足。<br><a id="more"></a></p><h2><span id="一-mysql为什么建议使用自增">一、MySQL为什么建议使用自增？</span></h2><p>通过网上查阅资料，得出一个这样的结论:<br><strong>表的主键一般都要使用自增 id，不建议使用业务id ，是因为使用自增id可以避免页分裂。</strong></p><p>按照我过去的实践:<br>选择使用自增可以避免很多麻烦，主要体现是数据的唯一性(从1到xxx，肯定不会重复的)。</p><h3><span id="1什么是页分裂">1.什么是页分裂？</span></h3><p>这块我没看太明白，我主要参考<strong>如下链接:</strong><br><a href="https://www.cnblogs.com/ZhuChangwu/p/14041410.html" target="_blank" rel="noopener">一看就懂的：MySQL数据页以及页分裂机制</a></p><p><a href="https://zhuanlan.zhihu.com/p/250117430" target="_blank" rel="noopener">为什么?mysql不推荐使用uuid或者雪花id作为主键?</a></p><h2><span id="二-uuid作为主键的优劣势是什么以及它的应用场景是什么">二、UUID作为主键的优劣势是什么？以及它的应用场景是什么？</span></h2><h3><span id="1uuid和自增int型作为主键的比较有哪些优势和劣势">1.UUID和自增int型作为主键的比较,有哪些优势和劣势？</span></h3><h4><span id="1优势">(1)优势</span></h4><ul><li>UUID值在不同的表、数据库、甚至是服务器中都是全局唯一的，所以你可以合并来自不同数据库，甚至是不同服务器上不同数据库上的数据行；</li><li>UUID值不会在URL中暴露你的数据信息。例如，一个客户可以通过 id10来访问他的账号地址 <a href="http://www.example.com/c/10/" target="_blank" rel="noopener">http://www.example.com/c/10/</a> ，他可以很轻松地猜到会有 id 11, 12等等的客户，这可能被拖库，或被别人猜到你的用户量；</li><li>UUID值生成的时候不需要查一遍数据库，并且它还简化了应用层的逻辑。例如，当你要给父表和子表插入数据时，一般你要先把数据插到父表里，然后才能插到子表里。但是如果你用UUID的话，你可以直接生成父表的主键，然后在一个事务里同时把数据插到父表和子表里。</li></ul><h5><span id="专业名词解释">专业名词解释</span></h5><p><strong>拖库:</strong>指黑客通过各种社工手段、技术手段将数据库中敏感信息非法获取，一般这些敏感信息包括用户的账号信息如用户名、密码；身份信息如真实姓名、证件号码；通讯信息如电子邮箱、电话、住址等。</p><h4><span id="2劣势">(2)劣势</span></h4><ul><li>存储UUID值（16字节）需要的存储空间比INT型（4字节）甚至是 BIGINT型（8字节）都要大;</li><li>调试起来会更难一些，你可以想象一下平时你只需要 WHERE id = 10 现在你要写 WHERE id = ‘df3b7cb7-6a95-11e7-8846-b05adad3f0ae’;</li><li>UUID 值通常会因为它的大小和未被排序的问题导致性能问题。</li></ul><p><strong>参考链接:</strong><br><a href="https://kalasearch.cn/community/tutorials/mysql-use-uuid-or-int-as-primary-key/" target="_blank" rel="noopener">MySQL主键应该用UUID还是INT类型</a></p><p><a href="https://zhuanlan.zhihu.com/p/69979644" target="_blank" rel="noopener">一分钟让你了解拖库、洗库和撞库</a></p><h2><span id="2哪些应用场景应该使用uuid作为主键">2.哪些应用场景应该使用UUID作为主键？</span></h2><p><strong>简要概括UUID的适用场景:</strong>主要适合用在大型项目微服务架构中，保证全局ID唯一性(大型项目微服务架构集成各式各样的子系统，避免ID冲突)。</p><p>起初我在数据表设计的时候就与项目经理争论过，挺类似这个链接的对话:<a href="https://blog.csdn.net/weixin_42146996/article/details/108604141" target="_blank" rel="noopener">UUID与数字ID的区别与适用场景</a></p><h2><span id="三-什么是联合主键联合主键的适用场景又是什么">三、什么是联合主键？联合主键的适用场景又是什么？</span></h2><h3><span id="1什么是联合主键">1.什么是联合主键</span></h3><p>指用2个或者是2个以上的字段组成的主键，用这个主键包含的字段作为主键，这个组合在数据表中是唯一，且附加上了主键索引。</p><h3><span id="2联合主键的适用场景是什么">2.联合主键的适用场景是什么？</span></h3><p>我能想到一个用户信息，针对某个一个区域如果用用户ID或用户ID+用户姓名作为主键，难以保持数据的唯一性，因为这一个地区不仅仅是有一个小马哥，可能有七八个人，如此，前面提到的用户ID或用户ID+用户姓名显然是行不通的，这时可以把身份证加入主键，变成了用户ID+用户姓名+身份证(形成了一个联合主键)，这样一来该用户数据的唯一性得到了验证。当然了，联合主键的场景不仅仅是这个，关键看业务场景。</p><h2><span id="四-数据表设计心得分享">四、数据表设计心得分享</span></h2><p>从外包公司-&gt;创业公司-&gt;教育公司-&gt;现在所在公司，回过头来看过去我的数据表设计方面，存在的一个最大不足，<strong>即着重考虑技术实现难易层面，而轻视业务场景适用性、扩展性、稳定性等。</strong></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Java之for循环内外创建对象的区别</title>
       <link href="/2021/03/21/Java%E4%B9%8Bfor%E5%BE%AA%E7%8E%AF%E5%86%85%E5%A4%96%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
       <url>/2021/03/21/Java%E4%B9%8Bfor%E5%BE%AA%E7%8E%AF%E5%86%85%E5%A4%96%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
