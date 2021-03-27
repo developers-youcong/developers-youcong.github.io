@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>如何写好对外的API微服务</title>
+      <link href="/2021/03/27/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E5%AF%B9%E5%A4%96%E7%9A%84API%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+      <url>/2021/03/27/%E5%A6%82%E4%BD%95%E5%86%99%E5%A5%BD%E5%AF%B9%E5%A4%96%E7%9A%84API%E5%BE%AE%E6%9C%8D%E5%8A%A1/</url>
+      
+        <content type="html"><![CDATA[<p>写好对外API和对内API本质上是一样的，都需要考虑这几个方面？</p><ul><li>API文档；</li><li>API安全性；</li><li>API日志；</li><li>API性能。<a id="more"></a></li></ul><h2><span id="一-api文档">一、API文档</span></h2><p>好的API文档，能够降低低效沟通带来的时间、人力成本。好的文档应具有的特性有:结构清晰、内容简洁易懂等。</p><h3><span id="好的api文档应该要有这些内容">好的API文档应该要有这些内容？</span></h3><h4><span id="1概述">1.概述</span></h4><h5><span id="1编制目的">(1)编制目的</span></h5><h5><span id="2协议描述">(2)协议描述</span></h5><h6><span id="a应用名称">a.应用名称</span></h6><h6><span id="b交互协议通常http">b.交互协议(通常HTTP)</span></h6><h6><span id="c请求数据格式">c.请求数据格式</span></h6><h6><span id="d数据编码方式">d.数据编码方式</span></h6><h6><span id="e字符编码方式">e.字符编码方式</span></h6><h6><span id="fapi地址">f.API地址</span></h6><h6><span id="g交互超时">g.交互超时</span></h6><h4><span id="2接口列表">2.接口列表</span></h4><h5><span id="1具体接口名称">(1)具体接口名称</span></h5><h5><span id="2接口描述">(2)接口描述</span></h5><h5><span id="3请求频率">(3)请求频率</span></h5><h5><span id="4请求url">(4)请求URL</span></h5><h5><span id="5请求参数">(5)请求参数</span></h5><h5><span id="6请求参数描述">(6)请求参数描述</span></h5><h5><span id="7响应结果">(7)响应结果</span></h5><h4><span id="3附录">3.附录</span></h4><h5><span id="1响应码对照">(1)响应码对照</span></h5><h5><span id="2其它补充">(2)其它补充</span></h5><h3><span id="业内参考对象">业内参考对象</span></h3><p>可以借鉴参考，不一定照搬照抄，适合自己的才最重要。下面的具体实例和我上面列举的大同小异。</p><h4><span id="1支付宝">1.支付宝</span></h4><p>支付宝支付api文档地址:<br><a href="https://opendocs.alipay.com/apis/api_1" target="_blank" rel="noopener">https://opendocs.alipay.com/apis/api_1</a></p><h4><span id="2微信支付">2.微信支付</span></h4><p>微信支付api文档地址:<br><a href="https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_1.shtml" target="_blank" rel="noopener">https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_1.shtml</a></p><h4><span id="3聚合">3.聚合</span></h4><p>聚合API文档:<br><a href="https://www.juhe.cn/docs" target="_blank" rel="noopener">https://www.juhe.cn/docs</a><br>例如身份证实名认证api文档地址:<br><a href="https://www.juhe.cn/docs/api/id/103" target="_blank" rel="noopener">https://www.juhe.cn/docs/api/id/103</a></p><h4><span id="4腾讯云">4.腾讯云</span></h4><p>腾讯云API文档:<br><a href="https://cloud.tencent.com/document/api/" target="_blank" rel="noopener">https://cloud.tencent.com/document/api/</a></p><h4><span id="5阿里云">5.阿里云</span></h4><p>阿里云API文档:<br><a href="https://developer.aliyun.com/api" target="_blank" rel="noopener">https://developer.aliyun.com/api</a></p><h2><span id="二-api安全性">二、API安全性</span></h2><p>API安全性的目的是防止被人攻击以及非法利用获取数据等。这就显得API安全性至关重要。常用API安全性设计有如下:</p><ul><li>token鉴权机制；</li><li>时间戳超时机制；</li><li>API签名机制。</li></ul><p>这三种机制我都经历过，其中token鉴权机制，我就主导过两次，一次是在创业公司，另一次是在目前这家公司。API签名机制前创业公司由我们组长主导，当时她的设计是时间戳+签名两者都结合起来，而后到了教育项目的时候由我这边开始结合shiro+jwt实现token鉴权机制。<br>关于Shiro+JWT+Token鉴权可以参考我写的这篇文章:<br><a href="https://segmentfault.com/a/1190000038174544" target="_blank" rel="noopener">SpringBoot集成Shiro</a></p><p>关于SpringCloud之Security(本质上还是token鉴权，基于OAuth1.0)，可以参考我写的这篇文章:<br><a href="https://youcongtech.com/2020/06/10/SpringCloud%E4%B9%8BSecurity/" target="_blank" rel="noopener">SpringCloud之Security</a></p><p>不仅仅是对外的API需要特别注重安全性，对内的API(本质上是自己的App和后台API交互)也一样，不然的话很容易受到如下攻击:</p><ul><li>DOS攻击；</li><li>DDOS攻击。</li></ul><p>当然了除了Token鉴权机制、时间戳机制、签名机制外，也可以自建一套独特的机制，例如最近做的对外API，我就结合了公私钥+签名机制做了鉴权，感兴趣的朋友可以参考这篇文档:<br><a href="https://youcongtech.com/2020/10/31/WebService%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E5%AE%9E%E8%B7%B5/" target="_blank" rel="noopener">WebService安全机制的思考与实践</a></p><p>当然了，还有我曾经最早做的Blog系统，用一个中间表做session存储，每次登录会将用户唯一标识+sessionid插入这张表里，同时这张表会有一个创建时间，系统定时任务每分钟会执行一次，检测sessionid从创建到现在有没有超过8个小时，如果超过了会自动清除这条数据，每次登录会判断是否存在这条数据，如果存在则更新，不存在则新增。这样做的话有一个弊端就是正在操作的时候突然一下就被弹出去了，为此还要有一个接口实时请求刷新这张表，但频繁的操作数据表特别是用户量很大的时候并不是一个明智的选择，于是我让Redis来做这件事情。</p><h2><span id="三-api日志">三、API日志</span></h2><p>API日志分为两个方面，以最近的实践经验，第一针对接口请求进行入日志表存储，第二针对请求的数据进行存入特定的xxx.log(也就是日志文件)。这样做的话主要的目的是针对对方推送调用API，而我方通过获取对方推送的数据进行处理和入库。而我方通常响应的结果不会是数据，只会是状态码便可以结合这两种方式进行处理。<br>但如果是我方既接收和处理数据，同时也接收和响应数据，那么就需要充分的考虑业务场景了，针对响应的结果是否有必要进行存储，在我看来有必要，特别是我方将数据卖给第三方，有证可查，避免少数客户的刁难。</p><p>结合我最近的实践经验来看，我上面这样做虽然做到有据可查，但是也会存在一些问题的:</p><ul><li>服务器的磁盘空间；</li><li>MySQL单表容量2GB或500万行(如果超过这个数会影响性能)。</li></ul><p>存在的问题也有办法解决:</p><ul><li>针对服务器的磁盘空间，可以写shell脚本定期备份和清理；</li><li>对于MySQL可以采用分库分表的形式(有现成的解决方案，如MyCat、Sharding-JDBC等)。</li></ul><h2><span id="四-api性能">四、API性能</span></h2><p>API性能衡量指标主要如下:</p><ul><li>响应时间；</li><li>请求成功率；</li><li>TPS；</li><li>资源利用率；</li><li>数据库死锁；</li><li>CPU限制；</li><li>内存。</li></ul><p>最直接的衡量标准就是，哪怕我用户量多么大，API都能正常给我吐出我想要的结果而不是404或502，再或没有响应处于卡顿的状态。<br>API性能的好坏跟开发人员写的代码也有很大的关系，例如我最近一个同事，优化某个代码，将原本需要6~8个小时才能拿到结果优化到2个小时，最后由两个小时优化到几分钟。<br>这段代码我没细看过，听她跟我说，关键原因是:<strong>for循环里进行频繁的DB操作。</strong></p><p>以我上家教育公司为例，面对庞大的用户所产生庞大的数据量，最常见的做法就是加服务器、加内存、加CPU等，通过服务器冗余来保持稳定性。</p><h2><span id="五-总结">五、总结</span></h2><p>不断回顾以往实践经历(做的好的+设计不足遇到的坑+未知的坑等)，是为了让未来走的更稳。以前很少去复盘，导致不断犯一些重复性的错误，这些重复性错误，虽然能短时间解决，但在我看来是完全没有必要的，因为浪费了时间，这些时间原本可以做一些其它的事情(优化某段问题代码、重构一些冗余代码、学习一些新技术、夯实基础、学一些新东西(非技术类的)等)。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 微服务 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常量与配置文件的应用考量</title>
+      <link href="/2021/03/27/%E5%B8%B8%E9%87%8F%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%BA%94%E7%94%A8%E8%80%83%E9%87%8F/"/>
+      <url>/2021/03/27/%E5%B8%B8%E9%87%8F%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E7%9A%84%E5%BA%94%E7%94%A8%E8%80%83%E9%87%8F/</url>
+      
+        <content type="html"><![CDATA[<p>常量，可以理解为一种特殊的变量，通常用static final来修饰，它的值一旦设定，在程序运行过程中不允许改变。<br>常量在实际开发中使用非常多，这里以我博客为例，我的博客系统主要以WordPress作为模仿对象，我的常量类如下：<br><a id="more"></a><br><img src="/2021/03/27/常量与配置文件的应用考量/01.png" alt=""></p><p>其中的RoleConst.java内容如下:<br><img src="/2021/03/27/常量与配置文件的应用考量/02.png" alt=""></p><h3><span id="一我为什么使用常量来定义这些">一.我为什么使用常量来定义这些？</span></h3><p>最主要的一个原因是它能解决魔法值问题。特别是代码中有switch、if和其它重复多次的变量值，通常这些值都可以定义为常量。魔法值太多不利于代码的维护。<br>魔法值代码例子如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String key = &quot;Id#taobao_&quot; + tradeId;</span><br><span class="line">cache.put(key, value);</span><br></pre></td></tr></table></figure></p><h3><span id="二-常量与配置文件的区别">二、常量与配置文件的区别？</span></h3><p>常量通常是一个或多个Java类，这些类的包前缀通常为constant。<br>而配置文件大多是xx.properties文件或xml文件、yaml文件，一般来说，目前properties文件和yaml文件是用的比较多的(分布式微服务项目，如spring+springmvc+mybatis、springboot+mybatis、springboot+springcloud等)，xml文件偏向于比较老的项目了(spring+struts/struts2+hibernate或ssm(sprint+struts/struts2+mybatis等)。</p><h3><span id="三-什么时候应该使用常量什么时候应该使用配置文件">三、什么时候应该使用常量？什么时候应该使用配置文件？</span></h3><p>对于魔法值通常建议使用常量进行管理，而像mysql、memcache、elasticesearch、tomcat、redis、mongodb、对象存储服务器(类似文件管理这样的)等通常使用配置文件进行管理。</p><h3><span id="四-常量的规范有哪些">四、常量的规范有哪些？</span></h3><p>这里参考阿里巴巴Java开发手册:</p><ul><li><p>1.【强制】不允许任何魔法值（即未经定义的常量）直接出现在代码中。</p></li><li><p>2.【强制】long 或者 Long 初始赋值时，使用大写的 L，不能是小写的 l，小写容易跟数字 1 混<br>淆，造成误解。</p></li><li><p>3.【推荐】不要使用一个常量类维护所有常量，按常量功能进行归类，分开维护。<br>说明：大而全的常量类，非得使用查找功能才能定位到修改的常量，不利于理解和维护。</p></li><li><p>4.【推荐】常量的复用层次有五层：跨应用共享常量、应用内共享常量、子工程内共享常量、包<br>内共享常量、类内共享常量。<br>1） 跨应用共享常量：放置在二方库中，通常是 client.jar 中的 constant 目录下。<br>2） 应用内共享常量：放置在一方库中，通常是 modules 中的 constant 目录下。<br>3） 子工程内部共享常量：即在当前子工程的 constant 目录下。<br>4） 包内共享常量：即在当前包下单独的 constant 目录下。<br>5） 类内共享常量：直接在类内部 private static final 定义。</p></li><li><p>5.【推荐】如果变量值仅在一个范围内变化，且带有名称之外的延伸属性，定义为枚举类。下面<br>正例中的数字就是延伸信息，表示星期几。</p></li></ul><h3><span id="五-配置文件有哪些规范">五、配置文件有哪些规范？</span></h3><ul><li>(1)首先要遵循该配置文件类型的规范，否则会报错或失效(yaml、properties、xml或txt、ini等)；</li><li>(2)按功能类型区分，用户配置文件、系统配置文件、业务配置文件、第三方配置文件等(对于springboot项目而言通常配置文件会放在resources目录下，通过目录进行区分)；</li><li>(3)注释说明(像txt的可能没办法加注释，但最后有一个专门的配置文档说明书，利于以后的扩展和维护)。</li></ul><h3><span id="六-总结">六、总结</span></h3><p>常量和配置文件本质上是让我们的代码变得更稳定、更好维护、更易扩展等，最后带来的好处是团队研发效率的提高，项目开发顺利，不用加班。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 代码规范 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>数据表设计之主键自增、UUID或联合主键</title>
       <link href="/2021/03/25/%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%AE%BE%E8%AE%A1%E4%B9%8B%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E%E3%80%81UUID%E6%88%96%E8%81%94%E5%90%88%E4%B8%BB%E9%94%AE/"/>
       <url>/2021/03/25/%E6%95%B0%E6%8D%AE%E8%A1%A8%E8%AE%BE%E8%AE%A1%E4%B9%8B%E4%B8%BB%E9%94%AE%E8%87%AA%E5%A2%9E%E3%80%81UUID%E6%88%96%E8%81%94%E5%90%88%E4%B8%BB%E9%94%AE/</url>
