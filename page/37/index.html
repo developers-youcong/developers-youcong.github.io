@@ -292,6 +292,79 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-VsCode插件与Node-js交互通信" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/05/VsCode插件与Node-js交互通信/" class="article-date">
+      <time datetime="2019-06-05T07:15:48.000Z" itemprop="datePublished">2019-06-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/05/VsCode插件与Node-js交互通信/">VsCode插件与Node.js交互通信</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>首先关于VsCode插件通信，如果不明白的可以参考我的这篇博客<a href="https://www.cnblogs.com/youcong/p/10294758.html" target="_blank" rel="noopener">VsCode插件开发之插件初步通信</a></p>
+<p>如果需要详细例子的话，可以参考<a href="https://github.com/developers-youcong/vscode-extension-dev" target="_blank" rel="noopener">VsCode插件开发</a></p>
+<p>现在又有一个新的需求是，VsCode插件可以通过jQuery的方式/或者引入某种前端通信框架实现与后台交互。但是针对之前某个需求，需求描述:用户登录后在本地某盘创建特定的文件夹。通常像创建特定文件夹的话，一般都是后端语言实现。而我当时编写的这个插件是用JavaScript，JavaScript是不能读写文件的，当然了，有些朋友可能会说可以使用ActiveXObject，但是这个ActiveXObject有局限性，它仅仅只能支持IE浏览器，而不能支持像Google Chrome和火狐这样的通用性广的浏览器。</p>
+<p>为了解决这个需求，我决定结合node.js解决这个问题。</p>
+<p>首先明确一点，vscode插件开发，不管是使用JavaScript还是TypeScript，通常由于本地调试的需求，都需要安装对应库，而管理这个库，通常使用npm或yarn。由此我们便可知，我们直接可以在该插件中编写node.js相关的代码。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VsCode/">VsCode</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/06/05/VsCode插件与Node-js交互通信/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-算法图解之散列表" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -873,75 +946,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/05/26/公司内部技术分享之vue-js和前端工程化/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-CRMEB中因为重写规则导致的服务器异常和404之解决办法" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/" class="article-date">
-      <time datetime="2019-05-21T05:52:35.000Z" itemprop="datePublished">2019-05-21</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/">CRMEB中因为重写规则导致的服务器异常和404之解决办法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>问题描述:<br>安装CRMEB后，只能通过https://域名//index.php/admin访问到后台，而不能直接通过https://域名/admin访问到后台，以至于导致进入系统后台出现有的功能界面可用，有的功能界面则出现404或者服务器异常之类的，从浏览器上看就是路径方面的原因导致的，实际原因则是apache没有开启重写模块导致的。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/05/21/CRMEB中因为重写规则导致的服务器异常和404之解决办法/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
