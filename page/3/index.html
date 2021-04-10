@@ -292,6 +292,78 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-mysql快速插入数据三种方法" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/18/mysql快速插入数据三种方法/" class="article-date">
+      <time datetime="2021-01-18T13:34:52.000Z" itemprop="datePublished">2021-01-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/18/mysql快速插入数据三种方法/">mysql快速插入数据三种方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>今日发现一个独立的api微服务插入数据过慢，主要体现在日志aop的数据入库。于是我通过搜索想知道如何提高mysql数据库插入数据的效率。通过搜索我找到了三种方法:</p>
+<ul>
+<li>(1)修改mysql配置文件(mysql的ini文件增加bulk_insert_buffer_size=100M);</li>
+<li>(2)改写insert语句(使用insert delayed into);</li>
+<li>(3)一次插入多条数据(使用insert into table values(‘张三’,’18’),(‘李四’,’22’),(‘王五’,’28’)…;)。</li>
+</ul>
+<p>其中我尝试了第二种方法，效果能直接看到，只不过有延迟，没有普通insert into那样实时性(从字面上就很好理解，即延迟插入)，<br>这种方法和我用线程池异步处理效果很相似。</p>
+<p>参考资料如下:<br><a href="https://www.cnblogs.com/wangsongbai/p/10493700.html" target="_blank" rel="noopener">mysql千万级数据库插入速度和读取速度的调整记录</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Linux-git免密登录" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -892,75 +964,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2021/01/04/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List-版本问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Linux-设备上没有空间的问题解决" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/12/27/Linux-设备上没有空间的问题解决/" class="article-date">
-      <time datetime="2020-12-27T03:23:25.000Z" itemprop="datePublished">2020-12-27</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/27/Linux-设备上没有空间的问题解决/">Linux:设备上没有空间的问题解决</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>某天前端跟我说验证码的接口挂掉了，然后我急忙去看日志，发现一切正常，没有问题，服务运行正常，Redis也正常。后来看具体日志发现，出现这样的错误，设备上没有空间。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/12/27/Linux-设备上没有空间的问题解决/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
