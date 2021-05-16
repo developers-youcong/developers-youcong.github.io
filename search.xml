@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Java之特殊字符过滤处理</title>
+      <link href="/2021/05/16/Java%E4%B9%8B%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E8%BF%87%E6%BB%A4%E5%A4%84%E7%90%86/"/>
+      <url>/2021/05/16/Java%E4%B9%8B%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E8%BF%87%E6%BB%A4%E5%A4%84%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<p>核心方法如下(结合正则表达式和Matcher的方法进行替换):<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public static String strSpecialFilter(String str) &#123;</span><br><span class="line">    String regEx = &quot;[\\u00A0\\s\&quot;`~!@#$%^&amp;*()+=|&#123;&#125;&apos;:;&apos;,\\[\\].&lt;&gt;/?~！@#￥%……&amp;*（）——+|&#123;&#125;【】‘；：”“’。，、？]&quot;;</span><br><span class="line">    Pattern p = Pattern.compile(regEx);</span><br><span class="line">    Matcher m = p.matcher(str);</span><br><span class="line">    //将所有的特殊字符替换为空字符串</span><br><span class="line">    return m.replaceAll(&quot;&quot;).trim();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>CentOS7如何卸载自带OpenJDK</title>
       <link href="/2021/05/16/CentOS7%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6OpenJDK/"/>
       <url>/2021/05/16/CentOS7%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6OpenJDK/</url>
