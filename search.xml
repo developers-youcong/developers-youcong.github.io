@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>CentOS7如何卸载自带OpenJDK</title>
+      <link href="/2021/05/16/CentOS7%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6OpenJDK/"/>
+      <url>/2021/05/16/CentOS7%E5%A6%82%E4%BD%95%E5%8D%B8%E8%BD%BD%E8%87%AA%E5%B8%A6OpenJDK/</url>
+      
+        <content type="html"><![CDATA[<p>开发版的CentOS7.x一般自带OpenJDK,通常我们用商业版的Oracle JDK，这就需要将CentOS7.x自带的OpenJDK进行卸载。那么该如何卸载呢？</p><a id="more"></a><h2><span id="1首先通过命令获取默认安装的openjdk">1.首先，通过命令获取默认安装的OpenJDK</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep java</span><br></pre></td></tr></table></figure><h2><span id="2其次执行删除1中列出的jdk">2.其次，执行删除1中列出的jdk</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --nodeps 需要删除的OpenJDK名称</span><br></pre></td></tr></table></figure><p>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -e --nodeps java-1.8.0-openjdk-1.8.0.191.b12-0.el7_5.x86_64</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>正版office产品密钥-激活码</title>
       <link href="/2021/05/16/%E6%AD%A3%E7%89%88office%E4%BA%A7%E5%93%81%E5%AF%86%E9%92%A5-%E6%BF%80%E6%B4%BB%E7%A0%81/"/>
       <url>/2021/05/16/%E6%AD%A3%E7%89%88office%E4%BA%A7%E5%93%81%E5%AF%86%E9%92%A5-%E6%BF%80%E6%B4%BB%E7%A0%81/</url>
