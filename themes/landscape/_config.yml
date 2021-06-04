@@ -2,6 +2,9 @@
 menu:
   Home: /
   Archives: /archives
+  About: /about/
+  Plan: /planning/
+  GitHub: https://github.com/developers-youcong
 rss: /atom.xml
 
 # Content
