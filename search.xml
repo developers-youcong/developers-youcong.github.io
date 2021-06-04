@@ -4,6 +4,101 @@
   
     
     <entry>
+      <title>BASE理论之思考</title>
+      <link href="/2021/06/03/BASE%E7%90%86%E8%AE%BA%E4%B9%8B%E6%80%9D%E8%80%83/"/>
+      <url>/2021/06/03/BASE%E7%90%86%E8%AE%BA%E4%B9%8B%E6%80%9D%E8%80%83/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-什么是base理论">一、什么是BASE理论？</span></h2><p>BASE理论是对CAP中一致性和可用性权衡的结果，它的核心思想是：<strong>即使无法做到强一致性，但每个应用都可以根据自身业务特点，采用适当的方式来使系统达到最终一致性。</strong><br><a id="more"></a></p><p><strong>BASE理论包含如下三个元素:</strong></p><ul><li>BA:基本可用；</li><li>S:软状态，状态可以在一段时间内不同步；</li><li>E:最终一致性，在一定的时间窗口内，最终数据达成一致即可。</li></ul><h3><span id="1什么是基本可用">1.什么是基本可用？</span></h3><p><strong>举例说明:</strong><br>以曾经做过的OJ系统为例，OJ系统一般宕机的原因，主要是很多学员在相同的某个时间段统一提交。那么什么时候大多学员会统一提交呢？<br>一般刷题的时候，时间不确定，有的人喜欢上午刷题，有的人喜欢晚上刷题。基本上OJ是能够承载着不确定时间的提交。问题提到大多学员会在什么时候统一提交，答案是考试，考试有一定的时间规定，例如120分钟或150分钟等，超过时间规定范围视为放弃考试，一般考试会提交10分钟内交卷，而这个10分钟承载着大量的学员提交，而这个大量提交不亚于电商秒杀商品。大量的学员提交，会造成系统一度假死状态，即不能正常对外提供服务，通常我们的做法是弹性伸缩，所谓弹性伸缩就是每到考试的时候，服务器会自动根据学员提交的情况来决定是否创建更多的实例，通过创建更多的实例来平衡服务压力。但有些时候并不是创建更多的实例就能应对的，例如12306抢票，全国人民抢票回家，针对这样的场景，不仅仅是加机器来横向扩容保证服务可用，还得服务将降级处理，所谓服务降级分为两个层面，一个是延迟服务，另一个是暂停目前用不到的服务把资源给优先级高的服务，以此来达到服务基本可用的目的。</p><h3><span id="2什么是软状态">2.什么是软状态？</span></h3><p><strong>举例说明:</strong><br>以批量导入大量的历史数据为例，成千上万的Excel文件，里面装有上亿的数据，针对这些数据，系统使用人员在导入数据的过程中，总希望导入一个能够马上得到实时反馈(成功了多少，失败了多少，失败的原因是什么)，但从实际中来看，几百万条数据插入到数据库，肯定会消耗数据库资源，一定程度上降低数据库性能，使得其它应用服务受到一定程度上的影响。以我上家公司的解决办法就是延迟插入，首先用户在导入数据的时候，我们会马上提示，数据正在导入中，导入成功后会给该用户发送手机短信或者是邮件，但其实数据正在导入中并没有马上导入，而是进入到一个数据导入任务队列中，排队执行，先进先出，当执行到该任务时，数据任务导入队列会集中多个服务器进行数据导入，分批次导入，这样一来效率高的多。当然了，这样一来，用户不能马上看到数据，但这在一定程度上提高了系统整体可用性，避免因为数据导入而影响对外的正常服务，正好符合软状态，即数据状态可以在一段时间内不同步。</p><h3><span id="3什么是最终一致性">3.什么是最终一致性？</span></h3><p><strong>举例说明:</strong><br>以很久以前我写的一个博客爬虫为例，博客爬虫分别是有三个，一个思否爬虫，一个是CSDN爬虫，最后是博客园爬虫，三个系统均是一个小的SpringBoot微服务，我的主服务仍然是博客系统，爬虫数据抓取并实时入库，会在一定程度上导致我的主博客系统访问缓慢，原因是因为爬虫应用抓取数据并实时入库，性能在数据库上，后来我想了一个办法将爬虫数据库放在阿里云的RDS上，每当晚上的23点到第二天的5点，这个时间段，爬虫会将爬虫数据库上面的数据迁移到我的主博客系统上。<br>以此来保证数据的最终一致性，也就是我不一定要数据马上入库能看到效果，我可以允许一定的延迟时间，只要最终某个时间段我能看到大量的数据即可，当时做这个的目的在于那个时候研究数据库SQL优化，在研究SQL优化层面，我需要造一批数据，但我不喜欢假数据，于是通过爬虫抓取一些真实的数据，这些真实的数据主要为我个人服务，一方面作为学习的素材，另外一方面可以基于真实的内容做一些数据分析。</p><h2><span id="二-为什么会产生base理论">二、为什么会产生BASE理论？</span></h2><p>新的理论的产生总是为了改进和完善旧有的理论，但本质上仍然变化不大(这也是左耳朵耗子为什么着重说要注重基本功，也包括我的导师以及老J也曾说过多次)。<br><strong>例如:</strong><br>从单体应用到分布式微服务应用、从CAP理论到BASE理论、从前后端不分离到前后分离等，就很好的说明了这一点。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 分布式 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CAP理论之思考</title>
+      <link href="/2021/06/03/CAP%E7%90%86%E8%AE%BA%E4%B9%8B%E6%80%9D%E8%80%83/"/>
+      <url>/2021/06/03/CAP%E7%90%86%E8%AE%BA%E4%B9%8B%E6%80%9D%E8%80%83/</url>
+      
+        <content type="html"><![CDATA[<p>分布式系统的最大难点就是各个节点如何保持一致。最近我在工作中就遇到这样的问题，不同节点之间，彼此通过API，进行通信，交互数据，但有些服务节点存在延迟等问题，导致我看到的并不是实时的数据，以及系统更新时，更新A服务，间接影响到B服务，而B服务受到影响后，C服务随之受到影响，以此类推。对于公司技术架构平台设计者之一的我而言，虽然采用一些临时性措施解决了这些问题，但我不得不深入的去思考分布式一些本质上的东西，因为很多问题不从根本上弄清楚并解决，后面只会以一种或多种不同的状态存在着。搞清楚理论并带着直面的问题思考，或许能找到解决问题的最佳方式。</p><a id="more"></a><h2><span id="一-什么是cap理论引用维基百科解释">一、什么是CAP理论(引用维基百科解释)？</span></h2><p>在理论计算机科学中，CAP理论，又被称作布鲁尔定理，它指出对于一个分布式计算系统来说，<strong>不可能同时满足以下三点：</strong></p><ul><li>一致性(等同于所有节点访问同一份最新的数据副本）；</li><li>可用性(每次请求都能获取到非错的响应——但是不保证获取的数据为最新数据)；</li><li>分区容错性(以实际效果而言，分区相当于对通信的时限要求。系统如果不能在时限内达成数据一致性，就意味着发生了分区的情况，必须就当前操作在C和A之间做出选择)。</li></ul><p>C对应的是一致性，A对应的是可用性，P对应的是分区容错性。</p><h2><span id="二-为什么说c-a-p只可同时满足两点而不能三者兼顾呢">二、为什么说C、A、P只可同时满足两点，而不能三者兼顾呢？</span></h2><p>一致性、可用性，分区容错性，分区容错性是一致性和可用性的前提。<br>这里我引用《分布式服务架构:原理、设计与实战》来解释为什么不能三者兼顾，该书是这样概括:<br><strong>CAP原理证明，任何分布式系统只可满足以上两点，无法三者兼顾。由于关系型数据库是单节点无复制的，因此不具有分区容错性，但是具有一致性和可用性，而分布式的服务化系统都需要满足分区容忍性，那么我们必须在一致性和可用性之间进行权衡。如果在网络上有消息丢失，也就是出现了网络分区，则复制操作可能会被延后，如果这时我们的使用方等待复制完成再返回，则可能导致有限时间内无法返回，就失去了可用性；而如果使用方不等待复制完成，而在主分片写完后直接返回，则具有了可用性，但是失去了一致性。</strong></p><h2><span id="三-c-a-p究竟该如何取舍">三、C、A、P究竟该如何取舍？</span></h2><p>从我个人的角度来看，并结合目前的情况，分区容错性和可用性于我们目前是最重要的，数据上我们可以允许有一定或部分的延迟。A和P是适合我们目前的情况。</p><h2><span id="四-那么如何实现a和p呢即如何实现可用性和分区容错性">四、那么如何实现A和P呢？即如何实现可用性和分区容错性？</span></h2><p>最直接的方式就是分布式(分布式中的每个节点都需要集群，通过集群的冗余极大的保证可用性，不同节点的职责保证系统的稳定性)，综合利用多台服务器提高整体性能，这个性能包括提高容错率、提高并发处理能力、各个节点的服务器计算能力等。<br>之前写过一篇文章<a href="https://youcongtech.com/2021/04/17/%E4%BB%8E%E5%8D%95%E4%BD%93%E6%9E%B6%E6%9E%84%E5%88%B0%E5%88%86%E5%B8%83%E5%BC%8F%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%9E%B6%E6%9E%84%E7%9A%84%E6%80%9D%E8%80%83/" target="_blank" rel="noopener">《从单体架构到分布式微服务架构的思考》</a>或许让大家对分布式应用系统有一定的理解。</p><h2><span id="五-总结">五、总结</span></h2><p>近来遇到了很多问题，让我不得不更深入地学习与思考，在不断深入地学习与思考以及实践过程中，摸索出适合公司的分布式架构体系，但这并不是一件很容易的事情，面对着很多突发情况和问题，我需要保持冷静，并积极寻找问题解决的办法。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 分布式理论 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>JavaWeb之Response文件下载(中文编码问题)</title>
+      <link href="/2021/06/03/JavaWeb%E4%B9%8BResponse%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD-%E4%B8%AD%E6%96%87%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/"/>
+      <url>/2021/06/03/JavaWeb%E4%B9%8BResponse%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD-%E4%B8%AD%E6%96%87%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p>很久以前遇到过这样的问题，最近再次遇到，做个记录。<br><a id="more"></a><br><strong>核心代码如下(这里采用Excel导出是EasyPoi):</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(&quot;/downloadPost&quot;)</span><br><span class="line">   public void downloadPost(HttpServletResponse response) &#123;</span><br><span class="line">       try &#123;</span><br><span class="line">           Workbook workbook = ExcelExportUtil.exportExcel(new ExportParams(&quot;博客园文章数据&quot;, &quot;博客园文章数据&quot;),</span><br><span class="line">                   PostExcelEntity.class, postService.selectBasePostDataList());</span><br><span class="line">           // 指定下载的文件名--设置响应头</span><br><span class="line">           response.setHeader(&quot;Content-Disposition&quot;, &quot;attachment;filename=&quot; + URLEncoder.encode(&quot;博客园文章数据.xls&quot;, &quot;UTF-8&quot;));</span><br><span class="line">           response.setContentType(&quot;application/vnd.ms-excel;charset=UTF-8&quot;);</span><br><span class="line">           response.setHeader(&quot;Pragma&quot;, &quot;no-cache&quot;);</span><br><span class="line">           response.setHeader(&quot;Cache-Control&quot;, &quot;no-cache&quot;);</span><br><span class="line">           response.setDateHeader(&quot;Expires&quot;, 0);</span><br><span class="line">           // 写出数据输出流到页面</span><br><span class="line">           OutputStream output = response.getOutputStream();</span><br><span class="line">           BufferedOutputStream bufferedOutPut = new BufferedOutputStream(output);</span><br><span class="line">           workbook.write(bufferedOutPut);</span><br><span class="line">           bufferedOutPut.flush();</span><br><span class="line">           bufferedOutPut.close();</span><br><span class="line">           output.close();</span><br><span class="line">       &#125; catch (IOException e) &#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>java使用jsoup时绕过https证书验证</title>
+      <link href="/2021/06/03/java%E4%BD%BF%E7%94%A8jsoup%E6%97%B6%E7%BB%95%E8%BF%87https%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81/"/>
+      <url>/2021/06/03/java%E4%BD%BF%E7%94%A8jsoup%E6%97%B6%E7%BB%95%E8%BF%87https%E8%AF%81%E4%B9%A6%E9%AA%8C%E8%AF%81/</url>
+      
+        <content type="html"><![CDATA[<p><strong>详细错误信息:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SunCertPathBuilderException: unable to find valid certification path to requested target</span><br></pre></td></tr></table></figure></p><p><strong>问题原因:</strong><br>爬相关数据，因该网站有SSL加密，故无法爬取。</p><p><strong>问题解决之核心代码:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    * 绕过HTTPS验证</span><br><span class="line">    */</span><br><span class="line">   static public void initTSL() &#123;</span><br><span class="line">       try &#123;</span><br><span class="line">           SSLContext context = SSLContext.getInstance(&quot;TLS&quot;);</span><br><span class="line">           context.init(null, new X509TrustManager[]&#123;new X509TrustManager() &#123;</span><br><span class="line">               @Override</span><br><span class="line">               public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException &#123;</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">               @Override</span><br><span class="line">               public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException &#123;</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">               @Override</span><br><span class="line">               public X509Certificate[] getAcceptedIssuers() &#123;</span><br><span class="line">                   return new X509Certificate[0];</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;&#125;, new SecureRandom());</span><br><span class="line">           HttpsURLConnection.setDefaultSSLSocketFactory(context.getSocketFactory());</span><br><span class="line">       &#125; catch (NoSuchAlgorithmException e) &#123;</span><br><span class="line">       &#125; catch (KeyManagementException e) &#123;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Linux下删除当前目录及子目录下的所有.txt文件</title>
+      <link href="/2021/06/03/Linux%E4%B8%8B%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E5%8F%8A%E5%AD%90%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89-txt%E6%96%87%E4%BB%B6/"/>
+      <url>/2021/06/03/Linux%E4%B8%8B%E5%88%A0%E9%99%A4%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95%E5%8F%8A%E5%AD%90%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%9A%84%E6%89%80%E6%9C%89-txt%E6%96%87%E4%BB%B6/</url>
+      
+        <content type="html"><![CDATA[<p>因为某种应用场景我需要将特定目录下的txt文件进行清理，核心命令如下:<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find 目录 -name &apos;*.txt&apos; -type f -print -exec rm -rf &#123;&#125; \;</span><br></pre></td></tr></table></figure></p><p>例如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find /home/tech/data_log -name &apos;*.txt&apos; -type f -print -exec rm -rf &#123;&#125; \;</span><br></pre></td></tr></table></figure></p><p>这样就能将data_log目录下的所有txt进行删除。当然了，不仅仅是txt文件，还可以是其它的文件。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>技术人对赚钱的思考与摸索</title>
       <link href="/2021/05/23/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%AF%B9%E8%B5%9A%E9%92%B1%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E6%91%B8%E7%B4%A2/"/>
       <url>/2021/05/23/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%AF%B9%E8%B5%9A%E9%92%B1%E7%9A%84%E6%80%9D%E8%80%83%E4%B8%8E%E6%91%B8%E7%B4%A2/</url>
