@@ -306,144 +306,6 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
-    <article id="post-《设计模式之禅》之六大设计原则中篇" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/11/05/《设计模式之禅》之六大设计原则中篇/" class="article-date">
-      <time datetime="2019-11-05T01:49:11.000Z" itemprop="datePublished">2019-11-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/05/《设计模式之禅》之六大设计原则中篇/">《设计模式之禅》之六大设计原则中篇</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>本文主要讲依赖倒置原则和接口隔离原则。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/11/05/《设计模式之禅》之六大设计原则中篇/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-《设计模式之禅》之六大设计原则上篇" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/11/04/《设计模式之禅》之六大设计原则上篇/" class="article-date">
-      <time datetime="2019-11-04T05:49:30.000Z" itemprop="datePublished">2019-11-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/04/《设计模式之禅》之六大设计原则上篇/">《设计模式之禅》之六大设计原则上篇</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>本文主要讲单一职责原则和里氏替换原则。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/11/04/《设计模式之禅》之六大设计原则上篇/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
     <article id="post-git-bash-乱码问题之解决方案" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -975,6 +837,150 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/09/15/SpringBoot之热部署/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-MP实战系列-十九-之批量新增" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/15/MP实战系列-十九-之批量新增/" class="article-date">
+      <time datetime="2019-09-15T11:43:38.000Z" itemprop="datePublished">2019-09-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/15/MP实战系列-十九-之批量新增/">MP实战系列(十九)之批量新增</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>批量操作在实际开发中也应用非常多，例如批量下发优惠券、批量添加用户等。</p>
+<p>以MyBatis为例，通常实现批量操作，有这么几种方式?</p>
+<p>第一，单条插入sql语句，进行for循环遍历，基准条件是根据前端传过的数组长度而定，如果传了四个参数过来，也就是长度为4，代表遍历4次(也就是执行四次插入)，这种方式不太建议采用;</p>
+<p>第二、编写相关mapper<br>关于这一点不再赘述，，也参考我的这篇文章<a href="https://www.cnblogs.com/youcong/p/9356776.html" target="_blank" rel="noopener">SSM框架之批量增加示例(同步请求jsp视图解析)</a><br>其主要使用的就是MyBatis的动态sql;</p>
+<p>换做MyBatis-Plus，就不必要编写批量新增相关的sql以及mapper(可以理解为数据访问接口)，因为MyBatis-Plus已经封装好了，你只需按照对应的规则进行调用即可。</p>
+<p>以下面这段路由层代码为例，示例如下:<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis-Plus/">MyBatis-Plus</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/09/15/MP实战系列-十九-之批量新增/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-微信小程序之上传图片-含前后端代码例子" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/11/微信小程序之上传图片-含前后端代码例子/" class="article-date">
+      <time datetime="2019-09-11T08:57:08.000Z" itemprop="datePublished">2019-09-11</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/11/微信小程序之上传图片-含前后端代码例子/">微信小程序之上传图片(含前后端代码例子)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>此代码示例，能够让你成功将图片上传至后端，后端做相应的处理，然后返回成功码。</p>
+<h2 id="前端小程序代码"><a href="#前端小程序代码" class="headerlink" title="前端小程序代码"></a>前端小程序代码</h2>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序开发/">微信小程序开发</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/09/11/微信小程序之上传图片-含前后端代码例子/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
