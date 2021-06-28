@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="一、爬虫的定义爬虫是一个模拟人类请求网站行为的程序。可以自动请求网页、并将数据抓取下来，然后使用一定的规则提取有价值的数据。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-06-27T14:47:50.855Z">
+<meta property="og:updated_time" content="2021-06-28T05:11:48.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="爬虫与反爬虫策略思考">
 <meta name="twitter:description" content="一、爬虫的定义爬虫是一个模拟人类请求网站行为的程序。可以自动请求网页、并将数据抓取下来，然后使用一定的规则提取有价值的数据。">
@@ -372,7 +372,7 @@ var _hmt = _hmt || [];
 <p>具体可阅读这篇文章:<br><a href="https://zhuanlan.zhihu.com/p/66997586#:~:text=%E5%9C%A82019%E5%B9%B405%E6%9C%8828%E6%97%A5%E5%9B%BD%E5%AE%B6%E7%BD%91%E4%BF%A1%E5%8A%9E%E5%8F%91%E5%B8%83%E7%9A%84%E3%80%8A%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E5%BE%81%E6%B1%82%E6%84%8F%E8%A7%81%E7%A8%BF%EF%BC%89%E3%80%8B%E4%B8%AD%EF%BC%8C%E6%8B%9F%E9%80%9A%E8%BF%87%E8%A1%8C%E6%94%BF%E6%B3%95%E8%A7%84%E7%9A%84%E5%BD%A2%E5%BC%8F%EF%BC%8C%E5%AF%B9%E7%88%AC%E8%99%AB%E7%9A%84%E4%BD%BF%E7%94%A8%E8%BF%9B%E8%A1%8C%E9%99%90%E5%88%B6%EF%BC%9A.%20%E7%AC%AC%E5%8D%81%E5%85%AD%E6%9D%A1%20%E7%BD%91%E7%BB%9C%E8%BF%90%E8%90%A5%E8%80%85%E9%87%87%E5%8F%96%E8%87%AA%E5%8A%A8%E5%8C%96%E6%89%8B%E6%AE%B5%E8%AE%BF%E9%97%AE%E6%94%B6%E9%9B%86%E7%BD%91%E7%AB%99%E6%95%B0%E6%8D%AE%EF%BC%8C%E4%B8%8D%E5%BE%97%E5%A6%A8%E7%A2%8D%E7%BD%91%E7%AB%99%E6%AD%A3%E5%B8%B8%E8%BF%90%E8%A1%8C%EF%BC%9B%E6%AD%A4%E7%B1%BB%E8%A1%8C%E4%B8%BA%E4%B8%A5%E9%87%8D%E5%BD%B1%E5%93%8D%E7%BD%91%E7%AB%99%E8%BF%90%E8%A1%8C%EF%BC%8C%E5%A6%82%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%BF%E9%97%AE%E6%94%B6%E9%9B%86%E6%B5%81%E9%87%8F%E8%B6%85%E8%BF%87%E7%BD%91%E7%AB%99%E6%97%A5%E5%9D%87%E6%B5%81%E9%87%8F%E4%B8%89%E5%88%86%E4%B9%8B%E4%B8%80%EF%BC%8C%E7%BD%91%E7%AB%99%E8%A6%81%E6%B1%82%E5%81%9C%E6%AD%A2%E8%87%AA%E5%8A%A8%E5%8C%96%E8%AE%BF%E9%97%AE%E6%94%B6%E9%9B%86%E6%97%B6%EF%BC%8C%E5%BA%94%E5%BD%93%E5%81%9C%E6%AD%A2%E3%80%82.,%E5%9B%BD%E5%AE%B6%E4%BA%92%E8%81%94%E7%BD%91%E4%BF%A1%E6%81%AF%E5%8A%9E%E5%85%AC%E5%AE%A4%E5%85%B3%E4%BA%8E%E3%80%8A%E6%95%B0%E6%8D%AE%E5%AE%89%E5%85%A8%E7%AE%A1%E7%90%86%E5%8A%9E%E6%B3%95%EF%BC%88%E5%BE%81%E6%B1%82%E6%84%8F%E8%A7%81%E7%A8%BF%EF%BC%89%E3%80%8B%E5%85%AC%E5%BC%80%E5%BE%81%E6%B1%82%E6%84%8F%E8%A7%81%E7%9A%84%E9%80%9A%E7%9F%A5-%E4%B8%AD%E5%85%B1%E4%B8%AD%E5%A4%AE%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%92%8C%E4%BF%A1%E6%81%AF%E5%8C%96%E5%A7%94%E5%91%98%E4%BC%9A%E5%8A%9E%E5%85%AC%E5%AE%A4%20%E2%80%8Bwww.cac.gov.cn.%20%E6%AD%A4%E5%89%8D%EF%BC%8C%E6%AD%A3%E5%A5%BD%E6%96%B0%E5%8D%8E%E7%A4%BE%E7%9A%84%E6%8A%A5%E9%81%93%E4%BA%86%E4%B8%80%E5%AE%B6%E5%A4%A7%E8%82%86%E9%80%9A%E8%BF%87%E7%88%AC%E8%99%AB%E8%8E%B7%E5%8F%96%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E7%9A%84%E6%A1%88%E4%BE%8B%EF%BC%9A.%20%E5%8C%97%E4%BA%AC%E8%AD%A6%E6%96%B9%E8%BF%91%E6%9C%9F%E7%A0%B4%E8%8E%B7%E5%A4%87%E5%8F%97%E5%85%B3%E6%B3%A8%E7%9A%84%E5%B7%A7%E8%BE%BE%E7%A7%91%E6%8A%80%E9%9D%9E%E6%B3%95%E8%8E%B7%E5%8F%96%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E6%95%B0%E6%8D%AE%E6%A1%88%E3%80%82." target="_blank" rel="noopener">爬虫的法律红线</a></p>
 <p>总而言之，数据爬虫不要影响网站运营者的正常运营，所爬取的数据应该是该网站公开的(而非绕过鉴权抓取的)，所爬取的数据未经许可不得用于商业用途。</p>
 <h2><span id="七-反爬虫的策略有哪些">七、反爬虫的策略有哪些</span></h2><h3><span id="1基于ip反爬虫ip限制频次">1.基于IP反爬虫(IP限制频次)</span></h3><h3><span id="2通过header反爬虫user-agent-referer检测">2.通过Header反爬虫(User-Agent + Referer检测)</span></h3><h3><span id="3基于用户行为反爬虫">3.基于用户行为反爬虫</span></h3><h3><span id="4动态页面反爬虫">4.动态页面反爬虫</span></h3><h3><span id="5cookie限制登录限制">5.Cookie限制(登录限制)；</span></h3><h3><span id="6验证码限制">6.验证码限制；</span></h3><h3><span id="7js加密通过js加密请求参数-解密加密的数据来反爬">7.js加密(通过js加密请求参数、解密加密的数据来反爬)；</span></h3><h3><span id="8css偏移反爬虫css偏移反爬虫指的是利用css样式将乱序的文字排版为人类正常阅读的顺序">8.CSS偏移反爬虫(CSS偏移反爬虫指的是利用CSS样式将乱序的文字，排版为人类正常阅读的顺序)。</span></h3><p>这些反爬策略在各大网站上都有体现，如豆瓣、美团、Boss直聘、淘宝、蔚蓝地图、拉勾等。</p>
-<h2><span id="八-总结">八、总结</span></h2><p>《孙子兵法》有云，故兵无常势力，水无长形。爬虫的技术不断演变，反爬虫策略也应与时俱进。不要妄想着一套不变的东西能够永久的适应当下的发展(近来在做架构相关的设计，深有体会)。</p>
+<h2><span id="八-总结">八、总结</span></h2><p>《孙子兵法》有云，故兵无常势力，水无常形。爬虫的技术不断演变，反爬虫策略也应与时俱进。不要妄想着一套不变的东西能够永久的适应当下的发展(近来在做架构相关的设计，深有体会)。</p>
 
       
     </div>
@@ -384,7 +384,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2021/06/27/爬虫与反爬虫策略思考/">爬虫与反爬虫策略思考</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2021-06-27, 21:39:53</p>
-        <p><span>最后更新:</span>2021-06-27, 22:47:50</p>
+        <p><span>最后更新:</span>2021-06-28, 13:11:48</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2021/06/27/爬虫与反爬虫策略思考/" title="爬虫与反爬虫策略思考">http://developers-youcong.github.io/2021/06/27/爬虫与反爬虫策略思考/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2021/06/27/爬虫与反爬虫策略思考/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
