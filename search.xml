@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>我对低代码的理解</title>
+      <link href="/2021/06/28/%E6%88%91%E5%AF%B9%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+      <url>/2021/06/28/%E6%88%91%E5%AF%B9%E4%BD%8E%E4%BB%A3%E7%A0%81%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-什么是低代码它的特征有哪些愿景是什么">一、什么是低代码?它的特征有哪些？愿景是什么？</span></h2><p>简单来讲，低代码(Low Code)就是一种可视化搭建系统，从字面意思来讲，一是可视化；二是少写代码。 无代码(No Code)同样从字面上来理解，一是可视化，二是不写代码。<br><a id="more"></a></p><p><strong>低代码的特征如下:</strong></p><ul><li>可视化IDE：一种用于可视化定义应用程序的UI，工作流和数据模型，并在必要时添加手写代码的环境。</li><li>各种后端或服务的连接器：自动处理数据结构，存储和检索。</li><li>应用程序生命周期管理器：用于在测试，登台和生产中构建，调试，部署和维护应用程序的自动化工具。</li><li>跨平台。</li><li>所见即所得。</li></ul><p><strong>愿景如下:</strong></p><ul><li>让技术人员开发应用更简单。</li><li>让不懂代码的业务人员也能开发应用。</li></ul><h2><span id="二-低代码火爆的背景">二、低代码火爆的背景</span></h2><h3><span id="1社会-经济因素">1.社会、经济因素</span></h3><p>2020年的疫情冲击不容忽视，它挑战了很多企业原有的商业模式、协作模式，数字化经济的繁荣、信息化需求的激增，造成程序员供需失衡。</p><h3><span id="2技术因素">2.技术因素</span></h3><p>云计算技术的成熟、移动化的趋势等，为低代码2.0提供了技术基础。万维网出现前夕，计算机网络是一座座孤岛，互联网打破了这些孤岛。同样，如今的信息孤岛、云端孤岛屡见不鲜，曾经的低代码作为开发工具也只是在构建孤岛。但”低代码+云”的想象力将不止于此，如果能形成”互联、共生的生态”，它有可能会打破当前应用与应用，企业与企业，开发者与开发者之间的孤岛，大大提高代码复用率，进而引发一次效率的飞跃。</p><h3><span id="3环境因素">3.环境因素</span></h3><p>国外低代码平台成功商业化，国内”互联网+”、”数智化转型”风口等都是催化因子。</p><h2><span id="三-低代码的利与弊分别有哪些">三、低代码的利与弊，分别有哪些？</span></h2><h3><span id="1低代码的利">1.低代码的利</span></h3><ul><li>更快的软件开发速度；</li><li>敏捷度提高；</li><li>更好的用户体验；</li><li>保持核心竞争力的同时，完成更多工作。</li></ul><h3><span id="2低代码的弊">2.低代码的弊</span></h3><ul><li>安全性与可靠性(由于是拖拉拽生成的代码无法保证代码的安全性和可靠性)；</li><li>有限集成(不能很好的适应业务的变化和发展，例如需要集成新的东西时，新的东西某些组件可能与现有组件冲突等)；</li><li>自定义功能(个性化定制的局限性)。</li></ul><h2><span id="四-现有的低代码平台有哪些国内和国外">四、现有的低代码平台有哪些(国内和国外)？</span></h2><ul><li><a href="https://www.jiandaoyun.com/" target="_blank" rel="noopener">简道云</a></li><li><a href="https://www.mingdao.com/home.htm" target="_blank" rel="noopener">明道云</a></li><li><a href="https://www.ivx.cn/" target="_blank" rel="noopener">IVX</a></li><li><a href="https://www.actionsoft.com.cn/" target="_blank" rel="noopener">炎黄盈动</a></li><li><a href="https://www.aliwork.com/" target="_blank" rel="noopener">宜搭</a></li><li><a href="https://powerapps.microsoft.com/zh-cn/" target="_blank" rel="noopener">微软-Power Apps</a></li><li><a href="https://developers.google.com/appmaker?hl=id" target="_blank" rel="noopener">Google-App Maker</a></li><li><a href="https://www.mendix.com/zh/" target="_blank" rel="noopener">Mendix</a></li><li><a href="https://www.outsystems.com/" target="_blank" rel="noopener">OutSystems</a></li></ul><h2><span id="五-我与低代码的两次正面接触">五、我与低代码的两次正面接触</span></h2><p>最早的接触是在某外包公司做项目实施的时候，通过拖拉拽的形式生成一个又一个子系统(这个时候体现低代码的”无代码”)。<br>而后到了某创业公司，为了提高开发效率使用一些开源项目的代码生成器(这个时候体现低代码的”少写代码”)。<br>当时开源代码的代码生成器采用过jeecg、mybatis-plus-generator、renren-generator、jeesite4等。</p><h2><span id="六-我对低代码的思考">六、我对低代码的思考</span></h2><p>低代码的初衷是通过复用性来提高开发效率，这个初衷是很好的，但在实际落地过程中仍然会存在不少问题。</p><ul><li><p><strong>产生很多垃圾代码</strong>(MyBatis的代码生成器生成一堆CRUD，但每次还得改很多东西，这也是我那个时候在做门锁系统时，放弃使用MyBatis的代码生成器转而使用MyBatis-Plus的代码生成器的重要原因之一)。</p></li><li><p><strong>定制化很有限</strong>(例如一个专门做电商相关低代码平台，这时客户突然有一个新的需求，即增加一个云上课平台，基于原有的低代码平台进行扩展可能会有很多问题，不仅仅是短时间内做不做的出来的问题，还有就是做出来以后的兼容性问题等)。</p></li><li><p><strong>平台依赖性</strong>(对于一些公司而言，不想过于依赖于平台，受制于平台，这也间接的解释为什么我们要开发一个属于自己的操作系统(鸿蒙系统的诞生))。</p></li></ul><p>本文参考资料如下:<br><a href="https://zhuanlan.zhihu.com/p/351174365" target="_blank" rel="noopener">深入看透低代码</a><br><a href="https://zhuanlan.zhihu.com/p/361926149" target="_blank" rel="noopener">开发工程师为什么要使用低代码平台？</a><br><a href="https://zhuanlan.zhihu.com/p/349415091" target="_blank" rel="noopener">盘点 | 有哪些好用的低代码开发平台？</a><br><a href="https://blog.csdn.net/zhuzhoulin/article/details/114680747" target="_blank" rel="noopener">低代码开发平台建设步骤及思考</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术思考与实践 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>杨二前辈给我的几点启发</title>
       <link href="/2021/06/27/%E6%9D%A8%E4%BA%8C%E5%89%8D%E8%BE%88%E7%BB%99%E6%88%91%E7%9A%84%E5%87%A0%E7%82%B9%E5%90%AF%E5%8F%91/"/>
       <url>/2021/06/27/%E6%9D%A8%E4%BA%8C%E5%89%8D%E8%BE%88%E7%BB%99%E6%88%91%E7%9A%84%E5%87%A0%E7%82%B9%E5%90%AF%E5%8F%91/</url>
