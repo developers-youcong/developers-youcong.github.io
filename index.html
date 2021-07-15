@@ -335,7 +335,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>今日发现某个代理出现下载文件失败问题，相当于点击下载，直接提示下载失败，需要点击继续才能成功，基于这个问题我搜索查找了一下，最后发现是代理配置的有问题，这是原来的问题配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location /file &#123;</span><br><span class="line">          proxy_pass http://127.0.0.1:8080/report;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></p>
+              <p>今日发现某个代理出现下载文件失败问题，相当于点击下载，直接提示下载失败，需要点击继续才能成功，基于这个问题我搜索查找了一下，最后发现是代理配置的有问题，这是原来的问题配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location /file &#123;</span><br><span class="line">          proxy_pass http://127.0.0.1:8080/files;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></p>
           
       
     </div>
