@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="一、无依赖原则组件依赖关系图不应该出现环。 我们一定有过这样的经历: 当你花了一整天的时间，好不容易搞定了一段代码，第二天上班时却发现这段代码莫名其妙地又不能工作。这通常是因为有人在你走后修改了你所依赖的某个组件。这种情况叫做”一觉醒来综合症”。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-06-04T15:18:04.985Z">
+<meta property="og:updated_time" content="2021-08-10T15:25:24.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《架构整洁之道》之组件耦合">
 <meta name="twitter:description" content="一、无依赖原则组件依赖关系图不应该出现环。 我们一定有过这样的经历: 当你花了一整天的时间，好不容易搞定了一段代码，第二天上班时却发现这段代码莫名其妙地又不能工作。这通常是因为有人在你走后修改了你所依赖的某个组件。这种情况叫做”一觉醒来综合症”。">
@@ -346,8 +346,7 @@ var _hmt = _hmt || [];
           
         <h2><span id="一-无依赖原则">一、无依赖原则</span></h2><p><strong>组件依赖关系图不应该出现环。</strong></p>
 <p>我们一定有过这样的经历:</p>
-<p>当你花了一整天的时间，好不容易搞定了一段代码，第二天上班时却发现这段代码莫名其妙地又不能工作。这通常是因为有人在你走后修改了你所依赖的某个组件。这种情况叫做”一觉醒来综合症”。</p>
-<a id="more"></a>
+<p>当你花了一整天的时间，好不容易搞定了一段代码，第二天上班时却发现这段代码莫名其妙地又不能工作。这通常是因为有人在你走后修改了你所依赖的某个组件。这种情况叫做”一觉醒来综合症”。<br><a id="more"></a></p>
 <p>这种综合症的主要病因是:</p>
 <p>多个程序员同时修改了同一个源代码文件。虽然在规模相对较小、人员较少的项目中，这种问题或许并不严重，但是随着项目的增长，研发人员的增加，这种每天早上刚上班时都要经历一遍的痛苦就会越来越多。甚至会严重到让有的团队在长达数周的时间内都不能发布一个稳定的项目版本，因为每个人都在不停地修改自己的代码，以适应其他人所提交的变更。</p>
 <p>针对上述问题逐渐演化出两种解决方案。一种是”每周构建”，另一种是”无依赖环原则”。</p>
@@ -363,6 +362,41 @@ var _hmt = _hmt || [];
 <p>组件结构图中的一个重要目标是指导如何隔离频繁的变更。我们不希望哪些频繁变更的组件影响到其他本来应该很稳定的组件，例如，我们通常不会希望无关紧要的GUI变更影响到业务逻辑组件;我们也不希望对报表的增删操作影响到其高阶策略。出于这样的考虑，软件架构师们才有必要设计并且铸造出一套组件依赖关系图来，以便将稳定的高价值组件与常变得组件隔离开，从而起到保护作用。</p>
 <p>另外，随着应用程序的增长，创建可重用组件的需要也会逐渐重要起来。这时共同复用原则又会开始影响组件的组成。最后当循环依赖出现时，随着无循环依赖原则的应用，组件依赖关系会产生相应的抖动和扩张。</p>
 <p>如果我们在设计具体类之前就来设计组件依赖关系，那么几乎是必然要失败的。因为在当下，我们对项目中的共同闭包一无所知，也不可能知道哪些组件可以复用，这样几乎一定会创造出循环依赖的组件。因此，组件依赖关系是必须要随着项目逻辑设计一起扩张和演进的。</p>
+<h2><span id="三-稳定依赖原则">三、稳定依赖原则</span></h2><p><strong>依赖关系必须要指向更稳定的方向。</strong></p>
+<p>设计这件事情不可能是完全静止的，如果我们要让一个设计是可维护性的，那么其中某些部分就必须可变的。</p>
+<p>通过共同闭包原则(CCP)，我们可以创造出对某些变更敏感，对其他变更不敏感的组件。</p>
+<p>任何一个我们预期会经常变更的组件都不应该被一个难于修改的组件所依赖，否则这个多变的组件也将会变得非常难以被修改。</p>
+<h3><span id="1稳定性">1.稳定性</span></h3><p>软件组件的变更困难度与很多因素有关，例如代码的体量大小、复杂度、清晰度等。这里我们暂时忽略这些，只集中讨论一个特别因素，那就是让软件组件难以修改的一个最直接的办法就是让很多其他组件依赖于它。带有许多入向依赖关系的组件是非常稳定的，因为它的任何变更都需要应用到所有依赖它的组件上。</p>
+<h3><span id="2稳定性指标">2.稳定性指标</span></h3><ul>
+<li>Fan-in：入向依赖，这个指标指代了组件外部类依赖于组件内部类的数量。</li>
+<li>Fan-out：出向依赖，这个指标指代了组件内部类依赖于组件外部类的数量。</li>
+<li>I：不稳定性，I=Fan-out/(Fan-in+Fan-out)。改指标的范围是[0,1],I=0意味着组件是最稳定的，I=1意味着组件是最不稳定的。</li>
+</ul>
+<p>当I指标等于1时，说明没有组件依赖当前组件(Fan-in=0)，同时该组件却依赖于其他组件(Fan-out&gt;0)。这是组件最不稳定的一种情况，我们认为这种组件是”不负责的、对外依赖的”。由于这个组件没有被其他组件依赖，所以自然也就没有力量会干预它的变更，同时也因为该组件依赖于其他组件，所以就必然会经常需要变更。</p>
+<p>相反，当I=0的时候，说明当前组件是其他组件所依赖的目标(Fan-in&gt;0)，同时其自身并不依赖任何其他组件(Fan-out=0)。我们通常认为这样的组件是”负责的、不对外依赖的”。这是组件最具稳定性的一种情况，其他组件对它的依赖关系会导致这个组件很难被变更，同时由于它没有对外依赖关系，所以不会有来自外部的变更理由。</p>
+<p>稳定依赖原则(SDP)的要求是让每个组件的I指标都必须大于其所依赖组件的I指标。也就是说，组件结构依赖图中各组件的I指标必须要按其依赖关系方向递减。</p>
+<h3><span id="3并不是所有组件都应该是最稳定的">3.并不是所有组件都应该是最稳定的</span></h3><p>如果一个系统中的所有组件都处于最高稳定性状态，那么系统就一定无法再进行变更了，这显然不是我们想要的。事实上，我们设计组件架构图的目的就是要决定让哪些组件最稳定，让哪些组件不稳定。</p>
+<h3><span id="4抽象组件">4.抽象组件</span></h3><p>抽象组件通常会非常稳定，可以被那些相对不稳定的组件依赖。</p>
+<h2><span id="四-稳定抽象原则">四、稳定抽象原则</span></h2><p><strong>一个组件的抽象化程度应该与其稳定性保持一致。</strong></p>
+<h3><span id="1高阶策略应该放在哪里">1.高阶策略应该放在哪里</span></h3><p>在一个软件系统中，总有些部分是不应该经常发生变更的。这些部分通常用于表现该系统的高阶架构设计及一些策略相关的高阶决策。</p>
+<p><strong>如何才能让一个无限稳定的组件(I=0)接受变更呢？</strong><br>开闭原则(OCP)为我们提供了答案。这个原则告诉我们:创造一个足够灵活、能够被扩展，而且不需要修改的类是可能的，而这正是我们所需要的。</p>
+<p><strong>哪一种类符合这个原则呢？</strong><br>答案是抽象类。</p>
+<h3><span id="2稳定抽象原则简介">2.稳定抽象原则简介</span></h3><p>稳定抽象原则(SAP)为组件的稳定性与它的抽象化程度建立了一种关联。一方面，该原则要求稳定的组件同时应该是抽象的，这样它的稳定性就不会影响到扩展性。另一方面，该原则也要求一个不稳定的组件应该包含具体的实现代码，这样它的不稳定性就可以通过具体的代码被轻易修改。</p>
+<h3><span id="3衡量抽象化程度">3.衡量抽象化程度</span></h3><ul>
+<li>Nc：组件中类的数量。</li>
+<li>Na：组件中抽象类和接口的数量。</li>
+<li>A：抽象程度，A=Na/Nc。</li>
+</ul>
+<p>A指标的取值范围是从0到1，值为0代表组件中没有任何抽象类，值为1就意味着组件中只有抽象类。</p>
+<h3><span id="4主序列">4.主序列</span></h3><p>不可能所有的组件都能处于这两个位置上(0,1)和(1,0)组件通常都有各自的稳定程度和抽象化程度。</p>
+<h3><span id="5痛苦区">5.痛苦区</span></h3><p>假设某个组件处于(0,0)位置，那么它应该是一个非常稳定但也非常具体的组件。这样的组件在设计上是不佳的，因为它很难被修改，这意味着该组件不能被扩展。这样一来，因为这个组件不是抽象的，而且它又由于稳定性的原因变得特别难以被修改，我们并不希望一个设计良好的组件贴近这个区域，因此(0,0)周围的这个区域被我们称为痛苦区。</p>
+<h3><span id="6无用区">6.无用区</span></h3><p>靠近(1,1)这一位置点的组件。该位置上的组件不会是我们想要的，因为这些组件通常是无限抽象的，但是没有被其他组件依赖，这样的组件往往无法使用。因此我们将这个区域称为无用区。</p>
+<h3><span id="7避开这两个区域">7.避开这两个区域</span></h3><p>在整条主序列线上，组件所能处于最优的位置是线的两端。一个优秀的软件架构师应该争取将自己设计的大部分组件尽可能地推向这两个位置。然而，以我的个人经验来说，大型系统中的组件不可能做到完全抽象，也不可能做到完全稳定。所以我们只要追求让这些组件位于主序列线上，或者贴近这条线即可。</p>
+<h3><span id="8离主序列线的距离">8.离主序列线的距离</span></h3><p>如果让组件位于或者靠近主序列是可取的目标，那么我们就可以创建一个指标来衡量一个组件距离最佳位置的距离。</p>
+<ul>
+<li>D指标:距离D=|A+I-1|，该指标的取值范围是[0,1]。值为0意味着组件是直接位于主序列线上的，值为1则意味着组件在距离主序列最远的位置。</li>
+</ul>
+<p>通过计算每个组件的D指标，就可以量化一个系统设计与主序列的契合程度了。另外，我们也可以用D指标大于0多少来指导组件的重构与重新设计。</p>
 
       
     </div>
@@ -374,7 +408,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2020/07/13/《架构整洁之道》之组件耦合/">《架构整洁之道》之组件耦合</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2020-07-13, 21:49:21</p>
-        <p><span>最后更新:</span>2021-06-04, 23:18:04</p>
+        <p><span>最后更新:</span>2021-08-10, 23:25:24</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2020/07/13/《架构整洁之道》之组件耦合/" title="《架构整洁之道》之组件耦合">http://developers-youcong.github.io/2020/07/13/《架构整洁之道》之组件耦合/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2020/07/13/《架构整洁之道》之组件耦合/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -410,7 +444,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、无依赖原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1.每周构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">2.消除循环依赖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、自上而下的设计</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、无依赖原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.1.</span> <span class="toc-text">1.每周构建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">1.2.</span> <span class="toc-text">2.消除循环依赖</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、自上而下的设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、稳定依赖原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.1.</span> <span class="toc-text">1.稳定性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.2.</span> <span class="toc-text">2.稳定性指标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.3.</span> <span class="toc-text">3.并不是所有组件都应该是最稳定的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">3.4.</span> <span class="toc-text">4.抽象组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、稳定抽象原则</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.1.</span> <span class="toc-text">1.高阶策略应该放在哪里</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.2.</span> <span class="toc-text">2.稳定抽象原则简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.3.</span> <span class="toc-text">3.衡量抽象化程度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.4.</span> <span class="toc-text">4.主序列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.5.</span> <span class="toc-text">5.痛苦区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.6.</span> <span class="toc-text">6.无用区</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.7.</span> <span class="toc-text">7.避开这两个区域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-number">4.8.</span> <span class="toc-text">8.离主序列线的距离</span></a></li></ol></li></ol>
         
     </div>
     <style>
