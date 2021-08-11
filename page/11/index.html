@@ -306,6 +306,75 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-springboot整合CXF时，启动报错" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/10/25/springboot整合CXF时，启动报错/" class="article-date">
+      <time datetime="2020-10-25T12:16:05.000Z" itemprop="datePublished">2020-10-25</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/25/springboot整合CXF时，启动报错/">springboot整合CXF时，启动报错</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">***************************</span><br><span class="line">APPLICATION FAILED TO START</span><br><span class="line">***************************</span><br><span class="line">Description:</span><br><span class="line">Parameter 1 of constructor in org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration required a bean of type &apos;org.springframework.boot.autoconfigure.web.servlet.DispatcherServletPath&apos; that could not be found.</span><br><span class="line">The following candidates were found but could not be injected:</span><br><span class="line">    - Bean method &apos;dispatcherServletRegistration&apos; in &apos;DispatcherServletAutoConfiguration.DispatcherServletRegistrationConfiguration&apos; not loaded because DispatcherServlet Registration found non dispatcher servlet dispatcherServlet</span><br><span class="line">Action:</span><br><span class="line">Consider revisiting the entries above or defining a bean of type &apos;org.springframework.boot.autoconfigure.web.servlet.DispatcherServletPath&apos; in your configuration.</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/10/25/springboot整合CXF时，启动报错/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-我对测试的思考" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -914,75 +983,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2020/10/07/2020年的一些思考和总结/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Centos7-cache-buff过高处理方法" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/30/Centos7-cache-buff过高处理方法/" class="article-date">
-      <time datetime="2020-09-30T09:44:01.000Z" itemprop="datePublished">2020-09-30</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/30/Centos7-cache-buff过高处理方法/">Centos7 cache/buff过高处理方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>核心三条命令，即可清理cache/buff:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo 1 &gt; /proc/sys/vm/drop_caches</span><br><span class="line"></span><br><span class="line">echo 2 &gt; /proc/sys/vm/drop_caches</span><br><span class="line"></span><br><span class="line">echo 3 &gt; /proc/sys/vm/drop_caches</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/09/30/Centos7-cache-buff过高处理方法/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
