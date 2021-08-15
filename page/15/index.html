@@ -306,6 +306,73 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Java8之合并list并去重" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/09/Java8之合并list并去重/" class="article-date">
+      <time datetime="2020-09-09T12:44:32.000Z" itemprop="datePublished">2020-09-09</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/09/Java8之合并list并去重/">Java8之合并list并去重</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>核心代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; result = Stream.of(Lists.newArrayList(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;), Lists.newArrayList(&quot;A&quot;, &quot;B&quot;))</span><br><span class="line">  .flatMap(Collection::stream).distinct().collect(Collectors.toList());</span><br></pre></td></tr></table></figure></p>
+<p>最终的结果输出是A B C。</p>
+<p>应用场景:<br>有些时候我们需要合并两个返回类型相同的结果集，就可以用这个，不必SQL查询合并结果。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-前端代码规范" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -897,75 +964,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2020/09/05/nacos的三种部署方式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/02/o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml/" class="article-date">
-      <time datetime="2020-09-02T13:21:39.000Z" itemprop="datePublished">2020-09-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml/">o.s.c.a.n.c.NacosPropertySourceBuilder : get data from Nacos error,dataId:application-dev.yaml</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>昨天部署项目到公司内部开发服务器上，部署显示是成功，结果出现了这样的错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o.s.c.a.n.c.NacosPropertySourceBuilder : get data from Nacos error,dataId:application-dev.yaml</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/09/02/o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
