@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="构建完整的架构边界是一件很耗费">
+<meta name="description" content="构建完整的架构边界是一件很耗费成本的事。在这个过程中，需要为系统设计双向的多态边界接口，用于输入和输出的数据结构，以及所有相关的依赖关系管理，以便将系统分割成可独立编译与部署的组件。这里会涉及大量的前期工作，以及大量的后期维护工作。">
 <meta name="keywords" content="读书笔记">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《架构整洁之道》之不完全边界">
 <meta property="og:url" content="http://developers-youcong.github.io/2021/08/15/《架构整洁之道》之不完全边界/index.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="构建完整的架构边界是一件很耗费">
+<meta property="og:description" content="构建完整的架构边界是一件很耗费成本的事。在这个过程中，需要为系统设计双向的多态边界接口，用于输入和输出的数据结构，以及所有相关的依赖关系管理，以便将系统分割成可独立编译与部署的组件。这里会涉及大量的前期工作，以及大量的后期维护工作。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2021-08-15T12:05:23.666Z">
+<meta property="og:updated_time" content="2021-08-21T13:07:08.858Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《架构整洁之道》之不完全边界">
-<meta name="twitter:description" content="构建完整的架构边界是一件很耗费">
+<meta name="twitter:description" content="构建完整的架构边界是一件很耗费成本的事。在这个过程中，需要为系统设计双向的多态边界接口，用于输入和输出的数据结构，以及所有相关的依赖关系管理，以便将系统分割成可独立编译与部署的组件。这里会涉及大量的前期工作，以及大量的后期维护工作。">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -344,7 +344,12 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>构建完整的架构边界是一件很耗费</p>
+        <p>构建完整的架构边界是一件很耗费成本的事。在这个过程中，需要为系统设计双向的多态边界接口，用于输入和输出的数据结构，以及所有相关的依赖关系管理，以便将系统分割成可独立编译与部署的组件。这里会涉及大量的前期工作，以及大量的后期维护工作。<br><a id="more"></a></p>
+<h2><span id="一-省掉最后一步">一、省掉最后一步</span></h2><p>构建不完全边界的一种方式就是在将系统分割成一系列可以独立编译、独立部署的组件之后，再把它们构建成一个组件。换句话说，在将系统中所有的接口、用于输入/输出的数据格式等每一件事都设置好之后，仍选择将它们统一编译和部署为一个组件。</p>
+<h2><span id="二-单向边界">二、单向边界</span></h2><p>在设计一套完整的系统架构边界时，往往需要用反向接口来维护边界两侧组件的隔离性。而且，维护这种双向的隔离性，通常不会是一次性的工作，它需要我们持续地长期投入资源维护下去。</p>
+<h2><span id="三-门户模式">三、门户模式</span></h2><p>更简单的架构边界设计:采用门户模式。</p>
+<h2><span id="四-小结">四、小结</span></h2><p>每种实现方式都有相应的成本和收益。每种方式都有自己所适用的场景，它们可以被用来充当最终完整架构边界的临时替代品。同时，如果这些边界最终被证明是没有必要存在的，那么也可以被自然降解。</p>
+<p>架构师的职责之一就是预判未来哪里有可能会需要设置架构边界，并决定应该以完全形式还是不完全形式来实现它们。</p>
 
       
     </div>
@@ -356,7 +361,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2021/08/15/《架构整洁之道》之不完全边界/">《架构整洁之道》之不完全边界</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2021-08-15, 19:18:24</p>
-        <p><span>最后更新:</span>2021-08-15, 20:05:23</p>
+        <p><span>最后更新:</span>2021-08-21, 21:07:08</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2021/08/15/《架构整洁之道》之不完全边界/" title="《架构整洁之道》之不完全边界">http://developers-youcong.github.io/2021/08/15/《架构整洁之道》之不完全边界/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2021/08/15/《架构整洁之道》之不完全边界/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -392,7 +397,7 @@ var _hmt = _hmt || [];
     <div id="toc" class="toc-article">
         <strong class="toc-title">文章目录</strong>
         
-            
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">1.</span> <span class="toc-text">一、省掉最后一步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">2.</span> <span class="toc-text">二、单向边界</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">3.</span> <span class="toc-text">三、门户模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined"><span class="toc-number">4.</span> <span class="toc-text">四、小结</span></a></li></ol>
         
     </div>
     <style>
