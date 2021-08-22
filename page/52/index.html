@@ -306,6 +306,144 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-python3-6在linux持久运行django" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/19/python3-6在linux持久运行django/" class="article-date">
+      <time datetime="2019-03-19T06:17:45.000Z" itemprop="datePublished">2019-03-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/19/python3-6在linux持久运行django/">python3.6在linux持久运行django</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>最近线上运行一个OnlineJudgeServer的项目，通过python manage.py runserver 0.0.0.0:8090运行，如果关闭当前窗口，实际就相当于关闭了这个进程。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/19/python3-6在linux持久运行django/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Node-js读取某个目录下的所有文件夹名字并将其写入到json文件" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/" class="article-date">
+      <time datetime="2019-03-19T06:08:12.000Z" itemprop="datePublished">2019-03-19</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/">Node.js读取某个目录下的所有文件夹名字并将其写入到json文件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>针对解决的问题是，有些时候我们需要读取某个文件并将其写入到对应的json文件(xml文件也行，不过目前用json很多，json是主流)。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/19/Node-js读取某个目录下的所有文件夹名字并将其写入到json文件/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-PostgreSQL安装和使用" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -845,147 +983,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/03/09/StringRedisTemplate操作Redis/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Could-not-get-a-resource-from-the-pool-错误解决" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/" class="article-date">
-      <time datetime="2019-03-09T12:26:18.000Z" itemprop="datePublished">2019-03-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/">Could not get a resource from the pool 错误解决</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误关键信息:Could not get a resource from the pool</p>
-<p>通常原因是因为远程服务器上的redis没有配置好。</p>
-<p>解决方案如下:<br>(1)将redis.conf中的bind:127.0.0.1注释掉;<br>(2)将redis.conf中的protected-mode yes改为protected-mode no</p>
-<p>按照上述的解决方案是可以解决这个问题的。但是以SpringBoot为例，这样做仍然无法解决问题，原因是因为application.yml中的redis配置有误造成的。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Redis/">Redis</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/03/09/Could-not-get-a-resource-from-the-pool-错误解决/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-大型网站技术架构演化" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/03/08/大型网站技术架构演化/" class="article-date">
-      <time datetime="2019-03-08T05:54:14.000Z" itemprop="datePublished">2019-03-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/08/大型网站技术架构演化/">大型网站技术架构演化</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、大型网站软件系统的特点"><a href="#一、大型网站软件系统的特点" class="headerlink" title="一、大型网站软件系统的特点"></a>一、大型网站软件系统的特点</h2><h4 id="1-高并发、大流量"><a href="#1-高并发、大流量" class="headerlink" title="1.高并发、大流量"></a>1.高并发、大流量</h4><h5 id="a-什么是高并发"><a href="#a-什么是高并发" class="headerlink" title="a.什么是高并发?"></a>a.什么是高并发?</h5><p>高并发是互联网分布式系统架构设计中必须考虑的因素之一，它通常是指，通过设计保证系统能够同时并行处理多个请求。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/03/08/大型网站技术架构演化/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
