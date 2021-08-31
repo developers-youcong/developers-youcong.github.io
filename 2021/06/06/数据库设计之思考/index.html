@@ -24,7 +24,7 @@
 <meta property="og:description" content="去年的时候写了一篇文章叫Java程序员的两项通用能力，这篇文章我提到对于Java程序员而言很重要的两项通用能力(从编程的角度出发)，一是熟练掌握并深入理解Java编程语言，二是数据库。关于深入理解Java编程语言，后续我会有一个专门的wiki来讲这方面的东西，今天主要讲数据库设计方面的。我个人认为数据库设计是”互联网软件三高架构体系(高并发、高可用、高性能)”的根基">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2021/06/06/数据库设计之思考/01.png">
-<meta property="og:updated_time" content="2021-06-21T15:59:20.122Z">
+<meta property="og:updated_time" content="2021-08-31T12:08:01.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库设计之思考">
 <meta name="twitter:description" content="去年的时候写了一篇文章叫Java程序员的两项通用能力，这篇文章我提到对于Java程序员而言很重要的两项通用能力(从编程的角度出发)，一是熟练掌握并深入理解Java编程语言，二是数据库。关于深入理解Java编程语言，后续我会有一个专门的wiki来讲这方面的东西，今天主要讲数据库设计方面的。我个人认为数据库设计是”互联网软件三高架构体系(高并发、高可用、高性能)”的根基">
@@ -439,7 +439,7 @@ var _hmt = _hmt || [];
 <li>Power Design；</li>
 <li>Navicat Data Modeler。</li>
 </ul>
-<h5><span id="k获取数据模式手册">k.获取数据模式手册</span></h5><h5><span id="l做新的数据库设计时要记住过去的教训古为今鉴">l.做新的数据库设计时，要记住过去的教训，古为今鉴</span></h5><h5><span id="m在物理实践之前进行逻辑实现">m.在物理实践之前进行逻辑实现</span></h5><h5><span id="n创建数据字典和er图表">n.创建数据字典和ER图表</span></h5><h5><span id="o有意义的字段命名">o.有意义的字段命名</span></h5><h5><span id="p标准化和数据驱动">p.标准化和数据驱动</span></h5><h5><span id="q标准化不能过头">q.标准化不能过头</span></h5><h5><span id="r小心保留字">r.小心保留字</span></h5><h5><span id="s仔细选择数字类型">s.仔细选择数字类型</span></h5><h5><span id="t避免使用触发器">t.避免使用触发器</span></h5><h5><span id="u文本字段留足量">u.文本字段留足量</span></h5><h5><span id="v采用视图">v.采用视图</span></h5><h5><span id="w用存储过程让系统做活">w.用存储过程让系统做活</span></h5><h5><span id="x创建模式">x.创建模式</span></h5><h5><span id="y报表技巧">y.报表技巧</span></h5><h5><span id="z检查各种变化">z.检查各种变化</span></h5><h4><span id="3我对规范层面的感受">(3)我对规范层面的感受</span></h4><p>从外包公司到至今，越来越体会到规范化的重要意义。从数据库设计到编码，简直是一部血泪史。当年在某创业公司的时候，除了写代码随意之外，对于数据库设计更是随意，为了功能更好实现，给数据库对应的表不断增加字段，最终造成大量冗余，数据库字段冗余，对应的Java代码也是如此。而后到某教育Saas公司才明白数据表不可轻易加字段，需要从需求层面考虑，而不是从自身功能实现难易考虑。</p>
+<h5><span id="k获取数据模式手册">k.获取数据模式手册</span></h5><h5><span id="l做新的数据库设计时要记住过去的教训古为今鉴">l.做新的数据库设计时，要记住过去的教训，古为今鉴</span></h5><h5><span id="m在物理实践之前进行逻辑实现">m.在物理实践之前进行逻辑实现</span></h5><h5><span id="n创建数据字典和er图表">n.创建数据字典和ER图表</span></h5><h5><span id="o有意义的字段命名">o.有意义的字段命名</span></h5><h5><span id="p标准化和数据驱动">p.标准化和数据驱动</span></h5><h5><span id="q标准化不能过头">q.标准化不能过头</span></h5><h5><span id="r小心保留字">r.小心保留字</span></h5><h5><span id="s仔细选择数字类型">s.仔细选择数字类型</span></h5><h5><span id="t避免使用触发器">t.避免使用触发器</span></h5><h5><span id="u文本字段留足量">u.文本字段留足量</span></h5><h5><span id="v采用视图">v.采用视图</span></h5><h5><span id="w用存储过程让系统做活">w.用存储过程让系统做活</span></h5><h5><span id="x创建模式">x.创建模式</span></h5><h5><span id="y报表技巧">y.报表技巧</span></h5><h5><span id="z检查各种变化">z.检查各种变化</span></h5><h4><span id="3我对规范层面的感受">(3)我对规范层面的感受</span></h4><p>从外包公司到至今，越来越体会到规范化的重要意义。从数据库设计到编码，简直是一部血泪史。当年在某创业公司的时候，除了写代码随意之外，对于数据库设计更是随意，为了功能更好实现，给数据库对应的表不断增加字段，最终造成大量冗余，数据库字段冗余，对应的Java代码也是如此。而后到某教育Saas公司才明白数据表不可轻易加字段，需要从整体全局考虑，而不是单单从自身功能实现难易考虑。</p>
 
       
     </div>
@@ -451,7 +451,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2021/06/06/数据库设计之思考/">数据库设计之思考</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2021-06-06, 12:40:04</p>
-        <p><span>最后更新:</span>2021-06-21, 23:59:20</p>
+        <p><span>最后更新:</span>2021-08-31, 20:08:01</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2021/06/06/数据库设计之思考/" title="数据库设计之思考">http://developers-youcong.github.io/2021/06/06/数据库设计之思考/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2021/06/06/数据库设计之思考/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
