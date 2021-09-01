@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>谈谈跨域</title>
+      <link href="/2021/09/01/%E8%B0%88%E8%B0%88%E8%B7%A8%E5%9F%9F/"/>
+      <url>/2021/09/01/%E8%B0%88%E8%B0%88%E8%B7%A8%E5%9F%9F/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-什么是跨域">一、什么是跨域？</span></h2><p>浏览器从一个域名的网页去请求另一个域名的资源时，域名、端口、协议任意一个不同，都是跨域。<br><a id="more"></a></p><h2><span id="二-为什么会出现跨域">二、为什么会出现跨域？</span></h2><p>以我职业生涯为例，待过的两家公司，均做过JSP相关的项目，所谓的JSP项目就是一个Java项目中既有后端代码，又有前端代码，前端代码的表现形式就是JSP。JSP项目通常不会有跨域的问题，因为前端发起Ajax请求的时候，也是以请求当前域名为主(符合同源策略)。而当后来在创业公司做智能门锁系统的时候，使用微服务框架SpringBoot，然后就遇到跨域这样的问题(因为不符合同源策略)，做智能门锁系统的时候，当时我采用的架构模式是前后端分离，这也是当时技术经理比较推崇的。</p><h2><span id="三-什么是同源策略">三、什么是同源策略？</span></h2><p>同源策略/SOP（Same origin policy）是一种约定，由Netscape公司1995年引入浏览器，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到XSS、CSFR等攻击。所谓同源是指”协议+域名+端口”三者相同，即便两个不同的域名指向同一个ip地址，也非同源。</p><h2><span id="四-为什么会有同源策略">四、为什么会有同源策略？</span></h2><p>为了保护用户的隐私信息。我们每浏览一个网站时，不论是以游客身份或者网站用户身份访问网站时，网站或多或少都会涉及到以Cookie的方式存储我们的信息。如果没有同源策略，就意味着资源的访问没有限制，如果没有限制将会非常容易遭到不法分子的网络攻击。</p><h2><span id="五-针对跨域我所遇到的问题以及解决问题的方式">五、针对跨域我所遇到的问题以及解决问题的方式</span></h2><p>下面四个链接是针对跨域的解决方案(从单体到分布式微服务，主要侧重Java):<br><a href="https://www.cnblogs.com/youcong/p/9676433.html" target="_blank" rel="noopener">Spring配置跨域请求</a></p><p><a href="https://www.cnblogs.com/youcong/p/10503088.html" target="_blank" rel="noopener">Springboot实现跨域请求</a></p><p><a href="https://www.cnblogs.com/youcong/p/10544286.html" target="_blank" rel="noopener">express框架之跨域请求</a></p><p><a href="https://youcongtech.com/2020/08/29/SpringCloudGateWay%E4%B9%8B%E7%BD%91%E5%85%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" target="_blank" rel="noopener">SpringCloudGateWay之网关跨域问题解决</a></p><p>包括最近因为某个需要在Nginx放行资源，减少跨域问题的干扰(同源策略的限制)，在对应的location下配置如下，就能解决(从中我们能看到解决问题的方式一样，只不过表现的形式不一样而已。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#允许跨域请求的域，* 代表所有</span><br><span class="line">add_header &apos;Access-Control-Allow-Origin&apos; *;</span><br><span class="line">#允许请求的header</span><br><span class="line">add_header &apos;Access-Control-Allow-Headers&apos; *;</span><br><span class="line">#允许带上cookie请求</span><br><span class="line">add_header &apos;Access-Control-Allow-Credentials&apos; &apos;true&apos;;</span><br><span class="line">#允许请求的方法，比如 GET,POST,PUT,DELETE</span><br><span class="line">add_header &apos;Access-Control-Allow-Methods&apos; *;</span><br></pre></td></tr></table></figure></p><p>但是换言之，这种方法做法真的好吗？我的答案是未必(通常建议生产环境设置为某个具体的域名而不能仅仅为了省事设置为<em>，主要是从安全的角度考虑)。<br>因为如果是</em>的话意味着任何人都能以某种方式访问你的网站而不受限制，于是便有了诸如Http Basic Auth、session-cookie、token、OAuth1.0/2.0、签名鉴权等鉴权认证的方式。</p><p>本文参考资料:<br><a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy" target="_blank" rel="noopener">浏览器的同源策略</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术分享与思考 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>农民工这个词</title>
       <link href="/2021/08/28/%E5%86%9C%E6%B0%91%E5%B7%A5%E8%BF%99%E4%B8%AA%E8%AF%8D/"/>
       <url>/2021/08/28/%E5%86%9C%E6%B0%91%E5%B7%A5%E8%BF%99%E4%B8%AA%E8%AF%8D/</url>
