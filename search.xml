@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Linux中文件夹的文件按照时间倒序或者升序排列</title>
+      <link href="/2021/09/25/Linux%E4%B8%AD%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E6%96%87%E4%BB%B6%E6%8C%89%E7%85%A7%E6%97%B6%E9%97%B4%E5%80%92%E5%BA%8F%E6%88%96%E8%80%85%E5%8D%87%E5%BA%8F%E6%8E%92%E5%88%97/"/>
+      <url>/2021/09/25/Linux%E4%B8%AD%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E6%96%87%E4%BB%B6%E6%8C%89%E7%85%A7%E6%97%B6%E9%97%B4%E5%80%92%E5%BA%8F%E6%88%96%E8%80%85%E5%8D%87%E5%BA%8F%E6%8E%92%E5%88%97/</url>
+      
+        <content type="html"><![CDATA[<p>应用场景:<br>查询服务器上某个特定文件夹下的文件定时最新生成情况。<br><a id="more"></a></p><h2><span id="核心命令升序">核心命令(升序)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">命令:ls -lrt</span><br><span class="line">详细解释:</span><br><span class="line"></span><br><span class="line">-l     use a long listing format  以长列表方式显示（详细信息方式）</span><br><span class="line">-t     sort by modification time 按修改时间排序（最新的在最前面）</span><br><span class="line">-r     reverse order while sorting （反序）</span><br></pre></td></tr></table></figure><h2><span id="核心命令降序">核心命令(降序)</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">命令:ls -lt</span><br><span class="line">详细解释:</span><br><span class="line"></span><br><span class="line">-l     use a long listing format  以长列表方式显示（详细信息方式）</span><br><span class="line">-t     sort by modification time 按修改时间排序（最新的在最前面）</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>谈谈跳槽</title>
       <link href="/2021/09/24/%E8%B0%88%E8%B0%88%E8%B7%B3%E6%A7%BD/"/>
       <url>/2021/09/24/%E8%B0%88%E8%B0%88%E8%B7%B3%E6%A7%BD/</url>
