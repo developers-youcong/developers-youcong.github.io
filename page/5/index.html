@@ -306,6 +306,144 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Nginx代理下载文件出现失败问题之解决" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/07/15/Nginx代理下载文件出现失败问题之解决/" class="article-date">
+      <time datetime="2021-07-15T13:57:19.000Z" itemprop="datePublished">2021-07-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/15/Nginx代理下载文件出现失败问题之解决/">Nginx代理下载文件出现失败问题之解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>今日发现某个代理出现下载文件失败问题，相当于点击下载，直接提示下载失败，需要点击继续才能成功，基于这个问题我搜索查找了一下，最后发现是代理配置的有问题，这是原来的问题配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location /file &#123;</span><br><span class="line">          proxy_pass http://127.0.0.1:8080/files;</span><br><span class="line">       &#125;</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/07/15/Nginx代理下载文件出现失败问题之解决/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-将本地jar包放入maven仓库" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/07/15/将本地jar包放入maven仓库/" class="article-date">
+      <time datetime="2021-07-15T13:36:27.000Z" itemprop="datePublished">2021-07-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/15/将本地jar包放入maven仓库/">将本地jar包放入maven仓库</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>因为业务需要，需要引入非Maven的jar，项目中使用Maven来管理依赖包，如今非Maven依赖的jar该如何引入呢？很简单，执行如下命令，将jar变为本地Maven仓库的依赖即可：<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/07/15/将本地jar包放入maven仓库/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Java之文件生成和内容写入" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -836,147 +974,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2021/06/20/mysqld-error-while-loading-shared-libraries-libaio-so-1/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Linux下word转pdf中文乱码问题" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/06/20/Linux下word转pdf中文乱码问题/" class="article-date">
-      <time datetime="2021-06-20T12:26:04.000Z" itemprop="datePublished">2021-06-20</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/20/Linux下word转pdf中文乱码问题/">Linux下word转pdf中文乱码问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>最近遇到一个问题，word下载正常，word转pdf后下载出现乱码(如果是本地windos则没有问题，如果是Linux上直接显示乱码)。</p>
-<p>最后通过搜索找到了原因:<br>原因之所以Windows不会有乱码在于C:\Windows\Fonts(有windows丰富的字体库，而Linux很缺乏)。</p>
-<p>其实早在很久以前搭建WordPress站点的时候就遇到这样的乱码问题，那个时候也是将Windows的字体库上传解决的。</p>
-<p><strong>解决问题步骤如下:</strong><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/06/20/Linux下word转pdf中文乱码问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-数据库设计之思考" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/06/06/数据库设计之思考/" class="article-date">
-      <time datetime="2021-06-06T04:40:04.000Z" itemprop="datePublished">2021-06-06</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/06/数据库设计之思考/">数据库设计之思考</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>去年的时候写了一篇文章叫<a href="https://www.cnblogs.com/youcong/p/12963752.html" target="_blank" rel="noopener">Java程序员的两项通用能力</a>，这篇文章我提到对于Java程序员而言很重要的两项通用能力(从编程的角度出发)，一是熟练掌握并深入理解Java编程语言，二是数据库。关于深入理解Java编程语言，后续我会有一个专门的wiki来讲这方面的东西，今天主要讲数据库设计方面的。<strong>我个人认为数据库设计是”互联网软件三高架构体系(高并发、高可用、高性能)”的根基</strong><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计思考与实践/">设计思考与实践</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/06/06/数据库设计之思考/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
