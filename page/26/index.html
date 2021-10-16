@@ -306,6 +306,75 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-UnicodeEncodeError-ascii-codec-can-t-encode-characters-in-position-0-2-ordinal-not-in-range-128" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/04/05/UnicodeEncodeError-ascii-codec-can-t-encode-characters-in-position-0-2-ordinal-not-in-range-128/" class="article-date">
+      <time datetime="2020-04-05T15:33:40.000Z" itemprop="datePublished">2020-04-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/05/UnicodeEncodeError-ascii-codec-can-t-encode-characters-in-position-0-2-ordinal-not-in-range-128/">UnicodeEncodeError: &#39;ascii&#39; codec can&#39;t encode characters in position 0-2: ordinal not in range(128)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>错误背景:<br>使用Python2.7写一个简单爬虫报的错。</p>
+<p>错误详细信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UnicodeEncodeError: &apos;ascii&apos; codec can&apos;t encode characters in position 0-2: ordinal not in range(128)</span><br></pre></td></tr></table></figure></p>
+<p>错误原因:<br>1.python默认使用ASCII处理字符流。</p>
+<p>2.Unicode编码与ASCII编码的不兼容，Python脚本文件是由utf-8编码的。</p>
+<p>解决方法(在当前python文件最上面加上如下代码):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">import sys</span><br><span class="line">reload(sys)</span><br><span class="line">sys.setdefaultencoding(&apos;utf-8&apos;)</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-《设计模式之禅》之解释器模式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -902,75 +971,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2020/03/22/Error-java-JDK-isn-t-specified-for-module/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-《设计模式之禅》之观察者模式" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/03/15/《设计模式之禅》之观察者模式/" class="article-date">
-      <time datetime="2020-03-15T07:15:57.000Z" itemprop="datePublished">2020-03-15</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/15/《设计模式之禅》之观察者模式/">《设计模式之禅》之观察者模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、观察者模式的定义"><a href="#一、观察者模式的定义" class="headerlink" title="一、观察者模式的定义"></a>一、观察者模式的定义</h2><p>观察者模式也叫做发布订阅模式，它是一个在项目中经常使用的模式，其定义如下:<br><strong>定义对象间一种一对多的依赖关系，使得没当一个对象改变状态，则所有依赖于它的对象都会得到通知并被自动更新。</strong><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/03/15/《设计模式之禅》之观察者模式/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
