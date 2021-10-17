@@ -306,6 +306,79 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/12/21/Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration/" class="article-date">
+      <time datetime="2019-12-21T13:11:36.000Z" itemprop="datePublished">2019-12-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/12/21/Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration/">Command line is too long. Shorten command line for *** or also for Spring Boot default configuration</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Command line is too long. Shorten command line for *** or also for Spring Boot default configuration</span><br></pre></td></tr></table></figure></p>
+<p>通常会导致的后果是无法启动项目。</p>
+<p>解决办法:</p>
+<p>修改项目下 .idea\workspace.xml，找到标签 <component name="PropertiesComponent"> ， 在标签里加一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &lt;property name=&quot;dynamic.classpath&quot; value=&quot;true&quot; /&gt;</span><br></pre></td></tr></table></figure></component></p>
+<p>参考解决办法链接:<a href="https://blog.csdn.net/weixin_41235754/article/details/100514000" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41235754/article/details/100514000</a><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea/">Idea</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/12/21/Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-《设计模式之禅》之代理模式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -897,72 +970,6 @@ var _hmt = _hmt || [];
         <p class="article-more-link">
           <a href="/2019/11/30/org-springframework-beans-factory-BeanCreationException-Error-creating-bean-with-name-jpaMappingContext-Invocation-of-init-method-failed-nested-exception-is-java-lang-IllegalArgumentException之解决办法/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Postman测试后台使用-RequestBody接收参数的坑" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/11/30/Postman测试后台使用-RequestBody接收参数的坑/" class="article-date">
-      <time datetime="2019-11-30T08:47:25.000Z" itemprop="datePublished">2019-11-30</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/11/30/Postman测试后台使用-RequestBody接收参数的坑/">Postman测试后台使用@RequestBody接收参数的坑</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>问题原因:我在使用PostMan测试接口时发现数据传递不过来，是因为请求体定义为JSON数据，自动就传递不过来，虽然问题简单，但由于之前这个用的较少，所以就忽略了这点。</p>
-<p>解决问题链接:<a href="https://blog.csdn.net/qq_24484085/article/details/82800798" target="_blank" rel="noopener">https://blog.csdn.net/qq_24484085/article/details/82800798</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/计算机/">计算机</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
