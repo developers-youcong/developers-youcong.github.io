@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>我在M2公司做架构之定时任务</title>
+      <link href="/2021/10/30/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+      <url>/2021/10/30/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-什么是定时任务">一、什么是定时任务？</span></h2><p>即定时执行的代码片段。</p><h2><span id="二-定时任务的应用场景有哪些">二、定时任务的应用场景有哪些？</span></h2><ul><li>某App推送新上线的电影；</li><li>优惠劵快要过期了；</li><li>双十一秒抢购商品的提醒；</li><li>某会员快到期了需要续费；</li><li>某款云服务产品的到期前续费提醒；</li><li>游戏打怪升级提醒(还差诸如多少的经验值之类的)。<a id="more"></a></li></ul><p>上面列举的应用场景，生活或工作中使用的App或者是网站，随处可见。</p><h2><span id="三-基于分布式定时任务有哪些现有的解决方案">三、基于分布式定时任务有哪些现有的解决方案？</span></h2><ul><li>ShedLock；</li><li>Xxl-Job；</li><li>Elastic-Job；</li><li>Quartz；</li><li>Schedule+Redis结合。</li></ul><p>我曾写过关于ShedLock、Xxl-Job以及使用Schedule等定时任务解决方案的文章，感兴趣的朋友可以阅读:<br><a href="https://youcongtech.com/2020/11/21/Java%E4%B9%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%85%A8%E5%AE%B6%E6%A1%B6/" target="_blank" rel="noopener">Java之定时任务全家桶</a></p><p>我以往写的定时任务的文章如下:<br><a href="https://www.cnblogs.com/youcong/p/9385472.html" target="_blank" rel="noopener">SpringBoot实战(二)之计划任务</a><br><a href="https://www.cnblogs.com/youcong/p/9037425.html" target="_blank" rel="noopener">Spring定时任务使用和如何使用邮件监控服务器</a><br><a href="https://www.cnblogs.com/youcong/p/12935760.html" target="_blank" rel="noopener">SpringBoot整合Xxl-Job</a></p><h2><span id="四-在分布式定时任务中遇到的主要问题有哪些">四、在分布式定时任务中遇到的主要问题有哪些？</span></h2><p>最主要的问题就是定时任务只需执行一次即可，不需要重复执行，如果永常规的schedule，你会发现微服务集群下，相同的微服务每个都执行一遍，那样的话，非常不好，既不利于充分利用分布式环境下的服务高可用，也不利于部分定时任务的数据抓取(多个重复执行，意味着数据重复插入或更新之类的，不利于一些数据分析程序的运转)。<br>而解决这样的问题，采用ShedLock或Xxl-Job就能解决这样的问题。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 架构 </tag>
+            
+            <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我在M2公司做架构之组件化</title>
       <link href="/2021/10/30/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E7%BB%84%E4%BB%B6%E5%8C%96/"/>
       <url>/2021/10/30/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E7%BB%84%E4%BB%B6%E5%8C%96/</url>
