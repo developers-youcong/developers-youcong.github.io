@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>我在M2公司做架构之Nexus私服</title>
+      <link href="/2021/10/30/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8BNexus%E7%A7%81%E6%9C%8D/"/>
+      <url>/2021/10/30/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8BNexus%E7%A7%81%E6%9C%8D/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-nexus介绍">一、Nexus介绍</span></h2><p>Nexus是一个强大的Maven仓库管理器,它极大的简化了本地内部仓库的维护和外部仓库的访问。<br><a id="more"></a></p><p>Nexus是一套开箱即用的系统不需要数据库,它使用文件系统加Lucene来组织数据。</p><p>Nexus使用ExtJS来开发界面,利用Restlet来提供完整的REST APIs,通过IDEA和Eclipse集成使用。</p><p>Nexus支持WebDAV与LDAP安全身份认证。</p><p>Nexus提供了强大的仓库管理功能,构件搜索功能,它基于REST,友好的UI是一个extjs的REST客户端,占用较少的内存,基于简单文件系统而非数据库。</p><h2><span id="二-什么是私服">二、什么是私服？</span></h2><p>私服是指私有服务器,是假设在局域网的一种特殊的远程仓库,目的是代理远程仓库及部署第三方构建.有了私服之后,当Maven需要下载构件时,直接请求私服,私服上存在则下载到本地仓库;否则,私服请求外部的远程仓库,将构件下载到私服,在提供给本地仓库下载.</p><h2><span id="二-为什么要使用私服私服的好处有哪些">二、为什么要使用私服？私服的好处有哪些？</span></h2><p>如果没有Nexus私服，我们所需的所有构件都需要通过Maven的中央仓库和第三方的Maven仓库下载到本地，而一个团队中的所有人都重复的从Maven仓库下载构件无疑加大了仓库的负载和浪费了外网带宽，如果网速慢的话，还会影响项目的进程。很多情况下项目的开发都是在内网进行的，连接不到Maven仓库怎么办呢？开发的公共构件怎么让其它项目使用？这个时候我们不得不为自己的团队搭建属于自己的Maven私服，这样既节省了网络带宽也会加速项目搭建的进程，当然前提条件就是你的私服中拥有项目所需的所有构件。</p><p>私服的好处由此归纳如下:</p><ul><li>节省外网带宽；</li><li>加速Maven构建；</li><li>部署第三方构件；</li><li>提高稳定性，增强控制；</li><li>降低中央仓库的负荷；</li><li>控制和审计；</li><li>建立本地内部公用仓库。</li></ul><h2><span id="三-nexus搭建步骤">三、Nexus搭建步骤</span></h2><p>以前在创业公司的时候搭建过私服，文章如下:<br><a href="https://www.cnblogs.com/youcong/p/9416938.html" target="_blank" rel="noopener">Maven搭建私服</a></p><p><a href="https://www.cnblogs.com/youcong/p/9438956.html" target="_blank" rel="noopener">Nexus修改admin密码及其添加用户</a></p><p><a href="https://www.cnblogs.com/youcong/p/11745609.html" target="_blank" rel="noopener">nexus没有授权导致的错误</a></p><p>上面涉及的比较偏老版本，去年为公司搭建了一个新的Nexus私服，版本相对比较新，搭建的流程总结了一番。</p><h3><span id="1官网下载">1.官网下载</span></h3><p><a href="https://help.sonatype.com/repomanager3/download/download-archives---repository-manager-3" target="_blank" rel="noopener">https://help.sonatype.com/repomanager3/download/download-archives---repository-manager-3</a></p><p>或者使用wget下载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://download.sonatype.com/nexus/3/nexus-3.29.2-02-unix.tar.gz</span><br></pre></td></tr></table></figure></p><p>wget下载不了，可能需要VPN。</p><h3><span id="2解压">2.解压</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -xzvf nexus-3.29.2-02-unix.tar.gz</span><br></pre></td></tr></table></figure><h3><span id="3配置运行用户">3.配置运行用户</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim nexus.rc</span><br><span class="line">#取消改行注释并改为如下:</span><br><span class="line">run_as_user=&quot;user&quot;</span><br></pre></td></tr></table></figure><h3><span id="4修改端口">4.修改端口</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim nexus-default.properties</span><br><span class="line">将端口改为如下:</span><br><span class="line">application-port=9951</span><br></pre></td></tr></table></figure><h3><span id="5启动">5.启动</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nexus start</span><br></pre></td></tr></table></figure><h3><span id="6maven-settingsxml配置">6.maven settings.xml配置</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> &lt;server&gt;</span><br><span class="line">     &lt;id&gt;maven-releases&lt;/id&gt;</span><br><span class="line">     &lt;username&gt;user&lt;/username&gt;</span><br><span class="line">     &lt;password&gt;xxxx&lt;/password&gt;</span><br><span class="line"> &lt;/server&gt;</span><br><span class="line"></span><br><span class="line"> &lt;server&gt;</span><br><span class="line">     &lt;id&gt;maven-snapshots&lt;/id&gt;</span><br><span class="line">     &lt;username&gt;user&lt;/username&gt;</span><br><span class="line">     &lt;password&gt;xxxx&lt;/password&gt;</span><br><span class="line"> &lt;/server&gt;</span><br><span class="line"></span><br><span class="line">&lt;mirror&gt;</span><br><span class="line">     &lt;!--该镜像的唯一标识符。id用来区分不同的mirror元素。 --&gt;</span><br><span class="line">     &lt;id&gt;maven-public&lt;/id&gt;</span><br><span class="line">     &lt;!--镜像名称 --&gt;</span><br><span class="line">     &lt;name&gt;maven-public&lt;/name&gt;</span><br><span class="line">     &lt;!--*指的是访问任何仓库都使用我们的私服--&gt;</span><br><span class="line">     &lt;mirrorOf&gt;*&lt;/mirrorOf&gt;</span><br><span class="line">     &lt;!--该镜像的URL。构建系统会优先考虑使用该URL，而非使用默认的服务器URL。 --&gt;</span><br><span class="line">     &lt;url&gt;http://127.0.0.1:9951/repository/maven-public/&lt;/url&gt;     </span><br><span class="line"> &lt;/mirror&gt;</span><br></pre></td></tr></table></figure><h3><span id="7项目pomxml配置">7.项目pom.xml配置</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;distributionManagement&gt;</span><br><span class="line">        &lt;repository&gt;</span><br><span class="line">            &lt;id&gt;maven-releases&lt;/id&gt;</span><br><span class="line">            &lt;name&gt;maven-releases&lt;/name&gt;</span><br><span class="line">            &lt;url&gt;http://127.0.0.1:9951/repository/maven-releases/&lt;/url&gt;</span><br><span class="line">        &lt;/repository&gt;</span><br><span class="line">    &lt;/distributionManagement&gt;</span><br><span class="line"></span><br><span class="line">或</span><br><span class="line">    &lt;repositories&gt;</span><br><span class="line">        &lt;repository&gt;</span><br><span class="line">            &lt;id&gt;maven-public&lt;/id&gt;</span><br><span class="line">            &lt;name&gt;maven-public&lt;/name&gt;</span><br><span class="line">            &lt;url&gt;http://127.0.0.1:9951/repository/maven-public/&lt;/url&gt;</span><br><span class="line">            &lt;releases&gt;</span><br><span class="line">                &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">            &lt;/releases&gt;</span><br><span class="line">            &lt;snapshots&gt;</span><br><span class="line">                &lt;enabled&gt;true&lt;/enabled&gt;</span><br><span class="line">            &lt;/snapshots&gt;</span><br><span class="line">        &lt;/repository&gt;</span><br><span class="line">    &lt;/repositories&gt;</span><br></pre></td></tr></table></figure><h3><span id="8nexus常用命令">8.Nexus常用命令</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">./nexus start</span><br><span class="line">./nexus status</span><br><span class="line">./nexus stop</span><br></pre></td></tr></table></figure><h2><span id="四-我推行私服主要解决的是哪些问题">四、我推行私服主要解决的是哪些问题？</span></h2><p><strong>主要解决的问题是:</strong>让通用型组件在不同的微服务中以Maven依赖的形式进行注入，而通用型组件由专门的团队或者是专门人来进行维护，一定程度上让通用型组件与微服务这些关系进行隔绝，避免因为同在一个项目之中，有的地方一改动，另外的地方也随之改动，从而导致了牵其一动其余。而采用了私服，每次通用型组件发布都会有对应的版本号，小版本小改动，大版本大改动，不影响原有的微服务团队使用当前版本的通用型组件，通用型组件的发布不影响现有微服务的通用型组件使用，至于最终是否升级，依据各微服务团队而定，结合具体情况，安排时间，逐步迭代。终极目标始终围绕了软件的设计原则:高内聚，低耦合。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术思考与实践 </tag>
+            
+            <tag> 架构 </tag>
+            
+            <tag> 职业生涯 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我在M2公司做架构之定时任务</title>
       <link href="/2021/10/30/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
       <url>/2021/10/30/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/</url>
@@ -14,11 +37,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -37,11 +60,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -60,11 +83,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -83,11 +106,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -106,11 +129,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -129,11 +152,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -152,11 +175,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -175,11 +198,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -198,11 +221,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -221,11 +244,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -244,11 +267,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -267,11 +290,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -290,11 +313,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -313,11 +336,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -336,11 +359,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -359,11 +382,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -382,11 +405,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
