@@ -4,6 +4,29 @@
   
     
     <entry>
+      <title>我在M2公司做架构之Netty</title>
+      <link href="/2021/10/31/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8BNetty/"/>
+      <url>/2021/10/31/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8BNetty/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-netty的定义">一、Netty的定义</span></h2><p>Netty是一个异步事件驱动的网络应用程序框架，用于快速开发可维护的高性能协议服务器和客户端。<br><a id="more"></a></p><h2><span id="二-为什么要使用netty">二、为什么要使用Netty</span></h2><p>Netty是业界最流行的NIO框架之一，它的健壮性、功能、性能、可定制性和可扩展性在同类框架中都是首屈一指的，它已经得到成百上千的商用项目验证，例如Hadoop的RPC框架avro使用Netty作为底层通信框架。很多其它业界主流的RPC框架，也使用Netty来构建高性能的异步通信能力。</p><p>Netty的优点可归纳为如下:</p><ul><li>1) API使用简单，开发门槛低；</li><li>2) 功能强大，预置了多种编解码功能，支持多种主流协议；</li><li>3) 定制能力强，可以通过ChannelHandler对通信框架进行灵活的扩展；</li><li>4) 性能高，通过与其它业界主流的NIO框架对比，Netty的综合性能最优；</li><li>5) 成熟、稳定，Netty修复了已经发现的所有JDK NIO BUG，业务开发人员不需要再为NIO的BUG而烦恼；</li><li>6) 社区活跃，版本迭代周期短，发现的BUG可以被及时修复，同时，更多的新功能会被加入；</li><li>7) 经历了大规模的商业应用考验，质量已经得到验证。在互联网、大数据、网络游戏、企业应用、电信软件等众多行业得到成功商用，证明了它可以完全满足不同行业的商业应用。</li></ul><h2><span id="三-netty的应用场景有哪些">三、Netty的应用场景有哪些</span></h2><ul><li>互联网行业；</li><li>游戏行业；</li><li>大数据领域；</li><li>开源项目。</li></ul><h2><span id="四-netty实现mini版本的http服务器">四、Netty实现Mini版本的HTTP服务器</span></h2><p>文章链接为:<br><a href="https://zhuanlan.zhihu.com/p/65041931" target="_blank" rel="noopener">手写一套迷你版HTTP服务器</a></p><p>关于Netty的资源推荐，我个人推荐如下:<br><a href="http://" target="_blank" rel="noopener">资料推荐:</a><br><a href="https://netty.io/" target="_blank" rel="noopener">Netty官网</a><br><a href="https://zhuanlan.zhihu.com/p/181239748" target="_blank" rel="noopener">超详细Netty入门，看这篇就够了！</a><br><a href="https://github.com/netty/netty" target="_blank" rel="noopener">Netty源码</a><br><a href="https://github.com/code4craft/netty-learning" target="_blank" rel="noopener">Netty源码学习</a><br><a href="https://zhuanlan.zhihu.com/p/148726453" target="_blank" rel="noopener">阿里大牛总结的Netty最全常见面试题，面试再也不怕被问Netty了</a><br><a href="https://zhuanlan.zhihu.com/p/375655339" target="_blank" rel="noopener">Netty面试题（2021 最新版）</a></p><p><strong>书籍推荐:</strong><br>《Netty源码刨析与应用》<br>《Netty权威指南（第2版）》<br>《Netty原理解析与开发实战》<br>《Netty进阶之路:跟着案例学Netty》<br>《Netty4核心原理与手写RPC框架实战》</p><h2><span id="五-netty在项目中主要起到的是什么作用">五、Netty在项目中主要起到的是什么作用</span></h2><p>Netty在业务型系统和通用型系统中没有起到什么作用，可以说系统根本就没用到，唯一用到的是另外一位同事负责的X智能减排仪项目，相当于数据源之一，但后来因为一些客观原因，X智能减排仪项目停止了。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 技术思考与实践 </tag>
+            
+            <tag> 架构 </tag>
+            
+            <tag> 职业生涯 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>我在M2公司做架构之Redis</title>
       <link href="/2021/10/31/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8BRedis/"/>
       <url>/2021/10/31/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8BRedis/</url>
