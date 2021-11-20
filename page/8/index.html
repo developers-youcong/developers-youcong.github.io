@@ -306,6 +306,75 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-服务器安全策略之思考与实践" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/07/16/服务器安全策略之思考与实践/" class="article-date">
+      <time datetime="2021-07-16T11:47:48.000Z" itemprop="datePublished">2021-07-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/16/服务器安全策略之思考与实践/">服务器安全策略之思考与实践</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>之所以决定写这篇文章，换言之，这篇文章起源于公司自建服务器因为没有开启防火墙被黑客攻击(其中一台公网暴露的情况下)，基于那次有了一些感悟，而后公司的一位女同事的腾讯云服务器因为数据库密码过于简单，数据库被黑客绑架(相当于将库的数据全部清理，最后仅留一下一句话，要xxx比特币赎回…)，这两次黑客的挑衅，让我对服务器安全方面有了更多的感悟。就在今天服务器突然又宕机了，原因还是被黑客攻击了(黑客利用Redis的漏洞进行病毒植入)，我与其作战了一个下午，最初还以为是Redis的原因，最后发现Redis仅仅是表象，再与其更深入地作战过程中，发现其通过Redis的漏洞，安装了两个病毒软件、篡改了ssh密钥、控制了定时任务，一切的目的只为了一个，把你服务器上的所有资源(带宽、CPU、内存等)全部用于挖矿(挖矿是需要巨大的算力)。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术思考与实践/">技术思考与实践</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/07/16/服务器安全策略之思考与实践/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Nginx代理下载文件出现失败问题之解决" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -905,75 +974,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2021/06/20/Linux之利用mail和sendmail发送邮件/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-mysqld-error-while-loading-shared-libraries-libaio-so-1" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/06/20/mysqld-error-while-loading-shared-libraries-libaio-so-1/" class="article-date">
-      <time datetime="2021-06-20T14:29:41.000Z" itemprop="datePublished">2021-06-20</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/20/mysqld-error-while-loading-shared-libraries-libaio-so-1/">mysqld: error while loading shared libraries: libaio.so.1</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>CentOS7.x版本初始化MySQL,出现如下错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld: error while loading shared libraries: libaio.so.1:cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/06/20/mysqld-error-while-loading-shared-libraries-libaio-so-1/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
