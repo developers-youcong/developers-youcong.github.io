@@ -306,6 +306,75 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Drools之规则中级语法" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/07/14/Drools之规则中级语法/" class="article-date">
+      <time datetime="2020-07-14T03:05:01.000Z" itemprop="datePublished">2020-07-14</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/14/Drools之规则中级语法/">Drools之规则中级语法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2><span id="一-package说明">一、package说明</span></h2><p>package是定义在规则文件首行的，也是规则文件三大模块之一。<br>package为规则逻辑路径，定义时可不与物理目录相同，但为了更方便管理，强烈建议与物理目录同步。<br>package包含import、global、function、query、rule、EOF。<br>其rule是贯穿整个规则文件的核心，介绍的pattern、运行符、约束连接、规则属性等都是rule中的内容。</p>
+<p>介绍package时不得不再次说明kmodule.xml配置，当配置文件中的KieBase设置package路径，则当前路径下的所有规则相关文件(规则文件、决策表、领域语言文件等)都会被加入规则库中，但当前路径下子文件夹的规则相关文件不包含在当前规则库中。</p>
+<p>package参数本身是一个命名空间，并且不以任何方式关联文件或文件夹。因此，可以由多个规则目录为规则库构建源组合规则，有一个顶级的package配置，所有的规则都在其控制之下(在组合规则时)。虽然声明在不同名称下的资源不可能合并为同一个包，但是单个规则库可以用多个包来构建它。也就是说，packages可以设置多个路径，并通过逗号分隔，但这是对配置文件packages而言的。</p>
+<h2><span id="二-global全局变量">二、global全局变量</span></h2><p>全局变量是一个很有用的元素节点，它是通过关键字global class(对象类型) name组成的。class可以任意的，能为规则提供操作数据或服务等功能，特别是在规则RHS部分中使用程序提供的服务功能，如在RHS部分添加日志功能、修改数据表、发送E-mail等。</p>
+<p>global全局变量与Fact(事实)对象不同，不会因为值变化而影响到规则的再次激活。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Drools/">Drools</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-《跟小贤学运营》之从初级到高阶，运营的进阶之路" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -913,75 +982,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2020/07/09/《架构整洁之道》之组件/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-js实现导出word" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/07/08/js实现导出word/" class="article-date">
-      <time datetime="2020-07-08T14:46:32.000Z" itemprop="datePublished">2020-07-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/08/js实现导出word/">js实现导出word</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、两个js文件-FileSaver-js和jquery-wordexport-js"><a href="#一、两个js文件-FileSaver-js和jquery-wordexport-js" class="headerlink" title="一、两个js文件(FileSaver.js和jquery.wordexport.js)"></a>一、两个js文件(FileSaver.js和jquery.wordexport.js)</h2>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/07/08/js实现导出word/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
