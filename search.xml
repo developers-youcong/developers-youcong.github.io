@@ -4,11 +4,30 @@
   
     
     <entry>
+      <title>我的分布式微服务框架:YC-Framework</title>
+      <link href="/2021/12/04/%E6%88%91%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6-YC-Framework/"/>
+      <url>/2021/12/04/%E6%88%91%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6-YC-Framework/</url>
+      
+        <content type="html"><![CDATA[<p>YC-Framework官方文档:<br><a href="http://framework.youcongtech.com/" target="_blank" rel="noopener">http://framework.youcongtech.com/</a></p><p>YC-Framework源代码:<br><a href="https://github.com/developers-youcong/yc-framework.git" target="_blank" rel="noopener">https://github.com/developers-youcong/yc-framework.git</a></p><p>YC-Framework问题反馈:<br><a href="https://github.com/developers-youcong/yc-framework/issues" target="_blank" rel="noopener">https://github.com/developers-youcong/yc-framework/issues</a><br><a id="more"></a></p><h2><span id="一-yc-framework的由来是什么">一、YC-Framework的由来是什么?</span></h2><p>我很早以前就想写一个框架了，但不确定写什么好，直到近几年分布式微服务的实践，使我想着写一个最佳通用型分布式微服务解决方案(也可以叫框架)。关于框架的命名，我想了很多，最终以YC定下来了，YC一词最早的灵感来源于《黑客与画家》这本书,同样也是我本人姓名的简写。</p><h2><span id="二-yc-framework致力于解决什么样的问题">二、YC-Framework致力于解决什么样的问题？</span></h2><p>YC-Framework官方文档中就声明了如下:<br><img src="/2021/12/04/我的分布式微服务框架-YC-Framework/01.png" alt="图一"></p><p>表示解决的问题是:</p><ul><li>让开发分布式微服务应用更简单；</li><li>让部署分布式微服务应用更简单；</li><li>集成众多的行业领域解决方案；</li><li>微服务如何简单的实现高可用、高性能、高并发。</li></ul><h2><span id="三-yc-framework适用于什么样的群体">三、YC-Framework适用于什么样的群体？</span></h2><p>主要针对Java开发群体。</p><p>Java开发群体的要求如下:</p><ul><li>熟悉Java语言，有相关的Java开发经验；</li><li>了解分布式微服务，有使用过SpringBoot+SpringCloud；</li><li>掌握Linux常用知识，懂得软件安装和配置；</li><li>懂得搜索和提问。</li></ul><h2><span id="四-yc-framework的学习成本是怎样的">四、YC-Framework的学习成本是怎样的？</span></h2><p>学习成本不高，有使用Java编程语言开发的经验即可。</p><h2><span id="五-yc-framework如何实现技术兼容性">五、YC-Framework如何实现技术兼容性？</span></h2><p>不会过于追求高版本，适合才是最重要的。</p><h2><span id="六-yc-framework的文档内容主体有哪些">六、YC-Framework的文档内容主体有哪些？</span></h2><p>文档内容主体有五大部分:</p><ul><li>初步；</li><li>快速开始；</li><li>组件使用；</li><li>测试；</li><li>部署。</li></ul><p>部分相关图如下:<br><img src="/2021/12/04/我的分布式微服务框架-YC-Framework/02.png" alt="图二"><br><img src="/2021/12/04/我的分布式微服务框架-YC-Framework/03.png" alt="图三"></p><h2><span id="七-yc-framework使用过程中出现了问题怎么办">七、YC-Framework使用过程中出现了问题怎么办？</span></h2><p>任何的框架都不可能不会有问题，欢迎大家前往<a href="https://github.com/developers-youcong/yc-framework/issues" target="_blank" rel="noopener">Github代码仓库-Issue提问</a></p><p>针对任何的提问，我本人将在闲暇时间进行处理。</p><p>关于如何提问，准备提问前，建议阅读一下:<br><a href="http://tieba.github.io/common/howtoask.html" target="_blank" rel="noopener">http://tieba.github.io/common/howtoask.html</a></p><h2><span id="八-yc-framework如果不活跃的怎么办">八、YC-Framework如果不活跃的怎么办？</span></h2><p>只要你具备SpringBoot、Spring、SpringCloud相关的开发经验和善于搜索、热爱学习就能自行改造和维护。一定程度上说明，只要具备相应的开发经验，改造起来，并不难(懂一定的原理+实际的经验+热爱学习，肯定是没问题的)。</p><h2><span id="九-yc-framework的商业模式是怎样的">九、YC-Framework的商业模式是怎样的？</span></h2><p>目前暂不考虑如何实现盈利。</p><h2><span id="十-yc-framework的开发者有哪些">十、YC-Framework的开发者有哪些？</span></h2><p>目前开发者就我一个人，也许将来会有更多志同道合的小伙伴加入。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> YC-Framework </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>遥远的救世主</title>
       <link href="/2021/12/01/%E9%81%A5%E8%BF%9C%E7%9A%84%E6%95%91%E4%B8%96%E4%B8%BB/"/>
       <url>/2021/12/01/%E9%81%A5%E8%BF%9C%E7%9A%84%E6%95%91%E4%B8%96%E4%B8%BB/</url>
       
-        <content type="html"><![CDATA[<p>近来因为一部电视剧《天道》对豆豆这位作家充满了兴趣，于是收藏了相关书单，即豆豆三部曲(《背叛》、《遥远的救世主》、《天幕红尘》等，其中《遥远的救世主》、《天幕红尘》我已经读完了一遍)，这份书单中《背叛》、《遥远的救世主》均已改编为电视剧，由于某些原因，《遥远的救世主》删减了不少，完整版在B站可以找到，至于《背叛》我没看过，就不做任何评价了。</p><p>《天道》这部电视剧我看完了，我也找来了原著(即《遥远的救世主》)读了一遍。这也使我对马克思、恩格斯、毛泽东、中国传统文化(儒家、道家、佛家、兵家等)等产生了浓厚的兴趣，在此期间也阅读了相关的书籍，既有实体书籍，也有电子版书籍，这些书籍虽然没有完全读完，但读的过程中有很大的收获。《遥远的救世主》这本书最重要的一点是引起了我对得救之道的兴趣和探索。下面谈谈我这本书和电视剧给我的几点感触。</p><a id="more"></a><h2><span id="一-生存法则">一、生存法则</span></h2><p>丁元英说，生存法则很简单，忍人所不忍，能人所不能，忍是一条线，能又是一条线，这个两者之间就是生存空间，如果我们真能做到忍人所不忍能人所不能，那我们的生存空间就比别人大。这个市场竞争的确是非常厉害，胜负往往在毫厘之间，两败俱伤，你只要比他多一口气，你就是赢家。<br><strong>我的感触:</strong><br>刚工作那年做运维的时候，什么都不会，做运维仅仅只是为了生存而已。企业不会养无用之人，这就给当初的我更大的压力。由于住的很远，虽然上班时间是早上九点半(公司是996制度，只有周日才休息一天)，但我六点必须起来，一趟公交+两趟地铁，通勤一天算起来四个小时，去公司两个小时，回来也得两个小时。有的时候加班到十一点多，末班地铁基本上赶不上了。于是只得转夜班公交，夜班公交到住得地方基本上得凌晨一点多了(中间还得转一趟，一共两趟公交)。也许有人说，住这么远，为什么不换近点的地方呢？答案是，<strong>我没钱</strong>，租房的钱是借的，吃饭的钱也是借的，每天的开支必须精打细算。即便有些时候能赶上末班地铁，但到了转公交的时候，我通常会选择走路回去，因为还不太晚，也就十点多，到住的地方，最多十一点，只要不是凌晨一点多或者两点，基本上我会选择学习到凌晨一点左右。如果问我为什么要这么苦自己？其实可以完全不这样的？答案是，<strong>当时对我最重要的一件事是必须要靠自己的本事生存下去，否则前面的积累将没有任何的意义，只有凭借自己的本事生存下去，才会有后续的发展可能。</strong></p><h2><span id="二-挣钱的秘诀">二、挣钱的秘诀</span></h2><p>芮小丹问，书店里炒股的书到处都是，为什么到了你这，你连说都不能说了。<br>丁元英回答到，真有挣钱的秘籍人家能告诉你。要是那样能挣着钱，那就不用写书了。<br><strong>我的感触:</strong><br>这让我想起了慕容雪村在《中国，少了一味药》中说到的一句话，<strong>不会思考是可耻的，而更可耻的是，这群不会思考的人正在教我如何思考。</strong>早年学生时期也读过不少成功学大师的书籍，后面工作了，才深刻明白了一点，成功学大师是靠不住的，唯有自己从实际出发，不断摸索和实践，才有可能探索出属于自己的赚钱方式，才有可能最终实现自由。</p><h2><span id="三-扶贫">三、扶贫</span></h2><p>丁元英说，杀富济贫，杀富富不去，救贫贫不离，救主的文化，唯救主可说，救主不是人，是道。得救不是破了戒的狼吞虎咽，是觉悟。<br><strong>我的感触:</strong><br>一个人要想真正的脱贫，光靠外界的扶持是远远不够的，要从转变自己的观念出发，这就好比一些新闻上讲的，一些贫困户越帮越穷，一些贫困户越帮越富有，关键在于那些变得富有的贫困户改变了自己的观念，深刻认识到一点，外界的扶持是有限的，自己必须要独立自主起来(这一点也是当年我父亲和母亲创业从家徒四壁到有房有车的核心关键)。就想书中讲的王庙村，王庙村的生产体系搭建并运转起来，每个农户都是个体户，都掌握着生产体系中的某一环节和拥有某一环节的技术手段，这就表示格律诗从某种程度上需要依赖于格律诗，而王庙村即便没有格律诗也是能够生存和发展下去的，这也是为什么最后要预留股份吸收王庙村冯世杰的重要原因。</p><h2><span id="四-悟">四、悟</span></h2><p>芮小丹说，只有是我自己觉到悟到的我才能做到，只要不是我觉到、悟到的，你给不了我，给了我也拿不住，叶晓明他们就是例子。只有我自己觉到、悟到的，我才有可能做到，我能做到的才是我的。</p><p><strong>我的感触:</strong><br>这与我在<a href="https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247485793&amp;idx=1&amp;sn=8435adff26db97b3f09f08d1abf97b2c&amp;chksm=f9805a72cef7d364b01fb27d4921c9818ef10643d532cbfba1ea8c7e92603db28c056311fbed&amp;token=166285557&amp;lang=zh_CN#rd" target="_blank" rel="noopener">我对投资的思考</a>一文中提到的<strong>“你永远赚不到，超出你认知范围外的钱”。</strong>不论是自主创业，还是依托于公司下的雇佣模式，或者是副业(理财投资、信息差、说书、短视频、网上投稿、代购等)，均适用这样的原因。<br><strong>注意一点:</strong><br><strong>“你永远赚不到，超出你认知范围外的钱”。</strong>这句话并不代表你就需要放弃尝试各种新鲜事物。<br>同样这些年来，导师在我的编程职业生涯中给我传授了很多优秀的方法论，那个时候刚传授的时候，由于量变积累的有限性，我尚不能理解，但当量变的积累到达一定的程度时，我发现我理解了，从实践中理解了，这种悟，是谁都抢不走的，而且随着不断的实践，它会促使我更加强大。当然了，这种实践也是痛苦的，因为具有不确定性。</p><h2><span id="五-靠字文化">五、”靠”字文化</span></h2><p>丁元英说，传统文化的死结在一个”靠”字上，在家靠父母，出门靠朋友，靠上帝、靠菩萨、靠皇恩，总之，靠什么都行，就是别靠自己。<br><strong>我的感触:</strong><br>一个人在社会中，要说绝对靠自己，这也是不现实的。毕竟无论生活还是工作，都离不开人和人、人和物的。但我想要强调的是，<strong>“在大城市里，很多东西是需要靠自己的实力去不断争取的，要想下一代过好一点，这一代就得历经很多磨难”。</strong></p><h2><span id="六-只有你行你才有机会">六、只有你行，你才有机会</span></h2><p>丁元英对刘冰说，公司刚筹建的时候，很多事情要顾到人情，现在改组了，就要走新章程了。搞市场，光靠人情是不行的。这个心里要有一个数。只有你行，你才有机会。<br><strong>我的感触:</strong><br>其实最关键让我有感触的一句话在于”只有你行，你才有机会”。这句话贯穿于我五年的奋斗历程。既让我在众多的竞争者中脱颖而出，也让我受到了各式各样的毒打。</p><h2><span id="七-文化属性">七、文化属性</span></h2><p>丁元英说，透视社会依次有三个层面，技术、制度与文化，小到一个人，大到一个国家一个民族，任何一种命运，都是那种文化属性的产物，强势文化造就强者，弱势文化造就弱者。这是规律，也可以理解为天道，不以人的意志为转移。<br>芮小丹问到，什么是强势文化？什么又是弱势文化？<br>丁元英回答到，强势文化在武学里称之为秘笈，弱势文化因为易学、易懂、易用就成了流行品种。</p><h2><span id="八-两首词">八、两首词</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">自嘲</span><br><span class="line">本是后山人，偶做前堂客。醉舞经阁半卷书，坐井说天阔。</span><br><span class="line">大志戏功名，海斗量福祸。论到囊中羞怯时，怒指乾坤错。</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  悟</span><br><span class="line">悟道休言天命，修行勿取真经。</span><br><span class="line">一悲一喜一枯荣，哪个前生注定？</span><br><span class="line">袈裟本无清净，红尘不染性空。</span><br><span class="line">幽幽古刹千年钟，都是痴人说梦。</span><br></pre></td></tr></table></figure><p>这两首词，有人说贯穿于整部书，也有人说这里面有很多门道可以思索，既有佛学，也有道学，还有儒学。管他什么学，在我看来，不同的人对此有不同的解读罢了。</p><h2><span id="九-居安思危">九、居安思危</span></h2><p>面对格律诗和乐圣的商战，伯爵董事长居安思危的做法不得不令人深思。回顾这些年的职业经历，我发现每当我处于安逸的状态后，总会出各种意外，例如公司所面临的破产、老板资金困难发不出工资等。当我改变以往的安逸状态，专心致志于不断的学习实践时，一切均往好的方面发展。不过这些年的职业经历告诉我，对于一个程序员而言，技术能力固然是重要的，但情商方面也不能过于轻视(情商方面包含认识自我情绪、管理情绪、自我激励、识别他人情绪、处理人际关系等)。这也是我接下来学习和实践的重点。</p><h2><span id="十-总结">十、总结</span></h2><p>有些人过于把《天道》这部电视剧和《遥远的救世主》这本书神化了，彷佛它能把人生的所有疑问都给解答了，我个人十分反对这样的做法。在我看来不论是电视剧还是书籍，它们的共同之处让我看到不同的世界和对世界不同角度的解读，有积极，也有消极，有入世，也有避世，有启发，也有疑惑，<strong>总的来说，它从思想上丰富了我对世界的认知，而实践的过程中，优化和改进我对世界的认知。</strong></p>]]></content>
+        <content type="html"><![CDATA[<p>近来因为一部电视剧《天道》对豆豆这位作家充满了兴趣，于是收藏了相关书单，即豆豆三部曲(《背叛》、《遥远的救世主》、《天幕红尘》等，其中《遥远的救世主》、《天幕红尘》我已经读完了一遍)，这份书单中《背叛》、《遥远的救世主》均已改编为电视剧，由于某些原因，《遥远的救世主》删减了不少，完整版在B站可以找到，至于《背叛》我没看过，就不做任何评价了。</p><p>《天道》这部电视剧我看完了，我也找来了原著(即《遥远的救世主》)读了一遍。这也使我对马克思、恩格斯、毛泽东、中国传统文化(儒家、道家、佛家、兵家等)等产生了浓厚的兴趣，在此期间也阅读了相关的书籍，既有实体书籍，也有电子版书籍，这些书籍虽然没有完全读完，但读的过程中有很大的收获。《遥远的救世主》这本书最重要的一点是引起了我对得救之道的兴趣和探索。下面谈谈我这本书和电视剧给我的几点感触。</p><a id="more"></a><h2><span id="一-生存法则">一、生存法则</span></h2><p>丁元英说，生存法则很简单，忍人所不忍，能人所不能，忍是一条线，能又是一条线，这个两者之间就是生存空间，如果我们真能做到忍人所不忍能人所不能，那我们的生存空间就比别人大。这个市场竞争的确是非常厉害，胜负往往在毫厘之间，两败俱伤，你只要比他多一口气，你就是赢家。<br><strong>我的感触:</strong><br>刚工作那年做运维的时候，什么都不会，做运维仅仅只是为了生存而已。企业不会养无用之人，这就给当初的我更大的压力。由于住的很远，虽然上班时间是早上九点半(公司是996制度，只有周日才休息一天)，但我六点必须起来，一趟公交+两趟地铁，通勤一天算起来四个小时，去公司两个小时，回来也得两个小时。有的时候加班到十一点多，末班地铁基本上赶不上了。于是只得转夜班公交，夜班公交到住得地方基本上得凌晨一点多了(中间还得转一趟，一共两趟公交)。也许有人说，住这么远，为什么不换近点的地方呢？答案是，<strong>我没钱</strong>，租房的钱是借的，吃饭的钱也是借的，每天的开支必须精打细算。即便有些时候能赶上末班地铁，但到了转公交的时候，我通常会选择走路回去，因为还不太晚，也就十点多，到住的地方，最多十一点，只要不是凌晨一点多或者两点，基本上我会选择学习到凌晨一点左右。如果问我为什么要这么苦自己？其实可以完全不这样的？答案是，<strong>当时对我最重要的一件事是必须要靠自己的本事生存下去，否则前面的积累将没有任何的意义，只有凭借自己的本事生存下去，才会有后续的发展可能。</strong></p><h2><span id="二-挣钱的秘诀">二、挣钱的秘诀</span></h2><p>芮小丹问，书店里炒股的书到处都是，为什么到了你这，你连说都不能说了。<br>丁元英回答到，真有挣钱的秘籍人家能告诉你。要是那样能挣着钱，那就不用写书了。<br><strong>我的感触:</strong><br>这让我想起了慕容雪村在《中国，少了一味药》中说到的一句话，<strong>不会思考是可耻的，而更可耻的是，这群不会思考的人正在教我如何思考。</strong>早年学生时期也读过不少成功学大师的书籍，后面工作了，才深刻明白了一点，成功学大师是靠不住的，唯有自己从实际出发，不断摸索和实践，才有可能探索出属于自己的赚钱方式，才有可能最终实现自由。</p><h2><span id="三-扶贫">三、扶贫</span></h2><p>丁元英说，杀富济贫，杀富富不去，救贫贫不离，救主的文化，唯救主可说，救主不是人，是道。得救不是破了戒的狼吞虎咽，是觉悟。<br><strong>我的感触:</strong><br>一个人要想真正的脱贫，光靠外界的扶持是远远不够的，要从转变自己的观念出发，这就好比一些新闻上讲的，一些贫困户越帮越穷，一些贫困户越帮越富有，关键在于那些变得富有的贫困户改变了自己的观念，深刻认识到一点，外界的扶持是有限的，自己必须要独立自主起来(这一点也是当年我父亲和母亲创业从家徒四壁到有房有车的核心关键)。就想书中讲的王庙村，王庙村的生产体系搭建并运转起来，每个农户都是个体户，都掌握着生产体系中的某一环节和拥有某一环节的技术手段，这就表示格律诗从某种程度上需要依赖于格律诗，而王庙村即便没有格律诗也是能够生存和发展下去的，这也是为什么最后要预留股份吸收王庙村冯世杰的重要原因。</p><h2><span id="四-悟">四、悟</span></h2><p>芮小丹说，只有是我自己觉到悟到的我才能做到，只要不是我觉到、悟到的，你给不了我，给了我也拿不住，叶晓明他们就是例子。只有我自己觉到、悟到的，我才有可能做到，我能做到的才是我的。</p><p><strong>我的感触:</strong><br>这与我在<a href="https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247485793&amp;idx=1&amp;sn=8435adff26db97b3f09f08d1abf97b2c&amp;chksm=f9805a72cef7d364b01fb27d4921c9818ef10643d532cbfba1ea8c7e92603db28c056311fbed&amp;token=166285557&amp;lang=zh_CN#rd" target="_blank" rel="noopener">我对投资的思考</a>一文中提到的<strong>“你永远赚不到，超出你认知范围外的钱”。</strong>不论是自主创业，还是依托于公司下的雇佣模式，或者是副业(理财投资、信息差、说书、短视频、网上投稿、代购等)，均适用这样的原因。<br><strong>注意一点:</strong><br><strong>“你永远赚不到，超出你认知范围外的钱”。</strong>这句话并不代表你就需要放弃尝试各种新鲜事物。<br>同样这些年来，导师在我的编程职业生涯中给我传授了很多优秀的方法论，那个时候刚传授的时候，由于量变积累的有限性，我尚不能理解，但当量变的积累到达一定的程度时，我发现我理解了，从实践中理解了，这种悟，是谁都抢不走的，而且随着不断的实践，它会促使我更加强大。当然了，这种实践也是痛苦的，因为具有不确定性。</p><h2><span id="五-靠字文化">五、”靠”字文化</span></h2><p>丁元英说，传统文化的死结在一个”靠”字上，在家靠父母，出门靠朋友，靠上帝、靠菩萨、靠皇恩，总之，靠什么都行，就是别靠自己。<br><strong>我的感触:</strong><br>一个人在社会中，要说绝对靠自己，这也是不现实的。毕竟无论生活还是工作，都离不开人和人、人和物的。但我想要强调的是，<strong>“在大城市里，很多东西是需要靠自己的实力去不断争取的，要想下一代过好一点，这一代就得历经很多磨难”。</strong></p><h2><span id="六-只有你行你才有机会">六、只有你行，你才有机会</span></h2><p>丁元英对刘冰说，公司刚筹建的时候，很多事情要顾到人情，现在改组了，就要走新章程了。搞市场，光靠人情是不行的。这个心里要有一个数。只有你行，你才有机会。<br><strong>我的感触:</strong><br>其实最关键让我有感触的一句话在于”只有你行，你才有机会”。这句话贯穿于我五年的奋斗历程。既让我在众多的竞争者中脱颖而出，也让我受到了各式各样的毒打。</p><h2><span id="七-文化属性">七、文化属性</span></h2><p>丁元英说，透视社会依次有三个层面，技术、制度与文化，小到一个人，大到一个国家一个民族，任何一种命运，都是那种文化属性的产物，强势文化造就强者，弱势文化造就弱者。这是规律，也可以理解为天道，不以人的意志为转移。<br>芮小丹问到，什么是强势文化？什么又是弱势文化？<br>丁元英回答到，强势文化在武学里称之为秘笈，弱势文化因为易学、易懂、易用就成了流行品种。</p><h2><span id="八-两首词">八、两首词</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">自嘲</span><br><span class="line">本是后山人，偶做前堂客。醉舞经阁半卷书，坐井说天阔。</span><br><span class="line">大志戏功名，海斗量福祸。论到囊中羞怯时，怒指乾坤错。</span><br></pre></td></tr></table></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  悟</span><br><span class="line">悟道休言天命，修行勿取真经。</span><br><span class="line">一悲一喜一枯荣，哪个前生注定？</span><br><span class="line">袈裟本无清净，红尘不染性空。</span><br><span class="line">幽幽古刹千年钟，都是痴人说梦。</span><br></pre></td></tr></table></figure><p>这两首词，有人说贯穿于整部书，也有人说这里面有很多门道可以思索，既有佛学，也有道学，还有儒学。管他什么学，在我看来，不同的人对此有不同的解读罢了。</p><h2><span id="九-居安思危">九、居安思危</span></h2><p>面对格律诗和乐圣的商战，伯爵董事长居安思危的做法不得不令人深思。回顾这些年的职业经历，我发现每当我处于安逸的状态后，总会出各种意外，例如公司所面临的破产、老板资金困难发不出工资等。当我改变以往的安逸状态，专心致志于不断的学习实践时，一切均往好的方面发展。不过这些年的职业经历告诉我，对于一个程序员而言，技术能力固然是重要的，但情商方面也不能过于轻视(情商方面包含认识自我情绪、管理情绪、自我激励、识别他人情绪、处理人际关系等)。这也是我接下来学习和实践的重点。</p><h2><span id="十-总结">十、总结</span></h2><p>有些人过于把《天道》这部电视剧和《遥远的救世主》这本书神化了，彷佛它能把人生的所有疑问都给解答了，我个人十分反对这样的做法。在我看来不论是电视剧还是书籍，它们的共同之处让我看到不同的世界和对世界不同角度的解读，有积极，也有消极，有入世，也有避世，有启发，也有疑惑，<strong>总的来说，它从思想上丰富了我对世界的认知，而在实践的过程中，优化和改进我对世界的认知。</strong></p>]]></content>
       
       
       
@@ -128,11 +147,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -189,11 +208,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -212,11 +231,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -235,11 +254,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -258,11 +277,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -281,11 +300,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -304,11 +323,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -327,11 +346,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -350,11 +369,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -373,11 +392,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -396,11 +415,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -419,11 +438,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -442,11 +461,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -465,11 +484,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -488,34 +507,11 @@
       
         <tags>
             
-            <tag> 架构 </tag>
-            
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>我在M2公司做架构之日志管理</title>
-      <link href="/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/"/>
-      <url>/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/</url>
-      
-        <content type="html"><![CDATA[<h2><span id="一-日志管理的重要性">一、日志管理的重要性</span></h2><p>日志是程序设计中很重要的一部分，它提供了丰富的程序运行时的信息，例如:程序运行时的逻辑信息、错误信息、事件描述信息、关键数据、状态信息、执行时间和用户登录信息等，这些信息可以帮助开发人员快速地发现和定位问题。在实际生产环境中，日志是查找问题的重要来源，良好的日志格式和记录方式可以帮助开发人员、应急人员快速定位到错误的根源，并找到解决问题的办法。<br><a id="more"></a></p><h2><span id="二-日志框架的选型">二、日志框架的选型</span></h2><ul><li>JDK Logger；</li><li>Apache Commons Logging；</li><li>Apache Log4j；</li><li>Slf4j；</li><li>Logback；</li><li>Apache Log4j 2。</li></ul><p>而我们采用的是Logback。</p><h2><span id="三-日志系统的优化和最佳实践">三、日志系统的优化和最佳实践</span></h2><h3><span id="1开发人员的日志意识">1.开发人员的日志意识</span></h3><ul><li>开发代码时要有意识地设想代码出现问题的场景，针对出问题的场景记录关键的程序运行的信息，这样在代码出现问题时才能通过日志恢复程序运行的过程，才容易定位问题。</li><li>打印日志时必须包含环境信息，环境信息是指在打印可获得的帮助开发人员定位问题的信息，例如：用户ID、角色、参数、返回值、逻辑判断结果、循环次数、异常信息等。</li><li>对异常等错误信息必须打印错误级别及以上级别的日志，对线上日志要定期检查，没有异常日志产生的服务才是健康的服务。</li><li>生产环境将关闭的日志必须在打印日志前进行判断，以此来提高执行效率。</li><li>必须使用占位符的方式代替字符串连接，这样程序更加简洁，并且性能有所提高。</li><li>对关键业务步骤必须打点并记录耗时和结果等信息。</li></ul><h3><span id="2日志级别的设置">2.日志级别的设置</span></h3><p>通常来说线上应用使用info级别就够了，但是刚刚交付的项目或服务质量还不稳定，换言之，还有一定数量的bug存在，如果使用info级别，则出现问题很难定位，因此没有一个完美的答案，下面是最佳实践(可供参考):</p><ul><li>QA环境可以使用debug及以下级别的日志。</li><li>刚刚上线的应用还没有到稳定期，使用debug级别的日志。</li><li>上线后稳定的应用，使用info级别的日志。</li><li>常年不出现问题的应用使用error级别的日志。</li></ul><p>对于不同的情况应该使用的日志级别如下:</p><ul><li>使用trace级别的日志输出最细粒度的信息事件，通过这些信息可以跟踪程序执行的任一步骤。</li><li>使用debug级别的日志输出细粒度的信息事件，这些信息对调试应用程序非常有用。</li><li>使用info级别的日志输出粗粒度的信息事件，突出强调应用程序运行的关键逻辑和过程。</li><li>使用warn级别的日志输出可能出现的错误，或者输出潜在发生错误的环境信息，或者打印用户输入的非法信息。</li><li>使用error级别的输出错误事件，但仍然不影响系统的继续运行，在Java程序中发生异常一定要记录error日志，并且打印异常堆栈。异常在封装后抛出时一定要保留根源异常和错误信息，构成异常树，因为在解决线上问题时，日志中的异常堆栈和异常信息都是非常重要的线索。</li><li>fatal级别代表严重的错误事件，将会导致应用程序的退出。</li></ul><h3><span id="3日志的数量和大小">3.日志的数量和大小</span></h3><p>首先，我们一定要控制日志的输出量，避免由于业务上量而导致服务器磁盘占满并大量地输出无用的日志，这不利于系统性能的提升，也不利于快速定位错误点。</p><p>我们写程序时，要清晰地了解程序中的哦哪一处会发生问题，以及发生问题时打印哪些日志可以帮助定位这些问题，这样打印出来的日志才最有效。因此，我们只需打印关键的信息，不要随便把对象JSON序列化后打印出来。如果要打印对象列表，则使用JSON格式打印会占用很大空间。</p><h3><span id="4logbackxml参考模板">4.logback.xml(参考模板)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 日志存放路径 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;property name=&quot;log.path&quot; value=&quot;/home/tech/log/xx&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 日志输出格式 --&gt;</span><br><span class="line">    &lt;property name=&quot;log.pattern&quot; value=&quot;%d&#123;HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;20&#125; - [%method,%line] - %msg%n&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 控制台输出 --&gt;</span><br><span class="line">    &lt;appender name=&quot;console&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 系统日志输出 --&gt;</span><br><span class="line">    &lt;appender name=&quot;file_info&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;file&gt;$&#123;log.path&#125;/info.log&lt;/file&gt;</span><br><span class="line">        &lt;!-- 循环政策：基于时间创建日志文件 --&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 日志文件名格式 --&gt;</span><br><span class="line"></span><br><span class="line">         &lt;fileNamePattern&gt;$&#123;log.path&#125;/info.%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 60天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;60&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</span><br><span class="line">            &lt;!-- 过滤的级别 --&gt;</span><br><span class="line">            &lt;level&gt;INFO&lt;/level&gt;</span><br><span class="line">            &lt;!-- 匹配时的操作：接收（记录） --&gt;</span><br><span class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</span><br><span class="line">            &lt;!-- 不匹配时的操作：拒绝（不记录） --&gt;</span><br><span class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line">    &lt;appender name=&quot;file_error&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;file&gt;$&#123;log.path&#125;/error.log&lt;/file&gt;</span><br><span class="line">        &lt;!-- 循环政策：基于时间创建日志文件 --&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 日志文件名格式 --&gt;</span><br><span class="line">        &lt;fileNamePattern&gt;$&#123;log.path&#125;/error.%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 60天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;60&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;!-- 过滤的级别 --&gt;</span><br><span class="line">            &lt;level&gt;ERROR&lt;/level&gt;</span><br><span class="line">            &lt;!-- 匹配时的操作：接收（记录） --&gt;</span><br><span class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</span><br><span class="line">            &lt;!-- 不匹配时的操作：拒绝（不记录） --&gt;</span><br><span class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line">    &lt;!-- 指定打印SQL --&gt;</span><br><span class="line">    &lt;logger name=&quot;com.xx.dao&quot; level=&quot;debug&quot;/&gt;</span><br><span class="line">    &lt;!-- 系统模块日志级别控制  --&gt;</span><br><span class="line">    &lt;logger name=&quot;com.xx&quot; level=&quot;info&quot;/&gt;</span><br><span class="line">    &lt;!-- Spring日志级别控制  --&gt;</span><br><span class="line">    &lt;logger name=&quot;org.springframework&quot; level=&quot;warn&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;root level=&quot;info&quot;&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;console&quot;/&gt;</span><br><span class="line">    &lt;/root&gt;</span><br><span class="line">    &lt;!--系统操作日志--&gt;</span><br><span class="line">    &lt;root level=&quot;info&quot;&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;file_info&quot;/&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;file_error&quot;/&gt;</span><br><span class="line">    &lt;/root&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure><h2><span id="四-总结">四、总结</span></h2><p>上述大部分内容来自《分布式服务架构:原理、设计与实战》，而这些内容都在我主要负责的公司分布式架构体系中实践着。</p>]]></content>
-      
-      
-      
-        <tags>
             
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -534,11 +530,34 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
             
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我在M2公司做架构之日志管理</title>
+      <link href="/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/"/>
+      <url>/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-日志管理的重要性">一、日志管理的重要性</span></h2><p>日志是程序设计中很重要的一部分，它提供了丰富的程序运行时的信息，例如:程序运行时的逻辑信息、错误信息、事件描述信息、关键数据、状态信息、执行时间和用户登录信息等，这些信息可以帮助开发人员快速地发现和定位问题。在实际生产环境中，日志是查找问题的重要来源，良好的日志格式和记录方式可以帮助开发人员、应急人员快速定位到错误的根源，并找到解决问题的办法。<br><a id="more"></a></p><h2><span id="二-日志框架的选型">二、日志框架的选型</span></h2><ul><li>JDK Logger；</li><li>Apache Commons Logging；</li><li>Apache Log4j；</li><li>Slf4j；</li><li>Logback；</li><li>Apache Log4j 2。</li></ul><p>而我们采用的是Logback。</p><h2><span id="三-日志系统的优化和最佳实践">三、日志系统的优化和最佳实践</span></h2><h3><span id="1开发人员的日志意识">1.开发人员的日志意识</span></h3><ul><li>开发代码时要有意识地设想代码出现问题的场景，针对出问题的场景记录关键的程序运行的信息，这样在代码出现问题时才能通过日志恢复程序运行的过程，才容易定位问题。</li><li>打印日志时必须包含环境信息，环境信息是指在打印可获得的帮助开发人员定位问题的信息，例如：用户ID、角色、参数、返回值、逻辑判断结果、循环次数、异常信息等。</li><li>对异常等错误信息必须打印错误级别及以上级别的日志，对线上日志要定期检查，没有异常日志产生的服务才是健康的服务。</li><li>生产环境将关闭的日志必须在打印日志前进行判断，以此来提高执行效率。</li><li>必须使用占位符的方式代替字符串连接，这样程序更加简洁，并且性能有所提高。</li><li>对关键业务步骤必须打点并记录耗时和结果等信息。</li></ul><h3><span id="2日志级别的设置">2.日志级别的设置</span></h3><p>通常来说线上应用使用info级别就够了，但是刚刚交付的项目或服务质量还不稳定，换言之，还有一定数量的bug存在，如果使用info级别，则出现问题很难定位，因此没有一个完美的答案，下面是最佳实践(可供参考):</p><ul><li>QA环境可以使用debug及以下级别的日志。</li><li>刚刚上线的应用还没有到稳定期，使用debug级别的日志。</li><li>上线后稳定的应用，使用info级别的日志。</li><li>常年不出现问题的应用使用error级别的日志。</li></ul><p>对于不同的情况应该使用的日志级别如下:</p><ul><li>使用trace级别的日志输出最细粒度的信息事件，通过这些信息可以跟踪程序执行的任一步骤。</li><li>使用debug级别的日志输出细粒度的信息事件，这些信息对调试应用程序非常有用。</li><li>使用info级别的日志输出粗粒度的信息事件，突出强调应用程序运行的关键逻辑和过程。</li><li>使用warn级别的日志输出可能出现的错误，或者输出潜在发生错误的环境信息，或者打印用户输入的非法信息。</li><li>使用error级别的输出错误事件，但仍然不影响系统的继续运行，在Java程序中发生异常一定要记录error日志，并且打印异常堆栈。异常在封装后抛出时一定要保留根源异常和错误信息，构成异常树，因为在解决线上问题时，日志中的异常堆栈和异常信息都是非常重要的线索。</li><li>fatal级别代表严重的错误事件，将会导致应用程序的退出。</li></ul><h3><span id="3日志的数量和大小">3.日志的数量和大小</span></h3><p>首先，我们一定要控制日志的输出量，避免由于业务上量而导致服务器磁盘占满并大量地输出无用的日志，这不利于系统性能的提升，也不利于快速定位错误点。</p><p>我们写程序时，要清晰地了解程序中的哦哪一处会发生问题，以及发生问题时打印哪些日志可以帮助定位这些问题，这样打印出来的日志才最有效。因此，我们只需打印关键的信息，不要随便把对象JSON序列化后打印出来。如果要打印对象列表，则使用JSON格式打印会占用很大空间。</p><h3><span id="4logbackxml参考模板">4.logback.xml(参考模板)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 日志存放路径 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;property name=&quot;log.path&quot; value=&quot;/home/tech/log/xx&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 日志输出格式 --&gt;</span><br><span class="line">    &lt;property name=&quot;log.pattern&quot; value=&quot;%d&#123;HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;20&#125; - [%method,%line] - %msg%n&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 控制台输出 --&gt;</span><br><span class="line">    &lt;appender name=&quot;console&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 系统日志输出 --&gt;</span><br><span class="line">    &lt;appender name=&quot;file_info&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;file&gt;$&#123;log.path&#125;/info.log&lt;/file&gt;</span><br><span class="line">        &lt;!-- 循环政策：基于时间创建日志文件 --&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 日志文件名格式 --&gt;</span><br><span class="line"></span><br><span class="line">         &lt;fileNamePattern&gt;$&#123;log.path&#125;/info.%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 60天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;60&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</span><br><span class="line">            &lt;!-- 过滤的级别 --&gt;</span><br><span class="line">            &lt;level&gt;INFO&lt;/level&gt;</span><br><span class="line">            &lt;!-- 匹配时的操作：接收（记录） --&gt;</span><br><span class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</span><br><span class="line">            &lt;!-- 不匹配时的操作：拒绝（不记录） --&gt;</span><br><span class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line">    &lt;appender name=&quot;file_error&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;file&gt;$&#123;log.path&#125;/error.log&lt;/file&gt;</span><br><span class="line">        &lt;!-- 循环政策：基于时间创建日志文件 --&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 日志文件名格式 --&gt;</span><br><span class="line">        &lt;fileNamePattern&gt;$&#123;log.path&#125;/error.%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 60天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;60&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;!-- 过滤的级别 --&gt;</span><br><span class="line">            &lt;level&gt;ERROR&lt;/level&gt;</span><br><span class="line">            &lt;!-- 匹配时的操作：接收（记录） --&gt;</span><br><span class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</span><br><span class="line">            &lt;!-- 不匹配时的操作：拒绝（不记录） --&gt;</span><br><span class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line">    &lt;!-- 指定打印SQL --&gt;</span><br><span class="line">    &lt;logger name=&quot;com.xx.dao&quot; level=&quot;debug&quot;/&gt;</span><br><span class="line">    &lt;!-- 系统模块日志级别控制  --&gt;</span><br><span class="line">    &lt;logger name=&quot;com.xx&quot; level=&quot;info&quot;/&gt;</span><br><span class="line">    &lt;!-- Spring日志级别控制  --&gt;</span><br><span class="line">    &lt;logger name=&quot;org.springframework&quot; level=&quot;warn&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;root level=&quot;info&quot;&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;console&quot;/&gt;</span><br><span class="line">    &lt;/root&gt;</span><br><span class="line">    &lt;!--系统操作日志--&gt;</span><br><span class="line">    &lt;root level=&quot;info&quot;&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;file_info&quot;/&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;file_error&quot;/&gt;</span><br><span class="line">    &lt;/root&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure><h2><span id="四-总结">四、总结</span></h2><p>上述大部分内容来自《分布式服务架构:原理、设计与实战》，而这些内容都在我主要负责的公司分布式架构体系中实践着。</p>]]></content>
+      
+      
+      
+        <tags>
+            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 架构 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -557,11 +576,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -580,11 +599,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -603,11 +622,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -626,11 +645,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -649,11 +668,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -672,11 +691,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -695,11 +714,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -718,11 +737,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -741,11 +760,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -764,11 +783,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
