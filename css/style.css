@@ -505,6 +505,9 @@ a {
   #container .toc-article a {
     color: #767676;
   }
+  #container li.toc-item {
+    line-height: 1.2;
+  }
   #container .copyright {
     width: 90%;
     padding: 0.5em 0.8em;
@@ -1739,6 +1742,20 @@ li:hover {
 #toc ol.toc ol.toc-child {
   padding-left: 1.25em;
   margin: 4px 0;
+}
+#toc a.toc-link {
+  display: inline-block;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+#toc li.toc-item {
+  line-height: 1.45em;
+}
+#toc li.toc-item > i {
+  position: relative;
+  bottom: 0.35em;
 }
 .copyright {
   width: 85%;
