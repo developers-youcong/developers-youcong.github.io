@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>基于报告之复盘</title>
+      <link href="/2021/12/07/%E5%9F%BA%E4%BA%8E%E6%8A%A5%E5%91%8A%E4%B9%8B%E5%A4%8D%E7%9B%98/"/>
+      <url>/2021/12/07/%E5%9F%BA%E4%BA%8E%E6%8A%A5%E5%91%8A%E4%B9%8B%E5%A4%8D%E7%9B%98/</url>
+      
+        <content type="html"><![CDATA[<p>报告在数据分析相关的系统里是非常常见的，如年度统计报告、某一公司季度分析报告、某一行业月度分析报告、某一功能日使用详情报告等。在今年中旬我也遇到这样的业务。做的过程中遇到了很多的问题，不过还在这些问题最终都解决了。但我觉得应该对这个过程做一个复盘。<br>&lt;!–more-&gt;</p><h2><span id="一-技术选型">一、技术选型</span></h2><ul><li>Apache Poi；</li><li>Freemark；</li><li>Poi-tl。</li></ul><p>最终我选择了Poi-tl。</p><h2><span id="二-应用场景">二、应用场景</span></h2><p>当天产生昨天的数据分析报告(日报告)，本周一产生上一周的数据分析报告(周报告)。</p><h2><span id="三-功能开发排期">三、功能开发排期</span></h2><p>当时领导安排我带小L一起做，给了两周时间做这个，第一周把日报做完，第二周把周报做完。根据当时的情况，我很快制定出开发计划，由小L主要负责实际的开发，而我负责总体把控和一些问题的处理，因为当时领导还安排我处理其它的事情。我把制定好的计划发给了领导之后，开始多方并行(日周报相关和其它事情处理等)。我当时制定完计划后，以为不是很复杂，到最后不料发现，问题巨多无比，整整差不多两月才使其功能相对完整。</p><h2><span id="四-问题清单">四、问题清单</span></h2><ul><li>(1)代码可读性问题。</li><li>(2)代码可扩展性问题。</li><li>(3)报告由word转pdf出现乱码问题。</li><li>(4)报告注入图片变形问题。</li><li>(5)报告由word转为pdf，内容表格出现下划线。</li><li>(6)报告表格表头自定义以及表格宽高问题。</li><li>(7)报告Pdf预览问题。</li><li>(8)报告服务器环境配置问题。</li><li>(9)报告生成后的URL通过代理下载失败问题。</li><li>(10)报告与其它API程序通信失败问题。</li><li>(11)报告字体问题。</li><li>(12)报告下载缓慢问题。</li><li>(13)报告定时任务重复执行问题(微服务集群下)。</li><li>(14)报告自动化生成问题。</li><li>(15)代码处理业务数据过程中的问题。</li></ul><p>其实，远远不止上面这15个问题。面对这些问题我可谓是加班加点不断的思考、不断的实践，终于把它们都给解决了。</p><h3><span id="1代码可读性问题">1.代码可读性问题</span></h3><p>问题描述:魔法值到处都是(缺失常量定义)、注释非常少且不是特别明确、命名极其不规范等。</p><p>问题解决办法:借鉴《阿里巴巴Java开发手册》中的编程规约进行整改。</p><h3><span id="2代码可扩展性问题">2.代码可扩展性问题</span></h3><p>问题描述:到处都是重复性代码，而这些重复性代码是可以抽取为通用型方法的。</p><p>问题解决办法:出现两次或三次以上的代码块，将其抽取为一个业务通用型方法。</p><h3><span id="3报告由word转pdf出现乱码问题">3.报告由word转pdf出现乱码问题</span></h3><p>本地Windows环境生成报告正常，一到Linux上，生成后的报告，根本就无法看。</p><p>问题解决办法:<br>我针对该问题写了相关的文章，文章为<a href="https://youcongtech.com/2021/06/20/Linux%E4%B8%8Bword%E8%BD%ACpdf%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">Linux下word转pdf中文乱码问题</a></p><h3><span id="4报告注入图片变形问题">4.报告注入图片变形问题</span></h3><p>问题描述:生成图片尺寸看起来正常的，一旦注入到word中各种形状体现(椭圆、扁圆、缩小体等)。</p><p>问题解决办法:<br>编写图片形状控制方法，统一定义生成图片的标准。</p><h3><span id="5报告由word转为pdf内容表格出现下划线">5.报告由word转为pdf，内容表格出现下划线</span></h3><p>问题描述:word生成的表格没问题，一旦转为pdf，每个表格里面的数据都会出现下划线。</p><p>问题解决办法:<br>采用<a href="https://downloads.aspose.com/total/java" target="_blank" rel="noopener">aspose</a>解决。这个玩意是需要花钱买的，不过网上有针对如何破解的资料，感兴趣的朋友自行搜索即可。</p><h3><span id="6报告表格表头自定义以及表格宽高问题">6.报告表格表头自定义以及表格宽高问题</span></h3><p>问题描述:<br>表头或表格因内容过多导致错乱。</p><p>问题解决办法:<br>编写自定义表头或表格内容自定义宽高方法进行适配。</p><h3><span id="7报告pdf预览问题">7.报告Pdf预览问题</span></h3><p>问题描述:产生的pdf通过Nginx代理不能直接预览而是下载。</p><p>问题解决办法:<br>核心代码配置:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">location /file &#123;</span><br><span class="line">    alias /home/file/project/oop;</span><br><span class="line">    if ($request_filename ~* ^.*?\.(html|doc|pdf|zip|docx)$) &#123;</span><br><span class="line">    add_header  Content-Disposition attachment;</span><br><span class="line">    add_header  Content-Type application/octet-stream;</span><br><span class="line">    &#125;</span><br><span class="line">    autoindex on;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>修改完配置后记得重启Nginx。</p><h3><span id="8报告服务器环境配置问题">8.报告服务器环境配置问题</span></h3><p>问题描述:每次搭建相关环境都要上传很多文件配置环境变量。</p><p>解决办法:<br>编写shell脚本进行自动化处理。</p><h3><span id="9报告生成后的url通过代理下载失败问题">9.报告生成后的URL通过代理下载失败问题</span></h3><p>问题描述:生成的报告word或pdf，需要点击两次才能下载成功。</p><p>解决办法:<br>我针对该问题写了相关文章记录下来<a href="https://youcongtech.com/2021/02/28/Nginx%E4%BB%A3%E7%90%86%E4%B9%8B%E5%A4%A7%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" target="_blank" rel="noopener">Nginx代理之大文件下载失败问题</a></p><h3><span id="10报告与其它api程序通信失败问题">10.报告与其它API程序通信失败问题</span></h3><p>问题描述:报告中调用其它API，连接超时造成报错。</p><p>问题解决办法:<br>结合hystrix处理对应API的超时情况。</p><h3><span id="11报告字体问题">11.报告字体问题</span></h3><p>问题描述:报告字体和数据注入后的字体不一致。</p><p>问题解决办法:<br>Poi-tl支持自定义字体。</p><h3><span id="12报告下载缓慢问题">12.报告下载缓慢问题</span></h3><p>问题描述:点击下载报告，下载十分缓慢。</p><p>问题解决办法:<br>原来是响应式的，点击下载，后台进行数据处理，处理完毕后，生成word或pdf文件，后来改为定时任务生成，当天生成昨天的日报，用户一点击非常迅速，体验非常好。</p><h3><span id="13报告定时任务重复执行问题微服务集群下">13.报告定时任务重复执行问题(微服务集群下)</span></h3><p>问题描述:不仅仅是报告定时任务在微服务集群下出现这样的问题，其它定时任务也如此。</p><p>问题解决办法:<br>使用Quartz解决该问题(Quartz是Java的定时任务框架，支持集群)或者使用ShedLock。我针对定时任务写过相关的文章，文章为<a href="https://youcongtech.com/2020/11/21/Java%E4%B9%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%85%A8%E5%AE%B6%E6%A1%B6/" target="_blank" rel="noopener">Java之定时任务全家桶</a></p><h3><span id="14报告自动化生成问题">14.报告自动化生成问题</span></h3><p>问题描述:报告每天或每周会在特定的时间生成，但生成有一个前提，业务数据必须没有问题，否则会报错，最终导致无法生成。</p><p>问题解决办法:<br>优化代码，完善处理逻辑，不管业务数据是否有问题，均正常生成。</p><h3><span id="15代码处理业务数据过程中的问题">15.代码处理业务数据过程中的问题</span></h3><p>问题描述:代码处理业务数据计算过程中较为缓慢，涉及取数据、存数据再计算、比较运算或调API以及一些算法等。</p><p>问题解决办法:<br>重新梳理和理解业务流程(之前写的时候，只想着快速完成，不管对不对或者代码执行效率如何)，化繁为简，将复杂问题简单化。</p><h2><span id="五-总结-提炼方法论">五、总结-提炼方法论</span></h2><p>每一次复盘是为了更好的汲取经验教训，提炼出相关的方法论进行团队推广，避免下一次少犯或不犯错误，从而使得产品研发的过程中高效率，使得最终交付的成品高质量。经过了这些问题的解决和开发报告的这一过程，<strong>我总结了如下方法论:</strong></p><ul><li>(1)技术选型确定后最好多写几个示例用于团队成员参考；</li><li>(2)每天跟进团队成员开发情况，询问遇到那些技术类难题，集中时间由Leader或团队技术较好的成员进行集中攻关，减少技术类难题的阻碍；</li><li>(3)统一团队编码规范(注释必须写、魔法值抽取为常量、重复性方法进行抽取)；</li><li>(4)功能完成后，预留开发人员专门测试入口，方便问题的排查；</li><li>(5)理解业务，多问为什么，不要过于着急做，做的过程中，一定要把流程梳理清楚(简单txt文件就能搞定这件事)；</li><li>(6)主动向上沟通，反馈进度和已出现的问题或可能出现的问题，让领导心里有底，知道这块并不是那么容易做的，多争取些时间；</li><li>(7)功能完成后，模板备份留存，示例备份留存(数据完整性的样例)，以供领导需要时用；</li><li>(8)提测前，环境一定要搭建好，搭建过程中，将步骤流程化为脚本进行自动化(留待后续预生产环境、生产环境安装和配置等)。</li></ul>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 复盘 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>简书网站SSL证书过期</title>
       <link href="/2021/12/05/%E7%AE%80%E4%B9%A6%E7%BD%91%E7%AB%99SSL%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F/"/>
       <url>/2021/12/05/%E7%AE%80%E4%B9%A6%E7%BD%91%E7%AB%99SSL%E8%AF%81%E4%B9%A6%E8%BF%87%E6%9C%9F/</url>
@@ -185,11 +204,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -246,11 +265,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -269,11 +288,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -292,11 +311,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -315,11 +334,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -338,11 +357,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -361,11 +380,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -384,11 +403,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -407,11 +426,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -430,11 +449,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -453,11 +472,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -476,11 +495,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -499,11 +518,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -522,11 +541,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -545,34 +564,11 @@
       
         <tags>
             
-            <tag> 架构 </tag>
-            
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>我在M2公司做架构之多数据源</title>
-      <link href="/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/"/>
-      <url>/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/</url>
-      
-        <content type="html"><![CDATA[<h2><span id="一-什么是多数据源">一、什么是多数据源？</span></h2><p>多数据源即在一个应用中配置多个不同的连接池(不同的连接池操作不同的数据库)。<br><a id="more"></a></p><h2><span id="二-为何要采用多数据源">二、为何要采用多数据源？</span></h2><ul><li>某特定业务场景下的需要(不同的公司，不同的业务场景)；</li><li>数据库拆分为多个，怎样让拆分后的数据库实现业务需要。</li></ul><h2><span id="三-多数据源现有的解决方案有哪些">三、多数据源现有的解决方案有哪些？</span></h2><ul><li>JdbcTemplate多数据源；</li><li>MyBatis多数据源；</li><li>MyBatis-Plus多数据源。</li></ul><h2><span id="四-关于多数据源的具体实践">四、关于多数据源的具体实践</span></h2><p>目前用的场景不是特别多，因为采用的是MyBatis-Plus多数据源，使用注解来切换不同数据库，基本上没遇到什么问题，问题基本上都jar包之间的冲突导致一些包不能引入报错之类的。</p><p>感兴趣的朋友可以参考如下:</p><p><a href="https://www.cnblogs.com/youcong/p/9806848.html" target="_blank" rel="noopener">SSM框架之多数据源配置</a></p><p><a href="https://www.cnblogs.com/youcong/p/12935716.html" target="_blank" rel="noopener">SpringBoot+MyBatis-Plus实现多数据源</a></p>]]></content>
-      
-      
-      
-        <tags>
             
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -591,11 +587,34 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
             
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我在M2公司做架构之多数据源</title>
+      <link href="/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/"/>
+      <url>/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-什么是多数据源">一、什么是多数据源？</span></h2><p>多数据源即在一个应用中配置多个不同的连接池(不同的连接池操作不同的数据库)。<br><a id="more"></a></p><h2><span id="二-为何要采用多数据源">二、为何要采用多数据源？</span></h2><ul><li>某特定业务场景下的需要(不同的公司，不同的业务场景)；</li><li>数据库拆分为多个，怎样让拆分后的数据库实现业务需要。</li></ul><h2><span id="三-多数据源现有的解决方案有哪些">三、多数据源现有的解决方案有哪些？</span></h2><ul><li>JdbcTemplate多数据源；</li><li>MyBatis多数据源；</li><li>MyBatis-Plus多数据源。</li></ul><h2><span id="四-关于多数据源的具体实践">四、关于多数据源的具体实践</span></h2><p>目前用的场景不是特别多，因为采用的是MyBatis-Plus多数据源，使用注解来切换不同数据库，基本上没遇到什么问题，问题基本上都jar包之间的冲突导致一些包不能引入报错之类的。</p><p>感兴趣的朋友可以参考如下:</p><p><a href="https://www.cnblogs.com/youcong/p/9806848.html" target="_blank" rel="noopener">SSM框架之多数据源配置</a></p><p><a href="https://www.cnblogs.com/youcong/p/12935716.html" target="_blank" rel="noopener">SpringBoot+MyBatis-Plus实现多数据源</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 架构 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -614,11 +633,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -637,11 +656,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -660,11 +679,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -683,11 +702,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -706,11 +725,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -729,11 +748,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -752,11 +771,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -775,11 +794,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -798,11 +817,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -821,11 +840,11 @@
       
         <tags>
             
+            <tag> 技术思考与实践 </tag>
+            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
-            
-            <tag> 技术思考与实践 </tag>
             
         </tags>
       
