@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>YC-Framework版本更新:V1.0.3</title>
+      <link href="/2021/12/18/YC-Framework%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-V1-0-3/"/>
+      <url>/2021/12/18/YC-Framework%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-V1-0-3/</url>
+      
+        <content type="html"><![CDATA[<p><a href="https://youcongtech.com/2021/12/04/%E6%88%91%E7%9A%84%E5%88%86%E5%B8%83%E5%BC%8F%E5%BE%AE%E6%9C%8D%E5%8A%A1%E6%A1%86%E6%9E%B6-YC-Framework/" target="_blank" rel="noopener">分布式微服务框架:YC-Framework</a>版本更新V1.0.3！！！<br><a id="more"></a></p><h3><span id="本次版本v103更新">本次版本V1.0.3更新</span></h3><ul><li>集成分布式事务Seata；</li><li>集成分布式事务Tx-LCN；</li><li>集成Kafka；</li><li>集成RocketMQ；</li><li>集成分布式定时任务Xxl-Job；</li><li>微信生态方案模块化；</li><li>集成分布式定时任务Elastic-Job；</li><li>Quartz定时任务模块化；</li><li>爬虫模块化；</li><li>集成Zipkin+Sleuth分布式链路追踪；</li><li>部分问题修复；</li><li>文档更新1.0.3。</li></ul><p>最新代码可访问对应的代码仓库:<br><a href="https://github.com/developers-youcong/yc-framework" target="_blank" rel="noopener">https://github.com/developers-youcong/yc-framework</a></p><p>最新文档访问官方网站:<br><a href="http://framework.youcongtech.com/" target="_blank" rel="noopener">http://framework.youcongtech.com/</a></p><p>历史版本查看:<br><a href="https://github.com/developers-youcong/yc-framework/releases" target="_blank" rel="noopener">https://github.com/developers-youcong/yc-framework/releases</a></p><p>关于YC-Framework，你有任何问题可前往<a href="https://github.com/developers-youcong/yc-framework/issues" target="_blank" rel="noopener">issues</a>进行提问</p><p>本次版本更新部分相应的效果图:<br><img src="/2021/12/18/YC-Framework版本更新-V1-0-3/01.png" alt="图一"><br><img src="/2021/12/18/YC-Framework版本更新-V1-0-3/02.png" alt="图二"><br><img src="/2021/12/18/YC-Framework版本更新-V1-0-3/03.png" alt="图三"><br><img src="/2021/12/18/YC-Framework版本更新-V1-0-3/04.png" alt="图四"></p><p>此次v1.0.3版本更新将是2021年的最后一次更新(因为接下来的13天我需要和团队小伙伴并肩作战打通”最后一公里”，保障项目的顺利交付)，2022年将继续每周或每两周保障更新一次，解决开源爱好者朋友或使用者朋友所反馈的问题。</p><p>为了更好的收集和解决问题，我将成立微信群，收集技术爱好者朋友的意见，以此来不断改进和完善分布式微服务框架:YC-Framework。</p><p>对于即将来临的2022年，YC-Framework继续践行这样的理念(这也是YC-Framework的愿景):<br><strong>致力于打造一款优秀的分布式微服务解决方案</strong></p><p><strong>这样的理念最终衡量的标准:</strong></p><ul><li>让开发更简单；</li><li>让运维更简单；</li><li>模块化与轻量级；</li><li>集成众多经过实际验证的优秀解决方案；</li><li>更贴近具体的业务场景；</li><li>三高(高性能、高并发、高可用)是标准。</li></ul><p><strong>YC-Framework开源技术群:</strong><br><img src="/2021/12/18/YC-Framework版本更新-V1-0-3/05.png" alt="图四"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> YC-Framework </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>YC-Framework版本更新:V1.0.2</title>
       <link href="/2021/12/12/YC-Framework%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-V1-0-2/"/>
       <url>/2021/12/12/YC-Framework%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-V1-0-2/</url>
@@ -244,9 +263,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -305,9 +324,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -328,9 +347,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -351,9 +370,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -374,9 +393,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -397,9 +416,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -420,9 +439,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -443,9 +462,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -466,9 +485,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -489,9 +508,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -512,9 +531,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -535,9 +554,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -558,9 +577,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -581,9 +600,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -604,9 +623,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -627,9 +646,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -650,9 +669,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -673,9 +692,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -696,9 +715,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -719,9 +738,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -742,9 +761,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -765,9 +784,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -788,9 +807,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -811,9 +830,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -834,9 +853,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -857,9 +876,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -880,9 +899,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 职业生涯 </tag>
-            
             <tag> 技术思考与实践 </tag>
+            
+            <tag> 职业生涯 </tag>
             
         </tags>
       
