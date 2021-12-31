@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Hadoop环境搭建</title>
+      <link href="/2021/12/31/Hadoop%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
+      <url>/2021/12/31/Hadoop%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<p>Hadoop官网:<br><a href="https://hadoop.apache.org/" target="_blank" rel="noopener">https://hadoop.apache.org/</a></p><p>官网下载地址:<br><a href="https://hadoop.apache.org/releases.html" target="_blank" rel="noopener">https://hadoop.apache.org/releases.html</a></p><p>可以选择最新版，也可以选择历史版本，如果是历史版本，可访问如下地址:<br><a href="https://archive.apache.org/dist/hadoop/common/" target="_blank" rel="noopener">https://archive.apache.org/dist/hadoop/common/</a></p><p>官方文档写的很详细，我这篇文章是官方文档和一些博客文章的补充与完善。<br><a id="more"></a></p><h2><span id="一-下载hadoop">一、下载Hadoop</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://mirrors.bfsu.edu.cn/apache/hadoop/common/hadoop-3.3.1/hadoop-3.3.1.tar.gz</span><br></pre></td></tr></table></figure><h2><span id="二-解压">二、解压</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf hadoop-3.3.1.tar.gz</span><br></pre></td></tr></table></figure><h2><span id="三-配置环境变量">三、配置环境变量</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure><p>添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">HADOOP_HOME=/home/tech/hadoop-3.3.1</span><br><span class="line">PATH=$PATH:$JAVA_HOME/bin:$SPARK_HOME/bin:$HADOOP_HOME/bin</span><br></pre></td></tr></table></figure></p><h2><span id="四-修改hadoop-envsh配置文件">四、修改hadoop-env.sh配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /home/tech/hadoop-3.3.1/etc/hadoop/hadoop-env.sh</span><br></pre></td></tr></table></figure><p>修改如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=/usr/lib/jvm/java-1.8.0</span><br></pre></td></tr></table></figure></p><h2><span id="五-修改hdfs-sitexml配置文件">五、修改hdfs-site.xml配置文件</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /home/tech/hadoop-3.3.1/etc/hadoop/hdfs-site.xml</span><br></pre></td></tr></table></figure><p>添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">&lt;!-- 集群的namenode的位置  datanode能通过这个地址注册--&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;dfs.namenode.rpc-address&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;localhost:9000&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- namenode存储元数据的位置 --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;dfs.namenode.name.dir&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;/APP/hdpdata/name/&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- datanode存储数据的位置 --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;dfs.datanode.data.dir&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;/APP/hdpdata/data/&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&lt;!--  WEB UI  --&gt;</span><br><span class="line">&lt;property&gt;</span><br><span class="line">    &lt;name&gt;dfs.namenode.http-address&lt;/name&gt;</span><br><span class="line">    &lt;value&gt;localhost:6002&lt;/value&gt;</span><br><span class="line">&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p><h2><span id="六-修改core-sitexml">六、修改core-site.xml</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /home/tech/hadoop-3.3.1/etc/hadoop/core-site.xml</span><br></pre></td></tr></table></figure><p>添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;</span><br><span class="line">    &lt;property&gt;</span><br><span class="line">        &lt;name&gt;fs.defaultFS&lt;/name&gt;</span><br><span class="line">        &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;</span><br><span class="line">    &lt;/property&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p><h2><span id="七-初始化namedata">七、初始化namedata</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /home/tech/hadoop-3.3.1/bin/</span><br><span class="line">./hadoop  namenode  -format</span><br></pre></td></tr></table></figure><h2><span id="八-执行启动脚本">八、执行启动脚本</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd /home/tech/hadoop-3.3.1/sbin</span><br><span class="line">bash start-all.sh #启动</span><br><span class="line">bash stop-all.sh #关闭</span><br></pre></td></tr></table></figure><h2><span id="九">九、</span></h2><p><img src="/2021/12/31/Hadoop环境搭建/01.png" alt="图一"></p><p><img src="/2021/12/31/Hadoop环境搭建/02.png" alt="图二"></p><h2><span id="十-注意问题">十、注意问题</span></h2><h3><span id="1hadoop-313-启动hdfs时报错error-attempting-to-operate-on-hdfs-namenode-as-root的解决方法">1.hadoop-3.1.3 启动HDFS时报错ERROR: Attempting to operate on hdfs namenode as root的解决方法</span></h3><p>解决办法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile.d/my_env.sh</span><br></pre></td></tr></table></figure></p><p>添加如下内容:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">export HDFS_NAMENODE_USER=root</span><br><span class="line">export HDFS_DATANODE_USER=root</span><br><span class="line">export HDFS_SECONDARYNAMENODE_USER=root</span><br><span class="line">export YARN_RESOURCEMANAGER_USER=root</span><br><span class="line">export YARN_NODEMANAGER_USER=root</span><br></pre></td></tr></table></figure></p><h3><span id="2hadoop配置过程中可能会出的问题localhost-rootlocalhost-permission-denied-publickeypassword">2.hadoop配置过程中可能会出的问题localhost: root@localhost: Permission denied (publickey,password)</span></h3><p>解决办法(四条命令):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh/                     # 若没有该目录，请先执行一次ssh localhost</span><br><span class="line">ssh-keygen -t rsa              # 会有提示，都按回车就可以</span><br><span class="line">cat ./id_rsa.pub &gt;&gt; ./authorized_keys  # 加入授权</span><br><span class="line">ssh localhost # 验证</span><br></pre></td></tr></table></figure></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Hadoop </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>YC-Framework版本更新:V1.0.3</title>
       <link href="/2021/12/18/YC-Framework%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-V1-0-3/"/>
       <url>/2021/12/18/YC-Framework%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-V1-0-3/</url>
@@ -263,9 +282,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -324,9 +343,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -347,9 +366,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -370,9 +389,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -393,9 +412,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -416,9 +435,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -439,9 +458,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -462,9 +481,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -485,9 +504,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -508,9 +527,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -531,9 +550,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -554,9 +573,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -577,9 +596,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -600,9 +619,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -623,32 +642,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>我在M2公司做架构之日志管理</title>
-      <link href="/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/"/>
-      <url>/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/</url>
-      
-        <content type="html"><![CDATA[<h2><span id="一-日志管理的重要性">一、日志管理的重要性</span></h2><p>日志是程序设计中很重要的一部分，它提供了丰富的程序运行时的信息，例如:程序运行时的逻辑信息、错误信息、事件描述信息、关键数据、状态信息、执行时间和用户登录信息等，这些信息可以帮助开发人员快速地发现和定位问题。在实际生产环境中，日志是查找问题的重要来源，良好的日志格式和记录方式可以帮助开发人员、应急人员快速定位到错误的根源，并找到解决问题的办法。<br><a id="more"></a></p><h2><span id="二-日志框架的选型">二、日志框架的选型</span></h2><ul><li>JDK Logger；</li><li>Apache Commons Logging；</li><li>Apache Log4j；</li><li>Slf4j；</li><li>Logback；</li><li>Apache Log4j 2。</li></ul><p>而我们采用的是Logback。</p><h2><span id="三-日志系统的优化和最佳实践">三、日志系统的优化和最佳实践</span></h2><h3><span id="1开发人员的日志意识">1.开发人员的日志意识</span></h3><ul><li>开发代码时要有意识地设想代码出现问题的场景，针对出问题的场景记录关键的程序运行的信息，这样在代码出现问题时才能通过日志恢复程序运行的过程，才容易定位问题。</li><li>打印日志时必须包含环境信息，环境信息是指在打印可获得的帮助开发人员定位问题的信息，例如：用户ID、角色、参数、返回值、逻辑判断结果、循环次数、异常信息等。</li><li>对异常等错误信息必须打印错误级别及以上级别的日志，对线上日志要定期检查，没有异常日志产生的服务才是健康的服务。</li><li>生产环境将关闭的日志必须在打印日志前进行判断，以此来提高执行效率。</li><li>必须使用占位符的方式代替字符串连接，这样程序更加简洁，并且性能有所提高。</li><li>对关键业务步骤必须打点并记录耗时和结果等信息。</li></ul><h3><span id="2日志级别的设置">2.日志级别的设置</span></h3><p>通常来说线上应用使用info级别就够了，但是刚刚交付的项目或服务质量还不稳定，换言之，还有一定数量的bug存在，如果使用info级别，则出现问题很难定位，因此没有一个完美的答案，下面是最佳实践(可供参考):</p><ul><li>QA环境可以使用debug及以下级别的日志。</li><li>刚刚上线的应用还没有到稳定期，使用debug级别的日志。</li><li>上线后稳定的应用，使用info级别的日志。</li><li>常年不出现问题的应用使用error级别的日志。</li></ul><p>对于不同的情况应该使用的日志级别如下:</p><ul><li>使用trace级别的日志输出最细粒度的信息事件，通过这些信息可以跟踪程序执行的任一步骤。</li><li>使用debug级别的日志输出细粒度的信息事件，这些信息对调试应用程序非常有用。</li><li>使用info级别的日志输出粗粒度的信息事件，突出强调应用程序运行的关键逻辑和过程。</li><li>使用warn级别的日志输出可能出现的错误，或者输出潜在发生错误的环境信息，或者打印用户输入的非法信息。</li><li>使用error级别的输出错误事件，但仍然不影响系统的继续运行，在Java程序中发生异常一定要记录error日志，并且打印异常堆栈。异常在封装后抛出时一定要保留根源异常和错误信息，构成异常树，因为在解决线上问题时，日志中的异常堆栈和异常信息都是非常重要的线索。</li><li>fatal级别代表严重的错误事件，将会导致应用程序的退出。</li></ul><h3><span id="3日志的数量和大小">3.日志的数量和大小</span></h3><p>首先，我们一定要控制日志的输出量，避免由于业务上量而导致服务器磁盘占满并大量地输出无用的日志，这不利于系统性能的提升，也不利于快速定位错误点。</p><p>我们写程序时，要清晰地了解程序中的哦哪一处会发生问题，以及发生问题时打印哪些日志可以帮助定位这些问题，这样打印出来的日志才最有效。因此，我们只需打印关键的信息，不要随便把对象JSON序列化后打印出来。如果要打印对象列表，则使用JSON格式打印会占用很大空间。</p><h3><span id="4logbackxml参考模板">4.logback.xml(参考模板)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 日志存放路径 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;property name=&quot;log.path&quot; value=&quot;/home/tech/log/xx&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 日志输出格式 --&gt;</span><br><span class="line">    &lt;property name=&quot;log.pattern&quot; value=&quot;%d&#123;HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;20&#125; - [%method,%line] - %msg%n&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 控制台输出 --&gt;</span><br><span class="line">    &lt;appender name=&quot;console&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 系统日志输出 --&gt;</span><br><span class="line">    &lt;appender name=&quot;file_info&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;file&gt;$&#123;log.path&#125;/info.log&lt;/file&gt;</span><br><span class="line">        &lt;!-- 循环政策：基于时间创建日志文件 --&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 日志文件名格式 --&gt;</span><br><span class="line"></span><br><span class="line">         &lt;fileNamePattern&gt;$&#123;log.path&#125;/info.%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 60天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;60&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</span><br><span class="line">            &lt;!-- 过滤的级别 --&gt;</span><br><span class="line">            &lt;level&gt;INFO&lt;/level&gt;</span><br><span class="line">            &lt;!-- 匹配时的操作：接收（记录） --&gt;</span><br><span class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</span><br><span class="line">            &lt;!-- 不匹配时的操作：拒绝（不记录） --&gt;</span><br><span class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line">    &lt;appender name=&quot;file_error&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;file&gt;$&#123;log.path&#125;/error.log&lt;/file&gt;</span><br><span class="line">        &lt;!-- 循环政策：基于时间创建日志文件 --&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 日志文件名格式 --&gt;</span><br><span class="line">        &lt;fileNamePattern&gt;$&#123;log.path&#125;/error.%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 60天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;60&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;!-- 过滤的级别 --&gt;</span><br><span class="line">            &lt;level&gt;ERROR&lt;/level&gt;</span><br><span class="line">            &lt;!-- 匹配时的操作：接收（记录） --&gt;</span><br><span class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</span><br><span class="line">            &lt;!-- 不匹配时的操作：拒绝（不记录） --&gt;</span><br><span class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line">    &lt;!-- 指定打印SQL --&gt;</span><br><span class="line">    &lt;logger name=&quot;com.xx.dao&quot; level=&quot;debug&quot;/&gt;</span><br><span class="line">    &lt;!-- 系统模块日志级别控制  --&gt;</span><br><span class="line">    &lt;logger name=&quot;com.xx&quot; level=&quot;info&quot;/&gt;</span><br><span class="line">    &lt;!-- Spring日志级别控制  --&gt;</span><br><span class="line">    &lt;logger name=&quot;org.springframework&quot; level=&quot;warn&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;root level=&quot;info&quot;&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;console&quot;/&gt;</span><br><span class="line">    &lt;/root&gt;</span><br><span class="line">    &lt;!--系统操作日志--&gt;</span><br><span class="line">    &lt;root level=&quot;info&quot;&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;file_info&quot;/&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;file_error&quot;/&gt;</span><br><span class="line">    &lt;/root&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure><h2><span id="四-总结">四、总结</span></h2><p>上述大部分内容来自《分布式服务架构:原理、设计与实战》，而这些内容都在我主要负责的公司分布式架构体系中实践着。</p>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 架构 </tag>
-            
             <tag> 技术思考与实践 </tag>
-            
-            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -669,9 +665,32 @@
             
             <tag> 架构 </tag>
             
+            <tag> 职业生涯 </tag>
+            
             <tag> 技术思考与实践 </tag>
             
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我在M2公司做架构之日志管理</title>
+      <link href="/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/"/>
+      <url>/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E6%97%A5%E5%BF%97%E7%AE%A1%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-日志管理的重要性">一、日志管理的重要性</span></h2><p>日志是程序设计中很重要的一部分，它提供了丰富的程序运行时的信息，例如:程序运行时的逻辑信息、错误信息、事件描述信息、关键数据、状态信息、执行时间和用户登录信息等，这些信息可以帮助开发人员快速地发现和定位问题。在实际生产环境中，日志是查找问题的重要来源，良好的日志格式和记录方式可以帮助开发人员、应急人员快速定位到错误的根源，并找到解决问题的办法。<br><a id="more"></a></p><h2><span id="二-日志框架的选型">二、日志框架的选型</span></h2><ul><li>JDK Logger；</li><li>Apache Commons Logging；</li><li>Apache Log4j；</li><li>Slf4j；</li><li>Logback；</li><li>Apache Log4j 2。</li></ul><p>而我们采用的是Logback。</p><h2><span id="三-日志系统的优化和最佳实践">三、日志系统的优化和最佳实践</span></h2><h3><span id="1开发人员的日志意识">1.开发人员的日志意识</span></h3><ul><li>开发代码时要有意识地设想代码出现问题的场景，针对出问题的场景记录关键的程序运行的信息，这样在代码出现问题时才能通过日志恢复程序运行的过程，才容易定位问题。</li><li>打印日志时必须包含环境信息，环境信息是指在打印可获得的帮助开发人员定位问题的信息，例如：用户ID、角色、参数、返回值、逻辑判断结果、循环次数、异常信息等。</li><li>对异常等错误信息必须打印错误级别及以上级别的日志，对线上日志要定期检查，没有异常日志产生的服务才是健康的服务。</li><li>生产环境将关闭的日志必须在打印日志前进行判断，以此来提高执行效率。</li><li>必须使用占位符的方式代替字符串连接，这样程序更加简洁，并且性能有所提高。</li><li>对关键业务步骤必须打点并记录耗时和结果等信息。</li></ul><h3><span id="2日志级别的设置">2.日志级别的设置</span></h3><p>通常来说线上应用使用info级别就够了，但是刚刚交付的项目或服务质量还不稳定，换言之，还有一定数量的bug存在，如果使用info级别，则出现问题很难定位，因此没有一个完美的答案，下面是最佳实践(可供参考):</p><ul><li>QA环境可以使用debug及以下级别的日志。</li><li>刚刚上线的应用还没有到稳定期，使用debug级别的日志。</li><li>上线后稳定的应用，使用info级别的日志。</li><li>常年不出现问题的应用使用error级别的日志。</li></ul><p>对于不同的情况应该使用的日志级别如下:</p><ul><li>使用trace级别的日志输出最细粒度的信息事件，通过这些信息可以跟踪程序执行的任一步骤。</li><li>使用debug级别的日志输出细粒度的信息事件，这些信息对调试应用程序非常有用。</li><li>使用info级别的日志输出粗粒度的信息事件，突出强调应用程序运行的关键逻辑和过程。</li><li>使用warn级别的日志输出可能出现的错误，或者输出潜在发生错误的环境信息，或者打印用户输入的非法信息。</li><li>使用error级别的输出错误事件，但仍然不影响系统的继续运行，在Java程序中发生异常一定要记录error日志，并且打印异常堆栈。异常在封装后抛出时一定要保留根源异常和错误信息，构成异常树，因为在解决线上问题时，日志中的异常堆栈和异常信息都是非常重要的线索。</li><li>fatal级别代表严重的错误事件，将会导致应用程序的退出。</li></ul><h3><span id="3日志的数量和大小">3.日志的数量和大小</span></h3><p>首先，我们一定要控制日志的输出量，避免由于业务上量而导致服务器磁盘占满并大量地输出无用的日志，这不利于系统性能的提升，也不利于快速定位错误点。</p><p>我们写程序时，要清晰地了解程序中的哦哪一处会发生问题，以及发生问题时打印哪些日志可以帮助定位这些问题，这样打印出来的日志才最有效。因此，我们只需打印关键的信息，不要随便把对象JSON序列化后打印出来。如果要打印对象列表，则使用JSON格式打印会占用很大空间。</p><h3><span id="4logbackxml参考模板">4.logback.xml(参考模板)</span></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line"></span><br><span class="line">&lt;configuration scan=&quot;true&quot; scanPeriod=&quot;60 seconds&quot; debug=&quot;false&quot;&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 日志存放路径 --&gt;</span><br><span class="line"></span><br><span class="line">    &lt;property name=&quot;log.path&quot; value=&quot;/home/tech/log/xx&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 日志输出格式 --&gt;</span><br><span class="line">    &lt;property name=&quot;log.pattern&quot; value=&quot;%d&#123;HH:mm:ss.SSS&#125; [%thread] %-5level %logger&#123;20&#125; - [%method,%line] - %msg%n&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 控制台输出 --&gt;</span><br><span class="line">    &lt;appender name=&quot;console&quot; class=&quot;ch.qos.logback.core.ConsoleAppender&quot;&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &lt;!-- 系统日志输出 --&gt;</span><br><span class="line">    &lt;appender name=&quot;file_info&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;file&gt;$&#123;log.path&#125;/info.log&lt;/file&gt;</span><br><span class="line">        &lt;!-- 循环政策：基于时间创建日志文件 --&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 日志文件名格式 --&gt;</span><br><span class="line"></span><br><span class="line">         &lt;fileNamePattern&gt;$&#123;log.path&#125;/info.%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 60天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;60&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</span><br><span class="line">            &lt;!-- 过滤的级别 --&gt;</span><br><span class="line">            &lt;level&gt;INFO&lt;/level&gt;</span><br><span class="line">            &lt;!-- 匹配时的操作：接收（记录） --&gt;</span><br><span class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</span><br><span class="line">            &lt;!-- 不匹配时的操作：拒绝（不记录） --&gt;</span><br><span class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line"></span><br><span class="line">    &lt;appender name=&quot;file_error&quot; class=&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;&gt;</span><br><span class="line">        &lt;file&gt;$&#123;log.path&#125;/error.log&lt;/file&gt;</span><br><span class="line">        &lt;!-- 循环政策：基于时间创建日志文件 --&gt;</span><br><span class="line">        &lt;rollingPolicy class=&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;&gt;</span><br><span class="line">            &lt;!-- 日志文件名格式 --&gt;</span><br><span class="line">        &lt;fileNamePattern&gt;$&#123;log.path&#125;/error.%d&#123;yyyy-MM-dd&#125;.log&lt;/fileNamePattern&gt;</span><br><span class="line">            &lt;!-- 日志最大的历史 60天 --&gt;</span><br><span class="line">            &lt;maxHistory&gt;60&lt;/maxHistory&gt;</span><br><span class="line">        &lt;/rollingPolicy&gt;</span><br><span class="line">        &lt;encoder&gt;</span><br><span class="line">            &lt;pattern&gt;$&#123;log.pattern&#125;&lt;/pattern&gt;</span><br><span class="line">        &lt;/encoder&gt;</span><br><span class="line">        &lt;filter class=&quot;ch.qos.logback.classic.filter.LevelFilter&quot;&gt;</span><br><span class="line"></span><br><span class="line">            &lt;!-- 过滤的级别 --&gt;</span><br><span class="line">            &lt;level&gt;ERROR&lt;/level&gt;</span><br><span class="line">            &lt;!-- 匹配时的操作：接收（记录） --&gt;</span><br><span class="line">            &lt;onMatch&gt;ACCEPT&lt;/onMatch&gt;</span><br><span class="line">            &lt;!-- 不匹配时的操作：拒绝（不记录） --&gt;</span><br><span class="line">            &lt;onMismatch&gt;DENY&lt;/onMismatch&gt;</span><br><span class="line">        &lt;/filter&gt;</span><br><span class="line">    &lt;/appender&gt;</span><br><span class="line">    &lt;!-- 指定打印SQL --&gt;</span><br><span class="line">    &lt;logger name=&quot;com.xx.dao&quot; level=&quot;debug&quot;/&gt;</span><br><span class="line">    &lt;!-- 系统模块日志级别控制  --&gt;</span><br><span class="line">    &lt;logger name=&quot;com.xx&quot; level=&quot;info&quot;/&gt;</span><br><span class="line">    &lt;!-- Spring日志级别控制  --&gt;</span><br><span class="line">    &lt;logger name=&quot;org.springframework&quot; level=&quot;warn&quot;/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;root level=&quot;info&quot;&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;console&quot;/&gt;</span><br><span class="line">    &lt;/root&gt;</span><br><span class="line">    &lt;!--系统操作日志--&gt;</span><br><span class="line">    &lt;root level=&quot;info&quot;&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;file_info&quot;/&gt;</span><br><span class="line">        &lt;appender-ref ref=&quot;file_error&quot;/&gt;</span><br><span class="line">    &lt;/root&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure><h2><span id="四-总结">四、总结</span></h2><p>上述大部分内容来自《分布式服务架构:原理、设计与实战》，而这些内容都在我主要负责的公司分布式架构体系中实践着。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 架构 </tag>
+            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -692,9 +711,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -715,9 +734,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -738,9 +757,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -761,9 +780,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -784,9 +803,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -807,9 +826,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -830,9 +849,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -853,9 +872,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -876,9 +895,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -899,9 +918,9 @@
             
             <tag> 架构 </tag>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
