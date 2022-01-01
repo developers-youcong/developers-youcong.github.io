@@ -306,6 +306,74 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-LCN-错误-attempts-to-join-the-non-existent-transaction-group" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/22/LCN-错误-attempts-to-join-the-non-existent-transaction-group/" class="article-date">
+      <time datetime="2020-09-22T11:49:13.000Z" itemprop="datePublished">2020-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/22/LCN-错误-attempts-to-join-the-non-existent-transaction-group/">LCN 错误: attempts to join the non-existent transaction group</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">com.codingapi.txlcn.logger.AbstractTxLogger.error(AbstractTxLogger.java:70) - business code error</span><br><span class="line"></span><br><span class="line">attempts to join the non-existent transaction group</span><br><span class="line"></span><br><span class="line">rpc execute service error. action: joinGroup</span><br></pre></td></tr></table></figure></p>
+<p>解决办法:<br>在tx-lcn项目配置如下内容，即可解决:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 分布式事务执行总时间(ms). 默认为36000</span><br><span class="line">tx-lcn.manager.dtx-time=600000</span><br></pre></td></tr></table></figure></p>
+<p>配置完需要重新打包。</p>
+<p>参考资料:<br><a href="https://blog.csdn.net/qq_41463655/article/details/106483312" target="_blank" rel="noopener">LCN 错误: attempts to join the non-existent transaction group</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式事务/">分布式事务</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-redis集群搭建" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -923,73 +991,6 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-SpringBoot应用之运行jar包时指定端口" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/11/SpringBoot应用之运行jar包时指定端口/" class="article-date">
-      <time datetime="2020-09-11T12:26:40.000Z" itemprop="datePublished">2020-09-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/11/SpringBoot应用之运行jar包时指定端口/">SpringBoot应用之运行jar包时指定端口</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>应用场景:<br>同一个jar项目可以在一台服务器多部署。</p>
-<p>核心命令如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar XXXXX.jar --server.port=8080</span><br></pre></td></tr></table></figure></p>
-<p>参考资料:<br><a href="https://blog.csdn.net/wangxiaofeng0010/article/details/78520018" target="_blank" rel="noopener">运行jar包指定端口</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/19/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/61/">61</a><a class="extend next" rel="next" href="/page/21/">Next &raquo;</a>
@@ -1001,7 +1002,7 @@ var _hmt = _hmt || [];
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2019-2021 youcong
+                2019-2022 youcong
             </div>
             <div class="footer-right">
              <a href="#" target="_blank" title="快速、简洁且高效的博客框架">Power by youcong </a>

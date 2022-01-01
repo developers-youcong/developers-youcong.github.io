@@ -306,6 +306,73 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/" class="article-date">
+      <time datetime="2019-04-07T06:36:58.000Z" itemprop="datePublished">2019-04-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/">Caused by: java.sql.SQLException: Value &#39;0000-00-00 00:00:00&#39; can not be represented as java.sql.Timestamp</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>错误信息如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Caused by: java.sql.SQLException: Value &apos;0000-00-00 00:00:00&apos; can not be represented as java.sql.Timestamp</span><br></pre></td></tr></table></figure></p>
+<p>原因如下:<br>是因为数据表中字段类型与对象中的属性类型不一致。比如在我的数据表中是datetime类型，正常来说，对象中应该是Date类型，但是本次在对象中却是String类型。</p>
+<p>解决办法:<br>(1)将datetime类型修改为varchar类型，即可解决问题;<br>(2)将Java对象属性类型(对应的那个)改为Date类型(java.util而非java.sql),即可解决问题;</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-git分支开发的好处" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -935,76 +1002,6 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-MySQL去除查询结果重复" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/03/29/MySQL去除查询结果重复/" class="article-date">
-      <time datetime="2019-03-29T13:29:36.000Z" itemprop="datePublished">2019-03-29</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/29/MySQL去除查询结果重复/">MySQL去除查询结果重复</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>出现结果重复数SQL(四表关联):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">COUNT(post.ID )</span><br><span class="line">FROM wp_posts AS post LEFT JOIN</span><br><span class="line">wp_term_relationships AS relation</span><br><span class="line">ON(post.menu_order =</span><br><span class="line">relation.term_order) LEFT JOIN wp_term_taxonomy</span><br><span class="line">AS taxonomy</span><br><span class="line">ON(relation.term_taxonomy_id = taxonomy.term_id) LEFT JOIN</span><br><span class="line">wp_terms AS</span><br><span class="line">term ON(taxonomy.term_id = term.term_id)</span><br></pre></td></tr></table></figure></p>
-<p>正常的结果应该显示490条数据，但是结果显示了224941。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/03/29/MySQL去除查询结果重复/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/54/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/53/">53</a><a class="page-number" href="/page/54/">54</a><span class="page-number current">55</span><a class="page-number" href="/page/56/">56</a><a class="page-number" href="/page/57/">57</a><span class="space">&hellip;</span><a class="page-number" href="/page/61/">61</a><a class="extend next" rel="next" href="/page/56/">Next &raquo;</a>
@@ -1016,7 +1013,7 @@ var _hmt = _hmt || [];
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2019-2021 youcong
+                2019-2022 youcong
             </div>
             <div class="footer-right">
              <a href="#" target="_blank" title="快速、简洁且高效的博客框架">Power by youcong </a>
