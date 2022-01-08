@@ -306,6 +306,142 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-JavaWeb之Response文件下载-中文编码问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/03/JavaWeb之Response文件下载-中文编码问题/" class="article-date">
+      <time datetime="2021-06-03T12:23:32.000Z" itemprop="datePublished">2021-06-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/03/JavaWeb之Response文件下载-中文编码问题/">JavaWeb之Response文件下载(中文编码问题)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>很久以前遇到过这样的问题，最近再次遇到，做个记录。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/06/03/JavaWeb之Response文件下载-中文编码问题/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-java使用jsoup时绕过https证书验证" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/03/java使用jsoup时绕过https证书验证/" class="article-date">
+      <time datetime="2021-06-03T12:13:24.000Z" itemprop="datePublished">2021-06-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/03/java使用jsoup时绕过https证书验证/">java使用jsoup时绕过https证书验证</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>详细错误信息:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SunCertPathBuilderException: unable to find valid certification path to requested target</span><br></pre></td></tr></table></figure></p>
+<p><strong>问题原因:</strong><br>爬相关数据，因该网站有SSL加密，故无法爬取。</p>
+<p><strong>问题解决之核心代码:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    * 绕过HTTPS验证</span><br><span class="line">    */</span><br><span class="line">   static public void initTSL() &#123;</span><br><span class="line">       try &#123;</span><br><span class="line">           SSLContext context = SSLContext.getInstance(&quot;TLS&quot;);</span><br><span class="line">           context.init(null, new X509TrustManager[]&#123;new X509TrustManager() &#123;</span><br><span class="line">               @Override</span><br><span class="line">               public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException &#123;</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">               @Override</span><br><span class="line">               public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException &#123;</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">               @Override</span><br><span class="line">               public X509Certificate[] getAcceptedIssuers() &#123;</span><br><span class="line">                   return new X509Certificate[0];</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;&#125;, new SecureRandom());</span><br><span class="line">           HttpsURLConnection.setDefaultSSLSocketFactory(context.getSocketFactory());</span><br><span class="line">       &#125; catch (NoSuchAlgorithmException e) &#123;</span><br><span class="line">       &#125; catch (KeyManagementException e) &#123;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Linux下删除当前目录及子目录下的所有-txt文件" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -853,141 +989,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2021/05/16/CentOS7如何卸载自带OpenJDK/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-正版office产品密钥-激活码" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/05/16/正版office产品密钥-激活码/" class="article-date">
-      <time datetime="2021-05-16T03:50:59.000Z" itemprop="datePublished">2021-05-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/16/正版office产品密钥-激活码/">正版office产品密钥-激活码</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><strong>正版office产品密钥 office激活码 office2019永久激活:</strong><br><a href="https://www.win7w.com/win10jihuo/26107.html" target="_blank" rel="noopener">正版office产品密钥 office激活码 office2019永久激活</a><br><a href="http://www.ddooo.com/softdown/139653.htm" target="_blank" rel="noopener">office2019专业增强版激活密钥 附激活教程</a></p>
-<p>两个链接均可破解。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-老J的技术分享之总结" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/04/22/老J的技术分享之总结/" class="article-date">
-      <time datetime="2021-04-22T14:02:35.000Z" itemprop="datePublished">2021-04-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/22/老J的技术分享之总结/">老J的技术分享之总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>老J做IT这块有二十多个年头了，算是中国IT的见证者与参与者。<br>那个时候刚开始接触和了解时，对于他的一些建议，我不是很乐于去接受，因为我觉得他的那一套技术体系不是很适合如今的情况，当时间久了后发现，他对于数据库的设计、Java底层等有很多独到的见解和丰富的实践经验等，还是很值得学习和借鉴的。以下是老J的技术分享(其中也有我自己的一些分享进行补充完善)，由于时间比较长，我只能记的个大概，不过好在当初做了一些笔记。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享与思考/">技术分享与思考</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/04/22/老J的技术分享之总结/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
