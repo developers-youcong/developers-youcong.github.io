@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Java之ImmutableMap使用</title>
+      <link href="/2022/01/16/Java%E4%B9%8BImmutableMap%E4%BD%BF%E7%94%A8/"/>
+      <url>/2022/01/16/Java%E4%B9%8BImmutableMap%E4%BD%BF%E7%94%A8/</url>
+      
+        <content type="html"><![CDATA[<p>需引入对应的Maven依赖:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.google.guava&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;guava&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;$&#123;guava.version&#125;&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p><p>可去Maven仓库搜索<a href="https://mvnrepository.com/artifact/com.google.guava/guava?__cf_chl_f_tk=_H2VIg65oZgMSZT_9b.n.QAIHX9ewvQUS_8NsGAnnms-1642306261-0-gaNycGzNCpE" target="_blank" rel="noopener">guava</a>即可！！！</p><p>ImmutableMap模板代码:<br><a id="more"></a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 默认创建时赋值</span><br><span class="line">Map immutableMap = new ImmutableMap.Builder().put(&quot;A&quot;,&quot;A&quot;).put(&quot;B&quot;,&quot;B&quot;).build();</span><br><span class="line">System.out.println(&quot;test:&quot;+immutableMap.get(&quot;A&quot;));</span><br><span class="line"></span><br><span class="line"># 创建后不可变，会报错，错误关键信息为java.lang.UnsupportedOperationException</span><br><span class="line">System.out.println(&quot;test:&quot;+immutableMap.put(&quot;A&quot;,&quot;test&quot;));</span><br></pre></td></tr></table></figure><p><strong>应用场景归纳为如下几点：</strong></p><ul><li>确定性配置(如第三方请求API地址、固定的业务性配置等)；</li><li>单元测试。</li></ul><p>不适合key, value为未知参数, 因为可能有null产生的情况，也就代表key与value为确定值的场景均支持！！！</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>YC-Framework版本更新:V1.0.5</title>
       <link href="/2022/01/15/YC-Framework%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-V1-0-5/"/>
       <url>/2022/01/15/YC-Framework%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0-V1-0-5/</url>
@@ -33,11 +52,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -56,11 +75,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -98,11 +117,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -121,11 +140,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -429,11 +448,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -490,11 +509,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -513,11 +532,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -536,11 +555,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -559,11 +578,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -582,11 +601,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -605,11 +624,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -628,11 +647,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -651,11 +670,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -674,11 +693,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -697,11 +716,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -720,11 +739,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -743,11 +762,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -766,11 +785,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -789,34 +808,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
             
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>我在M2公司做架构之多数据源</title>
-      <link href="/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/"/>
-      <url>/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/</url>
-      
-        <content type="html"><![CDATA[<h2><span id="一-什么是多数据源">一、什么是多数据源？</span></h2><p>多数据源即在一个应用中配置多个不同的连接池(不同的连接池操作不同的数据库)。<br><a id="more"></a></p><h2><span id="二-为何要采用多数据源">二、为何要采用多数据源？</span></h2><ul><li>某特定业务场景下的需要(不同的公司，不同的业务场景)；</li><li>数据库拆分为多个，怎样让拆分后的数据库实现业务需要。</li></ul><h2><span id="三-多数据源现有的解决方案有哪些">三、多数据源现有的解决方案有哪些？</span></h2><ul><li>JdbcTemplate多数据源；</li><li>MyBatis多数据源；</li><li>MyBatis-Plus多数据源。</li></ul><h2><span id="四-关于多数据源的具体实践">四、关于多数据源的具体实践</span></h2><p>目前用的场景不是特别多，因为采用的是MyBatis-Plus多数据源，使用注解来切换不同数据库，基本上没遇到什么问题，问题基本上都jar包之间的冲突导致一些包不能引入报错之类的。</p><p>感兴趣的朋友可以参考如下:</p><p><a href="https://www.cnblogs.com/youcong/p/9806848.html" target="_blank" rel="noopener">SSM框架之多数据源配置</a></p><p><a href="https://www.cnblogs.com/youcong/p/12935716.html" target="_blank" rel="noopener">SpringBoot+MyBatis-Plus实现多数据源</a></p>]]></content>
-      
-      
-      
-        <tags>
-            
             <tag> 技术思考与实践 </tag>
-            
-            <tag> 架构 </tag>
-            
-            <tag> 职业生涯 </tag>
             
         </tags>
       
@@ -835,11 +831,34 @@
       
         <tags>
             
+            <tag> 架构 </tag>
+            
+            <tag> 职业生涯 </tag>
+            
             <tag> 技术思考与实践 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我在M2公司做架构之多数据源</title>
+      <link href="/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/"/>
+      <url>/2021/10/17/%E6%88%91%E5%9C%A8M2%E5%85%AC%E5%8F%B8%E5%81%9A%E6%9E%B6%E6%9E%84%E4%B9%8B%E5%A4%9A%E6%95%B0%E6%8D%AE%E6%BA%90/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="一-什么是多数据源">一、什么是多数据源？</span></h2><p>多数据源即在一个应用中配置多个不同的连接池(不同的连接池操作不同的数据库)。<br><a id="more"></a></p><h2><span id="二-为何要采用多数据源">二、为何要采用多数据源？</span></h2><ul><li>某特定业务场景下的需要(不同的公司，不同的业务场景)；</li><li>数据库拆分为多个，怎样让拆分后的数据库实现业务需要。</li></ul><h2><span id="三-多数据源现有的解决方案有哪些">三、多数据源现有的解决方案有哪些？</span></h2><ul><li>JdbcTemplate多数据源；</li><li>MyBatis多数据源；</li><li>MyBatis-Plus多数据源。</li></ul><h2><span id="四-关于多数据源的具体实践">四、关于多数据源的具体实践</span></h2><p>目前用的场景不是特别多，因为采用的是MyBatis-Plus多数据源，使用注解来切换不同数据库，基本上没遇到什么问题，问题基本上都jar包之间的冲突导致一些包不能引入报错之类的。</p><p>感兴趣的朋友可以参考如下:</p><p><a href="https://www.cnblogs.com/youcong/p/9806848.html" target="_blank" rel="noopener">SSM框架之多数据源配置</a></p><p><a href="https://www.cnblogs.com/youcong/p/12935716.html" target="_blank" rel="noopener">SpringBoot+MyBatis-Plus实现多数据源</a></p>]]></content>
+      
+      
+      
+        <tags>
             
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -858,11 +877,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -881,11 +900,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -904,11 +923,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -927,11 +946,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -950,11 +969,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -973,11 +992,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -996,11 +1015,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -1019,11 +1038,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -1042,11 +1061,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
@@ -1065,11 +1084,11 @@
       
         <tags>
             
-            <tag> 技术思考与实践 </tag>
-            
             <tag> 架构 </tag>
             
             <tag> 职业生涯 </tag>
+            
+            <tag> 技术思考与实践 </tag>
             
         </tags>
       
