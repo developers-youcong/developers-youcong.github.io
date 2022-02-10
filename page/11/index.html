@@ -306,6 +306,75 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-杨二前辈给我的几点启发" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/27/杨二前辈给我的几点启发/" class="article-date">
+      <time datetime="2021-06-27T14:58:11.000Z" itemprop="datePublished">2021-06-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/27/杨二前辈给我的几点启发/">杨二前辈给我的几点启发</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>因为某种机缘与杨二前辈近距离的接触，杨二前辈一些分享给了我以下几点启发。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/程序人生/">程序人生</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/06/27/杨二前辈给我的几点启发/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-爬虫与反爬虫策略思考" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -908,73 +977,6 @@ var _hmt = _hmt || [];
         <p class="article-more-link">
           <a href="/2021/06/03/JavaWeb之Response文件下载-中文编码问题/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-java使用jsoup时绕过https证书验证" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/06/03/java使用jsoup时绕过https证书验证/" class="article-date">
-      <time datetime="2021-06-03T12:13:24.000Z" itemprop="datePublished">2021-06-03</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/03/java使用jsoup时绕过https证书验证/">java使用jsoup时绕过https证书验证</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><strong>详细错误信息:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SunCertPathBuilderException: unable to find valid certification path to requested target</span><br></pre></td></tr></table></figure></p>
-<p><strong>问题原因:</strong><br>爬相关数据，因该网站有SSL加密，故无法爬取。</p>
-<p><strong>问题解决之核心代码:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    * 绕过HTTPS验证</span><br><span class="line">    */</span><br><span class="line">   static public void initTSL() &#123;</span><br><span class="line">       try &#123;</span><br><span class="line">           SSLContext context = SSLContext.getInstance(&quot;TLS&quot;);</span><br><span class="line">           context.init(null, new X509TrustManager[]&#123;new X509TrustManager() &#123;</span><br><span class="line">               @Override</span><br><span class="line">               public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException &#123;</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">               @Override</span><br><span class="line">               public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException &#123;</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">               @Override</span><br><span class="line">               public X509Certificate[] getAcceptedIssuers() &#123;</span><br><span class="line">                   return new X509Certificate[0];</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;&#125;, new SecureRandom());</span><br><span class="line">           HttpsURLConnection.setDefaultSSLSocketFactory(context.getSocketFactory());</span><br><span class="line">       &#125; catch (NoSuchAlgorithmException e) &#123;</span><br><span class="line">       &#125; catch (KeyManagementException e) &#123;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
