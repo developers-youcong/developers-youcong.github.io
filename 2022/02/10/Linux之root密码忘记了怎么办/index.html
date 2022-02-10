@@ -23,7 +23,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="前段时间忘记了root用户密码，系统相关文件需要root用户授权才能访问，故通过如下方式找回了root用户密码。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2022-02-10T11:41:16.199Z">
+<meta property="og:updated_time" content="2022-02-10T11:51:26.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux之root密码忘记了怎么办">
 <meta name="twitter:description" content="前段时间忘记了root用户密码，系统相关文件需要root用户授权才能访问，故通过如下方式找回了root用户密码。">
@@ -348,7 +348,7 @@ var _hmt = _hmt || [];
 <p>目前适用环境:CentOS7.x！！！</p>
 <p><strong>大前提:</strong>必须要有一个普通用户账号，否则无法找回root用户。</p>
 <h2><span id="步骤一">步骤一</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br><span class="line"></span><br><span class="line">#会提示输入当前普通用户密码</span><br><span class="line"></span><br><span class="line">#输入完毕后，接着会提示重新设置的root用户密码</span><br><span class="line"></span><br><span class="line">#再次输入重新设置的root用户密码</span><br></pre></td></tr></table></figure>
-<h2><span id="步骤二">步骤二</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line"></span><br><span class="line">#输入root新密码</span><br></pre></td></tr></table></figure>
+<h2><span id="步骤二">步骤二</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su root</span><br><span class="line">#输入root新密码</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -359,7 +359,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2022/02/10/Linux之root密码忘记了怎么办/">Linux之root密码忘记了怎么办</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2022-02-10, 19:35:43</p>
-        <p><span>最后更新:</span>2022-02-10, 19:41:16</p>
+        <p><span>最后更新:</span>2022-02-10, 19:51:26</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2022/02/10/Linux之root密码忘记了怎么办/" title="Linux之root密码忘记了怎么办">http://developers-youcong.github.io/2022/02/10/Linux之root密码忘记了怎么办/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2022/02/10/Linux之root密码忘记了怎么办/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
