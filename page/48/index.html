@@ -306,6 +306,75 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Class-path-contains-multiple-SLF4J-bindings" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/" class="article-date">
+      <time datetime="2019-06-30T12:53:16.000Z" itemprop="datePublished">2019-06-30</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/">Class path contains multiple SLF4J bindings.</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>详细错误信息如下:<br>SLF4J: Class path contains multiple SLF4J bindings.<br>SLF4J: Found binding in [jar:file:/C:/Users/eluzhu/.m2/repository/org/slf4j/slf4j-log4j12/1.7.25/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]<br>SLF4J: Found binding in [jar:file:/C:/Users/eluzhu/.m2/repository/ch/qos/logback/logback-classic/1.1.11/logback-classic-1.1.11.jar!/org/slf4j/impl/StaticLoggerBinder.class]<br>SLF4J: See <a href="http://www.slf4j.org/codes.html#multiple_bindings" target="_blank" rel="noopener">http://www.slf4j.org/codes.html#multiple_bindings</a> for an explanation.<br>SLF4J: Detected both log4j-over-slf4j.jar AND bound slf4j-log4j12.jar on the class path, preempting StackOverflowError.<br>SLF4J: See also <a href="http://www.slf4j.org/codes.html#log4jDelegationLoop" target="_blank" rel="noopener">http://www.slf4j.org/codes.html#log4jDelegationLoop</a> for more details.<br>Exception in thread “main” java.lang.ExceptionInInitializerError<br>    at org.slf4j.impl.StaticLoggerBinder.<init>(StaticLoggerBinder.java:72)<br>    at org.slf4j.impl.StaticLoggerBinder.<clinit>(StaticLoggerBinder.java:45)<br>    at org.slf4j.LoggerFactory.bind(LoggerFactory.java:149)<br>    at org.slf4j.LoggerFactory.performInitialization(LoggerFactory.java:124)<br>    at org.slf4j.LoggerFactory.getILoggerFactory(LoggerFactory.java:390)<br>    at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:340)<br>    at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:361)<br>    at com.eluzhu.sass.Application.<clinit>(Application.java:13)<br>Caused by: java.lang.IllegalStateException: Detected both log4j-over-slf4j.jar AND bound slf4j-log4j12.jar on the class path, preempting StackOverflowError. See also <a href="http://www.slf4j.org/codes.html#log4jDelegationLoop" target="_blank" rel="noopener">http://www.slf4j.org/codes.html#log4jDelegationLoop</a> for more details.<br>    at org.slf4j.impl.Log4jLoggerFactory.<clinit>(Log4jLoggerFactory.java:54)<br>    … 8 more</clinit></clinit></clinit></init></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/06/30/Class-path-contains-multiple-SLF4J-bindings/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Java使用Jsoup之爬取博客数据应用实例" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -907,75 +976,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/06/17/layui如何隐藏弹出层关闭的按钮/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Git-bash-Error-Could-not-fork-child-process-There-are-no-available-terminals-1" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/06/16/Git-bash-Error-Could-not-fork-child-process-There-are-no-available-terminals-1/" class="article-date">
-      <time datetime="2019-06-16T11:15:24.000Z" itemprop="datePublished">2019-06-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/06/16/Git-bash-Error-Could-not-fork-child-process-There-are-no-available-terminals-1/">Git bash Error: Could not fork child process: There are no available terminals (-1)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误信息:<br>Error: Could not fork child process: There are no available terminals (-1)<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/06/16/Git-bash-Error-Could-not-fork-child-process-There-are-no-available-terminals-1/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
