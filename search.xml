@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>npm问题之解决</title>
+      <link href="/2022/02/25/npm%E9%97%AE%E9%A2%98%E4%B9%8B%E8%A7%A3%E5%86%B3/"/>
+      <url>/2022/02/25/npm%E9%97%AE%E9%A2%98%E4%B9%8B%E8%A7%A3%E5%86%B3/</url>
+      
+        <content type="html"><![CDATA[<h2><span id="错误信息1">错误信息1</span></h2><a id="more"></a><p><strong>错误信息1:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gyp ERR! configure error  gyp ERR! stack Error: EACCES: permission denied,.....build</span><br></pre></td></tr></table></figure></p><p><strong>错误信息1解决方案:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --unsafe-perm</span><br></pre></td></tr></table></figure></p><p><strong>错误信息1原因分析:</strong><br>使用了root用户在对应的Vue.js项目执行npm install导致的，如果你想要使用root项目成功完成npm install或npm run build:prod的话，需要执行上面的npm安装命令。通常不建议使用root用户。</p><h2><span id="错误信息2">错误信息2</span></h2><p><strong>错误信息2:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fatal: unable to access ‘https://github.com/nhn/raphael.git/‘: OpenSSL SSL_connect: Connection was</span><br></pre></td></tr></table></figure></p><p><strong>错误信息2解决方案(1):</strong><br>更换npm源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure></p><p><strong>错误信息2解决方案(2):</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global --unset http.proxy </span><br><span class="line">git config --global --unset https.proxy</span><br></pre></td></tr></table></figure></p><p>解决方案(1)不行的话就用解决方案(2)</p><p><strong>错误信息2原因分析:</strong><br>可能与npm源有关，也可能与代理设置有关。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> npm </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>论程序员的可持续发展</title>
       <link href="/2022/02/19/%E8%AE%BA%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E5%8F%AF%E6%8C%81%E7%BB%AD%E5%8F%91%E5%B1%95/"/>
       <url>/2022/02/19/%E8%AE%BA%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E5%8F%AF%E6%8C%81%E7%BB%AD%E5%8F%91%E5%B1%95/</url>
