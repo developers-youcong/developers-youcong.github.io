@@ -306,6 +306,286 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Linux设备上没有空间之复盘" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/04/Linux设备上没有空间之复盘/" class="article-date">
+      <time datetime="2021-01-04T13:22:35.000Z" itemprop="datePublished">2021-01-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/04/Linux设备上没有空间之复盘/">Linux设备上没有空间之复盘</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="一、问题是如何发现的以及如何解决的"><a href="#一、问题是如何发现的以及如何解决的" class="headerlink" title="一、问题是如何发现的以及如何解决的"></a>一、问题是如何发现的以及如何解决的</h3>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/01/04/Linux设备上没有空间之复盘/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Openrestry-Lua之静态文件鉴权" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/04/Openrestry-Lua之静态文件鉴权/" class="article-date">
+      <time datetime="2021-01-04T11:36:34.000Z" itemprop="datePublished">2021-01-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/04/Openrestry-Lua之静态文件鉴权/">Openrestry+Lua之静态文件鉴权</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>核心代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">location /statis-img &#123;</span><br><span class="line">              alias /home/user/files/;</span><br><span class="line">              access_by_lua &apos;</span><br><span class="line"></span><br><span class="line">                local token  = ngx.var.arg_token</span><br><span class="line"></span><br><span class="line">                local access_token = &quot;123456&quot;</span><br><span class="line"></span><br><span class="line">                if token == access_tokein then</span><br><span class="line">                    return true</span><br><span class="line">                else</span><br><span class="line">                   ngx.exit(403)</span><br><span class="line">                end</span><br><span class="line">            &apos;;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<p>这段代码的主要功能就是鉴权，/home/user/files下的静态文件访问是需要携带token的，携带token以及token正确的前提下才能访问到静态资源，否则被拦截并定向到403。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/01/04/Openrestry-Lua之静态文件鉴权/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List-版本问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/04/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List-版本问题/" class="article-date">
+      <time datetime="2021-01-04T11:05:21.000Z" itemprop="datePublished">2021-01-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/04/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List-版本问题/">net.sf.jsqlparser.statement.select.PlainSelect.getGroupByColumnReferences()Ljava/util/List(版本问题)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net.sf.jsqlparser.statement.select.PlainSelect.getGroupByColumnReferences()Ljava/util/List</span><br></pre></td></tr></table></figure></p>
+<p>这个问题导致我的pagehelper分页失效出不来以及报错。</p>
+<p>之前遇到过这样的错误，原因是因为pagehelper插件冲突导致的，我在这篇文章提到过<a href="https://developers-youcong.github.io/2020/09/30/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List/">net.sf.jsqlparser.statement.select.PlainSelect.getGroupByColumnReferences()Ljava/util/List;</a></p>
+<p>这个错误原因是因为jsqlparser版本过高导致的。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/01/04/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List-版本问题/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Linux-设备上没有空间的问题解决" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/12/27/Linux-设备上没有空间的问题解决/" class="article-date">
+      <time datetime="2020-12-27T03:23:25.000Z" itemprop="datePublished">2020-12-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/27/Linux-设备上没有空间的问题解决/">Linux:设备上没有空间的问题解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>某天前端跟我说验证码的接口挂掉了，然后我急忙去看日志，发现一切正常，没有问题，服务运行正常，Redis也正常。后来看具体日志发现，出现这样的错误，设备上没有空间。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/12/27/Linux-设备上没有空间的问题解决/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-接口之多种返回数据类型" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -719,288 +999,9 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-error-while-loading-shared-libraries-libluajit-5-1-so-2" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/12/02/error-while-loading-shared-libraries-libluajit-5-1-so-2/" class="article-date">
-      <time datetime="2020-12-02T13:36:22.000Z" itemprop="datePublished">2020-12-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/02/error-while-loading-shared-libraries-libluajit-5-1-so-2/">error while loading shared libraries: libluajit-5.1.so.2</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./sbin/nginx: error while loading shared libraries: libluajit-5.1.so.2: </span><br><span class="line">cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/12/02/error-while-loading-shared-libraries-libluajit-5-1-so-2/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-nacos之配置文件实时刷新" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/11/30/nacos之配置文件实时刷新/" class="article-date">
-      <time datetime="2020-11-30T12:51:37.000Z" itemprop="datePublished">2020-11-30</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/30/nacos之配置文件实时刷新/">nacos之配置文件实时刷新</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>当初为了解决nacos配置文件实时刷新问题，搜索了很多资料，仍无效，最后不经意间的尝试却解决了这个问题。</p>
-<p>我的SpringCloud版本为:Hoxton.SR4；</p>
-<p>我的SpringCloud Alibaba版本为:2.2.1.RELEASE；</p>
-<p>我的Nacos版本为:1.3.1。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/11/30/nacos之配置文件实时刷新/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-nginx之静态资源映射" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/11/30/nginx之静态资源映射/" class="article-date">
-      <time datetime="2020-11-30T12:49:04.000Z" itemprop="datePublished">2020-11-30</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/30/nginx之静态资源映射/">nginx之静态资源映射</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong>主要应用场景:</strong><br>访问nginx不同目录下的静态资源。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/11/30/nginx之静态资源映射/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Java之数据字典实现" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/11/30/Java之数据字典实现/" class="article-date">
-      <time datetime="2020-11-30T12:15:00.000Z" itemprop="datePublished">2020-11-30</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/30/Java之数据字典实现/">Java之数据字典实现</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><strong>数据字典核心代码实现:</strong><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/11/30/Java之数据字典实现/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/19/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/65/">65</a><a class="extend next" rel="next" href="/page/21/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/19/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/18/">18</a><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><a class="page-number" href="/page/22/">22</a><span class="space">&hellip;</span><a class="page-number" href="/page/66/">66</a><a class="extend next" rel="next" href="/page/21/">Next &raquo;</a>
     </nav>
   
 </div>
