@@ -306,6 +306,354 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-mysqld-error-while-loading-shared-libraries-libaio-so-1" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/20/mysqld-error-while-loading-shared-libraries-libaio-so-1/" class="article-date">
+      <time datetime="2021-06-20T14:29:41.000Z" itemprop="datePublished">2021-06-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/20/mysqld-error-while-loading-shared-libraries-libaio-so-1/">mysqld: error while loading shared libraries: libaio.so.1</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>CentOS7.x版本初始化MySQL,出现如下错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqld: error while loading shared libraries: libaio.so.1:cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/06/20/mysqld-error-while-loading-shared-libraries-libaio-so-1/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Linux下word转pdf中文乱码问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/20/Linux下word转pdf中文乱码问题/" class="article-date">
+      <time datetime="2021-06-20T12:26:04.000Z" itemprop="datePublished">2021-06-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/20/Linux下word转pdf中文乱码问题/">Linux下word转pdf中文乱码问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>最近遇到一个问题，word下载正常，word转pdf后下载出现乱码(如果是本地windos则没有问题，如果是Linux上直接显示乱码)。</p>
+<p>最后通过搜索找到了原因:<br>原因之所以Windows不会有乱码在于C:\Windows\Fonts(有windows丰富的字体库，而Linux很缺乏)。</p>
+<p>其实早在很久以前搭建WordPress站点的时候就遇到这样的乱码问题，那个时候也是将Windows的字体库上传解决的。</p>
+<p><strong>解决问题步骤如下:</strong><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/06/20/Linux下word转pdf中文乱码问题/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-数据库设计之思考" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/06/数据库设计之思考/" class="article-date">
+      <time datetime="2021-06-06T04:40:04.000Z" itemprop="datePublished">2021-06-06</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/06/数据库设计之思考/">数据库设计之思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>去年的时候写了一篇文章叫<a href="https://www.cnblogs.com/youcong/p/12963752.html" target="_blank" rel="noopener">Java程序员的两项通用能力</a>，这篇文章我提到对于Java程序员而言很重要的两项通用能力(从编程的角度出发)，一是熟练掌握并深入理解Java编程语言，二是数据库。关于深入理解Java编程语言，后续我会有一个专门的wiki来讲这方面的东西，今天主要讲数据库设计方面的。<strong>我个人认为数据库设计是”互联网软件三高架构体系(高并发、高可用、高性能)”的根基</strong><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计思考与实践/">设计思考与实践</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/06/06/数据库设计之思考/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-BASE理论之思考" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/03/BASE理论之思考/" class="article-date">
+      <time datetime="2021-06-03T12:39:31.000Z" itemprop="datePublished">2021-06-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/03/BASE理论之思考/">BASE理论之思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="一、什么是BASE理论？"><a href="#一、什么是BASE理论？" class="headerlink" title="一、什么是BASE理论？"></a>一、什么是BASE理论？</h2><p>BASE理论是对CAP中一致性和可用性权衡的结果，它的核心思想是：<strong>即使无法做到强一致性，但每个应用都可以根据自身业务特点，采用适当的方式来使系统达到最终一致性。</strong><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式理论/">分布式理论</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/06/03/BASE理论之思考/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-CAP理论之思考" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/03/CAP理论之思考/" class="article-date">
+      <time datetime="2021-06-03T12:38:20.000Z" itemprop="datePublished">2021-06-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/03/CAP理论之思考/">CAP理论之思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>分布式系统的最大难点就是各个节点如何保持一致。最近我在工作中就遇到这样的问题，不同节点之间，彼此通过API，进行通信，交互数据，但有些服务节点存在延迟等问题，导致我看到的并不是实时的数据，以及系统更新时，更新A服务，间接影响到B服务，而B服务受到影响后，C服务随之受到影响，以此类推。对于公司技术架构平台设计者之一的我而言，虽然采用一些临时性措施解决了这些问题，但我不得不深入的去思考分布式一些本质上的东西，因为很多问题不从根本上弄清楚并解决，后面只会以一种或多种不同的状态存在着。搞清楚理论并带着直面的问题思考，或许能找到解决问题的最佳方式。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式理论/">分布式理论</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/06/03/CAP理论之思考/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-JavaWeb之Response文件下载-中文编码问题" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
@@ -644,351 +992,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2021/05/23/SpringBoot单文件与多文件上传/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-模板引擎的思考" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/05/23/模板引擎的思考/" class="article-date">
-      <time datetime="2021-05-23T04:14:49.000Z" itemprop="datePublished">2021-05-23</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/23/模板引擎的思考/">模板引擎的思考</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、什么是模板引擎？"><a href="#一、什么是模板引擎？" class="headerlink" title="一、什么是模板引擎？"></a>一、什么是模板引擎？</h2><p>模板引擎是为了使用户界面与业务数据（内容）分离而产生的，它可以生成特定格式的文档，用于网站的模板引擎就会生成一个标准的文档<br>(模板文件和数据通过模板引擎生成一个HTML代码)。<br><img src="https://upload-images.jianshu.io/upload_images/8707272-8346cf5c4b91b284.png?imageMogr2/auto-orient/strip|imageView2/2/w/871/format/webp" alt=""><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术思考与实践/">技术思考与实践</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/05/23/模板引擎的思考/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-数据库被删之反思" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/05/22/数据库被删之反思/" class="article-date">
-      <time datetime="2021-05-22T15:20:24.000Z" itemprop="datePublished">2021-05-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/22/数据库被删之反思/">数据库被删之反思</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、数据库为什么会被删？"><a href="#一、数据库为什么会被删？" class="headerlink" title="一、数据库为什么会被删？"></a>一、数据库为什么会被删？</h2><p>同事小L最近负责整理数据库初始化脚本，在导出演示环境的数据库脚本后，在另外的服务器上执行该数据库脚本，最后由于操作的时候打开的窗口过多，没有注意到环境，当时他打开了很多窗口，有演示环境，也有自己试验环境，也有开发环境，一堆窗口，最后执行的时候发现执行错了，将演示环境给干掉了，演示环境有我们大量的数据，主要用于给客户演示用的，数据非常重要。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教训/">教训</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/05/22/数据库被删之反思/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-分布式配置中心之思考" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/05/22/分布式配置中心之思考/" class="article-date">
-      <time datetime="2021-05-22T10:00:48.000Z" itemprop="datePublished">2021-05-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/22/分布式配置中心之思考/">分布式配置中心之思考</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、为什么需要分布式配置中心？它能解决什么问题？"><a href="#一、为什么需要分布式配置中心？它能解决什么问题？" class="headerlink" title="一、为什么需要分布式配置中心？它能解决什么问题？"></a>一、为什么需要分布式配置中心？它能解决什么问题？</h2><p>从解决问题层面进行切入，它能解决配置混乱难管理的问题。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式/">分布式</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/05/22/分布式配置中心之思考/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Java之特殊字符过滤处理" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/05/16/Java之特殊字符过滤处理/" class="article-date">
-      <time datetime="2021-05-16T04:18:19.000Z" itemprop="datePublished">2021-05-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/16/Java之特殊字符过滤处理/">Java之特殊字符过滤处理</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>核心方法如下(结合正则表达式和Matcher的方法进行替换):<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/05/16/Java之特殊字符过滤处理/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-CentOS7如何卸载自带OpenJDK" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/05/16/CentOS7如何卸载自带OpenJDK/" class="article-date">
-      <time datetime="2021-05-16T03:56:23.000Z" itemprop="datePublished">2021-05-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/16/CentOS7如何卸载自带OpenJDK/">CentOS7如何卸载自带OpenJDK</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>开发版的CentOS7.x一般自带OpenJDK,通常我们用商业版的Oracle JDK，这就需要将CentOS7.x自带的OpenJDK进行卸载。那么该如何卸载呢？</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/05/16/CentOS7如何卸载自带OpenJDK/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
