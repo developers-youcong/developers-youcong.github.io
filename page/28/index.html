@@ -306,11 +306,11 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
-    <article id="post-java-lang-IllegalStateException-Service-id-not-legal-hostname-test-gw-aqa" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-SpringBoot-MyBatis-Redis-二级缓存" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/09/05/java-lang-IllegalStateException-Service-id-not-legal-hostname-test-gw-aqa/" class="article-date">
-      <time datetime="2020-09-05T07:24:40.000Z" itemprop="datePublished">2020-09-05</time>
+      <a href="/2020/09/11/SpringBoot-MyBatis-Redis-二级缓存/" class="article-date">
+      <time datetime="2020-09-11T12:12:25.000Z" itemprop="datePublished">2020-09-11</time>
 </a>
 
 
@@ -325,7 +325,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/05/java-lang-IllegalStateException-Service-id-not-legal-hostname-test-gw-aqa/">java.lang.IllegalStateException: Service id not legal hostname (/test-gw-aqa)</a>
+      <a class="article-title" href="/2020/09/11/SpringBoot-MyBatis-Redis-二级缓存/">SpringBoot+MyBatis+Redis(二级缓存)</a>
     </h1>
   
 
@@ -335,80 +335,8 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.IllegalStateException: Service id not legal hostname (/test-gw-aqa)</span><br></pre></td></tr></table></figure></p>
-<p>错误原因和解决方案:</p>
-<p>FeignClient错误写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@FeignClient(&quot;/test-gw-aqa&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>FeignClient正确写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@FeignClient(&quot;test-gw-aqa&quot;)</span><br></pre></td></tr></table></figure></p>
-<p>这种错误会直接导致微服务之间调用失败，因为找不到这个微服务。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/" class="article-date">
-      <time datetime="2020-09-05T07:13:12.000Z" itemprop="datePublished">2020-09-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/">org.springframework.context.ApplicationContextException: Unable to start web server; nested exceptio</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.</span><br></pre></td></tr></table></figure></p>
-<p>常规解决办法:<br>参考如下链接即可:<br><a href="https://cloud.tencent.com/developer/article/1536938" target="_blank" rel="noopener">org.springframework.context.ApplicationContextException: Unable to start web server; nested exceptio</a></p>
-<p>但是也分情况。比分我这次遇到是关于不同Maven多模块相互依赖关系导致此类错误，理解Maven多模块之间的依赖关系即可解决。</p>
-<p>由此可以看出Maven多模块一定得设计好以及依赖关系一定要明确，否则项目启动报错、打包报错等各种奇葩错误弄得你怀疑人生。</p>
-<p>不过兵来将挡，水来土淹。经过这几年得错误洗礼，面对错误，我也不再像过去烦躁或胆怯，因为我知道烦躁和胆怯是解决不了问题的。面对错误，就是要直接面对它，然后解决它。我提供我的<strong>通用思路</strong>:<br></p>
+              <p>应用场景:<br>保存大数据量，避免重复请求。</p>
+<h2 id="一、添加Maven依赖"><a href="#一、添加Maven依赖" class="headerlink" title="一、添加Maven依赖"></a>一、添加Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- SpringBoot Boot Redis --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
           
       
     </div>
@@ -424,7 +352,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/#more">more >></a>
+          <a href="/2020/09/11/SpringBoot-MyBatis-Redis-二级缓存/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -448,11 +376,11 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-nacos的三种部署方式" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-java之5分钟插入千万条数据" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/09/05/nacos的三种部署方式/" class="article-date">
-      <time datetime="2020-09-05T07:07:39.000Z" itemprop="datePublished">2020-09-05</time>
+      <a href="/2020/09/09/java之5分钟插入千万条数据/" class="article-date">
+      <time datetime="2020-09-09T13:00:11.000Z" itemprop="datePublished">2020-09-09</time>
 </a>
 
 
@@ -467,7 +395,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/05/nacos的三种部署方式/">nacos的三种部署方式</a>
+      <a class="article-title" href="/2020/09/09/java之5分钟插入千万条数据/">java之5分钟插入千万条数据</a>
     </h1>
   
 
@@ -477,146 +405,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>单机模式 - 用于测试和单机试用。<br>集群模式 - 用于生产环境，确保高可用。<br>多集群模式 - 用于多数据中心场景。</p>
-<p>参考地址(参考官方文档即可):<br><a href="https://nacos.io/zh-cn/docs/deployment.html" target="_blank" rel="noopener">https://nacos.io/zh-cn/docs/deployment.html</a><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/09/05/nacos的三种部署方式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/02/o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml/" class="article-date">
-      <time datetime="2020-09-02T13:21:39.000Z" itemprop="datePublished">2020-09-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml/">o.s.c.a.n.c.NacosPropertySourceBuilder : get data from Nacos error,dataId:application-dev.yaml</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>昨天部署项目到公司内部开发服务器上，部署显示是成功，结果出现了这样的错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o.s.c.a.n.c.NacosPropertySourceBuilder : get data from Nacos error,dataId:application-dev.yaml</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/09/02/o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-java使用split注意事项" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/02/java使用split注意事项/" class="article-date">
-      <time datetime="2020-09-02T13:09:17.000Z" itemprop="datePublished">2020-09-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/02/java使用split注意事项/">java使用split注意事项</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>java使用split的应用场景，通常是针对字符串进行分割。<br></p>
+              <p>虽说不一定5分钟就插入完毕，因为取决去所插入的字段，如果字段过多会稍微慢点，但不至于太慢。10分钟内基本能看到结果。</p>
+<p>之前我尝试用多线程来实现数据插入(百万条数据)，半个多小时才二十多万条数据。</p>
+<p>线程池数据插入核心代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ExecutorService executorService = Executors.newFixedThreadPool(1000000);</span><br><span class="line">        executorService.submit(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                for (int i = 0; i &lt; 150000; i++) &#123;</span><br><span class="line">                    TestUser user = new TestUser();</span><br><span class="line">                    user.setName(RandomUtil.randomString(20));</span><br><span class="line">                    userDao.insert(user);</span><br><span class="line">                    System.out.println(&quot;插入数据:&quot; + i);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                System.out.println(Thread.currentThread().getName() + &quot;正在执行任务&quot;);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
+<p>应用场景:<br>造测试数据，如千万甚至亿万级别的数据自动快速生成。<br></p>
           
       
     </div>
@@ -632,7 +424,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a href="/2020/09/02/java使用split注意事项/#more">more >></a>
+          <a href="/2020/09/09/java之5分钟插入千万条数据/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -656,11 +448,11 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-js存储token" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-centos7-8之防火墙常用命令" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/08/29/js存储token/" class="article-date">
-      <time datetime="2020-08-29T14:04:15.000Z" itemprop="datePublished">2020-08-29</time>
+      <a href="/2020/09/09/centos7-8之防火墙常用命令/" class="article-date">
+      <time datetime="2020-09-09T12:48:09.000Z" itemprop="datePublished">2020-09-09</time>
 </a>
 
 
@@ -675,7 +467,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/29/js存储token/">js存储token</a>
+      <a class="article-title" href="/2020/09/09/centos7-8之防火墙常用命令/">centos7.8之防火墙常用命令</a>
     </h1>
   
 
@@ -685,7 +477,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>关于存储token有多种方式(针对前端而言，如react可以使用redux存储token，js可以使用cookie存储token,还有今天说的通过sessionStorage保存token等)。</p>
+              <p>查看防火墙状态:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld</span><br></pre></td></tr></table></figure></p>
           
       
     </div>
@@ -696,12 +488,12 @@ var _hmt = _hmt || [];
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2020/08/29/js存储token/#more">more >></a>
+          <a href="/2020/09/09/centos7-8之防火墙常用命令/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -725,11 +517,11 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-SpringCloudGateWay之网关跨域问题解决" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Java8之合并list并去重" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/08/29/SpringCloudGateWay之网关跨域问题解决/" class="article-date">
-      <time datetime="2020-08-29T13:53:49.000Z" itemprop="datePublished">2020-08-29</time>
+      <a href="/2020/09/09/Java8之合并list并去重/" class="article-date">
+      <time datetime="2020-09-09T12:44:32.000Z" itemprop="datePublished">2020-09-09</time>
 </a>
 
 
@@ -744,7 +536,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/29/SpringCloudGateWay之网关跨域问题解决/">SpringCloudGateWay之网关跨域问题解决</a>
+      <a class="article-title" href="/2020/09/09/Java8之合并list并去重/">Java8之合并list并去重</a>
     </h1>
   
 
@@ -754,7 +546,74 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>应用场景:<br>所有的微服务是通过网关这个入口，在和前端对接口时，必然设计到有关跨域的问题。关于服务端跨域有很多方案，可以加注解(指定具体的路径允许跨域)，也可以统一配置。</p>
+        <p>核心代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; result = Stream.of(Lists.newArrayList(&quot;A&quot;, &quot;B&quot;, &quot;C&quot;), Lists.newArrayList(&quot;A&quot;, &quot;B&quot;))</span><br><span class="line">  .flatMap(Collection::stream).distinct().collect(Collectors.toList());</span><br></pre></td></tr></table></figure></p>
+<p>最终的结果输出是A B C。</p>
+<p>应用场景:<br>有些时候我们需要合并两个返回类型相同的结果集，就可以用这个，不必SQL查询合并结果。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-前端代码规范" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/05/前端代码规范/" class="article-date">
+      <time datetime="2020-09-05T08:25:40.000Z" itemprop="datePublished">2020-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/05/前端代码规范/">前端代码规范</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>这是我上家教育saas公司前端同事整理出来的(当时我们公司主要用的前端框架是React)，当时我在这家公司除了主写后端之外，还需要写一些前端代码，按照这个规范写，前端代码可读性、可维护性、可扩展性以及性能都会大大提高。</p>
           
       
     </div>
@@ -765,12 +624,12 @@ var _hmt = _hmt || [];
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码规范/">代码规范</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2020/08/29/SpringCloudGateWay之网关跨域问题解决/#more">more >></a>
+          <a href="/2020/09/05/前端代码规范/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -794,11 +653,11 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-linux下以M为单位显示文件大小" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-java8新特性之List处理" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/08/23/linux下以M为单位显示文件大小/" class="article-date">
-      <time datetime="2020-08-23T04:02:14.000Z" itemprop="datePublished">2020-08-23</time>
+      <a href="/2020/09/05/java8新特性之List处理/" class="article-date">
+      <time datetime="2020-09-05T08:07:38.000Z" itemprop="datePublished">2020-09-05</time>
 </a>
 
 
@@ -813,7 +672,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/23/linux下以M为单位显示文件大小/">linux下以M为单位显示文件大小</a>
+      <a class="article-title" href="/2020/09/05/java8新特性之List处理/">java8新特性之List处理</a>
     </h1>
   
 
@@ -823,7 +682,209 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>此命令用于查看当前目录各文件夹及文件所占用大小:<br><code>ls -l --block-size=M</code></p>
+              <p>分组:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, List&lt;T&gt;&gt; yearData = allData.stream().collect(Collectors.groupingBy(T::getYear));</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/09/05/java8新特性之List处理/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-node-js之linux安装-centos7-8" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/05/node-js之linux安装-centos7-8/" class="article-date">
+      <time datetime="2020-09-05T08:02:31.000Z" itemprop="datePublished">2020-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/05/node-js之linux安装-centos7-8/">node.js之linux安装(centos7.8)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>node.js linux安装:<br><a href="https://www.cnblogs.com/chenhaoyu/p/10237505.html" target="_blank" rel="noopener">https://www.cnblogs.com/chenhaoyu/p/10237505.html</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-maven多模块项目出现java文件异常-蓝色标记消失，pom-xml存在但仍不能导入对应的包，不能识别java文件等" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/05/maven多模块项目出现java文件异常-蓝色标记消失，pom-xml存在但仍不能导入对应的包，不能识别java文件等/" class="article-date">
+      <time datetime="2020-09-05T07:58:30.000Z" itemprop="datePublished">2020-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/05/maven多模块项目出现java文件异常-蓝色标记消失，pom-xml存在但仍不能导入对应的包，不能识别java文件等/">maven多模块项目出现java文件异常(蓝色标记消失，pom.xml存在但仍不能导入对应的包，不能识别java文件等)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>解决方案:<br>A-&gt;删除.idea文件，重新导入Idea<br>B-&gt;删除整个项目，重新下载导入Idea<br>C-&gt;Project Structure Module(对应的module)重新设置source root<br>D-&gt;检查pom.xml是否出错，如主pom.xml中的<modules>标签是否包含对应的子模块等</modules></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/idea/">idea</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-springboot-jar包部署如何不占用过多的服务器内存" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/05/springboot-jar包部署如何不占用过多的服务器内存/" class="article-date">
+      <time datetime="2020-09-05T07:45:46.000Z" itemprop="datePublished">2020-09-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/05/springboot-jar包部署如何不占用过多的服务器内存/">springboot jar包部署如何不占用过多的服务器内存</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>springboot部署方案有很多，可以将其打成war部署到tomcat，也可以直接jar部署(利用内嵌的tomcat),还可以使用docker部署等。</p>
+<p>今天主要说的是springboot jar包部署占用内存确实有些大，该怎么调整呢？其实很简单，核心代码如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup java -Xms64m -Xmx128m -jar blog-gateway-2.0.0.jar  &gt; blog-gateway.log 2&gt;&amp;1 &amp;</span><br></pre></td></tr></table></figure></p>
+<p>最关键的是-Xms64m -Xmx128m，与JVM有关。</p>
+<p>关于JVM内存设置可以参考如下链接:<br><a href="https://www.cnblogs.com/jack204/archive/2012/07/02/2572932.html" target="_blank" rel="noopener">https://www.cnblogs.com/jack204/archive/2012/07/02/2572932.html</a></p>
 
       
     </div>
@@ -859,11 +920,11 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-SpringAop之日志-读配置文件方式" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-pom-xml设置字符编码" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/08/23/SpringAop之日志-读配置文件方式/" class="article-date">
-      <time datetime="2020-08-23T03:44:51.000Z" itemprop="datePublished">2020-08-23</time>
+      <a href="/2020/09/05/pom-xml设置字符编码/" class="article-date">
+      <time datetime="2020-09-05T07:41:07.000Z" itemprop="datePublished">2020-09-05</time>
 </a>
 
 
@@ -878,7 +939,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/23/SpringAop之日志-读配置文件方式/">SpringAop之日志(读配置文件方式)</a>
+      <a class="article-title" href="/2020/09/05/pom-xml设置字符编码/">pom.xml设置字符编码</a>
     </h1>
   
 
@@ -888,8 +949,9 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>读配置文件的目的在于减少代码上的冗余，这个冗余通常指加注解之类的。<br></p>
-          
+        <p>为什么要设置字符编码？<br>如果不设置正确字符编码可能导致编译失败等问题。</p>
+<p>参考解决方案:<br><a href="https://blog.csdn.net/Victoria__W/article/details/80706763" target="_blank" rel="noopener">https://blog.csdn.net/Victoria__W/article/details/80706763</a></p>
+
       
     </div>
     
@@ -899,85 +961,9 @@ var _hmt = _hmt || [];
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a href="/2020/08/23/SpringAop之日志-读配置文件方式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-微服务内部通信之白名单" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/08/23/微服务内部通信之白名单/" class="article-date">
-      <time datetime="2020-08-23T03:37:51.000Z" itemprop="datePublished">2020-08-23</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/23/微服务内部通信之白名单/">微服务内部通信之白名单</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>微服务通信的方式有很多，有的用Socket，也有用一些HTTP客户端工具类，还有的有现成的组件如SpringCloud Open-Feign等。</p>
-<p>这些共同点都是通信。</p>
-<p>不同服务之间的通信涉及很多方面，比分说内网访问，外网不能访问等。</p>
-<p>那么微服务如何实现内部通信呢(这里说的是内网通信，外网不能访问)？<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/08/23/微服务内部通信之白名单/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -1002,7 +988,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/27/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/67/">67</a><a class="extend next" rel="next" href="/page/29/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/27/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/26/">26</a><a class="page-number" href="/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/page/29/">29</a><a class="page-number" href="/page/30/">30</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/">68</a><a class="extend next" rel="next" href="/page/29/">Next &raquo;</a>
     </nav>
   
 </div>

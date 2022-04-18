@@ -306,11 +306,11 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
-    <article id="post-SpringBoot使用Maven打包时减小jar包的大小方法" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-java-lang-IllegalStateException-Service-id-not-legal-hostname-test-gw-aqa" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/08/23/SpringBoot使用Maven打包时减小jar包的大小方法/" class="article-date">
-      <time datetime="2020-08-23T03:20:32.000Z" itemprop="datePublished">2020-08-23</time>
+      <a href="/2020/09/05/java-lang-IllegalStateException-Service-id-not-legal-hostname-test-gw-aqa/" class="article-date">
+      <time datetime="2020-09-05T07:24:40.000Z" itemprop="datePublished">2020-09-05</time>
 </a>
 
 
@@ -325,7 +325,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/23/SpringBoot使用Maven打包时减小jar包的大小方法/">SpringBoot使用Maven打包时减小jar包的大小方法</a>
+      <a class="article-title" href="/2020/09/05/java-lang-IllegalStateException-Service-id-not-legal-hostname-test-gw-aqa/">java.lang.IllegalStateException: Service id not legal hostname (/test-gw-aqa)</a>
     </h1>
   
 
@@ -335,8 +335,12 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>我在没使用maven插件压缩打包的时候，一个应用打包基本上100M以上，以我个人博客中的一个管理微服务模块来说，打包成功后生成的jar就123M左右。为此我搜索了下，研究如何减少jar包体积大小的方法，不料真还找到了。<br></p>
-          
+        <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java.lang.IllegalStateException: Service id not legal hostname (/test-gw-aqa)</span><br></pre></td></tr></table></figure></p>
+<p>错误原因和解决方案:</p>
+<p>FeignClient错误写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@FeignClient(&quot;/test-gw-aqa&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>FeignClient正确写法:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@FeignClient(&quot;test-gw-aqa&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>这种错误会直接导致微服务之间调用失败，因为找不到这个微服务。</p>
+
       
     </div>
     
@@ -346,13 +350,9 @@ var _hmt = _hmt || [];
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li></ul>
     </div>
 
-      
-        <p class="article-more-link">
-          <a href="/2020/08/23/SpringBoot使用Maven打包时减小jar包的大小方法/#more">more >></a>
-        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -375,11 +375,11 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-springboot-oauth2-0异常重写处理-针对token失效" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/08/23/springboot-oauth2-0异常重写处理-针对token失效/" class="article-date">
-      <time datetime="2020-08-23T02:35:30.000Z" itemprop="datePublished">2020-08-23</time>
+      <a href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/" class="article-date">
+      <time datetime="2020-09-05T07:13:12.000Z" itemprop="datePublished">2020-09-05</time>
 </a>
 
 
@@ -394,7 +394,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/23/springboot-oauth2-0异常重写处理-针对token失效/">springboot+oauth2.0异常重写处理(针对token失效)</a>
+      <a class="article-title" href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/">org.springframework.context.ApplicationContextException: Unable to start web server; nested exceptio</a>
     </h1>
   
 
@@ -404,7 +404,11 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>近来针对微服务框架开发，其中oauth2.0默认返回XML形式的token失效，不符合我们实际的开发需求，于是我参考网上一些博客重写了它,使其符合我们开发的需求。<br></p>
+              <p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.context.ApplicationContextException: Unable to start ServletWebServerApplicationContext due to missing ServletWebServerFactory bean.</span><br></pre></td></tr></table></figure></p>
+<p>常规解决办法:<br>参考如下链接即可:<br><a href="https://cloud.tencent.com/developer/article/1536938" target="_blank" rel="noopener">org.springframework.context.ApplicationContextException: Unable to start web server; nested exceptio</a></p>
+<p>但是也分情况。比分我这次遇到是关于不同Maven多模块相互依赖关系导致此类错误，理解Maven多模块之间的依赖关系即可解决。</p>
+<p>由此可以看出Maven多模块一定得设计好以及依赖关系一定要明确，否则项目启动报错、打包报错等各种奇葩错误弄得你怀疑人生。</p>
+<p>不过兵来将挡，水来土淹。经过这几年得错误洗礼，面对错误，我也不再像过去烦躁或胆怯，因为我知道烦躁和胆怯是解决不了问题的。面对错误，就是要直接面对它，然后解决它。我提供我的<strong>通用思路</strong>:<br></p>
           
       
     </div>
@@ -420,7 +424,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a href="/2020/08/23/springboot-oauth2-0异常重写处理-针对token失效/#more">more >></a>
+          <a href="/2020/09/05/org-springframework-context-ApplicationContextException-Unable-to-start-web-server-nested-exceptio/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -444,11 +448,11 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-SpringCloud-Alibaba之Nacos" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-nacos的三种部署方式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/08/23/SpringCloud-Alibaba之Nacos/" class="article-date">
-      <time datetime="2020-08-23T02:06:26.000Z" itemprop="datePublished">2020-08-23</time>
+      <a href="/2020/09/05/nacos的三种部署方式/" class="article-date">
+      <time datetime="2020-09-05T07:07:39.000Z" itemprop="datePublished">2020-09-05</time>
 </a>
 
 
@@ -463,7 +467,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/23/SpringCloud-Alibaba之Nacos/">SpringCloud Alibaba之Nacos</a>
+      <a class="article-title" href="/2020/09/05/nacos的三种部署方式/">nacos的三种部署方式</a>
     </h1>
   
 
@@ -473,7 +477,284 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <h2 id="一、运行Nacos"><a href="#一、运行Nacos" class="headerlink" title="一、运行Nacos"></a>一、运行Nacos</h2>
+              <p>单机模式 - 用于测试和单机试用。<br>集群模式 - 用于生产环境，确保高可用。<br>多集群模式 - 用于多数据中心场景。</p>
+<p>参考地址(参考官方文档即可):<br><a href="https://nacos.io/zh-cn/docs/deployment.html" target="_blank" rel="noopener">https://nacos.io/zh-cn/docs/deployment.html</a><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/09/05/nacos的三种部署方式/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/02/o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml/" class="article-date">
+      <time datetime="2020-09-02T13:21:39.000Z" itemprop="datePublished">2020-09-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml/">o.s.c.a.n.c.NacosPropertySourceBuilder : get data from Nacos error,dataId:application-dev.yaml</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>昨天部署项目到公司内部开发服务器上，部署显示是成功，结果出现了这样的错误:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">o.s.c.a.n.c.NacosPropertySourceBuilder : get data from Nacos error,dataId:application-dev.yaml</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/09/02/o-s-c-a-n-c-NacosPropertySourceBuilder-get-data-from-Nacos-error-dataId-application-dev-yaml/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-java使用split注意事项" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/02/java使用split注意事项/" class="article-date">
+      <time datetime="2020-09-02T13:09:17.000Z" itemprop="datePublished">2020-09-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/02/java使用split注意事项/">java使用split注意事项</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>java使用split的应用场景，通常是针对字符串进行分割。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/09/02/java使用split注意事项/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-js存储token" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/08/29/js存储token/" class="article-date">
+      <time datetime="2020-08-29T14:04:15.000Z" itemprop="datePublished">2020-08-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/29/js存储token/">js存储token</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>关于存储token有多种方式(针对前端而言，如react可以使用redux存储token，js可以使用cookie存储token,还有今天说的通过sessionStorage保存token等)。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/08/29/js存储token/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-SpringCloudGateWay之网关跨域问题解决" class="article article-type-post" itemscope="" itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/08/29/SpringCloudGateWay之网关跨域问题解决/" class="article-date">
+      <time datetime="2020-08-29T13:53:49.000Z" itemprop="datePublished">2020-08-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/29/SpringCloudGateWay之网关跨域问题解决/">SpringCloudGateWay之网关跨域问题解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>应用场景:<br>所有的微服务是通过网关这个入口，在和前端对接口时，必然设计到有关跨域的问题。关于服务端跨域有很多方案，可以加注解(指定具体的路径允许跨域)，也可以统一配置。</p>
           
       
     </div>
@@ -489,7 +770,7 @@ var _hmt = _hmt || [];
 
       
         <p class="article-more-link">
-          <a href="/2020/08/23/SpringCloud-Alibaba之Nacos/#more">more >></a>
+          <a href="/2020/08/29/SpringCloudGateWay之网关跨域问题解决/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -513,11 +794,11 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-IDEA中导入项目后的main方法右键没有Run" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-linux下以M为单位显示文件大小" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/08/07/IDEA中导入项目后的main方法右键没有Run/" class="article-date">
-      <time datetime="2020-08-07T06:02:33.000Z" itemprop="datePublished">2020-08-07</time>
+      <a href="/2020/08/23/linux下以M为单位显示文件大小/" class="article-date">
+      <time datetime="2020-08-23T04:02:14.000Z" itemprop="datePublished">2020-08-23</time>
 </a>
 
 
@@ -532,7 +813,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/07/IDEA中导入项目后的main方法右键没有Run/">IDEA中导入项目后的main方法右键没有Run</a>
+      <a class="article-title" href="/2020/08/23/linux下以M为单位显示文件大小/">linux下以M为单位显示文件大小</a>
     </h1>
   
 
@@ -542,7 +823,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>参考解决问题链接:<br><a href="https://blog.csdn.net/q15102780705/article/details/99686399" target="_blank" rel="noopener">IDEA中导入项目后的main方法右键没有Run</a></p>
+        <p>此命令用于查看当前目录各文件夹及文件所占用大小:<br><code>ls -l --block-size=M</code></p>
 
       
     </div>
@@ -553,7 +834,7 @@ var _hmt = _hmt || [];
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea/">Idea</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
     </div>
 
       
@@ -578,11 +859,11 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-Idea导入jar包的两种方法" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-SpringAop之日志-读配置文件方式" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/08/07/Idea导入jar包的两种方法/" class="article-date">
-      <time datetime="2020-08-07T06:01:01.000Z" itemprop="datePublished">2020-08-07</time>
+      <a href="/2020/08/23/SpringAop之日志-读配置文件方式/" class="article-date">
+      <time datetime="2020-08-23T03:44:51.000Z" itemprop="datePublished">2020-08-23</time>
 </a>
 
 
@@ -597,7 +878,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/07/Idea导入jar包的两种方法/">Idea导入jar包的两种方法</a>
+      <a class="article-title" href="/2020/08/23/SpringAop之日志-读配置文件方式/">SpringAop之日志(读配置文件方式)</a>
     </h1>
   
 
@@ -607,137 +888,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>参考解决问题链接:<br><a href="https://blog.csdn.net/Golden_soft/article/details/80952243" target="_blank" rel="noopener">Idea导入jar包的两种方法</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea/">Idea</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Error-java-无效的源发行版-11" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/08/07/Error-java-无效的源发行版-11/" class="article-date">
-      <time datetime="2020-08-07T05:58:12.000Z" itemprop="datePublished">2020-08-07</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/07/Error-java-无效的源发行版-11/">Error:java: 无效的源发行版: 11</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>参考解决办法链接:<br><a href="https://www.cnblogs.com/hui-run/p/11137296.html" target="_blank" rel="noopener">Error:java: 无效的源发行版: 11</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea/">Idea</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-jQuery之遍历" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/07/31/jQuery之遍历/" class="article-date">
-      <time datetime="2020-07-31T02:37:52.000Z" itemprop="datePublished">2020-07-31</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/31/jQuery之遍历/">jQuery之遍历</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>jQuery针对不同的对象遍历的方式是不一样的。<br></p>
+              <p>读配置文件的目的在于减少代码上的冗余，这个冗余通常指加注解之类的。<br></p>
           
       
     </div>
@@ -748,12 +899,12 @@ var _hmt = _hmt || [];
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2020/07/31/jQuery之遍历/#more">more >></a>
+          <a href="/2020/08/23/SpringAop之日志-读配置文件方式/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -777,11 +928,11 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-Cannot-create-resource-output-directory" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-微服务内部通信之白名单" class="article article-type-post" itemscope="" itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2020/07/28/Cannot-create-resource-output-directory/" class="article-date">
-      <time datetime="2020-07-28T09:51:52.000Z" itemprop="datePublished">2020-07-28</time>
+      <a href="/2020/08/23/微服务内部通信之白名单/" class="article-date">
+      <time datetime="2020-08-23T03:37:51.000Z" itemprop="datePublished">2020-08-23</time>
 </a>
 
 
@@ -796,7 +947,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/28/Cannot-create-resource-output-directory/">Cannot create resource output directory</a>
+      <a class="article-title" href="/2020/08/23/微服务内部通信之白名单/">微服务内部通信之白名单</a>
     </h1>
   
 
@@ -806,7 +957,10 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>错误背景:<br>mvn clean package下报错<br></p>
+              <p>微服务通信的方式有很多，有的用Socket，也有用一些HTTP客户端工具类，还有的有现成的组件如SpringCloud Open-Feign等。</p>
+<p>这些共同点都是通信。</p>
+<p>不同服务之间的通信涉及很多方面，比分说内网访问，外网不能访问等。</p>
+<p>那么微服务如何实现内部通信呢(这里说的是内网通信，外网不能访问)？<br></p>
           
       
     </div>
@@ -817,151 +971,13 @@ var _hmt = _hmt || [];
 
       
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
     </div>
 
       
         <p class="article-more-link">
-          <a href="/2020/07/28/Cannot-create-resource-output-directory/#more">more >></a>
+          <a href="/2020/08/23/微服务内部通信之白名单/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-SQL优化之博客案例" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/07/26/SQL优化之博客案例/" class="article-date">
-      <time datetime="2020-07-26T06:14:44.000Z" itemprop="datePublished">2020-07-26</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/26/SQL优化之博客案例/">SQL优化之博客案例</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>问题背景:<br>博客首页随着数据量的增加，最初是几百上千的数据，访问正常，这是开发环境，当切换测试环境(通过爬虫已有数据六万多)，这时候访问非常缓慢，长达一分钟。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/07/26/SQL优化之博客案例/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Drools之规则中级语法" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/07/14/Drools之规则中级语法/" class="article-date">
-      <time datetime="2020-07-14T03:05:01.000Z" itemprop="datePublished">2020-07-14</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/14/Drools之规则中级语法/">Drools之规则中级语法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2><span id="一-package说明">一、package说明</span></h2><p>package是定义在规则文件首行的，也是规则文件三大模块之一。<br>package为规则逻辑路径，定义时可不与物理目录相同，但为了更方便管理，强烈建议与物理目录同步。<br>package包含import、global、function、query、rule、EOF。<br>其rule是贯穿整个规则文件的核心，介绍的pattern、运行符、约束连接、规则属性等都是rule中的内容。</p>
-<p>介绍package时不得不再次说明kmodule.xml配置，当配置文件中的KieBase设置package路径，则当前路径下的所有规则相关文件(规则文件、决策表、领域语言文件等)都会被加入规则库中，但当前路径下子文件夹的规则相关文件不包含在当前规则库中。</p>
-<p>package参数本身是一个命名空间，并且不以任何方式关联文件或文件夹。因此，可以由多个规则目录为规则库构建源组合规则，有一个顶级的package配置，所有的规则都在其控制之下(在组合规则时)。虽然声明在不同名称下的资源不可能合并为同一个包，但是单个规则库可以用多个包来构建它。也就是说，packages可以设置多个路径，并通过逗号分隔，但这是对配置文件packages而言的。</p>
-<h2><span id="二-global全局变量">二、global全局变量</span></h2><p>全局变量是一个很有用的元素节点，它是通过关键字global class(对象类型) name组成的。class可以任意的，能为规则提供操作数据或服务等功能，特别是在规则RHS部分中使用程序提供的服务功能，如在RHS部分添加日志功能、修改数据表、发送E-mail等。</p>
-<p>global全局变量与Fact(事实)对象不同，不会因为值变化而影响到规则的再次激活。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Drools/">Drools</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
@@ -986,7 +1002,7 @@ var _hmt = _hmt || [];
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/28/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><span class="space">&hellip;</span><a class="page-number" href="/page/67/">67</a><a class="extend next" rel="next" href="/page/30/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/28/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><a class="page-number" href="/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><span class="space">&hellip;</span><a class="page-number" href="/page/68/">68</a><a class="extend next" rel="next" href="/page/30/">Next &raquo;</a>
     </nav>
   
 </div>
