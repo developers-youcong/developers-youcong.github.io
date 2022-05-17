@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 
     <!--[if lt IE 9]>
         <style>body {display: none; background: none !important} </style>
@@ -129,11 +129,11 @@ var _hmt = _hmt || [];
 
         
             <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
             <i class="fa fa-times" onclick="resetSearch()"></i>
             </form>
             <div id="local-search-result"></div>
-            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -302,11 +302,149 @@ var _hmt = _hmt || [];
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
   
-    <article id="post-轻松搭建SpringCloud-Eureka架构体系" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-深入浅出分布式定时任务之ShedLock" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/04/16/深入浅出分布式定时任务之ShedLock/" class="article-date">
+      <time datetime="2022-04-16T00:32:54.000Z" itemprop="datePublished">2022-04-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/16/深入浅出分布式定时任务之ShedLock/">深入浅出分布式定时任务之ShedLock</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="一、什么是ShedLock"><a href="#一、什么是ShedLock" class="headerlink" title="一、什么是ShedLock?"></a>一、什么是ShedLock?</h2><p>ShedLock是一个在分布式环境中使用的定时任务框架，用于解决在分布式环境中的多个实例的相同定时任务在同一时间点重复执行的问题，解决思路是通过对公用的数据库中的某个表进行记录和加锁，使得同一时间点只有第一个执行定时任务并成功在数据库表中写入相应记录的节点能够成功执行而其他节点直接跳过该任务。目前所支持的已经不仅仅只是数据库，还包括MongoDB、Zookeeper、Redis、Hazelcast、Couchbase、ElasticSearch、Neo4j、Etcd等。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式/">分布式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术思考与实践/">技术思考与实践</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2022/04/16/深入浅出分布式定时任务之ShedLock/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-轻松搭建Dubbo架构体系" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2022/04/15/轻松搭建Dubbo架构体系/" class="article-date">
+      <time datetime="2022-04-15T14:40:04.000Z" itemprop="datePublished">2022-04-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/15/轻松搭建Dubbo架构体系/">轻松搭建Dubbo架构体系</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>基于Dubbo架构体系，拿来即用，毫无任何杂糅的组件，可以基于此作为Dubbo分布式微服务的脚手架。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式/">分布式</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术思考与实践/">技术思考与实践</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2022/04/15/轻松搭建Dubbo架构体系/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-轻松搭建SpringCloud-Eureka架构体系" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2022/04/15/轻松搭建SpringCloud-Eureka架构体系/" class="article-date">
@@ -318,7 +456,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -375,7 +513,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-我在M2公司做架构之日常一些小工具分享" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-我在M2公司做架构之日常一些小工具分享" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2022/04/10/我在M2公司做架构之日常一些小工具分享/" class="article-date">
@@ -387,7 +525,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -444,7 +582,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-我在M2公司做架构之Excel定制化" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-我在M2公司做架构之Excel定制化" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2022/04/10/我在M2公司做架构之Excel定制化/" class="article-date">
@@ -456,7 +594,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -513,7 +651,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-我在M2公司做架构之自动化接口测试与Apifox" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-我在M2公司做架构之自动化接口测试与Apifox" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2022/04/10/我在M2公司做架构之自动化接口测试与Apifox/" class="article-date">
@@ -525,7 +663,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -582,7 +720,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-我在M2公司做架构之被删库了怎么办" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-我在M2公司做架构之被删库了怎么办" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2022/04/10/我在M2公司做架构之被删库了怎么办/" class="article-date">
@@ -594,7 +732,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -652,7 +790,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-我在M2公司做架构之框架的安全性" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-我在M2公司做架构之框架的安全性" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2022/04/10/我在M2公司做架构之框架的安全性/" class="article-date">
@@ -664,7 +802,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -721,7 +859,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-我在M2公司做架构之大数据量如何存储" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-我在M2公司做架构之大数据量如何存储" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2022/04/10/我在M2公司做架构之大数据量如何存储/" class="article-date">
@@ -733,7 +871,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -790,7 +928,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-我在M2公司做架构之sql-timeout-怎么办" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-我在M2公司做架构之sql-timeout-怎么办" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2022/04/10/我在M2公司做架构之sql-timeout-怎么办/" class="article-date">
@@ -802,7 +940,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -859,157 +997,6 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-开源项目分享之Easy系列" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/04/05/开源项目分享之Easy系列/" class="article-date">
-      <time datetime="2022-04-05T12:08:27.000Z" itemprop="datePublished">2022-04-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/05/开源项目分享之Easy系列/">开源项目分享之Easy系列</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>本文主要分享如下Easy系列的开源项目:</p>
-<ul>
-<li>1.Easy Poi；</li>
-<li>2.Easy Excel；</li>
-<li>3.Easy Rule；</li>
-<li>4.Easy Pay；</li>
-<li>5.Easy Captcha；</li>
-<li>6.Easy ES。</li>
-</ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享与思考/">技术分享与思考</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2022/04/05/开源项目分享之Easy系列/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-我在M2公司做架构之视图" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2022/04/05/我在M2公司做架构之视图/" class="article-date">
-      <time datetime="2022-04-05T04:08:51.000Z" itemprop="datePublished">2022-04-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2022/04/05/我在M2公司做架构之视图/">我在M2公司做架构之视图</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>本文主要内容:</p>
-<ul>
-<li>1.什么是视图？</li>
-<li>2.为什么要用视图？</li>
-<li>3.在使用视图的过程中会有哪些问题呢？</li>
-</ul>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术思考与实践/">技术思考与实践</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/职业生涯/">职业生涯</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2022/04/05/我在M2公司做架构之视图/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/5/">Next &raquo;</a>
@@ -1025,17 +1012,17 @@ var _hmt = _hmt || [];
             </div>
             <div class="footer-right">
              <a href="#" target="_blank" title="快速、简洁且高效的博客框架">Power by youcong </a>
-             <br>			 
+             <br/>			 
 			 <img width="18px" height="18px" src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png">
 	         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" target="_blank">京ICP备19022052号</a>
-	  <br>
+	  <br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">京ICP备19022052号-1</a>           
 		   </div>
         </div>
         
             <div class="visit">
                 
-                    <span id="busuanzi_container_site_pv" style="display:none">
+                    <span id="busuanzi_container_site_pv" style='display:none'>
                         <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -1044,8 +1031,8 @@ var _hmt = _hmt || [];
                     <span>| </span>
                 
                 
-                    <span id="busuanzi_container_page_pv" style="display:none">
-                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 

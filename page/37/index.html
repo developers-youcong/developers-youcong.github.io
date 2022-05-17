@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 
     <!--[if lt IE 9]>
         <style>body {display: none; background: none !important} </style>
@@ -129,11 +129,11 @@ var _hmt = _hmt || [];
 
         
             <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
             <i class="fa fa-times" onclick="resetSearch()"></i>
             </form>
             <div id="local-search-result"></div>
-            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -302,11 +302,150 @@ var _hmt = _hmt || [];
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
   
-    <article id="post-SpringCloud之Zuul" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-SpringCloud之Hystrix" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/06/05/SpringCloud之Hystrix/" class="article-date">
+      <time datetime="2020-06-05T13:59:38.000Z" itemprop="datePublished">2020-06-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/05/SpringCloud之Hystrix/">SpringCloud之Hystrix</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>在微服务架构中，微服务之间互相依赖较大，相互之间调用必不可免的会失败。但当下游服务A因为瞬时流量导致服务崩溃，其他依赖于A服务的B、C服务由于调用A服务超时耗费了大量的资源，长时间下去，B、C服务也会崩溃。Hystrix就是用来解决服务之间相互调用失败，避免产生蝴蝶效应的熔断器，以及提供降级选项。Hystrix通过隔离服务之间的访问点，阻止它们之间的级联故障以及提供默认选项来实现这一目标，以提高系统的整体健壮性。</p>
+<p><strong>它主要解决什么问题?</strong><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringCloud/">SpringCloud</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/06/05/SpringCloud之Hystrix/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-博客园开放API如何使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/06/04/博客园开放API如何使用/" class="article-date">
+      <time datetime="2020-06-04T13:34:26.000Z" itemprop="datePublished">2020-06-04</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/04/博客园开放API如何使用/">博客园开放API如何使用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>业务背景:<br>我通过weblogic这个Java爬虫框架是能够爬取得到博客园的大多数数据，但后来得知博客园有自己的开放API，通过这个开放API可以做一些事情，比方说实现一个关于博客园文章的小程序阅读、或者想学习go、node.js、flutter或uniapp用其实现一个CMS应用。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/第三方API/">第三方API</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/06/04/博客园开放API如何使用/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-SpringCloud之Zuul" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2020/06/04/SpringCloud之Zuul/" class="article-date">
@@ -318,7 +457,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -375,7 +514,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-SpringCloud之Ribbon" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-SpringCloud之Ribbon" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2020/06/04/SpringCloud之Ribbon/" class="article-date">
@@ -387,7 +526,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -444,7 +583,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-SpringCloud之服务注册中心和提供者" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-SpringCloud之服务注册中心和提供者" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2020/06/02/SpringCloud之服务注册中心和提供者/" class="article-date">
@@ -456,7 +595,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -513,7 +652,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-《阿里工程师的自我修养》之阅读总结" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-《阿里工程师的自我修养》之阅读总结" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2020/06/01/《阿里工程师的自我修养》之阅读总结/" class="article-date">
@@ -525,7 +664,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -582,7 +721,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-GitHub-Pages-Hexo-配置来自阿里云的域名或腾讯云的域名" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-GitHub-Pages-Hexo-配置来自阿里云的域名或腾讯云的域名" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2020/05/29/GitHub-Pages-Hexo-配置来自阿里云的域名或腾讯云的域名/" class="article-date">
@@ -594,7 +733,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -647,7 +786,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-MySQL体系结构和存储引擎" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-MySQL体系结构和存储引擎" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2020/05/29/MySQL体系结构和存储引擎/" class="article-date">
@@ -659,7 +798,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -684,7 +823,7 @@ var _hmt = _hmt || [];
 <p>两个词的可以互换使用，但两者的概念完全不同。<br>因为在MySQL数据库中，实例与数据库的关系通常是一一对应的，即一个实例对应一个数据库，一个数据库对应一个实例。但是，在集群情况下可能存在一个数据库被多个数据实例使用的情况。</p>
 <p>关于MySQL集群可以参考:<br><a href="https://blog.csdn.net/qq_21153619/article/details/81529880" target="_blank" rel="noopener">Mysql集群搭建（多实例、主从）</a><br><a href="https://www.howtoing.com/how-to-install-a-mysql-cluster-on-ubuntu-16-04/" target="_blank" rel="noopener">如何在Ubuntu 16.04上安装MySQL集群</a></p>
 <h2><span id="mysql体系结构">MySQL体系结构</span></h2><h3><span id="数据库和数据库实例容易混淆">数据库和数据库实例容易混淆?</span></h3><p>从概念上来说，<br>数据库是文件的集合，是依照某种数据模型组织起来并存放于二级存储器中的数据集合;<br>数据库实例是程序，是位于用户与操作系统之间的一层数据管理软件，用户对数据库数据的任何操作，包括数据库定义、数据查询、数据维护、数据库运行控制等都是在数据库实例下进行的，应用程序只有通过数据库实例才能和数据库打交道。</p>
-<p>MySQL数据库体系结构，如下图所示:<br><img src="/2020/05/29/MySQL体系结构和存储引擎/01.png" alt=""></p>
+<p>MySQL数据库体系结构，如下图所示:<br><img src="/2020/05/29/MySQL体系结构和存储引擎/01.png" alt></p>
 <p>由图可知，MySQL由以下几部分组成:<br>连接池组件<br>管理服务和工具组件<br>SQL接口组件<br>查询分析器组件<br>优化器组件<br>缓存组件<br>插件式存储组件<br>物理文件</p>
 <p><strong>MySQL区别于其他数据库的最重要的一个特点是骑插件式的表存储引擎。</strong></p>
 <p><strong>存储引擎是基于表的，而不是数据库。</strong></p>
@@ -734,7 +873,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-Java程序员的两项通用能力" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Java程序员的两项通用能力" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2020/05/25/Java程序员的两项通用能力/" class="article-date">
@@ -746,7 +885,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -803,7 +942,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-SpringBoot之整合Dubbo" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-SpringBoot之整合Dubbo" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2020/05/22/SpringBoot之整合Dubbo/" class="article-date">
@@ -815,7 +954,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -874,146 +1013,6 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-SpringBoot整合Xxl-Job" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/05/22/SpringBoot整合Xxl-Job/" class="article-date">
-      <time datetime="2020-05-22T01:19:53.000Z" itemprop="datePublished">2020-05-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/22/SpringBoot整合Xxl-Job/">SpringBoot整合Xxl-Job</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、下载Xxl-Job源代码并导入本地并运行"><a href="#一、下载Xxl-Job源代码并导入本地并运行" class="headerlink" title="一、下载Xxl-Job源代码并导入本地并运行"></a>一、下载Xxl-Job源代码并导入本地并运行</h2><p>Github地址:<br><a href="https://github.com/xuxueli/xxl-job" target="_blank" rel="noopener">https://github.com/xuxueli/xxl-job</a></p>
-<p>中文文档地址:<br><a href="https://www.xuxueli.com/xxl-job/" target="_blank" rel="noopener">https://www.xuxueli.com/xxl-job/</a><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/05/22/SpringBoot整合Xxl-Job/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-SpringBoot之整合MongoDB" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/05/21/SpringBoot之整合MongoDB/" class="article-date">
-      <time datetime="2020-05-21T12:26:58.000Z" itemprop="datePublished">2020-05-21</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/21/SpringBoot之整合MongoDB/">SpringBoot之整合MongoDB</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>MongoDB官网安装:<br><a href="https://www.mongodb.com/download-center/community" target="_blank" rel="noopener">https://www.mongodb.com/download-center/community</a></p>
-<p>MongoDB客户端工具(Mongo Management Studio)安装:<br><a href="http://mms.litixsoft.de/#software_pricing" target="_blank" rel="noopener">http://mms.litixsoft.de/#software_pricing</a></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/05/21/SpringBoot之整合MongoDB/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/36/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/35/">35</a><a class="page-number" href="/page/36/">36</a><span class="page-number current">37</span><a class="page-number" href="/page/38/">38</a><a class="page-number" href="/page/39/">39</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/38/">Next &raquo;</a>
@@ -1029,17 +1028,17 @@ var _hmt = _hmt || [];
             </div>
             <div class="footer-right">
              <a href="#" target="_blank" title="快速、简洁且高效的博客框架">Power by youcong </a>
-             <br>			 
+             <br/>			 
 			 <img width="18px" height="18px" src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png">
 	         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" target="_blank">京ICP备19022052号</a>
-	  <br>
+	  <br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">京ICP备19022052号-1</a>           
 		   </div>
         </div>
         
             <div class="visit">
                 
-                    <span id="busuanzi_container_site_pv" style="display:none">
+                    <span id="busuanzi_container_site_pv" style='display:none'>
                         <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -1048,8 +1047,8 @@ var _hmt = _hmt || [];
                     <span>| </span>
                 
                 
-                    <span id="busuanzi_container_page_pv" style="display:none">
-                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 

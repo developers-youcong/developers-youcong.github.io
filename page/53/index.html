@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 
     <!--[if lt IE 9]>
         <style>body {display: none; background: none !important} </style>
@@ -129,11 +129,11 @@ var _hmt = _hmt || [];
 
         
             <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
             <i class="fa fa-times" onclick="resetSearch()"></i>
             </form>
             <div id="local-search-result"></div>
-            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -302,11 +302,153 @@ var _hmt = _hmt || [];
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
   
-    <article id="post-为-Nginx-添加-HTTP-基本认证-HTTP-Basic-Authentication" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-《远见》之读书笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/23/《远见》之读书笔记/" class="article-date">
+      <time datetime="2019-07-23T08:23:08.000Z" itemprop="datePublished">2019-07-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/23/《远见》之读书笔记/">《远见》之读书笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>读完《远见》这本书，做的读书笔记如下:</p>
+<h2 id="PART1-远见思维与工具箱"><a href="#PART1-远见思维与工具箱" class="headerlink" title="PART1 远见思维与工具箱"></a>PART1 远见思维与工具箱</h2><h3 id="远见思维-多行动，少忧虑"><a href="#远见思维-多行动，少忧虑" class="headerlink" title="远见思维:多行动，少忧虑"></a>远见思维:多行动，少忧虑</h3><p>打造职业生涯要知道的5件事情:<br>(1)职业生涯至少长达45年，被分为三个阶段;<br>(2)职场燃料是走完职业生涯的基础;<br>(3)职业燃料的获取需要数千小时的学习、体验和实践;<br>(4)职业生涯中随时都会出现意外，请随机应变;<br>(5)职业生涯是生活的一大部分,请将它融入更广阔的人生追求;<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/07/23/《远见》之读书笔记/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-shell之批量新增用户脚本-http-basic-auth" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/07/22/shell之批量新增用户脚本-http-basic-auth/" class="article-date">
+      <time datetime="2019-07-22T03:14:32.000Z" itemprop="datePublished">2019-07-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/22/shell之批量新增用户脚本-http-basic-auth/">shell之批量新增用户脚本(http-basic-auth)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>user.txt(用户名记录文件)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test001@163.com</span><br><span class="line">test002@163.com</span><br></pre></td></tr></table></figure></p>
+<p>user.sh(shell脚本):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">for line in `cat user.txt`</span><br><span class="line">do</span><br><span class="line">   echo $line &quot;u&quot;$line</span><br><span class="line">   printf &quot;$line:$(openssl passwd -crypt $line)\n&quot; &gt;&gt; conf.d/passwd</span><br><span class="line"></span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
+<p>执行完毕后，就可以在passwd看到对应的记录。</p>
+<p>应用场景:<br>比如我开发某个系统，希望有一个双重验证，第一次访问比如有一个HTTP Basic Auth认证(认证一次，浏览器有缓存，就无需再重新验证)，第二次如果你想使用系统的服务的话，还需要登录。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/07/22/shell之批量新增用户脚本-http-basic-auth/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-为-Nginx-添加-HTTP-基本认证-HTTP-Basic-Authentication" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/22/为-Nginx-添加-HTTP-基本认证-HTTP-Basic-Authentication/" class="article-date">
@@ -318,7 +460,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -377,7 +519,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-Linux搜索所有文件中的内容" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Linux搜索所有文件中的内容" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/21/Linux搜索所有文件中的内容/" class="article-date">
@@ -389,7 +531,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -450,7 +592,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-Node-js之删除文件夹-含递归删除" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-Node-js之删除文件夹-含递归删除" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/20/Node-js之删除文件夹-含递归删除/" class="article-date">
@@ -462,7 +604,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -519,7 +661,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-微信小程序开发之页面传参" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-微信小程序开发之页面传参" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/19/微信小程序开发之页面传参/" class="article-date">
@@ -531,7 +673,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -588,7 +730,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-微信小程序之确认框实现" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-微信小程序之确认框实现" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/19/微信小程序之确认框实现/" class="article-date">
@@ -600,7 +742,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -617,7 +759,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>效果图如下:<br><img src="/2019/07/19/微信小程序之确认框实现/01.png" alt=""><br></p>
+              <p>效果图如下:<br><img src="/2019/07/19/微信小程序之确认框实现/01.png" alt><br></p>
           
       
     </div>
@@ -657,7 +799,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-微信小程序之使用checkbox" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-微信小程序之使用checkbox" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/19/微信小程序之使用checkbox/" class="article-date">
@@ -669,7 +811,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -726,7 +868,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-微信小程序之如何定义页面标题" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-微信小程序之如何定义页面标题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/19/微信小程序之如何定义页面标题/" class="article-date">
@@ -738,7 +880,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -755,7 +897,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>效果图:<br><img src="/2019/07/19/微信小程序之如何定义页面标题/01.png" alt=""><br></p>
+              <p>效果图:<br><img src="/2019/07/19/微信小程序之如何定义页面标题/01.png" alt><br></p>
           
       
     </div>
@@ -795,7 +937,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-微信小程序之使用wx-for遍历循环" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-微信小程序之使用wx-for遍历循环" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/19/微信小程序之使用wx-for遍历循环/" class="article-date">
@@ -807,7 +949,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -824,7 +966,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
           
-              <p>效果图如下:<br><img src="/2019/07/19/微信小程序之使用wx-for遍历循环/01.png" alt=""><br></p>
+              <p>效果图如下:<br><img src="/2019/07/19/微信小程序之使用wx-for遍历循环/01.png" alt><br></p>
           
       
     </div>
@@ -864,146 +1006,6 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-微信小程序之数据缓存" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/19/微信小程序之数据缓存/" class="article-date">
-      <time datetime="2019-07-19T09:35:51.000Z" itemprop="datePublished">2019-07-19</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/19/微信小程序之数据缓存/">微信小程序之数据缓存</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>关于缓存，举个示例，假定我不是通过微信授权登录的方式，小程序又是如何识别我登录后的身份呢？？？<br>效果图:<br><img src="/2019/07/19/微信小程序之数据缓存/01.png" alt="图一"></p>
-<p>这个功能我是通过缓存实现的。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序开发/">微信小程序开发</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/07/19/微信小程序之数据缓存/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-微信小程序之页面导航栏" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/19/微信小程序之页面导航栏/" class="article-date">
-      <time datetime="2019-07-19T09:29:43.000Z" itemprop="datePublished">2019-07-19</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/19/微信小程序之页面导航栏/">微信小程序之页面导航栏</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>效果图:<br><img src="/2019/07/19/微信小程序之页面导航栏/01.png" alt=""></p>
-<p>页面有点丑，作为初次学习，页面可以要求不那么美观，先学会再说。毕竟后面可以优化的很漂亮。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微信小程序开发/">微信小程序开发</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/07/19/微信小程序之页面导航栏/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/52/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/51/">51</a><a class="page-number" href="/page/52/">52</a><span class="page-number current">53</span><a class="page-number" href="/page/54/">54</a><a class="page-number" href="/page/55/">55</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/54/">Next &raquo;</a>
@@ -1019,17 +1021,17 @@ var _hmt = _hmt || [];
             </div>
             <div class="footer-right">
              <a href="#" target="_blank" title="快速、简洁且高效的博客框架">Power by youcong </a>
-             <br>			 
+             <br/>			 
 			 <img width="18px" height="18px" src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png">
 	         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" target="_blank">京ICP备19022052号</a>
-	  <br>
+	  <br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">京ICP备19022052号-1</a>           
 		   </div>
         </div>
         
             <div class="visit">
                 
-                    <span id="busuanzi_container_site_pv" style="display:none">
+                    <span id="busuanzi_container_site_pv" style='display:none'>
                         <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -1038,8 +1040,8 @@ var _hmt = _hmt || [];
                     <span>| </span>
                 
                 
-                    <span id="busuanzi_container_page_pv" style="display:none">
-                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 

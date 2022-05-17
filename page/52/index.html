@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 
     <!--[if lt IE 9]>
         <style>body {display: none; background: none !important} </style>
@@ -129,11 +129,11 @@ var _hmt = _hmt || [];
 
         
             <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
             <i class="fa fa-times" onclick="resetSearch()"></i>
             </form>
             <div id="local-search-result"></div>
-            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -302,11 +302,152 @@ var _hmt = _hmt || [];
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
   
-    <article id="post-VsCode更新代码问题之解决方案" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-HustOJ二次开发之隐藏菜单栏" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/08/08/HustOJ二次开发之隐藏菜单栏/" class="article-date">
+      <time datetime="2019-08-08T10:47:47.000Z" itemprop="datePublished">2019-08-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/08/HustOJ二次开发之隐藏菜单栏/">HustOJ二次开发之隐藏菜单栏</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>通过关键搜索:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name *nav.php</span><br></pre></td></tr></table></figure></p>
+<p>出现如下结果:<br>/home/judge/src/web/template/ie/nav.php<br>/home/judge/src/web/template/ace/nav.php<br>/home/judge/src/web/template/bs3/nav.php<br>/home/judge/src/web/template/sweet/nav.php</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /home/judge/src/web/template/bs3/nav.php</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HustOJ/">HustOJ</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/08/08/HustOJ二次开发之隐藏菜单栏/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-HustOJ二次开发之修改相关Logo" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/08/08/HustOJ二次开发之修改相关Logo/" class="article-date">
+      <time datetime="2019-08-08T10:27:48.000Z" itemprop="datePublished">2019-08-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/08/HustOJ二次开发之修改相关Logo/">HustOJ二次开发之修改相关Logo</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>比如将如图中的HUSTOJ进行修改:<br><img src="/2019/08/08/HustOJ二次开发之修改相关Logo/01.png" alt></p>
+<p>在Linux上修改，通过关键字搜索，会获取如下两个重要文件，找到都有的文字进行修改即可:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grep -rn &quot;HUSTOJ&quot; *</span><br><span class="line">cd /home/judge/src/web</span><br><span class="line">vim include/db_info.inc.php 修改标题</span><br><span class="line">vim template/bs3/js.php 修改底部</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HustOJ/">HustOJ</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/08/08/HustOJ二次开发之修改相关Logo/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-VsCode更新代码问题之解决方案" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/08/07/VsCode更新代码问题之解决方案/" class="article-date">
@@ -318,7 +459,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -375,7 +516,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-layui之tree使用" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-layui之tree使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/08/06/layui之tree使用/" class="article-date">
@@ -387,7 +528,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -446,7 +587,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-腾讯产品法之读书笔记" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-腾讯产品法之读书笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/08/03/腾讯产品法之读书笔记/" class="article-date">
@@ -458,7 +599,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -516,7 +657,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-原则之读书笔记-生活篇" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-原则之读书笔记-生活篇" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/31/原则之读书笔记-生活篇/" class="article-date">
@@ -528,7 +669,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -585,7 +726,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-MySQL之replace函数应用" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-MySQL之replace函数应用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/31/MySQL之replace函数应用/" class="article-date">
@@ -597,7 +738,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -654,7 +795,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-js截取get参数乱码问题之解决" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-js截取get参数乱码问题之解决" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/31/js截取get参数乱码问题之解决/" class="article-date">
@@ -666,7 +807,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -723,7 +864,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-js转义问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-js转义问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/26/js转义问题/" class="article-date">
@@ -735,7 +876,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -792,7 +933,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-js之select三级联动" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-js之select三级联动" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/07/26/js之select三级联动/" class="article-date">
@@ -804,7 +945,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -863,148 +1004,6 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-《远见》之读书笔记" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/23/《远见》之读书笔记/" class="article-date">
-      <time datetime="2019-07-23T08:23:08.000Z" itemprop="datePublished">2019-07-23</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/23/《远见》之读书笔记/">《远见》之读书笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>读完《远见》这本书，做的读书笔记如下:</p>
-<h2 id="PART1-远见思维与工具箱"><a href="#PART1-远见思维与工具箱" class="headerlink" title="PART1 远见思维与工具箱"></a>PART1 远见思维与工具箱</h2><h3 id="远见思维-多行动，少忧虑"><a href="#远见思维-多行动，少忧虑" class="headerlink" title="远见思维:多行动，少忧虑"></a>远见思维:多行动，少忧虑</h3><p>打造职业生涯要知道的5件事情:<br>(1)职业生涯至少长达45年，被分为三个阶段;<br>(2)职场燃料是走完职业生涯的基础;<br>(3)职业燃料的获取需要数千小时的学习、体验和实践;<br>(4)职业生涯中随时都会出现意外，请随机应变;<br>(5)职业生涯是生活的一大部分,请将它融入更广阔的人生追求;<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/07/23/《远见》之读书笔记/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-shell之批量新增用户脚本-http-basic-auth" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/07/22/shell之批量新增用户脚本-http-basic-auth/" class="article-date">
-      <time datetime="2019-07-22T03:14:32.000Z" itemprop="datePublished">2019-07-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/22/shell之批量新增用户脚本-http-basic-auth/">shell之批量新增用户脚本(http-basic-auth)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>user.txt(用户名记录文件)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">test001@163.com</span><br><span class="line">test002@163.com</span><br></pre></td></tr></table></figure></p>
-<p>user.sh(shell脚本):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">for line in `cat user.txt`</span><br><span class="line">do</span><br><span class="line">   echo $line &quot;u&quot;$line</span><br><span class="line">   printf &quot;$line:$(openssl passwd -crypt $line)\n&quot; &gt;&gt; conf.d/passwd</span><br><span class="line"></span><br><span class="line">done</span><br></pre></td></tr></table></figure></p>
-<p>执行完毕后，就可以在passwd看到对应的记录。</p>
-<p>应用场景:<br>比如我开发某个系统，希望有一个双重验证，第一次访问比如有一个HTTP Basic Auth认证(认证一次，浏览器有缓存，就无需再重新验证)，第二次如果你想使用系统的服务的话，还需要登录。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/07/22/shell之批量新增用户脚本-http-basic-auth/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/51/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/50/">50</a><a class="page-number" href="/page/51/">51</a><span class="page-number current">52</span><a class="page-number" href="/page/53/">53</a><a class="page-number" href="/page/54/">54</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/53/">Next &raquo;</a>
@@ -1020,17 +1019,17 @@ var _hmt = _hmt || [];
             </div>
             <div class="footer-right">
              <a href="#" target="_blank" title="快速、简洁且高效的博客框架">Power by youcong </a>
-             <br>			 
+             <br/>			 
 			 <img width="18px" height="18px" src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png">
 	         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" target="_blank">京ICP备19022052号</a>
-	  <br>
+	  <br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">京ICP备19022052号-1</a>           
 		   </div>
         </div>
         
             <div class="visit">
                 
-                    <span id="busuanzi_container_site_pv" style="display:none">
+                    <span id="busuanzi_container_site_pv" style='display:none'>
                         <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -1039,8 +1038,8 @@ var _hmt = _hmt || [];
                     <span>| </span>
                 
                 
-                    <span id="busuanzi_container_page_pv" style="display:none">
-                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 

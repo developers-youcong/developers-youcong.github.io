@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
 
     <!--[if lt IE 9]>
         <style>body {display: none; background: none !important} </style>
@@ -129,11 +129,11 @@ var _hmt = _hmt || [];
 
         
             <form id="search-form">
-            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="false" />
             <i class="fa fa-times" onclick="resetSearch()"></i>
             </form>
             <div id="local-search-result"></div>
-            <p class="no-result">No results found <i class="fa fa-spinner fa-pulse"></i></p>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -302,11 +302,155 @@ var _hmt = _hmt || [];
             </nav>
         </header>                
     </div>
-    <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
+    <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
   
-    <article id="post-Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-大型网站架构模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/08/大型网站架构模式/" class="article-date">
+      <time datetime="2019-04-08T05:59:10.000Z" itemprop="datePublished">2019-04-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/08/大型网站架构模式/">大型网站架构模式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>关于什么是模式,这个来自建筑师的词汇是这样定义的:”每一个模式描述了一个在我们周围不断重复发生的问题及该问题解决方案的核心。这样，你就能一次又一次地使用该方案而不必做重复的工作”。</p>
+<p>模式的关键在于模式的可重复性，问题与场景的可重复性带来的解决方案的可重复使用。</p>
+<p><strong>联系实际开发</strong>:<br>每个做前后台开发的小伙伴们都会发现一点，一个正儿八经的后台系统，80%是重复的，20%是特别的(可以称作个性化定制)。</p>
+<p>举个例子:<br>人人开源的后台系统:<br><img src="/2019/04/08/大型网站架构模式/model01.png" alt></p>
+<p>Jeesite4的后台系统:<br><img src="/2019/04/08/大型网站架构模式/model02.png" alt></p>
+<p>从这两者进行比对就可以明显的发现公共的部分非常相似(只不过展现的形式不一样，renren-security中的角色管理是直接在菜单中显示，而jeesite4则放在权限管理中，只需点击即可看到对应的角色管理)<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/08/大型网站架构模式/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-博客中的文章归档是如何实现的" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/04/07/博客中的文章归档是如何实现的/" class="article-date">
+      <time datetime="2019-04-07T07:39:40.000Z" itemprop="datePublished">2019-04-07</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/07/博客中的文章归档是如何实现的/">博客中的文章归档是如何实现的</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>我的效果图如下(这个是我实现的):<br><img src="/2019/04/07/博客中的文章归档是如何实现的/blog01.png" alt></p>
+<p>wordpress的效果图如下:<br><img src="/2019/04/07/博客中的文章归档是如何实现的/blog02.png" alt><br>sql代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT DISTINCT YEAR(post.post_modified)AS `year`,MONTH(post.post_modified) AS `month` FROM wp_posts AS post</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/04/07/博客中的文章归档是如何实现的/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/04/07/Caused-by-java-sql-SQLException-Value-0000-00-00-00-00-00-can-not-be-represented-as-java-sql-Timestamp/" class="article-date">
@@ -318,7 +462,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -373,7 +517,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-git分支开发的好处" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-git分支开发的好处" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/04/06/git分支开发的好处/" class="article-date">
@@ -385,7 +529,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -453,7 +597,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-layui之日期和时间组件" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-layui之日期和时间组件" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/04/05/layui之日期和时间组件/" class="article-date">
@@ -465,7 +609,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -522,7 +666,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-vue-electron脚手架" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-vue-electron脚手架" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/04/04/vue-electron脚手架/" class="article-date">
@@ -534,7 +678,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -553,7 +697,7 @@ var _hmt = _hmt || [];
           
         <p>vue-electron官方文档(中文):<a href="https://simulatedgreg.gitbooks.io/electron-vue/content/cn" target="_blank" rel="noopener">https://simulatedgreg.gitbooks.io/electron-vue/content/cn</a><br>vue-electron官方文档(英文):<a href="https://simulatedgreg.gitbooks.io/electron-vue/content/en" target="_blank" rel="noopener">https://simulatedgreg.gitbooks.io/electron-vue/content/en</a></p>
 <h2><span id="1脚手架搭建流程步骤">1.脚手架搭建流程步骤</span></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 安装 vue-cli 和 脚手架样板代码</span><br><span class="line">npm install -g vue-cli</span><br><span class="line">vue init simulatedgreg/electron-vue my-project</span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"># 安装依赖并运行你的程序</span><br><span class="line">cd my-project</span><br><span class="line">yarn # 或者 npm install</span><br><span class="line">yarn run dev # 或者 npm run dev</span><br></pre></td></tr></table></figure>
-<h2><span id="2效果图">2.效果图</span></h2><p><img src="/2019/04/04/vue-electron脚手架/electron.png" alt=""></p>
+<h2><span id="2效果图">2.效果图</span></h2><p><img src="/2019/04/04/vue-electron脚手架/electron.png" alt></p>
 <p>注意:<br>(1)环境问题:<br>可以参考我的这篇文章<a href="https://www.cnblogs.com/youcong/p/10230091.html" target="_blank" rel="noopener">VsCode源码编译运行</a><br>环境与其保持一致，基本上就不会出什么问题。</p>
 <p>(2)包管理工具问题:<br>关于npm和yarn，两者都是包的管理工具<br>我用npm install总是在报Error之类的错误，用yarn就好了。</p>
 
@@ -591,7 +735,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-GitHub-Contributions贡献值没有增加" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-GitHub-Contributions贡献值没有增加" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/04/03/GitHub-Contributions贡献值没有增加/" class="article-date">
@@ -603,7 +747,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -657,7 +801,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-记一次layui弹框关闭问题" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-记一次layui弹框关闭问题" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/04/03/记一次layui弹框关闭问题/" class="article-date">
@@ -669,7 +813,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -726,7 +870,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-js获取select标签选中的值" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-js获取select标签选中的值" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/04/03/js获取select标签选中的值/" class="article-date">
@@ -738,7 +882,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -795,7 +939,7 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-layui之确认框" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <article id="post-layui之确认框" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2019/04/03/layui之确认框/" class="article-date">
@@ -807,7 +951,7 @@ var _hmt = _hmt || [];
   
   <div class="article-inner">
     
-      <input type="hidden" class="isFancy">
+      <input type="hidden" class="isFancy" />
     
     
       <header class="article-header">
@@ -864,144 +1008,6 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-Node-js读取文件内容并返回值-非异步" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/02/Node-js读取文件内容并返回值-非异步/" class="article-date">
-      <time datetime="2019-04-02T06:43:59.000Z" itemprop="datePublished">2019-04-02</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/02/Node-js读取文件内容并返回值-非异步/">Node.js读取文件内容并返回值(非异步)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>主要解决的问题的，以最近VsCode插件开发为例，每次请求都需要token,而vscode并不支持cookie这样的存储，所以就采用粗暴点办法，存到某个用户目录下并读取。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/02/Node-js读取文件内容并返回值-非异步/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter" class="article article-type-post" itemscope="" itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/" class="article-date">
-      <time datetime="2019-04-01T13:31:47.000Z" itemprop="datePublished">2019-04-01</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/">springboot1.5.4 配置druid1.1.0(使用druid-spring-boot-starter)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、导入Maven依赖"><a href="#一、导入Maven依赖" class="headerlink" title="一、导入Maven依赖"></a>一、导入Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;com.alibaba&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;druid-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;1.1.0&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/04/01/springboot1-5-4-配置druid1-1-0-使用druid-spring-boot-starter/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/63/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/62/">62</a><a class="page-number" href="/page/63/">63</a><span class="page-number current">64</span><a class="page-number" href="/page/65/">65</a><a class="page-number" href="/page/66/">66</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/65/">Next &raquo;</a>
@@ -1017,17 +1023,17 @@ var _hmt = _hmt || [];
             </div>
             <div class="footer-right">
              <a href="#" target="_blank" title="快速、简洁且高效的博客框架">Power by youcong </a>
-             <br>			 
+             <br/>			 
 			 <img width="18px" height="18px" src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png">
 	         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=" target="_blank">京ICP备19022052号</a>
-	  <br>
+	  <br/>
 	  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/#/Integrated/index" target="_blank">京ICP备19022052号-1</a>           
 		   </div>
         </div>
         
             <div class="visit">
                 
-                    <span id="busuanzi_container_site_pv" style="display:none">
+                    <span id="busuanzi_container_site_pv" style='display:none'>
                         <span id="site-visit" title="本站到访数"><i class="fa fa-user" aria-hidden="true"></i><span id="busuanzi_value_site_uv"></span>
                         </span>
                     </span>
@@ -1036,8 +1042,8 @@ var _hmt = _hmt || [];
                     <span>| </span>
                 
                 
-                    <span id="busuanzi_container_page_pv" style="display:none">
-                        <span id="page-visit" title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit"  title="本页阅读量"><i class="fa fa-eye animated infinite pulse" aria-hidden="true"></i><span id="busuanzi_value_page_pv"></span>
                         </span>
                     </span>
                 
