@@ -306,6 +306,73 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-bin-mysqld-error-while-loading-shared-libraries-libaio-so-1-cannot-open-shared-object-file" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/02/16/bin-mysqld-error-while-loading-shared-libraries-libaio-so-1-cannot-open-shared-object-file/" class="article-date">
+      <time datetime="2021-02-16T08:25:11.000Z" itemprop="datePublished">2021-02-16</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/16/bin-mysqld-error-while-loading-shared-libraries-libaio-so-1-cannot-open-shared-object-file/">/bin/mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file:</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./mysqld: error while loading shared libraries: libaio.so.1: cannot open shared object file: No such file or directory</span><br></pre></td></tr></table></figure></p>
+<p>错误原因分析:<br>是因为缺少初始化所必须的库。</p>
+<p>解决办法:<br>安装对应的库，即可，执行如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y libaio</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-Error-Code-1153-Got-a-packet-bigger-than-max-allowed-packet-bytes" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -911,74 +978,6 @@ var _hmt = _hmt || [];
         <p class="article-more-link">
           <a href="/2021/01/11/ERROR-1006-HY000-Can-t-create-database/#more">more >></a>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-RedisCommandExecutionException-MISCONF-Redis-is-configured-to-save-RDB-snapshots-but-it-is-current" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/01/11/RedisCommandExecutionException-MISCONF-Redis-is-configured-to-save-RDB-snapshots-but-it-is-current/" class="article-date">
-      <time datetime="2021-01-11T13:09:29.000Z" itemprop="datePublished">2021-01-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/11/RedisCommandExecutionException-MISCONF-Redis-is-configured-to-save-RDB-snapshots-but-it-is-current/">RedisCommandExecutionException: MISCONF Redis is configured to save RDB snapshots, but it is current</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RedisCommandExecutionException: MISCONF Redis is configured to save RDB snapshots, but it is current</span><br></pre></td></tr></table></figure></p>
-<p>出现错误信息的原因:<br>还是因为授权，我的应用部署在/home下的某个用户目录下，而恰好其中一个应用在启动的时候会用到Redis进行数据初始化。初始化需要将MySQL的数据放到Redis中，而Redis则会将数据持久化，持久化涉及到存储，而存储势必会写入，因为Redis我放在/usr/software这个目录下，而我并未给这个用户授权，所以才导致上面的错误。</p>
-<p>解决办法:<br>授权该用户有写入Redis的权限即可。</p>
-<p>参考解决办法:<br><a href="https://cloud.tencent.com/developer/article/1600527" target="_blank" rel="noopener">解决Redis报错Redis is configured to save RDB snapshots, but it is currently not able to persist on disk</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
       
       <div class="clearfix"></div>
     </div>
