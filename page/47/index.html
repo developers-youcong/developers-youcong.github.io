@@ -306,6 +306,626 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-mysql查询结果多列拼接查询" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/02/08/mysql查询结果多列拼接查询/" class="article-date">
+      <time datetime="2020-02-07T16:06:42.000Z" itemprop="datePublished">2020-02-08</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/08/mysql查询结果多列拼接查询/">mysql查询结果多列拼接查询</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>mysql查询结果多列拼接查询,主要场景是，列表中其中一列涉及另外一张表的多条数据，但是我只需要多条数据中的其中某一列(主子表场景)</p>
+<p>关键字:GROUP_CONCAT</p>
+<p>sql语句如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">            r.id,b.NAME AS group_name,GROUP_CONCAT( a.`name` ) province_name</span><br><span class="line">            FROM config_rule AS r</span><br><span class="line">            LEFT JOIN group AS g ON ( r.svg_id = g.id )</span><br><span class="line">            LEFT JOIN config_rule_detail AS rd ON ( r.id = rd.chat_config_rule_id )</span><br><span class="line">            LEFT JOIN area AS a ON ( rd.province_id = a.id )</span><br><span class="line">            WHERE r.company_id = 1 AND r.delete_flag = &apos;N&apos; AND rd.delete_flag = &apos;N&apos; and r.chat_mongo_id = &apos;123456&apos;</span><br></pre></td></tr></table></figure></p>
+<p>参考地址:<a href="https://blog.csdn.net/qq_35548288/article/details/81771978" target="_blank" rel="noopener">https://blog.csdn.net/qq_35548288/article/details/81771978</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-《高性能MySQL》之EXPLAIN" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/02/02/《高性能MySQL》之EXPLAIN/" class="article-date">
+      <time datetime="2020-02-02T06:38:03.000Z" itemprop="datePublished">2020-02-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/02/《高性能MySQL》之EXPLAIN/">《高性能MySQL》之EXPLAIN</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="使用explain关键字获取sql执行性能"><a href="#使用explain关键字获取sql执行性能" class="headerlink" title="使用explain关键字获取sql执行性能"></a>使用explain关键字获取sql执行性能</h2>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/02/02/《高性能MySQL》之EXPLAIN/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-《高性能MySQL》之MySQL查询性能优化" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/02/02/《高性能MySQL》之MySQL查询性能优化/" class="article-date">
+      <time datetime="2020-02-02T06:21:01.000Z" itemprop="datePublished">2020-02-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/02/《高性能MySQL》之MySQL查询性能优化/">《高性能MySQL》之MySQL查询性能优化</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="为什么查询会慢"><a href="#为什么查询会慢" class="headerlink" title="为什么查询会慢?"></a>为什么查询会慢?</h2><p>响应时间过长。如果把查询看做是一个任务，那么它由一系列子任务组成，每个子任务都会消耗一定的时间。如果要优化查询，实际上优化其子任务，要么消除其中一些子任务，要么减少子任务的执行次数，要么让子任务运行得更快。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/02/02/《高性能MySQL》之MySQL查询性能优化/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-《学会提问》阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/02/02/《学会提问》阅读笔记/" class="article-date">
+      <time datetime="2020-02-02T04:08:59.000Z" itemprop="datePublished">2020-02-02</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/02/《学会提问》阅读笔记/">《学会提问》阅读笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="一、正确提问的好处和方法"><a href="#一、正确提问的好处和方法" class="headerlink" title="一、正确提问的好处和方法"></a>一、正确提问的好处和方法</h2>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/02/02/《学会提问》阅读笔记/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-《设计模式之禅》之装饰模式" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/02/01/《设计模式之禅》之装饰模式/" class="article-date">
+      <time datetime="2020-02-01T08:14:05.000Z" itemprop="datePublished">2020-02-01</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/01/《设计模式之禅》之装饰模式/">《设计模式之禅》之装饰模式</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="一、装饰模式的定义"><a href="#一、装饰模式的定义" class="headerlink" title="一、装饰模式的定义"></a>一、装饰模式的定义</h2><p>装饰模式是一种笔记常见的模式，其定义如下:<br>动态地给一个对象添加一些额外的职责。就增加功能来说，装饰模式相比生成子类更为灵活。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/02/01/《设计模式之禅》之装饰模式/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-《金字塔原理》阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/01/31/《金字塔原理》阅读笔记/" class="article-date">
+      <time datetime="2020-01-31T10:56:58.000Z" itemprop="datePublished">2020-01-31</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/31/《金字塔原理》阅读笔记/">《金字塔原理》阅读笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="表达的逻辑"><a href="#表达的逻辑" class="headerlink" title="表达的逻辑"></a>表达的逻辑</h1><h2 id="一、为什么要用金字塔结构"><a href="#一、为什么要用金字塔结构" class="headerlink" title="一、为什么要用金字塔结构"></a>一、为什么要用金字塔结构</h2>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/01/31/《金字塔原理》阅读笔记/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-《游戏改变世界》阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/01/29/《游戏改变世界》阅读笔记/" class="article-date">
+      <time datetime="2020-01-29T06:23:19.000Z" itemprop="datePublished">2020-01-29</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/29/《游戏改变世界》阅读笔记/">《游戏改变世界》阅读笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="游戏，通往未来的线索"><a href="#游戏，通往未来的线索" class="headerlink" title="游戏，通往未来的线索"></a>游戏，通往未来的线索</h1><h2 id="一、游戏化，互联时代的重要趋势"><a href="#一、游戏化，互联时代的重要趋势" class="headerlink" title="一、游戏化，互联时代的重要趋势"></a>一、游戏化，互联时代的重要趋势</h2>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/01/29/《游戏改变世界》阅读笔记/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-《微服务设计》阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/01/28/《微服务设计》阅读笔记/" class="article-date">
+      <time datetime="2020-01-28T09:54:43.000Z" itemprop="datePublished">2020-01-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/28/《微服务设计》阅读笔记/">《微服务设计》阅读笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="一、微服务"><a href="#一、微服务" class="headerlink" title="一、微服务"></a>一、微服务</h2>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/01/28/《微服务设计》阅读笔记/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-《格鲁夫给经理人的第一课》阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/01/28/《格鲁夫给经理人的第一课》阅读笔记/" class="article-date">
+      <time datetime="2020-01-28T06:58:14.000Z" itemprop="datePublished">2020-01-28</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/28/《格鲁夫给经理人的第一课》阅读笔记/">《格鲁夫给经理人的第一课》阅读笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="序言-从20世纪80年代的巨变谈起"><a href="#序言-从20世纪80年代的巨变谈起" class="headerlink" title="序言 从20世纪80年代的巨变谈起"></a>序言 从20世纪80年代的巨变谈起</h2>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/01/28/《格鲁夫给经理人的第一课》阅读笔记/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-《演讲的力量-TED思想的力量系列-》阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -375,640 +995,9 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-《赢》阅读笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/01/28/《赢》阅读笔记/" class="article-date">
-      <time datetime="2020-01-28T06:09:27.000Z" itemprop="datePublished">2020-01-28</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/28/《赢》阅读笔记/">《赢》阅读笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、基础篇"><a href="#一、基础篇" class="headerlink" title="一、基础篇"></a>一、基础篇</h2>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/01/28/《赢》阅读笔记/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-《设计模式之禅》之责任链模式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/01/12/《设计模式之禅》之责任链模式/" class="article-date">
-      <time datetime="2020-01-12T09:27:33.000Z" itemprop="datePublished">2020-01-12</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/12/《设计模式之禅》之责任链模式/">《设计模式之禅》之责任链模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、责任链模式的定义"><a href="#一、责任链模式的定义" class="headerlink" title="一、责任链模式的定义"></a>一、责任链模式的定义</h2><p>使多个对象都有机会处理请求，从而避免了请求的发送者和接受者之间的耦合关系。将这些对象连成一条链，并沿着这条链传递该请求，直到有对象处理它为止。</p>
-<p>责任链模式的重点是在”链”上，由一条链去处理相似的请求在链中决定谁来处理这个请求。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/01/12/《设计模式之禅》之责任链模式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-《设计模式之禅》之命令模式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/01/11/《设计模式之禅》之命令模式/" class="article-date">
-      <time datetime="2020-01-11T10:32:52.000Z" itemprop="datePublished">2020-01-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/11/《设计模式之禅》之命令模式/">《设计模式之禅》之命令模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、命令模式定义"><a href="#一、命令模式定义" class="headerlink" title="一、命令模式定义"></a>一、命令模式定义</h2><p>将一个请求封装成一个对象，从而让你使用不同的请求把客户端参数化，对请求排队或记录请求日志，可以提供命令的撤销和恢复功能。</p>
-<p>命令模式的通用类图(这里我抽象为如下):<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/01/11/《设计模式之禅》之命令模式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-《设计模式之禅》之中介者模式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/01/05/《设计模式之禅》之中介者模式/" class="article-date">
-      <time datetime="2020-01-05T07:41:10.000Z" itemprop="datePublished">2020-01-05</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/01/05/《设计模式之禅》之中介者模式/">《设计模式之禅》之中介者模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、中介者模式的定义"><a href="#一、中介者模式的定义" class="headerlink" title="一、中介者模式的定义"></a>一、中介者模式的定义</h2><p>用一个中介对象封装一系列的对象交互，中介者使各对象不需要显示地相互作用，从而使其耦合松散，而且可以独立地改变它们之间的交互。</p>
-<p>中介者模式主要由以下几个部分组成:<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/01/05/《设计模式之禅》之中介者模式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-《设计模式之禅》之原型模式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/12/29/《设计模式之禅》之原型模式/" class="article-date">
-      <time datetime="2019-12-29T10:32:34.000Z" itemprop="datePublished">2019-12-29</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/29/《设计模式之禅》之原型模式/">《设计模式之禅》之原型模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、原型模式定义"><a href="#一、原型模式定义" class="headerlink" title="一、原型模式定义"></a>一、原型模式定义</h2><p>用原型实例指定创建对象的种类，并且通过拷贝这些原型创建新的对象。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/12/29/《设计模式之禅》之原型模式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Idea设置热加载" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/12/28/Idea设置热加载/" class="article-date">
-      <time datetime="2019-12-28T08:47:11.000Z" itemprop="datePublished">2019-12-28</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/28/Idea设置热加载/">Idea设置热加载</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>最近转使用Idea,Idea热加载据说很不友好，但是我没有试过，由于个人项目迁移到Idea上面开发，发现连改个HTML，都要重启，太TM气人了。<br>最后果断的搜索Idea热加载怎么做，先不管友好不，先试试看，最后改完后，发现并没有想象中的那么坏，也许是个人项目比较小的缘故。</p>
-<p>参考解决办法链接:<a href="https://blog.csdn.net/qq_42685050/article/details/81588584" target="_blank" rel="noopener">Idea之热加载实现</a><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea/">Idea</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/12/28/Idea设置热加载/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/12/21/Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration/" class="article-date">
-      <time datetime="2019-12-21T13:11:36.000Z" itemprop="datePublished">2019-12-21</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/21/Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration/">Command line is too long. Shorten command line for *** or also for Spring Boot default configuration</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Command line is too long. Shorten command line for *** or also for Spring Boot default configuration</span><br></pre></td></tr></table></figure></p>
-<p>通常会导致的后果是无法启动项目。</p>
-<p>解决办法:</p>
-<p>修改项目下 .idea\workspace.xml，找到标签 <component name="PropertiesComponent"> ， 在标签里加一行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &lt;property name=&quot;dynamic.classpath&quot; value=&quot;true&quot; /&gt;</span><br></pre></td></tr></table></figure></component></p>
-<p>参考解决办法链接:<a href="https://blog.csdn.net/weixin_41235754/article/details/100514000" target="_blank" rel="noopener">https://blog.csdn.net/weixin_41235754/article/details/100514000</a><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea/">Idea</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/12/21/Command-line-is-too-long-Shorten-command-line-for-or-also-for-Spring-Boot-default-configuration/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-《设计模式之禅》之代理模式" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/12/08/《设计模式之禅》之代理模式/" class="article-date">
-      <time datetime="2019-12-08T11:09:29.000Z" itemprop="datePublished">2019-12-08</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/08/《设计模式之禅》之代理模式/">《设计模式之禅》之代理模式</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、代理模式的定义"><a href="#一、代理模式的定义" class="headerlink" title="一、代理模式的定义"></a>一、代理模式的定义</h2><p>为其他对象提供一种代理以控制对这个对象的访问。</p>
-<p>代理模式也叫委托模式，它是一项基本设计技巧。许多其他的模式，如状态模式、策略模式、访问者模式本质上是在更特殊的场合采用了委托模式，而且在日常的应用中，代理模式可以提供非常好的访问控制。如Struts2的Form元素映射就是采用了代理模式。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/读书笔记/">读书笔记</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/12/08/《设计模式之禅》之代理模式/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-portal项目启动问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/12/04/portal项目启动问题/" class="article-date">
-      <time datetime="2019-12-04T14:33:00.000Z" itemprop="datePublished">2019-12-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/12/04/portal项目启动问题/">portal项目启动问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Disconnected from the target VM, address: &apos;127.0.0.1:58909&apos;, transport: &apos;socket&apos;</span><br><span class="line"></span><br><span class="line">Process finished with exit code -1</span><br></pre></td></tr></table></figure></p>
-<p>解决办法:<br>替换application-qa.properties文件，并将application.properties上面的profile指定为qa,并启动PortalApplication.java即可解决该问题。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/12/04/portal项目启动问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/46/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="page-number" href="/page/46/">46</a><span class="page-number current">47</span><a class="page-number" href="/page/48/">48</a><a class="page-number" href="/page/49/">49</a><span class="space">&hellip;</span><a class="page-number" href="/page/70/">70</a><a class="extend next" rel="next" href="/page/48/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/46/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/45/">45</a><a class="page-number" href="/page/46/">46</a><span class="page-number current">47</span><a class="page-number" href="/page/48/">48</a><a class="page-number" href="/page/49/">49</a><span class="space">&hellip;</span><a class="page-number" href="/page/71/">71</a><a class="extend next" rel="next" href="/page/48/">Next &raquo;</a>
     </nav>
   
 </div>
