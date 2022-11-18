@@ -306,6 +306,422 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-MyBatis分页插件失效问题之解决" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/22/MyBatis分页插件失效问题之解决/" class="article-date">
+      <time datetime="2021-01-22T14:41:58.000Z" itemprop="datePublished">2021-01-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/22/MyBatis分页插件失效问题之解决/">MyBatis分页插件失效问题之解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>今天遇到一个问题，MyBatis分页插件失效，导致分页无效，分页失效的原因是我在Controller里做了分页，但业务逻辑实现类对应的方法却写了两个SQL，第一个SQL是查询一条数据判断，第二个SQL是查询列表(是需要分页的)，结果通过日志打印SQL，我发现它却对第一个SQL做分页。最后我的解决办法是，在业务逻辑实现类对应的方法做分页，解决了这个问题。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/01/22/MyBatis分页插件失效问题之解决/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-nginx之MySQL代理" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/22/nginx之MySQL代理/" class="article-date">
+      <time datetime="2021-01-22T13:27:58.000Z" itemprop="datePublished">2021-01-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/22/nginx之MySQL代理/">nginx之MySQL代理</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>修改nginx.conf，添加如下配置(注意:stream和http是同级的):<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/01/22/nginx之MySQL代理/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-mysql快速插入数据三种方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/18/mysql快速插入数据三种方法/" class="article-date">
+      <time datetime="2021-01-18T13:34:52.000Z" itemprop="datePublished">2021-01-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/18/mysql快速插入数据三种方法/">mysql快速插入数据三种方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>今日发现一个独立的api微服务插入数据过慢，主要体现在日志aop的数据入库。于是我通过搜索想知道如何提高mysql数据库插入数据的效率。通过搜索我找到了三种方法:</p>
+<ul>
+<li>(1)修改mysql配置文件(mysql的ini文件增加bulk_insert_buffer_size=100M);</li>
+<li>(2)改写insert语句(使用insert delayed into);</li>
+<li>(3)一次插入多条数据(使用insert into table values(‘张三’,’18’),(‘李四’,’22’),(‘王五’,’28’)…;)。</li>
+</ul>
+<p>其中我尝试了第二种方法，效果能直接看到，只不过有延迟，没有普通insert into那样实时性(从字面上就很好理解，即延迟插入)，<br>这种方法和我用线程池异步处理效果很相似。</p>
+<p>参考资料如下:<br><a href="https://www.cnblogs.com/wangsongbai/p/10493700.html" target="_blank" rel="noopener">mysql千万级数据库插入速度和读取速度的调整记录</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Linux-git免密登录" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/13/Linux-git免密登录/" class="article-date">
+      <time datetime="2021-01-13T11:53:42.000Z" itemprop="datePublished">2021-01-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/13/Linux-git免密登录/">Linux git免密登录</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>因为某种原因，内网的git需要对外开放，为了保障git代码库的安全。<br>我让所有的仓库均为不可见，相当于登录才能看到对应的代码仓库，不登录看不到，之前是不登陆也能clone到本地，因为是内网，不怕外界侵入。但因此我的部署脚本需要重复输入用户名和密码，为了只输入一次，我执行了如下命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br><span class="line"></span><br><span class="line">git config --list</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/01/13/Linux-git免密登录/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Http之413错误解决" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/13/Http之413错误解决/" class="article-date">
+      <time datetime="2021-01-13T11:44:13.000Z" itemprop="datePublished">2021-01-13</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/13/Http之413错误解决/">Http之413错误解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="1-错误信息"><a href="#1-错误信息" class="headerlink" title="1.错误信息"></a>1.错误信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">error:RPC失败。HTTP 413 curl 22 the request URL returned error:413</span><br><span class="line"></span><br><span class="line">fatal:远端意外挂断了。</span><br><span class="line"></span><br><span class="line">fatal:远端意外挂断了。</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/01/13/Http之413错误解决/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-windows杀死端口进程命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/12/windows杀死端口进程命令/" class="article-date">
+      <time datetime="2021-01-12T11:06:06.000Z" itemprop="datePublished">2021-01-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/12/windows杀死端口进程命令/">windows杀死端口进程命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2><span id="一-windows杀死端口进程步骤">一、windows杀死端口进程步骤</span></h2><h4><span id="1查询端口进程">1.查询端口进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr 端口</span><br></pre></td></tr></table></figure>
+<h4><span id="2找到端口进程占用的应用">2.找到端口进程占用的应用</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist | findstr 进程号</span><br></pre></td></tr></table></figure>
+<h4><span id="3杀死端口进程">3.杀死端口进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill -PID 进程号 -F</span><br></pre></td></tr></table></figure>
+<h2><span id="二-应用场景">二、应用场景</span></h2><p>想杀死某个端口进程，但在服务列表中却找不到，可以之间通过命令行找到这个进程并杀死该进程。这样一来，减少重启电脑和找到问题根源。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/">Windows</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-ERROR-1006-HY000-Can-t-create-database" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -581,429 +997,9 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-Openrestry-Lua之静态文件鉴权" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/01/04/Openrestry-Lua之静态文件鉴权/" class="article-date">
-      <time datetime="2021-01-04T11:36:34.000Z" itemprop="datePublished">2021-01-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/04/Openrestry-Lua之静态文件鉴权/">Openrestry+Lua之静态文件鉴权</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>核心代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">location /statis-img &#123;</span><br><span class="line">              alias /home/user/files/;</span><br><span class="line">              access_by_lua &apos;</span><br><span class="line"></span><br><span class="line">                local token  = ngx.var.arg_token</span><br><span class="line"></span><br><span class="line">                local access_token = &quot;123456&quot;</span><br><span class="line"></span><br><span class="line">                if token == access_tokein then</span><br><span class="line">                    return true</span><br><span class="line">                else</span><br><span class="line">                   ngx.exit(403)</span><br><span class="line">                end</span><br><span class="line">            &apos;;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
-<p>这段代码的主要功能就是鉴权，/home/user/files下的静态文件访问是需要携带token的，携带token以及token正确的前提下才能访问到静态资源，否则被拦截并定向到403。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/01/04/Openrestry-Lua之静态文件鉴权/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List-版本问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/01/04/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List-版本问题/" class="article-date">
-      <time datetime="2021-01-04T11:05:21.000Z" itemprop="datePublished">2021-01-04</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/04/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List-版本问题/">net.sf.jsqlparser.statement.select.PlainSelect.getGroupByColumnReferences()Ljava/util/List(版本问题)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>详细错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net.sf.jsqlparser.statement.select.PlainSelect.getGroupByColumnReferences()Ljava/util/List</span><br></pre></td></tr></table></figure></p>
-<p>这个问题导致我的pagehelper分页失效出不来以及报错。</p>
-<p>之前遇到过这样的错误，原因是因为pagehelper插件冲突导致的，我在这篇文章提到过<a href="https://developers-youcong.github.io/2020/09/30/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List/">net.sf.jsqlparser.statement.select.PlainSelect.getGroupByColumnReferences()Ljava/util/List;</a></p>
-<p>这个错误原因是因为jsqlparser版本过高导致的。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/01/04/net-sf-jsqlparser-statement-select-PlainSelect-getGroupByColumnReferences-Ljava-util-List-版本问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Linux-设备上没有空间的问题解决" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/12/27/Linux-设备上没有空间的问题解决/" class="article-date">
-      <time datetime="2020-12-27T03:23:25.000Z" itemprop="datePublished">2020-12-27</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/27/Linux-设备上没有空间的问题解决/">Linux:设备上没有空间的问题解决</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>某天前端跟我说验证码的接口挂掉了，然后我急忙去看日志，发现一切正常，没有问题，服务运行正常，Redis也正常。后来看具体日志发现，出现这样的错误，设备上没有空间。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/12/27/Linux-设备上没有空间的问题解决/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-接口之多种返回数据类型" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/12/19/接口之多种返回数据类型/" class="article-date">
-      <time datetime="2020-12-19T06:39:22.000Z" itemprop="datePublished">2020-12-19</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/19/接口之多种返回数据类型/">接口之多种返回数据类型</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>近来在做另一个项目接口设计的时候需要考虑这样一个需求，一套接口需兼容两类数据类型(xml和json)。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/12/19/接口之多种返回数据类型/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Linux当前用户如何免密登录" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/12/19/Linux当前用户如何免密登录/" class="article-date">
-      <time datetime="2020-12-19T06:31:22.000Z" itemprop="datePublished">2020-12-19</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/19/Linux当前用户如何免密登录/">Linux当前用户如何免密登录</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>最近因某些问题研究需要用到这相关的知识，今天做个记录。<br>Linux当前用户如何免密登录，通常免密登录的应用场景主要是跨服务器文件传输或者跨服务器进行某些操作需要用到。</p>
-<p>关于跨服务器文件传输可以参考早年我写的这篇文章:<br><a href="https://www.cnblogs.com/youcong/p/10809056.html" target="_blank" rel="noopener">Linux远程传输文件免密码</a></p>
-<p>关于当前用户如何免密登录，很简单按照如下步骤操作即可:<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/12/19/Linux当前用户如何免密登录/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-OpenResty源码编译安装" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/12/12/OpenResty源码编译安装/" class="article-date">
-      <time datetime="2020-12-12T13:30:02.000Z" itemprop="datePublished">2020-12-12</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/12/OpenResty源码编译安装/">OpenResty源码编译安装</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="一-下载源码包"><a href="#一-下载源码包" class="headerlink" title="一.下载源码包"></a>一.下载源码包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://openresty.org/download/openresty-1.17.8.1.tar.gz</span><br><span class="line">wget http://labs.frickle.com/files/ngx_cache_purge-2.3.tar.gz</span><br><span class="line">wget https://github.com/yaoweibin/nginx_upstream_check_module/archive/v0.3.0.tar.gz</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/12/12/OpenResty源码编译安装/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/31/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/page/33/">33</a><a class="page-number" href="/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/page/78/">78</a><a class="extend next" rel="next" href="/page/33/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/31/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/page/33/">33</a><a class="page-number" href="/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/page/79/">79</a><a class="extend next" rel="next" href="/page/33/">Next &raquo;</a>
     </nav>
   
 </div>
