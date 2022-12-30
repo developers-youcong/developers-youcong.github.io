@@ -306,6 +306,505 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-CAP理论之思考" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/03/CAP理论之思考/" class="article-date">
+      <time datetime="2021-06-03T12:38:20.000Z" itemprop="datePublished">2021-06-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/03/CAP理论之思考/">CAP理论之思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>分布式系统的最大难点就是各个节点如何保持一致。最近我在工作中就遇到这样的问题，不同节点之间，彼此通过API，进行通信，交互数据，但有些服务节点存在延迟等问题，导致我看到的并不是实时的数据，以及系统更新时，更新A服务，间接影响到B服务，而B服务受到影响后，C服务随之受到影响，以此类推。对于公司技术架构平台设计者之一的我而言，虽然采用一些临时性措施解决了这些问题，但我不得不深入的去思考分布式一些本质上的东西，因为很多问题不从根本上弄清楚并解决，后面只会以一种或多种不同的状态存在着。搞清楚理论并带着直面的问题思考，或许能找到解决问题的最佳方式。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式理论/">分布式理论</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/06/03/CAP理论之思考/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-JavaWeb之Response文件下载-中文编码问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/03/JavaWeb之Response文件下载-中文编码问题/" class="article-date">
+      <time datetime="2021-06-03T12:23:32.000Z" itemprop="datePublished">2021-06-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/03/JavaWeb之Response文件下载-中文编码问题/">JavaWeb之Response文件下载(中文编码问题)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>很久以前遇到过这样的问题，最近再次遇到，做个记录。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/06/03/JavaWeb之Response文件下载-中文编码问题/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-java使用jsoup时绕过https证书验证" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/03/java使用jsoup时绕过https证书验证/" class="article-date">
+      <time datetime="2021-06-03T12:13:24.000Z" itemprop="datePublished">2021-06-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/03/java使用jsoup时绕过https证书验证/">java使用jsoup时绕过https证书验证</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong>详细错误信息:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SunCertPathBuilderException: unable to find valid certification path to requested target</span><br></pre></td></tr></table></figure></p>
+<p><strong>问题原因:</strong><br>爬相关数据，因该网站有SSL加密，故无法爬取。</p>
+<p><strong>问题解决之核心代码:</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">    * 绕过HTTPS验证</span><br><span class="line">    */</span><br><span class="line">   static public void initTSL() &#123;</span><br><span class="line">       try &#123;</span><br><span class="line">           SSLContext context = SSLContext.getInstance(&quot;TLS&quot;);</span><br><span class="line">           context.init(null, new X509TrustManager[]&#123;new X509TrustManager() &#123;</span><br><span class="line">               @Override</span><br><span class="line">               public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException &#123;</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">               @Override</span><br><span class="line">               public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException &#123;</span><br><span class="line">               &#125;</span><br><span class="line"></span><br><span class="line">               @Override</span><br><span class="line">               public X509Certificate[] getAcceptedIssuers() &#123;</span><br><span class="line">                   return new X509Certificate[0];</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;&#125;, new SecureRandom());</span><br><span class="line">           HttpsURLConnection.setDefaultSSLSocketFactory(context.getSocketFactory());</span><br><span class="line">       &#125; catch (NoSuchAlgorithmException e) &#123;</span><br><span class="line">       &#125; catch (KeyManagementException e) &#123;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Linux下删除当前目录及子目录下的所有-txt文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/03/Linux下删除当前目录及子目录下的所有-txt文件/" class="article-date">
+      <time datetime="2021-06-03T11:26:30.000Z" itemprop="datePublished">2021-06-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/03/Linux下删除当前目录及子目录下的所有-txt文件/">Linux下删除当前目录及子目录下的所有.txt文件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>因为某种应用场景我需要将特定目录下的txt文件进行清理，核心命令如下:<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/06/03/Linux下删除当前目录及子目录下的所有-txt文件/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-技术人对赚钱的思考与摸索" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/23/技术人对赚钱的思考与摸索/" class="article-date">
+      <time datetime="2021-05-23T09:57:26.000Z" itemprop="datePublished">2021-05-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/23/技术人对赚钱的思考与摸索/">技术人对赚钱的思考与摸索</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>从2018年6月到目前为止，我一直在为一个目标而前进，即如何让自己的未来发展更好顺带着赚更多的钱。为此我做了很多尝试，有过成功，也有过失败，于是便有了这篇文章《技术人对赚钱的思考与摸索》。<br><strong>本文主要内容为如下:</strong></p>
+<ul>
+<li>自媒体；</li>
+<li>网站；</li>
+<li>外包接私活；</li>
+<li>在线课程；</li>
+<li>开源项目；</li>
+<li>网店；</li>
+<li>写作；</li>
+<li>投资理财；</li>
+<li>升职加薪；</li>
+<li>创业。</li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/职业生涯思考/">职业生涯思考</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/05/23/技术人对赚钱的思考与摸索/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-SpringBoot单文件与多文件上传" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/23/SpringBoot单文件与多文件上传/" class="article-date">
+      <time datetime="2021-05-23T06:41:23.000Z" itemprop="datePublished">2021-05-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/23/SpringBoot单文件与多文件上传/">SpringBoot单文件与多文件上传</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>本次例子不基于第三方存储(如七牛云对象存储、阿里云对象存储、腾讯云对象存储等)，仅基于本地存储。</p>
+<p>单文件上传主要应用场景如上传头像、特定文件转换、授权文件验证等。<br>多文件上传主要应用场景如批量Excel文件数据录入等。<br>本文主要内容如下:</p>
+<ul>
+<li>公共文件存储代码；</li>
+<li>单文件上传代码；</li>
+<li>多文件上传代码。</li>
+</ul>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/05/23/SpringBoot单文件与多文件上传/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-模板引擎的思考" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/05/23/模板引擎的思考/" class="article-date">
+      <time datetime="2021-05-23T04:14:49.000Z" itemprop="datePublished">2021-05-23</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/23/模板引擎的思考/">模板引擎的思考</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="一、什么是模板引擎？"><a href="#一、什么是模板引擎？" class="headerlink" title="一、什么是模板引擎？"></a>一、什么是模板引擎？</h2><p>模板引擎是为了使用户界面与业务数据（内容）分离而产生的，它可以生成特定格式的文档，用于网站的模板引擎就会生成一个标准的文档<br>(模板文件和数据通过模板引擎生成一个HTML代码)。<br><img src="https://upload-images.jianshu.io/upload_images/8707272-8346cf5c4b91b284.png?imageMogr2/auto-orient/strip|imageView2/2/w/871/format/webp" alt><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术思考与实践/">技术思考与实践</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/05/23/模板引擎的思考/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-数据库被删之反思" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -513,489 +1012,9 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-CentOS7如何卸载自带OpenJDK" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/05/16/CentOS7如何卸载自带OpenJDK/" class="article-date">
-      <time datetime="2021-05-16T03:56:23.000Z" itemprop="datePublished">2021-05-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/16/CentOS7如何卸载自带OpenJDK/">CentOS7如何卸载自带OpenJDK</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>开发版的CentOS7.x一般自带OpenJDK,通常我们用商业版的Oracle JDK，这就需要将CentOS7.x自带的OpenJDK进行卸载。那么该如何卸载呢？</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/05/16/CentOS7如何卸载自带OpenJDK/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-正版office产品密钥-激活码" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/05/16/正版office产品密钥-激活码/" class="article-date">
-      <time datetime="2021-05-16T03:50:59.000Z" itemprop="datePublished">2021-05-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/16/正版office产品密钥-激活码/">正版office产品密钥-激活码</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p><strong>正版office产品密钥 office激活码 office2019永久激活:</strong><br><a href="https://www.win7w.com/win10jihuo/26107.html" target="_blank" rel="noopener">正版office产品密钥 office激活码 office2019永久激活</a><br><a href="http://www.ddooo.com/softdown/139653.htm" target="_blank" rel="noopener">office2019专业增强版激活密钥 附激活教程</a></p>
-<p>两个链接均可破解。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-老J的技术分享之总结" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/04/22/老J的技术分享之总结/" class="article-date">
-      <time datetime="2021-04-22T14:02:35.000Z" itemprop="datePublished">2021-04-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/22/老J的技术分享之总结/">老J的技术分享之总结</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>老J做IT这块有二十多个年头了，算是中国IT的见证者与参与者。<br>那个时候刚开始接触和了解时，对于他的一些建议，我不是很乐于去接受，因为我觉得他的那一套技术体系不是很适合如今的情况，当时间久了后发现，他对于数据库的设计、Java底层等有很多独到的见解和丰富的实践经验等，还是很值得学习和借鉴的。以下是老J的技术分享(其中也有我自己的一些分享进行补充完善)，由于时间比较长，我只能记的个大概，不过好在当初做了一些笔记。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术分享与思考/">技术分享与思考</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/04/22/老J的技术分享之总结/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-从单体架构到分布式微服务架构的思考" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/04/17/从单体架构到分布式微服务架构的思考/" class="article-date">
-      <time datetime="2021-04-17T09:13:33.000Z" itemprop="datePublished">2021-04-17</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/17/从单体架构到分布式微服务架构的思考/">从单体架构到分布式微服务架构的思考</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、单体架构"><a href="#一、单体架构" class="headerlink" title="一、单体架构"></a>一、单体架构</h2><h3 id="1-什么是单体架构？"><a href="#1-什么是单体架构？" class="headerlink" title="1.什么是单体架构？"></a>1.什么是单体架构？</h3><p>单体架构也可叫单体系统或单体应用，是一种把系统所有的功能模块耦合在一个应用的架构方式。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/04/17/从单体架构到分布式微服务架构的思考/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-IDEA-java-lang-OutOfMemoryError-Java-heap-space" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/04/12/IDEA-java-lang-OutOfMemoryError-Java-heap-space/" class="article-date">
-      <time datetime="2021-04-12T13:21:53.000Z" itemprop="datePublished">2021-04-12</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/12/IDEA-java-lang-OutOfMemoryError-Java-heap-space/">IDEA java.lang.OutOfMemoryError: Java heap space</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="一、错误背景"><a href="#一、错误背景" class="headerlink" title="一、错误背景"></a>一、错误背景</h3><p>本地开发环境，使用PostMan或Swagger请求A微服务，而A微服务需要将数据传递给B微服务,A微服务的控制台开始报错，使得A微服务没有得到正确的响应。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea/">Idea</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/04/12/IDEA-java-lang-OutOfMemoryError-Java-heap-space/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-博客园整改之思考" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/04/06/博客园整改之思考/" class="article-date">
-      <time datetime="2021-04-06T09:45:31.000Z" itemprop="datePublished">2021-04-06</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/06/博客园整改之思考/">博客园整改之思考</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>在博客园写博客写了三年半的时间了，当初为什么会选择在博客园写，我也记不清是什么原因了，或许这大概是缘分吧。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/程序人生/">程序人生</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/04/06/博客园整改之思考/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-MyBatis之insert-插入和更新" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/04/03/MyBatis之insert-插入和更新/" class="article-date">
-      <time datetime="2021-04-03T10:01:58.000Z" itemprop="datePublished">2021-04-03</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/03/MyBatis之insert-插入和更新/">MyBatis之insert(插入和更新)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>近来在改造一个同事的数据入库项目，发现了一些问题，其中就因为数据库联合主键的缘故导入新增的数据不能入库(这个新增的入库数据，其实对应的数据表就存在这样的数据，她那边没有针对此进行判断有则更新，仅仅是无则插入)。<br>基于这个问题，我不想写太多的代码(查这条数据是否存在，存在则更新这样的)，只想用最少的代码量解决这个问题，通过搜索我找到了这样的方法，无需写很多代码，就是一条SQL就能搞定。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/04/03/MyBatis之insert-插入和更新/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/31/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/page/33/">33</a><a class="page-number" href="/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/page/81/">81</a><a class="extend next" rel="next" href="/page/33/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/31/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/30/">30</a><a class="page-number" href="/page/31/">31</a><span class="page-number current">32</span><a class="page-number" href="/page/33/">33</a><a class="page-number" href="/page/34/">34</a><span class="space">&hellip;</span><a class="page-number" href="/page/82/">82</a><a class="extend next" rel="next" href="/page/33/">Next &raquo;</a>
     </nav>
   
 </div>
