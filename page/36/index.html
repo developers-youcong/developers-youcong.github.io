@@ -306,6 +306,143 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-windows杀死端口进程命令" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/12/windows杀死端口进程命令/" class="article-date">
+      <time datetime="2021-01-12T11:06:06.000Z" itemprop="datePublished">2021-01-12</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/12/windows杀死端口进程命令/">windows杀死端口进程命令</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h2><span id="一-windows杀死端口进程步骤">一、windows杀死端口进程步骤</span></h2><h4><span id="1查询端口进程">1.查询端口进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr 端口</span><br></pre></td></tr></table></figure>
+<h4><span id="2找到端口进程占用的应用">2.找到端口进程占用的应用</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist | findstr 进程号</span><br></pre></td></tr></table></figure>
+<h4><span id="3杀死端口进程">3.杀死端口进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill -PID 进程号 -F</span><br></pre></td></tr></table></figure>
+<h2><span id="二-应用场景">二、应用场景</span></h2><p>想杀死某个端口进程，但在服务列表中却找不到，可以之间通过命令行找到这个进程并杀死该进程。这样一来，减少重启电脑和找到问题根源。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/">Windows</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-ERROR-1006-HY000-Can-t-create-database" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/01/11/ERROR-1006-HY000-Can-t-create-database/" class="article-date">
+      <time datetime="2021-01-11T13:47:31.000Z" itemprop="datePublished">2021-01-11</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/11/ERROR-1006-HY000-Can-t-create-database/">ERROR 1006 (HY000): Can&#39;t create database</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1006 (HY000): Can&apos;&apos;t create database</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/01/11/ERROR-1006-HY000-Can-t-create-database/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-RedisCommandExecutionException-MISCONF-Redis-is-configured-to-save-RDB-snapshots-but-it-is-current" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -863,141 +1000,6 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-OpenResty源码编译安装" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/12/12/OpenResty源码编译安装/" class="article-date">
-      <time datetime="2020-12-12T13:30:02.000Z" itemprop="datePublished">2020-12-12</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/12/OpenResty源码编译安装/">OpenResty源码编译安装</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="一-下载源码包"><a href="#一-下载源码包" class="headerlink" title="一.下载源码包"></a>一.下载源码包</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://openresty.org/download/openresty-1.17.8.1.tar.gz</span><br><span class="line">wget http://labs.frickle.com/files/ngx_cache_purge-2.3.tar.gz</span><br><span class="line">wget https://github.com/yaoweibin/nginx_upstream_check_module/archive/v0.3.0.tar.gz</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/12/12/OpenResty源码编译安装/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Maven之多线程打包" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/12/12/Maven之多线程打包/" class="article-date">
-      <time datetime="2020-12-12T13:05:48.000Z" itemprop="datePublished">2020-12-12</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/12/Maven之多线程打包/">Maven之多线程打包</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Maven多线程打包核心命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean package -T 1C -Dmaven.test.skip=true  -Dmaven.compile.fork=true</span><br></pre></td></tr></table></figure></p>
-<p>主要解决多模块编译打包速度问题。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Maven/">Maven</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/35/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/34/">34</a><a class="page-number" href="/page/35/">35</a><span class="page-number current">36</span><a class="page-number" href="/page/37/">37</a><a class="page-number" href="/page/38/">38</a><span class="space">&hellip;</span><a class="page-number" href="/page/82/">82</a><a class="extend next" rel="next" href="/page/37/">Next &raquo;</a>
@@ -1009,7 +1011,7 @@ var _hmt = _hmt || [];
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2019-2022 youcong
+                2019-2023 youcong
             </div>
             <div class="footer-right">
              <a href="#" target="_blank" title="快速、简洁且高效的博客框架">Power by youcong </a>

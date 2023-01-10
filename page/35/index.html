@@ -306,6 +306,144 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-MySQL之集群配置" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/02/21/MySQL之集群配置/" class="article-date">
+      <time datetime="2021-02-21T12:55:40.000Z" itemprop="datePublished">2021-02-21</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/21/MySQL之集群配置/">MySQL之集群配置</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>本次针对的MySQL版本为5.7，首先分别在A服务器和B服务器上安装MySQL，可以通过yum安装也可以通过wget下载直接编译安装。安装方式可以多种多样，但必须要确保安装成功。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/">MySQL</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/02/21/MySQL之集群配置/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-Java之判断字符串是否为数字-包含浮点型数据" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/02/18/Java之判断字符串是否为数字-包含浮点型数据/" class="article-date">
+      <time datetime="2021-02-18T13:40:47.000Z" itemprop="datePublished">2021-02-18</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/02/18/Java之判断字符串是否为数字-包含浮点型数据/">Java之判断字符串是否为数字(包含浮点型数据)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>核心代码如下(利用正则表达式判断):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public static boolean isNumber(String str) &#123;</span><br><span class="line"></span><br><span class="line">    if (StringUtils.isNotEmpty(str)) &#123;</span><br><span class="line">        String reg = &quot;^[0-9]+(.[0-9]+)?$&quot;;</span><br><span class="line">        return str.matches(reg);</span><br><span class="line">    &#125;</span><br><span class="line">    return false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/02/18/Java之判断字符串是否为数字-包含浮点型数据/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-bin-mysqld-error-while-loading-shared-libraries-libaio-so-1-cannot-open-shared-object-file" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -863,143 +1001,6 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-windows杀死端口进程命令" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/01/12/windows杀死端口进程命令/" class="article-date">
-      <time datetime="2021-01-12T11:06:06.000Z" itemprop="datePublished">2021-01-12</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/12/windows杀死端口进程命令/">windows杀死端口进程命令</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2><span id="一-windows杀死端口进程步骤">一、windows杀死端口进程步骤</span></h2><h4><span id="1查询端口进程">1.查询端口进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netstat -ano | findstr 端口</span><br></pre></td></tr></table></figure>
-<h4><span id="2找到端口进程占用的应用">2.找到端口进程占用的应用</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tasklist | findstr 进程号</span><br></pre></td></tr></table></figure>
-<h4><span id="3杀死端口进程">3.杀死端口进程</span></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">taskkill -PID 进程号 -F</span><br></pre></td></tr></table></figure>
-<h2><span id="二-应用场景">二、应用场景</span></h2><p>想杀死某个端口进程，但在服务列表中却找不到，可以之间通过命令行找到这个进程并杀死该进程。这样一来，减少重启电脑和找到问题根源。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Windows/">Windows</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-ERROR-1006-HY000-Can-t-create-database" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/01/11/ERROR-1006-HY000-Can-t-create-database/" class="article-date">
-      <time datetime="2021-01-11T13:47:31.000Z" itemprop="datePublished">2021-01-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/11/ERROR-1006-HY000-Can-t-create-database/">ERROR 1006 (HY000): Can&#39;t create database</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ERROR 1006 (HY000): Can&apos;&apos;t create database</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/01/11/ERROR-1006-HY000-Can-t-create-database/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/34/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/33/">33</a><a class="page-number" href="/page/34/">34</a><span class="page-number current">35</span><a class="page-number" href="/page/36/">36</a><a class="page-number" href="/page/37/">37</a><span class="space">&hellip;</span><a class="page-number" href="/page/82/">82</a><a class="extend next" rel="next" href="/page/36/">Next &raquo;</a>
@@ -1011,7 +1012,7 @@ var _hmt = _hmt || [];
         <div id="footer-info">
             <div class="footer-left">
                 <i class="fa fa-copyright"></i> 
-                2019-2022 youcong
+                2019-2023 youcong
             </div>
             <div class="footer-right">
              <a href="#" target="_blank" title="快速、简洁且高效的博客框架">Power by youcong </a>
