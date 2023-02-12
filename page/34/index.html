@@ -306,6 +306,144 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-MyBatis之insert-插入和更新" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/04/03/MyBatis之insert-插入和更新/" class="article-date">
+      <time datetime="2021-04-03T10:01:58.000Z" itemprop="datePublished">2021-04-03</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/03/MyBatis之insert-插入和更新/">MyBatis之insert(插入和更新)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>近来在改造一个同事的数据入库项目，发现了一些问题，其中就因为数据库联合主键的缘故导入新增的数据不能入库(这个新增的入库数据，其实对应的数据表就存在这样的数据，她那边没有针对此进行判断有则更新，仅仅是无则插入)。<br>基于这个问题，我不想写太多的代码(查这条数据是否存在，存在则更新这样的)，只想用最少的代码量解决这个问题，通过搜索我找到了这样的方法，无需写很多代码，就是一条SQL就能搞定。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/04/03/MyBatis之insert-插入和更新/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-质疑微服务设计" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/03/27/质疑微服务设计/" class="article-date">
+      <time datetime="2021-03-27T10:50:16.000Z" itemprop="datePublished">2021-03-27</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/27/质疑微服务设计/">质疑微服务设计</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>这套分布式微服务体系建设到现在，已经有半年以上了。前段时间因为技术顾问和项目经理的一些提问，我有些质疑我的设计是不是合理的。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/微服务/">微服务</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/03/27/质疑微服务设计/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-如何写好对外的API微服务" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -844,144 +982,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2021/03/05/Java之时间处理-当前年的上一年、上一季度、当月、当季/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Nginx代理之大文件下载失败问题" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/02/28/Nginx代理之大文件下载失败问题/" class="article-date">
-      <time datetime="2021-02-28T06:15:36.000Z" itemprop="datePublished">2021-02-28</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/28/Nginx代理之大文件下载失败问题/">Nginx代理之大文件下载失败问题</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Cloning into &apos;aplanmis-project&apos;...</span><br><span class="line">remote: Enumerating objects: 176887, done.</span><br><span class="line">remote: Counting objects: 100% (176887/176887), done.</span><br><span class="line">remote: Compressing objects: 100% (75181/75181), done.</span><br><span class="line">error: RPC failed; curl 18 transfer closed with outstanding read data remaining</span><br><span class="line">fatal: the remote end hung up unexpectedly</span><br><span class="line">fatal: early EOF</span><br><span class="line">fatal: index-pack failed</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/02/28/Nginx代理之大文件下载失败问题/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-PageHelper之排序" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/02/27/PageHelper之排序/" class="article-date">
-      <time datetime="2021-02-27T13:27:21.000Z" itemprop="datePublished">2021-02-27</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/02/27/PageHelper之排序/">PageHelper之排序</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>PageHelper是MyBatis的分页插件。关于MyBatis的分页插件如何使用和注意事项，可以参考我的这篇博客:<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/02/27/PageHelper之排序/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
