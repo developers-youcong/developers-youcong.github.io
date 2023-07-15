@@ -306,6 +306,75 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/" class="article-date">
+      <time datetime="2019-03-05T13:16:45.000Z" itemprop="datePublished">2019-03-05</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/">mybatis错误之org.apache.ibatis.binding.BindingException: Invalid bound statement (not found)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>玩了MyBatis差不多有两年了，中间也玩过MyBatis-Plus,这个MyBatis-Plus其实与MyBatis的区别并不大。今天写博客业务代码的时候，犯一个初学者犯过的错误。<br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MyBatis/">MyBatis</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/03/05/mybatis错误之org-apache-ibatis-binding-BindingException-Invalid-bound-statement-not-found/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-node-js服务端程序在Linux上持久运行" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -918,78 +987,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/02/25/阿里云配置tomcat-https/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-springboot打成的jar包如何在Linux上持久运行" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/02/23/springboot打成的jar包如何在Linux上持久运行/" class="article-date">
-      <time datetime="2019-02-23T09:16:10.000Z" itemprop="datePublished">2019-02-23</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/23/springboot打成的jar包如何在Linux上持久运行/">springboot打成的jar包如何在Linux上持久运行</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、首先说说在没有springboot的时候，项目是如何部署的？"><a href="#一、首先说说在没有springboot的时候，项目是如何部署的？" class="headerlink" title="一、首先说说在没有springboot的时候，项目是如何部署的？"></a>一、首先说说在没有springboot的时候，项目是如何部署的？</h2><h4 id="1-动态web项目"><a href="#1-动态web项目" class="headerlink" title="1.动态web项目"></a>1.动态web项目</h4><p>动态web项目部署很方便，基本上上传文件到服务器的tomcat里面的webapps文件夹下即可完成部署。<br>当然了，这种做法的弊端是，如果是通过winscp来传输对于网速方面要求严格，不然的话网速一卡，很久传不过去，很耽误时间的，当然了，我一个同学他们公司用的就是动态web项目，部署的方式也正是采用这种方式，据说是公司制度定下的。原因我就没有细问过他。</p>
-<p>当然了，有人会说，那我上传到服务器之前将其压缩成一个zip包，然后在Linux通过unzip命令解压。这种方式我以前也这么干过。<br>当我后来发现将动态web项目导出war包，直接通过winscp上传到tomcat对应的目录下，在当前目录就会产生一个文件夹，该文件夹主要是web相关的资源，还有就是java产生的编译文件class等。</p>
-<p>由此可以推出动态web项目常规部署方式有这么几种?<br>a.直接上传到tomcat对应的目录下;<br>b.先打成zip包然后再传输到tomcat对应的目录下;<br>c.本地导出war包，然后在传输到tomcat对应的目录下;</p>
-<p>其实a和b是一样的，c则是利用Eclipse的导出war功能来实现的。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/02/23/springboot打成的jar包如何在Linux上持久运行/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
