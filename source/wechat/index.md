@@ -2,15 +2,50 @@
 title: 微信公众号
 date: 2021-11-28 17:42:18
 ---
-我的微信号:youcong_tech
-加我请备注:Blog
 
 我的微信公众号:
-![wechat](./wechat.jpg)
+![wechat](https://youcongtech.com/wechat/wechat.jpg)
 
-
-微信公众号将精选和收录我以往的文章，文章列表如下:
+**微信公众号将精选和收录我以往的文章，文章列表如下:**
+[我的分布式微服务框架:YC-Framework](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247485813&amp;idx=1&amp;sn=daa6e8447409672c28f07dbe094c4f28&amp;chksm=f9805a66cef7d37061b15154a900c840da4bfdedd77cd0ea5865aee740bd1f2c01bb5cc37127&token=1142470289&lang=zh_CN#rd)
+[遥远的救世主](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247485803&amp;idx=1&amp;sn=29e6516ae613b6bb934ffd765a8d4170&amp;chksm=f9805a78cef7d36e6ac3c0883b12066ec06423be6d5772facf6f67e3b8a1121f061f8cfc6500&token=1142470289&lang=zh_CN#rd)
+[我在M2公司做架构系列文章合集](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247485828&amp;idx=1&amp;sn=e31e088922e90ea5e591deeff723ba21&amp;chksm=f9805a97cef7d381b3ec770748c86e0ffb4bf5dc0813db0a48452d9b5545df7775e28f7bb0a5&token=1142470289&lang=zh_CN#rd)
+[谈谈系统重构](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247485993&amp;idx=1&amp;sn=ca27f9f111b679998ef659e4d250f72e&amp;chksm=f980593acef7d02c85dcf259c3c510cbbd8606d0e09216657d0a75af176f6c81ba47bfa91b20&token=1142470289&lang=zh_CN#rd)
+[我对运维的思考](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486144&amp;idx=1&amp;sn=5319380abe31047f61526d22caf30abd&amp;chksm=f98059d3cef7d0c5337a3e723e755efebbbbd8ad50b8d0eb9d11206169bba7a80bd77bb45787&token=1142470289&lang=zh_CN#rd)
+[我对测试的思考](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486146&amp;idx=1&amp;sn=7a585fe66722c4a4a9fe9cbf42ad119b&amp;chksm=f98059d1cef7d0c7cfe688cb04b067f3ed4d00866f8672eb86b3bf833dd7320705f8e1372736&token=1142470289&lang=zh_CN#rd)
+[深入理解SaaS之业务篇](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486148&amp;idx=1&amp;sn=80cc09a5dcc919340469a7db67e60f13&amp;chksm=f98059d7cef7d0c100ae7d4519732326edd63957984f1bbff4741d8ea1242cb4572742e22c42&token=1142470289&lang=zh_CN#rd)
+[深入理解SaaS之架构篇](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486147&amp;idx=1&amp;sn=a2029da23962604285b26a1b6f2fda70&amp;chksm=f98059d0cef7d0c64d191ee0c225bbe784f0f24d99620f55a9b16bf68be15c3f2fd30573266f&token=1142470289&lang=zh_CN#rd)
+[程序员的可持续发展之路](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486164&amp;idx=1&amp;sn=c60b250af65daf39f64bd6d1b0d2c803&amp;chksm=f98059c7cef7d0d1219c166cb00ca26d83e4c2e9b5355bb82f10035c46608d0e5261c703e2c2&token=1142470289&lang=zh_CN#rd)
+[项目依赖管理混乱问题之解决](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486167&amp;idx=1&amp;sn=0338e4a0de00275a991f9b27cda09527&amp;chksm=f98059c4cef7d0d27849f4e6b363d22c9e3e72920fa12db3ccf8fa29c9f2a54383936014bb6c&token=1142470289&lang=zh_CN#rd)
+[面向对象编程的23种设计模式](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486220&amp;idx=1&amp;sn=455a6827b47bda3fd4758dd84e5e08ab&amp;chksm=f980581fcef7d1098f5e3c2d6e0755d4303d1739b2a73586dea9f0c9c5632a135c49cb6b16b7&token=1142470289&lang=zh_CN#rd)
+[如何写好对外的API微服务](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486221&amp;idx=1&amp;sn=82ca5d8bae33303839ddd6b1c593349d&amp;chksm=f980581ecef7d1089c9a65dd09eb31e210481533172dea06c43aa2372446235895c515e6d44b&token=1142470289&lang=zh_CN#rd)
+[我对低代码的理解](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486222&amp;idx=1&amp;sn=8815983bfb92f893893179f9b0dc8263&amp;chksm=f980581dcef7d10b6a5f4641ff844c7543163fbeaf5af69e50ac85e921d6af70c0cac199cd07&token=1142470289&lang=zh_CN#rd)
+[我对SpringBoot的思考](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486230&amp;idx=1&amp;sn=4db9a67d4084a25750aecbe99bd6a94a&amp;chksm=f9805805cef7d11379e2ff80e8f609fbfd1d59f0a0a63071865836c1ba67c9dff378ede638e4&token=1142470289&lang=zh_CN#rd)
+[我对SSM框架的思考](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486224&amp;idx=1&amp;sn=3a4fdb272c9b2b6793eb4ceb1375b510&amp;chksm=f9805803cef7d1153ae7771b1a7f48b32e31648ca5b6cec27c0a5738e85376d84a7cc5d64d81&token=1142470289&lang=zh_CN#rd)
+[深入理解规则引擎](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486297&amp;idx=1&amp;sn=a78c791e013cb42a686e506cc53f15c4&amp;chksm=f980584acef7d15c211cb40db0e0e67e9f7d67dc7e702f28df9c6ea854b4352db15630e79d62&token=1142470289&lang=zh_CN#rd)
+[服务器安全策略之思考与实践](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486274&amp;idx=1&amp;sn=19a06823108aff1f70a598d349dd6f65&amp;chksm=f9805851cef7d147094015c57b14f8f87ae4bb5094cbc6112a514eccee3431cfeddb97b22458&token=1142470289&lang=zh_CN#rd)
+[云风给我的一些启发](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486870&amp;idx=1&amp;sn=5262867afa8aec950a230014730fe484&amp;chksm=f9805e85cef7d793e0148ca8fefc08c452ff68df42b43605faf9d97ed33b429b25f18581e1b1&token=1142470289&lang=zh_CN#rd)
+[陈皓给我的一些启发](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486891&amp;idx=1&amp;sn=d471e600f98352d0ff6f5b41f090c660&amp;chksm=f9805eb8cef7d7ae8f90b40976c52a3eb5d0c43498472bf131ca0eb55c4513c67a088e3dda87&token=1142470289&lang=zh_CN#rd)
+[我的学习方法论](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486963&amp;idx=1&amp;sn=8859d387d719dda001b192078c4aa0cf&amp;chksm=f9805ee0cef7d7f6e5d1360270f221dba49e59936e56542dd18262d51cf6886d4a5de702ecad&token=1142470289&lang=zh_CN#rd)
+[全国性系统之架构设计与思考](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486971&amp;idx=1&amp;sn=663fd114bfa36e2602ad27147e6ee6c4&amp;chksm=f9805ee8cef7d7fe22e45b80e00cebb1f331e546649e5db17ba7ae8af1802a70586e723a94fa&token=1142470289&lang=zh_CN#rd)
+[深入浅出Nginx之实战与架构](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247487155&amp;idx=1&amp;sn=adee49223b1afe8f7d800cbb0b690d8f&amp;chksm=f9805da0cef7d4b60f3b1b7d289e825c25e4a0b4e515027f76e3c76eadbfc4a6a7eebd297835&token=1142470289&lang=zh_CN#rd)
+[运维体系该怎样构建](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247487227&amp;idx=1&amp;sn=2fd78330ae3e4770cf857d08ed9e42cc&amp;chksm=f9805de8cef7d4febbe849cbb7ed257dff9f74bf02e7921e617c2e73f6d5b3d2505fe1b46263&token=1142470289&lang=zh_CN#rd)
+[生产环境出了问题该怎么办？](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247487304&amp;idx=1&amp;sn=e0bcb82a6ed91dd2530235e89354e8f0&amp;chksm=f9805c5bcef7d54d4d91261ac318252bc863221ed970f37ce8d572bdc86dcc6f1c79273c0b34&token=1142470289&lang=zh_CN#rd)
+[从流水线女工到顶尖科技公司程序员，她用了十年](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247487379&amp;idx=1&amp;sn=07901c35e105c383ec76964e0cdde32a&amp;chksm=f9805c80cef7d596452744fc337d65faee5a2c8bcef04dbcb9831dc412828681bb6b28dc5524&token=1142470289&lang=zh_CN#rd)
+[扫码登录很简单](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247487466&amp;idx=1&amp;sn=84bcf29b2cd0b28c7de454388882b2aa&amp;chksm=f9805cf9cef7d5ef3115be05347d41166526d5fca915ba029f727c6ebd29e7c8af71e6361956&token=1142470289&lang=zh_CN#rd)
+[程序员如何用技术变现？](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486970&amp;idx=1&amp;sn=f034e91ec77241a74d6e6cf08124dedb&amp;chksm=f9805ee9cef7d7ffd0f013f857f34d6c2db2ab1f92b78cfe56b0efcffb3c9ada204056ad90cc&token=1142470289&lang=zh_CN#rd)
+[深入理解权限管理模型](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247487467&amp;idx=1&amp;sn=1acc20af4ff09a6b4c117a9415f87079&amp;chksm=f9805cf8cef7d5ee4a629aa7d42fc074122b28b09320a1ab802b6c5d862177b683d8cff2a119&token=1142470289&lang=zh_CN#rd)
+[分布式架构系列文章合集](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247487827&amp;idx=1&amp;sn=82d44c8078a1233fb7fbc016b6fba0cd&amp;chksm=f9804240cef7cb56f0cf72dcba4b0923362172f9f4bd288fa9707eeecf80dc69439e347b8c15&token=1142470289&lang=zh_CN#rd)
+[瞻仰毛主席纪念堂有感](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247487829&amp;idx=1&amp;sn=d4c29379f281222d9b646f44f4169747&amp;chksm=f9804246cef7cb50e60ae3768a593c32acb59aa44ccdc42e7a01a36fb3e8433a651d2afbae12&token=1142470289&lang=zh_CN#rd)
+[那些年印象深刻的面试](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247487897&amp;idx=1&amp;sn=41bcd8965bd9cc940768c3cb2c23d4d6&amp;chksm=f980428acef7cb9cf12bd24edb596e881ce2cde5ce49f12b7bf1650dff2d9d69f39cab208e8e&token=1142470289&lang=zh_CN#rd)
+[那些年粉丝们向我请教的一些问题](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247487954&amp;idx=1&amp;sn=bcd3df36c1d51c13a1530d209c0ac48f&amp;chksm=f98042c1cef7cbd7a42d410b48247cb7cf309b783775f3966d2cdda73c84eeaef0901ee0b085&token=1142470289&lang=zh_CN#rd)
+[Java面试八股文分享](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247488003&amp;idx=1&amp;sn=36245b42c551f69d84254b2772896969&amp;chksm=f9804110cef7c80639ddcd12f7152a5b195be6d70cb20231cad639e2c3f6dac94a93a2e8a5aa&token=1142470289&lang=zh_CN#rd)
+[线上应急的正确姿势应是怎样的？](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247488004&amp;idx=1&amp;sn=44b8948faf1639b884c71b479f59e906&amp;chksm=f9804117cef7c801bb922937ca91b309330df7b1f0bcef025dabeb9fe4dcf16a6bcc7bca8c27&token=1142470289&lang=zh_CN#rd)
+[年年行情不好，年年裁员，怎么办？？？](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486878&amp;idx=1&amp;sn=2df0056aee15c8d84b94adaf8fa7c1a2&amp;chksm=f9805e8dcef7d79ba09b11ce6d7d0b33ff31d365485f0b3c28e709d45936d37c6f0c3c32ffa1&token=1142470289&lang=zh_CN#rd)
 [我对投资的思考](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247485793&amp;idx=1&amp;sn=8435adff26db97b3f09f08d1abf97b2c&amp;chksm=f9805a72cef7d364b01fb27d4921c9818ef10643d532cbfba1ea8c7e92603db28c056311fbed&token=166285557&lang=zh_CN#rd)
+[外包何去何从？？？](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486364&amp;idx=1&amp;sn=aafa8a4d322cd4899b350442bacd5bf9&amp;chksm=f980588fcef7d1998e58466749b69ccfc486ab64ec1f5f504bf6c4b412475b41e940de73f6d2&token=1142470289&lang=zh_CN#rd)
+[我对加班的看法](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247486298&amp;idx=1&amp;sn=8420153a1f48d8341775f3fd16d58b78&amp;chksm=f9805849cef7d15f721f2217d128976b9d306f153cbf961a6df689bd86326cfb34d3e03d9cab&token=1142470289&lang=zh_CN#rd)
+[中国象棋之启发](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247485991&amp;idx=1&amp;sn=652459ae42165d8f8ee0dc2b0f475cd3&amp;chksm=f9805934cef7d022ac8151ecdd27b58b38c56fd886b881837e635b7cd66465ac8deb6429ad9a&token=1142470289&lang=zh_CN#rd)
 [一次失败的股票投机](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247485780&amp;idx=1&amp;sn=6de6d8e84a25861a5738dea4409b91f7&amp;chksm=f9805a47cef7d35114161c5ec6c4d853a09d0055e80a6d3a9caa33d596a3d39bc8dc84f37857&token=166285557&lang=zh_CN#rd)
 [肖申克的救赎之感悟关键词](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247485776&amp;idx=1&amp;sn=9e60fd8bcd7fba1b31a2be418b6de90e&amp;chksm=f9805a43cef7d3552955bd28fda2147a86e96a96e93bd414d46408c4acf6733eac7372aa5eb1&token=166285557&lang=zh_CN#rd)
 [数据库设计之思考](https://mp.weixin.qq.com/s?__biz=MzUxODk0ODQ3Ng==&amp;mid=2247485765&amp;idx=1&amp;sn=ddd624cccb79442d6cbadab2aae80f98&amp;chksm=f9805a56cef7d340d8cee15f345cfe2dac8cc1f6d50f2c8a233be5dc24cf755ab391f3d42cdd&token=166285557&lang=zh_CN#rd)
