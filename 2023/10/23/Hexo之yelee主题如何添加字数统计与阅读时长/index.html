@@ -25,7 +25,8 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://developers-youcong.github.io/2023/10/23/Hexo之yelee主题如何添加字数统计与阅读时长/01.png">
 <meta property="og:image" content="http://developers-youcong.github.io/2023/10/23/Hexo之yelee主题如何添加字数统计与阅读时长/02.png">
-<meta property="og:updated_time" content="2023-10-23T09:23:04.724Z">
+<meta property="og:image" content="http://developers-youcong.github.io/2023/10/23/Hexo之yelee主题如何添加字数统计与阅读时长/03.png">
+<meta property="og:updated_time" content="2023-10-23T11:21:47.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo之yelee主题如何添加字数统计与阅读时长">
 <meta name="twitter:description" content="一直都想给Hexo搭建的博客添加字数统计与阅读时长，之前曾尝试一些方案，但因为不同主题以及Node.js版本原因(这个是最关键的)，最后都放弃了，今天略有时间尝试了另外一种方案，居然成功了。步骤如下所示：">
@@ -339,9 +340,6 @@ var _hmt = _hmt || [];
 
     <div class="article-tag tagcloud" style="display: flex; flex-wrap: wrap">
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-       <span class="post-count" style="font-color:gray;">总字数341</span>
-	  
-       <span class="post-count" style="font-color:gray;">预计阅读1分钟</span>
     </div>
 
 
@@ -361,6 +359,8 @@ var _hmt = _hmt || [];
 <h3><span id="三-修改样式">三、修改样式</span></h3><p>目标文件：themes/yelee/source/css/_partial/tagcloud.styl</p>
 <p>在原内容的基础上添加(在.article-tag::before上方添加)：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.article-tag</span><br><span class="line">    .article-tag-list</span><br><span class="line">        display flex</span><br><span class="line">        flex-wrap wrap</span><br><span class="line">    span</span><br><span class="line">        cursor pointer</span><br><span class="line">        line-height 29px</span><br><span class="line">        font-size 13px</span><br><span class="line">        color #aaa</span><br><span class="line">        &amp;:before</span><br><span class="line">            content &quot;\27A4&quot;</span><br><span class="line">            margin-left 1em</span><br></pre></td></tr></table></figure></p>
 <p>最终效果图如下所示:<br><img src="/2023/10/23/Hexo之yelee主题如何添加字数统计与阅读时长/01.png" alt="图一"><br><img src="/2023/10/23/Hexo之yelee主题如何添加字数统计与阅读时长/02.png" alt="图二"></p>
+<p>不过奇怪的是部署上去后，居然变成这样(样式完全紊乱了):<br><img src="/2023/10/23/Hexo之yelee主题如何添加字数统计与阅读时长/03.png" alt="图三"></p>
+<p>最近，我决定隐藏那段代码后续再来深究是什么原因。</p>
 
       
     </div>
@@ -372,7 +372,7 @@ var _hmt = _hmt || [];
         <p><span>本文标题:</span><a href="/2023/10/23/Hexo之yelee主题如何添加字数统计与阅读时长/">Hexo之yelee主题如何添加字数统计与阅读时长</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">youcong</a></p>
         <p><span>发布时间:</span>2023-10-23, 17:08:35</p>
-        <p><span>最后更新:</span>2023-10-23, 17:23:04</p>
+        <p><span>最后更新:</span>2023-10-23, 19:21:47</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2023/10/23/Hexo之yelee主题如何添加字数统计与阅读时长/" title="Hexo之yelee主题如何添加字数统计与阅读时长">http://developers-youcong.github.io/2023/10/23/Hexo之yelee主题如何添加字数统计与阅读时长/</a>
             <span class="copy-path" data-clipboard-text="原文: http://developers-youcong.github.io/2023/10/23/Hexo之yelee主题如何添加字数统计与阅读时长/　　作者: youcong" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
