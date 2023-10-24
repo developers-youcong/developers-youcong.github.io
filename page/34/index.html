@@ -306,6 +306,78 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Linux下word转pdf中文乱码问题" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2021/06/20/Linux下word转pdf中文乱码问题/" class="article-date">
+      <time datetime="2021-06-20T12:26:04.000Z" itemprop="datePublished">2021-06-20</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/06/20/Linux下word转pdf中文乱码问题/">Linux下word转pdf中文乱码问题</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>最近遇到一个问题，word下载正常，word转pdf后下载出现乱码(如果是本地windos则没有问题，如果是Linux上直接显示乱码)。</p>
+<p>最后通过搜索找到了原因:<br>原因之所以Windows不会有乱码在于C:\Windows\Fonts(有windows丰富的字体库，而Linux很缺乏)。</p>
+<p>其实早在很久以前搭建WordPress站点的时候就遇到这样的乱码问题，那个时候也是将Windows的字体库上传解决的。</p>
+<p><strong>解决问题步骤如下:</strong><br></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2021/06/20/Linux下word转pdf中文乱码问题/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-数据库设计之思考" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -920,75 +992,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2021/05/23/模板引擎的思考/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-数据库被删之反思" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2021/05/22/数据库被删之反思/" class="article-date">
-      <time datetime="2021-05-22T15:20:24.000Z" itemprop="datePublished">2021-05-22</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/22/数据库被删之反思/">数据库被删之反思</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="一、数据库为什么会被删？"><a href="#一、数据库为什么会被删？" class="headerlink" title="一、数据库为什么会被删？"></a>一、数据库为什么会被删？</h2><p>同事小L最近负责整理数据库初始化脚本，在导出演示环境的数据库脚本后，在另外的服务器上执行该数据库脚本，最后由于操作的时候打开的窗口过多，没有注意到环境，当时他打开了很多窗口，有演示环境，也有自己试验环境，也有开发环境，一堆窗口，最后执行的时候发现执行错了，将演示环境给干掉了，演示环境有我们大量的数据，主要用于给客户演示用的，数据非常重要。</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/教训/">教训</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2021/05/22/数据库被删之反思/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
