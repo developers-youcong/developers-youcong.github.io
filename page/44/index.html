@@ -306,6 +306,208 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-LCN-错误-attempts-to-join-the-non-existent-transaction-group" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/22/LCN-错误-attempts-to-join-the-non-existent-transaction-group/" class="article-date">
+      <time datetime="2020-09-22T11:49:13.000Z" itemprop="datePublished">2020-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/22/LCN-错误-attempts-to-join-the-non-existent-transaction-group/">LCN 错误: attempts to join the non-existent transaction group</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>错误信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">com.codingapi.txlcn.logger.AbstractTxLogger.error(AbstractTxLogger.java:70) - business code error</span><br><span class="line"></span><br><span class="line">attempts to join the non-existent transaction group</span><br><span class="line"></span><br><span class="line">rpc execute service error. action: joinGroup</span><br></pre></td></tr></table></figure></p>
+<p>解决办法:<br>在tx-lcn项目配置如下内容，即可解决:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 分布式事务执行总时间(ms). 默认为36000</span><br><span class="line">tx-lcn.manager.dtx-time=600000</span><br></pre></td></tr></table></figure></p>
+<p>配置完需要重新打包。</p>
+<p>参考资料:<br><a href="https://blog.csdn.net/qq_41463655/article/details/106483312" target="_blank" rel="noopener">LCN 错误: attempts to join the non-existent transaction group</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/分布式事务/">分布式事务</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-redis集群搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/22/redis集群搭建/" class="article-date">
+      <time datetime="2020-09-22T11:43:59.000Z" itemprop="datePublished">2020-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/22/redis集群搭建/">redis集群搭建</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>参考博客文章:<br><a href="https://www.cnblogs.com/fousor/p/10598400.html" target="_blank" rel="noopener">redis5.0.4 集群搭建</a><br>说明:<br>就目前亲测，redis5.0以上版本都可以这么做。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
+    <article id="post-redis集群报错-error-CLUSTERDOWN-Hash-slot-not-served" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/22/redis集群报错-error-CLUSTERDOWN-Hash-slot-not-served/" class="article-date">
+      <time datetime="2020-09-22T11:29:37.000Z" itemprop="datePublished">2020-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/22/redis集群报错-error-CLUSTERDOWN-Hash-slot-not-served/">redis集群报错:(error) CLUSTERDOWN Hash slot not served</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <p>错误关键信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(error) CLUSTERDOWN Hash slot not served</span><br></pre></td></tr></table></figure></p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2020/09/22/redis集群报错-error-CLUSTERDOWN-Hash-slot-not-served/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-TX-LCN分布式事务框架使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -789,218 +991,9 @@ var _hmt = _hmt || [];
 <!--gitment 评论 end-->
 
   
-    <article id="post-SpringBoot应用之运行jar包时指定端口" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/11/SpringBoot应用之运行jar包时指定端口/" class="article-date">
-      <time datetime="2020-09-11T12:26:40.000Z" itemprop="datePublished">2020-09-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/11/SpringBoot应用之运行jar包时指定端口/">SpringBoot应用之运行jar包时指定端口</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>应用场景:<br>同一个jar项目可以在一台服务器多部署。</p>
-<p>核心命令如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java -jar XXXXX.jar --server.port=8080</span><br></pre></td></tr></table></figure></p>
-<p>参考资料:<br><a href="https://blog.csdn.net/wangxiaofeng0010/article/details/78520018" target="_blank" rel="noopener">运行jar包指定端口</a></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-SpringBoot-MyBatis-Redis-二级缓存" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/11/SpringBoot-MyBatis-Redis-二级缓存/" class="article-date">
-      <time datetime="2020-09-11T12:12:25.000Z" itemprop="datePublished">2020-09-11</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/11/SpringBoot-MyBatis-Redis-二级缓存/">SpringBoot+MyBatis+Redis(二级缓存)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>应用场景:<br>保存大数据量，避免重复请求。</p>
-<h2 id="一、添加Maven依赖"><a href="#一、添加Maven依赖" class="headerlink" title="一、添加Maven依赖"></a>一、添加Maven依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- SpringBoot Boot Redis --&gt;</span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/09/11/SpringBoot-MyBatis-Redis-二级缓存/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-java之5分钟插入千万条数据" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/09/java之5分钟插入千万条数据/" class="article-date">
-      <time datetime="2020-09-09T13:00:11.000Z" itemprop="datePublished">2020-09-09</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/09/java之5分钟插入千万条数据/">java之5分钟插入千万条数据</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>虽说不一定5分钟就插入完毕，因为取决去所插入的字段，如果字段过多会稍微慢点，但不至于太慢。10分钟内基本能看到结果。</p>
-<p>之前我尝试用多线程来实现数据插入(百万条数据)，半个多小时才二十多万条数据。</p>
-<p>线程池数据插入核心代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">ExecutorService executorService = Executors.newFixedThreadPool(1000000);</span><br><span class="line">        executorService.submit(new Runnable() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                for (int i = 0; i &lt; 150000; i++) &#123;</span><br><span class="line">                    TestUser user = new TestUser();</span><br><span class="line">                    user.setName(RandomUtil.randomString(20));</span><br><span class="line">                    userDao.insert(user);</span><br><span class="line">                    System.out.println(&quot;插入数据:&quot; + i);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                System.out.println(Thread.currentThread().getName() + &quot;正在执行任务&quot;);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure></p>
-<p>应用场景:<br>造测试数据，如千万甚至亿万级别的数据自动快速生成。<br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/09/09/java之5分钟插入千万条数据/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/43/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="page-number" href="/page/43/">43</a><span class="page-number current">44</span><a class="page-number" href="/page/45/">45</a><a class="page-number" href="/page/46/">46</a><span class="space">&hellip;</span><a class="page-number" href="/page/84/">84</a><a class="extend next" rel="next" href="/page/45/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/43/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/42/">42</a><a class="page-number" href="/page/43/">43</a><span class="page-number current">44</span><a class="page-number" href="/page/45/">45</a><a class="page-number" href="/page/46/">46</a><span class="space">&hellip;</span><a class="page-number" href="/page/85/">85</a><a class="extend next" rel="next" href="/page/45/">Next &raquo;</a>
     </nav>
   
 </div>
