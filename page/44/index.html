@@ -306,6 +306,73 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-redis集群之节点少于六个错误-解决" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2020/09/22/redis集群之节点少于六个错误-解决/" class="article-date">
+      <time datetime="2020-09-22T11:57:17.000Z" itemprop="datePublished">2020-09-22</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/09/22/redis集群之节点少于六个错误-解决/">redis集群之节点少于六个错误-解决</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">*** ERROR: Invalid configuration for cluster creation.</span><br><span class="line">*** Redis Cluster requires at least 3 master nodes.</span><br><span class="line">*** This is not possible with 4 nodes and 1 replicas per node.</span><br><span class="line">*** At least 6 nodes are required.</span><br></pre></td></tr></table></figure></p>
+<p>解决方案:<br>增加节点即可。</p>
+<p>参考资料:<br><a href="https://www.cnblogs.com/linyilong3/p/6033901.html" target="_blank" rel="noopener">当节点数量少于6个时候会提示如下信息,初始化一个集群的时候需要6个节点，为什么??</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-There-is-no-normal-TM" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -901,75 +968,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2020/09/16/closing-inbound-before-receiving-peer-s-close-notify/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-Error-creating-bean-with-name-entityManagerFactory-defined-in-class-path-resource" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2020/09/16/Error-creating-bean-with-name-entityManagerFactory-defined-in-class-path-resource/" class="article-date">
-      <time datetime="2020-09-16T13:27:43.000Z" itemprop="datePublished">2020-09-16</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/09/16/Error-creating-bean-with-name-entityManagerFactory-defined-in-class-path-resource/">Error creating bean with name &#39;entityManagerFactory&#39; defined in class path resource</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>错误详细信息:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Error creating bean with name &apos;entityManagerFactory&apos; defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method fail</span><br></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Idea/">Idea</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2020/09/16/Error-creating-bean-with-name-entityManagerFactory-defined-in-class-path-resource/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

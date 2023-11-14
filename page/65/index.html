@@ -306,6 +306,76 @@ var _hmt = _hmt || [];
 </nav>
       <div class="body-wrap">
   
+    <article id="post-SpringBoot之热部署" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2019/09/15/SpringBoot之热部署/" class="article-date">
+      <time datetime="2019-09-15T11:54:49.000Z" itemprop="datePublished">2019-09-15</time>
+</a>
+
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/15/SpringBoot之热部署/">SpringBoot之热部署</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h2 id="添加依赖"><a href="#添加依赖" class="headerlink" title="添加依赖"></a>添加依赖</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--实现springboot的热加载--&gt;</span><br><span class="line">&lt;dependency&gt;  </span><br><span class="line">          &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">          &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line">          &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line">          &lt;scope&gt;true&lt;/scope&gt;</span><br><span class="line">      &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="application-yml添加对应的配置-这里以yml文件为例"><a href="#application-yml添加对应的配置-这里以yml文件为例" class="headerlink" title="application.yml添加对应的配置(这里以yml文件为例)"></a>application.yml添加对应的配置(这里以yml文件为例)</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">devtools:</span><br><span class="line">  restart:</span><br><span class="line">    enabled: true</span><br><span class="line">    additional-paths: src/main/java</span><br><span class="line">    execlude: test/**</span><br></pre></td></tr></table></figure>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SpringBoot/">SpringBoot</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a href="/2019/09/15/SpringBoot之热部署/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+
+<!--gitment 评论-->
+
+<!--gitment 评论 end-->
+
+  
     <article id="post-MP实战系列-十九-之批量新增" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -923,75 +993,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a href="/2019/08/30/记一次MyBatisPlus问题-如果表名是数据库关键字怎么办/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-<!--gitment 评论-->
-
-<!--gitment 评论 end-->
-
-  
-    <article id="post-分析WordPress数据表之分类标签表-功能篇" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2019/08/29/分析WordPress数据表之分类标签表-功能篇/" class="article-date">
-      <time datetime="2019-08-29T13:21:52.000Z" itemprop="datePublished">2019-08-29</time>
-</a>
-
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/29/分析WordPress数据表之分类标签表-功能篇/">分析WordPress数据表之分类标签表(功能篇)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="数据表分析"><a href="#数据表分析" class="headerlink" title="数据表分析"></a>数据表分析</h2><h3 id="wp-terms-分类标签表"><a href="#wp-terms-分类标签表" class="headerlink" title="wp_terms(分类标签表)"></a>wp_terms(分类标签表)</h3><p><img src="/2019/08/29/分析WordPress数据表之分类标签表-功能篇/01.png" alt="图一"><br></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/WordPress/">WordPress</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a href="/2019/08/29/分析WordPress数据表之分类标签表-功能篇/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
